@@ -1,0 +1,25 @@
+.thinContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.thinContainer {
+  width: 150px;
+  padding-left: 50px;
+  float: left;
+}
+
+.container {
+  width: 20px;
+}
+
+.label {
+  margin-left: -37px;
+  padding: 15px;
+}
+
+.thinLabel {
+  margin-left: -15px;
+  padding: 15px;
+  width: 150px;
+}

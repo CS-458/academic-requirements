@@ -1,0 +1,329 @@
+// The @ts-ignore rejects the error from having the .tsx file extension on import
+import React, { useState, useEffect } from "react";
+// @ts-expect-error
+import SearchableDropdown from "./SearchableDropdown.tsx";
+// @ts-expect-error
+import DeleteableInput from "./DeleteableInput.tsx";
+
+import ErrorPopup from "./ErrorPopup";
+
+import ImportPopup from "./ImportPopup";
+
+// Input page is the page where the user inputs all of their information
+const InputPage = (props: {
+  showing: boolean;
+  majorList: any[];
+  majorDisplayList: any[];
+  concentrationList: any[];
+  concentrationDisplayList: any[];
+  concentrationHasFourYearPlan: boolean;
+  importData: (data: any) => void;
+
+  courseSubjectAcronyms: string[];
+  setSelectedCourseSubject: (subject: string) => void;
+  courseSubjectNumbers: string[];
+
+  takenCourses: string[];
+  setTakenCourses: (courses: string[]) => void;
+  onClickMajor: (major: string) => void;
+  onClickConcentration: (concentration: string) => void;
+  onClickGenerate: (
+    major: string,
+    concentration: string,
+    previousCourses: string[]
+  ) => void;
+  setUseFourYearPlan: (usePlan: boolean) => void;
+}): JSX.Element => {
+  // TODO make sure all of this information being passed is filled in and valid
+
+  /*
+  General variables
+  */
+  const [major, setMajor] = useState(""); // major that is selected
+  const [concentration, setConcentration] = useState(""); // concentration that is selected
+  const [showConcentration, setShowConcentration] = useState(false); // concentration dropdown menu is shown
+  const [concentrationOptions, setConcentrationOptions] = useState<string[]>(); // all available concentrations
+
+  // JSON that is imported
+  const [importData, setImportData] = useState<any | null>(null);
+
+  useEffect(() => {
+    props.importData(importData);
+    console.log(importData);
+    if (importData !== null) {
+      setTimeout(() => {
+        props.onClickGenerate(
+          importData.Major,
+          importData.Concentration,
+          importData["Completed Courses"]
+        );
+      }, 1200);
+    }
+  }, [importData]);
+
+  useEffect(() => {
+    if (importData !== null) {
+      setMajor(importData.Major);
+      setConcentration(importData.Concentration);
+      setCoursesTaken(importData["Completed Courses"]);
+    }
+  }, [importData]);
+
+  const [coursesTaken, setCoursesTaken] = useState<string[]>(
+    props.takenCourses
+  ); // courses taken list of strings
+
+  function handleUseFourYearPlan(e: any): void {
+    props.setUseFourYearPlan(e.target.checked);
+  }
+
+  /*
+  Methods that assign major, minor, or concentration when picking option from a dropdown
+*/
+  function selectedMajor(_major: any): void {
+    setMajor(_major);
+    setConcentration(""); // reset the concetration when major is updated
+    setShowConcentration(true);
+    props.onClickMajor(_major);
+    setConcentrationOptions(concentrationOptions);
+  }
+
+  // function selectedMinor(_minor) { setMinor(_minor); }
+
+  function selectedConcentration(_concentration: any): void {
+    setConcentration(_concentration);
+    props.onClickConcentration(_concentration);
+  }
+
+  /*
+  Methods for updating the table of previously taken courses
+*/
+  const [selectedAcronym, setSelectedAcronym] = useState(null);
+  const [selectedNumber, setSelectedNumber] = useState(null);
+
+  // When a new subject is selected, reset the selected number back to null
+  useEffect(() => {
+    setSelectedNumber(null);
+  }, [selectedAcronym]);
+
+  function selectedCourseSubjectAcronym(_selectedAcronym: any): void {
+    setSelectedAcronym(_selectedAcronym);
+
+    // The updates the selected course acronym in App.js
+    props.setSelectedCourseSubject(_selectedAcronym);
+  }
+
+  function selectedCourseNumber(_selectedNumber: any): void {
+    setSelectedNumber(_selectedNumber);
+  }
+
+  const [visibility, setVisibility] = useState(false);
+  const popupCloseHandler = (): void => {
+    setVisibility(false);
+  };
+  const [error, setError] = useState("");
+  function throwError(error: any): void {
+    setVisibility(true);
+    setError(error);
+  }
+
+  // closes the uploader popup
+  const [uploaderVisibility, setUploaderVisibility] = useState(false);
+  const popupCloseHandlerUp = (): void => {
+    setUploaderVisibility(false);
+  };
+  // Makes the uploader popup visible
+  function showUploader(): void {
+    setUploaderVisibility(true);
+  }
+  // This method handles adding a new taken course to the table
+  function processCompletedCourse(): void {
+    if (selectedNumber != null && selectedAcronym != null) {
+      // TODO Check that the course is a valid course in the database
+      if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
+        // Add the course to the completed course list
+        console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
+        setCoursesTaken(
+          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+        );
+        props.setTakenCourses(
+          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+        );
+      } else {
+        throwError("This course has already been added");
+      }
+    } else {
+      if (selectedNumber == null) {
+        throwError(
+          "No course number has been selected, please select a course number."
+        );
+      } else {
+        throwError(
+          "No course type has been selected, please select a course type before adding a course."
+        );
+      }
+    }
+    console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
+    // setCoursesTaken(
+    //  coursesTaken.concat(selectedAcronym + "-" + selectedNumber)
+    // );
+    // props.setTakenCourses(
+    //   coursesTaken.concat(selectedAcronym + "-" + selectedNumber)
+    // );
+  }
+
+  // Removes the course from the coursesTaken list
+  function removeCourse(course: string): void {
+    // Slice method did not work, so here's a replacement:
+    const arr: any[] = [];
+    const index = coursesTaken.findIndex((x) => x === course);
+    coursesTaken.forEach((x, y) => {
+      if (y !== index) {
+        arr.push(x);
+      }
+    });
+    setCoursesTaken(arr);
+    props.setTakenCourses(arr);
+    console.log("Deleted course: " + course);
+  }
+
+  /*
+  This function calls the showUploader function
+  it has the uploader popup appear where the user
+  can select and upload a chosen file.
+  Implementation of the Import Button and part of what it's suppose to do is in /ImportPopup/index.js
+  */
+  function setupUploader(): void {
+    // Makes the upload screen visible sort of redundant
+    showUploader();
+  }
+
+  // Function to autopopulate completed courses list. with every course.
+  return (
+    <div className="App">
+      {props.showing && (
+        <div data-testid="content">
+          <header className="Four-Year-Plan">
+            <h1>Academic Planner</h1>
+          </header>
+          <ErrorPopup
+            onClose={popupCloseHandler}
+            show={visibility}
+            title="Error"
+            error={error}
+          />
+          <ImportPopup
+            title="Upload"
+            show={uploaderVisibility}
+            onClose={popupCloseHandlerUp}
+            returnData={setImportData}
+          />
+          <div className="screen">
+            <div className="input-grid">
+              <div className="input-grid-dropdown" data-testid="MajorDropDown">
+                <SearchableDropdown
+                  options={props.majorDisplayList}
+                  label="Major"
+                  onSelectOption={selectedMajor} // reference
+                  showDropdown={true}
+                  thin={true}
+                />
+              </div>
+              <div className="input-grid-dropdown">
+                <SearchableDropdown
+                  options={props.concentrationDisplayList}
+                  label="Concentration"
+                  onSelectOption={selectedConcentration}
+                  showDropdown={showConcentration}
+                  thin={true}
+                />
+              </div>
+              <div className="input-grid-item">
+                <div className="courseDropdowns">
+                  <SearchableDropdown
+                    options={props.courseSubjectAcronyms}
+                    label="Course Subject"
+                    onSelectOption={selectedCourseSubjectAcronym}
+                    showDropdown={true}
+                    thin={true}
+                  />
+                  <SearchableDropdown
+                    options={props.courseSubjectNumbers}
+                    label="Course Number"
+                    onSelectOption={selectedCourseNumber}
+                    showDropdown={selectedAcronym}
+                    thin={true}
+                  />
+                </div>
+                <button
+                  onClick={processCompletedCourse}
+                  className="addCourseButton"
+                >
+                  Add Course
+                </button>
+              </div>
+              <div className="input-grid-item">
+                <button onClick={setupUploader} data-testid="Import">
+                  Import Schedule
+                </button>
+              </div>
+              <div className="input-grid-item">
+                <button
+                  onClick={() =>
+                    props.onClickGenerate(major, concentration, coursesTaken)
+                  }
+                  data-testid="GenerateSchedule"
+                >
+                  Generate My Schedule
+                </button>
+                <br />
+                {props.concentrationHasFourYearPlan && (
+                  <div style={{ fontSize: "1em", margin: "10px" }}>
+                    <input
+                      id="fourYearPlan"
+                      type="checkbox"
+                      onChange={handleUseFourYearPlan}
+                    />
+                    <label
+                      htmlFor="fourYearPlan"
+                      data-testid="fourYearPlanCheckbox"
+                    >
+                      Load a four year plan?
+                    </label>
+                  </div>
+                )}
+              </div>
+              <div className="input-grid-item-courses">
+                <div className="completedCourses">
+                  <h2>Completed Courses</h2>
+                  <div
+                    className="courseList"
+                    style={{
+                      gridTemplateColumns: `repeat(${
+                        // This may be where issue is with dropdown columns/formatting.
+                        (coursesTaken.length - 1) / 10 + 1
+                      }, 1fr)`
+                    }}
+                  >
+                    {coursesTaken.map((course) => {
+                      return (
+                        <div key={course} onClick={() => removeCourse(course)}>
+                          <DeleteableInput
+                            text={course}
+                            thinWidth={coursesTaken.length >= 20}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default InputPage;

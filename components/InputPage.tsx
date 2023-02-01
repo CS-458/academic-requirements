@@ -8,6 +8,8 @@ import DeleteableInput from "./DeleteableInput.tsx";
 import ErrorPopup from "./ErrorPopup";
 
 import ImportPopup from "./ImportPopup";
+import Link from "next/link";
+import { Button } from "@mui/material";
 
 // Input page is the page where the user inputs all of their information
 const InputPage = (props: {
@@ -255,27 +257,19 @@ const InputPage = (props: {
                     thin={true}
                   />
                 </div>
-                <button
-                  onClick={processCompletedCourse}
-                  className="addCourseButton"
-                >
-                  Add Course
-                </button>
+                <Button onClick={processCompletedCourse}>Add Course</Button>
               </div>
               <div className="input-grid-item">
-                <button onClick={setupUploader} data-testid="Import">
-                  Import Schedule
-                </button>
+                {
+                  // <Button onClick={setupUploader} data-testid="Import">
+                  //   Import Schedule
+                  // </Button>
+                }
               </div>
               <div className="input-grid-item">
-                <button
-                  onClick={() =>
-                    props.onClickGenerate(major, concentration, coursesTaken)
-                  }
-                  data-testid="GenerateSchedule"
-                >
-                  Generate My Schedule
-                </button>
+                <Link href="/scheduler">
+                  <Button>Generate Schedule</Button>
+                </Link>
                 <br />
                 {props.concentrationHasFourYearPlan && (
                   <div style={{ fontSize: "1em", margin: "10px" }}>

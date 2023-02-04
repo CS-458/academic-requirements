@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ErrorPopup from "./ErrorPopup";
 import Example from "./example";
 
-const FourYearPlanPage = (props: {
+const PassThrough = (props: {
   importData?: {};
   showing: boolean;
   majorCourseList: Array<{
@@ -99,4 +99,4 @@ const FourYearPlanPage = (props: {
   );
 };
 
-export default FourYearPlanPage;
+export default PassThrough;

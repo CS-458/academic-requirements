@@ -115,7 +115,7 @@ function App(): JSX.Element {
         // Sets majorDisplayData to the 'name' of the majors
         setMajorDisplayData(temp);
       })
-      .catch(() => { });
+      .catch(() => {});
     fetch("/api/subjects")
       .then(async (res) => await res.json())
       .then((result) => {
@@ -126,13 +126,13 @@ function App(): JSX.Element {
         // get Course subject data, pass in the result
         setCourseSubjects(temp);
       })
-      .catch(() => { });
+      .catch(() => {});
     fetch("/api/courses/geneds")
       .then(async (res) => await res.json())
       .then((result) => {
         setGenEdCourseData(result);
       })
-      .catch(() => { });
+      .catch(() => {});
   }, []);
 
   // Runs whenever a course subject has been selected
@@ -271,7 +271,6 @@ function App(): JSX.Element {
   return (
     <div>
       <InputPage
-        showing={true}
         onClickGenerate={generateSchedule}
         onClickMajor={selectMajor}
         onClickConcentration={selectConcentration}

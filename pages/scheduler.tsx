@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import FourYearPlanPage from "../components/FourYearPlanPage";
+import FourYearPlanPage from "../components/PassThrough";
 import ErrorPopup from "../components/ErrorPopup";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -18,7 +18,7 @@ function App(): JSX.Element {
   const [concentrationData, setConcentrationData] = useState<any[]>([]);
   // concentrationDisplayData is an array of the 'name' of the concentration objects
   const [concentrationDisplayData, setConcentrationDisplayData] = useState<
-  string[]
+    string[]
   >([]);
   // concentrationCode is an array of the 'idConcentration' of the concentration objects
   const [concentrationCode, setConcentrationCode] = useState();

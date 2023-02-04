@@ -8,39 +8,26 @@ import React /* { useEffect, useState } */ from "react"; // added useEffect, use
 // const [majorDisplayData, setMajorDisplayData] = useState([]);
 
 // Note: drop down often key-value pair behind scenes.
-const SearchableDropdown = (props: {
-  options: string[];
+export default function SearchableDropdown<T>(props: {
+  options: Array<{ label: string; value: T }>;
   label: string;
-  onSelectOption: (option: string) => void;
-  showDropdown: boolean;
-  thin: boolean;
-}): JSX.Element => {
+  onSelectOption: (option?: T) => void;
+}): JSX.Element {
   // Runs a debug message with the selected major
   // and passes the name of the selected class to onSelectOption
   function onChangeOption(
     _a: any,
-    option: { label: string; value: string } | null
+    option: { label: string; value: T } | null
   ): void {
-    if (option !== null) {
-      console.log(`Selected Option: ${option.value}`);
-      props.onSelectOption(option.label);
-    }
+    props.onSelectOption(option?.value);
   }
   return (
-    <>
-      {props.showDropdown && (
-        <Autocomplete
-          disablePortal
-          options={props.options?.map((opt) => ({ label: opt, value: opt }))}
-          onChange={onChangeOption}
-          renderInput={(params) => (
-            <TextField {...params} label={props.label} />
-          )}
-        />
-      )}
-    </>
+    <Autocomplete
+      disablePortal
+      options={props.options}
+      onChange={onChangeOption}
+      renderInput={(params) => <TextField {...params} label={props.label} />}
+    />
   );
   // TODO: Select element
-};
-// create fetch statement somewhere
-export default SearchableDropdown;
+}

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ErrorPopup from "./ErrorPopup";
-import Example from "./example";
+import React from "react";
+import FourYearPlanPage from "./FourYearPlanPage";
 
 const PassThrough = (props: {
   importData?: {};
@@ -15,6 +14,7 @@ const PassThrough = (props: {
     category: string;
     id: number;
     idCategory: number;
+    dragSource: string;
   }>;
   concentrationCourseList: Array<{
     credits: number;
@@ -26,6 +26,7 @@ const PassThrough = (props: {
     category: string;
     id: number;
     idCategory: number;
+    dragSource: string;
   }>;
   genEdCourseList: Array<{
     credits: number;
@@ -37,51 +38,48 @@ const PassThrough = (props: {
     category: string;
     id: number;
     idCategory: number;
+    dragSource: string;
   }>;
-  completedCourses: Array<{
-    Course: string[];
-  }>;
+  completedCourses: string[];
   selectedMajor: string;
   selectedConcentration: string;
-  requirements: Array<{
+  requirements: {
     courseCount: number;
     courseReqs: string;
     creditCount: number;
     idCategory: number;
     name: string;
     parentCategory: number;
-  }>;
-  requirementsGen: Array<{
+    percentage: number;
+    inheritedCredits: number;
+    coursesTaken: string[];
+    courseCountTaken: number;
+    creditCountTaken: number;
+  }[];
+  requirementsGen: {
     courseCount: number;
     courseReqs: string;
     creditCount: number;
     idCategory: number;
     name: string;
     parentCategory: number;
-  }>;
+    percentage: number;
+    inheritedCredits: number;
+    coursesTaken: string[];
+    courseCountTaken: number;
+    creditCountTaken: number;
+  }[];
   fourYearPlan?: {};
 }): JSX.Element => {
-  // Functions and variables for controlling an error popup
-  const [visibility, setVisibility] = useState(false);
-  const popupCloseHandler = (): void => {
-    setVisibility(false);
-  };
-  const [error] = useState("");
-
   return (
     <div>
+    {props.showing && (
       <div className="screen">
         <div className="four-year-plan" data-testid="scheduleContent">
           <h1>Academic Planner</h1>
         </div>
-        <ErrorPopup
-          onClose={popupCloseHandler}
-          show={visibility}
-          title="Error"
-          error={error}
-        />
         <div className="page">
-          <Example
+          <FourYearPlanPage
             PassedCourseList={props.majorCourseList
               .concat(props.concentrationCourseList)
               .concat(props.genEdCourseList)}
@@ -95,7 +93,8 @@ const PassThrough = (props: {
           />
         </div>
       </div>
-    </div>
+    )}
+  </div>
   );
 };
 

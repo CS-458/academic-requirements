@@ -54,8 +54,8 @@ export const Course: FC<CourseProps> = memo(function Course({
         id,
         idCategory
       },
-      collect: (monitor) => ({
-        opacity: monitor.isDragging() ? 0.4 : 1
+      collect: (monitor: any) => ({
+        opacity: monitor.isDragging() !== null ? 0.4 : 1
       })
     }),
     [name, type, dragSource] // what is collected by the semester and course list when you drop it

@@ -130,7 +130,7 @@ app.get("/courses/geneds", (req, res) => {
 });
 
 /* Gets the Requirements FOR ALL non-gen-ed Things, so gets it for the MAJOR CONCENTRATION
-   Since there is a union, if there is an update to any ofthe columns we are trying to return
+   Since there is a union, if there is an update to any of the columns we are trying to return
    EVERY "Block" needs to be  modified as well
 */
 app.get("/requirements", (req, res) => {

@@ -26,6 +26,7 @@ export default function SearchableDropdown<T>(props: {
       disablePortal
       options={props.options}
       onChange={onChangeOption}
+      isOptionEqualToValue={(a, b) => a.value === b.value}
       renderInput={(params) => <TextField {...params} label={props.label} />}
     />
   );

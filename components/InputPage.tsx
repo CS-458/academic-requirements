@@ -53,6 +53,7 @@ export default function InputPage(props: {
         completed_courses: []
       });
     } else {
+      setCanMoveOn(false);
       setUserMajor(undefined);
     }
   }
@@ -151,9 +152,12 @@ export default function InputPage(props: {
     console.log(`Deleted course: ${course}`);
   }
 
-  const concentrationList = majorList().find(
-    (a) => a.id === major
-  )?.concentrations;
+  const concentrationList = majorList()
+    .find((a) => a.id === major)
+    ?.concentrations.map((a) => ({
+      label: a.name,
+      value: a.id
+    }));
 
   // Function to autopopulate completed courses list. with every course.
   return (
@@ -231,7 +235,7 @@ export default function InputPage(props: {
             </div>
             <div className="input-grid-item">
               <Link href="/scheduler">
-                <Button disabled={canMoveOn}>Generate Schedule</Button>
+                <Button disabled={!canMoveOn}>Generate Schedule</Button>
               </Link>
               <br />
               {

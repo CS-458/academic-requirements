@@ -30,3 +30,7 @@ export interface Requirement {
   name: string;
   parentCategory: number;
 }
+
+export interface Requirements {
+  [category: number]: Requirement;
+}

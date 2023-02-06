@@ -6,15 +6,15 @@ const majorIDs: {
 } = {
   2: [
     {
-      subject: "",
-      number: 0,
-      name: "",
+      subject: "R",
+      number: 101,
+      name: "Course B",
       credits: 0,
       preReq: "",
       idCategory: 0,
-      category: "",
-      semesters: "",
-      id: 0
+      category: "ResA",
+      semesters: "fall",
+      id: 1
     }
   ]
 };

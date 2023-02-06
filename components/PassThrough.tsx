@@ -71,30 +71,39 @@ const PassThrough = (props: {
   }[];
   fourYearPlan?: {};
 }): JSX.Element => {
+  // Functions and variables for controlling an error popup
+  const [visibility, setVisibility] = useState(false);
+  const popupCloseHandler = (): void => {
+    setVisibility(false);
+  };
+  const [error] = useState("");
+
+  console.log(props);
+
   return (
     <div>
-    {props.showing && (
-      <div className="screen">
-        <div className="four-year-plan" data-testid="scheduleContent">
-          <h1>Academic Planner</h1>
+      {props.showing && (
+        <div className="screen">
+          <div className="four-year-plan" data-testid="scheduleContent">
+            <h1>Academic Planner</h1>
+          </div>
+          <div className="page">
+            <FourYearPlanPage
+              PassedCourseList={props.majorCourseList
+                .concat(props.concentrationCourseList)
+                .concat(props.genEdCourseList)}
+              CompletedCourses={props.completedCourses}
+              selectedMajor={props.selectedMajor}
+              selectedConcentration={props.selectedConcentration}
+              requirements={props.requirements}
+              requirementsGen={props.requirementsGen}
+              fourYearPlan={props.fourYearPlan}
+              importData={props.importData}
+            />
+          </div>
         </div>
-        <div className="page">
-          <FourYearPlanPage
-            PassedCourseList={props.majorCourseList
-              .concat(props.concentrationCourseList)
-              .concat(props.genEdCourseList)}
-            CompletedCourses={props.completedCourses}
-            selectedMajor={props.selectedMajor}
-            selectedConcentration={props.selectedConcentration}
-            requirements={props.requirements}
-            requirementsGen={props.requirementsGen}
-            fourYearPlan={props.fourYearPlan}
-            importData={props.importData}
-          />
-        </div>
-      </div>
-    )}
-  </div>
+      )}
+    </div>
   );
 };
 

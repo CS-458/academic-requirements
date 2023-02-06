@@ -58,7 +58,7 @@ export const Course: FC<CourseProps> = memo(function Course({
         opacity: monitor.isDragging() !== null ? 0.4 : 1
       })
     }),
-    [name, type, dragSource] // what is collected by the semester and course list when you drop it
+    [id, type, dragSource] // what is collected by the semester and course list when you drop it
   );
 
   // Gets the URL to the UW Stout Bulletin for the given Course

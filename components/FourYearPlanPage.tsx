@@ -264,8 +264,8 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
-      (index: number, item: { name: string; dragSource: string }) => {
-        const { name } = item;
+      (index: number, item: { id: string; dragSource: string }) => {
+        const { id } = item;
         const { dragSource } = item;
         let movedFromIndex = -1;
         let course;
@@ -273,11 +273,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           // index of semester it was moved from
           movedFromIndex = +dragSource.split(" ")[1];
           course = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.id === id
           );
         } else {
           // find the course by name in the master list of all courses
-          course = courses.find((item) => item.name === name);
+          course = courses.find((item) => item.id === id);
         }
 
         //  Get all course subject and acronyms in current semester (excluding the course to be added)
@@ -389,15 +389,15 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
-      (item: { name: string; dragSource: string }) => {
-        const { name } = item;
+      (item: { id: number; dragSource: string }) => {
+        const { id } = item;
         const { dragSource } = item;
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
           // get the semester index from the drag source
           const movedFromIndex = +dragSource.split(" ")[1];
           const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.id === id
           );
           // set the drag source to course list (may be redundant but I'm scared to mess with it)
           found.dragSource = "CourseList";
@@ -428,7 +428,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           let count = 0;
           semesters.forEach((x) =>
             x.courses.forEach((y: any) => {
-              if (y.name === found.name) {
+              if (y.id === found.id) {
                 count++;
               }
             })

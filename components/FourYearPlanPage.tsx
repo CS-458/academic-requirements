@@ -1,6 +1,5 @@
 import update from "immutability-helper";
 import React, { FC, useEffect, memo, useCallback, useState } from "react";
-import { Course } from "./DraggableCourse";
 import { Semester } from "./Semester";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
@@ -146,7 +145,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
       useState<Course[]>([]);
     const [warningDuplicateCourses, setWarningDuplicateCourses] = useState<
-    Course[]
+      Course[]
     >([]);
     //  Warning for spring/fall semester
     const [updateWarning, setUpdateWarning] = useState<{
@@ -169,7 +168,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<
-    Requirement[]
+      Requirement[]
     >([]);
 
     // Requirements that are manipulated
@@ -179,10 +178,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
       useState<
-      {
-        idString: string;
-        categories: number[];
-      }[]
+        {
+          idString: string;
+          categories: number[];
+        }[]
       >([]);
 
     // Stuff for category dropdown.
@@ -484,10 +483,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
               setVisibility(true);
               setErrorMessage(
                 "WARNING! " +
-                  course.subject +
-                  "_" +
-                  course.number +
-                  " is already in other semesters."
+                course.subject +
+                "_" +
+                course.number +
+                " is already in other semesters."
               );
 
               //  Append the course to the duplicate warning courses list
@@ -535,12 +534,12 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             setVisibility(true);
             setErrorMessage(
               "WARNING! " +
-                updateWarning.course.subject +
-                "_" +
-                updateWarning.course.number +
-                " is not typically offered during the " +
-                (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") +
-                " semester"
+              updateWarning.course.subject +
+              "_" +
+              updateWarning.course.number +
+              " is not typically offered during the " +
+              (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") +
+              " semester"
             );
           }
         }
@@ -609,11 +608,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             setVisibility(true);
             setErrorMessage(
               "WARNING! " +
-                updateWarning.course.subject +
-                "_" +
-                updateWarning.course.number +
-                " has failed the following prerequisites: " +
-                satisfied.failedString
+              updateWarning.course.subject +
+              "_" +
+              updateWarning.course.number +
+              " has failed the following prerequisites: " +
+              satisfied.failedString
             );
 
             //  Update the warning courses to include the just dragged course
@@ -804,11 +803,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           setVisibility(true);
           setErrorMessage(
             "WARNING! " +
-              courseToRemove.subject +
-              "_" +
-              courseToRemove.number +
-              " is a prerequisite for the following courses: " +
-              message
+            courseToRemove.subject +
+            "_" +
+            courseToRemove.number +
+            " is a prerequisite for the following courses: " +
+            message
           );
         }
       }
@@ -1320,7 +1319,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                         if (
                           reqGenList[i].coursesTaken.length > 0 &&
                           reqGenList[i].idCategory !==
-                            reqGenList[parentIndex].idCategory
+                          reqGenList[parentIndex].idCategory
                         ) {
                           filledCategories++;
                         }

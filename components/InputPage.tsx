@@ -153,7 +153,7 @@ export default function InputPage(props: {
   }
 
   const concentrationList = majorList()
-    .find((a) => a.id === major)
+    .data?.find((a) => a.id === major)
     ?.concentrations.map((a) => ({
       label: a.name,
       value: a.id
@@ -184,10 +184,12 @@ export default function InputPage(props: {
           <div className="input-grid">
             <div className="input-grid-dropdown" data-testid="MajorDropDown">
               <SearchableDropdown
-                options={majorList().map((m) => ({
-                  label: m.name,
-                  value: m.id
-                }))}
+                options={
+                  majorList().data?.map((m) => ({
+                    label: m.name,
+                    value: m.id
+                  })) ?? []
+                }
                 label="Major"
                 onSelectOption={(m?: number) => {
                   setMajor(m);
@@ -271,7 +273,7 @@ export default function InputPage(props: {
                     return (
                       <div key={course} onClick={() => removeCourse(course)}>
                         <DeleteableInput
-                          text={course}
+                          text={`${course}`}
                           thinWidth={coursesTaken.length >= 20}
                         />
                       </div>

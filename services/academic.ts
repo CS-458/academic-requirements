@@ -5,6 +5,7 @@ import {
   Major,
   Requirements
 } from "../entities/four_year_plan";
+import { fetchApi } from "./util";
 
 // TODO: use fetchApi to make request to actual API
 
@@ -18,15 +19,19 @@ export function majorList(): UseQueryResult<Major[]> {
   ]);
 }
 
-export async function concentration(
+export function concentration(
   concentration: number
-): Promise<Concentration | null> {
-  switch (concentration) {
-    case 0:
-      return { id: 0, name: "Sec", four_year_plan: "null" };
-    default:
-      return null;
-  }
+): UseQueryResult<Concentration | null> {
+  return useQuery(
+    ["concectrations", concentration],
+    async () => await fetchApi(`/api/concentrations?conid=${concentration}`)
+  );
+  // switch (concentration) {
+  //   case 0:
+  //     return { id: 0, name: "Sec", four_year_plan: "null" };
+  //   default:
+  //     return null;
+  // }
 }
 
 export async function course(course: number): Promise<Course> {

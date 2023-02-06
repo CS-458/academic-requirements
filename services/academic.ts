@@ -10,13 +10,7 @@ import { fetchApi } from "./util";
 // TODO: use fetchApi to make request to actual API
 
 export function majorList(): UseQueryResult<Major[]> {
-  return useQuery("Major List", async () => [
-    {
-      id: 2,
-      name: "CS",
-      concentrations: [{ id: 0, name: "Sec" }]
-    }
-  ]);
+  return useQuery("Major List", async () => await fetchApi(`/api/major`));
 }
 
 export function concentration(

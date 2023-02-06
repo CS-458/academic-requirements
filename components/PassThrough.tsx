@@ -71,15 +71,6 @@ const PassThrough = (props: {
   }[];
   fourYearPlan?: {};
 }): JSX.Element => {
-  // Functions and variables for controlling an error popup
-  const [visibility, setVisibility] = useState(false);
-  const popupCloseHandler = (): void => {
-    setVisibility(false);
-  };
-  const [error] = useState("");
-
-  console.log(props);
-
   return (
     <div>
       {props.showing && (

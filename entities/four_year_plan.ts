@@ -1,28 +1,38 @@
-export interface Major {
+export interface MajorType {
   id: number;
   name: string;
-  concentrations: Array<{ id: number; name: string }>;
+  concentrationId: number;
 }
 
-export interface Concentration {
-  id: number;
+export interface ConcentrationType {
+  idConcentration: number;
   name: string;
-  four_year_plan: string;
+  fourYearPlan: string;
 }
 
-export interface Course {
+export interface CourseType {
   credits: number;
   name: string;
+  subject: string;
   number: number;
   semesters: string;
-  subject: string;
+  type: string;
   preReq: string;
-  category: string;
+  dragSource: string;
+  warningYellowColor?: boolean;
+  warningOrangeColor?: boolean;
+  warningRedColor?: boolean;
   id: number;
   idCategory: number;
 }
 
-export interface Requirement {
+export interface CourseListType {
+  accept: CourseType;
+  onDrop: (item: any) => void;
+  courses: CourseType[];
+}
+
+export interface RequirementType {
   courseCount: number;
   courseReqs: string;
   creditCount: number;
@@ -32,5 +42,5 @@ export interface Requirement {
 }
 
 export interface Requirements {
-  [category: number]: Requirement;
+  [category: number]: RequirementType;
 }

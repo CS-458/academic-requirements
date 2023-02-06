@@ -168,7 +168,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<
-      Requirement[]
+    Requirement[]
     >([]);
 
     // Requirements that are manipulated
@@ -178,10 +178,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
       useState<
-        {
-          idString: string;
-          categories: number[];
-        }[]
+      {
+        idString: string;
+        categories: number[];
+      }[]
       >([]);
 
     // Stuff for category dropdown.

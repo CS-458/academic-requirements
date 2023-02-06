@@ -12,9 +12,8 @@ import { majorList } from "../services/academic";
 
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
-  majorDisplayList: any[];
+  majorList: any[];
   concentrationList: any[];
-  concentrationDisplayList: any[];
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
 
@@ -58,7 +57,7 @@ export default function InputPage(props: {
     }
   }
 
-  const [coursesTaken, setCoursesTaken] = useState<number[]>([]);
+  const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
 
   /*
   Methods for updating the table of previously taken courses
@@ -138,7 +137,7 @@ export default function InputPage(props: {
   }
 
   // Removes the course from the coursesTaken list
-  function removeCourse(course: number): void {
+  function removeCourse(course: string): void {
     // Slice method did not work, so here's a replacement:
     const arr: any[] = [];
     const index = coursesTaken.findIndex((x) => x === course);

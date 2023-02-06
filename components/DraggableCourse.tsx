@@ -2,25 +2,9 @@ import type { FC } from "react";
 import React, { memo } from "react";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
+import { CourseType } from "../entities/four_year_plan";
 
-// defines the expected course properties
-export interface CourseProps {
-  credits: number;
-  name: string;
-  subject: string;
-  number: number;
-  semesters: string;
-  type: string;
-  preReq: string;
-  dragSource: string;
-  warningYellowColor?: boolean;
-  warningOrangeColor?: boolean;
-  warningRedColor?: boolean;
-  id: number;
-  idCategory: number;
-}
-
-export const Course: FC<CourseProps> = memo(function Course({
+export const Course: FC<CourseType> = memo(function Course({
   name,
   subject,
   number,

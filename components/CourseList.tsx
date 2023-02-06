@@ -3,6 +3,7 @@ import React, { memo } from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
 import { Course } from "./DraggableCourse";
+import { CourseListType } from "../entities/four_year_plan";
 
 // Styling for the course list
 const style: CSSProperties = {
@@ -21,13 +22,7 @@ const style: CSSProperties = {
   overflow: "auto"
 };
 
-export interface CourseListProps {
-  accept: Course;
-  onDrop: (item: any) => void;
-  courses: Course[];
-}
-
-export const CourseList: FC<CourseListProps> = memo(function CourseList({
+export const CourseList: FC<CourseListType> = memo(function CourseList({
   accept,
   onDrop,
   courses
@@ -44,15 +39,15 @@ export const CourseList: FC<CourseListProps> = memo(function CourseList({
   // changes the background color on hover over course list
   const isActive = isOver;
   let backgroundColor = "#004990";
-  if (isActive) {
+  if (isActive === true) {
     backgroundColor = "darkgreen";
   }
 
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
-      {isActive ? "Release to drop" : ""}
+      {isActive === true ? "Release to drop" : ""}
       {courses.map(
-        ({ name, subject, number, semesters, credits, preReq }, index) => (
+        ({ name, subject, number, semesters, credits, preReq, id, idCategory }, index) => (
           <Course
             name={name}
             subject={subject}
@@ -63,6 +58,8 @@ export const CourseList: FC<CourseListProps> = memo(function CourseList({
             key={index}
             dragSource={"CourseList"}
             preReq={preReq}
+            id={id}
+            idCategory={idCategory}
           />
         )
       )}

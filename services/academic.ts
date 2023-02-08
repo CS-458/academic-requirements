@@ -18,7 +18,7 @@ export function concentrationList(
 ): UseQueryResult<Concentration[] | null> {
   return useQuery(
     ["concentrations", majorId],
-    async () => await fetchApi(`/api/concentrations?majid=${majorId}`)
+    async () => await fetchApi(`/api/concentration?majid=${majorId}`)
   );
 }
 

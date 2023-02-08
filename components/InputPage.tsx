@@ -159,6 +159,11 @@ export default function InputPage(props: {
   //     value: a.id
   //   }));
 
+  const concentrationListValue = concentrationList(major).data?.map((c) => ({
+    label: c.name,
+    value: c.id
+  })) ?? [];
+
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
@@ -201,10 +206,7 @@ export default function InputPage(props: {
               {major !== undefined && (
                 <SearchableDropdown
                   options={
-                    concentrationList(major).data?.map((c) => ({
-                      label: c.name,
-                      value: c.id
-                    })) ?? []
+                    concentrationListValue
                   }
                   label="Concentration"
                   onSelectOption={(m?: number) => {

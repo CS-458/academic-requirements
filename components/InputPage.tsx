@@ -43,7 +43,10 @@ export default function InputPage(props: {
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
-  function updateMoveOn(): void {
+  function updateMoveOn(
+    major: number | undefined,
+    concentration: number | undefined
+  ): void {
     if (major !== undefined && concentration !== undefined) {
       setCanMoveOn(true);
       setUserMajor({
@@ -197,8 +200,12 @@ export default function InputPage(props: {
                 }
                 label="Major"
                 onSelectOption={(m?: number) => {
-                  setMajor(m);
-                  updateMoveOn();
+                  if (m !== major) {
+                    setMajor(m);
+                    setConcentration(undefined);
+                    setCanMoveOn(false);
+                    setUserMajor(undefined);
+                  }
                 }}
               />
             </div>
@@ -211,7 +218,15 @@ export default function InputPage(props: {
                   label="Concentration"
                   onSelectOption={(m?: number) => {
                     setConcentration(m);
-                    updateMoveOn();
+                    if (major !== undefined && m !== undefined) {
+                      setCanMoveOn(true);
+                      setUserMajor({
+                        major,
+                        concentration: m,
+                        load_four_year_plan: fourYearPlan,
+                        completed_courses: []
+                      });
+                    }
                   }}
                 />
               )}
@@ -273,7 +288,7 @@ export default function InputPage(props: {
                     gridTemplateColumns: `repeat(${
                       // This may be where issue is with dropdown columns/formatting.
                       (coursesTaken.length - 1) / 10 + 1
-                    }, 1fr)`
+                      }, 1fr)`
                   }}
                 >
                   {coursesTaken.map((course) => {

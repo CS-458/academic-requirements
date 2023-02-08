@@ -11,7 +11,7 @@ export default function SearchableDropdown<T>(props: {
     <Autocomplete
       disablePortal
       options={props.options.map((v) => {
-        if ("label" in v && "value" in v) {
+        if (typeof v === "object" && v != null && "label" in v && "value" in v) {
           return v;
         } else {
           return {

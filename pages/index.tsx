@@ -161,7 +161,7 @@ function App(): JSX.Element {
   // Gets the courses related to the 'idConcentration' of the selected concentration
   // Runs when concentrationCode is updated
   useEffect(() => {
-    fetch(`/api/courses/concentration?conid=${concentration?.idConcentration}`)
+    fetch(`/api/courses/concentration?conid=${concentration?.id}`)
       .then(async (res) => await res.json())
       .then((result) => {
         console.log("result", result);
@@ -173,7 +173,7 @@ function App(): JSX.Element {
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/api/requirements?conid=${concentration?.idConcentration}`)
+    fetch(`/api/requirements?conid=${concentration?.id}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets concentrationCourseData to the result from the query
@@ -185,7 +185,7 @@ function App(): JSX.Element {
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/api/requirements/gen?conid=${concentration?.idConcentration}`)
+    fetch(`/api/requirements/gen?conid=${concentration?.id}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets concentrationCourseData to the result from the query

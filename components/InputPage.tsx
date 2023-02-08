@@ -10,6 +10,7 @@ import ErrorPopup from "./ErrorPopup";
 // import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
 import { majorList } from "../services/academic";
+import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
@@ -38,8 +39,8 @@ export default function InputPage(props: {
   /*
   General variables
   */
-  const [major, setMajor] = useState<string | undefined>(); // major that is selected
-  const [concentration, setConcentration] = useState<string | null>(); // concentration that is selected
+  const [major, setMajor] = useState<{ name: string, id: number } | undefined>(); // major that is selected
+  const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: {} } | undefined>(); // concentration that is selected
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
@@ -61,12 +62,12 @@ export default function InputPage(props: {
   const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
 
   // Methods for updating the table of previously taken courses
-  const [selectedAcronym, setSelectedAcronym] = useState(null);
-  const [selectedNumber, setSelectedNumber] = useState(null);
+  const [selectedAcronym, setSelectedAcronym] = useState<string | undefined>();
+  const [selectedNumber, setSelectedNumber] = useState<string | undefined>();
 
   // When a new subject is selected, reset the selected number back to null
   useEffect(() => {
-    setSelectedNumber(null);
+    setSelectedNumber(undefined);
   }, [selectedAcronym]);
 
   const [visibility, setVisibility] = useState(false);
@@ -132,11 +133,17 @@ export default function InputPage(props: {
     props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
-  console.log(major);
+
   const concentrationList = majorList()
-    .data?.find((a) => a.name === major)
-    ?.concentrations.map((a: any) => (a.name));
+    .data?.find((a) => a.id === major?.id)
+    ?.concentrations.map((a: any): { label: string; value: ConcentrationType } => ({ 
+      label: a.name,
+      value: a
+    })) ?? [];
+
+  console.log(major);
   console.log(concentration);
+  console.log(concentrationList);
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
@@ -157,37 +164,40 @@ export default function InputPage(props: {
       <Grid container spacing={3} pt={5}>
         <Grid sm={5}>
           <SearchableDropdown
-            options={majorList().data?.map((m) => (m.name)) ?? []}
+            options={majorList().data?.map((m): { label: string; value: MajorType } => ({
+              label: m.name,
+              value: m
+            })) ?? []}
             label="Major"
-            onSelectOption={(m?: string) => {
+            onSelectOption={(m) => {
               setMajor(m);
               updateMoveOn();
             }}
           />
-          {concentrationList !== undefined && (
+          {concentrationList.length !== 0 && (
           <SearchableDropdown
             options={concentrationList}
             label="Concentration"
-            onSelectOption={(m?: number) => {
+            onSelectOption={(m?: any) => {
               setConcentration(m);
               updateMoveOn();
             }}
           />
           )}
           <Link href="/scheduler">
-            <Button disabled={concentration === null}>Generate Schedule</Button>
+            <Button disabled={concentration === undefined || major === undefined}>Generate Schedule</Button>
           </Link>
         </Grid>
         <Grid sm={4}>
           <SearchableDropdown
             options={props.courseSubjectAcronyms}
             label="Course Subject"
-            onSelectOption={setSelectedAcronym}
+            onSelectOption={(v) => setSelectedAcronym(v)}
           />
            <SearchableDropdown
-            options={["123", "456", "789"].map((n) => ({ label: n, value: n }))}
+            options={["123", "456", "789"]}
             label="Course Number"
-            onSelectOption={setSelectedNumber}
+            onSelectOption={(a) => setSelectedNumber(a)}
           />
           <Button onClick={processCompletedCourse}>Add Course</Button>
         </Grid>

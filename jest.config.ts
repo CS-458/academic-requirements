@@ -5,6 +5,7 @@ const createJestConfig = nextJest({
 
 export default createJestConfig({
   moduleDirectories: ["node_modules", "<rootDir>/"],
+  transform: {},
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
   collectCoverageFrom: [

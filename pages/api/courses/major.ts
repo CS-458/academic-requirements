@@ -12,7 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if(typeof req.query.conid === "string"){
+  if(typeof req.query.majid === "string"){
     //Creates connection to the DB
     const con = await sql();
 

@@ -22,6 +22,12 @@ export default async function handler(
       FROM course c
       ORDER BY c.subject ASC `
   );
+  let result = [];
+    rows.map((row: any) => {
+      result.push(row.subject);
+    });
+    res.status(200).json(result);
+    return;
   //Returns the data queried from the DB onto the screen
   res.status(200).json(rows);
   return;

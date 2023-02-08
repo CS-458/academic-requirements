@@ -13,19 +13,13 @@ export function majorList(): UseQueryResult<Major[]> {
   return useQuery("Major List", async () => await fetchApi(`/api/major`));
 }
 
-export function concentration(
-  concentration: number
-): UseQueryResult<Concentration | null> {
+export function concentrationList(
+  majorId: number | undefined
+): UseQueryResult<Concentration[] | null> {
   return useQuery(
-    ["concectrations", concentration],
-    async () => await fetchApi(`/api/concentrations?conid=${concentration}`)
+    ["concentrations", majorId],
+    async () => await fetchApi(`/api/concentrations?majid=${majorId}`)
   );
-  // switch (concentration) {
-  //   case 0:
-  //     return { id: 0, name: "Sec", four_year_plan: "null" };
-  //   default:
-  //     return null;
-  // }
 }
 
 export async function course(course: number): Promise<Course> {

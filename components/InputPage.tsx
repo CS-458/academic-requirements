@@ -8,12 +8,12 @@ import DeleteableInput from "./DeleteableInput";
 import ErrorPopup from "./ErrorPopup";
 import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
-import { majorList } from "../services/academic";
+import { majorList, concentrationList } from "../services/academic";
 
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
   majorDisplayList: any[];
-  concentrationList: any[];
+  // concentrationList: any[];
   concentrationDisplayList: any[];
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
@@ -152,12 +152,12 @@ export default function InputPage(props: {
     console.log(`Deleted course: ${course}`);
   }
 
-  const concentrationList = majorList()
-    .data?.find((a) => a.id === major)
-    ?.concentrations.map((a) => ({
-      label: a.name,
-      value: a.id
-    }));
+  // const concentrationList = majorList()
+  //   .data?.find((a) => a.id === major)
+  //   ?.concentrations.map((a) => ({
+  //     label: a.name,
+  //     value: a.id
+  //   }));
 
   // Function to autopopulate completed courses list. with every course.
   return (
@@ -198,9 +198,14 @@ export default function InputPage(props: {
               />
             </div>
             <div className="input-grid-dropdown">
-              {concentrationList !== undefined && (
+              {major !== undefined && (
                 <SearchableDropdown
-                  options={concentrationList}
+                  options={
+                    concentrationList(major).data?.map((c) => ({
+                      label: c.name,
+                      value: c.id
+                    })) ?? []
+                  }
                   label="Concentration"
                   onSelectOption={(m?: number) => {
                     setConcentration(m);

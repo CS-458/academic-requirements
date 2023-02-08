@@ -1,13 +1,13 @@
 export interface Major {
   id: number;
   name: string;
-  concentrations: Array<{ id: number; name: string }>;
+  // concentrations: Array<{ id: number; name: string }>;
 }
 
 export interface Concentration {
   id: number;
   name: string;
-  four_year_plan: string;
+  fourYearPlan: string;
 }
 
 export interface Course {

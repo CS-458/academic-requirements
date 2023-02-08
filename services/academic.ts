@@ -22,6 +22,19 @@ export function concentrationList(
   );
 }
 
+export function courseSubjects(): UseQueryResult<Array<string>> {
+  return useQuery("courseSubjects", async () => await fetchApi(`/api/subjects`));
+}
+
+export function courseNumbers(
+  subject: number | undefined
+): UseQueryResult<Concentration[] | null> {
+  return useQuery(
+    ["courseNumbers", subject],
+    async () => await fetchApi(`/api/subjects/numbers?sub=${subject}`)
+  );
+}
+
 export async function course(course: number): Promise<Course> {
   throw new Error("TODO");
 }

@@ -8,7 +8,7 @@ import DeleteableInput from "./DeleteableInput";
 import ErrorPopup from "./ErrorPopup";
 import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
-import { majorList, concentrationList } from "../services/academic";
+import { majorList, concentrationList, courseSubjects, courseNumbers } from "../services/academic";
 
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
@@ -18,7 +18,7 @@ export default function InputPage(props: {
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
 
-  courseSubjectAcronyms: string[];
+  // courseSubjectAcronyms: string[];
   setSelectedCourseSubject: (subject: string) => void;
   courseSubjectNumbers: string[];
 
@@ -58,9 +58,8 @@ export default function InputPage(props: {
 
   function selectedCourseSubjectAcronym(_selectedAcronym: any): void {
     setSelectedAcronym(_selectedAcronym);
-
     // The updates the selected course acronym in App.js
-    props.setSelectedCourseSubject(_selectedAcronym);
+    // props.setSelectedCourseSubject(_selectedAcronym);
   }
 
   function selectedCourseNumber(_selectedNumber: any): void {
@@ -216,14 +215,24 @@ export default function InputPage(props: {
             <div className="input-grid-item">
               <div className="courseDropdowns">
                 <SearchableDropdown
-                  options={props.courseSubjectAcronyms}
+                  options={
+                    courseSubjects().data?.map((s: string) => ({
+                      label: s,
+                      value: s
+                    })) ?? []
+                  }
                   label="Course Subject"
                   onSelectOption={selectedCourseSubjectAcronym}
                   showDropdown={true}
                   thin={true}
                 />
                 <SearchableDropdown
-                  options={props.courseSubjectNumbers}
+                  options={
+                    courseNumbers(selectedAcronym).data?.map((s: string) => ({
+                      label: s,
+                      value: s
+                    })) ?? []
+                  }
                   label="Course Number"
                   onSelectOption={selectedCourseNumber}
                   showDropdown={selectedAcronym}

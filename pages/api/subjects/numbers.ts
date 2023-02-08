@@ -25,8 +25,17 @@ export default async function handler(
         ORDER BY c.number ASC `, req.query.sub
     );
     //Returns the data queried from the DB onto the screen
-    res.status(200).json(rows);
+    let result = [];
+    rows.map((row: any) => {
+      result.push(row.number);
+    });
+    res.status(200).json(result);
     return;
+    // var result = rows.find(obj =>{
+    //   res.status(200).json(obj.number)
+    //   return;
+    // })
+    //res.status(200).json(rows.number);
   }
   res.status(400).json({ error: "Major not defined" });
 }

@@ -17,7 +17,7 @@ export function concentration(
   concentration: number
 ): UseQueryResult<Concentration | null> {
   return useQuery(
-    ["concectrations", concentration],
+    ["concentrations", concentration],
     async () => await fetchApi(`/api/concentrations?conid=${concentration}`)
   );
   // switch (concentration) {

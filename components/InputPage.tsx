@@ -2,7 +2,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
-
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 import ErrorPopup from "./ErrorPopup";
@@ -37,7 +42,7 @@ export default function InputPage(props: {
   /*
   General variables
   */
-  const [major, setMajor] = useState<number | undefined>(); // major that is selected
+  const [major, setMajor] = useState<string | undefined>(); // major that is selected
   const [concentration, setConcentration] = useState<number | undefined>(); // concentration that is selected
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
@@ -59,9 +64,7 @@ export default function InputPage(props: {
 
   const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
 
-  /*
-  Methods for updating the table of previously taken courses
-*/
+  // Methods for updating the table of previously taken courses
   const [selectedAcronym, setSelectedAcronym] = useState(null);
   const [selectedNumber, setSelectedNumber] = useState(null);
 
@@ -70,17 +73,15 @@ export default function InputPage(props: {
     setSelectedNumber(null);
   }, [selectedAcronym]);
 
-  function selectedCourseSubjectAcronym(_selectedAcronym: any): void {
-    setSelectedAcronym(_selectedAcronym);
-
-    // The updates the selected course acronym in App.js
-    props.setSelectedCourseSubject(_selectedAcronym);
-  }
-
-  function selectedCourseNumber(_selectedNumber: any): void {
-    setSelectedNumber(_selectedNumber);
-  }
-
+  // function setMajorSelection(majorName: string | undefined): void {
+  //   let tempMajor;
+  //   majorList().data?.map((m: any) => {
+  //     if (m.name === majorName) {
+  //       tempMajor = m;
+  //     }
+  //   });
+  //   setMajor(tempMajor);
+  // }
   const [visibility, setVisibility] = useState(false);
   const popupCloseHandler = (): void => {
     setVisibility(false);
@@ -104,36 +105,30 @@ export default function InputPage(props: {
   function processCompletedCourse(): void {
     if (selectedNumber != null && selectedAcronym != null) {
       // TODO Check that the course is a valid course in the database
-      if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
-        // Add the course to the completed course list
-        console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
-        setCoursesTaken(
-          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
-        );
-        props.setTakenCourses(
-          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
-        );
-      } else {
-        throwError("This course has already been added");
-      }
-    } else {
-      if (selectedNumber == null) {
-        throwError(
-          "No course number has been selected, please select a course number."
-        );
-      } else {
-        throwError(
-          "No course type has been selected, please select a course type before adding a course."
-        );
-      }
+      // if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
+      // Add the course to the completed course list
+      console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
+      setCoursesTaken(
+        coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+      );
+      props.setTakenCourses(
+        coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+      );
+    //   } else {
+    //     throwError("This course has already been added");
+    //   }
+    // } else {
+    //   if (selectedNumber == null) {
+    //     throwError(
+    //       "No course number has been selected, please select a course number."
+    //     );
+    //   } else {
+    //     throwError(
+    //       "No course type has been selected, please select a course type before adding a course."
+    //     );
+    //   }
     }
     console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
-    // setCoursesTaken(
-    //  coursesTaken.concat(selectedAcronym + "-" + selectedNumber)
-    // );
-    // props.setTakenCourses(
-    //   coursesTaken.concat(selectedAcronym + "-" + selectedNumber)
-    // );
   }
 
   // Removes the course from the coursesTaken list
@@ -150,140 +145,110 @@ export default function InputPage(props: {
     props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
-
+  console.log(major);
+ 
   const concentrationList = majorList()
-    .data?.find((a) => a.id === major)
-    ?.concentrations.map((a) => ({
-      label: a.name,
-      value: a.id
-    }));
-
+    .data?.find((a) => a.name === major)
+    ?.concentrations.map((a: any) => (a.name));
+  console.log(concentrationList);
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
-      <div data-testid="content">
-        <header className="Four-Year-Plan">
-          <h1>Academic Planner</h1>
-        </header>
-        <ErrorPopup
-          onClose={popupCloseHandler}
-          show={visibility}
-          title="Error"
-          error={error}
-        />
-        {
-          // <ImportPopup
-          //   title="Upload"
-          //   show={uploaderVisibility}
-          //   onClose={popupCloseHandlerUp}
-          //   returnData={setImportData}
-          // />
-        }
-        <div className="screen">
-          <div className="input-grid">
-            <div className="input-grid-dropdown" data-testid="MajorDropDown">
-              <SearchableDropdown
-                options={
-                  majorList().data?.map((m) => ({
-                    label: m.name,
-                    value: m.id
-                  })) ?? []
-                }
-                label="Major"
-                onSelectOption={(m?: number) => {
-                  setMajor(m);
-                  updateMoveOn();
-                }}
-              />
-            </div>
-            <div className="input-grid-dropdown">
-              {concentrationList !== undefined && (
-                <SearchableDropdown
-                  options={concentrationList}
-                  label="Concentration"
-                  onSelectOption={(m?: number) => {
-                    setConcentration(m);
-                    updateMoveOn();
-                  }}
-                />
-              )}
-            </div>
-            <div className="input-grid-item">
-              <div className="courseDropdowns">
-                <SearchableDropdown
-                  options={props.courseSubjectAcronyms}
-                  label="Course Subject"
-                  onSelectOption={selectedCourseSubjectAcronym}
-                  showDropdown={true}
-                  thin={true}
-                />
-                <SearchableDropdown
-                  options={props.courseSubjectNumbers}
-                  label="Course Number"
-                  onSelectOption={selectedCourseNumber}
-                  showDropdown={selectedAcronym}
-                  thin={true}
-                />
-              </div>
-              <Button onClick={processCompletedCourse}>Add Course</Button>
-            </div>
-            <div className="input-grid-item">
-              {
-                // <Button onClick={setupUploader} data-testid="Import">
-                //   Import Schedule
-                // </Button>
-              }
-            </div>
-            <div className="input-grid-item">
-              <Link href="/scheduler">
-                <Button disabled={!canMoveOn}>Generate Schedule</Button>
-              </Link>
-              <br />
-              {
-                props.concentrationHasFourYearPlan && <></>
-                // <div style={{ fontSize: "1em", margin: "10px" }}>
-                //   <input
-                //     id="fourYearPlan"
-                //     type="checkbox"
-                //     onChange={handleUseFourYearPlan}
-                //   />
-                //   <label
-                //     htmlFor="fourYearPlan"
-                //     data-testid="fourYearPlanCheckbox"
-                //   >
-                //     Load a four year plan?
-                //   </label>
-                // </div>
-              }
-            </div>
-            <div className="input-grid-item-courses">
-              <div className="completedCourses">
-                <h2>Completed Courses</h2>
-                <div
-                  className="courseList"
-                  style={{
-                    gridTemplateColumns: `repeat(${
-                      // This may be where issue is with dropdown columns/formatting.
-                      (coursesTaken.length - 1) / 10 + 1
-                    }, 1fr)`
-                  }}
-                >
-                  {coursesTaken.map((course) => {
-                    return (
-                      <div key={course} onClick={() => removeCourse(course)}>
-                        <DeleteableInput
-                          text={`${course}`}
-                          thinWidth={coursesTaken.length >= 20}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+          <img src="/logo-new.svg" height="60" alt="logo"/>
+            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+              Academic Planner
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <ErrorPopup
+        onClose={popupCloseHandler}
+        show={visibility}
+        title="Error"
+        error={error}
+      />
+      {
+        // <ImportPopup
+        //   title="Upload"
+        //   show={uploaderVisibility}
+        //   onClose={popupCloseHandlerUp}
+        //   returnData={setImportData}
+        // />
+      }
+      <Grid container spacing={3} pt={5}>
+        <Grid sm={4}>
+          <SearchableDropdown
+            options={majorList().data?.map((m) => (m.name)) ?? []}
+            label="Major"
+            onSelectOption={(m?: string) => {
+              setMajor(m);
+              updateMoveOn();
+            }}
+          />
+          {concentrationList !== undefined && (
+          <SearchableDropdown
+            options={concentrationList}
+            label="Concentration"
+            onSelectOption={(m?: number) => {
+              setConcentration(m);
+              updateMoveOn();
+            }}
+          />
+          )}
+        </Grid>
+        <Grid sm={4}>
+          <SearchableDropdown
+            options={props.courseSubjectAcronyms}
+            label="Course Subject"
+            onSelectOption={setSelectedAcronym}
+          />
+           <SearchableDropdown
+            options={["123", "456", "789"]}
+            label="Course Number"
+            onSelectOption={setSelectedNumber}
+          />
+          <Button onClick={processCompletedCourse}>Add Course</Button>
+        </Grid>
+        <Grid sm={4}>
+          <Paper elevation={5}>
+            <h2>Completed Courses</h2>
+            <DeleteableInput
+              courses={coursesTaken}
+              deleteCourse={removeCourse}
+            />
+          </Paper>
+        </Grid>
+      {
+        // <Button onClick={setupUploader} data-testid="Import">
+        //   Import Schedule
+        // </Button>
+      }
+      <Link href="/scheduler">
+        <Button disabled={!canMoveOn}>Generate Schedule</Button>
+      </Link>
+      <br />
+      {
+        props.concentrationHasFourYearPlan && <></>
+        // <div style={{ fontSize: "1em", margin: "10px" }}>
+        //   <input
+        //     id="fourYearPlan"
+        //     type="checkbox"
+        //     onChange={handleUseFourYearPlan}
+        //   />
+        //   <label
+        //     htmlFor="fourYearPlan"
+        //     data-testid="fourYearPlanCheckbox"
+        //   >
+        //     Load a four year plan?
+        //   </label>
+        // </div>
+      }
+
+      </Grid>
     </div>
   );
 }

@@ -16,8 +16,8 @@ export default function DeleteableInput(props: {
       <List dense={true} sx={{ width: "100%", maxHeight: "75vh", overflow: "auto" }}>
       {props.courses?.map((value) => {
         return (
-          <Grid item xs={2} sm={4} md={4} key={value}>
-            <ListItem
+          <Grid item xs={6} sm={10} md={10} key={value}>
+            <ListItem sx={{ pl: 8 }}
               secondaryAction={
                 <IconButton edge="end" aria-label="delete" onClick={() => {
                   // Delete the course if the garbage can icon is clicked

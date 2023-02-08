@@ -2,16 +2,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 import ErrorPopup from "./ErrorPopup";
-import ImportPopup from "./ImportPopup";
+// import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
 import { majorList } from "../services/academic";
 
@@ -43,7 +39,7 @@ export default function InputPage(props: {
   General variables
   */
   const [major, setMajor] = useState<string | undefined>(); // major that is selected
-  const [concentration, setConcentration] = useState<number | undefined>(); // concentration that is selected
+  const [concentration, setConcentration] = useState<string | null>(); // concentration that is selected
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
@@ -54,7 +50,7 @@ export default function InputPage(props: {
         major,
         concentration,
         load_four_year_plan: fourYearPlan,
-        completed_courses: []
+        completed_courses: coursesTaken
       });
     } else {
       setCanMoveOn(false);
@@ -73,15 +69,6 @@ export default function InputPage(props: {
     setSelectedNumber(null);
   }, [selectedAcronym]);
 
-  // function setMajorSelection(majorName: string | undefined): void {
-  //   let tempMajor;
-  //   majorList().data?.map((m: any) => {
-  //     if (m.name === majorName) {
-  //       tempMajor = m;
-  //     }
-  //   });
-  //   setMajor(tempMajor);
-  // }
   const [visibility, setVisibility] = useState(false);
   const popupCloseHandler = (): void => {
     setVisibility(false);
@@ -93,14 +80,14 @@ export default function InputPage(props: {
   }
 
   // closes the uploader popup
-  const [uploaderVisibility, setUploaderVisibility] = useState(false);
+  // const [uploaderVisibility, setUploaderVisibility] = useState(false);
   const popupCloseHandlerUp = (): void => {
     setUploaderVisibility(false);
   };
   // Makes the uploader popup visible
-  function showUploader(): void {
-    setUploaderVisibility(true);
-  }
+  // function showUploader(): void {
+  //   setUploaderVisibility(true);
+  // }
   // This method handles adding a new taken course to the table
   function processCompletedCourse(): void {
     if (selectedNumber != null && selectedAcronym != null) {
@@ -146,25 +133,13 @@ export default function InputPage(props: {
     console.log(`Deleted course: ${course}`);
   }
   console.log(major);
- 
   const concentrationList = majorList()
     .data?.find((a) => a.name === major)
     ?.concentrations.map((a: any) => (a.name));
-  console.log(concentrationList);
+  console.log(concentration);
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-          <img src="/logo-new.svg" height="60" alt="logo"/>
-            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-              Academic Planner
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
       <ErrorPopup
         onClose={popupCloseHandler}
         show={visibility}
@@ -180,7 +155,7 @@ export default function InputPage(props: {
         // />
       }
       <Grid container spacing={3} pt={5}>
-        <Grid sm={4}>
+        <Grid sm={5}>
           <SearchableDropdown
             options={majorList().data?.map((m) => (m.name)) ?? []}
             label="Major"
@@ -199,6 +174,9 @@ export default function InputPage(props: {
             }}
           />
           )}
+          <Link href="/scheduler">
+            <Button disabled={concentration === null}>Generate Schedule</Button>
+          </Link>
         </Grid>
         <Grid sm={4}>
           <SearchableDropdown
@@ -207,29 +185,29 @@ export default function InputPage(props: {
             onSelectOption={setSelectedAcronym}
           />
            <SearchableDropdown
-            options={["123", "456", "789"]}
+            options={["123", "456", "789"].map((n) => ({ label: n, value: n }))}
             label="Course Number"
             onSelectOption={setSelectedNumber}
           />
           <Button onClick={processCompletedCourse}>Add Course</Button>
         </Grid>
-        <Grid sm={4}>
-          <Paper elevation={5}>
-            <h2>Completed Courses</h2>
-            <DeleteableInput
-              courses={coursesTaken}
-              deleteCourse={removeCourse}
-            />
-          </Paper>
+        <Grid sm={3}>
+          {coursesTaken.length !== 0 && (
+            <Paper elevation={5}>
+              <h2>Completed Courses</h2>
+              <DeleteableInput
+                courses={coursesTaken}
+                deleteCourse={removeCourse}
+              />
+            </Paper>
+          )}
         </Grid>
       {
         // <Button onClick={setupUploader} data-testid="Import">
         //   Import Schedule
         // </Button>
       }
-      <Link href="/scheduler">
-        <Button disabled={!canMoveOn}>Generate Schedule</Button>
-      </Link>
+
       <br />
       {
         props.concentrationHasFourYearPlan && <></>

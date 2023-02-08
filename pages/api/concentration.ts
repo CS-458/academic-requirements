@@ -8,6 +8,7 @@ export default async function handler(
   if (typeof req.query.majid === "string") {
     if (req.query.majid === "undefined") {
       res.status(200).json([]);
+      return;
     }
     const con = await sql();
     const rows = await con.all(

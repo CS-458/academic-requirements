@@ -6,6 +6,9 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   if (typeof req.query.majid === "string") {
+    if (req.query.majid === "undefined") {
+      res.status(200).json([]);
+    }
     const con = await sql();
     const rows = await con.all(
       "SELECT * FROM concentration WHERE majorId = ?", req.query.majid

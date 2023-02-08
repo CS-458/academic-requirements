@@ -43,24 +43,6 @@ export default function InputPage(props: {
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
-  function updateMoveOn(
-    major: number | undefined,
-    concentration: number | undefined
-  ): void {
-    if (major !== undefined && concentration !== undefined) {
-      setCanMoveOn(true);
-      setUserMajor({
-        major,
-        concentration,
-        load_four_year_plan: fourYearPlan,
-        completed_courses: []
-      });
-    } else {
-      setCanMoveOn(false);
-      setUserMajor(undefined);
-    }
-  }
-
   const [coursesTaken, setCoursesTaken] = useState<number[]>([]);
 
   /*

@@ -48,12 +48,12 @@ export default function InputPage(props: {
   /*
   Methods for updating the table of previously taken courses
 */
-  const [selectedAcronym, setSelectedAcronym] = useState(null);
-  const [selectedNumber, setSelectedNumber] = useState(null);
+  const [selectedAcronym, setSelectedAcronym] = useState(undefined);
+  const [selectedNumber, setSelectedNumber] = useState(undefined);
 
   // When a new subject is selected, reset the selected number back to null
   useEffect(() => {
-    setSelectedNumber(null);
+    setSelectedNumber(undefined);
   }, [selectedAcronym]);
 
   function selectedCourseSubjectAcronym(_selectedAcronym: any): void {

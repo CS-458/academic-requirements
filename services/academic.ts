@@ -28,7 +28,7 @@ export function courseSubjects(): UseQueryResult<Array<string>> {
 
 export function courseNumbers(
   subject: number | undefined
-): UseQueryResult<Concentration[] | null> {
+): UseQueryResult<Array<string> | null> {
   return useQuery(
     ["courseNumbers", subject],
     async () => await fetchApi(`/api/subjects/numbers?sub=${subject}`)

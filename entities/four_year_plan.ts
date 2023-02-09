@@ -1,7 +1,7 @@
 export interface MajorType {
   id: number;
   name: string;
-  concentrationId: number;
+  // concentrations: Array<{ id: number; name: string }>;
 }
 
 export interface ConcentrationType {

@@ -9,7 +9,7 @@ import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
-import { majorList } from "../services/academic";
+import { majorList, concentrationList, courseNumbers, courseSubjects } from "../services/academic";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
@@ -18,7 +18,7 @@ export default function InputPage(props: {
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
 
-  courseSubjectAcronyms: string[];
+  // courseSubjectAcronyms: string[];
   setSelectedCourseSubject: (subject: string) => void;
   courseSubjectNumbers: string[];
 
@@ -43,21 +43,6 @@ export default function InputPage(props: {
   const [fourYearPlan, setFourYearPlan] = useState(false);
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
-  function updateMoveOn(): void {
-    if (major !== undefined && concentration !== undefined) {
-      setCanMoveOn(true);
-      setUserMajor({
-        major,
-        concentration,
-        load_four_year_plan: fourYearPlan,
-        completed_courses: coursesTaken
-      });
-    } else {
-      setCanMoveOn(false);
-      setUserMajor(undefined);
-    }
-  }
-
   const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
 
   // Methods for updating the table of previously taken courses
@@ -70,7 +55,7 @@ export default function InputPage(props: {
   }, [selectedAcronym]);
 
   const [visibility, setVisibility] = useState(false);
-  const [severity, setSeverity] = useState<string>("");
+  const [severity, setSeverity] = useState<any>(undefined);
   const [error, setError] = useState("");
   // Severity should be error, warning, info, or success
   function throwError(error: string, errorSeverity: string): void {
@@ -147,12 +132,17 @@ export default function InputPage(props: {
     console.log(`Deleted course: ${course}`);
   }
 
-  const concentrationList = majorList()
-    .data?.find((a) => a.id === major?.id)
-    ?.concentrations.map((a: any): { label: string; value: ConcentrationType } => ({ 
-      label: a.name,
-      value: a
-    })) ?? [];
+  // const concentrationList = majorList()
+  //   .data?.find((a) => a.id === major)
+  //   ?.concentrations.map((a) => ({
+  //     label: a.name,
+  //     value: a.id
+  //   }));
+
+  const concentrationListValue = concentrationList(major?.id).data?.map((c) => ({
+    label: c.name,
+    value: c
+  })) ?? [];
 
   // Function to autopopulate completed courses list. with every course.
   return (
@@ -179,33 +169,51 @@ export default function InputPage(props: {
             })) ?? []}
             label="Major"
             onSelectOption={(m) => {
-              setMajor(m);
-              updateMoveOn();
+              if (m !== major) {
+                setMajor(m);
+                setConcentration(undefined);
+                setCanMoveOn(false);
+                setUserMajor(undefined);
+              }
             }}
           />
-          {concentrationList.length !== 0 && (
+          {concentrationListValue.length !== 0 && (
           <SearchableDropdown
-            key={resetConcentration}
-            options={concentrationList}
+            // key={resetConcentration}
+            options={concentrationListValue}
             label="Concentration"
             onSelectOption={(m?: any) => {
               setConcentration(m);
-              updateMoveOn();
+              if (major !== undefined && m !== undefined) {
+                setCanMoveOn(true);
+                setUserMajor({
+                  major,
+                  concentration: m,
+                  load_four_year_plan: fourYearPlan,
+                  completed_courses: []
+                });
+              }
             }}
           />
           )}
           <Link href="/scheduler">
-            <Button disabled={concentration === undefined || major === undefined}>Generate Schedule</Button>
+            <Button disabled={!canMoveOn}>Generate Schedule</Button>
           </Link>
         </Grid>
         <Grid sm={4}>
           <SearchableDropdown
-            options={props.courseSubjectAcronyms}
+            options={courseSubjects().data?.map((s: string) => ({
+              label: s,
+              value: s
+            })) ?? []}
             label="Course Subject"
             onSelectOption={(v) => setSelectedAcronym(v)}
           />
            <SearchableDropdown
-            options={["123", "456", "789"]}
+            options={courseNumbers(selectedAcronym).data?.map((s: string) => ({
+              label: s,
+              value: s
+            })) ?? []}
             label="Course Number"
             onSelectOption={(a) => setSelectedNumber(a)}
           />

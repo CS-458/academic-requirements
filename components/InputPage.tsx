@@ -8,24 +8,29 @@ import DeleteableInput from "./DeleteableInput";
 import ErrorPopup from "./ErrorPopup";
 import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
-import { majorList, concentrationList, courseSubjects, courseNumbers } from "../services/academic";
+import {
+  majorList,
+  concentrationList,
+  courseSubjects,
+  courseNumbers
+} from "../services/academic";
 
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
-  majorDisplayList: any[];
+  // majorDisplayList: any[];
   // concentrationList: any[];
-  concentrationDisplayList: any[];
+  // concentrationDisplayList: any[];
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
 
   // courseSubjectAcronyms: string[];
-  setSelectedCourseSubject: (subject: string) => void;
-  courseSubjectNumbers: string[];
+  // setSelectedCourseSubject: (subject: string) => void;
+  // courseSubjectNumbers: string[];
 
   takenCourses: string[];
   setTakenCourses: (courses: string[]) => void;
-  onClickMajor: (major: string) => void;
-  onClickConcentration: (concentration: string) => void;
+  // onClickMajor: (major: string) => void;
+  // onClickConcentration: (concentration: string) => void;
   onClickGenerate: (
     major: string,
     concentration: string,

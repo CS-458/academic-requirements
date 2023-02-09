@@ -1,17 +1,16 @@
-// The @ts-ignore rejects the error from having the .tsx file extension on import
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
-import ErrorPopup from "./ErrorPopup";
 // import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
 import { majorList } from "../services/academic";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
-
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
   majorList: any[];
@@ -71,20 +70,32 @@ export default function InputPage(props: {
   }, [selectedAcronym]);
 
   const [visibility, setVisibility] = useState(false);
-  const popupCloseHandler = (): void => {
-    setVisibility(false);
-  };
+  const [severity, setSeverity] = useState<string>("");
   const [error, setError] = useState("");
-  function throwError(error: any): void {
+  // Severity should be error, warning, info, or success
+  function throwError(error: string, errorSeverity: string): void {
     setVisibility(true);
     setError(error);
+    setSeverity(errorSeverity);
   }
 
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setVisibility(false);
+  };
   // closes the uploader popup
   // const [uploaderVisibility, setUploaderVisibility] = useState(false);
-  const popupCloseHandlerUp = (): void => {
-    setUploaderVisibility(false);
-  };
+  // const popupCloseHandlerUp = (): void => {
+  //   setUploaderVisibility(false);
+  // };
   // Makes the uploader popup visible
   // function showUploader(): void {
   //   setUploaderVisibility(true);
@@ -93,28 +104,30 @@ export default function InputPage(props: {
   function processCompletedCourse(): void {
     if (selectedNumber != null && selectedAcronym != null) {
       // TODO Check that the course is a valid course in the database
-      // if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
+      if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
       // Add the course to the completed course list
-      console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
-      setCoursesTaken(
-        coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
-      );
-      props.setTakenCourses(
-        coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
-      );
-    //   } else {
-    //     throwError("This course has already been added");
-    //   }
-    // } else {
-    //   if (selectedNumber == null) {
-    //     throwError(
-    //       "No course number has been selected, please select a course number."
-    //     );
-    //   } else {
-    //     throwError(
-    //       "No course type has been selected, please select a course type before adding a course."
-    //     );
-    //   }
+        console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
+        setCoursesTaken(
+          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+        );
+        props.setTakenCourses(
+          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+        );
+      } else {
+        throwError("This course has already been added", "error");
+      }
+    } else {
+      if (selectedNumber == null) {
+        throwError(
+          "No course number has been selected, please select a course number.",
+          "error"
+        );
+      } else {
+        throwError(
+          "No course type has been selected, please select a course type before adding a course.",
+          "error"
+        );
+      }
     }
     console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
   }
@@ -141,18 +154,14 @@ export default function InputPage(props: {
       value: a
     })) ?? [];
 
-  console.log(major);
-  console.log(concentration);
-  console.log(concentrationList);
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
-      <ErrorPopup
-        onClose={popupCloseHandler}
-        show={visibility}
-        title="Error"
-        error={error}
-      />
+     <Snackbar open={visibility} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal: "center" }}>
+        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+          {error}
+        </Alert>
+      </Snackbar>
       {
         // <ImportPopup
         //   title="Upload"
@@ -176,6 +185,7 @@ export default function InputPage(props: {
           />
           {concentrationList.length !== 0 && (
           <SearchableDropdown
+            key={resetConcentration}
             options={concentrationList}
             label="Concentration"
             onSelectOption={(m?: any) => {

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
+import { masterCourseList } from "../services/academic";
+import { userMajor } from "../services/user";
+import { Course } from "../entities/four_year_plan";
 
 const PassThrough = (props: {
   importData?: {};
@@ -80,6 +83,9 @@ const PassThrough = (props: {
 
   console.log(props);
 
+  // major and minor come from user service
+  const courseList: Course[] = masterCourseList(userMajor()?.major, userMajor()?.concentration);
+
   return (
     <div>
       {props.showing && (
@@ -89,9 +95,10 @@ const PassThrough = (props: {
           </div>
           <div className="page">
             <FourYearPlanPage
-              PassedCourseList={props.majorCourseList
-                .concat(props.concentrationCourseList)
-                .concat(props.genEdCourseList)}
+              // PassedCourseList={props.majorCourseList
+              //   .concat(props.concentrationCourseList)
+              //   .concat(props.genEdCourseList)}
+              PassedCourseList={courseList}
               CompletedCourses={props.completedCourses}
               selectedMajor={props.selectedMajor}
               selectedConcentration={props.selectedConcentration}

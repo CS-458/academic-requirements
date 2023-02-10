@@ -1422,7 +1422,12 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                 className="course-box-header"
               >
                 <SearchableDropdown
-                  options={categories}
+                  options={
+                    categories.map((c) => ({
+                      label: c,
+                      value: c
+                    }))
+                  }
                   label={null}
                   onSelectOption={selectedCategory} // If option chosen, selected Category activated.
                   showDropdown={true}

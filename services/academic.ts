@@ -51,11 +51,11 @@ export function majorCourseList(
 
 // Get and cache the list of concentration courses
 export function concentrationCourseList(
-  concId: number | undefined
+  conId: number | undefined
 ): UseQueryResult<Course[] | null> {
   return useQuery(
-    ["concentrationCourseList", concId],
-    async () => await fetchApi(`/api/courses/concentration?conid=${concId}`)
+    ["concentrationCourseList", conId],
+    async () => await fetchApi(`/api/courses/concentration?conid=${conId}`)
   );
 }
 
@@ -64,13 +64,27 @@ export function genedCourseList(): UseQueryResult<Course[]> {
   return useQuery("genedCourseList", async () => await fetchApi(`/api/courses/geneds`));
 }
 
+export function masterCourseList(
+  majId: number | undefined,
+  conId: number | undefined
+): Course[] {
+  const c1 = majorCourseList(majId).data;
+  const c2 = concentrationCourseList(conId).data;
+  const c3 = genedCourseList().data;
+
+  if (c1 && c2 && c3) {
+    return c1.concat(c2).concat(c3);
+  }
+  return [];
+}
+
 // Get and cache the list of category requirements
 export function courseCategoryRequirements(
-  concId: number | undefined
+  conId: number | undefined
 ): UseQueryResult<Requirements[] | null> {
   return useQuery(
-    ["courseCategoryRequirements", concId],
-    async () => await fetchApi(`/api/requirements?conid=${concId}`)
+    ["courseCategoryRequirements", conId],
+    async () => await fetchApi(`/api/requirements?conid=${conId}`)
   );
 }
 

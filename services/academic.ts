@@ -39,16 +39,42 @@ export function courseNumbers(
   );
 }
 
-// TODO Maj/Conc/Gen courses
-
-// TODO: Maj/Conc/Gen Requirements
-
-export async function course(course: number): Promise<Course> {
-  throw new Error("TODO");
+// Get and cache the list of major courses
+export function majorCourseList(
+  majorId: number | undefined
+): UseQueryResult<Course[] | null> {
+  return useQuery(
+    ["majorCourseList", majorId],
+    async () => await fetchApi(`/api/courses/major?majid=${majorId}`)
+  );
 }
 
-export async function requirements(
-  concentration: number
-): Promise<Requirements | null> {
-  throw new Error("TODO");
+// Get and cache the list of concentration courses
+export function concentrationCourseList(
+  concId: number | undefined
+): UseQueryResult<Course[] | null> {
+  return useQuery(
+    ["concentrationCourseList", concId],
+    async () => await fetchApi(`/api/courses/concentration?conid=${concId}`)
+  );
+}
+
+// Get and cache the list of gened courses
+export function genedCourseList(): UseQueryResult<Course[]> {
+  return useQuery("genedCourseList", async () => await fetchApi(`/api/courses/geneds`));
+}
+
+// Get and cache the list of category requirements
+export function courseCategoryRequirements(
+  concId: number | undefined
+): UseQueryResult<Requirements[] | null> {
+  return useQuery(
+    ["courseCategoryRequirements", concId],
+    async () => await fetchApi(`/api/requirements?conid=${concId}`)
+  );
+}
+
+// Get and cache the list of gened requirements
+export function genedCategoryRequirements(): UseQueryResult<Requirements[]> {
+  return useQuery("genedRequirements", async () => await fetchApi(`/api/requirements/gen`));
 }

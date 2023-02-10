@@ -247,15 +247,15 @@ function App(): JSX.Element {
         onClickGenerate={generateSchedule}
         onClickMajor={selectMajor}
         onClickConcentration={selectConcentration}
-        concentrationList={concentrationData}
-        majorList={majorData}
+        // concentrationList={concentrationData}
+        // majorList={majorData}
         takenCourses={coursesTaken}
         setTakenCourses={setCoursesTaken}
         setUseFourYearPlan={setUseFourYearPlan}
         concentrationHasFourYearPlan={fourYearPlan != null}
-        courseSubjectAcronyms={courseSubjects}
+        // courseSubjectAcronyms={courseSubjects}
         setSelectedCourseSubject={setSelectedCourseSubject}
-        courseSubjectNumbers={courseSubjectNumbers}
+        // courseSubjectNumbers={courseSubjectNumbers}
         importData={importData}
       />
       <ErrorPopup

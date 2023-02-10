@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import Switch from "@mui/material/Switch";
+import FormControlLabel from '@mui/material/FormControlLabel';
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -13,15 +15,11 @@ import { majorList, concentrationList, courseNumbers, courseSubjects } from "../
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
-  majorList: any[];
-  concentrationList: any[];
+  // majorList: any[];
+  // concentrationList: any[];
   concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
-
-  // courseSubjectAcronyms: string[];
   setSelectedCourseSubject: (subject: string) => void;
-  courseSubjectNumbers: string[];
-
   takenCourses: string[];
   setTakenCourses: (courses: string[]) => void;
   onClickMajor: (major: string) => void;
@@ -41,6 +39,7 @@ export default function InputPage(props: {
   const [major, setMajor] = useState<{ name: string, id: number } | undefined>(); // major that is selected
   const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: {} } | undefined>(); // concentration that is selected
   const [fourYearPlan, setFourYearPlan] = useState(false);
+  const label = { inputProps: { "aria-label": "Use Suggested Four Year Plan" } };
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
   const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
@@ -143,7 +142,10 @@ export default function InputPage(props: {
     label: c.name,
     value: c
   })) ?? [];
-
+  function handleUseFourYearPlan() {
+    console.log("acted");
+  }
+  console.log(concentration);
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
@@ -160,7 +162,7 @@ export default function InputPage(props: {
         //   returnData={setImportData}
         // />
       }
-      <Grid container spacing={3} pt={5}>
+      <Grid container spacing={3} pt={5} justifyContent="left">
         <Grid sm={5}>
           <SearchableDropdown
             options={majorList().data?.map((m): { label: string; value: MajorType } => ({
@@ -196,6 +198,13 @@ export default function InputPage(props: {
             }}
           />
           )}
+          {concentration?.fourYearPlan != null && (
+          <FormControlLabel control={<Switch
+          onChange={handleUseFourYearPlan}
+          inputProps={{ "aria-label": "controlled" }}
+          />} label="Use Suggested Four Year Plan"/>)
+          }
+          <br/>
           <Link href="/scheduler">
             <Button disabled={!canMoveOn}>Generate Schedule</Button>
           </Link>
@@ -235,25 +244,6 @@ export default function InputPage(props: {
         //   Import Schedule
         // </Button>
       }
-
-      <br />
-      {
-        props.concentrationHasFourYearPlan && <></>
-        // <div style={{ fontSize: "1em", margin: "10px" }}>
-        //   <input
-        //     id="fourYearPlan"
-        //     type="checkbox"
-        //     onChange={handleUseFourYearPlan}
-        //   />
-        //   <label
-        //     htmlFor="fourYearPlan"
-        //     data-testid="fourYearPlanCheckbox"
-        //   >
-        //     Load a four year plan?
-        //   </label>
-        // </div>
-      }
-
       </Grid>
     </div>
   );

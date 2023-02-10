@@ -1,7 +1,6 @@
 /* istanbul ignore file */
 
 import "../styles/globals.css";
-
 import "../styles/App.css";
 import "../styles/DraggableCourse.css";
 

@@ -37,12 +37,10 @@ export default function InputPage(props: {
   General variables
   */
   const [major, setMajor] = useState<{ name: string, id: number } | undefined>(); // major that is selected
-  const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: {} } | undefined>(); // concentration that is selected
-  const [fourYearPlan, setFourYearPlan] = useState(false);
-  const label = { inputProps: { "aria-label": "Use Suggested Four Year Plan" } };
+  const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: string | null }>(); // concentration that is selected
+  const [usePlan, setUsePlan] = useState(false);
+  const [coursesTaken, setCoursesTaken] = useState<string[]>([]); // completed courses added to the list
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
-
-  const [coursesTaken, setCoursesTaken] = useState<string[]>([]);
 
   // Methods for updating the table of previously taken courses
   const [selectedAcronym, setSelectedAcronym] = useState<string | undefined>();
@@ -53,6 +51,7 @@ export default function InputPage(props: {
     setSelectedNumber(undefined);
   }, [selectedAcronym]);
 
+  // Variables for controlling error throwing
   const [visibility, setVisibility] = useState(false);
   const [severity, setSeverity] = useState<any>(undefined);
   const [error, setError] = useState("");
@@ -142,9 +141,39 @@ export default function InputPage(props: {
     label: c.name,
     value: c
   })) ?? [];
-  function handleUseFourYearPlan() {
-    console.log("acted");
+  function handleUseFourYearPlan(event: React.ChangeEvent<HTMLInputElement>) {
+    if (event.target.checked) {
+      if (major !== undefined && concentration !== undefined) {
+        setUsePlan(true);
+        setUserMajor({
+          major,
+          concentration,
+          load_four_year_plan: true,
+          completed_courses: coursesTaken
+        });
+      }
+    } else {
+      if (major !== undefined && concentration !== undefined) {
+        setUsePlan(false);
+        setUserMajor({
+          major,
+          concentration,
+          load_four_year_plan: false,
+          completed_courses: coursesTaken
+        });
+      }
+    }
   }
+  useEffect(() => {
+    if (major !== undefined && concentration !== undefined) {
+      setUserMajor({
+        major,
+        concentration,
+        load_four_year_plan: usePlan,
+        completed_courses: coursesTaken
+      });
+    }
+  }, [coursesTaken]);
   console.log(concentration);
   // Function to autopopulate completed courses list. with every course.
   return (
@@ -191,8 +220,8 @@ export default function InputPage(props: {
                 setUserMajor({
                   major,
                   concentration: m,
-                  load_four_year_plan: fourYearPlan,
-                  completed_courses: []
+                  load_four_year_plan: usePlan,
+                  completed_courses: coursesTaken
                 });
               }
             }}

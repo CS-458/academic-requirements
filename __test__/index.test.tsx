@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Home from "../pages/index";
@@ -13,13 +13,17 @@ test("Verify Majors and Concentrations", async () => {
   const generateButton = screen.getByText(/Generate Schedule/i);
   expect(generateButton).toBeDisabled();
 
-  await user.click(screen.getByLabelText(/Major/i));
-  await user.click(screen.getByText(/Computer Science/i));
+  await waitFor(async () => {
+    await user.click(screen.getByLabelText(/Major/i));
+    await user.click(screen.getByText(/Computer Science/i));
+  });
   expect(index.baseElement).toMatchSnapshot();
   expect(generateButton).toBeDisabled();
 
-  await user.click(screen.getByLabelText(/Concentration/i));
-  await user.click(screen.getByText(/Mobile Applications/i));
+  await waitFor(async () => {
+    await user.click(screen.getByLabelText(/Concentration/i));
+    await user.click(screen.getByText(/Mobile Applications/i));
+  });
   expect(index.baseElement).toMatchSnapshot();
   expect(generateButton).not.toBeDisabled();
 });

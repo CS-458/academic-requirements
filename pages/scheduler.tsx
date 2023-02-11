@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PassThrough from "../components/PassThrough";
 import ErrorPopup from "../components/ErrorPopup";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 import { userMajor, UserMajor } from "../services/user";
 import Router from "next/router";
 import { fetchApi } from "../services/util";
@@ -222,21 +220,19 @@ function App(): JSX.Element {
     return <></>;
   }
   return (
-    <DndProvider backend={HTML5Backend}>
-      <PassThrough
-        showing={true}
-        data-testid="FourYearPage"
-        concentrationCourseList={concentrationCourseData}
-        majorCourseList={majorCourseData}
-        genEdCourseList={genEdCourseData}
-        selectedMajor={major}
-        selectedConcentration={concentration ?? ""}
-        completedCourses={coursesTaken}
-        requirements={requirements}
-        requirementsGen={requirementsGen}
-        fourYearPlan={useFourYearPlan ? fourYearPlan : undefined}
-      />
-    </DndProvider>
+    <PassThrough
+      showing={true}
+      data-testid="FourYearPage"
+      concentrationCourseList={concentrationCourseData}
+      majorCourseList={majorCourseData}
+      genEdCourseList={genEdCourseData}
+      selectedMajor={major}
+      selectedConcentration={concentration ?? ""}
+      completedCourses={coursesTaken}
+      requirements={requirements}
+      requirementsGen={requirementsGen}
+      fourYearPlan={useFourYearPlan ? fourYearPlan : undefined}
+    />
   );
 }
 

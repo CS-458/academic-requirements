@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Switch from "@mui/material/Switch";
-import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControlLabel from "@mui/material/FormControlLabel";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -17,19 +17,19 @@ import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 export default function InputPage(props: {
   // majorList: any[];
   // concentrationList: any[];
-  concentrationHasFourYearPlan: boolean;
+  // concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
-  setSelectedCourseSubject: (subject: string) => void;
-  takenCourses: string[];
-  setTakenCourses: (courses: string[]) => void;
-  onClickMajor: (major: string) => void;
-  onClickConcentration: (concentration: string) => void;
-  onClickGenerate: (
-    major: string,
-    concentration: string,
-    previousCourses: string[]
-  ) => void;
-  setUseFourYearPlan: (usePlan: boolean) => void;
+  // setSelectedCourseSubject: (subject: string) => void;
+  // takenCourses: string[];
+  // setTakenCourses: (courses: string[]) => void;
+  // onClickMajor: (major: string) => void;
+  // onClickConcentration: (concentration: string) => void;
+  // onClickGenerate: (
+  //   major: string,
+  //   concentration: string,
+  //   previousCourses: string[]
+  // ) => void;
+  // setUseFourYearPlan: (usePlan: boolean) => void;
 }): JSX.Element {
   // TODO make sure all of this information being passed is filled in and valid
 
@@ -39,12 +39,16 @@ export default function InputPage(props: {
   const [major, setMajor] = useState<{ name: string, id: number } | undefined>(); // major that is selected
   const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: string | null }>(); // concentration that is selected
   const [usePlan, setUsePlan] = useState(false);
-  const [coursesTaken, setCoursesTaken] = useState<string[]>([]); // completed courses added to the list
+  const [completedCourses, setCompletedCourses] = useState<string[]>([]); // completed courses added to the list
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
 
   // Methods for updating the table of previously taken courses
   const [selectedAcronym, setSelectedAcronym] = useState<string | undefined>();
   const [selectedNumber, setSelectedNumber] = useState<string | undefined>();
+
+  // Used for clearing the displayed text in the dropdown components
+  const [resetConcentration, setResetConcentration] = useState(false);
+  const [resetNumber, setResetNumber] = useState(false);
 
   // When a new subject is selected, reset the selected number back to null
   useEffect(() => {
@@ -74,6 +78,7 @@ export default function InputPage(props: {
     }
     setVisibility(false);
   };
+
   // closes the uploader popup
   // const [uploaderVisibility, setUploaderVisibility] = useState(false);
   // const popupCloseHandlerUp = (): void => {
@@ -83,19 +88,21 @@ export default function InputPage(props: {
   // function showUploader(): void {
   //   setUploaderVisibility(true);
   // }
+
   // This method handles adding a new taken course to the table
   function processCompletedCourse(): void {
+    setResetNumber(!resetNumber);
     if (selectedNumber != null && selectedAcronym != null) {
       // TODO Check that the course is a valid course in the database
-      if (!coursesTaken.includes(`${selectedAcronym}-${selectedNumber}`)) {
+      if (!completedCourses.includes(`${selectedAcronym}-${selectedNumber}`)) {
       // Add the course to the completed course list
         console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
-        setCoursesTaken(
-          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
+        setCompletedCourses(
+          completedCourses.concat(`${selectedAcronym}-${selectedNumber}`)
         );
-        props.setTakenCourses(
-          coursesTaken.concat(`${selectedAcronym}-${selectedNumber}`)
-        );
+        // props.setTakenCourses(
+        //   completedCourses.concat(`${selectedAcronym}-${selectedNumber}`)
+        // );
       } else {
         throwError("This course has already been added", "error");
       }
@@ -112,36 +119,29 @@ export default function InputPage(props: {
         );
       }
     }
-    console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
   }
 
   // Removes the course from the coursesTaken list
   function removeCourse(course: string): void {
     // Slice method did not work, so here's a replacement:
     const arr: any[] = [];
-    const index = coursesTaken.findIndex((x) => x === course);
-    coursesTaken.forEach((x, y) => {
+    const index = completedCourses.findIndex((x) => x === course);
+    completedCourses.forEach((x, y) => {
       if (y !== index) {
         arr.push(x);
       }
     });
-    setCoursesTaken(arr);
+    setCompletedCourses(arr);
     props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
-
-  // const concentrationList = majorList()
-  //   .data?.find((a) => a.id === major)
-  //   ?.concentrations.map((a) => ({
-  //     label: a.name,
-  //     value: a.id
-  //   }));
 
   const concentrationListValue = concentrationList(major?.id).data?.map((c) => ({
     label: c.name,
     value: c
   })) ?? [];
-  function handleUseFourYearPlan(event: React.ChangeEvent<HTMLInputElement>) {
+
+  function handleUseFourYearPlan(event: React.ChangeEvent<HTMLInputElement>): void {
     if (event.target.checked) {
       if (major !== undefined && concentration !== undefined) {
         setUsePlan(true);
@@ -149,7 +149,7 @@ export default function InputPage(props: {
           major,
           concentration,
           load_four_year_plan: true,
-          completed_courses: coursesTaken
+          completed_courses: completedCourses
         });
       }
     } else {
@@ -159,22 +159,39 @@ export default function InputPage(props: {
           major,
           concentration,
           load_four_year_plan: false,
-          completed_courses: coursesTaken
+          completed_courses: completedCourses
         });
       }
     }
   }
+
+  // This updates the completed courses that will be sent to the next page
   useEffect(() => {
     if (major !== undefined && concentration !== undefined) {
       setUserMajor({
         major,
         concentration,
         load_four_year_plan: usePlan,
-        completed_courses: coursesTaken
+        completed_courses: completedCourses
       });
     }
-  }, [coursesTaken]);
-  console.log(concentration);
+  }, [completedCourses]);
+
+  // force sets using a four year plan to false if their is no plan
+  useEffect(() => {
+    if (concentration?.fourYearPlan === null) {
+      if (major !== undefined && concentration !== undefined) {
+        setUsePlan(false);
+        setUserMajor({
+          major,
+          concentration,
+          load_four_year_plan: false,
+          completed_courses: completedCourses
+        });
+      }
+    }
+  }, [concentration]);
+
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
@@ -183,16 +200,8 @@ export default function InputPage(props: {
           {error}
         </Alert>
       </Snackbar>
-      {
-        // <ImportPopup
-        //   title="Upload"
-        //   show={uploaderVisibility}
-        //   onClose={popupCloseHandlerUp}
-        //   returnData={setImportData}
-        // />
-      }
       <Grid container spacing={3} pt={5} justifyContent="left">
-        <Grid sm={5}>
+        <Grid item sm={5}>
           <SearchableDropdown
             options={majorList().data?.map((m): { label: string; value: MajorType } => ({
               label: m.name,
@@ -205,12 +214,13 @@ export default function InputPage(props: {
                 setConcentration(undefined);
                 setCanMoveOn(false);
                 setUserMajor(undefined);
+                setResetConcentration(!resetConcentration);
               }
             }}
           />
           {concentrationListValue.length !== 0 && (
           <SearchableDropdown
-            // key={resetConcentration}
+            key={resetConcentration}
             options={concentrationListValue}
             label="Concentration"
             onSelectOption={(m?: any) => {
@@ -221,7 +231,7 @@ export default function InputPage(props: {
                   major,
                   concentration: m,
                   load_four_year_plan: usePlan,
-                  completed_courses: coursesTaken
+                  completed_courses: completedCourses
                 });
               }
             }}
@@ -238,16 +248,17 @@ export default function InputPage(props: {
             <Button disabled={!canMoveOn}>Generate Schedule</Button>
           </Link>
         </Grid>
-        <Grid sm={4}>
+        <Grid item sm={4}>
           <SearchableDropdown
             options={courseSubjects().data?.map((s: string) => ({
               label: s,
               value: s
             })) ?? []}
             label="Course Subject"
-            onSelectOption={(v) => setSelectedAcronym(v)}
+            onSelectOption={(v) => { setSelectedAcronym(v); setResetNumber(!resetNumber); }}
           />
-           <SearchableDropdown
+          <SearchableDropdown
+            key={resetNumber}
             options={courseNumbers(selectedAcronym).data?.map((s: string) => ({
               label: s,
               value: s
@@ -257,18 +268,24 @@ export default function InputPage(props: {
           />
           <Button onClick={processCompletedCourse}>Add Course</Button>
         </Grid>
-        <Grid sm={3}>
-          {coursesTaken.length !== 0 && (
+        <Grid item sm={3}>
+          {completedCourses.length !== 0 && (
             <Paper elevation={5}>
               <h2>Completed Courses</h2>
               <DeleteableInput
-                courses={coursesTaken}
+                courses={completedCourses}
                 deleteCourse={removeCourse}
               />
             </Paper>
           )}
         </Grid>
       {
+        // <ImportPopup
+        //   title="Upload"
+        //   show={uploaderVisibility}
+        //   onClose={popupCloseHandlerUp}
+        //   returnData={setImportData}
+        // />
         // <Button onClick={setupUploader} data-testid="Import">
         //   Import Schedule
         // </Button>

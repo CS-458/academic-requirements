@@ -1,6 +1,4 @@
-import { testApiHandler } from "next-test-api-route-handler";
-import handler from "../../pages/api/major";
-import { fetchReplace } from "../util";
+import { fetchApiJson } from "../util";
 
 // test("Check major list", async () => {
 //   await testApiHandler({
@@ -15,11 +13,23 @@ import { fetchReplace } from "../util";
 // });
 
 test("Check major list 2", async () => {
-  await fetchReplace("/api/requirements/gen?conid=undefined");
-  await fetchReplace("/api/subjects/numbers?sub=");
-  await fetchReplace("/api/concentration?majid=undefined");
-  await fetchReplace("/api/courses/major?majid=undefined");
-  await fetchReplace("/api/courses/concentration?conid=undefined");
-  await fetchReplace("/api/requirements?conid=undefined");
-  await fetchReplace("/api/requirements/gen?conid=undefined");
+  expect(
+    fetchApiJson("/api/requirements/gen?conid=undefined")
+  ).resolves.toStrictEqual([]);
+  expect(fetchApiJson("/api/subjects/numbers?sub=")).resolves.toStrictEqual([]);
+  expect(
+    fetchApiJson("/api/concentration?majid=undefined")
+  ).resolves.toStrictEqual([]);
+  expect(
+    fetchApiJson("/api/courses/major?majid=undefined")
+  ).resolves.toStrictEqual([]);
+  expect(
+    fetchApiJson("/api/courses/concentration?conid=undefined")
+  ).resolves.toStrictEqual([]);
+  expect(
+    fetchApiJson("/api/requirements?conid=undefined")
+  ).resolves.toStrictEqual([]);
+  expect(
+    fetchApiJson("/api/requirements/gen?conid=undefined")
+  ).resolves.toStrictEqual([]);
 }, 100000000);

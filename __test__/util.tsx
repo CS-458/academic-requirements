@@ -10,9 +10,14 @@ import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 
 interface UserExt {
   /// Select an element from an `AutoComplete` dropdown
-  selectAutocomplete: (label: Matcher, option: Matcher) => Promise<void>;
+  selectAutocomplete: (
+    this: UserEvent,
+    label: Matcher,
+    option: Matcher
+  ) => Promise<void>;
 }
 
+/// userEvent.setup(), but with some additional convience methods
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
@@ -29,7 +34,8 @@ export function setupUser(): UserEvent & UserExt {
   };
 }
 
-export async function fetchReplace(initial: string): Promise<Response> {
+/// Executes a request against an Api Route, roughly equavelent with `fetch`.
+export async function fetchApiRoute(url: string): Promise<Response> {
   if (jest.isEnvironmentTornDown()) {
     throw new Error("Environment has been torn down");
   }
@@ -38,37 +44,39 @@ export async function fetchReplace(initial: string): Promise<Response> {
     res.resolve = resolve;
     res.reject = reject;
   });
-  const [url, params] = initial.split("?");
-  const handler: NextApiHandler = await import(`../pages/${url}`);
+  const [path, params] = url.split("?");
+  const handler: NextApiHandler = await import(`../pages/${path}`);
   await testApiHandler({
     handler,
-    url: initial,
+    url: url,
     params: params?.split("&").reduce((a, b) => {
       const [name, value] = b.split("=");
       return { ...a, [name]: value };
     }, {}),
     test: async ({ fetch }) => {
       const inner = await fetch();
-      // console.error(initial, await inner.json());
-      // res.reject(new Error("Failed"));
       res.resolve(inner);
     }
   });
   return await result;
 }
 
+/// Calls fetchApiRoute, and decodes the response as JSON
+export async function fetchApiJson(url: string): Promise<any> {
+  return await (await fetchApiRoute(url)).json();
+}
+
 /**
  *  Wrap Elements with QueryClient & DndProvider similar to _app.tsx
+ *
+ *  Also overides window.fetch to use fetchApiRoute for testing
  * */
 export function wrapper(children: JSX.Element | JSX.Element[]): JSX.Element {
   // @ts-expect-error Parameters are different
-  window.fetch = fetchReplace;
-  // <DndProvider backend={HTML5Backend}>{children}</DndProvider>
+  window.fetch = fetchApiRoute;
   return (
-    <div data-testid="test-root-element">
-      <QueryClientProvider client={new QueryClient()}>
-        {children}
-      </QueryClientProvider>
-    </div>
+    <QueryClientProvider client={new QueryClient()}>
+      <DndProvider backend={HTML5Backend}>{children}</DndProvider>
+    </QueryClientProvider>
   );
 }

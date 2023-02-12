@@ -36,16 +36,21 @@ export function setupUser(): UserEvent & UserExt {
 
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
 export async function fetchApiRoute(url: string): Promise<Response> {
-  if (jest.isEnvironmentTornDown()) {
-    throw new Error("Environment has been torn down");
-  }
   const res = { resolve: (_a: any) => {}, reject: (_e: any) => {} };
   const result: Promise<Response> = new Promise((resolve, reject) => {
     res.resolve = resolve;
     res.reject = reject;
   });
   const [path, params] = url.split("?");
-  const handler: NextApiHandler = await import(`../pages/${path}`);
+  const handler: NextApiHandler = await import(`../pages/${path}`).catch(
+    (e) => {
+      if (jest.isEnvironmentTornDown()) {
+        console.log("Request made after environment torn down");
+      } else {
+        console.error(e);
+      }
+    }
+  );
   await testApiHandler({
     handler,
     url: url,

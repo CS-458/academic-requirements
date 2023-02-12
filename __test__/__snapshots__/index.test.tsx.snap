@@ -22,8 +22,8 @@ exports[`Verify Majors and Concentrations 1`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r0:"
-                  id=":r0:-label"
+                  for="mui-2"
+                  id="mui-2-label"
                 >
                   Major
                 </label>
@@ -37,7 +37,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r0:"
+                    id="mui-2"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -106,8 +106,8 @@ exports[`Verify Majors and Concentrations 1`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r2:"
-                  id=":r2:-label"
+                  for="mui-4"
+                  id="mui-4-label"
                 >
                   Course Subject
                 </label>
@@ -121,7 +121,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r2:"
+                    id="mui-4"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -177,8 +177,8 @@ exports[`Verify Majors and Concentrations 1`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r4:"
-                  id=":r4:-label"
+                  for="mui-6"
+                  id="mui-6-label"
                 >
                   Course Number
                 </label>
@@ -192,7 +192,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r4:"
+                    id="mui-6"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -303,8 +303,8 @@ exports[`Verify Majors and Concentrations 2`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="true"
-                  for=":r0:"
-                  id=":r0:-label"
+                  for="mui-2"
+                  id="mui-2-label"
                 >
                   Major
                 </label>
@@ -318,7 +318,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r0:"
+                    id="mui-2"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -409,8 +409,8 @@ exports[`Verify Majors and Concentrations 2`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r2:"
-                  id=":r2:-label"
+                  for="mui-4"
+                  id="mui-4-label"
                 >
                   Course Subject
                 </label>
@@ -424,7 +424,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r2:"
+                    id="mui-4"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -480,8 +480,8 @@ exports[`Verify Majors and Concentrations 2`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r4:"
-                  id=":r4:-label"
+                  for="mui-6"
+                  id="mui-6-label"
                 >
                   Course Number
                 </label>
@@ -495,7 +495,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r4:"
+                    id="mui-6"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -606,8 +606,8 @@ exports[`Verify Majors and Concentrations 3`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="true"
-                  for=":r0:"
-                  id=":r0:-label"
+                  for="mui-2"
+                  id="mui-2-label"
                 >
                   Major
                 </label>
@@ -621,7 +621,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r0:"
+                    id="mui-2"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -699,8 +699,8 @@ exports[`Verify Majors and Concentrations 3`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="true"
-                  for=":r6:"
-                  id=":r6:-label"
+                  for="mui-8"
+                  id="mui-8-label"
                 >
                   Concentration
                 </label>
@@ -714,7 +714,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r6:"
+                    id="mui-8"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -838,8 +838,8 @@ exports[`Verify Majors and Concentrations 3`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r2:"
-                  id=":r2:-label"
+                  for="mui-4"
+                  id="mui-4-label"
                 >
                   Course Subject
                 </label>
@@ -853,7 +853,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r2:"
+                    id="mui-4"
                     role="combobox"
                     spellcheck="false"
                     type="text"
@@ -909,8 +909,8 @@ exports[`Verify Majors and Concentrations 3`] = `
                 <label
                   class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                   data-shrink="false"
-                  for=":r4:"
-                  id=":r4:-label"
+                  for="mui-6"
+                  id="mui-6-label"
                 >
                   Course Number
                 </label>
@@ -924,7 +924,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                    id=":r4:"
+                    id="mui-6"
                     role="combobox"
                     spellcheck="false"
                     type="text"

@@ -224,7 +224,10 @@ export default function InputPage(props: {
         </Alert>
       </Snackbar>
       <Grid container spacing={3} pt={5}>
-        <Grid container item sm={5} flexDirection="column" alignItems="center">
+        <Grid container item sm={4} flexDirection="column" alignItems="center">
+          <Typography variant="h6" component="div">
+            Select Major
+          </Typography>
           <SearchableDropdown
             options={
               majorList().data?.map(
@@ -245,25 +248,24 @@ export default function InputPage(props: {
               }
             }}
           />
-          {concentrationListValue.length !== 0 && (
-            <SearchableDropdown
-              key={resetConcentration}
-              options={concentrationListValue}
-              label="Concentration"
-              onSelectOption={(m?: any) => {
-                setConcentration(m);
-                if (major !== undefined && m !== undefined) {
-                  setCanMoveOn(true);
-                  setUserMajor({
-                    major,
-                    concentration: m,
-                    load_four_year_plan: usePlan,
-                    completed_courses: completedCourses
-                  });
-                }
-              }}
-            />
-          )}
+          <SearchableDropdown
+            key={resetConcentration}
+            disabled={concentrationListValue.length === 0}
+            options={concentrationListValue}
+            label="Concentration"
+            onSelectOption={(m?: any) => {
+              setConcentration(m);
+              if (major !== undefined && m !== undefined) {
+                setCanMoveOn(true);
+                setUserMajor({
+                  major,
+                  concentration: m,
+                  load_four_year_plan: usePlan,
+                  completed_courses: completedCourses
+                });
+              }
+            }}
+          />
           <div>
             {concentration?.fourYearPlan != null && (
               <FormControlLabel
@@ -276,19 +278,14 @@ export default function InputPage(props: {
                 label="Use Suggested Four Year Plan"
               />
             )}
-            <br />
             <Link href="/scheduler">
               <Button disabled={!canMoveOn}>Generate Schedule</Button>
             </Link>
           </div>
         </Grid>
-        <Grid item sm={4}>
-          <Typography
-            variant="h5"
-            component="div"
-            sx={{ flexGrow: 1, textAlign: "left" }}
-          >
-            Enter previously completed courses:
+        <Grid container item sm={4} flexDirection="column" alignItems="Center">
+          <Typography variant="h6" component="div">
+            Completed Courses
           </Typography>
           <SearchableDropdown
             options={
@@ -305,6 +302,7 @@ export default function InputPage(props: {
           />
           <SearchableDropdown
             key={resetNumber}
+            disabled={courseNumbers(selectedAcronym).data?.length === 0}
             options={
               courseNumbers(selectedAcronym).data?.map((s: string) => ({
                 label: s,
@@ -314,20 +312,20 @@ export default function InputPage(props: {
             label="Course Number"
             onSelectOption={(a) => setSelectedNumber(a)}
           />
-          <Button onClick={processCompletedCourse}>Add Course</Button>
+          <div>
+            <Button onClick={processCompletedCourse}>Add Course</Button>
+          </div>
         </Grid>
-        <Grid item sm={3}>
-          {completedCourses.length !== 0 && (
-            <Paper elevation={5}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Completed Courses
-              </Typography>
-              <DeleteableInput
-                courses={completedCourses}
-                deleteCourse={removeCourse}
-              />
-            </Paper>
-          )}
+        <Grid container item sm={4} flexDirection="column" alignItems="center">
+          <Paper
+            elevation={5}
+            sx={{ width: "100%", minHeight: "20em", paddingY: "1em" }}
+          >
+            <DeleteableInput
+              courses={completedCourses}
+              deleteCourse={removeCourse}
+            />
+          </Paper>
         </Grid>
         {
           // <ImportPopup

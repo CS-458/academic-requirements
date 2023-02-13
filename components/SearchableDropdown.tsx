@@ -5,14 +5,21 @@ import React from "react";
 export default function SearchableDropdown<T>(props: {
   options: Array<{ label: string; value: T } | T>;
   label: string;
+  disabled?: boolean;
   onSelectOption: (option?: T) => void;
 }): JSX.Element {
   return (
     <Autocomplete
       disablePortal
+      disabled={props.disabled === true}
       autoHighlight
       options={props.options.map((v) => {
-        if (typeof v === "object" && v != null && "label" in v && "value" in v) {
+        if (
+          typeof v === "object" &&
+          v != null &&
+          "label" in v &&
+          "value" in v
+        ) {
           return v;
         } else {
           return {
@@ -24,7 +31,14 @@ export default function SearchableDropdown<T>(props: {
       onChange={(_a, value) => {
         props.onSelectOption(value?.value);
       }}
-      sx={{ "& .MuiAutocomplete-inputRoot": { paddingRight: "10px!important" }, width: "100%", maxWidth: 400, pt: 6, pl: 3, textAlign: "center" }}
+      sx={{
+        "& .MuiAutocomplete-inputRoot": { paddingRight: "10px!important" },
+        width: "100%",
+        maxWidth: 400,
+        pt: 6,
+        pl: 3,
+        textAlign: "center"
+      }}
       isOptionEqualToValue={(a, b) => a.value === b.value}
       renderInput={(params) => <TextField {...params} label={props.label} />}
     />

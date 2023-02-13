@@ -13,17 +13,14 @@ export interface ConcentrationType {
 export interface CourseType {
   credits: number;
   name: string;
-  subject: string;
   number: number;
   semesters: string;
-  type: string;
+  subject: string;
   preReq: string;
-  dragSource: string;
-  warningYellowColor?: boolean;
-  warningOrangeColor?: boolean;
-  warningRedColor?: boolean;
+  category: string;
   id: number;
   idCategory: number;
+  dragSource: string;
 }
 
 export interface CourseListType {

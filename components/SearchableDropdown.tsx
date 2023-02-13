@@ -24,7 +24,7 @@ export default function SearchableDropdown<T>(props: {
       onChange={(_a, value) => {
         props.onSelectOption(value?.value);
       }}
-      sx={{ width: "75%", pt: 6, pl: 3, textAlign: "center" }}
+      sx={{ "& .MuiAutocomplete-inputRoot": { paddingRight: "10px!important" }, width: "100%", maxWidth: 400, pt: 6, pl: 3, textAlign: "center" }}
       isOptionEqualToValue={(a, b) => a.value === b.value}
       renderInput={(params) => <TextField {...params} label={props.label} />}
     />

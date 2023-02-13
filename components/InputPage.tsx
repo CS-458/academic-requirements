@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Box from "@mui/material/Box";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -200,24 +201,25 @@ export default function InputPage(props: {
           {error}
         </Alert>
       </Snackbar>
-      <Grid container spacing={3} pt={5} justifyContent="left">
+      <Grid container spacing={3} pt={5} >
         <Grid item sm={5}>
-          <SearchableDropdown
-            options={majorList().data?.map((m): { label: string; value: MajorType } => ({
-              label: m.name,
-              value: m
-            })) ?? []}
-            label="Major"
-            onSelectOption={(m) => {
-              if (m !== major) {
-                setMajor(m);
-                setConcentration(undefined);
-                setCanMoveOn(false);
-                setUserMajor(undefined);
-                setResetConcentration(!resetConcentration);
-              }
-            }}
-          />
+          <Box justifyContent="center">
+            <SearchableDropdown
+              options={majorList().data?.map((m): { label: string; value: MajorType } => ({
+                label: m.name,
+                value: m
+              })) ?? []}
+              label="Major"
+              onSelectOption={(m) => {
+                if (m !== major) {
+                  setMajor(m);
+                  setConcentration(undefined);
+                  setCanMoveOn(false);
+                  setUserMajor(undefined);
+                  setResetConcentration(!resetConcentration);
+                }
+              }}
+            />
           {concentrationListValue.length !== 0 && (
           <SearchableDropdown
             key={resetConcentration}
@@ -237,18 +239,22 @@ export default function InputPage(props: {
             }}
           />
           )}
-          {concentration?.fourYearPlan != null && (
-          <FormControlLabel control={<Switch
-          onChange={handleUseFourYearPlan}
-          inputProps={{ "aria-label": "controlled" }}
-          />} label="Use Suggested Four Year Plan"/>)
-          }
-          <br/>
-          <Link href="/scheduler">
-            <Button disabled={!canMoveOn}>Generate Schedule</Button>
-          </Link>
+          <div>
+            {concentration?.fourYearPlan != null && (
+            <FormControlLabel control={<Switch
+            onChange={handleUseFourYearPlan}
+            inputProps={{ "aria-label": "controlled" }}
+            />} label="Use Suggested Four Year Plan"/>)
+            }
+            <br/>
+            <Link href="/scheduler">
+              <Button disabled={!canMoveOn}>Generate Schedule</Button>
+            </Link>
+          </div>
+          </Box>
         </Grid>
         <Grid item sm={4}>
+        <Typography variant="h5" component="div" sx={{ flexGrow: 1, textAlign: "left" }}>Enter previously completed courses:</Typography>
           <SearchableDropdown
             options={courseSubjects().data?.map((s: string) => ({
               label: s,
@@ -271,7 +277,7 @@ export default function InputPage(props: {
         <Grid item sm={3}>
           {completedCourses.length !== 0 && (
             <Paper elevation={5}>
-              <h2>Completed Courses</h2>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>Completed Courses</Typography>
               <DeleteableInput
                 courses={completedCourses}
                 deleteCourse={removeCourse}

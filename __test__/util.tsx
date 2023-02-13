@@ -27,6 +27,7 @@ export function setupUser(): UserEvent & UserExt {
       label: Matcher,
       option: Matcher
     ) {
+      await this.click(screen.getByTestId("test-root-element"));
       await this.click(
         await screen.findByLabelText(label, { selector: "input" })
       );
@@ -81,9 +82,11 @@ export function wrapper(children: JSX.Element | JSX.Element[]): JSX.Element {
   // @ts-expect-error Parameters are different
   window.fetch = fetchApiRoute;
   return (
-    <QueryClientProvider client={new QueryClient()}>
-      <DndProvider backend={HTML5Backend}>{children}</DndProvider>
-    </QueryClientProvider>
+    <div data-testid="test-root-element">
+      <QueryClientProvider client={new QueryClient()}>
+        <DndProvider backend={HTML5Backend}>{children}</DndProvider>
+      </QueryClientProvider>
+    </div>
   );
 }
 

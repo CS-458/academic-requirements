@@ -16,7 +16,7 @@ export default function DeleteableInput(props: {
       }}
     >
       {props.courses?.map((course) => (
-        <Grid>
+        <Grid key={course}>
           <Chip
             label={course}
             onDelete={() => props.deleteCourse(course)}

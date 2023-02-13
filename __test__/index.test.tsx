@@ -16,7 +16,32 @@ test("Verify Majors and Concentrations", async () => {
   expect(index.baseElement).toMatchSnapshot();
   expect(generateButton).toBeDisabled();
 
-  await user.selectAutocomplete(/Concentration/i, /Mobile Applications/i);
+  await user.selectAutocomplete(/Concentration/i, /Interdisciplinary/i);
   expect(index.baseElement).toMatchSnapshot();
+
+  expect(
+    screen.getByLabelText(/Use Suggested Four Year Plan/i)
+  ).not.toBeChecked();
+
   expect(generateButton).not.toBeDisabled();
+});
+
+test("Verify adding completed course", async () => {
+  const user = setupUser();
+  const index = render(wrapper(<Home />));
+  expect(index.baseElement).toMatchSnapshot();
+
+  const addButton = screen.getByText(/Add Course/i);
+  expect(addButton).toBeDisabled();
+
+  await user.selectAutocomplete(/Course Subject/i, /AEC/i);
+  expect(index.baseElement).toMatchSnapshot();
+  expect(addButton).toBeDisabled();
+
+  await user.selectAutocomplete(/Course Number/i, /191/i);
+  expect(index.baseElement).toMatchSnapshot();
+
+  expect(addButton).not.toBeDisabled();
+  await user.click(addButton);
+  expect(screen.getByText(/AEC-191/i)).toBeInTheDocument();
 });

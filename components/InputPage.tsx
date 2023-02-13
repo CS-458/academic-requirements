@@ -313,7 +313,12 @@ export default function InputPage(props: {
             onSelectOption={(a) => setSelectedNumber(a)}
           />
           <div>
-            <Button onClick={processCompletedCourse}>Add Course</Button>
+            <Button
+              disabled={selectedNumber === undefined}
+              onClick={processCompletedCourse}
+            >
+              Add Course
+            </Button>
           </div>
         </Grid>
         <Grid container item sm={4} flexDirection="column" alignItems="center">

@@ -146,7 +146,7 @@ export default function InputPage(props: {
       }
     });
     setCompletedCourses(arr);
-    //props.setTakenCourses(arr);
+    // props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
 

@@ -163,6 +163,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                 </div>
               </div>
               <div>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   disabled=""
@@ -559,6 +560,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                 </div>
               </div>
               <div>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   disabled=""
@@ -1008,6 +1010,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                     Use Suggested Four Year Plan
                   </span>
                 </label>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   tabindex="0"
@@ -1383,6 +1386,7 @@ exports[`Verify adding completed course 1`] = `
                 </div>
               </div>
               <div>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   disabled=""
@@ -1757,6 +1761,7 @@ exports[`Verify adding completed course 2`] = `
                 </div>
               </div>
               <div>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   disabled=""
@@ -2153,6 +2158,7 @@ exports[`Verify adding completed course 3`] = `
                 </div>
               </div>
               <div>
+                <br />
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   disabled=""

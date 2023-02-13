@@ -12,7 +12,12 @@ import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
 import { setUserMajor } from "../services/user";
-import { majorList, concentrationList, courseNumbers, courseSubjects } from "../services/academic";
+import {
+  majorList,
+  concentrationList,
+  courseNumbers,
+  courseSubjects
+} from "../services/academic";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
@@ -37,8 +42,14 @@ export default function InputPage(props: {
   /*
   General variables
   */
-  const [major, setMajor] = useState<{ name: string, id: number } | undefined>(); // major that is selected
-  const [concentration, setConcentration] = useState<{ name: string, id: number, fourYearPlan: string | null }>(); // concentration that is selected
+  const [major, setMajor] = useState<
+    { name: string; id: number } | undefined
+  >(); // major that is selected
+  const [concentration, setConcentration] = useState<{
+    name: string;
+    id: number;
+    fourYearPlan: string | null;
+  }>(); // concentration that is selected
   const [usePlan, setUsePlan] = useState(false);
   const [completedCourses, setCompletedCourses] = useState<string[]>([]); // completed courses added to the list
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
@@ -73,7 +84,10 @@ export default function InputPage(props: {
   ) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
     if (reason === "clickaway") {
       return;
     }
@@ -96,7 +110,7 @@ export default function InputPage(props: {
     if (selectedNumber != null && selectedAcronym != null) {
       // TODO Check that the course is a valid course in the database
       if (!completedCourses.includes(`${selectedAcronym}-${selectedNumber}`)) {
-      // Add the course to the completed course list
+        // Add the course to the completed course list
         console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
         setCompletedCourses(
           completedCourses.concat(`${selectedAcronym}-${selectedNumber}`)
@@ -137,12 +151,15 @@ export default function InputPage(props: {
     console.log(`Deleted course: ${course}`);
   }
 
-  const concentrationListValue = concentrationList(major?.id).data?.map((c) => ({
-    label: c.name,
-    value: c
-  })) ?? [];
+  const concentrationListValue =
+    concentrationList(major?.id).data?.map((c) => ({
+      label: c.name,
+      value: c
+    })) ?? [];
 
-  function handleUseFourYearPlan(event: React.ChangeEvent<HTMLInputElement>): void {
+  function handleUseFourYearPlan(
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void {
     if (event.target.checked) {
       if (major !== undefined && concentration !== undefined) {
         setUsePlan(true);
@@ -196,79 +213,104 @@ export default function InputPage(props: {
   // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
-     <Snackbar open={visibility} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal: "center" }}>
+      <Snackbar
+        open={visibility}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
         <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
           {error}
         </Alert>
       </Snackbar>
-      <Grid container spacing={3} pt={5} >
-        <Grid item sm={5}>
-          <Box justifyContent="center">
-            <SearchableDropdown
-              options={majorList().data?.map((m): { label: string; value: MajorType } => ({
-                label: m.name,
-                value: m
-              })) ?? []}
-              label="Major"
-              onSelectOption={(m) => {
-                if (m !== major) {
-                  setMajor(m);
-                  setConcentration(undefined);
-                  setCanMoveOn(false);
-                  setUserMajor(undefined);
-                  setResetConcentration(!resetConcentration);
-                }
-              }}
-            />
-          {concentrationListValue.length !== 0 && (
+      <Grid container spacing={3} pt={5}>
+        <Grid container item sm={5} flexDirection="column" alignItems="center">
           <SearchableDropdown
-            key={resetConcentration}
-            options={concentrationListValue}
-            label="Concentration"
-            onSelectOption={(m?: any) => {
-              setConcentration(m);
-              if (major !== undefined && m !== undefined) {
-                setCanMoveOn(true);
-                setUserMajor({
-                  major,
-                  concentration: m,
-                  load_four_year_plan: usePlan,
-                  completed_courses: completedCourses
-                });
+            options={
+              majorList().data?.map(
+                (m): { label: string; value: MajorType } => ({
+                  label: m.name,
+                  value: m
+                })
+              ) ?? []
+            }
+            label="Major"
+            onSelectOption={(m) => {
+              if (m !== major) {
+                setMajor(m);
+                setConcentration(undefined);
+                setCanMoveOn(false);
+                setUserMajor(undefined);
+                setResetConcentration(!resetConcentration);
               }
             }}
           />
+          {concentrationListValue.length !== 0 && (
+            <SearchableDropdown
+              key={resetConcentration}
+              options={concentrationListValue}
+              label="Concentration"
+              onSelectOption={(m?: any) => {
+                setConcentration(m);
+                if (major !== undefined && m !== undefined) {
+                  setCanMoveOn(true);
+                  setUserMajor({
+                    major,
+                    concentration: m,
+                    load_four_year_plan: usePlan,
+                    completed_courses: completedCourses
+                  });
+                }
+              }}
+            />
           )}
           <div>
             {concentration?.fourYearPlan != null && (
-            <FormControlLabel control={<Switch
-            onChange={handleUseFourYearPlan}
-            inputProps={{ "aria-label": "controlled" }}
-            />} label="Use Suggested Four Year Plan"/>)
-            }
-            <br/>
+              <FormControlLabel
+                control={
+                  <Switch
+                    onChange={handleUseFourYearPlan}
+                    inputProps={{ "aria-label": "controlled" }}
+                  />
+                }
+                label="Use Suggested Four Year Plan"
+              />
+            )}
+            <br />
             <Link href="/scheduler">
               <Button disabled={!canMoveOn}>Generate Schedule</Button>
             </Link>
           </div>
-          </Box>
         </Grid>
         <Grid item sm={4}>
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1, textAlign: "left" }}>Enter previously completed courses:</Typography>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ flexGrow: 1, textAlign: "left" }}
+          >
+            Enter previously completed courses:
+          </Typography>
           <SearchableDropdown
-            options={courseSubjects().data?.map((s: string) => ({
-              label: s,
-              value: s
-            })) ?? []}
+            options={
+              courseSubjects().data?.map((s: string) => ({
+                label: s,
+                value: s
+              })) ?? []
+            }
             label="Course Subject"
-            onSelectOption={(v) => { setSelectedAcronym(v); setResetNumber(!resetNumber); }}
+            onSelectOption={(v) => {
+              setSelectedAcronym(v);
+              setResetNumber(!resetNumber);
+            }}
           />
           <SearchableDropdown
             key={resetNumber}
-            options={courseNumbers(selectedAcronym).data?.map((s: string) => ({
-              label: s,
-              value: s
-            })) ?? []}
+            options={
+              courseNumbers(selectedAcronym).data?.map((s: string) => ({
+                label: s,
+                value: s
+              })) ?? []
+            }
             label="Course Number"
             onSelectOption={(a) => setSelectedNumber(a)}
           />
@@ -277,7 +319,9 @@ export default function InputPage(props: {
         <Grid item sm={3}>
           {completedCourses.length !== 0 && (
             <Paper elevation={5}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>Completed Courses</Typography>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Completed Courses
+              </Typography>
               <DeleteableInput
                 courses={completedCourses}
                 deleteCourse={removeCourse}
@@ -285,17 +329,17 @@ export default function InputPage(props: {
             </Paper>
           )}
         </Grid>
-      {
-        // <ImportPopup
-        //   title="Upload"
-        //   show={uploaderVisibility}
-        //   onClose={popupCloseHandlerUp}
-        //   returnData={setImportData}
-        // />
-        // <Button onClick={setupUploader} data-testid="Import">
-        //   Import Schedule
-        // </Button>
-      }
+        {
+          // <ImportPopup
+          //   title="Upload"
+          //   show={uploaderVisibility}
+          //   onClose={popupCloseHandlerUp}
+          //   returnData={setImportData}
+          // />
+          // <Button onClick={setupUploader} data-testid="Import">
+          //   Import Schedule
+          // </Button>
+        }
       </Grid>
     </div>
   );

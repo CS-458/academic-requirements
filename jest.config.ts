@@ -5,6 +5,10 @@ const createJestConfig = nextJest({
 
 export default createJestConfig({
   moduleDirectories: ["node_modules", "<rootDir>/"],
+  // transform: {
+  //   "\\.[jt]sx?$": "babel-jest"
+  // },
+  // transformIgnorePatterns: ["node_modules/(?!react-dnd/)"],
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
   collectCoverageFrom: [

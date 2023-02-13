@@ -7,7 +7,6 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Box from "@mui/material/Box";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -43,7 +42,7 @@ export default function InputPage(props: {
   General variables
   */
   const [major, setMajor] = useState<
-    { name: string; id: number } | undefined
+  { name: string; id: number } | undefined
   >(); // major that is selected
   const [concentration, setConcentration] = useState<{
     name: string;
@@ -147,7 +146,7 @@ export default function InputPage(props: {
       }
     });
     setCompletedCourses(arr);
-    props.setTakenCourses(arr);
+    //props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
 
@@ -278,6 +277,7 @@ export default function InputPage(props: {
                 label="Use Suggested Four Year Plan"
               />
             )}
+            <br/>
             <Link href="/scheduler">
               <Button disabled={!canMoveOn}>Generate Schedule</Button>
             </Link>

@@ -55,7 +55,7 @@ export const Course: FC<CourseProps> = memo(function Course({
         idCategory
       },
       collect: (monitor: any) => ({
-        opacity: monitor.isDragging() !== null ? 0.4 : 1
+        opacity: monitor.isDragging() !== false ? 0.8 : 1
       })
     }),
     [name, type, dragSource] // what is collected by the semester and course list when you drop it
@@ -79,14 +79,14 @@ export const Course: FC<CourseProps> = memo(function Course({
       data-testid="course"
       className={clsx(
         "CourseText",
-        warningYellowColor === true &&
-          warningRedColor !== true &&
-          warningOrangeColor !== true &&
+        warningYellowColor !== undefined &&
+          warningRedColor === undefined &&
+          warningOrangeColor === undefined &&
           "CourseWarningYellow",
-        warningOrangeColor === true &&
-          warningRedColor !== true &&
+        warningOrangeColor !== undefined &&
+          warningRedColor === undefined &&
           "CourseWarningOrange",
-        warningRedColor === true && "CourseWarningRed"
+        warningRedColor !== undefined && "CourseWarningRed"
       )}
     >
       {/* {isDropped ? <s>{name}</s> : name}  */}

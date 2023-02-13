@@ -14,7 +14,7 @@ function App(): JSX.Element {
   const [concentrationData, setConcentrationData] = useState<any[]>([]);
   // concentrationDisplayData is an array of the 'name' of the concentration objects
   const [concentrationDisplayData, setConcentrationDisplayData] = useState<
-  any[]
+    any[]
   >([]);
   // concentrationCode is an array of the 'idConcentration' of the concentration objects
   const [concentrationCode, setConcentrationCode] = useState();
@@ -102,7 +102,7 @@ function App(): JSX.Element {
   // Runs on startup
   // Get all the data that doesn't need user input
   useEffect(() => {
-    fetch("/major") // create similar
+    fetch("/api/major") // create similar
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets majorData to result from database query
@@ -116,7 +116,7 @@ function App(): JSX.Element {
         setMajorDisplayData(temp);
       })
       .catch(() => {});
-    fetch("/subjects")
+    fetch("/api/subjects")
       .then(async (res) => await res.json())
       .then((result) => {
         const temp: any[] = [];
@@ -127,7 +127,7 @@ function App(): JSX.Element {
         setCourseSubjects(temp);
       })
       .catch(() => {});
-    fetch("/courses/geneds")
+    fetch("/api/courses/geneds")
       .then(async (res) => await res.json())
       .then((result) => {
         setGenEdCourseData(result);
@@ -138,7 +138,7 @@ function App(): JSX.Element {
   // Runs whenever a course subject has been selected
   // Gets the array of course number for that subject from the API
   useEffect(() => {
-    fetch(`/subjects/numbers?sub=${selectedCourseSubject}`)
+    fetch(`/api/subjects/numbers?sub=${selectedCourseSubject}`)
       .then(async (res) => await res.json())
       .then((result) => {
         const temp: any = [];
@@ -153,7 +153,7 @@ function App(): JSX.Element {
   // Gets the concentrations from the database based on the 'idMajor' of the selected major
   // Runs when majorCode is updated
   useEffect(() => {
-    fetch(`/concentration?majid=${majorCode}`)
+    fetch(`/api/concentration?majid=${majorCode}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets concentrationData to result from database query
@@ -172,7 +172,7 @@ function App(): JSX.Element {
   // Gets the courses related to the 'idMajor' of the selected major
   // Runs when majorCode is updated
   useEffect(() => {
-    fetch(`/courses/major?majid=${majorCode}`)
+    fetch(`/api/courses/major?majid=${majorCode}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets majorCourseData to the result from the query
@@ -184,7 +184,7 @@ function App(): JSX.Element {
   // Gets the courses related to the 'idConcentration' of the selected concentration
   // Runs when concentrationCode is updated
   useEffect(() => {
-    fetch(`/courses/concentration?conid=${concentrationCode}`)
+    fetch(`/api/courses/concentration?conid=${concentrationCode}`)
       .then(async (res) => await res.json())
       .then((result) => {
         console.log("result", result);
@@ -196,7 +196,7 @@ function App(): JSX.Element {
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/requirements?conid=${concentrationCode}`)
+    fetch(`/api/requirements?conid=${concentrationCode}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets concentrationCourseData to the result from the query
@@ -208,7 +208,7 @@ function App(): JSX.Element {
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/requirements/gen?conid=${concentrationCode}`)
+    fetch(`/api/requirements/gen?conid=${concentrationCode}`)
       .then(async (res) => await res.json())
       .then((result) => {
         // Sets concentrationCourseData to the result from the query
@@ -251,14 +251,14 @@ function App(): JSX.Element {
   }
   useEffect(() => {
     if (data !== null) {
-      fetch(`/majorID?mname=${data.Major}`)
+      fetch(`/api/majorID?mname=${data.Major}`)
         .then(async (res) => await res.json())
         .then((result) => {
           // Sets concentrationCourseData to the result from the query
           setMajorCode(result[0].idMajor);
         })
         .catch(console.error);
-      fetch(`/concentrationID?cname=${data.Concentration}`)
+      fetch(`/api/concentrationID?cname=${data.Concentration}`)
         .then(async (res) => await res.json())
         .then((result) => {
           // Sets concentrationCourseData to the result from the query
@@ -271,7 +271,6 @@ function App(): JSX.Element {
   return (
     <div>
       <InputPage
-        showing={true}
         onClickGenerate={generateSchedule}
         onClickMajor={selectMajor}
         onClickConcentration={selectConcentration}

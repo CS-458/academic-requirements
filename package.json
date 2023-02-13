@@ -19,12 +19,15 @@
     "@types/node": "18.8.2",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "immutability-helper": "^3.1.1",
     "moment": "^2.29.4",
     "next": "12.3.1",
+    "promised-sqlite3": "^1.2.0",
     "react": "18.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

@@ -1,30 +1,48 @@
 import React, { useEffect, useState } from "react";
-import FourYearPlanPage from "../components/FourYearPlanPage";
+import PassThrough from "../components/PassThrough";
 import ErrorPopup from "../components/ErrorPopup";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { userMajor, UserMajor } from "../services/user";
+import Router from "next/router";
+import { fetchApi } from "../services/util";
 
 function App(): JSX.Element {
   /* Variables to store necessary info */
+  const [user, setUser] = useState<UserMajor | undefined>();
 
   // majorData is an array of major objects returned from the database
   const [majorData, setMajorData] = useState<any[]>([]);
   // majorDisplayData is an array of the 'name' of the major objects for display purposes
   const [majorDisplayData, setMajorDisplayData] = useState<string[]>([]);
   // majorCode is an array of the 'idMajor' of the major objects for query purposes
-  const [majorCode, setMajorCode] = useState();
+  const [majorCode, setMajorCode] = useState<number | undefined>(user?.major);
 
   // concentrationData is an array of concentration objects
   const [concentrationData, setConcentrationData] = useState<any[]>([]);
   // concentrationDisplayData is an array of the 'name' of the concentration objects
   const [concentrationDisplayData, setConcentrationDisplayData] = useState<
-  string[]
+    string[]
   >([]);
   // concentrationCode is an array of the 'idConcentration' of the concentration objects
-  const [concentrationCode, setConcentrationCode] = useState();
+  const [concentrationCode, setConcentrationCode] = useState<
+    number | undefined
+  >(user?.concentration);
 
   // majorCourseData is an array of course objects related to the major
-  const [majorCourseData, setMajorCourseData] = useState([]);
+  const [majorCourseData, setMajorCourseData] = useState<
+    Array<{
+      credits: number;
+      name: string;
+      number: number;
+      semesters: string;
+      subject: string;
+      preReq: string;
+      category: string;
+      id: number;
+      idCategory: number;
+    }>
+  >([]);
   // concentrationCourseData is an array of the course object related to the concentration
   const [concentrationCourseData, setConcentrationCourseData] = useState([]);
   // genEdCourseData is an array of the course object for general education courses
@@ -41,7 +59,7 @@ function App(): JSX.Element {
 
   // Flag for using a four year plan
   const [useFourYearPlan] = useState(false);
-  const [fourYearPlan, setFourYearPlan] = useState(null);
+  const [fourYearPlan, setFourYearPlan] = useState(undefined);
 
   // courseSubjects the array of subject strings from the database
   const [_0, setCourseSubjects] = useState<string[]>([]);
@@ -53,19 +71,11 @@ function App(): JSX.Element {
 
   const [coursesTaken] = useState([]);
 
-  // Functions and variables for controlling an error popup
-  const [visibility, setVisibility] = useState(false);
-  const popupCloseHandler = (): void => {
-    setVisibility(false);
-  };
-  const [error] = useState("");
-
   // Runs on startup
   // Get all the data that doesn't need user input
   useEffect(() => {
-    fetch("/major") // create similar
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi("/api/major") // create similar
+      .then((result: any) => {
         // Sets majorData to result from database query
         setMajorData(result);
         // Gets the 'name' of the major objects
@@ -76,10 +86,9 @@ function App(): JSX.Element {
         // Sets majorDisplayData to the 'name' of the majors
         setMajorDisplayData(temp);
       })
-      .catch(() => {});
-    fetch("/subjects")
-      .then(async (res) => await res.json())
-      .then((result) => {
+      .catch(console.error);
+    fetchApi("/api/subjects")
+      .then((result: any) => {
         const temp: string[] = [];
         result.forEach((x: any) => {
           temp.push(x.subject);
@@ -87,36 +96,33 @@ function App(): JSX.Element {
         // get Course subject data, pass in the result
         setCourseSubjects(temp);
       })
-      .catch(() => {});
-    fetch("/courses/geneds")
-      .then(async (res) => await res.json())
-      .then((result) => {
+      .catch(console.error);
+    fetchApi("/api/courses/geneds")
+      .then((result: any) => {
         setGenEdCourseData(result);
       })
-      .catch(() => {});
+      .catch(console.error);
   }, []);
 
   // Runs whenever a course subject has been selected
   // Gets the array of course number for that subject from the API
   useEffect(() => {
-    fetch(`/subjects/numbers?sub=${selectedCourseSubject}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/subjects/numbers?sub=${selectedCourseSubject}`)
+      .then((result: any) => {
         const temp: string[] = [];
         result.forEach((x: any) => {
           temp.push(x.number);
         });
         setCourseSubjectNumbers(temp);
       })
-      .catch(() => {});
+      .catch(console.error);
   }, [selectedCourseSubject]);
 
   // Gets the concentrations from the database based on the 'idMajor' of the selected major
   // Runs when majorCode is updated
   useEffect(() => {
-    fetch(`/concentration?majid=${majorCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/concentration?majid=${majorCode}`)
+      .then((result: any) => {
         // Sets concentrationData to result from database query
         setConcentrationData(result);
         // Gets the 'name' of the concentration objects
@@ -127,55 +133,51 @@ function App(): JSX.Element {
         // Sets concentrationDisplayData to the 'name' of the concentrations
         setConcentrationDisplayData(temp);
       })
-      .catch(() => {});
+      .catch(console.error);
   }, [majorCode]); // gets called whenever major is updated
 
   // Gets the courses related to the 'idMajor' of the selected major
   // Runs when majorCode is updated
   useEffect(() => {
-    fetch(`/courses/major?majid=${majorCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/courses/major?majid=${majorCode}`)
+      .then((result: any) => {
         // Sets majorCourseData to the result from the query
         setMajorCourseData(result);
       })
-      .catch(() => {});
+      .catch(console.error);
   }, [majorCode]);
 
   // Gets the courses related to the 'idConcentration' of the selected concentration
   // Runs when concentrationCode is updated
   useEffect(() => {
-    fetch(`/courses/concentration?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/courses/concentration?conid=${concentrationCode}`)
+      .then((result: any) => {
         console.log("result", result);
         // Sets concentrationCourseData to the result from the query
         setConcentrationCourseData(result);
       })
-      .catch(() => {});
+      .catch(console.error);
   }, [concentrationCode]);
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/requirements?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/requirements?conid=${concentrationCode}`)
+      .then((result: any) => {
         // Sets concentrationCourseData to the result from the query
         console.log("requirements", result);
         setRequirementsData(result);
       })
-      .catch((e) => console.error(e));
+      .catch(console.error);
   }, [concentrationCode]);
 
   // Gets the requirements related to the major/concentration
   useEffect(() => {
-    fetch(`/requirements/gen?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
+    fetchApi(`/api/requirements/gen?conid=${concentrationCode}`)
+      .then((result: any) => {
         // Sets concentrationCourseData to the result from the query
         setRequirementsGenData(result);
       })
-      .catch((e) => console.error(e));
+      .catch(console.error);
   }, [concentrationCode]);
 
   // Gets the 'idMajor' relating to the 'name' of the selected major
@@ -205,50 +207,34 @@ function App(): JSX.Element {
     }
   }, [concentration]);
 
-  const [data, setData] = useState<any | null>(null);
-
-  function importData(data: any): void {
-    setData(data);
-  }
   useEffect(() => {
-    if (data !== null) {
-      fetch(`/majorID?mname=${data.Major}`)
-        .then(async (res) => await res.json())
-        .then((result) => {
-          // Sets concentrationCourseData to the result from the query
-          setMajorCode(result[0].idMajor);
-        })
-        .catch(() => {});
-      fetch(`/concentrationID?cname=${data.Concentration}`)
-        .then(async (res) => await res.json())
-        .then((result) => {
-          // Sets concentrationCourseData to the result from the query
-          setConcentrationCode(result[0].idConcentration);
-        })
-        .catch(() => {});
+    const user = userMajor();
+    if (user === undefined) {
+      Router.replace("/").catch(console.error);
+    } else {
+      setUser(user);
+      setMajorCode(user.major);
+      setConcentrationCode(user.concentration);
     }
-  }, [data]);
+  }, []);
 
+  if (user === undefined) {
+    return <></>;
+  }
   return (
     <DndProvider backend={HTML5Backend}>
-      <FourYearPlanPage
+      <PassThrough
+        showing={true}
         data-testid="FourYearPage"
         concentrationCourseList={concentrationCourseData}
         majorCourseList={majorCourseData}
         genEdCourseList={genEdCourseData}
         selectedMajor={major}
-        selectedConcentration={concentration}
+        selectedConcentration={concentration ?? ""}
         completedCourses={coursesTaken}
         requirements={requirements}
         requirementsGen={requirementsGen}
-        fourYearPlan={useFourYearPlan ? fourYearPlan : null}
-        importData={data}
-      />
-      <ErrorPopup
-        onClose={popupCloseHandler}
-        show={visibility}
-        title="Error"
-        error={error}
+        fourYearPlan={useFourYearPlan ? fourYearPlan : undefined}
       />
     </DndProvider>
   );

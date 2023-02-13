@@ -1,3 +1,15 @@
+export interface Major {
+  id: number;
+  name: string;
+  concentrations: Array<{ id: number; name: string }>;
+}
+
+export interface Concentration {
+  id: number;
+  name: string;
+  four_year_plan: string;
+}
+
 export interface Course {
   credits: number;
   name: string;
@@ -17,4 +29,8 @@ export interface Requirement {
   idCategory: number;
   name: string;
   parentCategory: number;
+}
+
+export interface Requirements {
+  [category: number]: Requirement;
 }

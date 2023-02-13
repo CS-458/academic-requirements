@@ -24,6 +24,8 @@ rules:
   "@typescript-eslint/member-delimiter-style": off
   "@typescript-eslint/restrict-template-expressions": off
   "@typescript-eslint/no-unused-vars": warn
+  "@typescript-eslint/restrict-plus-operands": off
+  "@typescript-eslint/array-type": off
 ignorePatterns:
   - "next-env.d.ts"
 parserOptions:

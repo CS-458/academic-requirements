@@ -1,20 +1,19 @@
 import React from "react";
-import { ReactComponent as XSymbol } from "../images/xSymbol.svg";
+import { ReactComponent as XSymbol } from "../public/xSymbol.svg";
 import clsx from "clsx";
 
-import "./DeleteableInput.css";
-
 const DeleteableInput = (props: {
-  text: string;
+  text?: string;
   thinWidth: boolean;
 }): JSX.Element => {
+  console.log("DeletableInp: ", props.text);
+  // <XSymbol className="x" />
   return (
     <div
       className={clsx("container", props.thinWidth && "thin")}
-      key={props.text}
+      key={`${props.text}`}
     >
-      <XSymbol className="x" />
-      {props.text}
+      {`${props.text}`}
     </div>
   );
 };

@@ -116,7 +116,7 @@ class StringProcessing {
   prettyFailedString(failedString: string): string {
     let updateString = failedString.replace(/-/g, "_");
     updateString = updateString.replace(/,/g, " and ");
-    updateString = updateString.replace(/|/g, " or ");
+    updateString = updateString.replace(/\|/g, " or ");
     updateString = updateString.replace(/&/g, " & ");
     return updateString;
   }

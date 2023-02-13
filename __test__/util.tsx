@@ -7,6 +7,7 @@ import { NextApiHandler } from "next";
 import { Matcher, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
+import { UserMajor } from "../services/user";
 
 interface UserExt {
   /// Select an element from an `AutoComplete` dropdown
@@ -84,4 +85,35 @@ export function wrapper(children: JSX.Element | JSX.Element[]): JSX.Element {
       <DndProvider backend={HTML5Backend}>{children}</DndProvider>
     </QueryClientProvider>
   );
+}
+
+const localStorage: { [key: string]: string } = {};
+
+export function getMockStorage(key: string): string | null {
+  return localStorage[key];
+}
+
+export function setMockStorage(key: string, value: string) {
+  localStorage[key] = value;
+}
+
+export function removeMockStorage(key: string) {
+  delete localStorage[key];
+}
+
+export function clearMockStorage() {
+  for (let k in localStorage) {
+    delete localStorage[k];
+  }
+}
+
+/// Configure local storage and set pre-existing data in local storage
+export function buildLocalStorage(user?: UserMajor) {
+  window.localStorage.getItem = getMockStorage;
+  window.localStorage.setItem = setMockStorage;
+  window.localStorage.removeItem = removeMockStorage;
+  window.localStorage.clear = clearMockStorage;
+  if (user !== undefined) {
+    setMockStorage("user_major", JSON.stringify(user));
+  }
 }

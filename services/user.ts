@@ -1,8 +1,8 @@
 export interface UserMajor {
   /// Major ID number
-  major: { name: string, id: number };
+  major: { name: string; id: number };
   /// Concentration ID number
-  concentration: { name: string, id: number };
+  concentration: { name: string; id: number };
   /// Whether to load a four year plan
   load_four_year_plan: boolean;
   /// A list of completed courses taken

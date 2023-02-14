@@ -170,8 +170,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     >([]);
 
     // Requirements that are manipulated
-    const [reqList, setReqList] = useState<Requirement[]>(requirements);
-    let [reqGenList, setReqGenList] = useState<Requirement[]>(requirementsGen);
+    const [reqList, setReqList] = useState(requirements);
+    console.log("reqList & requirements:", reqList, requirements);
+    const [reqGenList, setReqGenList] = useState(requirementsGen);
+    console.log("GEN: reqList & requirements:", reqGenList, requirementsGen);
 
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
@@ -193,6 +195,12 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     ]);
     const [displayedInformationType, setDisplayedInformationType] =
       useState<string>(defaultInformationType);
+
+    // does not work, but useful for debugging
+    useEffect(() => {
+      setReqList(requirements);
+      setReqGenList(requirementsGen);
+    }, [requirements, requirementsGen]);
 
     useEffect(() => {
       // Whenever completed courses may update, determine
@@ -273,7 +281,6 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             (item: any) => item.name === name
           );
         } else {
-          console.log(name, PassedCourseList);
           // find the course by name in the master list of all courses
           course = PassedCourseList.find((item) => item.name === name);
         }
@@ -953,6 +960,8 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     // get all of the requirements and sort through the course list for courses
     // that can fullfill multiple categories
     useEffect(() => {
+      // don't proceed if there are no requirements
+      if (reqList === undefined || reqGenList === undefined) { return; }
       const temp: Requirement[] = [];
       let tempReqList: Requirement[] = reqList;
       tempReqList.forEach((x) => {
@@ -1044,7 +1053,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
         }
       }
       setCoursesInMultipleCategories(tempArr);
-    }, [requirements, requirementsGen]);
+    }, [requirements, requirementsGen, PassedCourseList]);
 
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
@@ -1354,7 +1363,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           }
         }
       },
-      [reqList, reqGenList]
+      [reqList, reqGenList, requirements, requirementsGen]
     );
     // TODO do the requirements define when a course can be taken twice for credit
     const checkRequirements = useCallback(
@@ -1373,7 +1382,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           );
         }
       },
-      [reqList, reqGenList]
+      [reqList, reqGenList, requirements, requirementsGen, PassedCourseList]
     );
 
     return (

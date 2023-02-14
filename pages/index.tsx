@@ -127,12 +127,12 @@ function App(): JSX.Element {
     //     setCourseSubjects(temp);
     //   })
     //   .catch(() => {});
-    fetch("/api/courses/geneds")
-      .then(async (res) => await res.json())
-      .then((result) => {
-        setGenEdCourseData(result);
-      })
-      .catch(() => {});
+    // fetch("/api/courses/geneds")
+    //   .then(async (res) => await res.json())
+    //   .then((result) => {
+    //     setGenEdCourseData(result);
+    //   })
+    //   .catch(() => {});
   }, []);
 
   // Runs whenever a course subject has been selected
@@ -171,51 +171,51 @@ function App(): JSX.Element {
 
   // Gets the courses related to the 'idMajor' of the selected major
   // Runs when majorCode is updated
-  useEffect(() => {
-    fetch(`/api/courses/major?majid=${majorCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
-        // Sets majorCourseData to the result from the query
-        setMajorCourseData(result);
-      })
-      .catch(console.error);
-  }, [majorCode]);
+  // useEffect(() => {
+  //   fetch(`/api/courses/major?majid=${majorCode}`)
+  //     .then(async (res) => await res.json())
+  //     .then((result) => {
+  //       // Sets majorCourseData to the result from the query
+  //       setMajorCourseData(result);
+  //     })
+  //     .catch(console.error);
+  // }, [majorCode]);
 
   // Gets the courses related to the 'idConcentration' of the selected concentration
   // Runs when concentrationCode is updated
-  useEffect(() => {
-    fetch(`/api/courses/concentration?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
-        console.log("result", result);
-        // Sets concentrationCourseData to the result from the query
-        setConcentrationCourseData(result);
-      })
-      .catch(console.error);
-  }, [concentrationCode]);
+  // useEffect(() => {
+  //   fetch(`/api/courses/concentration?conid=${concentrationCode}`)
+  //     .then(async (res) => await res.json())
+  //     .then((result) => {
+  //       console.log("result", result);
+  //       // Sets concentrationCourseData to the result from the query
+  //       setConcentrationCourseData(result);
+  //     })
+  //     .catch(console.error);
+  // }, [concentrationCode]);
 
   // Gets the requirements related to the major/concentration
-  useEffect(() => {
-    fetch(`/api/requirements?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
-        // Sets concentrationCourseData to the result from the query
-        console.log("requirements", result);
-        setRequirementsData(result);
-      })
-      .catch(console.error);
-  }, [concentrationCode]);
+  // useEffect(() => {
+  //   fetch(`/api/requirements?conid=${concentrationCode}`)
+  //     .then(async (res) => await res.json())
+  //     .then((result) => {
+  //       // Sets concentrationCourseData to the result from the query
+  //       console.log("requirements", result);
+  //       setRequirementsData(result);
+  //     })
+  //     .catch(console.error);
+  // }, [concentrationCode]);
 
   // Gets the requirements related to the major/concentration
-  useEffect(() => {
-    fetch(`/api/requirements/gen?conid=${concentrationCode}`)
-      .then(async (res) => await res.json())
-      .then((result) => {
-        // Sets concentrationCourseData to the result from the query
-        setRequirementsGenData(result);
-      })
-      .catch(console.error);
-  }, [concentrationCode]);
+  // useEffect(() => {
+  //   fetch(`/api/requirements/gen?conid=${concentrationCode}`)
+  //     .then(async (res) => await res.json())
+  //     .then((result) => {
+  //       // Sets concentrationCourseData to the result from the query
+  //       setRequirementsGenData(result);
+  //     })
+  //     .catch(console.error);
+  // }, [concentrationCode]);
 
   // Gets the 'idMajor' relating to the 'name' of the selected major
   // Runs when major is updated

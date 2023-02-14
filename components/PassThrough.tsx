@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
-import { masterCourseList } from "../services/academic";
+import { masterCourseList, courseCategoryRequirements, genedCategoryRequirements } from "../services/academic";
 import { userMajor } from "../services/user";
 import { Course } from "../entities/four_year_plan";
 
@@ -46,32 +46,32 @@ const PassThrough = (props: {
   completedCourses: string[];
   selectedMajor: string;
   selectedConcentration: string;
-  requirements: {
-    courseCount: number;
-    courseReqs: string;
-    creditCount: number;
-    idCategory: number;
-    name: string;
-    parentCategory: number;
-    percentage: number;
-    inheritedCredits: number;
-    coursesTaken: string[];
-    courseCountTaken: number;
-    creditCountTaken: number;
-  }[];
-  requirementsGen: {
-    courseCount: number;
-    courseReqs: string;
-    creditCount: number;
-    idCategory: number;
-    name: string;
-    parentCategory: number;
-    percentage: number;
-    inheritedCredits: number;
-    coursesTaken: string[];
-    courseCountTaken: number;
-    creditCountTaken: number;
-  }[];
+  // requirements: {
+  //   courseCount: number;
+  //   courseReqs: string;
+  //   creditCount: number;
+  //   idCategory: number;
+  //   name: string;
+  //   parentCategory: number;
+  //   percentage: number;
+  //   inheritedCredits: number;
+  //   coursesTaken: string[];
+  //   courseCountTaken: number;
+  //   creditCountTaken: number;
+  // }[];
+  // requirementsGen: {
+  //   courseCount: number;
+  //   courseReqs: string;
+  //   creditCount: number;
+  //   idCategory: number;
+  //   name: string;
+  //   parentCategory: number;
+  //   percentage: number;
+  //   inheritedCredits: number;
+  //   coursesTaken: string[];
+  //   courseCountTaken: number;
+  //   creditCountTaken: number;
+  // }[];
   fourYearPlan?: {};
 }): JSX.Element => {
   // Functions and variables for controlling an error popup
@@ -81,10 +81,11 @@ const PassThrough = (props: {
   };
   const [error] = useState("");
 
-  console.log(props);
-
   // major and minor come from user service
   const courseList: Course[] = masterCourseList(userMajor()?.major, userMajor()?.concentration);
+
+  const requirements: Requirement[] = courseCategoryRequirements(userMajor()?.concentration).data;
+  const requirementsGen: Requirement[] = genedCategoryRequirements().data;
 
   return (
     <div>
@@ -102,8 +103,8 @@ const PassThrough = (props: {
               CompletedCourses={props.completedCourses}
               selectedMajor={props.selectedMajor}
               selectedConcentration={props.selectedConcentration}
-              requirements={props.requirements}
-              requirementsGen={props.requirementsGen}
+              requirements={requirements}
+              requirementsGen={requirementsGen}
               fourYearPlan={props.fourYearPlan}
               importData={props.importData}
             />

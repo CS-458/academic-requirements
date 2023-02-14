@@ -1,5 +1,5 @@
 import { useQuery, UseQueryResult } from "react-query";
-import { Major } from "../entities/four_year_plan";
+import { MajorType } from "../entities/four_year_plan";
 
 function mock_data<TData>(data: TData): UseQueryResult<TData> {
   return {
@@ -29,7 +29,7 @@ function mock_data<TData>(data: TData): UseQueryResult<TData> {
 }
 
 const module = {
-  majorList: (): UseQueryResult<Major[]> => mock_data([])
+  majorList: (): UseQueryResult<MajorType[]> => mock_data([])
   // function majorList(): UseQueryResult<Major[]> {
   //   return useQuery("Major List", async () => await fetchApi(`/api/major`));
   // }

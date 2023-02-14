@@ -20,7 +20,7 @@ export default function DeleteableInput(props: {
           <Chip
             label={course}
             onDelete={() => props.deleteCourse(course)}
-            deleteIcon={<DeleteIcon />}
+            deleteIcon={<DeleteIcon data-testid="delete-icon"/>}
             sx={{ width: "9em", margin: "0.5em" }}
           />
         </Grid>

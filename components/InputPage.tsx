@@ -105,8 +105,7 @@ export default function InputPage(props: {
 
   // This method handles adding a new taken course to the table
   function processCompletedCourse(): void {
-    setResetNumber(!resetNumber);
-    if (selectedNumber != null && selectedAcronym != null) {
+    if (selectedNumber !== undefined && selectedAcronym !== undefined) {
       // TODO Check that the course is a valid course in the database
       if (!completedCourses.includes(`${selectedAcronym}-${selectedNumber}`)) {
         // Add the course to the completed course list
@@ -120,19 +119,22 @@ export default function InputPage(props: {
       } else {
         throwError("This course has already been added", "error");
       }
-    } else {
-      if (selectedNumber == null) {
-        throwError(
-          "No course number has been selected, please select a course number.",
-          "error"
-        );
-      } else {
-        throwError(
-          "No course type has been selected, please select a course type before adding a course.",
-          "error"
-        );
-      }
     }
+    // else {
+    //   if (selectedNumber === undefined) {
+    //     throwError(
+    //       "No course number has been selected, please select a course number.",
+    //       "error"
+    //     );
+    //   } else {
+    //     throwError(
+    //       "No course type has been selected, please select a course type before adding a course.",
+    //       "error"
+    //     );
+    //   }
+    // }
+    setResetNumber(!resetNumber);
+    setSelectedNumber(undefined);
   }
 
   // Removes the course from the coursesTaken list
@@ -324,8 +326,11 @@ export default function InputPage(props: {
         <Grid container item sm={4} flexDirection="column" alignItems="center">
           <Paper
             elevation={5}
-            sx={{ width: "100%", minHeight: "20em", paddingY: "1em" }}
+            sx={{ width: "100%", minHeight: "10em", paddingY: "1em" }}
           >
+            <Typography variant="h6" component="div">
+              Courses Marked Complete
+            </Typography>
             <DeleteableInput
               courses={completedCourses}
               deleteCourse={removeCourse}

@@ -223,14 +223,15 @@ class RequirementProcessing {
     reqGenList: any,
     PassedCourseList: any
   ): { reqGenList: any } {
+    console.log("multiple", multipleCategories);
     const courseString = course.subject + "-" + course.number;
     const categories = multipleCategories.find(
       (item: any) => item.idString === courseString
     )?.categories;
     const reqCheck = new StringProcessing();
     // run once or for each category the course is in
-    for (let n = 0; n < (categories === null ? categories.length : 1); n++) {
-      const courseCategory = categories === null ? categories[n] : course.idCategory;
+    for (let n = 0; n < (categories != null ? categories.length : 1); n++) {
+      const courseCategory = categories != null ? categories[n] : course.idCategory;
       for (let i = 0; i < reqGenList.length; i++) {
         const x = reqGenList[i];
         // initialize the variables if they aren't already
@@ -538,6 +539,7 @@ class RequirementProcessing {
         }
       }
     }
+    console.log("list", reqGenList);
     return reqGenList;
   }
 }

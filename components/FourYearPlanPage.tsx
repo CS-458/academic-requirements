@@ -300,6 +300,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           const newWarningState = getWarning(newSemesterCount);
           // Add the course to the semester
           course.dragSource = "Semester " + index;
+          console.log("mult", coursesInMultipleCategories);
           checkRequirements(course, coursesInMultipleCategories);
           setSemesters(
             update(semesters, {
@@ -1365,21 +1366,25 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       },
       [reqList, reqGenList, requirements, requirementsGen]
     );
+
     // TODO do the requirements define when a course can be taken twice for credit
     const checkRequirements = useCallback(
       (course: Course, multipleCategories: any) => {
-        const reqCheck = new RequirementsProcessing();
-        // check for any major/concentration reqs it can fill
-        const Major = reqCheck.majorReqCheck(course, reqList);
-        setReqList(Major.reqList);
-        if (!Major.addedCourse) {
-          // check if it fills any unfilled gen-ed requirements
-          reqGenList = reqCheck.checkRequirementsGen(
-            course,
-            multipleCategories,
-            reqGenList,
-            PassedCourseList
-          );
+        console.log("requirementsList", reqList);
+        if (reqList) {
+          const reqCheck = new RequirementsProcessing();
+          // check for any major/concentration reqs it can fill
+          const Major = reqCheck.majorReqCheck(course, reqList);
+          setReqList(Major.reqList);
+          if (!Major.addedCourse) {
+            // check if it fills any unfilled gen-ed requirements
+            reqGenList = reqCheck.checkRequirementsGen(
+              course,
+              multipleCategories,
+              reqGenList,
+              PassedCourseList
+            );
+          }
         }
       },
       [reqList, reqGenList, requirements, requirementsGen, PassedCourseList]

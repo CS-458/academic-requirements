@@ -68,7 +68,7 @@ export default function DefaultLayout(props: {
                 useOneTap
               />
             ) : (
-              <Typography variant="h5" component="div">
+              <Typography variant="h4" component="div">
                 <span>{user.info.name}</span>
                 <img src={user.info.picture} style={{ height: "1em" }} />
               </Typography>

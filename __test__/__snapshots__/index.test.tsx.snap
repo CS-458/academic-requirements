@@ -22,7 +22,7 @@ exports[`Verify Four Year Plan Not Show 1`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -93,7 +93,7 @@ exports[`Verify Four Year Plan Not Show 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -183,7 +183,7 @@ exports[`Verify Four Year Plan Not Show 1`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -254,7 +254,7 @@ exports[`Verify Four Year Plan Not Show 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -354,24 +354,17 @@ exports[`Verify Four Year Plan Not Show 1`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -402,7 +395,7 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -495,7 +488,7 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -585,7 +578,7 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -656,7 +649,7 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -755,24 +748,17 @@ exports[`Verify Four Year Plan Not Show 2`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -803,7 +789,7 @@ exports[`Verify Four Year Plan Not Show 3`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -896,7 +882,7 @@ exports[`Verify Four Year Plan Not Show 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1011,7 +997,7 @@ exports[`Verify Four Year Plan Not Show 3`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1082,7 +1068,7 @@ exports[`Verify Four Year Plan Not Show 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1181,24 +1167,17 @@ exports[`Verify Four Year Plan Not Show 3`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -1229,7 +1208,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1300,7 +1279,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1390,7 +1369,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1461,7 +1440,7 @@ exports[`Verify Majors and Concentrations 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1561,24 +1540,17 @@ exports[`Verify Majors and Concentrations 1`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -1609,7 +1581,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1702,7 +1674,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1792,7 +1764,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1863,7 +1835,7 @@ exports[`Verify Majors and Concentrations 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1962,24 +1934,17 @@ exports[`Verify Majors and Concentrations 2`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -2010,7 +1975,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2103,7 +2068,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2249,7 +2214,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2320,7 +2285,7 @@ exports[`Verify Majors and Concentrations 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2419,24 +2384,17 @@ exports[`Verify Majors and Concentrations 3`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -2467,7 +2425,7 @@ exports[`Verify adding completed course 1`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2538,7 +2496,7 @@ exports[`Verify adding completed course 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2628,7 +2586,7 @@ exports[`Verify adding completed course 1`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2699,7 +2657,7 @@ exports[`Verify adding completed course 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2799,24 +2757,17 @@ exports[`Verify adding completed course 1`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -2847,7 +2798,7 @@ exports[`Verify adding completed course 2`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2918,7 +2869,7 @@ exports[`Verify adding completed course 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3008,7 +2959,7 @@ exports[`Verify adding completed course 2`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3101,7 +3052,7 @@ exports[`Verify adding completed course 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3201,24 +3152,17 @@ exports[`Verify adding completed course 2`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -3249,7 +3193,7 @@ exports[`Verify adding completed course 3`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3320,7 +3264,7 @@ exports[`Verify adding completed course 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3410,7 +3354,7 @@ exports[`Verify adding completed course 3`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3503,7 +3447,7 @@ exports[`Verify adding completed course 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3627,24 +3571,17 @@ exports[`Verify adding completed course 3`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -3675,7 +3612,7 @@ exports[`Verify deleting completed course 1`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3746,7 +3683,7 @@ exports[`Verify deleting completed course 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3836,7 +3773,7 @@ exports[`Verify deleting completed course 1`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3907,7 +3844,7 @@ exports[`Verify deleting completed course 1`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4007,24 +3944,17 @@ exports[`Verify deleting completed course 1`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -4055,7 +3985,7 @@ exports[`Verify deleting completed course 2`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4126,7 +4056,7 @@ exports[`Verify deleting completed course 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4216,7 +4146,7 @@ exports[`Verify deleting completed course 2`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4309,7 +4239,7 @@ exports[`Verify deleting completed course 2`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4409,24 +4339,17 @@ exports[`Verify deleting completed course 2`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>
@@ -4457,7 +4380,7 @@ exports[`Verify deleting completed course 3`] = `
                 Select Major
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4528,7 +4451,7 @@ exports[`Verify deleting completed course 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4618,7 +4541,7 @@ exports[`Verify deleting completed course 3`] = `
                 Completed Courses
               </div>
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4711,7 +4634,7 @@ exports[`Verify deleting completed course 3`] = `
                 </div>
               </div>
               <div
-                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-v7n52k-MuiAutocomplete-root"
+                class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
               >
                 <div
                   class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4835,24 +4758,17 @@ exports[`Verify deleting completed course 3`] = `
           </div>
         </div>
         <div
-          class="overlay"
           data-testid="popup"
           style="visibility: hidden; opacity: 0;"
         >
-          <div
-            class="popup"
-          >
+          <div>
             <h2>
               Error
             </h2>
-            <span
-              class="close"
-            >
+            <span>
               ×
             </span>
-            <div
-              class="content"
-            />
+            <div />
           </div>
         </div>
       </div>

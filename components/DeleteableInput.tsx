@@ -1,7 +1,6 @@
 import React from "react";
-import DeleteIcon from "@mui/icons-material/Delete";
-import Grid from "@mui/material/Grid";
-import { Chip } from "@mui/material";
+import { Delete } from "@mui/icons-material";
+import { Chip, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
 export default function DeleteableInput(props: {
@@ -20,7 +19,7 @@ export default function DeleteableInput(props: {
           <Chip
             label={course}
             onDelete={() => props.deleteCourse(course)}
-            deleteIcon={<DeleteIcon data-testid="delete-icon"/>}
+            deleteIcon={<Delete data-testid="delete-icon" />}
             sx={{ width: "9em", margin: "0.5em" }}
           />
         </Grid>

@@ -1,12 +1,12 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { screen, render as testRender } from "@testing-library/react";
 
 import Home from "../pages/index";
-import { setupUser, wrapper } from "./util";
+import { setupUser, render } from "./util";
 
 test("Verify Majors and Concentrations", async () => {
   const user = setupUser();
-  const index = render(wrapper(<Home />));
+  const index = render(<Home />);
   expect(index.baseElement).toMatchSnapshot();
 
   const generateButton = screen.getByText(/Generate Schedule/i);
@@ -28,7 +28,7 @@ test("Verify Majors and Concentrations", async () => {
 
 test("Verify Four Year Plan Not Show", async () => {
   const user = setupUser();
-  const index = render(wrapper(<Home />));
+  const index = render(<Home />);
   expect(index.baseElement).toMatchSnapshot();
 
   const generateButton = screen.getByText(/Generate Schedule/i);
@@ -41,16 +41,14 @@ test("Verify Four Year Plan Not Show", async () => {
   await user.selectAutocomplete(/Concentration/i, /Self-Designed/i);
   expect(index.baseElement).toMatchSnapshot();
 
-  expect(
-    screen.queryByLabelText(/Use Suggested Four Year Plan/i)
-  ).toBeNull();
+  expect(screen.queryByLabelText(/Use Suggested Four Year Plan/i)).toBeNull();
 
   expect(generateButton).not.toBeDisabled();
 });
 
 test("Verify adding completed course", async () => {
   const user = setupUser();
-  const index = render(wrapper(<Home />));
+  const index = render(<Home />);
   expect(index.baseElement).toMatchSnapshot();
 
   const addButton = screen.getByText(/Add Course/i);
@@ -70,7 +68,7 @@ test("Verify adding completed course", async () => {
 
 test("Verify deleting completed course", async () => {
   const user = setupUser();
-  const index = render(wrapper(<Home />));
+  const index = render(<Home />);
   expect(index.baseElement).toMatchSnapshot();
 
   const addButton = screen.getByText(/Add Course/i);

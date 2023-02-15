@@ -4,10 +4,16 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { testApiHandler } from "next-test-api-route-handler";
 import { NextApiHandler } from "next";
-import { Matcher, screen } from "@testing-library/react";
+import {
+  Matcher,
+  screen,
+  render as testRender,
+  RenderResult
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 import { UserMajor } from "../services/user";
+import "../pages/api";
 
 interface UserExt {
   /// Select an element from an `AutoComplete` dropdown
@@ -35,6 +41,8 @@ export function setupUser(): UserEvent & UserExt {
     }
   };
 }
+
+const modules: { [key: string]: NextApiHandler | Promise<NextApiHandler> } = {};
 
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
 export async function fetchApiRoute(url: string): Promise<Response> {
@@ -78,10 +86,10 @@ export async function fetchApiJson(url: string): Promise<any> {
  *
  *  Also overides window.fetch to use fetchApiRoute for testing
  * */
-export function wrapper(children: JSX.Element | JSX.Element[]): JSX.Element {
+export function render(children: JSX.Element | JSX.Element[]): RenderResult {
   // @ts-expect-error Parameters are different
   window.fetch = fetchApiRoute;
-  return (
+  return testRender(
     <div data-testid="test-root-element">
       <QueryClientProvider client={new QueryClient()}>
         <DndProvider backend={HTML5Backend}>{children}</DndProvider>

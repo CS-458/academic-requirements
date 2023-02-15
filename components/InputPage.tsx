@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Snackbar from "@mui/material/Snackbar";
+import {
+  Button,
+  Typography,
+  Grid,
+  Paper,
+  Snackbar,
+  Switch,
+  FormControlLabel
+} from "@mui/material";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -42,7 +45,7 @@ export default function InputPage(props: {
   General variables
   */
   const [major, setMajor] = useState<
-  { name: string; id: number } | undefined
+    { name: string; id: number } | undefined
   >(); // major that is selected
   const [concentration, setConcentration] = useState<{
     name: string;
@@ -221,7 +224,7 @@ export default function InputPage(props: {
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
-          {error}
+          {`${error}`}
         </Alert>
       </Snackbar>
       <Grid container spacing={3} pt={5}>
@@ -279,7 +282,7 @@ export default function InputPage(props: {
                 label="Use Suggested Four Year Plan"
               />
             )}
-            <br/>
+            <br />
             <Link href="/scheduler">
               <Button disabled={!canMoveOn}>Generate Schedule</Button>
             </Link>
@@ -337,17 +340,6 @@ export default function InputPage(props: {
             />
           </Paper>
         </Grid>
-        {
-          // <ImportPopup
-          //   title="Upload"
-          //   show={uploaderVisibility}
-          //   onClose={popupCloseHandlerUp}
-          //   returnData={setImportData}
-          // />
-          // <Button onClick={setupUploader} data-testid="Import">
-          //   Import Schedule
-          // </Button>
-        }
       </Grid>
     </div>
   );

@@ -23,6 +23,22 @@ export interface CourseType {
   dragSource: string;
 }
 
+export interface DragCourseType {
+  name: string,
+  subject: string,
+  number: number,
+  type: string,
+  credits: number,
+  semesters: string,
+  preReq: string,
+  dragSource: string,
+  warningYellowColor: any,
+  warningOrangeColor: any,
+  warningRedColor: any,
+  idCourse: number,
+  idCategory: number
+}
+
 export interface CourseListType {
   accept: CourseType;
   onDrop: (item: any) => void;

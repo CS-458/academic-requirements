@@ -2,9 +2,9 @@ import type { FC } from "react";
 import React, { memo } from "react";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
-import { CourseType } from "../entities/four_year_plan";
+import { DragCourseType } from "../entities/four_year_plan";
 
-export const Course: FC<CourseType> = memo(function Course({
+export const Course: FC<DragCourseType> = memo(function Course({
   name,
   subject,
   number,
@@ -16,7 +16,7 @@ export const Course: FC<CourseType> = memo(function Course({
   warningYellowColor,
   warningOrangeColor,
   warningRedColor,
-  id,
+  idCourse,
   idCategory
 }) {
   // defines the drag action
@@ -35,14 +35,14 @@ export const Course: FC<CourseType> = memo(function Course({
         warningYellowColor,
         warningOrangeColor,
         warningRedColor,
-        id,
+        idCourse,
         idCategory
       },
       collect: (monitor: any) => ({
         opacity: monitor.isDragging() !== false ? 0.8 : 1
       })
     }),
-    [id, type, dragSource] // what is collected by the semester and course list when you drop it
+    [idCourse, type, dragSource] // what is collected by the semester and course list when you drop it
   );
 
   // Gets the URL to the UW Stout Bulletin for the given Course

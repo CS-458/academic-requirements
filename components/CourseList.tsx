@@ -47,7 +47,7 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
     <div ref={drop} style={{ ...style, backgroundColor }}>
       {isActive === true ? "Release to drop" : ""}
       {courses.map(
-        ({ name, subject, number, semesters, credits, preReq, id, idCategory }, index) => (
+        ({ name, subject, number, semesters, credits, preReq, idCourse, idCategory }, index) => (
           <Course
             name={name}
             subject={subject}
@@ -58,8 +58,11 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
             key={index}
             dragSource={"CourseList"}
             preReq={preReq}
-            id={id}
+            idCourse={idCourse}
             idCategory={idCategory}
+            warningYellowColor={undefined}
+            warningOrangeColor={undefined}
+            warningRedColor={undefined}
           />
         )
       )}

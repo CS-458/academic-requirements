@@ -19,7 +19,7 @@ export interface ContainerProps {
     subject: string;
     preReq: string;
     category: string;
-    id: number;
+    idCourse: number;
     idCategory: number;
     dragSource: string;
   }[];
@@ -262,21 +262,23 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
-      (index: number, item: { id: number; dragSource: string }) => {
-        const { id } = item;
+      (index: number, item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
         const { dragSource } = item;
+        console.log("id", idCourse);
         let movedFromIndex = -1;
         let course: Course | undefined;
         if (dragSource !== "CourseList") {
           // index of semester it was moved from
           movedFromIndex = +dragSource.split(" ")[1];
           course = semesters[movedFromIndex].courses.find(
-            (item: any) => item.id === id
+            (item: any) => item.idCourse === idCourse
           );
         } else {
-          console.log(name, PassedCourseList);
+          console.log(idCourse, PassedCourseList);
           // find the course by name in the master list of all courses
-          course = PassedCourseList.find((item) => item.id === id);
+          course = PassedCourseList.find((item) => item.idCourse === idCourse);
+          console.log(item.idCourse, idCourse, course);
         }
 
         //  Get all course subject and acronyms in current semester (excluding the course to be added)
@@ -373,6 +375,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             );
           }
         }
+        console.log("setting");
         setUpdateWarning({
           course,
           oldSemester: courseAlreadyInSemester(course, index)
@@ -388,15 +391,15 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
-      (item: { id: number; dragSource: string }) => {
-        const { id } = item;
+      (item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
         const { dragSource } = item;
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
           // get the semester index from the drag source
           const movedFromIndex = +dragSource.split(" ")[1];
           const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.id === id
+            (item: any) => item.idCourse === idCourse
           );
           // set the drag source to course list (may be redundant but I'm scared to mess with it)
           found.dragSource = "CourseList";
@@ -427,7 +430,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           let count = 0;
           semesters.forEach((x) =>
             x.courses.forEach((y: any) => {
-              if (y.id === found.id) {
+              if (y.idCourse === found.idCourse) {
                 count++;
               }
             })
@@ -445,6 +448,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           if (!noRemove) {
             removeFromRequirements(found);
           }
+
           setUpdateWarning({
             course: found,
             oldSemester: movedFromIndex,
@@ -465,9 +469,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       );
     }
 
+    console.log(updateWarning.newCheck);
     //  This useEffect is in charge of checking for duplicate courses
     useEffect(() => {
       if (updateWarning.newCheck) {
+        console.log("checking");
         let duplicateFound = false;
         //  Compare each course to courses in future semesters to see if there are any duplicates
         semesters.forEach((semester, index) => {
@@ -601,7 +607,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             pastCourses,
             currCourses
           );
-
+          console.log(satisfied);
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);

@@ -166,22 +166,20 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<
-      Requirement[]
+    Requirement[]
     >([]);
 
     // Requirements that are manipulated
     const [reqList, setReqList] = useState(requirements);
-    console.log("reqList & requirements:", reqList, requirements);
     const [reqGenList, setReqGenList] = useState(requirementsGen);
-    console.log("GEN: reqList & requirements:", reqGenList, requirementsGen);
 
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
       useState<
-        {
-          idString: string;
-          categories: number[];
-        }[]
+      {
+        idString: string;
+        categories: number[];
+      }[]
       >([]);
 
     // Stuff for category dropdown.
@@ -197,10 +195,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       useState<string>(defaultInformationType);
 
     // does not work, but useful for debugging
-    useEffect(() => {
-      setReqList(requirements);
-      setReqGenList(requirementsGen);
-    }, [requirements, requirementsGen]);
+    // useEffect(() => {
+    //   setReqList(requirements);
+    //   setReqGenList(requirementsGen);
+    // }, [requirements, requirementsGen]);
 
     useEffect(() => {
       // Whenever completed courses may update, determine
@@ -300,7 +298,6 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           const newWarningState = getWarning(newSemesterCount);
           // Add the course to the semester
           course.dragSource = "Semester " + index;
-          console.log("mult", coursesInMultipleCategories);
           checkRequirements(course, coursesInMultipleCategories);
           setSemesters(
             update(semesters, {
@@ -390,7 +387,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           newCheck: true
         });
       },
-      [semesters, PassedCourseList]
+      [semesters, coursesInMultipleCategories, reqList, reqGenList, PassedCourseList]
     );
 
     // handle a drop into the course list from a semester
@@ -958,13 +955,16 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       link.href = url;
       link.click();
     }
+
     // get all of the requirements and sort through the course list for courses
     // that can fullfill multiple categories
     useEffect(() => {
+      console.log("running", reqList, requirements);
       // don't proceed if there are no requirements
-      if (reqList === undefined || reqGenList === undefined) { return; }
+      if (requirements === undefined || requirementsGen === undefined) { return; }
       const temp: Requirement[] = [];
-      let tempReqList: Requirement[] = reqList;
+      let tempReqList: Requirement[] = requirements;
+      const tempGen: Requirement[] = requirementsGen;
       tempReqList.forEach((x) => {
         if (
           x.parentCategory === null &&
@@ -990,32 +990,34 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
         }
 
         if (x.parentCategory !== null) {
-          for (let i = 0; i < reqGenList.length; i++) {
-            if (reqGenList[i].idCategory === x.parentCategory) {
-              reqGenList[i].inheritedCredits = x.creditCount;
-              if (reqGenList[i].courseReqs === null) {
-                reqGenList[i].courseReqs = x.courseReqs;
+          for (let i = 0; i < tempGen.length; i++) {
+            if (tempGen[i].idCategory === x.parentCategory) {
+              tempGen[i].inheritedCredits = x.creditCount;
+              if (tempGen[i].courseReqs === null) {
+                tempGen[i].courseReqs = x.courseReqs;
               } else if (
-                reqGenList[i].courseReqs.includes(x.courseReqs) === false
+                tempGen[i].courseReqs.includes(x.courseReqs) === false
               ) {
-                reqGenList[i].courseReqs =
-                  reqGenList[i].courseReqs + "," + x.courseReqs;
+                tempGen[i].courseReqs =
+                  tempGen[i].courseReqs + "," + x.courseReqs;
               }
-              reqGenList[i].inheritedCredits = x.creditCount;
+              tempGen[i].inheritedCredits = x.creditCount;
 
               tempReqList = tempReqList.filter(
                 (item) => item.idCategory !== x.idCategory
               );
             }
           }
-          setReqList(tempReqList);
         }
       });
-      reqGenList.forEach((x) => {
+      console.log("temp", tempReqList);
+      setReqList(tempReqList);
+      tempGen.forEach((x) => {
         if (x.parentCategory === null || x.parentCategory === undefined) {
           temp.push(x);
         }
       });
+      setReqGenList(tempGen);
       setRequirementsDisplay(temp);
 
       // get the courses with more than one category they can satisfy
@@ -1056,6 +1058,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       setCoursesInMultipleCategories(tempArr);
     }, [requirements, requirementsGen, PassedCourseList]);
 
+    useEffect(() => {
+      // setRequirementsDisplay([...requirementsDisplay]);
+      console.log("Update", requirementsDisplay);
+    }, [requirementsDisplay]);
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
       if (coursesInMultipleCategories.length !== 0) {
@@ -1367,28 +1373,48 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       [reqList, reqGenList, requirements, requirementsGen]
     );
 
-    // TODO do the requirements define when a course can be taken twice for credit
-    const checkRequirements = useCallback(
-      (course: Course, multipleCategories: any) => {
-        console.log("requirementsList", reqList);
-        if (reqList) {
-          const reqCheck = new RequirementsProcessing();
-          // check for any major/concentration reqs it can fill
-          const Major = reqCheck.majorReqCheck(course, reqList);
-          setReqList(Major.reqList);
-          if (!Major.addedCourse) {
-            // check if it fills any unfilled gen-ed requirements
-            reqGenList = reqCheck.checkRequirementsGen(
-              course,
-              multipleCategories,
-              reqGenList,
-              PassedCourseList
-            );
-          }
+    // // TODO do the requirements define when a course can be taken twice for credit
+    // const checkRequirements = useCallback(
+    //   (course: Course, multipleCategories: any) => {
+    //     console.log("requirementsList", reqList);
+    //     console.log("mult", multipleCategories);
+    //     if (reqList) {
+    //       const reqCheck = new RequirementsProcessing();
+    //       // check for any major/concentration reqs it can fill
+    //       const Major = reqCheck.majorReqCheck(course, reqList);
+    //       setReqList(Major.reqList);
+    //       if (!Major.addedCourse) {
+    //         // check if it fills any unfilled gen-ed requirements
+    //         reqGenList = reqCheck.checkRequirementsGen(
+    //           course,
+    //           multipleCategories,
+    //           reqGenList,
+    //           PassedCourseList
+    //         );
+    //       }
+    //     }
+    //   },
+    //   [reqList, reqGenList, requirementsDisplay, PassedCourseList]
+    // );
+    function checkRequirements(course: Course, multipleCategories: any): void {
+      console.log("requirementsList", reqList);
+      console.log("mult", multipleCategories);
+      if (reqList) {
+        const reqCheck = new RequirementsProcessing();
+        // check for any major/concentration reqs it can fill
+        const Major = reqCheck.majorReqCheck(course, reqList);
+        setReqList(Major.reqList);
+        if (!Major.addedCourse) {
+          // check if it fills any unfilled gen-ed requirements
+          reqGenList = reqCheck.checkRequirementsGen(
+            course,
+            multipleCategories,
+            reqGenList,
+            PassedCourseList
+          );
         }
-      },
-      [reqList, reqGenList, requirements, requirementsGen, PassedCourseList]
-    );
+      }
+    }
 
     return (
       <div>

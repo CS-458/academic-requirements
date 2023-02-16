@@ -956,12 +956,15 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       link.click();
     }
 
+    // this prevents the requirements from resetting on a page rerender (leaving page and coming back)
+    const [ran, setRan] = useState<boolean>(false);
     // get all of the requirements and sort through the course list for courses
     // that can fullfill multiple categories
     useEffect(() => {
       console.log("running", reqList, requirements);
       // don't proceed if there are no requirements
       if (requirements === undefined || requirementsGen === undefined) { return; }
+      if (ran) { return; };
       const temp: Requirement[] = [];
       let tempReqList: Requirement[] = requirements;
       const tempGen: Requirement[] = requirementsGen;
@@ -1055,6 +1058,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           }
         }
       }
+      setRan(true);
       setCoursesInMultipleCategories(tempArr);
     }, [requirements, requirementsGen, PassedCourseList]);
 
@@ -1374,47 +1378,47 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     );
 
     // // TODO do the requirements define when a course can be taken twice for credit
-    // const checkRequirements = useCallback(
-    //   (course: Course, multipleCategories: any) => {
-    //     console.log("requirementsList", reqList);
-    //     console.log("mult", multipleCategories);
-    //     if (reqList) {
-    //       const reqCheck = new RequirementsProcessing();
-    //       // check for any major/concentration reqs it can fill
-    //       const Major = reqCheck.majorReqCheck(course, reqList);
-    //       setReqList(Major.reqList);
-    //       if (!Major.addedCourse) {
-    //         // check if it fills any unfilled gen-ed requirements
-    //         reqGenList = reqCheck.checkRequirementsGen(
-    //           course,
-    //           multipleCategories,
-    //           reqGenList,
-    //           PassedCourseList
-    //         );
-    //       }
-    //     }
-    //   },
-    //   [reqList, reqGenList, requirementsDisplay, PassedCourseList]
-    // );
-    function checkRequirements(course: Course, multipleCategories: any): void {
-      console.log("requirementsList", reqList);
-      console.log("mult", multipleCategories);
-      if (reqList) {
-        const reqCheck = new RequirementsProcessing();
-        // check for any major/concentration reqs it can fill
-        const Major = reqCheck.majorReqCheck(course, reqList);
-        setReqList(Major.reqList);
-        if (!Major.addedCourse) {
-          // check if it fills any unfilled gen-ed requirements
-          reqGenList = reqCheck.checkRequirementsGen(
-            course,
-            multipleCategories,
-            reqGenList,
-            PassedCourseList
-          );
+    const checkRequirements = useCallback(
+      (course: Course, multipleCategories: any) => {
+        console.log("requirementsList", reqList);
+        console.log("mult", multipleCategories);
+        if (reqList) {
+          const reqCheck = new RequirementsProcessing();
+          // check for any major/concentration reqs it can fill
+          const Major = reqCheck.majorReqCheck(course, reqList);
+          setReqList(Major.reqList);
+          if (!Major.addedCourse) {
+            // check if it fills any unfilled gen-ed requirements
+            reqGenList = reqCheck.checkRequirementsGen(
+              course,
+              multipleCategories,
+              reqGenList,
+              PassedCourseList
+            );
+          }
         }
-      }
-    }
+      },
+      [reqList, reqGenList, requirementsDisplay, PassedCourseList]
+    );
+    // function checkRequirements(course: Course, multipleCategories: any): void {
+    //   console.log("requirementsList", reqList);
+    //   console.log("mult", multipleCategories);
+    //   if (reqList) {
+    //     const reqCheck = new RequirementsProcessing();
+    //     // check for any major/concentration reqs it can fill
+    //     const Major = reqCheck.majorReqCheck(course, reqList);
+    //     setReqList(Major.reqList);
+    //     if (!Major.addedCourse) {
+    //       // check if it fills any unfilled gen-ed requirements
+    //       reqGenList = reqCheck.checkRequirementsGen(
+    //         course,
+    //         multipleCategories,
+    //         reqGenList,
+    //         PassedCourseList
+    //       );
+    //     }
+    //   }
+    // }
 
     return (
       <div>

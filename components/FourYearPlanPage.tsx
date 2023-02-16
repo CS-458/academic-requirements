@@ -1022,7 +1022,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       });
       setReqGenList(tempGen);
       setRequirementsDisplay(temp);
+      setRan(true);
+    }, [requirements, requirementsGen, PassedCourseList]);
 
+    // This use effect creates a list of all courses that can fill more than one requirement
+    useEffect(() => {
       // get the courses with more than one category they can satisfy
       const tempArr: {
         idString: string;
@@ -1058,10 +1062,9 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           }
         }
       }
-      setRan(true);
+      console.log("creating mult", tempArr, PassedCourseList);
       setCoursesInMultipleCategories(tempArr);
-    }, [requirements, requirementsGen, PassedCourseList]);
-
+    }, [PassedCourseList]);
     useEffect(() => {
       // setRequirementsDisplay([...requirementsDisplay]);
       console.log("Update", requirementsDisplay);

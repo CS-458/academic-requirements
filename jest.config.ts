@@ -4,7 +4,18 @@ const createJestConfig = nextJest({
 });
 
 export default createJestConfig({
-  moduleDirectories: ["node_modules", "<rootDir>/"],
+  // moduleDirectories: ["node_modules", "<rootDir>/"],
+  transform: {},
+  // transform: {
+  //   "\\.[jt]sx?$": "babel-jest"
+  // },
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  globals: {
+    "ts-jest": {
+      useESM: true
+    }
+  },
+  // transformIgnorePatterns: ["node_modules/(?!react-dnd/)"],
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
   collectCoverageFrom: [

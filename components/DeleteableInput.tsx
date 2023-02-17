@@ -1,21 +1,29 @@
 import React from "react";
-import { ReactComponent as XSymbol } from "../public/xSymbol.svg";
-import clsx from "clsx";
+import { Delete } from "@mui/icons-material";
+import { Chip, Grid } from "@mui/material";
+import { Box } from "@mui/system";
 
-const DeleteableInput = (props: {
-  text?: string;
-  thinWidth: boolean;
-}): JSX.Element => {
-  console.log("DeletableInp: ", props.text);
-  // <XSymbol className="x" />
+export default function DeleteableInput(props: {
+  courses?: string[];
+  deleteCourse: (value: string) => void;
+}): JSX.Element {
   return (
-    <div
-      className={clsx("container", props.thinWidth && "thin")}
-      key={`${props.text}`}
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(10em, auto))"
+      }}
     >
-      {`${props.text}`}
-    </div>
+      {props.courses?.map((course) => (
+        <Grid key={course}>
+          <Chip
+            label={course}
+            onDelete={() => props.deleteCourse(course)}
+            deleteIcon={<Delete data-testid="delete-icon" />}
+            sx={{ width: "9em", margin: "0.5em" }}
+          />
+        </Grid>
+      ))}
+    </Box>
   );
-};
-
-export default DeleteableInput;
+}

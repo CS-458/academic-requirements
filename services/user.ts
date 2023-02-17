@@ -1,12 +1,12 @@
 export interface UserMajor {
   /// Major ID number
-  major: number;
+  major: { name: string; id: number };
   /// Concentration ID number
-  concentration: number;
+  concentration: { name: string; id: number; fourYearPlan: string | null; };
   /// Whether to load a four year plan
   load_four_year_plan: boolean;
-  /// A list of completed course ID numbers
-  completed_courses: number[];
+  /// A list of completed courses taken
+  completed_courses: string[];
 }
 
 export function userMajor(): UserMajor | undefined {

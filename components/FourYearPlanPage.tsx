@@ -8,7 +8,7 @@ import SearchableDropdown from "./SearchableDropdown";
 import ErrorPopup from "./ErrorPopup";
 import { Requirement } from "./Requirement";
 import RequirementsProcessing from "../entities/requirementsProcessing";
-
+import { userMajor } from "../services/user";
 //  Defines the properties that should be passed in
 export interface ContainerProps {
   PassedCourseList: {
@@ -19,13 +19,13 @@ export interface ContainerProps {
     subject: string;
     preReq: string;
     category: string;
-    id: number;
+    idCourse: number;
     idCategory: number;
     dragSource: string;
   }[];
-  CompletedCourses: string[];
-  selectedMajor: string;
-  selectedConcentration: string;
+  // CompletedCourses: string[];
+  // selectedMajor: string;
+  // selectedConcentration: string;
   requirements: {
     courseCount: number;
     courseReqs: string;
@@ -52,19 +52,19 @@ export interface ContainerProps {
     courseCountTaken: number;
     creditCountTaken: number;
   }[];
-  fourYearPlan?: {};
+  // fourYearPlan?: {};
   importData?: {};
 }
 
 export const FourYearPlanPage: FC<ContainerProps> = memo(
   function FourYearPlanPage({
     PassedCourseList, // The combination of major, concentration, and gen ed
-    CompletedCourses, // List of completed courses in subject-number format
-    selectedMajor,
-    selectedConcentration,
+    // CompletedCourses, // List of completed courses in subject-number format
+    // selectedMajor,
+    // selectedConcentration,
     requirements, // List of requirements for major/concentration
     requirementsGen, // List of requirements for gen-eds
-    fourYearPlan, // The four year plan if requested on Input page, or null
+    // fourYearPlan, // The four year plan if requested on Input page, or null
     importData
   }) {
     const [semesters, setSemesters] = useState<any[]>([
@@ -143,7 +143,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
       useState<Course[]>([]);
     const [warningDuplicateCourses, setWarningDuplicateCourses] = useState<
-      Course[]
+    Course[]
     >([]);
     //  Warning for spring/fall semester
     const [updateWarning, setUpdateWarning] = useState<{
@@ -164,6 +164,8 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       { accepts: [ItemTypes.COURSE], courses: [] }
     ]);
 
+    // fourYearPlan parsed as a JSON
+    const [fourYearPlan, setFourYearPlan] = useState(JSON.parse(userMajor()?.concentration.fourYearPlan));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<
     Requirement[]
@@ -194,16 +196,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     const [displayedInformationType, setDisplayedInformationType] =
       useState<string>(defaultInformationType);
 
-    // does not work, but useful for debugging
-    // useEffect(() => {
-    //   setReqList(requirements);
-    //   setReqGenList(requirementsGen);
-    // }, [requirements, requirementsGen]);
-
     useEffect(() => {
       // Whenever completed courses may update, determine
       // whether we need to display it in the dropdown
-      if (CompletedCourses.length > 0) {
+      if (userMajor()?.completed_courses !== undefined) {
         setInformationTypes((prevInformationTypes) => {
           // the ... is a spread operator and essentially means "take everything up to this point"
           if (!prevInformationTypes.includes("Completed Courses")) {
@@ -212,10 +208,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           return [...prevInformationTypes];
         });
       }
-    }, [CompletedCourses]);
-
-    useEffect(() => {
-      if (fourYearPlan !== undefined) {
+      if (userMajor()?.load_four_year_plan !== false) {
         setInformationTypes((prevInformationTypes) => {
           // the ... is a spread operator and essentially means "take everything up to this point"
           if (!prevInformationTypes.includes("Requirements (Four Year Plan)")) {
@@ -224,7 +217,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           return [...prevInformationTypes];
         });
       }
-    }, [fourYearPlan]);
+    }, []);
 
     useEffect(() => {
       if (importData !== undefined) {
@@ -268,19 +261,23 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
-      (index: number, item: { name: string; dragSource: string }) => {
-        const { name, dragSource } = item;
+      (index: number, item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
+        const { dragSource } = item;
+        console.log("id", idCourse);
         let movedFromIndex = -1;
         let course: Course | undefined;
         if (dragSource !== "CourseList") {
           // index of semester it was moved from
           movedFromIndex = +dragSource.split(" ")[1];
           course = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.idCourse === idCourse
           );
         } else {
+          console.log(idCourse, PassedCourseList);
           // find the course by name in the master list of all courses
-          course = PassedCourseList.find((item) => item.name === name);
+          course = PassedCourseList.find((item) => item.idCourse === idCourse);
+          console.log(item.idCourse, idCourse, course);
         }
 
         //  Get all course subject and acronyms in current semester (excluding the course to be added)
@@ -377,6 +374,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             );
           }
         }
+        console.log("setting");
         setUpdateWarning({
           course,
           oldSemester: courseAlreadyInSemester(course, index)
@@ -392,15 +390,15 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
-      (item: { name: string; dragSource: string }) => {
-        const { name } = item;
+      (item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
         const { dragSource } = item;
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
           // get the semester index from the drag source
           const movedFromIndex = +dragSource.split(" ")[1];
           const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.idCourse === idCourse
           );
           // set the drag source to course list (may be redundant but I'm scared to mess with it)
           found.dragSource = "CourseList";
@@ -431,7 +429,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           let count = 0;
           semesters.forEach((x) =>
             x.courses.forEach((y: any) => {
-              if (y.name === found.name) {
+              if (y.idCourse === found.idCourse) {
                 count++;
               }
             })
@@ -439,7 +437,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           if (count > 1) {
             noRemove = true;
           }
-          CompletedCourses.forEach((x) => {
+          userMajor()?.completed_courses.forEach((x) => {
             const subject = x.split("-")[0];
             const number = x.split("-")[1];
             if (subject === found.subject && number === found.number) {
@@ -449,6 +447,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           if (!noRemove) {
             removeFromRequirements(found);
           }
+
           setUpdateWarning({
             course: found,
             oldSemester: movedFromIndex,
@@ -469,9 +468,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       );
     }
 
+    console.log(updateWarning.newCheck);
     //  This useEffect is in charge of checking for duplicate courses
     useEffect(() => {
       if (updateWarning.newCheck) {
+        console.log("checking");
         let duplicateFound = false;
         //  Compare each course to courses in future semesters to see if there are any duplicates
         semesters.forEach((semester, index) => {
@@ -594,7 +595,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           });
 
           //  Append the already taken courses
-          CompletedCourses.forEach((x) => {
+          userMajor()?.completed_courses.forEach((x) => {
             pastCourses.push(x);
           });
 
@@ -605,7 +606,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             pastCourses,
             currCourses
           );
-
+          console.log(satisfied);
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);
@@ -849,7 +850,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       }
 
       //  Append completed courses to the array
-      CompletedCourses.forEach((x) => {
+      userMajor()?.completed_courses.forEach((x) => {
         previousCourses.push(x);
       });
 
@@ -886,9 +887,9 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     //  JSON Data for the Courses
     const info = {
-      Major: selectedMajor,
-      Concentration: selectedConcentration,
-      "Completed Courses": CompletedCourses,
+      Major: userMajor()?.major.name,
+      Concentration: userMajor()?.concentration.name,
+      "Completed Courses": userMajor()?.completed_courses,
       ClassPlan: {
         Semester1: getSemesterCoursesNames(0),
         Semester2: getSemesterCoursesNames(1),
@@ -1069,20 +1070,23 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       // setRequirementsDisplay([...requirementsDisplay]);
       console.log("Update", requirementsDisplay);
     }, [requirementsDisplay]);
+
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
-      if (coursesInMultipleCategories.length !== 0) {
-        CompletedCourses.forEach((x) => {
+      console.log("reqList", reqList);
+      if (coursesInMultipleCategories.length !== 0 && reqList !== undefined) {
+        userMajor()?.completed_courses.forEach((x) => {
           const a = x.split("-");
           const found = PassedCourseList.find(
-            (item) => item.subject === a[0] && item.number === parseInt(a[1])
+            (item) => item.subject === a[0] && item.number === a[1]
           );
           checkRequirements(found, coursesInMultipleCategories);
         });
         setReqList([...reqList]);
         setReqGenList([...reqGenList]);
         // recheck now that we have multiple category data
-        if (fourYearPlan !== undefined) {
+        if (userMajor()?.load_four_year_plan === true) {
+          console.log("set?", fourYearPlan);
           // fill in the schedule
           semesters.forEach((semester) => {
             const tempArr: Course[] = [];
@@ -1090,6 +1094,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             const courseStringArr =
               fourYearPlan.ClassPlan["Semester" + semester.semesterNumber]
                 .Courses;
+            console.log("courseStringArr", courseStringArr);
             let credits = 0;
             // loop through each course in the list
             courseStringArr.forEach((courseString: String) => {
@@ -1103,10 +1108,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
               PassedCourseList.forEach((x) => {
                 if (
                   x.subject === subject &&
-                  x.number === +number &&
-                  CompletedCourses.find(
+                  x.number === number &&
+                  userMajor()?.completed_courses.find(
                     (y) => y === x.subject + "-" + x.number
-                  ) === null
+                  ) === undefined
                 ) {
                   if (!foundOnce) {
                     // define the course and update it as needed
@@ -1152,7 +1157,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                 if (
                   x.subject === subject &&
                   x.number === number &&
-                  CompletedCourses.find(
+                  userMajor()?.completed_courses.find(
                     (y) => y === x.subject + "-" + x.number
                   ) === null
                 ) {
@@ -1525,15 +1530,15 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                     courses in the following categories in the respective
                     semesters.
                   </p>
-                  {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
-                    if (fourYearPlan.ClassPlan[key].Requirements.length > 0) {
+                  { Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
+                    if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
                       return (
                         <div style={{ margin: "5px" }} key={index}>
                           <p>{key}</p>
                           <p
                             style={{ marginLeft: "10px", marginBottom: "25px" }}
                           >
-                            {fourYearPlan.ClassPlan[
+                            {fourYearPlan?.ClassPlan[
                               key
                             ].Requirements.toString()}
                           </p>
@@ -1548,7 +1553,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                   <p className="right-information-box-description">
                     These are courses you marked as complete.
                   </p>
-                  {CompletedCourses?.map((completedCourse, index) => {
+                  {userMajor()?.completed_courses?.map((completedCourse, index) => {
                     return (
                       <div className="info-box-completed-course">
                         <a

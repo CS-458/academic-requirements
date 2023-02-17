@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
 import { masterCourseList, courseCategoryRequirements, genedCategoryRequirements } from "../services/academic";
 import { userMajor } from "../services/user";
-import { Course } from "../entities/four_year_plan";
+import { CourseType } from "../entities/four_year_plan";
 
 const PassThrough = (props: {
   importData?: {};
@@ -75,16 +75,11 @@ const PassThrough = (props: {
   fourYearPlan?: {};
 }): JSX.Element => {
   // Functions and variables for controlling an error popup
-  const [visibility, setVisibility] = useState(false);
-  const popupCloseHandler = (): void => {
-    setVisibility(false);
-  };
-  const [error] = useState("");
 
   // major and minor come from user service
-  const courseList: Course[] = masterCourseList(userMajor()?.major, userMajor()?.concentration);
+  const courseList: CourseType[] = masterCourseList(userMajor()?.major.id, userMajor()?.concentration.id);
 
-  const requirements: Requirement[] = courseCategoryRequirements(userMajor()?.concentration).data;
+  const requirements: Requirement[] = courseCategoryRequirements(userMajor()?.concentration.id).data;
   const requirementsGen: Requirement[] = genedCategoryRequirements().data;
 
   return (

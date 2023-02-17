@@ -1,23 +1,23 @@
 import { useQuery, UseQueryResult } from "react-query";
 import {
-  Concentration,
-  Course,
-  Major,
-  Requirement
+  ConcentrationType,
+  CourseType,
+  MajorType,
+  Requirements
 } from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 
 // TODO: use fetchApi to make request to actual API
 
 // Get and cache the list of majors
-export function majorList(): UseQueryResult<Major[]> {
+export function majorList(): UseQueryResult<MajorType[]> {
   return useQuery("Major List", async () => await fetchApi(`/api/major`));
 }
 
 // Get and cache the list of concentrations
 export function concentrationList(
   majorId: number | undefined
-): UseQueryResult<Concentration[] | null> {
+): UseQueryResult<ConcentrationType[] | null> {
   return useQuery(
     ["concentrations", majorId],
     async () => await fetchApi(`/api/concentration?majid=${majorId}`)
@@ -42,7 +42,7 @@ export function courseNumbers(
 // Get and cache the list of major courses
 export function majorCourseList(
   majorId: number | undefined
-): UseQueryResult<Course[] | null> {
+): UseQueryResult<CourseType[] | null> {
   return useQuery(
     ["majorCourseList", majorId],
     async () => await fetchApi(`/api/courses/major?majid=${majorId}`)
@@ -52,7 +52,7 @@ export function majorCourseList(
 // Get and cache the list of concentration courses
 export function concentrationCourseList(
   conId: number | undefined
-): UseQueryResult<Course[] | null> {
+): UseQueryResult<CourseType[] | null> {
   return useQuery(
     ["concentrationCourseList", conId],
     async () => await fetchApi(`/api/courses/concentration?conid=${conId}`)
@@ -60,14 +60,14 @@ export function concentrationCourseList(
 }
 
 // Get and cache the list of gened courses
-export function genedCourseList(): UseQueryResult<Course[]> {
+export function genedCourseList(): UseQueryResult<CourseType[]> {
   return useQuery("genedCourseList", async () => await fetchApi(`/api/courses/geneds`));
 }
 
 export function masterCourseList(
   majId: number | undefined,
   conId: number | undefined
-): Course[] {
+): CourseType[] {
   const c1 = majorCourseList(majId).data;
   const c2 = concentrationCourseList(conId).data;
   const c3 = genedCourseList().data;

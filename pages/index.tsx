@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InputPage from "../components/InputPage";
 import ErrorPopup from "../components/ErrorPopup";
-
+import { MajorType, ConcentrationType } from "../entities/four_year_plan";
 function App(): JSX.Element {
   // majorData is an array of major objects returned from the database
   // const [majorData, setMajorData] = useState<any[]>([]);
@@ -26,8 +26,8 @@ function App(): JSX.Element {
   // genEdCourseData is an array of the course object for general education courses
   const [_3, setGenEdCourseData] = useState([]);
 
-  const [major, setMajor] = useState("");
-  const [concentration, setConcentration] = useState<string | null>("");
+  const [major, setMajor] = useState<MajorType>();
+  const [concentration, setConcentration] = useState<ConcentrationType | null>();
 
   // requirements for the concentration
   const [_4, setRequirementsData] = useState([]);
@@ -101,39 +101,39 @@ function App(): JSX.Element {
 
   // Runs on startup
   // Get all the data that doesn't need user input
-  useEffect(() => {
-    // fetch("/api/major") // create similar
-    //   .then(async (res) => await res.json())
-    //   .then((result) => {
-    //     // Sets majorData to result from database query
-    //     setMajorData(result);
-    //     // Gets the 'name' of the major objects
-    //     const temp: any[] = [];
-    //     result.forEach((x: any) => {
-    //       temp.push(x.name);
-    //     });
-    //     // Sets majorDisplayData to the 'name' of the majors
-    //     setMajorDisplayData(temp);
-    //   })
-    //   .catch(() => {});
-    // fetch("/api/subjects")
-    //   .then(async (res) => await res.json())
-    //   .then((result) => {
-    //     const temp: any[] = [];
-    //     result.forEach((x: any) => {
-    //       temp.push(x.subject);
-    //     });
-    //     // get Course subject data, pass in the result
-    //     setCourseSubjects(temp);
-    //   })
-    //   .catch(() => {});
-    // fetch("/api/courses/geneds")
-    //   .then(async (res) => await res.json())
-    //   .then((result) => {
-    //     setGenEdCourseData(result);
-    //   })
-    //   .catch(() => {});
-  }, []);
+  // useEffect(() => {
+  // fetch("/api/major") // create similar
+  //   .then(async (res) => await res.json())
+  //   .then((result) => {
+  //     // Sets majorData to result from database query
+  //     setMajorData(result);
+  //     // Gets the 'name' of the major objects
+  //     const temp: any[] = [];
+  //     result.forEach((x: any) => {
+  //       temp.push(x.name);
+  //     });
+  //     // Sets majorDisplayData to the 'name' of the majors
+  //     setMajorDisplayData(temp);
+  //   })
+  //   .catch(() => {});
+  // fetch("/api/subjects")
+  //   .then(async (res) => await res.json())
+  //   .then((result) => {
+  //     const temp: any[] = [];
+  //     result.forEach((x: any) => {
+  //       temp.push(x.subject);
+  //     });
+  //     // get Course subject data, pass in the result
+  //     setCourseSubjects(temp);
+  //   })
+  //   .catch(() => {});
+  //   fetch("/api/courses/geneds")
+  //     .then(async (res) => await res.json())
+  //     .then((result) => {
+  //       setGenEdCourseData(result);
+  //     })
+  //     .catch(() => {});
+  // }, []);
 
   // Runs whenever a course subject has been selected
   // Gets the array of course number for that subject from the API
@@ -172,19 +172,19 @@ function App(): JSX.Element {
   // Gets the courses related to the 'idMajor' of the selected major
   // Runs when majorCode is updated
   // useEffect(() => {
-  //   fetch(`/api/courses/major?majid=${majorCode}`)
+  //   fetch(`/api/courses/major?majid=${major?.concentrationId}`)
   //     .then(async (res) => await res.json())
   //     .then((result) => {
   //       // Sets majorCourseData to the result from the query
   //       setMajorCourseData(result);
   //     })
   //     .catch(console.error);
-  // }, [majorCode]);
+  // }, [major]);
 
   // Gets the courses related to the 'idConcentration' of the selected concentration
   // Runs when concentrationCode is updated
   // useEffect(() => {
-  //   fetch(`/api/courses/concentration?conid=${concentrationCode}`)
+  //   fetch(`/api/courses/concentration?conid=${concentration?.idConcentration}`)
   //     .then(async (res) => await res.json())
   //     .then((result) => {
   //       console.log("result", result);
@@ -192,11 +192,11 @@ function App(): JSX.Element {
   //       setConcentrationCourseData(result);
   //     })
   //     .catch(console.error);
-  // }, [concentrationCode]);
+  // }, [concentration?.idConcentration]);
 
   // Gets the requirements related to the major/concentration
   // useEffect(() => {
-  //   fetch(`/api/requirements?conid=${concentrationCode}`)
+  //   fetch(`/api/requirements?conid=${concentration?.id}`)
   //     .then(async (res) => await res.json())
   //     .then((result) => {
   //       // Sets concentrationCourseData to the result from the query
@@ -204,18 +204,18 @@ function App(): JSX.Element {
   //       setRequirementsData(result);
   //     })
   //     .catch(console.error);
-  // }, [concentrationCode]);
+  // }, [concentration]);
 
   // Gets the requirements related to the major/concentration
   // useEffect(() => {
-  //   fetch(`/api/requirements/gen?conid=${concentrationCode}`)
+  //   fetch(`/api/requirements/gen?conid=${concentration?.id}`)
   //     .then(async (res) => await res.json())
   //     .then((result) => {
   //       // Sets concentrationCourseData to the result from the query
   //       setRequirementsGenData(result);
   //     })
   //     .catch(console.error);
-  // }, [concentrationCode]);
+  // }, [concentration]);
 
   // Gets the 'idMajor' relating to the 'name' of the selected major
   // Runs when major is updated
@@ -255,14 +255,14 @@ function App(): JSX.Element {
         .then(async (res) => await res.json())
         .then((result) => {
           // Sets concentrationCourseData to the result from the query
-          setMajorCode(result[0].idMajor);
+          setMajor(result[0]);
         })
         .catch(console.error);
       fetch(`/api/concentrationID?cname=${data.Concentration}`)
         .then(async (res) => await res.json())
         .then((result) => {
           // Sets concentrationCourseData to the result from the query
-          setConcentrationCode(result[0].idConcentration);
+          setConcentration(result[0]);
         })
         .catch(console.error);
     }
@@ -271,17 +271,17 @@ function App(): JSX.Element {
   return (
     <div>
       <InputPage
-        onClickGenerate={generateSchedule}
+        // onClickGenerate={generateSchedule}
         // onClickMajor={selectMajor}
         // onClickConcentration={selectConcentration}
         // concentrationList={concentrationData}
         // majorList={majorData}
         // majorDisplayList={majorDisplayData}
         // concentrationDisplayList={concentrationDisplayData}
-        takenCourses={coursesTaken}
-        setTakenCourses={setCoursesTaken}
-        setUseFourYearPlan={setUseFourYearPlan}
-        concentrationHasFourYearPlan={fourYearPlan != null}
+        // takenCourses={coursesTaken}
+        // setTakenCourses={setCoursesTaken}
+        // setUseFourYearPlan={setUseFourYearPlan}
+        // concentrationHasFourYearPlan={fourYearPlan != null}
         // courseSubjectAcronyms={courseSubjects}
         // setSelectedCourseSubject={setSelectedCourseSubject}
         // courseSubjectNumbers={courseSubjectNumbers}

@@ -2,25 +2,9 @@ import type { FC } from "react";
 import React, { memo } from "react";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
+import { DragCourseType } from "../entities/four_year_plan";
 
-// defines the expected course properties
-export interface CourseProps {
-  credits: number;
-  name: string;
-  subject: string;
-  number: number;
-  semesters: string;
-  type: string;
-  preReq: string;
-  dragSource: string;
-  warningYellowColor?: boolean;
-  warningOrangeColor?: boolean;
-  warningRedColor?: boolean;
-  id: number;
-  idCategory: number;
-}
-
-export const Course: FC<CourseProps> = memo(function Course({
+export const Course: FC<DragCourseType> = memo(function Course({
   name,
   subject,
   number,
@@ -32,7 +16,7 @@ export const Course: FC<CourseProps> = memo(function Course({
   warningYellowColor,
   warningOrangeColor,
   warningRedColor,
-  id,
+  idCourse,
   idCategory
 }) {
   // defines the drag action
@@ -51,14 +35,14 @@ export const Course: FC<CourseProps> = memo(function Course({
         warningYellowColor,
         warningOrangeColor,
         warningRedColor,
-        id,
+        idCourse,
         idCategory
       },
       collect: (monitor: any) => ({
-        opacity: monitor.isDragging() !== null ? 0.4 : 1
+        opacity: monitor.isDragging() !== false ? 0.8 : 1
       })
     }),
-    [name, type, dragSource] // what is collected by the semester and course list when you drop it
+    [idCourse, type, dragSource] // what is collected by the semester and course list when you drop it
   );
 
   // Gets the URL to the UW Stout Bulletin for the given Course
@@ -79,14 +63,14 @@ export const Course: FC<CourseProps> = memo(function Course({
       data-testid="course"
       className={clsx(
         "CourseText",
-        warningYellowColor === true &&
-          warningRedColor !== true &&
-          warningOrangeColor !== true &&
+        warningYellowColor !== undefined &&
+          warningRedColor === undefined &&
+          warningOrangeColor === undefined &&
           "CourseWarningYellow",
-        warningOrangeColor === true &&
-          warningRedColor !== true &&
+        warningOrangeColor !== undefined &&
+          warningRedColor === undefined &&
           "CourseWarningOrange",
-        warningRedColor === true && "CourseWarningRed"
+        warningRedColor !== undefined && "CourseWarningRed"
       )}
     >
       {/* {isDropped ? <s>{name}</s> : name}  */}

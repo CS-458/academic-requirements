@@ -1,34 +1,46 @@
-import { Autocomplete, Select, TextField } from "@mui/material";
-import React /* { useEffect, useState } */ from "react"; // added useEffect, useState portion.
-// Below majorInfo added as part of template for database connection.
-// majorData is an array of major objects returned from the database
-// const [majorData, setMajorData] = useState([]);
-
-// majorDisplayData is an array of the 'name' of the major objects for display purposes
-// const [majorDisplayData, setMajorDisplayData] = useState([]);
+import { Autocomplete, TextField } from "@mui/material";
+import React from "react";
 
 // Note: drop down often key-value pair behind scenes.
 export default function SearchableDropdown<T>(props: {
-  options: Array<{ label: string; value: T }>;
+  options: Array<{ label: string; value: T } | T>;
   label: string;
+  disabled?: boolean;
   onSelectOption: (option?: T) => void;
 }): JSX.Element {
-  // Runs a debug message with the selected major
-  // and passes the name of the selected class to onSelectOption
-  function onChangeOption(
-    _a: any,
-    option: { label: string; value: T } | null
-  ): void {
-    props.onSelectOption(option?.value);
-  }
   return (
     <Autocomplete
       disablePortal
-      options={props.options}
-      onChange={onChangeOption}
+      disabled={props.disabled === true}
+      autoHighlight
+      options={props.options.map((v) => {
+        if (
+          typeof v === "object" &&
+          v != null &&
+          "label" in v &&
+          "value" in v
+        ) {
+          return v;
+        } else {
+          return {
+            label: `${v}`,
+            value: v
+          };
+        }
+      })}
+      onChange={(_a, value) => {
+        props.onSelectOption(value?.value);
+      }}
+      sx={{
+        "& .MuiAutocomplete-inputRoot": { paddingRight: "10px!important" },
+        width: "100%",
+        maxWidth: 400,
+        pt: 6,
+        pl: 3,
+        textAlign: "center"
+      }}
       isOptionEqualToValue={(a, b) => a.value === b.value}
       renderInput={(params) => <TextField {...params} label={props.label} />}
     />
   );
-  // TODO: Select element
 }

@@ -14,6 +14,7 @@ rules:
   semi: [warn, always]
   quotes: [warn, double]
   multiline-ternary: 0
+  array-callback-return: off
   "@typescript-eslint/quotes": [warn, double]
   "@typescript-eslint/semi": [warn, always]
   "@typescript-eslint/space-before-function-paren":
@@ -26,6 +27,8 @@ rules:
   "@typescript-eslint/no-unused-vars": warn
   "@typescript-eslint/restrict-plus-operands": off
   "@typescript-eslint/array-type": off
+  "@typescript-eslint/explicit-function-return-type": warn
+  "@next/next/no-img-element": off
 ignorePatterns:
   - "next-env.d.ts"
 parserOptions:

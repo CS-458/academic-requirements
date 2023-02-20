@@ -80,6 +80,7 @@ export const Semester: FC<SemesterProps> = function Semester({
           name={course.name}
           subject={course.subject}
           number={course.number}
+          idCourse={course.idCourse}
           semesters={course.semesters}
           type={ItemTypes.COURSE}
           credits={course.credits}

@@ -19,7 +19,7 @@ export interface ContainerProps {
     subject: string;
     preReq: string;
     category: string;
-    id: number;
+    idCourse: number;
     idCategory: number;
     dragSource: string;
   }[];
@@ -137,8 +137,6 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     // The visibility of the error message
     const [visibility, setVisibility] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-    // A master list of all courses for the major, concentration, and gen eds
-    const [courses, setCourses] = useState<Course[]>(PassedCourseList);
     //  A list of courses that should have a warning color on them
     const [warningPrerequisiteCourses, setWarningPrerequisiteCourses] =
       useState<Course[]>([]);
@@ -168,7 +166,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<
-      Requirement[]
+    Requirement[]
     >([]);
 
     // Requirements that are manipulated
@@ -178,10 +176,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
       useState<
-        {
-          idString: string;
-          categories: number[];
-        }[]
+      {
+        idString: string;
+        categories: number[];
+      }[]
       >([]);
 
     // Stuff for category dropdown.
@@ -264,20 +262,23 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
 
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
-      (index: number, item: { name: string; dragSource: string }) => {
-        const { name } = item;
+      (index: number, item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
         const { dragSource } = item;
+        console.log("id", idCourse);
         let movedFromIndex = -1;
-        let course;
+        let course: Course | undefined;
         if (dragSource !== "CourseList") {
           // index of semester it was moved from
           movedFromIndex = +dragSource.split(" ")[1];
           course = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.idCourse === idCourse
           );
         } else {
+          console.log(idCourse, PassedCourseList);
           // find the course by name in the master list of all courses
-          course = courses.find((item) => item.name === name);
+          course = PassedCourseList.find((item) => item.idCourse === idCourse);
+          console.log(item.idCourse, idCourse, course);
         }
 
         //  Get all course subject and acronyms in current semester (excluding the course to be added)
@@ -374,6 +375,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             );
           }
         }
+        console.log("setting");
         setUpdateWarning({
           course,
           oldSemester: courseAlreadyInSemester(course, index)
@@ -384,20 +386,20 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           newCheck: true
         });
       },
-      [semesters]
+      [semesters, PassedCourseList]
     );
 
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
-      (item: { name: string; dragSource: string }) => {
-        const { name } = item;
+      (item: { idCourse: number; dragSource: string }) => {
+        const { idCourse } = item;
         const { dragSource } = item;
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
           // get the semester index from the drag source
           const movedFromIndex = +dragSource.split(" ")[1];
           const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.name === name
+            (item: any) => item.idCourse === idCourse
           );
           // set the drag source to course list (may be redundant but I'm scared to mess with it)
           found.dragSource = "CourseList";
@@ -428,7 +430,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           let count = 0;
           semesters.forEach((x) =>
             x.courses.forEach((y: any) => {
-              if (y.name === found.name) {
+              if (y.idCourse === found.idCourse) {
                 count++;
               }
             })
@@ -446,6 +448,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           if (!noRemove) {
             removeFromRequirements(found);
           }
+
           setUpdateWarning({
             course: found,
             oldSemester: movedFromIndex,
@@ -455,7 +458,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
           });
         }
       },
-      [courses, semesters]
+      [PassedCourseList, semesters]
     );
 
     //  This function checks if the course that was moved is in a "valid" fall or spring semester
@@ -466,9 +469,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       );
     }
 
+    console.log(updateWarning.newCheck);
     //  This useEffect is in charge of checking for duplicate courses
     useEffect(() => {
       if (updateWarning.newCheck) {
+        console.log("checking");
         let duplicateFound = false;
         //  Compare each course to courses in future semesters to see if there are any duplicates
         semesters.forEach((semester, index) => {
@@ -602,7 +607,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             pastCourses,
             currCourses
           );
-
+          console.log(satisfied);
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);
@@ -987,7 +992,9 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
               reqGenList[i].inheritedCredits = x.creditCount;
               if (reqGenList[i].courseReqs === null) {
                 reqGenList[i].courseReqs = x.courseReqs;
-              } else if (reqGenList[i].courseReqs.includes(x.courseReqs) === false) {
+              } else if (
+                reqGenList[i].courseReqs.includes(x.courseReqs) === false
+              ) {
                 reqGenList[i].courseReqs =
                   reqGenList[i].courseReqs + "," + x.courseReqs;
               }
@@ -1065,7 +1072,8 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             const tempArr: Course[] = [];
             // Get the semester data from the json
             const courseStringArr =
-              fourYearPlan.ClassPlan["Semester" + semester.semesterNumber].Courses;
+              fourYearPlan.ClassPlan["Semester" + semester.semesterNumber]
+                .Courses;
             let credits = 0;
             // loop through each course in the list
             courseStringArr.forEach((courseString: String) => {
@@ -1221,7 +1229,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
               const courseReqArr = reqGenList[i].courseReqs.split(",");
               let validCourse = false;
               courseReqArr.forEach((item: any) => {
-                const found = reqCheck.courseInListCheck(item, [courseString], undefined);
+                const found = reqCheck.courseInListCheck(
+                  item,
+                  [courseString],
+                  undefined
+                );
                 if (found.returnValue) {
                   validCourse = true;
                 }
@@ -1422,7 +1434,10 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                 className="course-box-header"
               >
                 <SearchableDropdown
-                  options={categories}
+                  options={categories.map((c) => ({
+                    label: c,
+                    value: c
+                  }))}
                   label={null}
                   onSelectOption={selectedCategory} // If option chosen, selected Category activated.
                   showDropdown={true}
@@ -1471,16 +1486,16 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
                     semesters.
                   </p>
                   {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
-                    if (
-                      fourYearPlan.ClassPlan[key].Requirements.length > 0
-                    ) {
+                    if (fourYearPlan.ClassPlan[key].Requirements.length > 0) {
                       return (
                         <div style={{ margin: "5px" }} key={index}>
                           <p>{key}</p>
                           <p
                             style={{ marginLeft: "10px", marginBottom: "25px" }}
                           >
-                            {fourYearPlan.ClassPlan[key].Requirements.toString()}
+                            {fourYearPlan.ClassPlan[
+                              key
+                            ].Requirements.toString()}
                           </p>
                         </div>
                       );

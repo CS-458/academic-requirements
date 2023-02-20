@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "npx eslint .",
-    "test": "jest --coverage",
-    "test:ci": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest",
+    "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest",
     "eslint:github-action": "next lint"
   },
   "dependencies": {

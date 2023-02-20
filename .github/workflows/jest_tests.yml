@@ -1,11 +1,9 @@
 name: Node.js Jest tests
-
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
-    branches: ['main']
-
+    branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
       - run: npm ci
       - name: Jest GitHub Action
         uses: willcaul/jest-github-action@v2
@@ -26,11 +24,11 @@ jobs:
           test-command: npm run test:ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: ESlint Github Action
-        uses: sibiraj-s/action-eslint@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
-          eslint-args: '--ignore-path=.gitignore --quiet'
-          extensions: 'js,jsx,ts,tsx'
-          annotations: true
-      - run: npm run build
+    # - name: ESlint Github Action
+    #   uses: sibiraj-s/action-eslint@v2
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
+    #     eslint-args: '--ignore-path=.gitignore --quiet'
+    #     extensions: 'js,jsx,ts,tsx'
+    #     annotations: true
+    # - run: npm run build

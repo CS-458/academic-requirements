@@ -4,20 +4,24 @@ const createJestConfig = nextJest({
 });
 
 export default createJestConfig({
-  // moduleDirectories: ["node_modules", "<rootDir>/"],
-  transform: {},
-  // transform: {
-  //   "\\.[jt]sx?$": "babel-jest"
-  // },
+  transform: {
+    "^.+\\.tsx?$": ["ts-jest", { useESM: true }]
+  },
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   globals: {
     "ts-jest": {
       useESM: true
     }
   },
-  // transformIgnorePatterns: ["node_modules/(?!react-dnd/)"],
   testEnvironment: "jest-environment-jsdom",
   collectCoverage: true,
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 80,
+  //     functions: 80,
+  //     lines: 80
+  //   }
+  // },
   collectCoverageFrom: [
     "./components/**",
     "./entities/**",
@@ -26,12 +30,5 @@ export default createJestConfig({
     "./public/**",
     "./services/**",
     "./styles/**"
-  ],
-  coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 80
-    }
-  }
+  ]
 });

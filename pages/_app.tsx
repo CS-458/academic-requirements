@@ -10,12 +10,15 @@ import React from "react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import secrets from "../secrets.json";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [queryClient] = React.useState(() => new QueryClient());
 
   return (
     <>
+    <GoogleOAuthProvider clientId={secrets.client.id}>
       <QueryClientProvider client={queryClient}>
         <Hydrate
           state={
@@ -30,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           </DndProvider>
         </Hydrate>
       </QueryClientProvider>
+    </GoogleOAuthProvider>
     </>
   );
 }

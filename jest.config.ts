@@ -4,7 +4,9 @@ const createJestConfig = nextJest({
 });
 
 export default createJestConfig({
-  transform: {},
+  transform: {
+    "^.+\\.tsx?$": ["ts-jest", { useESM: true }]
+  },
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   globals: {
     "ts-jest": {

@@ -23,7 +23,7 @@ jobs:
       - name: Jest GitHub Action
         uses: willcaul/jest-github-action@v2
         with:
-          test-command: node --experimental-vm-modules .\node_modules\jest\bin\jest.js:ci
+          test-command: npm run test:ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: ESlint Github Action

@@ -81,7 +81,7 @@ export function masterCourseList(
 // Get and cache the list of category requirements
 export function courseCategoryRequirements(
   conId: number | undefined
-): UseQueryResult<Requirements[] | null> {
+): UseQueryResult<Requirement[] | null> {
   return useQuery(
     ["courseCategoryRequirements", conId],
     async () => await fetchApi(`/api/requirements?conid=${conId}`)
@@ -89,6 +89,6 @@ export function courseCategoryRequirements(
 }
 
 // Get and cache the list of gened requirements
-export function genedCategoryRequirements(): UseQueryResult<Requirements[]> {
+export function genedCategoryRequirements(): UseQueryResult<Requirement[]> {
   return useQuery("genedRequirements", async () => await fetchApi(`/api/requirements/gen`));
 }

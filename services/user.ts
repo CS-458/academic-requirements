@@ -2,7 +2,7 @@ export interface UserMajor {
   /// Major ID number
   major: { name: string; id: number };
   /// Concentration ID number
-  concentration: { name: string; id: number };
+  concentration: { name: string; id: number; fourYearPlan: string | null; };
   /// Whether to load a four year plan
   load_four_year_plan: boolean;
   /// A list of completed courses taken
@@ -12,7 +12,7 @@ export interface UserMajor {
 export function userMajor(): UserMajor | undefined {
   const data = window.localStorage.getItem("user_major");
   if (data !== null) {
-    console.log(data);
+    // console.log(data);
     return JSON.parse(data);
   } else {
     return undefined;

@@ -1071,10 +1071,11 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
       console.log("Update", requirementsDisplay);
     }, [requirementsDisplay]);
 
+    const [alreadySetThisData, setAlreadySetThisData] = useState(false);
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
       console.log("reqList", reqList);
-      if (coursesInMultipleCategories.length !== 0 && reqList !== undefined) {
+      if (coursesInMultipleCategories.length !== 0 && reqList !== undefined && !alreadySetThisData) {
         userMajor()?.completed_courses.forEach((x) => {
           const a = x.split("-");
           const found = PassedCourseList.find(
@@ -1183,6 +1184,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
             semester.Warning = newWarningState;
           });
         }
+        setAlreadySetThisData(true);
       }
     }, [coursesInMultipleCategories]);
 

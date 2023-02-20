@@ -86,9 +86,7 @@ const PassThrough = (props: {
     <div>
       {props.showing && (
         <div className="screen">
-          <div className="four-year-plan" data-testid="scheduleContent">
-            <h1>Academic Planner</h1>
-          </div>
+          <br/>
           <div className="page">
             <FourYearPlanPage
               // PassedCourseList={props.majorCourseList

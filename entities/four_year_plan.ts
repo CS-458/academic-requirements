@@ -92,12 +92,12 @@ export interface SemesterProps {
   accept: TargetType; // makes it a drop target, don't worry about it
   onDrop: (item: any) => void; // function for when an item is dropped
   semesterNumber: number; // the number of the semester
-  courses: DragCourseType[]; // a list of courses in the semester
+  courses: CourseType[]; // a list of courses in the semester
   SemesterCredits: number; // total credits of all courses in semester
   Warning: string; // credit warning (low or high)
-  warningPrerequisiteCourses: DragCourseType[]; // list of courses in with prereq issues
-  warningFallvsSpringCourses: DragCourseType[]; // list of courses with semester issues
-  warningDuplicateCourses: DragCourseType[]; // list of courses in more than one semester
+  warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
+  warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
+  warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
 }
 
 // Defines the properties of a semester object

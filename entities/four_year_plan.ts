@@ -108,3 +108,11 @@ export interface SemesterType {
   SemesterCredits: number, // number of credits in the semester
   Warning: string // credit warning (high or low)
 }
+
+//  Defines the properties that should be passed in to the fourYearPlan page
+export interface FourYearPlanType {
+  PassedCourseList: CourseType[];
+  requirements: RequirementComponentType[];
+  requirementsGen: RequirementComponentType[];
+  importData?: {};
+}

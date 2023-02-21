@@ -13,8 +13,8 @@ const PassThrough = (props: {
   // major and minor come from user service
   const courseList: CourseType[] = masterCourseList(userMajor()?.major.id, userMajor()?.concentration.idConcentration);
 
-  const requirements: RequirementsType = courseCategoryRequirements(userMajor()?.concentration.idConcentration).data;
-  const requirementsGen: RequirementsType = genedCategoryRequirements().data;
+  const requirements: RequirementsType | null | undefined = courseCategoryRequirements(userMajor()?.concentration.idConcentration).data;
+  const requirementsGen: RequirementsType | null | undefined = genedCategoryRequirements().data;
 
   return (
     <div>

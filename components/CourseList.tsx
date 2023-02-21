@@ -59,9 +59,9 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
             preReq={preReq}
             idCourse={idCourse}
             idCategory={idCategory}
-            warningYellowColor={false}
-            warningOrangeColor={false}
-            warningRedColor={false}
+            warningYellowColor={undefined}
+            warningOrangeColor={undefined}
+            warningRedColor={undefined}
           />
         )
       )}

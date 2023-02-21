@@ -37,9 +37,9 @@ export interface DragCourseType {
   semesters: string, // see CourseType
   preReq: string, // see CourseType
   dragSource: string, // see CourseType
-  warningYellowColor: boolean, // If the course is in multiple semesters
-  warningOrangeColor: boolean, // If the course is in the wrong semester fall vs spring
-  warningRedColor: boolean, // If the course has a prereq error
+  warningYellowColor: number | undefined, // If the course is in multiple semesters
+  warningOrangeColor: number | undefined, // If the course is in the wrong semester fall vs spring
+  warningRedColor: number | undefined, // If the course has a prereq error
   idCourse: number, // see CourseType
   idCategory: number // see CourseType
 }
@@ -107,4 +107,12 @@ export interface SemesterType {
   courses: CourseType[], // list of courses in semester
   SemesterCredits: number, // number of credits in the semester
   Warning: string // credit warning (high or low)
+}
+
+//  Defines the properties that should be passed in to the fourYearPlan page
+export interface FourYearPlanType {
+  PassedCourseList: CourseType[];
+  requirements: RequirementComponentType[] | null | undefined;
+  requirementsGen: RequirementComponentType[] | null | undefined;
+  importData?: {};
 }

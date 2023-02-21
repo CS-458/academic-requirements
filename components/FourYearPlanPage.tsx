@@ -9,16 +9,9 @@ import ErrorPopup from "./ErrorPopup";
 import { Requirement } from "./Requirement";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import { CourseType, RequirementComponentType, SemesterType } from "../entities/four_year_plan";
-//  Defines the properties that should be passed in
-export interface ContainerProps {
-  PassedCourseList: CourseType[];
-  requirements: RequirementComponentType[];
-  requirementsGen: RequirementComponentType[];
-  importData?: {};
-}
+import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType } from "../entities/four_year_plan";
 
-export const FourYearPlanPage: FC<ContainerProps> = memo(
+export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
     PassedCourseList, // The combination of major, concentration, and gen ed
     requirements, // List of requirements for major/concentration
@@ -108,7 +101,7 @@ export const FourYearPlanPage: FC<ContainerProps> = memo(
     });
 
     // fourYearPlan parsed as a JSON
-    const [fourYearPlan, setFourYearPlan] = useState(JSON.parse(userMajor()?.concentration.fourYearPlan));
+    const [fourYearPlan, setFourYearPlan] = useState<{} | undefined>(JSON.parse(userMajor()?.concentration?.fourYearPlan));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<RequirementComponentType[]>([]);
 

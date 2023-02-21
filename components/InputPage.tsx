@@ -39,8 +39,8 @@ export default function InputPage(props: {
   const [selectedNumber, setSelectedNumber] = useState<string | undefined>();
 
   // Used for clearing the displayed text in the dropdown components
-  const [resetConcentration, setResetConcentration] = useState(false);
-  const [resetNumber, setResetNumber] = useState(false);
+  const [resetConcentration, setResetConcentration] = useState(0);
+  const [resetNumber, setResetNumber] = useState(0);
 
   // When a new subject is selected, reset the selected number back to null
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function InputPage(props: {
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string
-  ) => {
+  ): void => {
     if (reason === "clickaway") {
       return;
     }
@@ -87,7 +87,7 @@ export default function InputPage(props: {
         throwError("This course has already been added", "error");
       }
     }
-    setResetNumber(!resetNumber);
+    setResetNumber(resetNumber + 1);
     setSelectedNumber(undefined);
   }
 
@@ -197,7 +197,7 @@ export default function InputPage(props: {
                 setConcentration(undefined);
                 setCanMoveOn(false);
                 setUserMajor(undefined);
-                setResetConcentration(!resetConcentration);
+                setResetConcentration(resetConcentration + 1);
               }
             }}
           />
@@ -251,7 +251,7 @@ export default function InputPage(props: {
             label="Course Subject"
             onSelectOption={(v) => {
               setSelectedAcronym(v);
-              setResetNumber(!resetNumber);
+              setResetNumber(resetNumber + 1);
             }}
           />
           <SearchableDropdown

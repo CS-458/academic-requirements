@@ -3,7 +3,7 @@ import {
   ConcentrationType,
   CourseType,
   MajorType,
-  RequirementsType
+  RequirementComponentType
 } from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 
@@ -31,7 +31,7 @@ export function courseSubjects(): UseQueryResult<Array<string>> {
 
 // Get and cache the list of numbers for a subject acronym
 export function courseNumbers(
-  subject: number | undefined
+  subject: string | undefined
 ): UseQueryResult<Array<string> | null> {
   return useQuery(
     ["courseNumbers", subject],
@@ -81,7 +81,7 @@ export function masterCourseList(
 // Get and cache the list of category requirements
 export function courseCategoryRequirements(
   conId: number | undefined
-): UseQueryResult<RequirementsType | null> {
+): UseQueryResult<RequirementComponentType[] | null> {
   return useQuery(
     ["courseCategoryRequirements", conId],
     async () => await fetchApi(`/api/requirements?conid=${conId}`)
@@ -89,6 +89,6 @@ export function courseCategoryRequirements(
 }
 
 // Get and cache the list of gen-ed requirements
-export function genedCategoryRequirements(): UseQueryResult<RequirementsType> {
+export function genedCategoryRequirements(): UseQueryResult<RequirementComponentType[]> {
   return useQuery("genedRequirements", async () => await fetchApi("/api/requirements/gen"));
 }

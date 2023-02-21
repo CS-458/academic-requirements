@@ -1,11 +1,11 @@
-import { Course } from "../components/DraggableCourse";
+import { CourseType, RequirementComponentType, MultipleCategoriesType } from "../entities/four_year_plan";
 import StringProcessing from "./StringProcessing";
 
 class RequirementProcessing {
   majorReqCheck(
-    course: any, // this should be updated but it made linting error go away faster
-    reqList: any
-  ): { addedCourse: boolean; reqList: any } {
+    course: CourseType, // this should be updated but it made linting error go away faster
+    reqList: RequirementComponentType[]
+  ): { addedCourse: boolean; reqList: RequirementComponentType[] } {
     const courseString = course.subject + "-" + course.number;
     // determines whether course has fulfilled a major course and
     // shouldn't be check for a gen-ed req
@@ -16,7 +16,7 @@ class RequirementProcessing {
       const x = reqList[i];
       // initialize the variables if they aren't already
       if (x.coursesTaken === undefined) {
-        x.coursesTaken = [];
+        x.coursesTaken = "";
       }
       if (x.creditCountTaken === undefined) {
         x.creditCountTaken = 0;
@@ -30,7 +30,7 @@ class RequirementProcessing {
       // Check if this is the category of the course
       if (course.idCategory === x.idCategory) {
         // Check if a course has already been used for this requirement
-        if (x.coursesTaken.indexOf(courseString) === -1) {
+        if (!x.coursesTaken.includes(courseString)) {
           let courseReqArr = x.courseReqs.split(",");
           // The only requirement is a course count
           if (x.courseCount !== null && x.courseReqs === null && x.creditCount === null) {
@@ -40,7 +40,7 @@ class RequirementProcessing {
           // The only requirement is a courses required list
           if (x.courseCount === null && x.courseReqs !== null && x.creditCount === null) {
             let validCourse = false;
-            courseReqArr.forEach((item: any) => {
+            courseReqArr.forEach((item: string) => {
               const found = reqCheck.courseInListCheck(
                 item,
                 [courseString],
@@ -62,7 +62,7 @@ class RequirementProcessing {
           // The requirement is a course count and a list of required courses
           if (x.courseCount !== null && x.courseReqs !== null && x.creditCount === null) {
             let validCourse = false;
-            courseReqArr.forEach((item: any) => {
+            courseReqArr.forEach((item: string) => {
               const found = reqCheck.courseInListCheck(
                 item,
                 [courseString],
@@ -82,7 +82,7 @@ class RequirementProcessing {
             x.creditCountTaken = x.creditCountTaken + course.credits;
             const temp2 = (x.creditCountTaken / x.creditCount) * 100;
             let validCourse = false;
-            courseReqArr.forEach((item: any) => {
+            courseReqArr.forEach((item: string) => {
               const found = reqCheck.courseInListCheck(
                 item,
                 [courseString],
@@ -120,7 +120,7 @@ class RequirementProcessing {
             x.courseCountTaken = x.courseCountTaken + 1;
             let validCourse = false;
             let temp1 = x.percentage;
-            courseReqArr.forEach((item: any) => {
+            courseReqArr.forEach((item: string) => {
               const found = reqCheck.courseInListCheck(
                 item,
                 [courseString],
@@ -143,17 +143,17 @@ class RequirementProcessing {
               x.percentage = temp3;
             }
           }
-          x.coursesTaken.push(courseString);
+          x.coursesTaken = x.coursesTaken + "," + courseString;
           addedCourse = true;
           if (x.parentCategory !== null) {
             let temp1 = 1000;
             let temp2 = 1000;
             const parent = reqList.find(
-              (item: any) => item.idCategory === x.parentCategory
+              (item: RequirementComponentType) => item.idCategory === x.parentCategory
             );
             const parentIndex = reqList.indexOf(parent);
             // update for credits
-            if (parent.creditCount != null) {
+            if (parent?.creditCount != null) {
               if (parent.creditCountTaken === undefined) {
                 reqList[parentIndex].creditCountTaken = 0;
               }
@@ -163,7 +163,7 @@ class RequirementProcessing {
                 reqList[parentIndex].creditCount;
             }
             // update for number of courses
-            if (parent.courseCount != null) {
+            if (parent?.courseCount != null) {
               if (parent.courseCountTaken === undefined) {
                 reqList[parentIndex].courseCountTaken = 0;
               }
@@ -172,15 +172,14 @@ class RequirementProcessing {
                 reqList[parentIndex].courseCountTaken /
                 reqList[parentIndex].courseCount;
             }
-            if (parent.courseReqs != null) {
+            if (parent?.courseReqs != null) {
               if (parent.coursesTaken === undefined) {
                 reqList[parentIndex].coursesTaken = "";
               }
-              reqList[parentIndex].coursesTaken =
-                parent.coursesTaken + "," + courseString;
-              courseReqArr = reqList[parentIndex].split(",");
+              reqList[parentIndex].coursesTaken = parent.coursesTaken + "," + courseString;
+              courseReqArr = reqList[parentIndex].coursesTaken.split(",");
               let validCourse = false;
-              courseReqArr.forEach((item: any) => {
+              courseReqArr.forEach((item: string) => {
                 const found = reqCheck.courseInListCheck(
                   item,
                   [courseString],
@@ -218,15 +217,15 @@ class RequirementProcessing {
 
   // Checks and updates the gen-ed requirements
   checkRequirementsGen(
-    course: any, // TODO change back to course
-    multipleCategories: any,
-    reqGenList: any,
-    PassedCourseList: any
-  ): { reqGenList: any } {
+    course: CourseType,
+    multipleCategories: MultipleCategoriesType[],
+    reqGenList: RequirementComponentType[],
+    PassedCourseList: CourseType[]
+  ): { reqGenList: RequirementComponentType[] } {
     console.log("multiple", multipleCategories);
     const courseString = course.subject + "-" + course.number;
     const categories = multipleCategories.find(
-      (item: any) => item.idString === courseString
+      (item: MultipleCategoriesType) => item.idString === courseString
     )?.categories;
     const reqCheck = new StringProcessing();
     // run once or for each category the course is in
@@ -236,7 +235,7 @@ class RequirementProcessing {
         const x = reqGenList[i];
         // initialize the variables if they aren't already
         if (x.coursesTaken === undefined) {
-          x.coursesTaken = [];
+          x.coursesTaken = "";
         }
         if (x.creditCountTaken === undefined) {
           x.creditCountTaken = 0;
@@ -250,8 +249,8 @@ class RequirementProcessing {
         // Check if this is the category of the course
         if (courseCategory === x.idCategory) {
           // Check if a course has already been used for this requirement
-          if (x.coursesTaken.indexOf(courseString) === -1) {
-            let courseReqArr: String[] = [];
+          if (!x.coursesTaken.includes(courseString)) {
+            let courseReqArr: string[] = [];
             if (x.courseReqs !== null) {
               courseReqArr = x.courseReqs.split(",");
             }
@@ -264,7 +263,7 @@ class RequirementProcessing {
 
             if (x.courseCount === null && x.courseReqs !== null && x.creditCount === null) {
               let validCourse = false;
-              courseReqArr.forEach((item: any) => {
+              courseReqArr.forEach((item: string) => {
                 const found = reqCheck.courseInListCheck(item, [courseString], undefined);
                 if (found.returnValue) {
                   validCourse = true;
@@ -284,7 +283,7 @@ class RequirementProcessing {
               let validCourse = false;
               let temp1 = x.percentage;
               let temp2 = 0;
-              courseReqArr.forEach((item: any) => {
+              courseReqArr.forEach((item: string) => {
                 const found = reqCheck.courseInListCheck(item, [courseString], undefined);
                 if (found.returnValue) {
                   validCourse = true;
@@ -308,7 +307,7 @@ class RequirementProcessing {
               let validCourse = false;
               let temp1 = 0;
               let temp2 = 0;
-              courseReqArr.forEach((item: any) => {
+              courseReqArr.forEach((item: string) => {
                 const found = reqCheck.courseInListCheck(item, [courseString], undefined);
                 if (found.returnValue) {
                   validCourse = true;
@@ -347,7 +346,7 @@ class RequirementProcessing {
               x.courseCountTaken = x.courseCountTaken + 1;
               let validCourse = false;
               let temp1 = x.percentage;
-              courseReqArr.forEach((item: any) => {
+              courseReqArr.forEach((item: string) => {
                 const found = reqCheck.courseInListCheck(item, [courseString], undefined);
                 if (found.returnValue) {
                   validCourse = true;
@@ -369,7 +368,7 @@ class RequirementProcessing {
             if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
               x.percentage = 100;
             }
-            x.coursesTaken.push(courseString);
+            x.coursesTaken = x.coursesTaken + "," + courseString;
             if (x.percentage > 100) {
               x.percentage = 100;
             }
@@ -378,12 +377,12 @@ class RequirementProcessing {
               let temp2 = 1000;
               let temp3 = 1000;
               const parent = reqGenList.find(
-                (item: any) => item.idCategory === x.parentCategory
+                (item: RequirementComponentType) => item.idCategory === x.parentCategory
               );
               const parentIndex = reqGenList.indexOf(parent);
-              reqGenList[parentIndex].coursesTaken.push(courseString);
+              reqGenList[parentIndex].coursesTaken += "," + courseString;
               // update for credits
-              if (parent.creditCount != null) {
+              if (parent?.creditCount != null) {
                 if (reqGenList[parentIndex].creditCountTaken === undefined) {
                   reqGenList[parentIndex].creditCountTaken = 0;
                 }
@@ -393,7 +392,7 @@ class RequirementProcessing {
                   reqGenList[parentIndex].creditCount;
               }
               // update for number of courses
-              if (parent.courseCount != null) {
+              if (parent?.courseCount != null) {
                 if (reqGenList[parentIndex].courseCountTaken === undefined) {
                   reqGenList[parentIndex].courseCountTaken = 0;
                 }
@@ -402,15 +401,14 @@ class RequirementProcessing {
                   reqGenList[parentIndex].courseCountTaken /
                   reqGenList[parentIndex].courseCount;
               }
-              if (parent.courseReqs != null) {
+              if (parent?.courseReqs != null) {
                 if (parent.coursesTaken === undefined) {
                   reqGenList[parentIndex].coursesTaken = "";
                 }
-                reqGenList[parentIndex].coursesTaken =
-                  parent.coursesTaken + "," + courseString;
-                courseReqArr = reqGenList[parentIndex].split(",");
+                reqGenList[parentIndex].coursesTaken = parent.coursesTaken + "," + courseString;
+                courseReqArr = reqGenList[parentIndex].courseReqs.split(",");
                 let validCourse = false;
-                courseReqArr.forEach((item: any) => {
+                courseReqArr.forEach((item: string) => {
                   const found = reqCheck.courseInListCheck(item, [courseString], undefined);
                   if (found.returnValue) {
                     validCourse = true;
@@ -432,15 +430,15 @@ class RequirementProcessing {
               }
 
               // Make necessary changes for the categories with extra requirements
-              if (parent.idCategory === 23) {
+              if (parent?.idCategory === 23) {
                 // RES courses
                 // One must be RES A
                 let foundRESA = false;
-                parent.coursesTaken.forEach((y: any) => {
+                parent?.coursesTaken.split(",").forEach((y: string) => {
                   const tempArr = y.split("-");
                   // find this course where it is RES A (if it exists)
                   const courseFound = PassedCourseList.find(
-                    (item: any) =>
+                    (item: CourseType) =>
                       item.subject === tempArr[0] &&
                       item.number === tempArr[1] &&
                       item.idCategory === 30
@@ -455,11 +453,11 @@ class RequirementProcessing {
                     reqGenList[parentIndex].percentage = 50;
                   }
                 }
-              } else if (parent.idCategory === 25) {
+              } else if (parent?.idCategory === 25) {
                 // ARNS
                 // Must include one nat lab and one math/stat
                 const percents: number[] = [];
-                reqGenList.forEach((y: any) => {
+                reqGenList.forEach((y: RequirementComponentType) => {
                   if (y.parentCategory === 25) {
                     if (
                       y.courseReqs != null ||
@@ -478,12 +476,12 @@ class RequirementProcessing {
                   sum = sum + (y * 1) / percents.length;
                 });
                 reqGenList[parentIndex].percentage = sum;
-              } else if (parent.idCategory === 26 || parent.idCategory === 27) {
+              } else if (parent?.idCategory === 26 || parent?.idCategory === 27) {
                 // ART/HUM or SBSCI
                 // Must come from two different subcategories
-                if (parent.coursesTaken.length > 1) {
+                if (parent?.coursesTaken.length > 1) {
                   const percents: number[] = [];
-                  reqGenList.forEach((y: any) => {
+                  reqGenList.forEach((y: RequirementComponentType) => {
                     if (y.parentCategory === parent.idCategory) {
                       if (
                         y.courseReqs != null ||

@@ -4,7 +4,7 @@ import React from "react";
 // Note: drop down often key-value pair behind scenes.
 export default function SearchableDropdown<T>(props: {
   options: Array<{ label: string; value: T } | T>;
-  label: string;
+  label: string | null;
   disabled?: boolean;
   onSelectOption: (option?: T) => void;
 }): JSX.Element {

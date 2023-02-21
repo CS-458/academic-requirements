@@ -1,8 +1,9 @@
+import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 export interface UserMajor {
   /// Major ID number
-  major: { name: string; id: number };
+  major: MajorType;
   /// Concentration ID number
-  concentration: { name: string; id: number; fourYearPlan: string | null; };
+  concentration: ConcentrationType;
   /// Whether to load a four year plan
   load_four_year_plan: boolean;
   /// A list of completed courses taken

@@ -4,19 +4,17 @@
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
-import { Course } from "../../../entities/four_year_plan";
 import sql from "../../../services/sql";
-
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if(typeof req.query.conid === "string"){
-    //Creates connection to the DB
+  if (typeof req.query.conid === "string") {
+    // Creates connection to the DB
     const con = await sql();
 
-    //queries the DB for all Concentrations and saves it into the rows var
+    // queries the DB for all Concentrations and saves it into the rows var
     const rows = await con.all(
       ` SELECT co.subject, co.number, co.credits, co.semesters, co.name, co.preReq, co.idCourse, ca.name AS 'category', ca.idCategory
         FROM concentration c
@@ -27,7 +25,7 @@ export default async function handler(
         WHERE c.idConcentration = ?
         ORDER BY co.subject, co.number `, req.query.conid
     );
-    //Returns the data queried from the DB onto the screen
+    // Returns the data queried from the DB onto the screen
     res.status(200).json(rows);
     return;
   }

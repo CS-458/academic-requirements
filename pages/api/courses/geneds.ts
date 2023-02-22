@@ -15,7 +15,7 @@ export default async function handler(
 
   // queries the DB for all GenEDs and saves it into the rows var
   const rows = await con.all(
-    ` SELECT co.subject, co.number, co.credits, co.semesters, co.name, co.preReq, co.idCourse, cat.name AS 'category', cat.idCategory
+    ` SELECT co.subject, co.number, co.credits, co.semesters, co.name, co.preReq, co.idCourse, co.repeatableForCred, cat.name AS 'category', cat.idCategory
       FROM category cat
       JOIN coursecategory cc ON cc.categoryId = cat.idCategory
       JOIN course co ON co.idCourse = cc.courseId

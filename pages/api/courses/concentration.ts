@@ -16,7 +16,7 @@ export default async function handler(
 
     // queries the DB for all Concentrations and saves it into the rows var
     const rows = await con.all(
-      ` SELECT co.subject, co.number, co.credits, co.semesters, co.name, co.preReq, co.idCourse, ca.name AS 'category', ca.idCategory
+      ` SELECT co.subject, co.number, co.credits, co.semesters, co.name, co.preReq, co.idCourse, co.repeatableForCred, ca.name AS 'category', ca.idCategory
         FROM concentration c
         JOIN concentrationcategory cc ON c.idConcentration = cc.concentrationId
         JOIN category ca ON cc.categoryId = ca.idCategory

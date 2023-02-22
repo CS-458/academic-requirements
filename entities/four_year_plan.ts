@@ -25,6 +25,7 @@ export interface CourseType {
   idCourse: number; // Database course id
   idCategory: number; // Database id for the category
   dragSource: string; // Which element it came from i.e. "Semester 1" or CourseList
+  repeatableForCred: boolean; // If a course can be taken twice for credit
 }
 
 // Defines the actual draggable course object type
@@ -42,6 +43,7 @@ export interface DragCourseType {
   warningRedColor: number | undefined, // If the course has a prereq error
   idCourse: number, // see CourseType
   idCategory: number // see CourseType
+  repeatableForCred: boolean; // see CourseType
 }
 
 // Defines the props for the course list component

@@ -16,7 +16,7 @@ export default async function handler(
 
     // queries the DB for all courses given a major and saves it into the rows var
     const rows = await con.all(
-      ` SELECT co.subject, co.number, co.name, co.credits, co.preReq, co.idCourse, c.name AS 'category', c.idCategory
+      ` SELECT co.subject, co.number, co.name, co.credits, co.preReq, co.idCourse, co.repeatableForCred, c.name AS 'category', c.idCategory
         FROM major m
         JOIN majorcategory mc ON m.idMajor = mc.majorId
         JOIN category c ON mc.categoryId = c.idCategory

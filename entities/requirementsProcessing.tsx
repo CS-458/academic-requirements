@@ -223,7 +223,6 @@ class RequirementProcessing {
     reqGenList: RequirementComponentType[],
     PassedCourseList: CourseType[]
   ): RequirementComponentType[] {
-
     console.log("multiple", multipleCategories);
     const courseString = course.subject + "-" + course.number;
     const categories = multipleCategories.find(

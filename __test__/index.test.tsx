@@ -93,8 +93,7 @@ test("Verify deleting completed course", async () => {
 });
 
 test("Verify UW-Stout logo redirects to UW-Stout site", async () => {
-  const user = setupUser();
-  const index = render(<LogoLink />)
+  const index = render(<LogoLink />);
   expect(index.baseElement).toMatchSnapshot();
 
   const logo = screen.getByTestId("stout-logo-link");

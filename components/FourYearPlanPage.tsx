@@ -905,7 +905,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               tempGen[i].inheritedCredits = x.creditCount;
               if (tempGen[i].courseReqs === null) {
                 tempGen[i].courseReqs = x.courseReqs;
-              } else if (!tempGen[i].courseReqs.includes(x.courseReqs)) {
+              } else if (tempGen[i].courseReqs.includes(x.courseReqs) === undefined) {
                 tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
               }
               tempGen[i].inheritedCredits = x.creditCount;

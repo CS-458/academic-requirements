@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
+import LogoLink from "./LogoLink";
 export default function DefaultLayout(props: {
   children: JSX.Element | JSX.Element[];
 }): JSX.Element {
@@ -15,7 +16,7 @@ export default function DefaultLayout(props: {
     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
       <MenuIcon />
     </IconButton>
-    <img src="/logo-new.svg" height="60" alt="logo" />
+   <LogoLink/>
     <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}/>
     <Button color="inherit">Login</Button>
     </Toolbar>

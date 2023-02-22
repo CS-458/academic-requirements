@@ -26,7 +26,10 @@ export function concentrationList(
 
 // Get and cache the list of subject acronyms
 export function courseSubjects(): UseQueryResult<Array<string>> {
-  return useQuery("courseSubjects", async () => await fetchApi(`/api/subjects`));
+  return useQuery(
+    "courseSubjects",
+    async () => await fetchApi(`/api/subjects`)
+  );
 }
 
 // Get and cache the list of numbers for a subject acronym
@@ -61,7 +64,10 @@ export function concentrationCourseList(
 
 // Get and cache the list of gened courses
 export function genedCourseList(): UseQueryResult<CourseType[]> {
-  return useQuery("genedCourseList", async () => await fetchApi(`/api/courses/geneds`));
+  return useQuery(
+    "genedCourseList",
+    async () => await fetchApi(`/api/courses/geneds`)
+  );
 }
 
 export function masterCourseList(
@@ -90,5 +96,8 @@ export function courseCategoryRequirements(
 
 // Get and cache the list of gen-ed requirements
 export function genedCategoryRequirements(): UseQueryResult<RequirementsType> {
-  return useQuery("genedRequirements", async () => await fetchApi(`/api/requirements/gen`));
+  return useQuery(
+    "genedRequirements",
+    async () => await fetchApi(`/api/requirements/gen`)
+  );
 }

@@ -8,7 +8,8 @@ import {
   Matcher,
   screen,
   render as testRender,
-  RenderResult
+  RenderResult,
+  waitFor
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
@@ -38,9 +39,32 @@ async function selectAutocomplete(
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
-    selectAutocomplete
+    selectAutocomplete: async function (
+      this: UserEvent,
+      label: Matcher,
+      option: Matcher
+    ) {
+      await this.click(screen.getByTestId("test-root-element"));
+      const input = screen.getByLabelText(label, { selector: "input" });
+      await waitFor(async () => {
+        expect(input).not.toBeDisabled();
+      });
+      await this.click(input);
+      try {
+        await this.click(await screen.findByText(option));
+      } catch (e) {
+        const rootEl = screen.getByTestId("test-root-element");
+        const popper = rootEl?.querySelector(".MuiAutocomplete-popper");
+        const html = popper?.innerHTML;
+        throw new Error(
+          `Option ${option} was not found in dropdown.\nOptions: ${html}`
+        );
+      }
+    }
   };
 }
+
+// const modules: { [key: string]: NextApiHandler | Promise<NextApiHandler> } = {};
 
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
 export async function fetchApiRoute(url: string): Promise<Response> {

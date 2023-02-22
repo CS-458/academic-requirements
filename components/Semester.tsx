@@ -79,6 +79,7 @@ export const Semester: FC<SemesterProps> = function Semester({
             (x) => x === course
           )}
           warningRedColor={warningPrerequisiteCourses.find((x) => x === course)}
+          repeatableForCred={course.repeatableForCred}
         />
       ))}
     </div>

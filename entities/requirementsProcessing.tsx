@@ -223,6 +223,7 @@ class RequirementProcessing {
     reqGenList: RequirementComponentType[],
     PassedCourseList: CourseType[]
   ): RequirementComponentType[] {
+
     console.log("multiple", multipleCategories);
     const courseString = course.subject + "-" + course.number;
     const categories = multipleCategories.find(
@@ -403,6 +404,7 @@ class RequirementProcessing {
                     reqGenList[parentIndex].courseCountTaken /
                     reqGenList[parentIndex].courseCount;
                 }
+
                 if (parent?.courseReqs != null) {
                   if (parent.coursesTaken === undefined) {
                     reqGenList[parentIndex].coursesTaken = "";

@@ -2,6 +2,7 @@ import React from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
 import { masterCourseList, courseCategoryRequirements, genedCategoryRequirements } from "../services/academic";
 import { userMajor } from "../services/user";
+
 import { CourseType, RequirementComponentType } from "../entities/four_year_plan";
 
 const PassThrough = (props: {

@@ -1,7 +1,5 @@
 import "./major";
-import "./majorID";
 import "./concentration";
-import "./concentrationID";
 
 import "./courses/concentration";
 import "./courses/major";

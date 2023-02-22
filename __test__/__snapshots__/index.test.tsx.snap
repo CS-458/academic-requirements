@@ -2307,6 +2307,28 @@ exports[`Verify Majors and Concentrations 3`] = `
 </body>
 `;
 
+exports[`Verify UW-Stout logo redirects to UW-Stout site 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <a
+        data-testid="stout-logo-link"
+        href="https://www.uwstout.edu/"
+        target="_blank"
+      >
+        <img
+          alt="logo"
+          height="60"
+          src="/logo-new.svg"
+        />
+      </a>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Verify adding completed course 1`] = `
 <body>
   <div>

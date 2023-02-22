@@ -447,7 +447,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         //  Check if the course is offered in the semester it was dragged to
         if (checkCourseSemester(updateWarning.course, updateWarning.newSemester)) {
           //  If the course is not offered during the semester, add it to the warning course list
-          if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) !== undefined) {
+          if (!warningFallvsSpringCourses.find((x) => x === updateWarning.course)) {
             warningFallvsSpringCourses.push(updateWarning.course);
             setVisibility(true);
             setErrorMessage(
@@ -696,7 +696,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             setWarningPrerequisiteCourses(temp);
           }
           //  If the course is failing, but not due to the latest course move, modify the warning message
-          if (failedCoursesNoWarning.find((z) => z === x) !== undefined) {
+          if (!failedCoursesNoWarning.find((z) => z === x)) {
             message.length > 0
               ? (message = message + "," + x.subject + "-" + x.number)
               : (message = message + x.subject + "-" + x.number);

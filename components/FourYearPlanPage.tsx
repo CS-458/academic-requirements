@@ -446,7 +446,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         //  Check if the course is offered in the semester it was dragged to
         if (checkCourseSemester(updateWarning.course, updateWarning.newSemester)) {
           //  If the course is not offered during the semester, add it to the warning course list
-          if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) !== undefined) {
+          if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) === undefined) {
             warningFallvsSpringCourses.push(updateWarning.course);
             setVisibility(true);
             setErrorMessage(
@@ -657,7 +657,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // Remove any courses that were marked as warning, but now have resolved prerequisites
       if (!movedRight) {
         warningPrerequisiteCourses.forEach((currentWarningCourse) => {
-          if (initialPreviousCourses.find((prevCourse) => prevCourse === currentWarningCourse) !== undefined) {
+          if (initialPreviousCourses.find((prevCourse) => prevCourse === currentWarningCourse) === undefined) {
             failedCoursesList.forEach((currentFailedCourse) => {
               if (currentWarningCourse === currentFailedCourse) {
                 found = true;
@@ -689,13 +689,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         let message = "";
         //  Push each failed course to the warningCourses
         failedCoursesList.forEach((x) => {
-          if (warningPrerequisiteCourses.find((z) => z === x) !== undefined) {
+          if (warningPrerequisiteCourses.find((z) => z === x) === undefined) {
             const temp = warningPrerequisiteCourses;
             temp.push(x);
             setWarningPrerequisiteCourses(temp);
           }
           //  If the course is failing, but not due to the latest course move, modify the warning message
-          if (failedCoursesNoWarning.find((z) => z === x) !== undefined) {
+          if (failedCoursesNoWarning.find((z) => z === x) === undefined) {
             message.length > 0
               ? (message = message + "," + x.subject + "-" + x.number)
               : (message = message + x.subject + "-" + x.number);
@@ -705,7 +705,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         //  Show a warning stating that the classes failed the prereqs
         if (
           !message.includes(
-            courseToRemove.subject + "" + courseToRemove.number
+            courseToRemove.subject + "-" + courseToRemove.number
           ) &&
           message.length > 0
         ) {

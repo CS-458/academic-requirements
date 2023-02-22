@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { screen, render as testRender } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 
 import Home from "../pages/index";
 import { setupUser, render } from "./util";

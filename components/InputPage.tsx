@@ -22,9 +22,7 @@ import {
 } from "../services/academic";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 // Input page is the page where the user inputs all of their information
-export default function InputPage(props: {
-  importData: (data: any) => void;
-}): JSX.Element {
+export default function InputPage(): JSX.Element {
   /*
   General variables
   */

@@ -24,25 +24,23 @@ interface UserExt {
   ) => Promise<void>;
 }
 
+async function selectAutocomplete(
+  this: UserEvent,
+  label: Matcher,
+  option: Matcher
+): Promise<void> {
+  await this.click(screen.getByTestId("test-root-element"));
+  await this.click(await screen.findByLabelText(label, { selector: "input" }));
+  await this.click(await screen.findByText(option));
+}
+
 /// userEvent.setup(), but with some additional convience methods
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
-    selectAutocomplete: async function (
-      this: UserEvent,
-      label: Matcher,
-      option: Matcher
-    ) {
-      await this.click(screen.getByTestId("test-root-element"));
-      await this.click(
-        await screen.findByLabelText(label, { selector: "input" })
-      );
-      await this.click(await screen.findByText(option));
-    }
+    selectAutocomplete
   };
 }
-
-const modules: { [key: string]: NextApiHandler | Promise<NextApiHandler> } = {};
 
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
 export async function fetchApiRoute(url: string): Promise<Response> {
@@ -63,7 +61,7 @@ export async function fetchApiRoute(url: string): Promise<Response> {
   );
   await testApiHandler({
     handler,
-    url: url,
+    url,
     params: params?.split("&").reduce((a, b) => {
       const [name, value] = b.split("=");
       return { ...a, [name]: value };
@@ -104,22 +102,22 @@ export function getMockStorage(key: string): string | null {
   return localStorage[key];
 }
 
-export function setMockStorage(key: string, value: string) {
+export function setMockStorage(key: string, value: string): void {
   localStorage[key] = value;
 }
 
-export function removeMockStorage(key: string) {
+export function removeMockStorage(key: string): void {
   localStorage[key] = null;
 }
 
-export function clearMockStorage() {
+export function clearMockStorage(): void {
   for (const k in localStorage) {
     localStorage[k] = null;
   }
 }
 
 /// Configure local storage and set pre-existing data in local storage
-export function buildLocalStorage(user?: UserMajor) {
+export function buildLocalStorage(user?: UserMajor): void {
   window.localStorage.getItem = getMockStorage;
   window.localStorage.setItem = setMockStorage;
   window.localStorage.removeItem = removeMockStorage;

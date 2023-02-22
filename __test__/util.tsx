@@ -39,7 +39,7 @@ async function selectAutocomplete(
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
-    selectAutocomplete: async function (
+    selectAutocomplete: async function(
       this: UserEvent,
       label: Matcher,
       option: Matcher

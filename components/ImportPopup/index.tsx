@@ -38,12 +38,13 @@ const ImportPopup = (props: {
     // HTML of the uploaded file
     const filenameElement = document.getElementById("fileName");
 
-    const file = document.getElementById("fileName")?.files[0];
+    const files = (filenameElement as HTMLInputElement | undefined)?.files;
+    const file = files === undefined || files === null ? undefined : files[0];
     let fileName;
     // if file has been selected
-    if (filenameElement.files.length > 0) {
+    if (files !== undefined && files !== null) {
       // store file name in fileName
-      fileName = filenameElement.files.item(0).name;
+      fileName = files.item(0)?.name;
     } else {
       // if file has NOT been selected
       // Close uploader popup and throw error
@@ -52,27 +53,30 @@ const ImportPopup = (props: {
       return;
     }
     // if uploaded file is not a json -> throws error
-    if (fileName.split(".").pop().toLowerCase() !== "json") {
-      closeHandler();
-      throwError("Not a JSON File");
-    } else {
-      // if it is file "uploads"
-      const fileReader = new FileReader();
-      fileReader.readAsText(file);
-      // When the file reader reads the file
-      fileReader.onload = () => {
-        if (typeof fileReader.result === "string") {
-          data = JSON.parse(fileReader.result);
-          // Checks to make sure the JSON has the required properties
-          if (checkJSON(data)) {
-            // Returns JSON data
-            props.returnData(data);
-          } else {
-            throwError("Not a valid file");
+    if (fileName !== null && fileName !== undefined) {
+      const fileType = fileName.split(".").pop()?.toLowerCase();
+      if (fileType !== "json") {
+        closeHandler();
+        throwError("Not a JSON File");
+      } else if (file !== undefined) {
+        // if it is file "uploads"
+        const fileReader = new FileReader();
+        fileReader.readAsText(file);
+        // When the file reader reads the file
+        fileReader.onload = () => {
+          if (typeof fileReader.result === "string") {
+            data = JSON.parse(fileReader.result);
+            // Checks to make sure the JSON has the required properties
+            if (checkJSON(data)) {
+              // Returns JSON data
+              props.returnData(data);
+            } else {
+              throwError("Not a valid file");
+            }
           }
-        }
-      };
-      closeHandler();
+        };
+        closeHandler();
+      }
     }
   };
 

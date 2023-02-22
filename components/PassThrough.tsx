@@ -2,7 +2,7 @@ import React from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
 import { masterCourseList, courseCategoryRequirements, genedCategoryRequirements } from "../services/academic";
 import { userMajor } from "../services/user";
-import { CourseType, RequirementsType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType } from "../entities/four_year_plan";
 
 const PassThrough = (props: {
   // importData?: {};
@@ -13,8 +13,8 @@ const PassThrough = (props: {
   // major and minor come from user service
   const courseList: CourseType[] = masterCourseList(userMajor()?.major.id, userMajor()?.concentration.idConcentration);
 
-  const requirements: RequirementsType = courseCategoryRequirements(userMajor()?.concentration.idConcentration).data;
-  const requirementsGen: RequirementsType = genedCategoryRequirements().data;
+  const requirements: RequirementComponentType[] | null | undefined = courseCategoryRequirements(userMajor()?.concentration.idConcentration).data;
+  const requirementsGen: RequirementComponentType[] | null | undefined = genedCategoryRequirements().data;
 
   return (
     <div>

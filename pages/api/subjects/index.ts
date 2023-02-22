@@ -26,6 +26,4 @@ export default async function handler(
   });
   // Returns the data queried from the DB onto the screen
   res.status(200).json(result);
-  return;
-  res.status(400).json({ error: "Concentration not defined" });
 }

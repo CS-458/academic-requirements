@@ -353,20 +353,6 @@ exports[`Verify Four Year Plan Not Show 1`] = `
             </div>
           </div>
         </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -745,20 +731,6 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -1166,20 +1138,6 @@ exports[`Verify Four Year Plan Not Show 3`] = `
             </div>
           </div>
         </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1537,20 +1495,6 @@ exports[`Verify Majors and Concentrations 1`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -1931,20 +1875,6 @@ exports[`Verify Majors and Concentrations 2`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -2383,20 +2313,6 @@ exports[`Verify Majors and Concentrations 3`] = `
             </div>
           </div>
         </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -2754,20 +2670,6 @@ exports[`Verify adding completed course 1`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -3149,20 +3051,6 @@ exports[`Verify adding completed course 2`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -3570,20 +3458,6 @@ exports[`Verify adding completed course 3`] = `
             </div>
           </div>
         </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -3941,20 +3815,6 @@ exports[`Verify deleting completed course 1`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -4336,20 +4196,6 @@ exports[`Verify deleting completed course 2`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>
@@ -4755,20 +4601,6 @@ exports[`Verify deleting completed course 3`] = `
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          data-testid="popup"
-          style="visibility: hidden; opacity: 0;"
-        >
-          <div>
-            <h2>
-              Error
-            </h2>
-            <span>
-              ×
-            </span>
-            <div />
           </div>
         </div>
       </div>

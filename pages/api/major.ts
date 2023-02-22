@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import sql from "../../services/sql";
-
+import { MajorType } from "../../entities/four_year_plan";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -13,14 +13,9 @@ export default async function handler(
     "SELECT * FROM major"
   );
   const result = [];
-  let cur: {
-    id?: number;
-    name?: string;
-    // concentrations: Array<{ id: number; name: string }>;
-  } = {
+  let cur: MajorType = {
     id: rows[0].idMajor,
     name: rows[0].name
-    // concentrations: []
   };
   rows.forEach((a) => {
     if (cur.id !== a.idMajor) {
@@ -28,7 +23,6 @@ export default async function handler(
       cur = {
         id: a.idMajor,
         name: a.name
-        // concentrations: []
       };
     }
     // cur.concentrations.push({

@@ -3,7 +3,7 @@ import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
-
+import { SemesterProps } from "../entities/four_year_plan";
 // styling for the semester
 const style: CSSProperties = {
   height: "15rem",
@@ -21,19 +21,6 @@ const style: CSSProperties = {
   borderRadius: ".5rem",
   overflow: "auto"
 };
-
-export interface SemesterProps {
-  accept: Course;
-  lastDroppedItem?: any;
-  onDrop: (item: any) => void;
-  semesterNumber: number;
-  courses: Course[];
-  SemesterCredits: number;
-  Warning: string;
-  warningPrerequisiteCourses: Course[];
-  warningFallvsSpringCourses: Course[];
-  warningDuplicateCourses: Course[];
-}
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -56,7 +43,7 @@ export const Semester: FC<SemesterProps> = function Semester({
   });
 
   // Changes the background color when you're hovering over the semester
-  const isActive = isOver;
+  const isActive: boolean = isOver;
   let backgroundColor = "#004990";
   if (isActive) {
     backgroundColor = "darkgreen";

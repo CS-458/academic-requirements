@@ -23,35 +23,13 @@ import {
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 // Input page is the page where the user inputs all of their information
 export default function InputPage(props: {
-  // majorList: any[];
-  // concentrationList: any[];
-  // concentrationHasFourYearPlan: boolean;
   importData: (data: any) => void;
-  // setSelectedCourseSubject: (subject: string) => void;
-  // takenCourses: string[];
-  // setTakenCourses: (courses: string[]) => void;
-  // onClickMajor: (major: string) => void;
-  // onClickConcentration: (concentration: string) => void;
-  // onClickGenerate: (
-  //   major: string,
-  //   concentration: string,
-  //   previousCourses: string[]
-  // ) => void;
-  // setUseFourYearPlan: (usePlan: boolean) => void;
 }): JSX.Element {
-  // TODO make sure all of this information being passed is filled in and valid
-
   /*
   General variables
   */
-  const [major, setMajor] = useState<
-    { name: string; id: number } | undefined
-  >(); // major that is selected
-  const [concentration, setConcentration] = useState<{
-    name: string;
-    id: number;
-    fourYearPlan: string | null;
-  }>(); // concentration that is selected
+  const [major, setMajor] = useState<MajorType>(); // major that is selected
+  const [concentration, setConcentration] = useState<ConcentrationType>(); // concentration that is selected
   const [usePlan, setUsePlan] = useState(false);
   const [completedCourses, setCompletedCourses] = useState<string[]>([]); // completed courses added to the list
   const [canMoveOn, setCanMoveOn] = useState(false); // whether the user is ready to move on
@@ -96,51 +74,24 @@ export default function InputPage(props: {
     setVisibility(false);
   };
 
-  // closes the uploader popup
-  // const [uploaderVisibility, setUploaderVisibility] = useState(false);
-  // const popupCloseHandlerUp = (): void => {
-  //   setUploaderVisibility(false);
-  // };
-  // Makes the uploader popup visible
-  // function showUploader(): void {
-  //   setUploaderVisibility(true);
-  // }
-
   // This method handles adding a new taken course to the table
   function processCompletedCourse(): void {
     if (selectedNumber !== undefined && selectedAcronym !== undefined) {
-      // TODO Check that the course is a valid course in the database
       if (!completedCourses.includes(`${selectedAcronym}-${selectedNumber}`)) {
         // Add the course to the completed course list
         console.log(`Adding course ${selectedAcronym}-${selectedNumber}`);
         setCompletedCourses(
           completedCourses.concat(`${selectedAcronym}-${selectedNumber}`)
         );
-        // props.setTakenCourses(
-        //   completedCourses.concat(`${selectedAcronym}-${selectedNumber}`)
-        // );
       } else {
         throwError("This course has already been added", "error");
       }
     }
-    // else {
-    //   if (selectedNumber === undefined) {
-    //     throwError(
-    //       "No course number has been selected, please select a course number.",
-    //       "error"
-    //     );
-    //   } else {
-    //     throwError(
-    //       "No course type has been selected, please select a course type before adding a course.",
-    //       "error"
-    //     );
-    //   }
-    // }
     setResetNumber(!resetNumber);
     setSelectedNumber(undefined);
   }
 
-  // Removes the course from the coursesTaken list
+  // Removes the course from the completedCourses list
   function removeCourse(course: string): void {
     // Slice method did not work, so here's a replacement:
     const arr: any[] = [];
@@ -151,7 +102,6 @@ export default function InputPage(props: {
       }
     });
     setCompletedCourses(arr);
-    // props.setTakenCourses(arr);
     console.log(`Deleted course: ${course}`);
   }
 
@@ -214,7 +164,6 @@ export default function InputPage(props: {
     }
   }, [concentration]);
 
-  // Function to autopopulate completed courses list. with every course.
   return (
     <div className="App">
       <Snackbar

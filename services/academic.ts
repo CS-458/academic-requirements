@@ -3,7 +3,7 @@ import {
   ConcentrationType,
   CourseType,
   MajorType,
-  Requirements
+  RequirementsType
 } from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 
@@ -72,7 +72,7 @@ export function masterCourseList(
   const c2 = concentrationCourseList(conId).data;
   const c3 = genedCourseList().data;
 
-  if (c1 && c2 && c3) {
+  if (c1 != null && c2 != null && c3 != null) {
     return c1.concat(c2).concat(c3);
   }
   return [];
@@ -81,14 +81,14 @@ export function masterCourseList(
 // Get and cache the list of category requirements
 export function courseCategoryRequirements(
   conId: number | undefined
-): UseQueryResult<Requirement[] | null> {
+): UseQueryResult<RequirementsType | null> {
   return useQuery(
     ["courseCategoryRequirements", conId],
     async () => await fetchApi(`/api/requirements?conid=${conId}`)
   );
 }
 
-// Get and cache the list of gened requirements
-export function genedCategoryRequirements(): UseQueryResult<Requirement[]> {
+// Get and cache the list of gen-ed requirements
+export function genedCategoryRequirements(): UseQueryResult<RequirementsType> {
   return useQuery("genedRequirements", async () => await fetchApi(`/api/requirements/gen`));
 }

@@ -98,7 +98,6 @@ test("Verify UW-Stout logo redirects to UW-Stout site", async () => {
   expect(index.baseElement).toMatchSnapshot();
 
   const logo = screen.getByTestId("stout-logo-link");
-  //await user.click(logo);
   expect(logo).toHaveAttribute('href', 'https://www.uwstout.edu/');
   expect(logo).toHaveAttribute('target', '_blank');
 });

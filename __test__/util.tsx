@@ -98,7 +98,7 @@ export function render(children: JSX.Element | JSX.Element[]): RenderResult {
   );
 }
 
-const localStorage: { [key: string]: string } = {};
+const localStorage: { [key: string]: string | null } = {};
 
 export function getMockStorage(key: string): string | null {
   return localStorage[key];
@@ -109,12 +109,12 @@ export function setMockStorage(key: string, value: string) {
 }
 
 export function removeMockStorage(key: string) {
-  delete localStorage[key];
+  localStorage[key] = null;
 }
 
 export function clearMockStorage() {
-  for (let k in localStorage) {
-    delete localStorage[k];
+  for (const k in localStorage) {
+    localStorage[k] = null;
   }
 }
 

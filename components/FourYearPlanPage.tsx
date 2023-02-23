@@ -321,11 +321,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             found.dragSource = "CourseList";
 
             //  Update semesters to have the course removed
-            const itemArr = semesters[movedFromIndex].courses.filter(
-              (course: any) => course !== found
-            );
-            const newSemesterCount =
-              getSemesterTotalCredits(movedFromIndex) - found.credits;
+            const itemArr = semesters[movedFromIndex].courses.filter((course: any) => course !== found);
+            const newSemesterCount = getSemesterTotalCredits(movedFromIndex) - found.credits;
             const updatedWarning = getWarning(newSemesterCount);
             setSemesters(
               update(semesters, {
@@ -344,9 +341,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             );
             let noRemove = false;
             let count = 0;
+            console.log(semesters);
             semesters.forEach((x) =>
               x.courses.forEach((y: any) => {
                 if (y.idCourse === found.idCourse) {
+                  console.log(y, found);
                   count++;
                 }
               })
@@ -361,6 +360,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 noRemove = true;
               }
             });
+            console.log(noRemove);
             if (!noRemove) {
               removeFromRequirements(found);
             }
@@ -964,7 +964,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
         }
       }
-      console.log("creating mult", tempArr, PassedCourseList);
       setCoursesInMultipleCategories(tempArr);
     }, [PassedCourseList]);
 
@@ -1086,203 +1085,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     const removeFromRequirements = useCallback(
       (course: CourseType) => {
-        let temp1 = 1000;
-        let temp2 = 1000;
-        let temp3 = 1000;
-        const reqCheck = new StringProcessing();
-        if (reqList !== null && reqList !== undefined && reqGenList !== null && reqGenList !== undefined) {
-          for (let i = 0; i < reqList.length; i++) {
-            const courseString = course.subject + "-" + course.number;
-            const index = reqList[i].coursesTaken.indexOf(courseString);
-            if (index > -1) {
-              reqList[i].coursesTaken.slice(index, courseString.length);
-              if (reqList[i].creditCount !== null) {
-                reqList[i].creditCountTaken =
-                  reqList[i].creditCountTaken - course.credits;
-                temp1 = reqList[i].creditCountTaken / reqList[i].creditCount;
-              }
-              if (reqList[i].courseCount !== null) {
-                reqList[i].courseCountTaken = reqList[i].courseCountTaken - 1;
-                temp2 = reqList[i].courseCountTaken / reqList[i].courseCount;
-              }
-              if (reqList[i].courseReqs !== null) {
-                const total = reqList[i].courseReqs.split(",").length;
-                temp3 = reqList[i].coursesTaken.length / total;
-              }
-              // set the new percentage
-              if (temp1 <= temp2 && temp1 <= temp3) {
-                reqList[i].percentage = temp1 * 100;
-              } else if (temp2 <= temp3 && temp2 <= temp1) {
-                reqList[i].percentage = temp2 * 100;
-              } else {
-                reqList[i].percentage = temp3 * 100;
-              }
-              if (reqGenList[i].percentage > 100) {
-                reqGenList[i].percentage = 100;
-              }
-            }
-          }
-          // check if the course is filling any gen-eds
-          for (let i = 0; i < reqGenList.length; i++) {
-            temp1 = 1000;
-            temp2 = 1000;
-            temp3 = 1000;
-            const courseString = course.subject + "-" + course.number;
-            const index = reqGenList[i].coursesTaken?.indexOf(courseString);
-            if (index > -1 && index !== undefined) {
-              // remove the course from the requirment
-              reqGenList[i].coursesTaken.slice(index, 1);
-              if (reqGenList[i].creditCount !== null) {
-                reqGenList[i].creditCountTaken =
-                  reqGenList[i].creditCountTaken - course.credits;
-                temp1 =
-                  reqGenList[i].creditCountTaken / reqGenList[i].creditCount;
-              }
-              if (reqGenList[i].courseCount !== null) {
-                reqGenList[i].courseCountTaken =
-                  reqGenList[i].courseCountTaken - 1;
-                temp2 =
-                  reqGenList[i].courseCountTaken / reqGenList[i].courseCount;
-              }
-              if (reqGenList[i].courseReqs !== null) {
-                const total = reqGenList[i].courseReqs.split(",").length;
-                const courseReqArr = reqGenList[i].courseReqs.split(",");
-                let validCourse = false;
-                courseReqArr.forEach((item: any) => {
-                  const found = reqCheck.courseInListCheck(
-                    item,
-                    [courseString],
-                    undefined
-                  );
-                  if (found.returnValue) {
-                    validCourse = true;
-                  }
-                });
-                if (validCourse) {
-                  temp3 = reqGenList[i].percentage - (1 / total) * 100;
-                }
-              }
-              // set the new percentage
-              if (
-                temp1 <= temp2 &&
-                temp1 <= temp3 &&
-                reqGenList[i].creditCount !== null
-              ) {
-                reqGenList[i].percentage = temp1 * 100;
-              } else if (
-                temp2 <= temp3 &&
-                temp2 <= temp1 &&
-                reqGenList[i].courseCount !== null
-              ) {
-                reqGenList[i].percentage = temp2 * 100;
-              } else {
-                reqGenList[i].percentage = temp3 * 100;
-              }
-              const category = reqGenList.find((item) => item.idCategory === reqGenList[i].parentCategory);
-              let parentIndex: number;
-              if (category !== undefined) {
-                parentIndex = reqGenList.indexOf(category);
-              } else {
-                parentIndex = -1;
-              }
-              if (parentIndex !== -1) {
-                if (reqGenList[parentIndex].idCategory === 25) {
-                  // ARNS
-                  // Must include one nat lab and one math/stat
-                  const percents: number[] = [];
-                  reqGenList.forEach((y) => {
-                    if (y.parentCategory === 25) {
-                      if (
-                        y.courseReqs !== null ||
-                        y.courseCount !== null ||
-                        y.creditCount !== null
-                      ) {
-                        percents.push(y.percentage);
-                      }
-                    }
-                  });
-                  let sum = 0;
-                  percents.forEach((y) => {
-                    if (y === undefined) {
-                      y = 0;
-                    }
-                    sum = sum + (y * 1) / percents.length;
-                  });
-                  reqGenList[parentIndex].percentage = sum;
-                }
-                if (
-                  reqGenList[parentIndex].idCategory === 26 ||
-                  reqGenList[parentIndex].idCategory === 27
-                ) {
-                  // ART/HUM or SBSCI
-                  // Must come from two different subcategories
-                  if (reqGenList[parentIndex].coursesTaken.length > 1) {
-                    const percents: number[] = [];
-                    reqGenList.forEach((y) => {
-                      if (
-                        y.parentCategory === reqGenList[parentIndex].idCategory
-                      ) {
-                        if (
-                          y.courseReqs !== null ||
-                          y.courseCount !== null ||
-                          y.creditCount !== null
-                        ) {
-                          percents.push(y.percentage);
-                        }
-                      }
-                    });
-                    // at least one subcategory has it's own requirments that must
-                    // be satisfied as well
-                    if (percents.length > 1) {
-                      let sum = 0;
-                      percents.forEach((y) => {
-                        if (y === undefined) {
-                          y = 0;
-                        }
-                        sum = sum + y / percents.length;
-                      });
-                      reqGenList[parentIndex].percentage = sum;
-                    } else {
-                      // no req subcat, just fill two different ones
-                      let filledCategories = 0;
-                      for (let i = 0; i < reqGenList.length; i++) {
-                        if (
-                          reqGenList[i].parentCategory ===
-                          reqGenList[parentIndex].idCategory
-                        ) {
-                          if (
-                            reqGenList[i].coursesTaken.length > 0 &&
-                            reqGenList[i].idCategory !==
-                            reqGenList[parentIndex].idCategory
-                          ) {
-                            filledCategories++;
-                          }
-                        }
-                      }
-                      // the courses are only from one category
-                      if (filledCategories === 1) {
-                        if (reqGenList[parentIndex].percentage > 50) {
-                          reqGenList[parentIndex].percentage = 50;
-                        }
-                      } else if (percents.length === 1) {
-                        // courses are from different categories one of which is required
-                        reqGenList[parentIndex].percentage =
-                          reqGenList[parentIndex].percentage / 2 +
-                          percents[0] / 2;
-                      }
-                    }
-                  }
-                }
-                if (reqGenList[parentIndex].percentage > 100) {
-                  reqGenList[parentIndex].percentage = 100;
-                }
-              }
-              if (reqGenList[i].percentage > 100) {
-                reqGenList[i].percentage = 100;
-              }
-            }
-          }
-        }
+        console.log("called the function");
+        const reqCheck = new RequirementsProcessing();
+        const updatedRequirements = reqCheck.removeCourseFromRequirements(course, reqGenList, reqList);
+        console.log(updatedRequirements);
+        setReqGenList(updatedRequirements.gen);
+        setReqList(updatedRequirements.major);
       },
       [reqList, reqGenList, requirements, requirementsGen]
     );

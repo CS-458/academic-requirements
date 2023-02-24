@@ -1,7 +1,7 @@
-import { useQuery, UseQueryResult } from "react-query";
+import { UseQueryResult } from "react-query";
 import { MajorType } from "../entities/four_year_plan";
 
-function mock_data<TData>(data: TData): UseQueryResult<TData> {
+function mockData<TData>(data: TData): UseQueryResult<TData> {
   return {
     data,
     error: null,
@@ -23,13 +23,13 @@ function mock_data<TData>(data: TData): UseQueryResult<TData> {
     isPreviousData: false,
     isRefetching: false,
     isStale: false,
-    refetch: (options) => new Promise((resolve) => resolve(mock_data(data))),
-    remove: () => { }
+    refetch: async (_) => mockData(data),
+    remove: () => {}
   };
 }
 
-const module = {
-  majorList: (): UseQueryResult<MajorType[]> => mock_data([])
+const moduleInner = {
+  majorList: (): UseQueryResult<MajorType[]> => mockData([])
   // function majorList(): UseQueryResult<Major[]> {
   //   return useQuery("Major List", async () => await fetchApi(`/api/major`));
   // }
@@ -60,6 +60,6 @@ const module = {
   // }
 };
 
-export default module;
+export default moduleInner;
 
-jest.mock("../services/academic", () => module);
+jest.mock("../services/academic", () => moduleInner);

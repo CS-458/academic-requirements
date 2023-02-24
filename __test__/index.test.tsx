@@ -1,8 +1,10 @@
 import "@testing-library/jest-dom";
-import { screen, render as testRender } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 
 import Home from "../pages/index";
+import LogoLink from "../components/layout/LogoLink"
 import { setupUser, render } from "./util";
+import DefaultLayout from "../components/layout/DefaultLayout";
 
 test("Verify Majors and Concentrations", async () => {
   const user = setupUser();
@@ -88,4 +90,13 @@ test("Verify deleting completed course", async () => {
   const deleteButton = screen.getByTestId("delete-icon");
   await user.click(deleteButton);
   expect(screen.queryByText(/AEC-191/i)).toBeNull();
+});
+
+test("Verify UW-Stout logo redirects to UW-Stout site", async () => {
+  const index = render(<LogoLink />);
+  expect(index.baseElement).toMatchSnapshot();
+
+  const logo = screen.getByTestId("stout-logo-link");
+  expect(logo).toHaveAttribute('href', 'https://www.uwstout.edu/');
+  expect(logo).toHaveAttribute('target', '_blank');
 });

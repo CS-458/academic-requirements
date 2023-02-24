@@ -9,7 +9,7 @@ import ErrorPopup from "./ErrorPopup";
 import { Requirement } from "./Requirement";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType } from "../entities/four_year_plan";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -101,22 +101,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     });
 
     // fourYearPlan parsed as a JSON
-    const [fourYearPlan, setFourYearPlan] = useState(JSON.parse(userMajor()?.concentration.fourYearPlan));
+    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? ""));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<RequirementComponentType[]>([]);
 
     // Requirements that are manipulated
-    const [reqList, setReqList] = useState(requirements);
-    const [reqGenList, setReqGenList] = useState(requirementsGen);
+    const [reqList, setReqList] = useState<RequirementComponentType[] | null | undefined>(requirements);
+    const [reqGenList, setReqGenList] = useState<RequirementComponentType[] | null | undefined>(requirementsGen);
 
     //  A list of all courses that are in more than one categories, for use with requirements
-    const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
-      useState<
-      {
-        idString: string;
-        categories: number[];
-      }[]
-      >([]);
+    const [coursesInMultipleCategories, setCoursesInMultipleCategories] = useState<MultipleCategoriesType[]>([]);
 
     // Stuff for category dropdown.
     const [categories, setCategories] = useState<string[]>([]); // list of all categories
@@ -128,7 +122,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       defaultInformationType
     ]);
     const [displayedInformationType, setDisplayedInformationType] =
-      useState<string>(defaultInformationType);
+      useState<string | undefined>(defaultInformationType);
 
     useEffect(() => {
       // Whenever completed courses may update, determine
@@ -160,7 +154,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // }, [importData]);
 
     // SelectedCategory function.
-    function selectedCategory(_category: string): void {
+    function selectedCategory(_category: string | undefined): void {
       // New string array created.
       const set = new Array<CourseType>();
       // Iterate through major course list. If the index matches the category, push the course name of the index to array.
@@ -208,7 +202,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             (item: any) => item.idCourse === idCourse
           );
         } else {
-          console.log(idCourse, PassedCourseList);
           // find the course by name in the master list of all courses
           course = PassedCourseList.find((item) => item.idCourse === idCourse);
         }
@@ -322,64 +315,64 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (dragSource !== "CourseList") {
           // get the semester index from the drag source
           const movedFromIndex = +dragSource.split(" ")[1];
-          const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.idCourse === idCourse
-          );
-          // set the drag source to course list (may be redundant but I'm scared to mess with it)
-          found.dragSource = "CourseList";
+          const found = semesters[movedFromIndex].courses.find((item: any) => item.idCourse === idCourse);
+          if (found !== undefined) {
+            // set the drag source to course list (may be redundant but I'm scared to mess with it)
+            found.dragSource = "CourseList";
 
-          //  Update semesters to have the course removed
-          const itemArr = semesters[movedFromIndex].courses.filter(
-            (course: any) => course !== found
-          );
-          const newSemsterCount =
-            getSemesterTotalCredits(movedFromIndex) - found.credits;
-          const updatedWarning = getWarning(newSemsterCount);
-          setSemesters(
-            update(semesters, {
-              [movedFromIndex]: {
-                courses: {
-                  $set: itemArr
-                },
-                SemesterCredits: {
-                  $set: newSemsterCount
-                },
-                Warning: {
-                  $set: updatedWarning
+            //  Update semesters to have the course removed
+            const itemArr = semesters[movedFromIndex].courses.filter(
+              (course: any) => course !== found
+            );
+            const newSemesterCount =
+              getSemesterTotalCredits(movedFromIndex) - found.credits;
+            const updatedWarning = getWarning(newSemesterCount);
+            setSemesters(
+              update(semesters, {
+                [movedFromIndex]: {
+                  courses: {
+                    $set: itemArr
+                  },
+                  SemesterCredits: {
+                    $set: newSemesterCount
+                  },
+                  Warning: {
+                    $set: updatedWarning
+                  }
                 }
-              }
-            })
-          );
-          let noRemove = false;
-          let count = 0;
-          semesters.forEach((x) =>
-            x.courses.forEach((y: any) => {
-              if (y.idCourse === found.idCourse) {
-                count++;
-              }
-            })
-          );
-          if (count > 1) {
-            noRemove = true;
-          }
-          userMajor()?.completed_courses.forEach((x) => {
-            const subject = x.split("-")[0];
-            const number = x.split("-")[1];
-            if (subject === found.subject && number === found.number) {
+              })
+            );
+            let noRemove = false;
+            let count = 0;
+            semesters.forEach((x) =>
+              x.courses.forEach((y: any) => {
+                if (y.idCourse === found.idCourse) {
+                  count++;
+                }
+              })
+            );
+            if (count > 1) {
               noRemove = true;
             }
-          });
-          if (!noRemove) {
-            removeFromRequirements(found);
-          }
+            userMajor()?.completed_courses.forEach((x) => {
+              const subject = x.split("-")[0];
+              const number = x.split("-")[1];
+              if (subject === found.subject && number === found.number) {
+                noRemove = true;
+              }
+            });
+            if (!noRemove) {
+              removeFromRequirements(found);
+            }
 
-          setUpdateWarning({
-            course: found,
-            oldSemester: movedFromIndex,
-            newSemester: -1,
-            draggedOut: true,
-            newCheck: true
-          });
+            setUpdateWarning({
+              course: found,
+              oldSemester: movedFromIndex,
+              newSemester: -1,
+              draggedOut: true,
+              newCheck: true
+            });
+          }
         }
       },
       [PassedCourseList, semesters]
@@ -393,7 +386,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       );
     }
 
-    console.log(updateWarning.newCheck);
     //  This useEffect is in charge of checking for duplicate courses
     useEffect(() => {
       if (updateWarning.newCheck) {
@@ -450,11 +442,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     //  This useEffect handles fall vs spring course placement
     useEffect(() => {
-      if (updateWarning.newCheck) {
+      if (updateWarning.newCheck && updateWarning.course !== undefined) {
         //  Check if the course is offered in the semester it was dragged to
         if (checkCourseSemester(updateWarning.course, updateWarning.newSemester)) {
           //  If the course is not offered during the semester, add it to the warning course list
-          if (!warningFallvsSpringCourses.find((x) => x === updateWarning.course)) {
+          if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) === undefined) {
             warningFallvsSpringCourses.push(updateWarning.course);
             setVisibility(true);
             setErrorMessage(
@@ -467,9 +459,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               " semester"
             );
           }
-        }
-        //  Otherwise remove it from the warning course list
-        else {
+        } else {
+          //  Otherwise remove it from the warning course list
           const temp = new Array<CourseType>();
           const removeCourse = warningFallvsSpringCourses.find((x) => x === updateWarning.course);
           warningFallvsSpringCourses.forEach((x) => {
@@ -492,7 +483,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     //  This useEffect is in charge of checking prerequisites
     useEffect(() => {
-      if (updateWarning.newCheck) {
+      if (updateWarning.newCheck && updateWarning.course !== undefined) {
         //  This will store if the prerequisites for the changed course have been satisfied
         let satisfied;
         //  If the course is not dragged out, check its prerequisites
@@ -525,7 +516,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             pastCourses,
             currCourses
           );
-          console.log(satisfied);
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);
@@ -546,7 +536,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         }
 
         //  If the course has been dragged from earlier to later
-        if (updateWarning.oldSemester < updateWarning.newSemester) {
+        if (updateWarning.oldSemester < updateWarning.newSemester && satisfied !== undefined) {
           //  Check all semesters past the old moved semester
           preReqCheckAllCoursesPastSemester(
             updateWarning.course,
@@ -667,7 +657,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // Remove any courses that were marked as warning, but now have resolved prerequisites
       if (!movedRight) {
         warningPrerequisiteCourses.forEach((currentWarningCourse) => {
-          if (!initialPreviousCourses.find((prevCourse) => prevCourse === currentWarningCourse)) {
+          if (initialPreviousCourses.find((prevCourse) => prevCourse === currentWarningCourse) === undefined) {
             failedCoursesList.forEach((currentFailedCourse) => {
               if (currentWarningCourse === currentFailedCourse) {
                 found = true;
@@ -699,13 +689,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         let message = "";
         //  Push each failed course to the warningCourses
         failedCoursesList.forEach((x) => {
-          if (!warningPrerequisiteCourses.find((z) => z === x)) {
+          if (warningPrerequisiteCourses.find((z) => z === x) === undefined) {
             const temp = warningPrerequisiteCourses;
             temp.push(x);
             setWarningPrerequisiteCourses(temp);
           }
           //  If the course is failing, but not due to the latest course move, modify the warning message
-          if (!failedCoursesNoWarning.find((z) => z === x)) {
+          if (failedCoursesNoWarning.find((z) => z === x) === undefined) {
             message.length > 0
               ? (message = message + "," + x.subject + "-" + x.number)
               : (message = message + x.subject + "-" + x.number);
@@ -715,7 +705,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         //  Show a warning stating that the classes failed the prereqs
         if (
           !message.includes(
-            courseToRemove.subject + "" + courseToRemove.number
+            courseToRemove.subject + "-" + courseToRemove.number
           ) &&
           message.length > 0
         ) {
@@ -875,11 +865,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // this prevents the requirements from resetting on a page rerender (leaving page and coming back)
     const [ran, setRan] = useState<boolean>(false);
     // get all of the requirements and sort through the course list for courses
-    // that can fullfill multiple categories
+    // that can fulfill multiple categories
     useEffect(() => {
       console.log("running", reqList, requirements);
       // don't proceed if there are no requirements
-      if (requirements === undefined || requirementsGen === undefined) { return; }
+      if (requirements === undefined || requirements === null || requirementsGen === undefined || requirementsGen === null) { return; }
       if (ran) { return; };
       const temp: RequirementComponentType[] = [];
       let tempReqList: RequirementComponentType[] = requirements;
@@ -914,7 +904,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               tempGen[i].inheritedCredits = x.creditCount;
               if (tempGen[i].courseReqs === null) {
                 tempGen[i].courseReqs = x.courseReqs;
-              } else if (!tempGen[i].courseReqs.includes(x.courseReqs)) {
+              } else if (tempGen[i].courseReqs.includes(x.courseReqs) !== undefined) {
                 tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
               }
               tempGen[i].inheritedCredits = x.creditCount;
@@ -977,16 +967,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       console.log("creating mult", tempArr, PassedCourseList);
       setCoursesInMultipleCategories(tempArr);
     }, [PassedCourseList]);
-    useEffect(() => {
-      // setRequirementsDisplay([...requirementsDisplay]);
-      console.log("Update", requirementsDisplay);
-    }, [requirementsDisplay]);
 
+    // This prevents the data from resetting when you click off the page
     const [alreadySetThisData, setAlreadySetThisData] = useState(false);
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
       console.log("reqList", reqList);
-      if (coursesInMultipleCategories.length !== 0 && reqList !== undefined && !alreadySetThisData) {
+      if (coursesInMultipleCategories.length !== 0 && reqList != null && reqGenList != null && !alreadySetThisData) {
         userMajor()?.completed_courses.forEach((x) => {
           const a = x.split("-");
           const found = PassedCourseList.find((item) => item.subject === a[0] && item.number === a[1]);
@@ -994,11 +981,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             checkRequirements(found, coursesInMultipleCategories);
           }
         });
-        setReqList([...reqList]);
-        setReqGenList([...reqGenList]);
+        setReqList([...[...reqList]]);
+        setReqGenList([...[...reqGenList]]);
         // recheck now that we have multiple category data
         if (userMajor()?.load_four_year_plan === true) {
-          console.log("set?", fourYearPlan);
           // fill in the schedule
           semesters.forEach((semester) => {
             const tempArr: CourseType[] = [];
@@ -1006,13 +992,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             const courseStringArr =
               fourYearPlan.ClassPlan["Semester" + semester.semesterNumber]
                 .Courses;
-            console.log("courseStringArr", courseStringArr);
             let credits = 0;
             // loop through each course in the list
             courseStringArr.forEach((courseString: String) => {
               const subject = courseString.split("-")[0];
               const number = courseString.split("-")[1];
-              let course;
+              let course: CourseType | undefined;
               // This variable prevents the course being added twice if it is in
               // more than one category
               let foundOnce = false;
@@ -1033,8 +1018,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                     foundOnce = true;
                   }
                 }
+                // If there is a course add it to the temporary array for the semester
               });
-              // If there is a course add it to the temporary array for the semester
               if (course !== undefined) {
                 tempArr.push(course);
                 credits += course.credits;
@@ -1105,131 +1090,108 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         let temp2 = 1000;
         let temp3 = 1000;
         const reqCheck = new StringProcessing();
-        for (let i = 0; i < reqList.length; i++) {
-          const courseString = course.subject + "-" + course.number;
-          const index = reqList[i].coursesTaken.indexOf(courseString);
-          if (index > -1) {
-            reqList[i].coursesTaken.slice(index, courseString.length);
-            if (reqList[i].creditCount !== null) {
-              reqList[i].creditCountTaken =
-                reqList[i].creditCountTaken - course.credits;
-              temp1 = reqList[i].creditCountTaken / reqList[i].creditCount;
-            }
-            if (reqList[i].courseCount !== null) {
-              reqList[i].courseCountTaken = reqList[i].courseCountTaken - 1;
-              temp2 = reqList[i].courseCountTaken / reqList[i].courseCount;
-            }
-            if (reqList[i].courseReqs !== null) {
-              const total = reqList[i].courseReqs.split(",").length;
-              temp3 = reqList[i].coursesTaken.length / total;
-            }
-            // set the new percentage
-            if (temp1 <= temp2 && temp1 <= temp3) {
-              reqList[i].percentage = temp1 * 100;
-            } else if (temp2 <= temp3 && temp2 <= temp1) {
-              reqList[i].percentage = temp2 * 100;
-            } else {
-              reqList[i].percentage = temp3 * 100;
-            }
-            if (reqGenList[i].percentage > 100) {
-              reqGenList[i].percentage = 100;
+        if (reqList !== null && reqList !== undefined && reqGenList !== null && reqGenList !== undefined) {
+          for (let i = 0; i < reqList.length; i++) {
+            const courseString = course.subject + "-" + course.number;
+            const index = reqList[i].coursesTaken.indexOf(courseString);
+            if (index > -1) {
+              reqList[i].coursesTaken.slice(index, courseString.length);
+              if (reqList[i].creditCount !== null) {
+                reqList[i].creditCountTaken =
+                  reqList[i].creditCountTaken - course.credits;
+                temp1 = reqList[i].creditCountTaken / reqList[i].creditCount;
+              }
+              if (reqList[i].courseCount !== null) {
+                reqList[i].courseCountTaken = reqList[i].courseCountTaken - 1;
+                temp2 = reqList[i].courseCountTaken / reqList[i].courseCount;
+              }
+              if (reqList[i].courseReqs !== null) {
+                const total = reqList[i].courseReqs.split(",").length;
+                temp3 = reqList[i].coursesTaken.length / total;
+              }
+              // set the new percentage
+              if (temp1 <= temp2 && temp1 <= temp3) {
+                reqList[i].percentage = temp1 * 100;
+              } else if (temp2 <= temp3 && temp2 <= temp1) {
+                reqList[i].percentage = temp2 * 100;
+              } else {
+                reqList[i].percentage = temp3 * 100;
+              }
+              if (reqGenList[i].percentage > 100) {
+                reqGenList[i].percentage = 100;
+              }
             }
           }
-        }
-        // check if the course is filling any gen-eds
-        for (let i = 0; i < reqGenList.length; i++) {
-          temp1 = 1000;
-          temp2 = 1000;
-          temp3 = 1000;
-          const courseString = course.subject + "-" + course.number;
-          const index = reqGenList[i].coursesTaken?.indexOf(courseString);
-          if (index > -1 && index !== undefined) {
-            // remove the course from the requirment
-            reqGenList[i].coursesTaken.slice(index, 1);
-            if (reqGenList[i].creditCount !== null) {
-              reqGenList[i].creditCountTaken =
-                reqGenList[i].creditCountTaken - course.credits;
-              temp1 =
-                reqGenList[i].creditCountTaken / reqGenList[i].creditCount;
-            }
-            if (reqGenList[i].courseCount !== null) {
-              reqGenList[i].courseCountTaken =
-                reqGenList[i].courseCountTaken - 1;
-              temp2 =
-                reqGenList[i].courseCountTaken / reqGenList[i].courseCount;
-            }
-            if (reqGenList[i].courseReqs !== null) {
-              const total = reqGenList[i].courseReqs.split(",").length;
-              const courseReqArr = reqGenList[i].courseReqs.split(",");
-              let validCourse = false;
-              courseReqArr.forEach((item: any) => {
-                const found = reqCheck.courseInListCheck(
-                  item,
-                  [courseString],
-                  undefined
-                );
-                if (found.returnValue) {
-                  validCourse = true;
+          // check if the course is filling any gen-eds
+          for (let i = 0; i < reqGenList.length; i++) {
+            temp1 = 1000;
+            temp2 = 1000;
+            temp3 = 1000;
+            const courseString = course.subject + "-" + course.number;
+            const index = reqGenList[i].coursesTaken?.indexOf(courseString);
+            if (index > -1 && index !== undefined) {
+              // remove the course from the requirment
+              reqGenList[i].coursesTaken.slice(index, 1);
+              if (reqGenList[i].creditCount !== null) {
+                reqGenList[i].creditCountTaken =
+                  reqGenList[i].creditCountTaken - course.credits;
+                temp1 =
+                  reqGenList[i].creditCountTaken / reqGenList[i].creditCount;
+              }
+              if (reqGenList[i].courseCount !== null) {
+                reqGenList[i].courseCountTaken =
+                  reqGenList[i].courseCountTaken - 1;
+                temp2 =
+                  reqGenList[i].courseCountTaken / reqGenList[i].courseCount;
+              }
+              if (reqGenList[i].courseReqs !== null) {
+                const total = reqGenList[i].courseReqs.split(",").length;
+                const courseReqArr = reqGenList[i].courseReqs.split(",");
+                let validCourse = false;
+                courseReqArr.forEach((item: any) => {
+                  const found = reqCheck.courseInListCheck(
+                    item,
+                    [courseString],
+                    undefined
+                  );
+                  if (found.returnValue) {
+                    validCourse = true;
+                  }
+                });
+                if (validCourse) {
+                  temp3 = reqGenList[i].percentage - (1 / total) * 100;
                 }
-              });
-              if (validCourse) {
-                temp3 = reqGenList[i].percentage - (1 / total) * 100;
               }
-            }
-            // set the new percentage
-            if (
-              temp1 <= temp2 &&
-              temp1 <= temp3 &&
-              reqGenList[i].creditCount !== null
-            ) {
-              reqGenList[i].percentage = temp1 * 100;
-            } else if (
-              temp2 <= temp3 &&
-              temp2 <= temp1 &&
-              reqGenList[i].courseCount !== null
-            ) {
-              reqGenList[i].percentage = temp2 * 100;
-            } else {
-              reqGenList[i].percentage = temp3 * 100;
-            }
-            const parentIndex = reqGenList.indexOf(reqGenList.find((item) => item.idCategory === reqGenList[i].parentCategory));
-            if (parentIndex !== -1) {
-              if (reqGenList[parentIndex].idCategory === 25) {
-                // ARNS
-                // Must include one nat lab and one math/stat
-                const percents: number[] = [];
-                reqGenList.forEach((y) => {
-                  if (y.parentCategory === 25) {
-                    if (
-                      y.courseReqs !== null ||
-                      y.courseCount !== null ||
-                      y.creditCount !== null
-                    ) {
-                      percents.push(y.percentage);
-                    }
-                  }
-                });
-                let sum = 0;
-                percents.forEach((y) => {
-                  if (y === undefined) {
-                    y = 0;
-                  }
-                  sum = sum + (y * 1) / percents.length;
-                });
-                reqGenList[parentIndex].percentage = sum;
-              }
+              // set the new percentage
               if (
-                reqGenList[parentIndex].idCategory === 26 ||
-                reqGenList[parentIndex].idCategory === 27
+                temp1 <= temp2 &&
+                temp1 <= temp3 &&
+                reqGenList[i].creditCount !== null
               ) {
-                // ART/HUM or SBSCI
-                // Must come from two different subcategories
-                if (reqGenList[parentIndex].coursesTaken.length > 1) {
+                reqGenList[i].percentage = temp1 * 100;
+              } else if (
+                temp2 <= temp3 &&
+                temp2 <= temp1 &&
+                reqGenList[i].courseCount !== null
+              ) {
+                reqGenList[i].percentage = temp2 * 100;
+              } else {
+                reqGenList[i].percentage = temp3 * 100;
+              }
+              const category = reqGenList.find((item) => item.idCategory === reqGenList[i].parentCategory);
+              let parentIndex: number;
+              if (category !== undefined) {
+                parentIndex = reqGenList.indexOf(category);
+              } else {
+                parentIndex = -1;
+              }
+              if (parentIndex !== -1) {
+                if (reqGenList[parentIndex].idCategory === 25) {
+                  // ARNS
+                  // Must include one nat lab and one math/stat
                   const percents: number[] = [];
                   reqGenList.forEach((y) => {
-                    if (
-                      y.parentCategory === reqGenList[parentIndex].idCategory
-                    ) {
+                    if (y.parentCategory === 25) {
                       if (
                         y.courseReqs !== null ||
                         y.courseCount !== null ||
@@ -1239,54 +1201,85 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                       }
                     }
                   });
-                  // at least one subcategory has it's own requirments that must
-                  // be satisfied as well
-                  if (percents.length > 1) {
-                    let sum = 0;
-                    percents.forEach((y) => {
-                      if (y === undefined) {
-                        y = 0;
-                      }
-                      sum = sum + y / percents.length;
-                    });
-                    reqGenList[parentIndex].percentage = sum;
-                  } else {
-                    // no req subcat, just fill two different ones
-                    let filledCategories = 0;
-                    for (let i = 0; i < reqGenList.length; i++) {
+                  let sum = 0;
+                  percents.forEach((y) => {
+                    if (y === undefined) {
+                      y = 0;
+                    }
+                    sum = sum + (y * 1) / percents.length;
+                  });
+                  reqGenList[parentIndex].percentage = sum;
+                }
+                if (
+                  reqGenList[parentIndex].idCategory === 26 ||
+                  reqGenList[parentIndex].idCategory === 27
+                ) {
+                  // ART/HUM or SBSCI
+                  // Must come from two different subcategories
+                  if (reqGenList[parentIndex].coursesTaken.length > 1) {
+                    const percents: number[] = [];
+                    reqGenList.forEach((y) => {
                       if (
-                        reqGenList[i].parentCategory ===
-                        reqGenList[parentIndex].idCategory
+                        y.parentCategory === reqGenList[parentIndex].idCategory
                       ) {
                         if (
-                          reqGenList[i].coursesTaken.length > 0 &&
-                          reqGenList[i].idCategory !==
-                          reqGenList[parentIndex].idCategory
+                          y.courseReqs !== null ||
+                          y.courseCount !== null ||
+                          y.creditCount !== null
                         ) {
-                          filledCategories++;
+                          percents.push(y.percentage);
                         }
                       }
-                    }
-                    // the courses are only from one category
-                    if (filledCategories === 1) {
-                      if (reqGenList[parentIndex].percentage > 50) {
-                        reqGenList[parentIndex].percentage = 50;
+                    });
+                    // at least one subcategory has it's own requirments that must
+                    // be satisfied as well
+                    if (percents.length > 1) {
+                      let sum = 0;
+                      percents.forEach((y) => {
+                        if (y === undefined) {
+                          y = 0;
+                        }
+                        sum = sum + y / percents.length;
+                      });
+                      reqGenList[parentIndex].percentage = sum;
+                    } else {
+                      // no req subcat, just fill two different ones
+                      let filledCategories = 0;
+                      for (let i = 0; i < reqGenList.length; i++) {
+                        if (
+                          reqGenList[i].parentCategory ===
+                          reqGenList[parentIndex].idCategory
+                        ) {
+                          if (
+                            reqGenList[i].coursesTaken.length > 0 &&
+                            reqGenList[i].idCategory !==
+                            reqGenList[parentIndex].idCategory
+                          ) {
+                            filledCategories++;
+                          }
+                        }
                       }
-                    } else if (percents.length === 1) {
-                      // courses are from different categories one of which is required
-                      reqGenList[parentIndex].percentage =
-                        reqGenList[parentIndex].percentage / 2 +
-                        percents[0] / 2;
+                      // the courses are only from one category
+                      if (filledCategories === 1) {
+                        if (reqGenList[parentIndex].percentage > 50) {
+                          reqGenList[parentIndex].percentage = 50;
+                        }
+                      } else if (percents.length === 1) {
+                        // courses are from different categories one of which is required
+                        reqGenList[parentIndex].percentage =
+                          reqGenList[parentIndex].percentage / 2 +
+                          percents[0] / 2;
+                      }
                     }
                   }
                 }
+                if (reqGenList[parentIndex].percentage > 100) {
+                  reqGenList[parentIndex].percentage = 100;
+                }
               }
-              if (reqGenList[parentIndex].percentage > 100) {
-                reqGenList[parentIndex].percentage = 100;
+              if (reqGenList[i].percentage > 100) {
+                reqGenList[i].percentage = 100;
               }
-            }
-            if (reqGenList[i].percentage > 100) {
-              reqGenList[i].percentage = 100;
             }
           }
         }
@@ -1297,21 +1290,19 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // // TODO do the requirements define when a course can be taken twice for credit
     const checkRequirements = useCallback(
       (course: CourseType, multipleCategories: any) => {
-        console.log("requirementsList", reqList);
-        console.log("mult", multipleCategories);
-        if (reqList) {
+        if (reqList !== null && reqList !== undefined && reqGenList !== null && reqGenList !== undefined) {
           const reqCheck = new RequirementsProcessing();
           // check for any major/concentration reqs it can fill
           const Major = reqCheck.majorReqCheck(course, reqList);
           setReqList(Major.reqList);
           if (!Major.addedCourse) {
             // check if it fills any unfilled gen-ed requirements
-            reqGenList = reqCheck.checkRequirementsGen(
+            setReqGenList(reqCheck.checkRequirementsGen(
               course,
               multipleCategories,
               reqGenList,
               PassedCourseList
-            );
+            ));
           }
         }
       },
@@ -1372,8 +1363,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   }))}
                   label={null}
                   onSelectOption={selectedCategory} // If option chosen, selected Category activated.
-                  showDropdown={true}
-                  thin={true}
                 />
               </div>
             </div>
@@ -1402,8 +1391,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   options={informationTypes}
                   label={null}
                   onSelectOption={setDisplayedInformationType}
-                  showDropdown={true}
-                  thin={true}
                 />
               )}
             </div>

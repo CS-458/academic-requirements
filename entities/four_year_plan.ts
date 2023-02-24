@@ -25,6 +25,7 @@ export interface CourseType {
   idCourse: number; // Database course id
   idCategory: number; // Database id for the category
   dragSource: string; // Which element it came from i.e. "Semester 1" or CourseList
+  repeatableForCred: boolean; // If a course can be taken twice for credit
 }
 
 // Defines the actual draggable course object type
@@ -37,11 +38,12 @@ export interface DragCourseType {
   semesters: string, // see CourseType
   preReq: string, // see CourseType
   dragSource: string, // see CourseType
-  warningYellowColor: boolean, // If the course is in multiple semesters
-  warningOrangeColor: boolean, // If the course is in the wrong semester fall vs spring
-  warningRedColor: boolean, // If the course has a prereq error
+  warningYellowColor: number | undefined, // If the course is in multiple semesters
+  warningOrangeColor: number | undefined, // If the course is in the wrong semester fall vs spring
+  warningRedColor: number | undefined, // If the course has a prereq error
   idCourse: number, // see CourseType
   idCategory: number // see CourseType
+  repeatableForCred: boolean; // see CourseType
 }
 
 // Defines the props for the course list component
@@ -92,12 +94,12 @@ export interface SemesterProps {
   accept: TargetType; // makes it a drop target, don't worry about it
   onDrop: (item: any) => void; // function for when an item is dropped
   semesterNumber: number; // the number of the semester
-  courses: DragCourseType[]; // a list of courses in the semester
+  courses: CourseType[]; // a list of courses in the semester
   SemesterCredits: number; // total credits of all courses in semester
   Warning: string; // credit warning (low or high)
-  warningPrerequisiteCourses: DragCourseType[]; // list of courses in with prereq issues
-  warningFallvsSpringCourses: DragCourseType[]; // list of courses with semester issues
-  warningDuplicateCourses: DragCourseType[]; // list of courses in more than one semester
+  warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
+  warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
+  warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
 }
 
 // Defines the properties of a semester object
@@ -112,7 +114,7 @@ export interface SemesterType {
 //  Defines the properties that should be passed in to the fourYearPlan page
 export interface FourYearPlanType {
   PassedCourseList: CourseType[];
-  requirements: RequirementComponentType[];
-  requirementsGen: RequirementComponentType[];
+  requirements: RequirementComponentType[] | null | undefined;
+  requirementsGen: RequirementComponentType[] | null | undefined;
   importData?: {};
 }

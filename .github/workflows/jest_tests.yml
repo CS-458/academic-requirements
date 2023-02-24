@@ -25,6 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: ESlint Github Action
+        if: always()
         uses: sibiraj-s/action-eslint@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # Optional

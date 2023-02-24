@@ -77,106 +77,17 @@ class RequirementProcessing {
             if (x.courseReqs !== null) {
               courseReqArr = x.courseReqs.split(",");
             }
-            // The only requirement is a course count
-            if (x.courseCount !== null && x.courseReqs === null && x.creditCount === null) {
-              x.courseCountTaken = x.courseCountTaken + 1;
-              x.percentage = (x.courseCountTaken / x.courseCount) * 100;
-            }
-            // The only requirement is a courses required list
-            if (x.courseCount === null && x.courseReqs !== null && x.creditCount === null) {
-              let validCourse = false;
-              courseReqArr.forEach((item: string) => {
-                const found = reqCheck.courseInListCheck(item, [courseString], undefined);
-                if (found.returnValue) {
-                  validCourse = true;
-                }
-              });
-              if (validCourse) {
-                x.percentage = x.percentage + (1 / courseReqArr.length) * 100;
-              }
-            }
-            // The only requirement is a credit count
-            if (x.courseCount === null && x.courseReqs === null && x.creditCount !== null) {
-              x.creditCountTaken = x.creditCountTaken + course.credits;
-              x.percentage = (x.creditCountTaken / x.creditCount) * 100;
-            }
-            // The requirement is a course count and a list of required courses
-            if (x.courseCount !== null && x.courseReqs !== null && x.creditCount === null) {
-              let validCourse = false;
-              let temp1 = x.percentage;
-              let temp2 = 0;
-              courseReqArr.forEach((item: string) => {
-                const found = reqCheck.courseInListCheck(item, [courseString], undefined);
-                if (found.returnValue) {
-                  validCourse = true;
-                }
-              });
-              if (validCourse) {
-                // use course reqs as percent
-                temp1 = x.percentage + (1 / courseReqArr.length);
-              }
-              // add credits
-              x.courseCountTaken = x.courseCountTaken + 1;
-              temp2 = (x.courseCountTaken / x.courseCount);
-              x.percentage = useLowestPercentage(temp1, temp2);
-            }
-            // The requirement is a credit count and list of required courses
-            if (x.courseCount === null && x.courseReqs !== null && x.creditCount !== null) {
-              let validCourse = false;
-              let temp1 = 1000;
-              let temp2 = 1000;
-              courseReqArr.forEach((item: string) => {
-                const found = reqCheck.courseInListCheck(item, [courseString], undefined);
-                if (found.returnValue) {
-                  validCourse = true;
-                }
-              });
-              if (validCourse) {
-                // use req courses as percentage
-                temp1 = x.percentage + (1 / courseReqArr.length);
-              }
-              // add to course count but don't count it yet
-              x.creditCountTaken = x.creditCountTaken + course.credits;
-              temp2 = (x.creditCountTaken / x.creditCount);
-              // set to lowest so we don't report complete if its not
-              x.percentage = useLowestPercentage(temp1, temp2);
-            }
-            // The requirement is a credit count and a course count
-            if (x.courseCount !== null && x.courseReqs === null && x.creditCount !== null) {
-              x.courseCountTaken = x.courseCountTaken + 1;
-              x.creditCountTaken = x.creditCountTaken + course.credits;
-              const temp1 = (x.creditCountTaken / x.creditCount);
-              const temp2 = (x.courseCountTaken / x.courseCount);
-              x.percentage = useLowestPercentage(temp1, temp2);
-            }
-            // The requirement is a credit count, a course count, and a course list
-            if (x.courseCount !== null && x.courseReqs !== null && x.creditCount !== null) {
-              // update taken credits and course count
-              x.creditCountTaken = x.creditCountTaken + course.credits;
-              x.courseCountTaken = x.courseCountTaken + 1;
-              let validCourse = false;
-              let temp1 = x.percentage;
-              courseReqArr.forEach((item: string) => {
-                const found = reqCheck.courseInListCheck(item, [courseString], undefined);
-                if (found.returnValue) {
-                  validCourse = true;
-                }
-              });
-              if (validCourse) {
-                temp1 = x.percentage + (1 / courseReqArr.length);
-              }
-              const temp2 = (x.creditCountTaken / x.creditCount);
-              const temp3 = (x.courseCountTaken / x.courseCount);
-              x.percentage = useLowestPercentage(temp1, temp2, temp3);
-            }
-            if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
-              x.percentage = 100;
-            }
             if (x.coursesTaken === "") {
               x.coursesTaken = courseString;
             } else {
               x.coursesTaken = x.coursesTaken + "," + courseString;
             }
+            if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
+              x.percentage = 100;
+            } else {
+              x.percentage = calculateNewPercentage(x, course, reqCheck);
+            }
+
             if (x.percentage > 100) {
               x.percentage = 100;
             }
@@ -558,6 +469,7 @@ function calculateNewPercentage(requirement: RequirementComponentType, course: C
   let temp1 = 1000;
   let temp2 = 1000;
   let temp3 = 1000;
+  console.log(requirement);
   // if there is a credit count requirement calculate its percentage
   if (requirement.creditCount !== null) {
     requirement.creditCountTaken = requirement.creditCountTaken + course.credits;
@@ -585,7 +497,6 @@ function calculateNewPercentage(requirement: RequirementComponentType, course: C
         }
       });
     });
-    console.log(validCourses);
     if (validCourses > 0) {
       temp3 = validCourses / courseReqArr.length;
     }

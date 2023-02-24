@@ -341,16 +341,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             );
             let noRemove = false;
             let count = 0;
-            console.log(semesters);
             semesters.forEach((x) =>
               x.courses.forEach((y: any) => {
                 if (y.idCourse === found.idCourse) {
-                  console.log(y, found);
                   count++;
                 }
               })
             );
-            if (count > 1) {
+            if (count > 1 && !found.repeatableForCred) {
               noRemove = true;
             }
             userMajor()?.completed_courses.forEach((x) => {
@@ -915,13 +913,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
         }
       });
-      console.log("temp", tempReqList);
+      tempReqList.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
       setReqList(tempReqList);
       tempGen.forEach((x) => {
         if (x.parentCategory === null || x.parentCategory === undefined) {
           temp.push(x);
         }
       });
+      tempGen.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
       setReqGenList(tempGen);
       setRequirementsDisplay(temp);
       setRan(true);

@@ -196,7 +196,8 @@ export async function waitForQuery<T>(
   query: () => UseQueryResult<T>
 ): Promise<T> {
   // @ts-expect-error fetch only exists on our mock
-  return await query().fetch;
+  const temp = await query().fetch;
+  return temp;
 }
 
 const toBeUnique: MatcherFunction<[]> = (actual) => {
@@ -218,7 +219,6 @@ const toBeUnique: MatcherFunction<[]> = (actual) => {
         message: () => `Indicies ${i}, and ${pos} are the same`,
         pass: false
       };
-
     }
   }
   return {
@@ -231,12 +231,12 @@ expect.extend({
   toBeUnique
 });
 
-declare module 'expect' {
+declare module "expect" {
   interface AsymmetricMatchers {
-    toBeUnique(): void;
+    toBeUnique: () => void;
   }
   interface Matchers<R> {
-    toBeUnique(): R;
+    toBeUnique: () => R;
   }
 }
 

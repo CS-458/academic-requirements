@@ -1,7 +1,7 @@
 import { RequirementType } from "../../../entities/four_year_plan";
 import { fetchApiJson } from "../../util";
 
-test("Check GenEd Requirements", async () => {
+test("Check Major/Concentration Requirements", async () => {
   // Computer Science, Cyber Security
   const reqs: RequirementType[] = await fetchApiJson(
     "/api/requirements?conid=14"
@@ -30,4 +30,11 @@ test("Check GenEd Requirements", async () => {
       expect(typeof r.courseReqs).toBe("string");
     }
   });
+});
+
+test("Check Major/Concentration Requirements (no conid provided)", async () => {
+  const response = await fetchApiJson(
+    "/api/requirements"
+  );
+  expect(response.error).toBeTruthy();
 });

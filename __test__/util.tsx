@@ -229,3 +229,16 @@ declare module 'expect' {
     toBeUnique(): R;
   }
 }
+
+export function courseSemestersCheck(semesters: string): void {
+  /*
+    Available options: FA,WI,SP,SU
+
+    semesters can start with any of the options
+    then be followed by a comma and any of the options
+
+    Note: Data such as FA,FA will match but FA,bad_data will not
+  */
+  // Expect the format to match
+  expect(semesters).toMatch(/^(FA|WI|SP|SU)(,(FA|WI|SP|SU))*$/);
+}

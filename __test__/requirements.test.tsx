@@ -46,6 +46,68 @@ test("Check Major/Concentration Requirements Processing", async () => {
   }
 });
 
+// This test checks that repeatable for credit courses can get credit twice
+test("Check repeatable for credit courses", async () => {
+  // Computer Science, Cyber Security
+  const reqs: RequirementComponentType[] = await fetchApiJson(
+    "/api/requirements?conid=14"
+  );
+  // update database reqs to the req type we use
+  reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
+  // get major courses for computer science
+  const courses: CourseType[] = await fetchApiJson(
+    "/api/courses/concentration?conid=14"
+  );
+  const reqCheck = new RequirementsProcessing();
+
+  // get CNIT-133
+  let course = courses.find((x) => x.idCourse === 322);
+  let response;
+  if (course !== undefined) {
+    response = reqCheck.majorReqCheck(course, reqs);
+  }
+  // expect the course to have been added to a requirement
+  expect(response?.addedCourse).toBe(true);
+  // check the right category is updated
+  let category = response?.reqList.find((x) => x.idCategory === 19);
+  // check the right percentage is assigned
+  expect(category?.percentage).toBeCloseTo(9.38, 1);
+
+  // Add CNIT-133 a second time, reqs shouldn't change
+  if (course !== undefined) {
+    response = reqCheck.majorReqCheck(course, reqs);
+  }
+  // expect the course to have been added to a requirement
+  expect(response?.addedCourse).toBe(false);
+  // check the right category is updated
+  category = response?.reqList.find((x) => x.idCategory === 19);
+  // check the right percentage is assigned
+  expect(category?.percentage).toBeCloseTo(9.38, 1);
+
+  // get CS-458 which is repeatable for credit
+  course = courses.find((x) => x.idCourse === 320);
+  if (course !== undefined) {
+    response = reqCheck.majorReqCheck(course, reqs);
+  }
+  // expect the course to have been added to a requirement
+  expect(response?.addedCourse).toBe(true);
+  // check the right category is updated
+  category = response?.reqList.find((x) => x.idCategory === 19);
+  // check the right percentage is assigned
+  expect(category?.percentage).toBeCloseTo(21.88, 1);
+
+  // Add CS-145 a second time, reqs shouldn't change
+  if (course !== undefined) {
+    response = reqCheck.majorReqCheck(course, reqs);
+  }
+  // expect the course to have been added to a requirement
+  expect(response?.addedCourse).toBe(true);
+  // check the right category is updated
+  category = response?.reqList.find((x) => x.idCategory === 19);
+  // check the right percentage is assigned
+  expect(category?.percentage).toBeCloseTo(33.33, 1);
+});
+
 // This test check general education requirements processing including courses in multiple requirements
 test("Check General Requirements Processing", async () => {
   // Get general requirements

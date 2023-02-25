@@ -428,6 +428,7 @@ class RequirementProcessing {
   }
 }
 
+// this function checks the 3 types of requirements and returns the new percentage a req is completed
 function calculateNewPercentage(requirement: RequirementComponentType, course: CourseType, reqCheck: StringProcessing): number {
   let temp1 = 1000;
   let temp2 = 1000;
@@ -469,6 +470,8 @@ function calculateNewPercentage(requirement: RequirementComponentType, course: C
   const newPercentage = useLowestPercentage(temp1, temp2, temp3);
   return newPercentage;
 }
+
+// This function determines the percentage to use for a requirement
 function useLowestPercentage(a: number, b: number, c: number = 1000): number {
   let temp;
   if (a <= b && a <= c) {

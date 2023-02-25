@@ -2,6 +2,7 @@ import RequirementsProcessing from "../entities/requirementsProcessing";
 import { RequirementComponentType, CourseType } from "../entities/four_year_plan";
 import { fetchApiJson } from "./util";
 
+// This test checks major/concentration requirements
 test("Check Major/Concentration Requirements Processing", async () => {
   // Computer Science, Cyber Security
   const reqs: RequirementComponentType[] = await fetchApiJson(
@@ -45,6 +46,7 @@ test("Check Major/Concentration Requirements Processing", async () => {
   }
 });
 
+// This test check general education requirements processing including courses in multiple requirements
 test("Check General Requirements Processing", async () => {
   // Get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
@@ -119,6 +121,7 @@ test("Check General Requirements Processing", async () => {
   }
 });
 
+// This test checks requirements that have children are processed correctly
 test("Check ART/HUM or SBSCI Requirements Processing", async () => {
   // get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
@@ -174,6 +177,7 @@ test("Check ART/HUM or SBSCI Requirements Processing", async () => {
   }
 });
 
+// This checks that ARNS requirements process their children correctly
 test("Check ARNS Requirements Processing", async () => {
   // Get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
@@ -232,6 +236,7 @@ test("Check ARNS Requirements Processing", async () => {
   }
 });
 
+// This function creates the list of courses in multiple categories which is usually done in the fourYearPlanPage
 function createMultipleCategories(courses: CourseType[], multipleCats: { idString: string; categories: number[]; }[]): any {
   for (let i = 0; i < courses.length; i++) {
     let skip = false;

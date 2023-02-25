@@ -46,13 +46,13 @@ test("Check Major/Concentration Requirements Processing", async () => {
 });
 
 test("Check General Requirements Processing", async () => {
-  // Computer Science, Cyber Security
+  // Get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
     "/api/requirements/gen"
   );
   // update database reqs to the req type we use
   reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
-  // get major courses for computer science
+  // get gen ed courses
   const courses: CourseType[] = await fetchApiJson(
     "/api/courses/geneds"
   );
@@ -120,12 +120,13 @@ test("Check General Requirements Processing", async () => {
 });
 
 test("Check ART/HUM or SBSCI Requirements Processing", async () => {
+  // get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
     "/api/requirements/gen"
   );
   // update database reqs to the req type we use
   reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
-  // get major courses for computer science
+  // get general education courses
   const courses: CourseType[] = await fetchApiJson(
     "/api/courses/geneds"
   );
@@ -144,6 +145,7 @@ test("Check ART/HUM or SBSCI Requirements Processing", async () => {
   expect(category?.percentage).toBeCloseTo(100, 2);
   category = response?.find((x) => x.idCategory === 27);
   expect(category?.percentage).toBeCloseTo(50, 2);
+
   // Under SBSCI - ECON
   course = courses.find((x) => x.idCourse === 82);
   if (course !== undefined) {
@@ -152,7 +154,9 @@ test("Check ART/HUM or SBSCI Requirements Processing", async () => {
   category = response?.find((x) => x.idCategory === 43);
   expect(category?.percentage).toBeCloseTo(100, 2);
   category = response?.find((x) => x.idCategory === 27);
+  // has to come from two categories so should be 50%
   expect(category?.percentage).toBeCloseTo(50, 2);
+
   // Under SBSCI - GEOGRAPHY
   course = courses.find((x) => x.idCourse === 11);
   if (course !== undefined) {
@@ -165,24 +169,25 @@ test("Check ART/HUM or SBSCI Requirements Processing", async () => {
     expect(removeResponse?.major).toBe(null);
     expect(removeResponse?.gen).not.toBe(null);
     expect(removeResponse.gen?.find((x) => x.idCategory === 43)?.percentage).toBeCloseTo(100, 2);
+    // Has to come from two categories so should be 50%
     expect(removeResponse.gen?.find((x) => x.idCategory === 27)?.percentage).toBeCloseTo(50, 2);
   }
 });
 
 test("Check ARNS Requirements Processing", async () => {
-  // Computer Science, Cyber Security
+  // Get general requirements
   const reqs: RequirementComponentType[] = await fetchApiJson(
     "/api/requirements/gen"
   );
   // update database reqs to the req type we use
   reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
-  // get major courses for computer science
+  // get gen ed courses
   const courses: CourseType[] = await fetchApiJson(
     "/api/courses/geneds"
   );
+  // go through each item in the array to get any with duplicate categories
   let multipleCats: { idString: string; categories: number[]; }[] = [];
   multipleCats = createMultipleCategories(courses, multipleCats);
-  // go through each item in the array to get any with duplicate categories
 
   let response;
   let category;

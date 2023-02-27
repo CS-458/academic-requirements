@@ -48,5 +48,5 @@ jobs:
       - name: mock the secrets file for the build
         run: |
           touch secrets.json  
-          '{"client": {"id": "","secret": ""}}' > secrets.json
+          echo '{"client": {"id": "","secret": ""}}' >> secrets.json
       - run: npm run build

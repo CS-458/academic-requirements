@@ -46,8 +46,5 @@ jobs:
           extensions: 'js,jsx,ts,tsx'
           annotations: true
       - name: mock the secrets file for the build
-        run: |
-          touch secrets.json
-          git add secrets.json
-          git commit -m "adding file for build"
+        run: touch secrets.json
       - run: npm run build

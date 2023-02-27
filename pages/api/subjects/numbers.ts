@@ -35,5 +35,5 @@ export default async function handler(
     // })
     // res.status(200).json(rows.number);
   }
-  res.status(400).json({ error: "Major not defined" });
+  res.status(400).json({ error: "Subject not defined" });
 }

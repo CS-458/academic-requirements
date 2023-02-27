@@ -1,4 +1,4 @@
-import { jest, expect } from "@jest/globals";
+import { jest } from "@jest/globals";
 import type { MatcherFunction } from "expect";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";

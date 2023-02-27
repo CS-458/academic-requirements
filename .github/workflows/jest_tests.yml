@@ -45,4 +45,8 @@ jobs:
           eslint-args: '--ignore-path=.gitignore --quiet'
           extensions: 'js,jsx,ts,tsx'
           annotations: true
+      - name: stage changed files
+        run: git add secrets.json
+      - name: commit changed files
+        run: git commit -m "adding file for build"
       - run: npm run build

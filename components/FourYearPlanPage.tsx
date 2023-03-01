@@ -10,6 +10,7 @@ import { Requirement } from "./Requirement";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType } from "../entities/four_year_plan";
+import { courseAlreadyInSemester, getPreviousSemesterCourses, getSemesterCourses, getSemesterCoursesNames } from "../entities/prereqHelperFunctions";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -211,7 +212,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             currentCourses.push(x.subject + "-" + x.number);
           });
 
-          if (dragSource === "CourseList" && !courseAlreadyInSemester(course, index)) {
+          if (dragSource === "CourseList" && !courseAlreadyInSemester(course, index, semesters)) {
             const newSemesterCount = getSemesterTotalCredits(index) + course.credits;
             const newWarningState = getWarning(newSemesterCount);
             // Add the course to the semester
@@ -235,7 +236,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           } else {
             // Course was not found in the courses list, which means it currently occupies a semester
             // Only proceed if the course isn't moved to the same semester
-            if (!courseAlreadyInSemester(course, index)) {
+            if (!courseAlreadyInSemester(course, index, semesters)) {
               // Update the semester with the new dragged course
               const pushCourse = semesters[index].courses;
               pushCourse.push(course);
@@ -286,7 +287,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           console.log("setting");
           setUpdateWarning({
             course,
-            oldSemester: courseAlreadyInSemester(course, index) ? movedFromIndex : -1,
+            oldSemester: courseAlreadyInSemester(course, index, semesters) ? movedFromIndex : -1,
             newSemester: index,
             draggedOut: false,
             newCheck: true
@@ -544,21 +545,15 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       movedRight: boolean,
       draggedOut: boolean
     ): boolean {
-      //  prereqCheck will be used to check prerequisites
+      // prereqCheck will be used to check prerequisites
       const preReqCheck = new StringProcessing();
 
       //  Get the course names in the previous semesters
-      const previousCourses = getPreviousSemesterCourses(
-        courseSemesterIndex === -1 ? 0 : courseSemesterIndex
-      );
+      const previousCourses = getPreviousSemesterCourses(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
 
       //  Get the current courses in the current semester
-      let currentCourses = getSemesterCourses(
-        courseSemesterIndex === -1 ? 0 : courseSemesterIndex
-      );
-      let currentCoursesNames = getSemesterCoursesNames(
-        courseSemesterIndex === -1 ? 0 : courseSemesterIndex
-      );
+      let currentCourses = getSemesterCourses(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
+      let currentCoursesNames = getSemesterCoursesNames(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
 
       const failedCoursesList = new Array<CourseType>();
       const failedCoursesNoWarning = new Array<CourseType>();
@@ -598,12 +593,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           });
 
           //  Update the current course lists to be for the next semester
-          if (
-            index + 1 < semesters.length &&
-            semesters[index + 1].courses !== undefined
-          ) {
-            currentCourses = getSemesterCourses(index + 1);
-            currentCoursesNames = getSemesterCoursesNames(index + 1);
+          if (index + 1 < semesters.length && semesters[index + 1].courses !== undefined) {
+            currentCourses = getSemesterCourses(index + 1, semesters);
+            currentCoursesNames = getSemesterCoursesNames(index + 1, semesters);
           }
         }
       });
@@ -664,19 +656,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
           //  If the course is failing, but not due to the latest course move, modify the warning message
           if (failedCoursesNoWarning.find((z) => z === x) === undefined) {
-            message.length > 0
-              ? (message = message + "," + x.subject + "-" + x.number)
-              : (message = message + x.subject + "-" + x.number);
+            message.length > 0 ? (message = message + "," + x.subject + "-" + x.number) : (message = message + x.subject + "-" + x.number);
           }
         });
 
         //  Show a warning stating that the classes failed the prereqs
-        if (
-          !message.includes(
-            courseToRemove.subject + "-" + courseToRemove.number
-          ) &&
-          message.length > 0
-        ) {
+        if (!message.includes(courseToRemove.subject + "-" + courseToRemove.number) && message.length > 0) {
           setVisibility(true);
           setErrorMessage("WARNING! " + courseToRemove.subject + "-" + courseToRemove.number +
             " is a prerequisite for the following courses: " + message);
@@ -684,65 +669,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
 
       return failedCoursesList.length === 0;
-    }
-
-    //  Returns if a course is already in a semester's index
-    function courseAlreadyInSemester(course: CourseType, semesterIndex: number): boolean {
-      let found = false;
-      if (semesterIndex >= 0 || semesterIndex <= 8) {
-        semesters[semesterIndex].courses.forEach((x: any) => {
-          if (x === course) {
-            found = true;
-          }
-        });
-      }
-      return found;
-    }
-
-    //  Get all courses in previous semesters
-    //  param semesterIndex -> current semester index
-    function getPreviousSemesterCourses(semesterIndex: number): Array<string> {
-      const previousCourses = new Array<string>();
-      if (semesterIndex > -1 && semesterIndex < 8) {
-        semesters.forEach((currSemester) => {
-          if (currSemester.semesterNumber - 1 < semesterIndex) {
-            currSemester.courses.forEach((x: any) => {
-              previousCourses.push(x.subject + "-" + x.number);
-            });
-          }
-        });
-      }
-
-      //  Append completed courses to the array
-      userMajor()?.completed_courses.forEach((x) => {
-        previousCourses.push(x);
-      });
-
-      return previousCourses;
-    }
-
-    //  Get all Course objects in current semester
-    //  param semesterIndex -> current semester index
-    function getSemesterCourses(semesterIndex: number): Array<CourseType> {
-      const semCourses = new Array<CourseType>();
-      if (semesterIndex > -1 && semesterIndex < 8) {
-        semesters[semesterIndex].courses.forEach((x: any) => {
-          semCourses.push(x);
-        });
-      }
-      return semCourses;
-    }
-
-    //  Get all courses (string) in current semester
-    //  param semesterIndex -> current semester index
-    function getSemesterCoursesNames(semesterIndex: number): Array<string> {
-      const semCourses = new Array<string>();
-      if (semesterIndex > -1 && semesterIndex < 8) {
-        semesters[semesterIndex].courses.forEach((x: CourseType) => {
-          semCourses.push(x.subject + "-" + x.number);
-        });
-      }
-      return semCourses;
     }
 
     const popupCloseHandler = (): void => {
@@ -755,14 +681,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       Concentration: userMajor()?.concentration.name,
       "Completed Courses": userMajor()?.completed_courses,
       ClassPlan: {
-        Semester1: getSemesterCoursesNames(0),
-        Semester2: getSemesterCoursesNames(1),
-        Semester3: getSemesterCoursesNames(2),
-        Semester4: getSemesterCoursesNames(3),
-        Semester5: getSemesterCoursesNames(4),
-        Semester6: getSemesterCoursesNames(5),
-        Semester7: getSemesterCoursesNames(6),
-        Semester8: getSemesterCoursesNames(7)
+        Semester1: getSemesterCoursesNames(0, semesters),
+        Semester2: getSemesterCoursesNames(1, semesters),
+        Semester3: getSemesterCoursesNames(2, semesters),
+        Semester4: getSemesterCoursesNames(3, semesters),
+        Semester5: getSemesterCoursesNames(4, semesters),
+        Semester6: getSemesterCoursesNames(5, semesters),
+        Semester7: getSemesterCoursesNames(6, semesters),
+        Semester8: getSemesterCoursesNames(7, semesters)
       }
     };
 

@@ -49,7 +49,6 @@ export const Semester: FC<SemesterProps> = function Semester({
     backgroundColor = "darkgreen";
   }
 
-  console.log("help", warningPrerequisiteCourses);
   return (
     <div
       ref={drop}

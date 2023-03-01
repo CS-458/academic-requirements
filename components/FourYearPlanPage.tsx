@@ -10,7 +10,7 @@ import { Requirement } from "./Requirement";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType } from "../entities/four_year_plan";
-import { courseAlreadyInSemester, getPreviousSemesterCourses, getSemesterCourses, getSemesterCoursesNames } from "../entities/prereqHelperFunctions";
+import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -509,22 +509,34 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         //  If the course has been dragged from earlier to later
         if (updateWarning.oldSemester < updateWarning.newSemester && satisfied !== undefined) {
           //  Check all semesters past the old moved semester
-          preReqCheckAllCoursesPastSemester(
+          const response = preReqCheckAllCoursesPastSemester(
             updateWarning.course,
             updateWarning.oldSemester,
             updateWarning.oldSemester === -1 ? false : satisfied.returnValue,
             true,
-            false
+            false,
+            semesters,
+            warningPrerequisiteCourses
           );
+          console.log(response);
+          setVisibility(response.vis);
+          setWarningPrerequisiteCourses(response.warning);
+          setErrorMessage(response.error);
         }
         //  Check all semesters past the new moved semester
-        preReqCheckAllCoursesPastSemester(
+        const response = preReqCheckAllCoursesPastSemester(
           updateWarning.course,
           updateWarning.newSemester,
           true,
           false,
-          updateWarning.draggedOut
+          updateWarning.draggedOut,
+          semesters,
+          warningPrerequisiteCourses
         );
+        console.log(response);
+        setVisibility(response.vis);
+        setWarningPrerequisiteCourses(response.warning);
+        setErrorMessage(response.error);
       }
       // Reset the warning
       setUpdateWarning({
@@ -535,141 +547,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         newCheck: false
       });
     }, [semesters]);
-
-    //  This function checks if every course passes the prerequisite check when moving a course
-    //  out of a semester
-    function preReqCheckAllCoursesPastSemester(
-      courseToRemove: CourseType,
-      courseSemesterIndex: number,
-      showMessage: boolean,
-      movedRight: boolean,
-      draggedOut: boolean
-    ): boolean {
-      // prereqCheck will be used to check prerequisites
-      const preReqCheck = new StringProcessing();
-
-      //  Get the course names in the previous semesters
-      const previousCourses = getPreviousSemesterCourses(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
-
-      //  Get the current courses in the current semester
-      let currentCourses = getSemesterCourses(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
-      let currentCoursesNames = getSemesterCoursesNames(courseSemesterIndex === -1 ? 0 : courseSemesterIndex, semesters);
-
-      const failedCoursesList = new Array<CourseType>();
-      const failedCoursesNoWarning = new Array<CourseType>();
-
-      semesters.forEach((currSemester, index) => {
-        if (currSemester.semesterNumber - 1 >= courseSemesterIndex) {
-          //  Check every course in the current semester passes the prerequisites and push any failed
-          //  prerequisites to the failedCoursesList
-          currentCourses.forEach((x) => {
-            if (
-              !preReqCheck.courseInListCheck(
-                x !== undefined ? x.preReq : "",
-                previousCourses,
-                currentCoursesNames
-              ).returnValue
-            ) {
-              failedCoursesList.push(x);
-            }
-            //  If the course prereq fails, but not due to moving the course,
-            //  add it to the failedCoursesNoWarning list
-            if (
-              !preReqCheck
-                .courseInListCheck(
-                  x !== undefined ? x.preReq : "",
-                  previousCourses,
-                  currentCoursesNames
-                )
-                .failedString.includes(courseToRemove.subject + "-" + courseToRemove.number)
-            ) {
-              failedCoursesNoWarning.push(x);
-            }
-          });
-
-          //  Append the current semester to the previous courses semester
-          currentCoursesNames.forEach((x) => {
-            previousCourses.push(x);
-          });
-
-          //  Update the current course lists to be for the next semester
-          if (index + 1 < semesters.length && semesters[index + 1].courses !== undefined) {
-            currentCourses = getSemesterCourses(index + 1, semesters);
-            currentCoursesNames = getSemesterCoursesNames(index + 1, semesters);
-          }
-        }
-      });
-
-      //  Prepping variables for modifying warningPrerequisitesCourses
-      let found = false;
-      let tempWarningCourses = warningPrerequisiteCourses;
-      const initialPreviousCourses = new Array<CourseType>();
-
-      //  Add previous courses to initialPreviousCourses (the course object, not the strings)
-      semesters.forEach((x, index) => {
-        if (index < courseSemesterIndex) {
-          x.courses.forEach((y: any) => {
-            initialPreviousCourses.push(y);
-          });
-        }
-      });
-
-      // Remove any courses that were marked as warning, but now have resolved prerequisites
-      if (!movedRight) {
-        warningPrerequisiteCourses.forEach((currentWarningCourse) => {
-          if (initialPreviousCourses.find((prevCourse) => prevCourse === currentWarningCourse) === undefined) {
-            failedCoursesList.forEach((currentFailedCourse) => {
-              if (currentWarningCourse === currentFailedCourse) {
-                found = true;
-              }
-            });
-
-            //  If the currently selected course in the warningCourses now passes the prerequisites
-            if (!found) {
-              const temp = new Array<CourseType>();
-              //  Replace warningCourses with all courses but the currently selected warningCourse
-              tempWarningCourses.forEach((temporaryCurrentWarningCourse) => {
-                //  Carry on if the tempWarningCourse is not in a previous semester
-                if (temporaryCurrentWarningCourse !== currentWarningCourse) {
-                  temp.push(temporaryCurrentWarningCourse);
-                }
-              });
-              tempWarningCourses = temp;
-            }
-            found = false;
-          }
-        });
-
-        //  Update the warning courses to remove the currently now-satisifed prereqs course
-        setWarningPrerequisiteCourses(tempWarningCourses);
-      }
-
-      //  If any courses have failed, notify the user of each course that failed
-      if (showMessage && failedCoursesList.length > 0) {
-        let message = "";
-        //  Push each failed course to the warningCourses
-        failedCoursesList.forEach((x) => {
-          if (warningPrerequisiteCourses.find((z) => z === x) === undefined) {
-            const temp = warningPrerequisiteCourses;
-            temp.push(x);
-            setWarningPrerequisiteCourses(temp);
-          }
-          //  If the course is failing, but not due to the latest course move, modify the warning message
-          if (failedCoursesNoWarning.find((z) => z === x) === undefined) {
-            message.length > 0 ? (message = message + "," + x.subject + "-" + x.number) : (message = message + x.subject + "-" + x.number);
-          }
-        });
-
-        //  Show a warning stating that the classes failed the prereqs
-        if (!message.includes(courseToRemove.subject + "-" + courseToRemove.number) && message.length > 0) {
-          setVisibility(true);
-          setErrorMessage("WARNING! " + courseToRemove.subject + "-" + courseToRemove.number +
-            " is a prerequisite for the following courses: " + message);
-        }
-      }
-
-      return failedCoursesList.length === 0;
-    }
 
     const popupCloseHandler = (): void => {
       setVisibility(false);

@@ -49,6 +49,7 @@ export function userToken(): string | undefined {
   return React.useContext(UserLogin)?.cred;
 }
 
+// Calls the API to upload the schedule to the Database
 export async function uploadSchedule(name: string, schedule: any): Promise<void> {
   const token = userToken();
   if (token === undefined) {
@@ -57,6 +58,23 @@ export async function uploadSchedule(name: string, schedule: any): Promise<void>
   await fetchApi(`/api/inserts/schedule?name=${name}`, {
     method: "POST",
     body: JSON.stringify(schedule),
+    headers: {
+      "X-Google-Token": token
+    }
+  });
+}
+/*
+  Function used to store user into the user table
+  May not since we are checking if the user exists
+  when uploading the schedule
+*/
+export async function saveLoggedInUser(): Promise<void> {
+  const token = userToken();
+  if (token === undefined) {
+    throw new Error("User Token Not made");
+  }
+  await fetchApi("/api/inserts/user", {
+    method: "POST",
     headers: {
       "X-Google-Token": token
     }

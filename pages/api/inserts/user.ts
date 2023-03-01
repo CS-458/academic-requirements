@@ -1,6 +1,6 @@
 /*
     @Description
-      This is the API call that pushes the schedule form the user to the Database
+      This is the API call that pushes the User to the user table
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
@@ -28,19 +28,6 @@ export default async function handler(
   const user = verifyToken(token, con);
   if (user === undefined) {
     res.status(401).json({ error: "Invalid user token" });
-    return;
-  }
-  const name = req.query.name;
-  if (typeof name === "string" && req.body != null) {
-    // Inserts Data into the Schedule page
-    await con.all(
-      `INSERT INTO schedule (userID, name, sceduleData) 
-        VALUES (?, ?, ?) 
-        ON CONFLICT(userId, name) DO UPDATE SET sceduleData = excluded.sceduleData`,
-      [user, name, JSON.stringify(req.body)]
-    );
-    // Returns a success message
-    res.status(200).json({ message: "Successfully uploaded schedule" });
     return;
   }
   // Returns an error message with invalid parameters

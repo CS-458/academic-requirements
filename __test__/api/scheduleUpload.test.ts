@@ -3,12 +3,23 @@ import {
   fetchApiJson,
   mockToken
 } from "../util";
-import sql from "../../services/sql";
+import { setUserDb } from "../../services/sql";
+import { PromisedDatabase } from "promised-sqlite3";
+
+const db = new PromisedDatabase();
+beforeAll(async () => {
+  await db.open(":memory:");
+  await db.run(
+    "CREATE TABLE `user` ( `idUser` TEXT PRIMARY KEY, `role` TEXT NOT NULL)"
+  );
+  await db.run(
+    "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER NOT NULL, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
+  );
+  setUserDb(db);
+});
 
 test("Check import of Schedule Data", async () => {
   setupTokenMock();
-  const db = await sql();
-  await db.run("BEGIN IMMEDIATE");
 
   const response = await fetchApiJson(`/api/inserts/schedule?name=${"name"}`, {
     method: "POST",
@@ -23,5 +34,4 @@ test("Check import of Schedule Data", async () => {
   console.log(
     await db.get("SELECT * FROM schedule WHERE userID='1234' AND name='name'")
   );
-  await db.run("ROLLBACK");
 }, 100000000);

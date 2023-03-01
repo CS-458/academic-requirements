@@ -1,17 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import sql from "../../services/sql";
+import { academicDb } from "../../services/sql";
 import { MajorType } from "../../entities/four_year_plan";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const con = await sql();
+  const con = await academicDb();
   // const rows = await con.all(
   //   "SELECT m.idMajor, m.name, c.idConcentration, c.name as conName FROM major m JOIN concentration c ON m.idMajor = c.majorId"
   // );
-  const rows = await con.all(
-    "SELECT * FROM major"
-  );
+  const rows = await con.all("SELECT * FROM major");
   const result = [];
   let cur: MajorType = {
     id: rows[0].idMajor,

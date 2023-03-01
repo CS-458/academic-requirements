@@ -5,14 +5,14 @@
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
-import sql from "../../../services/sql";
+import { academicDb } from "../../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
   // Creates connection to the DB
-  const con = await sql();
+  const con = await academicDb();
 
   // queries the DB for all the GenEds for a given Concentration
   const rows = await con.all(

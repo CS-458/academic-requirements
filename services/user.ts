@@ -65,7 +65,7 @@ export async function uploadSchedule(name: string, schedule: any): Promise<void>
 }
 /*
   Function used to store user into the user table
-  May not since we are checking if the user exists
+  May not be needed since we are checking if the user exists
   when uploading the schedule
 */
 export async function saveLoggedInUser(): Promise<void> {

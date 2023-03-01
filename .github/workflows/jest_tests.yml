@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: ["main"]
 jobs:
-  build:
+  testing:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,11 +24,29 @@ jobs:
           test-command: npm run test:ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
       - name: ESlint Github Action
+        if: always()
         uses: sibiraj-s/action-eslint@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
           eslint-args: '--ignore-path=.gitignore --quiet'
           extensions: 'js,jsx,ts,tsx'
           annotations: true
+      - name: mock the secrets file for the build
+        run: |
+          touch secrets.json  
+          echo '{"client": {"id": "","secret": ""}}' >> secrets.json
       - run: npm run build

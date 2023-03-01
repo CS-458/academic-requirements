@@ -34,9 +34,9 @@ export default async function handler(
   if (typeof name === "string" && req.body != null) {
     // Inserts Data into the Schedule page
     await con.all(
-      `INSERT INTO schedule (userID, name, sceduleData) 
+      `INSERT INTO schedule (userID, name, scheduleData) 
         VALUES (?, ?, ?) 
-        ON CONFLICT(userId, name) DO UPDATE SET sceduleData = excluded.sceduleData`,
+        ON CONFLICT(userId, name) DO UPDATE SET scheduleData = excluded.scheduleData`,
       [user, name, JSON.stringify(req.body)]
     );
     // Returns a success message

@@ -13,7 +13,7 @@ beforeAll(async () => {
     "CREATE TABLE `user` ( `idUser` TEXT PRIMARY KEY, `role` TEXT NOT NULL)"
   );
   await db.run(
-    "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER NOT NULL, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
+    "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
   );
   setUserDb(db);
 });

@@ -22,7 +22,7 @@ export default async function verifyToken(
       await con.all(
         `INSERT INTO user (idUser, role)
          VALUES (?, ?)
-         ON CONFLICT(idUser, role) IGNORE`,
+         ON CONFLICT(idUser) DO NOTHING`,
         [id, "user"]
       );
     }

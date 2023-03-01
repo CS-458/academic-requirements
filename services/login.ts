@@ -2,7 +2,11 @@ import { OAuth2Client } from "google-auth-library";
 import { PromisedDatabase } from "promised-sqlite3";
 import secrets from "../secrets.json";
 
-const client = new OAuth2Client(secrets.client.id);
+let client = new OAuth2Client(secrets.client.id);
+
+export function updateClient(update: (c: OAuth2Client) => void): void {
+  update(client);
+}
 
 export default async function verifyToken(
   token: string,

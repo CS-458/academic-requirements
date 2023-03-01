@@ -1,19 +1,22 @@
-import { fetchApiJson, setupUser } from "../util";
+import { fetchApiJson } from "../util";
 import sql from "../../services/sql";
-import { PromisedDatabase as Database } from "promised-sqlite3";
 
 test("Check import of Schedule Data", async () => {
-  const scheduleData = "This is a Test Schedule";
-  const userid = 123;
+  let db = await sql();
+  await db.run("BEGIN IMMEDIATE");
 
-  // const db = jest.fn(sql).mockReturnValueOnce(new Promise<Database>((resolve, reject) => {
-  //   resolve({
-  //     all: new Promise((resolve) => resolve(jest.fn()))
-  //   });
-  // }));
-  
+  const response = await fetchApiJson(`/api/inserts/schedule?name=${"name"}`, {
+    method: "POST",
+    body: JSON.stringify({}),
+    headers: {
+      "X-Google-Token": "TEST_TOKEN"
+    }
+  });
 
-  const response = await fetchApiJson(`/api/schedule?userID=${userid}&scheduleData=${scheduleData}`);
-
-  expect(response?.message).toBeTruthy();
+  expect(response).toStrictEqual({ message: "Successfully uploaded schedule" });
+  // console.log(response);
+  console.log(
+    await db.get("SELECT * FROM schedule WHERE userID='1234' AND name='name'")
+  );
+  await db.run("ROLLBACK");
 }, 100000000);

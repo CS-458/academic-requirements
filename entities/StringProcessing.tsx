@@ -114,7 +114,7 @@ class StringProcessing {
 
   // Formats the failed string to be more readable
   prettyFailedString(failedString: string): string {
-    let updateString = failedString.replace(/-/g, "_");
+    let updateString = failedString.replace(/_/g, "-");
     updateString = updateString.replace(/,/g, " and ");
     updateString = updateString.replace(/\|/g, " or ");
     updateString = updateString.replace(/&/g, " & ");

@@ -57,7 +57,7 @@ export const Course: FC<DragCourseType> = memo(function Course({
       "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter";
     return URL;
   }
-
+  console.log("red", warningRedColor);
   return (
     <div
       ref={drag}
@@ -65,13 +65,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
       data-testid="course"
       className={clsx(
         "CourseText",
-        warningYellowColor !== undefined &&
-          warningRedColor === undefined &&
-          warningOrangeColor === undefined &&
-          "CourseWarningYellow",
-        warningOrangeColor !== undefined &&
-          warningRedColor === undefined &&
-          "CourseWarningOrange",
+        warningYellowColor !== undefined && warningRedColor === undefined && warningOrangeColor === undefined && "CourseWarningYellow",
+        warningOrangeColor !== undefined && warningRedColor === undefined && "CourseWarningOrange",
         warningRedColor !== undefined && "CourseWarningRed"
       )}
     >

@@ -49,6 +49,7 @@ export const Semester: FC<SemesterProps> = function Semester({
     backgroundColor = "darkgreen";
   }
 
+  console.log("help", warningPrerequisiteCourses);
   return (
     <div
       ref={drop}
@@ -75,9 +76,7 @@ export const Semester: FC<SemesterProps> = function Semester({
           dragSource={`Semester ${semesterNumber - 1}`}
           key={index}
           warningYellowColor={warningDuplicateCourses.find((x) => x === course)}
-          warningOrangeColor={warningFallvsSpringCourses.find(
-            (x) => x === course
-          )}
+          warningOrangeColor={warningFallvsSpringCourses.find((x) => x === course)}
           warningRedColor={warningPrerequisiteCourses.find((x) => x === course)}
           repeatableForCred={course.repeatableForCred}
         />

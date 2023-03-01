@@ -5,9 +5,10 @@ import StringProcessing from "./StringProcessing";
 export function courseAlreadyInSemester(course: CourseType, semesterIndex: number, semesters: SemesterType[]): boolean {
   if (semesterIndex > -1 && semesterIndex < semesters.length) {
     semesters[semesterIndex].courses.forEach((x: any) => {
-      if (x === course) {
-        return true;
-      }
+      console.log(x, course);
+      console.log("comparison", x === course);
+      console.log("comparison2", x === course);
+      return x === course;
     });
   }
   return false;

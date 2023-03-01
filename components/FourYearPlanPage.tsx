@@ -20,65 +20,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     requirementsGen, // List of requirements for gen-eds
     importData
   }) {
-    const [semesters, setSemesters] = useState<SemesterType[]>([
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 1,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 2,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 3,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 4,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 5,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 6,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 7,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      },
-      {
-        accepts: [ItemTypes.COURSE],
-        semesterNumber: 8,
-        courses: [],
-        SemesterCredits: 0,
-        Warning: ""
-      }
-    ]);
-
+    // this will update if you pull in a saved schedule with more than 8 semesters
+    // defaults to 8 for a standard schedule
+    const [semestersLength, setSemestersLength] = useState<number>(8);
+    const [semesters, setSemesters] = useState<SemesterType[]>(initializeSemesters());
     // The visibility of the error message
     const [visibility, setVisibility] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -122,6 +67,22 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const defaultInformationType = "Requirements (Calculated)"; // The default
     const [informationTypes, setInformationTypes] = useState<string[]>([defaultInformationType]);
     const [displayedInformationType, setDisplayedInformationType] = useState<string | undefined>(defaultInformationType);
+
+    function initializeSemesters(): SemesterType[] {
+      const tempSemesters = [];
+      for (let i = 0; i < semestersLength; i++) {
+        tempSemesters.push(
+          {
+            accepts: [ItemTypes.COURSE],
+            courses: [],
+            semesterNumber: i + 1,
+            SemesterCredits: 0,
+            Warning: ""
+          }
+        );
+      }
+      return tempSemesters;
+    }
 
     useEffect(() => {
       // Whenever completed courses may update, determine
@@ -197,6 +158,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (dragSource !== "CourseList") {
           // index of semester it was moved from
           movedFromIndex = +dragSource.split(" ")[1];
+          console.log(movedFromIndex);
           course = semesters[movedFromIndex].courses.find(
             (item: any) => item.idCourse === idCourse
           );
@@ -235,6 +197,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           } else {
             // Course was not found in the courses list, which means it currently occupies a semester
             // Only proceed if the course isn't moved to the same semester
+            console.log("Pay attention");
+            console.log(courseAlreadyInSemester(course, index, semesters));
+            console.log(index);
             if (!courseAlreadyInSemester(course, index, semesters)) {
               // Update the semester with the new dragged course
               const pushCourse = semesters[index].courses;
@@ -650,12 +615,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         // check now that we have multiple category data
         if (userMajor()?.load_four_year_plan === true) {
           // fill in the schedule
-          semesters.forEach((semester) => {
+          semesters.forEach((semester, index) => {
             const tempArr: CourseType[] = [];
             // Get the semester data from the json
-            const courseStringArr =
-              fourYearPlan.ClassPlan["Semester" + semester.semesterNumber]
-                .Courses;
+            const courseStringArr = fourYearPlan.ClassPlan["Semester" + (index + 1)].Courses;
             let credits = 0;
             // loop through each course in the list
             courseStringArr.forEach((courseString: String) => {
@@ -677,7 +640,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   if (!foundOnce) {
                     // define the course and update it as needed
                     course = x;
-                    course.dragSource = "Semester" + semester.semesterNumber;
+                    course.dragSource = "Semester" + (index + 1);
                     checkRequirements(course, coursesInMultipleCategories);
                     foundOnce = true;
                   }
@@ -795,7 +758,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               (
                 {
                   accepts,
-                  semesterNumber,
                   courses,
                   SemesterCredits,
                   Warning
@@ -805,7 +767,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 <Semester
                   accept={accepts}
                   onDrop={(item) => handleDrop(index, item)}
-                  semesterNumber={semesterNumber}
+                  semesterNumber={index + 1}
                   courses={courses}
                   key={index}
                   SemesterCredits={SemesterCredits}

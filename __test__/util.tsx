@@ -33,36 +33,28 @@ async function selectAutocomplete(
   option: Matcher
 ): Promise<void> {
   await this.click(screen.getByTestId("test-root-element"));
-  await this.click(await screen.findByLabelText(label, { selector: "input" }));
-  await this.click(await screen.findByText(option));
+  const input = screen.getByLabelText(label, { selector: "input" });
+  await waitFor(async () => {
+    expect(input).not.toBeDisabled();
+  });
+  await this.click(input);
+  try {
+    await this.click(await screen.findByText(option));
+  } catch (e) {
+    const rootEl = screen.getByTestId("test-root-element");
+    const popper = rootEl?.querySelector(".MuiAutocomplete-popper");
+    const html = popper?.innerHTML;
+    throw new Error(
+      `Option ${option} was not found in dropdown.\nOptions: ${html}`
+    );
+  }
 }
 
 /// userEvent.setup(), but with some additional convience methods
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
-    selectAutocomplete: async function(
-      this: UserEvent,
-      label: Matcher,
-      option: Matcher
-    ) {
-      await this.click(screen.getByTestId("test-root-element"));
-      const input = screen.getByLabelText(label, { selector: "input" });
-      await waitFor(async () => {
-        expect(input).not.toBeDisabled();
-      });
-      await this.click(input);
-      try {
-        await this.click(await screen.findByText(option));
-      } catch (e) {
-        const rootEl = screen.getByTestId("test-root-element");
-        const popper = rootEl?.querySelector(".MuiAutocomplete-popper");
-        const html = popper?.innerHTML;
-        throw new Error(
-          `Option ${option} was not found in dropdown.\nOptions: ${html}`
-        );
-      }
-    }
+    selectAutocomplete
   };
 }
 
@@ -70,7 +62,7 @@ export function setupUser(): UserEvent & UserExt {
 
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
 export async function fetchApiRoute(url: string): Promise<Response> {
-  const res = { resolve: (_a: any) => { }, reject: (_e: any) => { } };
+  const res = { resolve: (_a: any) => {}, reject: (_e: any) => {} };
   const result: Promise<Response> = new Promise((resolve, reject) => {
     res.resolve = resolve;
     res.reject = reject;
@@ -182,11 +174,11 @@ export function mockUseQuery<T>(
     refetch: async (_options: any) => {
       throw new Error("");
     },
-    remove: () => { }
+    remove: () => {}
   };
 }
 
-export function setupStandaloneQuery() {
+export function setupStandaloneQuery(): void {
   jest.mock("react-query", () => ({
     useQuery: mockUseQuery
   }));
@@ -211,9 +203,7 @@ const toBeUnique: MatcherFunction<[]> = (actual) => {
     };
   }
   for (const i of actual) {
-    const pos = actual.find((val, idx) =>
-      idx > i && actual[i] === val
-    );
+    const pos = actual.find((val, idx) => idx > i && actual[i] === val);
     if (pos !== undefined) {
       return {
         message: () => `Indicies ${i}, and ${pos} are the same`,

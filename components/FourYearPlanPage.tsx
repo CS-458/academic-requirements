@@ -11,6 +11,7 @@ import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
+import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -178,8 +179,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function extractCategories(): void {
       // Initialize new array.
       const i = new Array<string>();
-      // map is what loops over the list
-      // map calls arrow function, runs whats between curly braces.
       // Push course categories from major and concentration course lists to array.
       PassedCourseList.map((course, index) => {
         i.push(course.category);
@@ -367,10 +366,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     //  This function checks if the course that was moved is in a "valid" fall or spring semester
     function checkCourseSemester(course: CourseType, semNum: number): boolean {
-      return (
-        (course.semesters === "FA" && semNum % 2 === 1) ||
-        (course.semesters === "SP" && semNum % 2 === 0)
-      );
+      return ((course.semesters === "FA" && semNum % 2 === 1) || (course.semesters === "SP" && semNum % 2 === 0));
     }
 
     //  This useEffect is in charge of checking for duplicate courses
@@ -381,11 +377,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         semesters.forEach((semester, index) => {
           semester.courses.forEach((course: CourseType) => {
             //  If the course is found in future semesters, then it has a duplicate
-            if (
-              updateWarning.course === course &&
-              updateWarning.newSemester !== index &&
-              updateWarning.newSemester !== -1
-            ) {
+            if (updateWarning.course === course && updateWarning.newSemester !== index && updateWarning.newSemester !== -1) {
               if (!course.repeatableForCred) {
                 //  Show the warning
                 setVisibility(true);
@@ -630,101 +622,17 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // don't proceed if there are no requirements
       if (requirements === undefined || requirements === null || requirementsGen === undefined || requirementsGen === null) { return; }
       if (ran) { return; };
-      const temp: RequirementComponentType[] = [];
-      let tempReqList: RequirementComponentType[] = requirements;
-      const tempGen: RequirementComponentType[] = requirementsGen;
-      tempReqList.forEach((x) => {
-        if (
-          x.parentCategory === null &&
-          !(
-            x.courseReqs === null &&
-            x.creditCount === null &&
-            x.courseCount === null
-          )
-        ) {
-          temp.push(x);
-        } else {
-          tempReqList.forEach((n) => {
-            if (n.idCategory === x.parentCategory) {
-              if (
-                n.courseReqs === null &&
-                n.creditCount === null &&
-                n.courseCount === null
-              ) {
-                temp.push(x);
-              }
-            }
-          });
-        }
-
-        if (x.parentCategory !== null) {
-          for (let i = 0; i < tempGen.length; i++) {
-            if (tempGen[i].idCategory === x.parentCategory) {
-              tempGen[i].inheritedCredits = x.creditCount;
-              if (tempGen[i].courseReqs === null) {
-                tempGen[i].courseReqs = x.courseReqs;
-              } else if (tempGen[i].courseReqs.includes(x.courseReqs) !== undefined) {
-                tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
-              }
-              tempGen[i].inheritedCredits = x.creditCount;
-              tempReqList = tempReqList.filter(
-                (item) => item.idCategory !== x.idCategory
-              );
-            }
-          }
-        }
-      });
-      tempReqList.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
-      setReqList(tempReqList);
-      tempGen.forEach((x) => {
-        if (x.parentCategory === null || x.parentCategory === undefined) {
-          temp.push(x);
-        }
-      });
-      tempGen.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
-      setReqGenList(tempGen);
-      setRequirementsDisplay(temp);
+      const response = processRequirementLists(requirements, requirementsGen);
+      setReqList(response.req);
+      setReqGenList(response.reqGen);
+      setRequirementsDisplay(response.display);
       setRan(true);
     }, [requirements, requirementsGen, PassedCourseList]);
 
     // This use effect creates a list of all courses that can fill more than one requirement
     useEffect(() => {
       // get the courses with more than one category they can satisfy
-      const tempArr: {
-        idString: string;
-        categories: number[];
-      }[] = [];
-      // go through each item in the array to get any with duplicate categories
-      for (let i = 0; i < PassedCourseList.length; i++) {
-        let skip = false;
-        // check that we haven't already added this on to the array
-        for (let k = 0; k < tempArr.length; k++) {
-          if (
-            PassedCourseList[i].subject + "-" + PassedCourseList[i].number ===
-            tempArr[k].idString
-          ) {
-            skip = true;
-          }
-        }
-        // only look for more if this one isn't recorded
-        if (!skip) {
-          const currentIdString =
-            PassedCourseList[i].subject + "-" + PassedCourseList[i].number;
-          const tempCatArr: number[] = [];
-          for (let j = i; j < PassedCourseList.length; j++) {
-            if (
-              currentIdString ===
-              PassedCourseList[j].subject + "-" + PassedCourseList[j].number
-            ) {
-              tempCatArr.push(PassedCourseList[j].idCategory);
-            }
-          }
-          if (tempCatArr.length > 1) {
-            tempArr.push({ idString: currentIdString, categories: tempCatArr });
-          }
-        }
-      }
-      setCoursesInMultipleCategories(tempArr);
+      setCoursesInMultipleCategories(createMultipleCategoryList(PassedCourseList));
     }, [PassedCourseList]);
 
     // This prevents the data from resetting when you click off the page
@@ -739,9 +647,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             checkRequirements(found, coursesInMultipleCategories);
           }
         });
-        setReqList([...[...reqList]]);
-        setReqGenList([...[...reqGenList]]);
-        // recheck now that we have multiple category data
+        // check now that we have multiple category data
         if (userMajor()?.load_four_year_plan === true) {
           // fill in the schedule
           semesters.forEach((semester) => {
@@ -790,7 +696,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             semester.Warning = newWarningState;
           });
         }
-        // recheck now that we have multiple category data
+        // check now that we have multiple category data
         // if (importData !== undefined) {
         //   // fill in the schedule
         //   semesters.forEach((semester) => {
@@ -842,6 +748,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }, [coursesInMultipleCategories]);
 
+    // called when a course is removed from the schedule to remove it from reqs
     const removeFromRequirements = useCallback(
       (course: CourseType) => {
         const reqCheck = new RequirementsProcessing();
@@ -852,6 +759,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [reqList, reqGenList, requirements, requirementsGen]
     );
 
+    // called when a course is added to the schedule to add it to reqs
     const checkRequirements = useCallback(
       (course: CourseType, multipleCategories: any) => {
         if (reqList !== null && reqList !== undefined && reqGenList !== null && reqGenList !== undefined) {
@@ -872,6 +780,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       },
       [reqList, reqGenList, requirementsDisplay, PassedCourseList]
     );
+
     return (
       <div>
         <div className="drag-drop">

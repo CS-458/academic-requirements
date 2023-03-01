@@ -103,8 +103,6 @@ export function preReqCheckAllCoursesPastSemester(
         }
         //  If the course prereq fails, but not due to moving the course,
         //  add it to the failedCoursesNoWarning list
-        console.log("previous", previousCourses);
-        console.log("current", currentCourses);
         if (
           !preReqCheck.courseInListCheck(
             x !== undefined ? x.preReq : "",
@@ -113,7 +111,6 @@ export function preReqCheckAllCoursesPastSemester(
           )
             .failedString.includes(courseToRemove.subject + "-" + courseToRemove.number)
         ) {
-          console.log("setting it");
           failedCoursesNoWarning.push(x);
         }
       });
@@ -177,10 +174,8 @@ export function preReqCheckAllCoursesPastSemester(
 
   //  If any courses have failed, notify the user of each course that failed
   if (showMessage && failedCoursesList.length > 0) {
-    console.log("creating message");
     let message = "";
     //  Push each failed course to the warningCourses
-    console.log("list", failedCoursesList);
     failedCoursesList.forEach((x) => {
       if (warningPrerequisiteCourses.find((z) => z === x) === undefined) {
         const temp = warningPrerequisiteCourses;
@@ -188,18 +183,12 @@ export function preReqCheckAllCoursesPastSemester(
         setWarning = temp;
       }
       //  If the course is failing, but not due to the latest course move, modify the warning message
-      console.log(failedCoursesNoWarning);
-      console.log(x);
       if (failedCoursesNoWarning.find((z) => z === x) === undefined) {
-        console.log("writing");
         message.length > 0 ? (message = message + "," + x.subject + "-" + x.number) : (message = message + x.subject + "-" + x.number);
       }
     });
     //  Show a warning stating that the classes failed the prereqs
-    console.log(!message.includes(courseToRemove.subject + "-" + courseToRemove.number));
-    console.log(message.length);
     if (!message.includes(courseToRemove.subject + "-" + courseToRemove.number) && message.length > 0) {
-      console.log("here");
       visibility = true;
       errorMessage = "WARNING! " + courseToRemove.subject + "-" + courseToRemove.number +
         " is a prerequisite for the following courses: " + message;

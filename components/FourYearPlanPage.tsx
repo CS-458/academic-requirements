@@ -284,7 +284,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               );
             }
           }
-          console.log("setting");
           setUpdateWarning({
             course,
             oldSemester: courseAlreadyInSemester(course, index, semesters) ? movedFromIndex : -1,
@@ -349,7 +348,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 noRemove = true;
               }
             });
-            console.log(noRemove);
             if (!noRemove) {
               removeFromRequirements(found);
             }
@@ -461,7 +459,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     //  This useEffect is in charge of checking prerequisites
     useEffect(() => {
       if (updateWarning.newCheck && updateWarning.course !== undefined) {
-        console.log("running prereq useEffect");
         //  This will store if the prerequisites for the changed course have been satisfied
         let satisfied;
         //  If the course is not dragged out, check its prerequisites
@@ -518,10 +515,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             semesters,
             warningPrerequisiteCourses
           );
-          console.log(response);
-          setVisibility(response.vis);
+          if (response.vis) {
+            setVisibility(response.vis);
+            setErrorMessage(response.error);
+          }
           setWarningPrerequisiteCourses(response.warning);
-          setErrorMessage(response.error);
         }
         //  Check all semesters past the new moved semester
         const response = preReqCheckAllCoursesPastSemester(
@@ -533,10 +531,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           semesters,
           warningPrerequisiteCourses
         );
-        console.log(response);
-        setVisibility(response.vis);
+        if (response.vis) {
+          setVisibility(response.vis);
+          setErrorMessage(response.error);
+        }
         setWarningPrerequisiteCourses(response.warning);
-        setErrorMessage(response.error);
       }
       // Reset the warning
       setUpdateWarning({

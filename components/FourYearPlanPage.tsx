@@ -197,9 +197,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           } else {
             // Course was not found in the courses list, which means it currently occupies a semester
             // Only proceed if the course isn't moved to the same semester
-            console.log("Pay attention");
-            console.log(courseAlreadyInSemester(course, index, semesters));
-            console.log(index);
             if (!courseAlreadyInSemester(course, index, semesters)) {
               // Update the semester with the new dragged course
               const pushCourse = semesters[index].courses;

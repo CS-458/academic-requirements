@@ -4,12 +4,15 @@ import StringProcessing from "./StringProcessing";
 //  Returns if a course is already in a semester's index
 export function courseAlreadyInSemester(course: CourseType, semesterIndex: number, semesters: SemesterType[]): boolean {
   if (semesterIndex > -1 && semesterIndex < semesters.length) {
+    let found = false;
     semesters[semesterIndex].courses.forEach((x: any) => {
-      console.log(x, course);
-      console.log("comparison", x === course);
-      console.log("comparison2", x === course);
-      return x === course;
+      if (x.idCourse === course.idCourse) {
+        found = true;
+      }
     });
+    if (found) {
+      return true;
+    }
   }
   return false;
 }

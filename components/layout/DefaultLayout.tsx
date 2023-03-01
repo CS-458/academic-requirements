@@ -8,20 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
+import { User, UserLogin, UserInfo } from "../../services/user";
 
-interface UserInfo {
-  /// Profile URL
-  picture: string;
-  /// User ID
-  sub: string;
-  name: string;
-  email: string;
-}
-
-interface User {
-  info: UserInfo;
-  cred: string;
-}
 export default function DefaultLayout(props: {
   children: JSX.Element | JSX.Element[];
 }): JSX.Element {
@@ -46,7 +34,7 @@ export default function DefaultLayout(props: {
   }
 
   return (
-    <div>
+    <UserLogin.Provider value={user}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -69,8 +57,21 @@ export default function DefaultLayout(props: {
             ) : (
               <Typography variant="h5" component="div">
                 <Box sx={{ m: 0 }}>
-                  <span style={{ margin: 0, position: "absolute", top: "50%", transform: "translateY(-50%)", right: "5rem" }}>{user.info.name}</span>
-                  <img src={user.info.picture} style={{ height: "2em", borderRadius: "50%" }} />
+                  <span
+                    style={{
+                      margin: 0,
+                      position: "absolute",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      right: "5rem"
+                    }}
+                  >
+                    {user.info.name}
+                  </span>
+                  <img
+                    src={user.info.picture}
+                    style={{ height: "2em", borderRadius: "50%" }}
+                  />
                 </Box>
               </Typography>
             )}
@@ -78,6 +79,6 @@ export default function DefaultLayout(props: {
         </AppBar>
       </Box>
       {props.children}
-    </div>
+    </UserLogin.Provider>
   );
 }

@@ -45,4 +45,8 @@ jobs:
           eslint-args: '--ignore-path=.gitignore --quiet'
           extensions: 'js,jsx,ts,tsx'
           annotations: true
+      - name: mock the secrets file for the build
+        run: |
+          touch secrets.json  
+          echo '{"client": {"id": "","secret": ""}}' >> secrets.json
       - run: npm run build

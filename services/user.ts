@@ -1,3 +1,4 @@
+import React from "react";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
 export interface UserMajor {
   /// Major ID number
@@ -26,4 +27,23 @@ export function setUserMajor(maj: UserMajor | undefined): void {
   } else {
     window.localStorage.removeItem("user_major");
   }
+}
+
+export interface UserInfo {
+  /// Profile URL
+  picture: string;
+  /// User ID
+  sub: string;
+  name: string;
+  email: string;
+}
+
+export interface User {
+  info: UserInfo;
+  cred: string;
+}
+
+export const UserLogin = React.createContext<undefined | User>(undefined);
+export function userToken(): string | undefined {
+  return React.useContext(UserLogin)?.cred;
 }

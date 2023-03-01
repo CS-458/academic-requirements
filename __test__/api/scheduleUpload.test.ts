@@ -2,7 +2,7 @@ import { fetchApiJson } from "../util";
 import sql from "../../services/sql";
 
 test("Check import of Schedule Data", async () => {
-  let db = await sql();
+  const db = await sql();
   await db.run("BEGIN IMMEDIATE");
 
   const response = await fetchApiJson(`/api/inserts/schedule?name=${"name"}`, {

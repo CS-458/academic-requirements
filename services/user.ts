@@ -1,5 +1,6 @@
 import React from "react";
 import { ConcentrationType, MajorType } from "../entities/four_year_plan";
+import { fetchApi } from "./util";
 export interface UserMajor {
   /// Major ID number
   major: MajorType;
@@ -46,4 +47,18 @@ export interface User {
 export const UserLogin = React.createContext<undefined | User>(undefined);
 export function userToken(): string | undefined {
   return React.useContext(UserLogin)?.cred;
+}
+
+export async function uploadSchedule(name: string, schedule: any): Promise<void> {
+  const token = userToken();
+  if (token === undefined) {
+    throw new Error("User is not logged in");
+  }
+  await fetchApi(`/api/inserts/schedule?name=${name}`, {
+    method: "POST",
+    body: JSON.stringify(schedule),
+    headers: {
+      "X-Google-Token": token
+    }
+  });
 }

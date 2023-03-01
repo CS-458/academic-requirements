@@ -68,9 +68,9 @@ export async function fetchApiRoute(url: RequestInfo | URL, init?: RequestInit):
     res.reject = reject;
   });
 
-  let fullUrl: string | undefined = undefined;
-  let path = undefined;
-  let params = undefined;
+  let fullUrl: string | undefined;
+  let path;
+  let params;
   if (url instanceof URL) {
     fullUrl = url.href;
     path = url.pathname;

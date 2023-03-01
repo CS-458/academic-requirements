@@ -4,6 +4,7 @@
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
+import verifyToken from "../../../services/login";
 import sql from "../../../services/sql";
 
 export default async function handler(
@@ -14,19 +15,23 @@ export default async function handler(
     res.status(405).json({ error: `Only POST requests allowed` });
     return;
   }
-  let user = undefined;
+
+  // Creates connection to the DB
+  const con = await sql();
+
   // Headers are lowercased
-  if (req.headers["x-google-token"] === "TEST_TOKEN") {
-    user = 1234;
-  } else {
+  const token = req.headers["x-google-token"];
+  if (typeof token !== "string") {
+    res.status(401).json({ error: `Invalid user not logged in` });
+    return;
+  }
+  const user = verifyToken(token, con);
+  if (user === undefined) {
     res.status(401).json({ error: `Invalid user token` });
     return;
   }
   const name = req.query.name;
   if (typeof name === "string" && req.body != null) {
-    // Creates connection to the DB
-    const con = await sql();
-
     // Inserts Data into the Schedule page
     await con.all(
       `INSERT INTO schedule (userID, name, sceduleData) 

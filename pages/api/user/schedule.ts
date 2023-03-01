@@ -5,7 +5,7 @@
 
 import { NextApiRequest, NextApiResponse } from "next";
 import verifyToken from "../../../services/login";
-import sql from "../../../services/sql";
+import { userDb } from "../../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,7 +17,7 @@ export default async function handler(
   }
 
   // Creates connection to the DB
-  const con = await sql();
+  const con = await userDb();
 
   // Headers are lowercased
   const token = req.headers["x-google-token"];

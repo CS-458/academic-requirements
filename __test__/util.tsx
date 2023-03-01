@@ -15,6 +15,8 @@ import {
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 import { UserMajor } from "../services/user";
+import { VerifyIdTokenOptions, LoginTicket } from "google-auth-library";
+import { updateClient } from "../services/login";
 
 import "../pages/api";
 
@@ -61,8 +63,11 @@ export function setupUser(): UserEvent & UserExt {
 // const modules: { [key: string]: NextApiHandler | Promise<NextApiHandler> } = {};
 // declare function fetch2(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
 /// Executes a request against an Api Route, roughly equavelent with `fetch`.
-export async function fetchApiRoute(url: RequestInfo | URL, init?: RequestInit): Promise<Response> {
-  const res = { resolve: (_a: any) => { }, reject: (_e: any) => { } };
+export async function fetchApiRoute(
+  url: RequestInfo | URL,
+  init?: RequestInit
+): Promise<Response> {
+  const res = { resolve: (_a: any) => {}, reject: (_e: any) => {} };
   const result: Promise<Response> = new Promise((resolve, reject) => {
     res.resolve = resolve;
     res.reject = reject;
@@ -108,7 +113,10 @@ export async function fetchApiRoute(url: RequestInfo | URL, init?: RequestInit):
 }
 
 /// Calls fetchApiRoute, and decodes the response as JSON
-export async function fetchApiJson(url: RequestInfo | URL, init?: RequestInit): Promise<any> {
+export async function fetchApiJson(
+  url: RequestInfo | URL,
+  init?: RequestInit
+): Promise<any> {
   return await (await fetchApiRoute(url, init)).json();
 }
 
@@ -255,4 +263,27 @@ export function courseSemestersCheck(semesters: string): void {
   */
   // Expect the format to match
   expect(semesters).toMatch(/^(FA|WI|SP|SU)(,(FA|WI|SP|SU))*$/);
+}
+
+export function createMockToken(): void {
+  updateClient((c) => {
+    c.verifyIdToken = async (options: VerifyIdTokenOptions) => {
+      const [test, id] = options.idToken.split(":");
+      if (test !== "TEST_TOKEN") {
+        throw new Error("Invalid Token");
+      }
+      return new LoginTicket("", {
+        sub: id,
+        aud: c._clientId ?? "",
+        exp: Date.now() + 1000000,
+        iat: Date.now() - 100,
+        iss: "https://accounts.google.com",
+        at_hash: ""
+      });
+    };
+  });
+}
+
+export function mockToken(id: string): string {
+  return `TEST_TOKEN:${id}`;
 }

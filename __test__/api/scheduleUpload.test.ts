@@ -1,7 +1,12 @@
-import { fetchApiJson } from "../util";
+import {
+  createMockToken as setupTokenMock,
+  fetchApiJson,
+  mockToken
+} from "../util";
 import sql from "../../services/sql";
 
 test("Check import of Schedule Data", async () => {
+  setupTokenMock();
   const db = await sql();
   await db.run("BEGIN IMMEDIATE");
 
@@ -9,7 +14,7 @@ test("Check import of Schedule Data", async () => {
     method: "POST",
     body: JSON.stringify({}),
     headers: {
-      "X-Google-Token": "TEST_TOKEN"
+      "X-Google-Token": mockToken("1234")
     }
   });
 

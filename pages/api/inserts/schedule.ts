@@ -25,7 +25,7 @@ export default async function handler(
     res.status(401).json({ error: "Invalid user not logged in" });
     return;
   }
-  const user = verifyToken(token, con);
+  const user = await verifyToken(token, con);
   if (user === undefined) {
     res.status(401).json({ error: "Invalid user token" });
     return;
@@ -36,8 +36,8 @@ export default async function handler(
     await con.all(
       `INSERT INTO schedule (userID, name, scheduleData) 
         VALUES (?, ?, ?) 
-        ON CONFLICT(userId, name) DO UPDATE SET scheduleData = excluded.scheduleData`,
-      [user, name, JSON.stringify(req.body)]
+        ON CONFLICT(userID, name) DO UPDATE SET scheduleData = excluded.scheduleData`,
+      [user, name, req.body]
     );
     // Returns a success message
     res.status(200).json({ message: "Successfully uploaded schedule" });

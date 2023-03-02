@@ -74,5 +74,5 @@ test("Check Schedule Get", async () => {
     }
   });
   expect(getResponse?.length).toBeGreaterThan(0);
-  expect(getResponse[0]?.scheduleData).toStrictEqual(schedule);
+  expect(JSON.parse(getResponse[0]?.scheduleData)).toStrictEqual(schedule);
 }, 100000000);

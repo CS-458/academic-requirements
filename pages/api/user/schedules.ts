@@ -26,14 +26,14 @@ export default async function handler(
     return;
   }
 
-  const user = verifyToken(token, con);
+  const user = await verifyToken(token, con);
 
   if (user === undefined) {
     res.status(401).json({ error: "Invalid user token" });
     return;
   }
 
-  const rows = await con.all("SELECT * FROM schedule WHERE userId = ?", [user]);
+  const rows = await con.all("SELECT * FROM schedule WHERE userID = ?", [user]);
 
   // Returns a success message
   res.status(200).json(rows);

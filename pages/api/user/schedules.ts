@@ -25,23 +25,16 @@ export default async function handler(
     res.status(401).json({ error: "Invalid user not logged in" });
     return;
   }
+
   const user = verifyToken(token, con);
+
   if (user === undefined) {
     res.status(401).json({ error: "Invalid user token" });
     return;
   }
-  const name = req.query.name;
 
-  if (typeof name === "string") {
-    // Inserts Data into the Schedule page
-    const rows = await con.all(
-      "SELECT * FROM schedule WHERE userId = ?", [user]);
-    // Returns a success message
-    res.status(200).json(rows);
-    return;
-  }
-  // Returns an error message with invalid parameters
-  res
-    .status(400)
-    .json({ error: `Invalid parameters: ${JSON.stringify(req.query)}` });
+  const rows = await con.all("SELECT * FROM schedule WHERE userId = ?", [user]);
+
+  // Returns a success message
+  res.status(200).json(rows);
 }

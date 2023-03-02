@@ -81,12 +81,12 @@ export async function saveLoggedInUser(): Promise<void> {
   });
 }
 
-export async function getScheduleByName(name: string): Promise<UserSavedSchedule> {
+export async function getScheduleByName(name: string): Promise<UserSavedSchedule[]> {
   const token = userToken();
   if (token === undefined) {
     throw new Error("User Token Not made");
   }
-  return await fetchApi(`/api/user/schedule?name=${name}`, {
+  return await fetchApi("/api/user/schedules", {
     method: "GET",
     headers: {
       "X-Google-Token": token

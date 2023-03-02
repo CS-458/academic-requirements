@@ -1,5 +1,5 @@
 import React from "react";
-import { ConcentrationType, MajorType } from "../entities/four_year_plan";
+import { ConcentrationType, MajorType, UserSavedSchedule } from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 export interface UserMajor {
   /// Major ID number
@@ -81,7 +81,7 @@ export async function saveLoggedInUser(): Promise<void> {
   });
 }
 
-export async function getScheduleByName(name: string): Promise<string> {
+export async function getScheduleByName(name: string): Promise<UserSavedSchedule> {
   const token = userToken();
   if (token === undefined) {
     throw new Error("User Token Not made");

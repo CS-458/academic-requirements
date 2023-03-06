@@ -9,6 +9,7 @@ import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useState } from "react";
 import jwtDecode from "jwt-decode";
 import { User, UserLogin, UserInfo } from "../../services/user";
+import LogoLink from "./LogoLink";
 
 export default function DefaultLayout(props: {
   children: JSX.Element | JSX.Element[];
@@ -46,7 +47,7 @@ export default function DefaultLayout(props: {
             >
               <MenuIcon />
             </IconButton>
-            <img src="/logo-new.svg" height="50" alt="logo" />
+            <LogoLink/>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} />
             {user === undefined ? (
               <GoogleLogin

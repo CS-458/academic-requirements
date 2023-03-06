@@ -17,8 +17,6 @@ class RequirementProcessing {
       // Check if this is the category of the course
       if (course.idCategory === x.idCategory) {
         // Check if a course has already been used for this requirement and if it can be repeated for credit
-        console.log(course);
-        console.log(!x.coursesTaken.includes(courseString));
         if (!x.coursesTaken.includes(courseString) || (x.coursesTaken.includes(courseString) && course.repeatableForCred)) {
           if (x.coursesTaken === "") {
             x.coursesTaken = courseString;
@@ -26,7 +24,6 @@ class RequirementProcessing {
             x.coursesTaken = x.coursesTaken + "," + courseString;
           }
           x.percentage = calculateNewPercentage(x, course, reqCheck);
-          console.log("percentage", x.percentage);
           addedCourse = true;
           if (x.parentCategory !== null) {
             // let temp1 = 1000;

@@ -55,6 +55,15 @@ export default function MenuDrawer(): any {
         </Link>
         </ListItem>
       </List>
+      <List>
+          <ListItem key={"Button Text"} disablePadding>
+          <Link href="/account">
+            <ListItemButton>
+              Account
+            </ListItemButton>
+          </Link>
+          </ListItem>
+      </List>
     </Box>
   );
 

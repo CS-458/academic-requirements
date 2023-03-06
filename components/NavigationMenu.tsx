@@ -4,13 +4,12 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Link from "next/link";
 type Anchor = "left";
 
-export default function TemporaryDrawer(): any {
+export default function MenuDrawer(): any {
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -40,18 +39,20 @@ export default function TemporaryDrawer(): any {
     >
       <List>
         <ListItem key={"Button Text"} disablePadding>
-        <ListItemButton>
-            <Link href="/"> Link </Link>
-            <ListItemText primary={"Button Text"} />
-        </ListItemButton>
+        <Link href="/">
+          <ListItemButton>
+            Input Page
+          </ListItemButton>
+        </Link>
         </ListItem>
       </List>
       <List>
         <ListItem key={"Button Text"} disablePadding>
-        <ListItemButton>
-            <Link href="/scheduler"> Link </Link>
-            <ListItemText primary={"Button Text"} />
-        </ListItemButton>
+        <Link href="/scheduler">
+          <ListItemButton>
+            Schedule Page
+          </ListItemButton>
+        </Link>
         </ListItem>
       </List>
     </Box>
@@ -60,8 +61,8 @@ export default function TemporaryDrawer(): any {
   return (
     <div>
       <React.Fragment key={"left"}>
-      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon onClick={toggleDrawer("left", true)}/>
+      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer("left", true)}>
+            <MenuIcon/>
         </IconButton>
         <Drawer
           anchor={"left"}

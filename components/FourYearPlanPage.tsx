@@ -22,7 +22,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   }) {
     // this will update if you pull in a saved schedule with more than 8 semesters
     // defaults to 8 for a standard schedule
-    const [semestersLength, setSemestersLength] = useState<number>(8);
+    const [semestersLength] = useState<number>(8);
     const [semesters, setSemesters] = useState<SemesterType[]>(initializeSemesters());
     // The visibility of the error message
     const [visibility, setVisibility] = useState(false);

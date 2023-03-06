@@ -1,21 +1,12 @@
 import {
   createMockToken as setupTokenMock,
   fetchApiJson,
-  mockToken
+  mockToken,
+  setupMockUserDB
 } from "../util";
-import { setUserDb } from "../../services/sql";
-import { PromisedDatabase } from "promised-sqlite3";
 
-const db = new PromisedDatabase();
 beforeAll(async () => {
-  await db.open(":memory:");
-  await db.run(
-    "CREATE TABLE `user` ( `idUser` TEXT PRIMARY KEY, `role` TEXT NOT NULL)"
-  );
-  await db.run(
-    "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
-  );
-  setUserDb(db);
+  await setupMockUserDB();
 });
 
 test("Check import of Schedule Data", async () => {
@@ -54,18 +45,21 @@ test("Check Schedule Get", async () => {
     }
   };
 
-  const insertResponse = await fetchApiJson(`/api/inserts/schedule?name=${"name"}`, {
-    method: "POST",
-    body: JSON.stringify(schedule),
-    headers: {
-      "X-Google-Token": mockToken("12345")
+  const insertResponse = await fetchApiJson(
+    `/api/inserts/schedule?name=${"name"}`,
+    {
+      method: "POST",
+      body: JSON.stringify(schedule),
+      headers: {
+        "X-Google-Token": mockToken("12345")
+      }
     }
-  });
-
-  expect(insertResponse).toStrictEqual({ message: "Successfully uploaded schedule" });
-  console.log(
-    await db.all("SELECT * FROM schedule WHERE userID='12345'")
   );
+
+  expect(insertResponse).toStrictEqual({
+    message: "Successfully uploaded schedule"
+  });
+  console.log(await db.all("SELECT * FROM schedule WHERE userID='12345'"));
 
   const getResponse = await fetchApiJson("/api/user/schedules", {
     method: "GET",
@@ -89,7 +83,9 @@ test("Check Schedule Get (invalid token)", async () => {
   expect(responseBadToken).toStrictEqual({ error: "Invalid user token" });
 
   const responseNoToken = await fetchApiJson("/api/user/schedules");
-  expect(responseNoToken).toStrictEqual({ error: "Invalid user not logged in" });
+  expect(responseNoToken).toStrictEqual({
+    error: "Invalid user not logged in"
+  });
 }, 100000000);
 
 test("Check Insert Schedule (invalid token)", async () => {
@@ -106,7 +102,9 @@ test("Check Insert Schedule (invalid token)", async () => {
   const responseNoToken = await fetchApiJson("/api/inserts/schedule", {
     method: "POST"
   });
-  expect(responseNoToken).toStrictEqual({ error: "Invalid user not logged in" });
+  expect(responseNoToken).toStrictEqual({
+    error: "Invalid user not logged in"
+  });
 }, 100000000);
 
 test("Check Schedule Get (post request)", async () => {

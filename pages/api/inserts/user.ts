@@ -27,13 +27,11 @@ export default async function handler(
   }
 
   // verifyToken handles adding a user if it doesn't already exist
-  const user = verifyToken(token, con);
+  const user = await verifyToken(token, con);
   if (user === undefined) {
     res.status(401).json({ error: "Invalid user token" });
     return;
   }
   // Returns an error message with invalid parameters
-  res
-    .status(400)
-    .json({ error: `Invalid parameters: ${JSON.stringify(req.query)}` });
+  res.status(200).json({ message: "Successfully registered user" });
 }

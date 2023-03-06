@@ -290,7 +290,6 @@ export function mockToken(id: string): string {
   return `TEST_TOKEN:${id}`;
 }
 
-require("ts-node/register");
 const db = {
   db: new PromisedDatabase(),
   opened: false

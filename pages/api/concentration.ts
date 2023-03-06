@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import sql from "../../services/sql";
+import { ConcentrationType } from "../../entities/four_year_plan";
+import { academicDb } from "../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,25 +11,22 @@ export default async function handler(
       res.status(200).json([]);
       return;
     }
-    const con = await sql();
+    const con = await academicDb();
     const rows = await con.all(
-      "SELECT * FROM concentration WHERE majorId = ?", req.query.majid
+      "SELECT * FROM concentration WHERE majorId = ?",
+      req.query.majid
     );
     const result = [];
-    let cur: {
-      id?: number;
-      name?: string;
-      fourYearPlan?: string;
-    } = {
-      id: rows[0].idConcentration,
+    let cur: ConcentrationType = {
+      idConcentration: rows[0].idConcentration,
       name: rows[0].name,
       fourYearPlan: rows[0].fourYearPlan
     };
     rows.forEach((a) => {
-      if (cur.id !== a.idConcentration) {
+      if (cur.idConcentration !== a.idConcentration) {
         result.push(cur);
         cur = {
-          id: a.idConcentration,
+          idConcentration: a.idConcentration,
           name: a.name,
           fourYearPlan: a.fourYearPlan
         };

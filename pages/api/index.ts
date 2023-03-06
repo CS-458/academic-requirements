@@ -1,7 +1,5 @@
 import "./major";
-import "./majorID";
 import "./concentration";
-import "./concentrationID";
 
 import "./courses/concentration";
 import "./courses/major";
@@ -12,3 +10,8 @@ import "./requirements/gen";
 
 import "./subjects";
 import "./subjects/numbers";
+
+import "./inserts/schedule";
+import "./inserts/user";
+
+import "./user/schedules";

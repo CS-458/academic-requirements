@@ -1,22 +1,8 @@
 import type { FC } from "react";
 import React, { memo } from "react";
+import { RequirementComponentType } from "../entities/four_year_plan";
 
-// defines the expected course properties
-export interface RequirementProps {
-  courseCount: number;
-  courseReqs: string;
-  creditCount: number;
-  idCategory: number;
-  name: string;
-  parentCategory: number;
-  percentage: number;
-  inheritedCredits: number;
-  coursesTaken: string;
-  courseCountTaken: number;
-  creditCountTaken: number;
-}
-
-export const Requirement: FC<RequirementProps> = memo(function Requirement({
+export const Requirement: FC<RequirementComponentType> = memo(function Requirement({
   name,
   percentage
 }) {

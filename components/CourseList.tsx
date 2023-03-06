@@ -4,7 +4,6 @@ import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
 import { Course } from "./DraggableCourse";
 import { CourseListType } from "../entities/four_year_plan";
-
 // Styling for the course list
 const style: CSSProperties = {
   height: "30rem",
@@ -37,17 +36,17 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
   });
 
   // changes the background color on hover over course list
-  const isActive = isOver;
+  const isActive: boolean = isOver;
   let backgroundColor = "#004990";
-  if (isActive === true) {
+  if (isActive) {
     backgroundColor = "darkgreen";
   }
 
   return (
     <div ref={drop} style={{ ...style, backgroundColor }}>
-      {isActive === true ? "Release to drop" : ""}
+      {isActive ? "Release to drop" : ""}
       {courses.map(
-        ({ name, subject, number, semesters, credits, preReq, idCourse, idCategory }, index) => (
+        ({ name, subject, number, semesters, credits, preReq, idCourse, idCategory, repeatableForCred }, index) => (
           <Course
             name={name}
             subject={subject}
@@ -63,6 +62,7 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
             warningYellowColor={undefined}
             warningOrangeColor={undefined}
             warningRedColor={undefined}
+            repeatableForCred={repeatableForCred}
           />
         )
       )}

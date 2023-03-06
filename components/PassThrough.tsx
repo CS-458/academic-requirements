@@ -2,85 +2,19 @@ import React from "react";
 import FourYearPlanPage from "./FourYearPlanPage";
 import { masterCourseList, courseCategoryRequirements, genedCategoryRequirements } from "../services/academic";
 import { userMajor } from "../services/user";
-import { CourseType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType } from "../entities/four_year_plan";
 
 const PassThrough = (props: {
-  importData?: {};
+  // importData?: {};
   showing: boolean;
-  majorCourseList: Array<{
-    credits: number;
-    name: string;
-    number: number;
-    semesters: string;
-    subject: string;
-    preReq: string;
-    category: string;
-    id: number;
-    idCategory: number;
-    dragSource: string;
-  }>;
-  concentrationCourseList: Array<{
-    credits: number;
-    name: string;
-    number: number;
-    semesters: string;
-    subject: string;
-    preReq: string;
-    category: string;
-    id: number;
-    idCategory: number;
-    dragSource: string;
-  }>;
-  genEdCourseList: Array<{
-    credits: number;
-    name: string;
-    number: number;
-    semesters: string;
-    subject: string;
-    preReq: string;
-    category: string;
-    id: number;
-    idCategory: number;
-    dragSource: string;
-  }>;
-  completedCourses: string[];
-  selectedMajor: string;
-  selectedConcentration: string;
-  // requirements: {
-  //   courseCount: number;
-  //   courseReqs: string;
-  //   creditCount: number;
-  //   idCategory: number;
-  //   name: string;
-  //   parentCategory: number;
-  //   percentage: number;
-  //   inheritedCredits: number;
-  //   coursesTaken: string[];
-  //   courseCountTaken: number;
-  //   creditCountTaken: number;
-  // }[];
-  // requirementsGen: {
-  //   courseCount: number;
-  //   courseReqs: string;
-  //   creditCount: number;
-  //   idCategory: number;
-  //   name: string;
-  //   parentCategory: number;
-  //   percentage: number;
-  //   inheritedCredits: number;
-  //   coursesTaken: string[];
-  //   courseCountTaken: number;
-  //   creditCountTaken: number;
-  // }[];
-  fourYearPlan?: {};
 }): JSX.Element => {
   // Functions and variables for controlling an error popup
 
   // major and minor come from user service
-  const courseList: CourseType[] = masterCourseList(userMajor()?.major.id, userMajor()?.concentration.id);
+  const courseList: CourseType[] = masterCourseList(userMajor()?.major.id, userMajor()?.concentration.idConcentration);
 
-  const requirements: Requirement[] = courseCategoryRequirements(userMajor()?.concentration.id).data;
-  const requirementsGen: Requirement[] = genedCategoryRequirements().data;
+  const requirements: RequirementComponentType[] | null | undefined = courseCategoryRequirements(userMajor()?.concentration.idConcentration).data;
+  const requirementsGen: RequirementComponentType[] | null | undefined = genedCategoryRequirements().data;
 
   return (
     <div>
@@ -89,17 +23,10 @@ const PassThrough = (props: {
           <br/>
           <div className="page">
             <FourYearPlanPage
-              // PassedCourseList={props.majorCourseList
-              //   .concat(props.concentrationCourseList)
-              //   .concat(props.genEdCourseList)}
               PassedCourseList={courseList}
-              CompletedCourses={props.completedCourses}
-              selectedMajor={props.selectedMajor}
-              selectedConcentration={props.selectedConcentration}
               requirements={requirements}
               requirementsGen={requirementsGen}
-              fourYearPlan={props.fourYearPlan}
-              importData={props.importData}
+              importData={undefined}// props.importData
             />
           </div>
         </div>

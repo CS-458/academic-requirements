@@ -8,8 +8,8 @@ class StringProcessing {
   // param coursesList -> the array of strings that have courses taken
   // optional param concurrentCoursesList -> array of strings that have courses taken concurrently
   courseInListCheck(
-    compareString: string,
-    coursesList: string[],
+    compareString: string | null | undefined,
+    coursesList: string[] | null | undefined,
     concurrentCoursesList: string[] | undefined
   ): { returnValue: boolean; failedString: string } {
     // Boundary Conditions
@@ -21,7 +21,7 @@ class StringProcessing {
       return { returnValue: true, failedString: "" }; // nothing to compare to, so it must be true (essentially means no prerequisites)
     }
     if (
-      coursesList.length === 0 ||
+      coursesList?.length === 0 ||
       coursesList === null ||
       coursesList === undefined
     ) {
@@ -114,7 +114,7 @@ class StringProcessing {
 
   // Formats the failed string to be more readable
   prettyFailedString(failedString: string): string {
-    let updateString = failedString.replace(/-/g, "_");
+    let updateString = failedString.replace(/_/g, "-");
     updateString = updateString.replace(/,/g, " and ");
     updateString = updateString.replace(/\|/g, " or ");
     updateString = updateString.replace(/&/g, " & ");

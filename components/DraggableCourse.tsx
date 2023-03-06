@@ -17,7 +17,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
   warningOrangeColor,
   warningRedColor,
   idCourse,
-  idCategory
+  idCategory,
+  repeatableForCred
 }) {
   // defines the drag action
   const [{ opacity }, drag] = useDrag(
@@ -36,7 +37,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
         warningOrangeColor,
         warningRedColor,
         idCourse,
-        idCategory
+        idCategory,
+        repeatableForCred
       },
       collect: (monitor: any) => ({
         opacity: monitor.isDragging() !== false ? 0.8 : 1
@@ -63,13 +65,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
       data-testid="course"
       className={clsx(
         "CourseText",
-        warningYellowColor !== undefined &&
-          warningRedColor === undefined &&
-          warningOrangeColor === undefined &&
-          "CourseWarningYellow",
-        warningOrangeColor !== undefined &&
-          warningRedColor === undefined &&
-          "CourseWarningOrange",
+        warningYellowColor !== undefined && warningRedColor === undefined && warningOrangeColor === undefined && "CourseWarningYellow",
+        warningOrangeColor !== undefined && warningRedColor === undefined && "CourseWarningOrange",
         warningRedColor !== undefined && "CourseWarningRed"
       )}
     >

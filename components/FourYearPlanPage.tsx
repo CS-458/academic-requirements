@@ -87,8 +87,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     useEffect(() => {
       // Whenever completed courses may update, determine
       // whether we need to display it in the dropdown
-      let completedCourses = userMajor()?.completed_courses !== undefined ? userMajor()?.completed_courses.length : 0;
-      if (completedCourses === undefined) { completedCourses = 0; }
+      const completedCourses = userMajor()?.completed_courses ?? 0;
       if (completedCourses > 0) {
         console.log("Setting up completed courses", userMajor()?.completed_courses);
         setInformationTypes((prevInformationTypes) => {

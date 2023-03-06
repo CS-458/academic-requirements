@@ -17,6 +17,8 @@ import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
 import { UserMajor } from "../services/user";
 import { VerifyIdTokenOptions, LoginTicket } from "google-auth-library";
 import { updateClient } from "../services/login";
+import { PromisedDatabase } from "promised-sqlite3";
+import { setUserDb } from "../services/sql";
 
 import "../pages/api";
 
@@ -67,7 +69,7 @@ export async function fetchApiRoute(
   url: RequestInfo | URL,
   init?: RequestInit
 ): Promise<Response> {
-  const res = { resolve: (_a: any) => {}, reject: (_e: any) => {} };
+  const res = { resolve: (_a: any) => { }, reject: (_e: any) => { } };
   const result: Promise<Response> = new Promise((resolve, reject) => {
     res.resolve = resolve;
     res.reject = reject;
@@ -196,7 +198,7 @@ export function mockUseQuery<T>(
     refetch: async (_options: any) => {
       throw new Error("");
     },
-    remove: () => {}
+    remove: () => { }
   };
 }
 
@@ -286,4 +288,24 @@ export function createMockToken(): void {
 
 export function mockToken(id: string): string {
   return `TEST_TOKEN:${id}`;
+}
+
+require("ts-node/register");
+const db = {
+  db: new PromisedDatabase(),
+  opened: false
+};
+
+export async function setupMockUserDB(): Promise<void> {
+  setUserDb(db.db);
+  if (!db.opened) {
+    db.opened = true;
+    await db.db.open(":memory:");
+    await db.db.run(
+      "CREATE TABLE `user` ( `idUser` TEXT PRIMARY KEY, `role` TEXT NOT NULL)"
+    );
+    await db.db.run(
+      "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
+    );
+  }
 }

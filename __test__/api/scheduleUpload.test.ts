@@ -92,6 +92,23 @@ test("Check Schedule Get (invalid token)", async () => {
   expect(responseNoToken).toStrictEqual({ error: "Invalid user not logged in" });
 }, 100000000);
 
+test("Check Insert Schedule (invalid token)", async () => {
+  setupTokenMock();
+
+  const responseBadToken = await fetchApiJson("/api/inserts/schedule", {
+    method: "POST",
+    headers: {
+      "X-Google-Token": "bad token"
+    }
+  });
+  expect(responseBadToken).toStrictEqual({ error: "Invalid user token" });
+
+  const responseNoToken = await fetchApiJson("/api/inserts/schedule", {
+    method: "POST"
+  });
+  expect(responseNoToken).toStrictEqual({ error: "Invalid user not logged in" });
+}, 100000000);
+
 test("Check Schedule Get (post request)", async () => {
   setupTokenMock();
 
@@ -102,4 +119,16 @@ test("Check Schedule Get (post request)", async () => {
     }
   });
   expect(getResponse).toStrictEqual({ error: "Only Get requests allowed" });
+}, 100000000);
+
+test("Check insert Schedule (get request)", async () => {
+  setupTokenMock();
+
+  const getResponse = await fetchApiJson("/api/inserts/schedule", {
+    method: "GET",
+    headers: {
+      "X-Google-Token": mockToken("12345")
+    }
+  });
+  expect(getResponse).toStrictEqual({ error: "Only POST requests allowed" });
 }, 100000000);

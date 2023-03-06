@@ -10,3 +10,8 @@ import "./requirements/gen";
 
 import "./subjects";
 import "./subjects/numbers";
+
+import "./inserts/schedule";
+import "./inserts/user";
+
+import "./user/schedules";

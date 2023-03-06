@@ -1,5 +1,6 @@
+import { userDb } from "../../services/sql";
 import {
-  createMockToken as setupTokenMock,
+  createMockToken,
   fetchApiJson,
   mockToken,
   setupMockUserDB
@@ -7,11 +8,10 @@ import {
 
 beforeAll(async () => {
   await setupMockUserDB();
+  createMockToken();
 });
 
 test("Check import of Schedule Data", async () => {
-  setupTokenMock();
-
   const response = await fetchApiJson(`/api/inserts/schedule?name=${"name"}`, {
     method: "POST",
     body: JSON.stringify({}),
@@ -22,13 +22,13 @@ test("Check import of Schedule Data", async () => {
 
   expect(response).toStrictEqual({ message: "Successfully uploaded schedule" });
   // console.log(response);
+  const db = await userDb();
   console.log(
     await db.get("SELECT * FROM schedule WHERE userID='1234' AND name='name'")
   );
 }, 100000000);
 
 test("Check Schedule Get", async () => {
-  setupTokenMock();
   const schedule = {
     Major: "major",
     Concentration: "concentration",
@@ -59,6 +59,7 @@ test("Check Schedule Get", async () => {
   expect(insertResponse).toStrictEqual({
     message: "Successfully uploaded schedule"
   });
+  const db = await userDb();
   console.log(await db.all("SELECT * FROM schedule WHERE userID='12345'"));
 
   const getResponse = await fetchApiJson("/api/user/schedules", {
@@ -72,8 +73,6 @@ test("Check Schedule Get", async () => {
 }, 100000000);
 
 test("Check Schedule Get (invalid token)", async () => {
-  setupTokenMock();
-
   const responseBadToken = await fetchApiJson("/api/user/schedules", {
     method: "GET",
     headers: {
@@ -89,8 +88,6 @@ test("Check Schedule Get (invalid token)", async () => {
 }, 100000000);
 
 test("Check Insert Schedule (invalid token)", async () => {
-  setupTokenMock();
-
   const responseBadToken = await fetchApiJson("/api/inserts/schedule", {
     method: "POST",
     headers: {
@@ -108,8 +105,6 @@ test("Check Insert Schedule (invalid token)", async () => {
 }, 100000000);
 
 test("Check Schedule Get (post request)", async () => {
-  setupTokenMock();
-
   const getResponse = await fetchApiJson("/api/user/schedules", {
     method: "POST",
     headers: {
@@ -120,8 +115,6 @@ test("Check Schedule Get (post request)", async () => {
 }, 100000000);
 
 test("Check insert Schedule (get request)", async () => {
-  setupTokenMock();
-
   const getResponse = await fetchApiJson("/api/inserts/schedule", {
     method: "GET",
     headers: {

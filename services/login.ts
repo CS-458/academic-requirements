@@ -28,7 +28,7 @@ export default async function verifyToken(
     }
     return id;
   } catch (e) {
-    console.error(e);
+    // console.error(e);
     return undefined;
   }
 }

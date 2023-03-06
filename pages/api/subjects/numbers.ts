@@ -5,7 +5,7 @@
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
-import sql from "../../../services/sql";
+import { academicDb } from "../../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,14 +13,15 @@ export default async function handler(
 ): Promise<void> {
   if (typeof req.query.sub === "string") {
     // Creates connection to the DB
-    const con = await sql();
+    const con = await academicDb();
 
     // queries the DB for all courses given a Subject and saves it into the rows var
     const rows = await con.all(
       ` SELECT DISTINCT c.number 
         FROM course c 
         WHERE c.subject = ?
-        ORDER BY c.number ASC `, req.query.sub
+        ORDER BY c.number ASC `,
+      req.query.sub
     );
     // Returns the data queried from the DB onto the screen
     const result: number[] = [];

@@ -4,7 +4,7 @@
 */
 
 import { NextApiRequest, NextApiResponse } from "next";
-import sql from "../../../services/sql";
+import { academicDb } from "../../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +12,7 @@ export default async function handler(
 ): Promise<void> {
   if (typeof req.query.conid === "string") {
     // Creates connection to the DB
-    const con = await sql();
+    const con = await academicDb();
 
     // queries the DB for all Concentrations and saves it into the rows var
     const rows = await con.all(
@@ -23,7 +23,8 @@ export default async function handler(
         JOIN coursecategory coc ON ca.idCategory = coc.categoryId
         JOIN course co ON coc.courseId = co.idCourse
         WHERE c.idConcentration = ?
-        ORDER BY co.subject, co.number `, req.query.conid
+        ORDER BY co.subject, co.number `,
+      req.query.conid
     );
     // Returns the data queried from the DB onto the screen
     res.status(200).json(rows);

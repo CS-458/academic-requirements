@@ -18,6 +18,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm ci
+      - name: mock the secrets file for the build
+        run: |
+          touch secrets.json  
+          echo '{"client": {"id": "","secret": ""}}' >> secrets.json
       - name: Jest GitHub Action
         uses: willcaul/jest-github-action@v2
         with:

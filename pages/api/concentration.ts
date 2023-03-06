@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ConcentrationType } from "../../entities/four_year_plan";
-import sql from "../../services/sql";
+import { academicDb } from "../../services/sql";
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,9 +11,10 @@ export default async function handler(
       res.status(200).json([]);
       return;
     }
-    const con = await sql();
+    const con = await academicDb();
     const rows = await con.all(
-      "SELECT * FROM concentration WHERE majorId = ?", req.query.majid
+      "SELECT * FROM concentration WHERE majorId = ?",
+      req.query.majid
     );
     const result = [];
     let cur: ConcentrationType = {

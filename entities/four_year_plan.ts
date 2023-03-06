@@ -118,3 +118,24 @@ export interface FourYearPlanType {
   requirementsGen: RequirementComponentType[] | null | undefined;
   importData?: {};
 }
+
+export interface UserSavedSchedule {
+  userID: string,
+  name: string,
+  timestamp: number,
+  scheduleData: {
+    Major: string,
+    Concentration: string,
+    "Completed Courses": string[],
+    ClassPlan: {
+      Semester1: string[],
+      Semester2: string[],
+      Semester3: string[],
+      Semester4: string[],
+      Semester5: string[],
+      Semester6: string[],
+      Semester7: string[],
+      Semester8: string[]
+    }
+  }
+}

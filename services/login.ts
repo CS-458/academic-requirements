@@ -4,6 +4,10 @@ import secrets from "../secrets.json";
 
 const client = new OAuth2Client(secrets.client.id);
 
+export function updateClient(update: (c: OAuth2Client) => void): void {
+  update(client);
+}
+
 export default async function verifyToken(
   token: string,
   con?: PromisedDatabase
@@ -18,7 +22,7 @@ export default async function verifyToken(
       await con.all(
         `INSERT INTO user (idUser, role)
          VALUES (?, ?)
-         ON CONFLICT(idUser, role) IGNORE`,
+         ON CONFLICT(idUser) DO NOTHING`,
         [id, "user"]
       );
     }

@@ -1,5 +1,6 @@
 import React from "react";
-import { ConcentrationType, MajorType } from "../entities/four_year_plan";
+import { ConcentrationType, MajorType, UserSavedSchedule } from "../entities/four_year_plan";
+import { fetchApi } from "./util";
 export interface UserMajor {
   /// Major ID number
   major: MajorType;
@@ -46,4 +47,49 @@ export interface User {
 export const UserLogin = React.createContext<undefined | User>(undefined);
 export function userToken(): string | undefined {
   return React.useContext(UserLogin)?.cred;
+}
+
+// Calls the API to upload the schedule to the Database
+export async function uploadSchedule(name: string, schedule: any): Promise<void> {
+  const token = userToken();
+  if (token === undefined) {
+    throw new Error("User is not logged in");
+  }
+  await fetchApi(`/api/inserts/schedule?name=${name}`, {
+    method: "POST",
+    body: JSON.stringify(schedule),
+    headers: {
+      "X-Google-Token": token
+    }
+  });
+}
+/*
+  Function used to store user into the user table
+  May not be needed since we are checking if the user exists
+  when uploading the schedule
+*/
+export async function saveLoggedInUser(): Promise<void> {
+  const token = userToken();
+  if (token === undefined) {
+    throw new Error("User Token Not made");
+  }
+  await fetchApi("/api/inserts/user", {
+    method: "POST",
+    headers: {
+      "X-Google-Token": token
+    }
+  });
+}
+
+export async function getScheduleByName(name: string): Promise<UserSavedSchedule[]> {
+  const token = userToken();
+  if (token === undefined) {
+    throw new Error("User Token Not made");
+  }
+  return await fetchApi("/api/user/schedules", {
+    method: "GET",
+    headers: {
+      "X-Google-Token": token
+    }
+  });
 }

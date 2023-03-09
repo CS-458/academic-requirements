@@ -67,17 +67,23 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const defaultInformationType = "Requirements (Calculated)"; // The default
     const [informationTypes, setInformationTypes] = useState<string[]>([defaultInformationType]);
     const [displayedInformationType, setDisplayedInformationType] = useState<string | undefined>(defaultInformationType);
-
+    console.log(semesters);
     function initializeSemesters(): SemesterType[] {
       const tempSemesters = [];
+      let year: number = 0;
       for (let i = 0; i < semestersLength; i++) {
+        if (i % 2 === 0) {
+          year++;
+        }
         tempSemesters.push(
           {
             accepts: [ItemTypes.COURSE],
             courses: [],
             semesterNumber: i + 1,
             SemesterCredits: 0,
-            Warning: ""
+            Warning: "",
+            year,
+            season: i % 2 === 0 ? "Fall" : "Spring"
           }
         );
       }
@@ -756,7 +762,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   accepts,
                   courses,
                   SemesterCredits,
-                  Warning
+                  Warning,
+                  year,
+                  season
                 },
                 index
               ) => (
@@ -771,6 +779,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   warningPrerequisiteCourses={warningPrerequisiteCourses}
                   warningFallvsSpringCourses={warningFallvsSpringCourses}
                   warningDuplicateCourses={warningDuplicateCourses}
+                  year={year}
+                  season={season}
                 />
               )
             )}

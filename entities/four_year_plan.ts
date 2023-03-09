@@ -100,6 +100,8 @@ export interface SemesterProps {
   warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
   warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
   warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
+  year: number; // year number 1,2,3,4,etc.
+  season: string; // Season the semester is (Fall, Winter, Spring, Summer)
 }
 
 // Defines the properties of a semester object
@@ -108,7 +110,9 @@ export interface SemesterType {
   semesterNumber: number, // number of the semester
   courses: CourseType[], // list of courses in semester
   SemesterCredits: number, // number of credits in the semester
-  Warning: string // credit warning (high or low)
+  Warning: string, // credit warning (high or low)
+  year: number, // year number 1,2,3,4,etc.
+  season: string // Season the semester is (Fall, Winter, Spring, Summer)
 }
 
 //  Defines the properties that should be passed in to the fourYearPlan page

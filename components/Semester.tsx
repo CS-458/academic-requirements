@@ -31,7 +31,9 @@ export const Semester: FC<SemesterProps> = function Semester({
   Warning,
   warningPrerequisiteCourses,
   warningFallvsSpringCourses,
-  warningDuplicateCourses
+  warningDuplicateCourses,
+  year,
+  season
 }) {
   // defines the drop action
   const [{ isOver }, drop] = useDrop({
@@ -57,9 +59,7 @@ export const Semester: FC<SemesterProps> = function Semester({
     >
       {isActive
         ? "Release to drop"
-        : `Semester ${semesterNumber} ${
-            semesterNumber % 2 === 0 ? "\nSpring\n" : "\nFall\n"
-          }Credits ${SemesterCredits}`}
+        : `Semester ${semesterNumber} \n ${season} \n Credits ${SemesterCredits}`}
       {`${Warning}`}
 
       {courses.map((course, index) => (

@@ -60,7 +60,7 @@ export const Semester: FC<SemesterProps> = function Semester({
       {isActive
         ? "Release to drop"
         : `Semester ${semesterNumber} \n ${season} \n Credits ${SemesterCredits}`}
-      {`${Warning}`}
+      {Warning !== null ? ` (${Warning})` : ""}
 
       {courses.map((course, index) => (
         <Course

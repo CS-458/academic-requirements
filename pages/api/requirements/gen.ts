@@ -15,7 +15,7 @@ export default async function handler(
 
   // queries the DB for all the GenEds for a given Concentration
   const rows = await con.all(
-    ` SELECT c.idCategory, c.name, c.parentCategory, cr.creditCount, cr.courseCount, cr.courseReqs
+    ` SELECT c.idCategory, c.name, c.parentCategory, c.shortName, cr.creditCount, cr.courseCount, cr.courseReqs
       FROM category c
       JOIN categoryrequirements cr ON cr.categoryId = c.idCategory
       WHERE c.idCategory NOT IN (SELECT categoryId FROM majorCategory) AND c.idCategory NOT IN (SELECT categoryId FROM concentrationCategory) `

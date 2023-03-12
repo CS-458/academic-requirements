@@ -1,8 +1,7 @@
 import type { FC } from "react";
 import React, { memo } from "react";
-import { RequirementComponentType } from "../entities/four_year_plan";
 
-export const Requirement: FC<RequirementComponentType> = memo(function Requirement({
+export const Requirement: FC<any> = memo(function Requirement({
   name,
   percentage
 }) {

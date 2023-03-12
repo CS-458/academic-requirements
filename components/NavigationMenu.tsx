@@ -78,7 +78,9 @@ export default function MenuDrawer(): any {
           open={state.left}
           onClose={toggleDrawer("left", false)}
         >
-            {list("left")}
+          <br/>
+          <br/>
+          {list("left")}
         </Drawer>
       </React.Fragment>
     </div>

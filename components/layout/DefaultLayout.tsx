@@ -1,4 +1,5 @@
 import AppBar from "@mui/material/AppBar";
+import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -30,11 +31,24 @@ export default function DefaultLayout(props: {
   function errorMessage(): void {
     console.error("Login failed");
   }
+  // interface AppBarProps extends MuiAppBarProps {
+  //   open?: boolean;
+  // }
+
+  // const AppBar = styled(MuiAppBar, {
+  //   shouldForwardProp: (prop) => prop !== "open"
+  // })<AppBarProps>(({ theme, open }) => ({
+  //   zIndex: theme.zIndex.drawer + 1,
+  //   transition: theme.transitions.create(["width", "margin"], {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.leavingScreen
+  //   })
+  // }));
 
   return (
     <UserLogin.Provider value={user}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, position: "relative" }}>
           <Toolbar>
             <MenuDrawer/>
             <LogoLink/>

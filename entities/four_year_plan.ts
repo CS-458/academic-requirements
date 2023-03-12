@@ -70,6 +70,7 @@ export interface RequirementComponentType {
   creditCount: number; // number of credits required to satisfy
   idCategory: number; // Database id for requirement
   name: string; // name of the requirement
+  shortName: string; // abbreviated version of the name for display
   parentCategory: number; // Database id for parent requirement category
   percentage: number; // Percentage that requirement has been filled
   inheritedCredits: number; // Number of credits a parent req inherits from child req

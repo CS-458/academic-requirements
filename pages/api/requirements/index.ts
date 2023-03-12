@@ -16,14 +16,14 @@ export default async function handler(
 
     // queries the DB for all the Requirements for a given Concentration and saves it into the rows var
     const rows = await con.all(
-      ` SELECT c.idCategory, c.name, c.parentCategory, cr.creditCount, cr.courseCount, cr.courseReqs
+      ` SELECT c.idCategory, c.name, c.parentCategory, c.shortName, cr.creditCount, cr.courseCount, cr.courseReqs
         FROM category c
         JOIN majorCategory mc ON mc.categoryId = c.idCategory
         JOIN concentration co ON co.majorId = mc.majorId
         JOIN categoryrequirements cr ON cr.categoryId = c.idCategory
         WHERE co.idConcentration = ?
         UNION
-        SELECT c.idCategory, c.name, c.parentCategory, cr.creditCount, cr.courseCount, cr.courseReqs
+        SELECT c.idCategory, c.name, c.parentCategory, c.shortName, cr.creditCount, cr.courseCount, cr.courseReqs
         FROM category c
         JOIN concentrationCategory cc ON cc.categoryId = c.idCategory
         JOIN categoryrequirements cr ON cr.categoryId = c.idCategory

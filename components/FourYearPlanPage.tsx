@@ -46,9 +46,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       draggedOut: true,
       newCheck: false
     });
-
+    console.log(userMajor()?.concentration?.fourYearPlan ?? "{}");
+    console.log(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // fourYearPlan parsed as a JSON
-    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? ""));
+    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<RequirementComponentType[]>([]);
 
@@ -62,11 +63,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // Stuff for category dropdown.
     const [categories, setCategories] = useState<string[]>([]); // list of all categories
     const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>([]); // courses in category that is selected
-
-    // Used to keep track of which information to display in the far right area
-    const defaultInformationType = "Requirements (Calculated)"; // The default
-    const [informationTypes, setInformationTypes] = useState<string[]>([defaultInformationType]);
-    const [displayedInformationType, setDisplayedInformationType] = useState<string | undefined>(defaultInformationType);
 
     function initializeSemesters(): SemesterType[] {
       const tempSemesters = [];
@@ -83,31 +79,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
       return tempSemesters;
     }
-
-    useEffect(() => {
-      // Whenever completed courses may update, determine
-      // whether we need to display it in the dropdown
-      const completedCourses = userMajor()?.completed_courses ?? 0;
-      if (completedCourses > 0) {
-        console.log("Setting up completed courses", userMajor()?.completed_courses);
-        setInformationTypes((prevInformationTypes) => {
-          // the ... is a spread operator and essentially means "take everything up to this point"
-          if (!prevInformationTypes.includes("Completed Courses")) {
-            return [...prevInformationTypes, "Completed Courses"];
-          }
-          return [...prevInformationTypes];
-        });
-      }
-      if (userMajor()?.load_four_year_plan !== false) {
-        setInformationTypes((prevInformationTypes) => {
-          // the ... is a spread operator and essentially means "take everything up to this point"
-          if (!prevInformationTypes.includes("Requirements (Four Year Plan)")) {
-            return [...prevInformationTypes, "Requirements (Four Year Plan)"];
-          }
-          return [...prevInformationTypes];
-        });
-      }
-    }, []);
 
     // useEffect(() => {
     //   if (importData !== undefined) {

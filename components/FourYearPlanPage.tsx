@@ -46,8 +46,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       draggedOut: true,
       newCheck: false
     });
-    console.log(userMajor()?.concentration?.fourYearPlan ?? "{}");
-    console.log(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // fourYearPlan parsed as a JSON
     const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // The list of requirements and their completion for display

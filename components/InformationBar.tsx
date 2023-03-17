@@ -97,7 +97,7 @@ function TabPanel(props: TabPanelProps): any {
 }
 
 export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[] }): JSX.Element {
-  const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? ""));
+  const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
   const [completedCourses] = useState(userMajor()?.completed_courses ?? 0);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
   const [open, setOpen] = useState<boolean>(false);
@@ -142,20 +142,34 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
         </DrawerHeader>
         <Divider />
         <TabPanel value={value} index={0}>
-        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (
+          <Typography>Major</Typography>
+          <Divider/>
+        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<>
+          { name === "Global Perspective (GLP)"
+            ? <>
+            <Typography>General Education</Typography>
+            <Divider/>
+            </> : <></>
+          }
           <Requirement
             name={name}
             percentage={percentage}
             digits={100}
             key={index}
-          />))
-          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (
+          /></>))
+          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<>
+          { shortName === "GLP"
+            ? <>
+            <Typography>Gen Eds</Typography>
+            <Divider/>
+            </> : <></>
+          }
           <Requirement
             name={shortName}
             percentage={percentage}
             digits={1}
             key={index}
-          />))
+          /></>))
         }
         </TabPanel>
         { loadPlan ? <TabPanel value={value} index={1}>

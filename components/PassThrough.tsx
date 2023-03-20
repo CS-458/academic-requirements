@@ -21,7 +21,6 @@ const PassThrough = (props: {
       {props.showing && (
         <div className="screen">
           <br/>
-          <div className="page">
             <FourYearPlanPage
               PassedCourseList={courseList}
               requirements={requirements}
@@ -29,7 +28,6 @@ const PassThrough = (props: {
               importData={undefined}// props.importData
             />
           </div>
-        </div>
       )}
     </div>
   );

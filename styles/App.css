@@ -20,32 +20,8 @@ button {
   border-radius: 15px;
 }
 
-.addCourseButton {
-  margin-top: 40px;
-  margin-bottom: -40px;
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.grid-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 60% auto auto;
-  column-gap: 1px;
-  row-gap: 50px;
-  background-color: #004990;
-}
-
-.semesters-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  column-gap: 1px;
-  row-gap: 100px;
-  overflow: auto;
-  background-color: #004990;
 }
 
 .class-dropdown {
@@ -60,80 +36,17 @@ body {
 .drag-drop {
   height: 100%;
   display: grid;
-  grid-template-columns: 50% 25% 24.5%;
+  grid-template-columns: 63% 25% 10%;
   column-gap: 10px;
 }
 
-.schedule {
-  height: 100%;
-  width: 100%;
-  column-gap: 1px;
-  row-gap: 1px;
-}
-
-.page {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
-  column-gap: 1px;
-  text-align: center;
-}
-
-.course-box-header > .thinContainer {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  float: none;
-  clear: left;
-  width: unset;
-  padding: 0px 25px;
-}
-
-.course-box-header > .thinContainer > .thinLabel {
-  width: unset;
-  padding: 0px;
-  margin: 15px;
-  align-self: center;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: auto auto 33.33%;
-  grid-template-rows: 50% 45%;
-  column-gap: 15px;
-  row-gap: 0px;
-  justify-items: center;
-}
-/* boxes where the import schedule, generate schedule and course subject and number buttons/ elements are held.*/
-.input-grid-item {
-  text-align: center;
-  height: 100%;
-}
-/* both the major and concentration boxes, this is the backgound box*/
-.input-grid-dropdown {
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-}
-/* the completed courses box on the first page, on the bottom right */
-.input-grid-item-courses {
-  height: 150%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #004990;
-  border-color: black;
-  color: white;
-  border-radius: 15px;
-  width: 100%;
-}
 /* Text inside the course dropdown menu*/
 .courseDropdowns {
   text-align: center;
   width: 100%;
   float: center;
 }
+
 /* The words inside of the requirements box in the schedule generator*/
 .RequirementText {
   width: 100%;
@@ -144,10 +57,12 @@ body {
   font-size: 11pt;
   padding-left: 0;
 }
+
 /* the percent sign in the requirements category*/
 .percentage {
   text-align: right;
 }
+
 .requirementName {
   text-align: left;
 }

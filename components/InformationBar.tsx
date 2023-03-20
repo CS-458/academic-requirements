@@ -14,7 +14,7 @@ import { RequirementComponentType } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
 import { userMajor } from "../services/user";
 
-const drawerWidth = 550;
+const drawerWidth = "37%";
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -31,7 +31,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen
   }),
   overflowX: "hidden",
-  width: 155
+  width: "10%"
   // width: `calc(${theme.spacing(13)} + 1px)`,
   // [theme.breakpoints.up("sm")]: {
   //   width: `calc(${theme.spacing(12)} + 1px)`
@@ -88,7 +88,7 @@ function TabPanel(props: TabPanelProps): any {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 1 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -140,7 +140,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
               </>
           }
         </DrawerHeader>
-        <Divider />
+        {open ? <Divider /> : undefined}
         <TabPanel value={value} index={0}>
           <Typography>Major</Typography>
           <Divider/>
@@ -212,7 +212,6 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             );
           })}
         </TabPanel> : undefined}
-        <Divider />
       </Drawer>
     </Box>
   );

@@ -108,11 +108,12 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
 
   const handleDrawerClose = (): void => {
     setOpen(false);
+    handleTabChange(undefined, 0);
   };
 
   const [value, setValue] = useState(0);
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number): void => {
+  const handleTabChange = (event: React.SyntheticEvent | undefined, newValue: number): void => {
     setValue(newValue);
   };
 
@@ -142,13 +143,13 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
         </DrawerHeader>
         {open ? <Divider /> : undefined}
         <TabPanel value={value} index={0}>
-          <Typography>Major</Typography>
-          <Divider/>
+          <Typography sx={{ color: "primary.main" }}>Major</Typography>
+          <Divider sx={{ color: "primary.main" }}/>
         { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<>
           { name === "Global Perspective (GLP)"
             ? <>
-            <Typography>General Education</Typography>
-            <Divider/>
+            <Typography sx={{ color: "primary.main" }}>General Education</Typography>
+            <Divider sx={{ color: "primary.main" }}/>
             </> : <></>
           }
           <Requirement
@@ -160,8 +161,8 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<>
           { shortName === "GLP"
             ? <>
-            <Typography>Gen Eds</Typography>
-            <Divider/>
+            <Typography sx={{ color: "primary.main" }}>Gen Eds</Typography>
+            <Divider sx={{ color: "primary.main" }}/>
             </> : <></>
           }
           <Requirement
@@ -173,7 +174,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
         }
         </TabPanel>
         { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>
-          <Typography>
+          <Typography sx={{ color: "primary.main" }}>
             The four year plan for your concentration recommends taking
             courses in the following categories in the respective
             semesters.
@@ -192,7 +193,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           })}
         </TabPanel> : undefined}
         { completedCourses.length !== 0 ? <TabPanel value={value} index={1}>
-          <Typography>
+          <Typography sx={{ color: "primary.main" }}>
             These are courses you marked as complete.
           </Typography>
           {completedCourses.map((completedCourse, index) => {

@@ -89,6 +89,19 @@ export interface MultipleCategoriesType {
   idString: string; // an identifier for the course i.e. CS-144
 }
 
+// define what can be a season
+export enum season {
+  Fall = "Fall",
+  Winter = "Winter",
+  Spring = "Spring",
+  Summer = "Summer",
+};
+// define
+export enum warning {
+  Low = "Low",
+  High = "High"
+}
+
 // Defines the properties of a semester component
 export interface SemesterProps {
   accept: TargetType; // makes it a drop target, don't worry about it
@@ -96,10 +109,12 @@ export interface SemesterProps {
   semesterNumber: number; // the number of the semester
   courses: CourseType[]; // a list of courses in the semester
   SemesterCredits: number; // total credits of all courses in semester
-  Warning: string; // credit warning (low or high)
+  Warning: warning | null; // credit warning (low or high)
   warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
   warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
   warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
+  year: number; // year number 1,2,3,4,etc.
+  season: season;// Season the semester is (Fall, Winter, Spring, Summer)
 }
 
 // Defines the properties of a semester object
@@ -108,7 +123,9 @@ export interface SemesterType {
   semesterNumber: number, // number of the semester
   courses: CourseType[], // list of courses in semester
   SemesterCredits: number, // number of credits in the semester
-  Warning: string // credit warning (high or low)
+  Warning: warning | null, // credit warning (high or low)
+  year: number, // year number 1,2,3,4,etc.
+  season: season // Season the semester is (Fall, Winter, Spring, Summer)
 }
 
 //  Defines the properties that should be passed in to the fourYearPlan page

@@ -42,7 +42,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-start",
-  padding: theme.spacing(0, 1),
+  // padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar
 }));
@@ -53,7 +53,7 @@ const Drawer = styled(MuiDrawer, {
   width: drawerWidth,
   flexShrink: 0,
   // whiteSpace: "nowrap",
-  boxSizing: "border-box",
+  // boxSizing: "border-box",
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme)
@@ -98,7 +98,7 @@ function TabPanel(props: TabPanelProps): any {
 
 export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[] }): JSX.Element {
   const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
-  const [completedCourses] = useState(userMajor()?.completed_courses ?? 0);
+  const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
   const [open, setOpen] = useState<boolean>(false);
 
@@ -135,13 +135,13 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
               <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
                 <Tab label="Requirements" {...a11yProps(0)} />
                 { loadPlan ? <Tab label="Four Year Plan" {...a11yProps(1)} /> : undefined}
-                { completedCourses !== 0 ? <Tab label="Completed Courses" {...a11yProps(2)} /> : undefined}
+                { completedCourses.length !== 0 ? <Tab label="Completed Courses" {...a11yProps(2)} /> : undefined}
               </Tabs>
               </>
           }
         </DrawerHeader>
         <Divider />
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0} sx={{ padding: 0 }}>
           <Typography>Major</Typography>
           <Divider/>
         { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<>
@@ -191,29 +191,30 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             }
           })}
         </TabPanel> : undefined}
-        { completedCourses !== 0 ? <TabPanel value={value} index={2}>
+        { completedCourses.length !== 0 ? <TabPanel value={value} index={2}>
           <Typography>
             These are courses you marked as complete.
           </Typography>
-          {userMajor()?.completed_courses?.map((completedCourse, index) => {
+          {completedCourses.map((completedCourse, index) => {
             return (
               <div>
-                <a
-                  href={
-                    "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
-                    completedCourse.split("-")[0] +
-                    "&filter%5B29%5D=" +
-                    completedCourse.split("-")[1] +
-                    "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                  }
-                  target="_blank"
-                >
-                  {completedCourse}
-                </a>
+              <p>Help</p>
+              <a
+                href={
+                  "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
+                  completedCourse.split("-")[0] +
+                  "&filter%5B29%5D=" +
+                  completedCourse.split("-")[1] +
+                  "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                }
+                target="_blank"
+              >
+                {completedCourse}
+              </a>
               </div>
             );
           })}
-        </TabPanel> : undefined}
+        </TabPanel> : <TabPanel value={value} index={2}><p>Help</p></TabPanel>}
         <Divider />
       </Drawer>
     </Box>

@@ -14,7 +14,7 @@ import { RequirementComponentType } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
 import { userMajor } from "../services/user";
 
-const drawerWidth = 500;
+const drawerWidth = 550;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -54,11 +54,11 @@ const Drawer = styled(MuiDrawer, {
   flexShrink: 0,
   // whiteSpace: "nowrap",
   // boxSizing: "border-box",
-  ...(open && {
+  ...((open != null && open) && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme)
   }),
-  ...(!open && {
+  ...((open != null && !open) && {
     ...closedMixin(theme),
     "& .MuiDrawer-paper": closedMixin(theme)
   })
@@ -134,14 +134,14 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
               </IconButton>
               <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
                 <Tab label="Requirements" {...a11yProps(0)} />
-                { loadPlan ? <Tab label="Four Year Plan" {...a11yProps(1)} /> : undefined}
-                { completedCourses.length !== 0 ? <Tab label="Completed Courses" {...a11yProps(2)} /> : undefined}
+                { completedCourses.length !== 0 ? <Tab label="Completed Courses" {...a11yProps(1)} /> : loadPlan ? <Tab label="Four Year Plan" {...a11yProps(1)} /> : undefined}
+                { completedCourses.length !== 0 && loadPlan ? <Tab label="Four Year Plan" {...a11yProps(2)} /> : undefined}
               </Tabs>
               </>
           }
         </DrawerHeader>
         <Divider />
-        <TabPanel value={value} index={0} sx={{ padding: 0 }}>
+        <TabPanel value={value} index={0}>
           <Typography>Major</Typography>
           <Divider/>
         { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<>
@@ -172,7 +172,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           /></>))
         }
         </TabPanel>
-        { loadPlan ? <TabPanel value={value} index={1}>
+        { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>
           <Typography>
             The four year plan for your concentration recommends taking
             courses in the following categories in the respective
@@ -191,14 +191,12 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             }
           })}
         </TabPanel> : undefined}
-        { completedCourses.length !== 0 ? <TabPanel value={value} index={2}>
+        { completedCourses.length !== 0 ? <TabPanel value={value} index={1}>
           <Typography>
             These are courses you marked as complete.
           </Typography>
           {completedCourses.map((completedCourse, index) => {
             return (
-              <div>
-              <p>Help</p>
               <a
                 href={
                   "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
@@ -211,10 +209,9 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
               >
                 {completedCourse}
               </a>
-              </div>
             );
           })}
-        </TabPanel> : <TabPanel value={value} index={2}><p>Help</p></TabPanel>}
+        </TabPanel> : undefined}
         <Divider />
       </Drawer>
     </Box>

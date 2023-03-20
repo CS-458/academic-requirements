@@ -12,6 +12,7 @@ import { userMajor } from "../services/user";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
+import CourseFiltering from "./CourseFiltering";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -793,7 +794,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             style={{ overflow: "hidden", clear: "both" }}
             className="class-dropdown"
           >
-            <div>
+            {/* <div>
               <div
                 onClick={() => extractCategories()}
                 className="course-box-header"
@@ -807,7 +808,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   onSelectOption={selectedCategory} // If option chosen, selected Category activated.
                 />
               </div>
-            </div>
+            </div> */}
+            <CourseFiltering
+              courseData={PassedCourseList}
+              onFiltered={(courses) => { setCoursesInCategory(courses); }}
+            />
             <CourseList
               accept={[ItemTypes.COURSE]}
               onDrop={(item) => handleReturnDrop(item)}

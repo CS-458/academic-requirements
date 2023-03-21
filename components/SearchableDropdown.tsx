@@ -6,6 +6,8 @@ export default function SearchableDropdown<T>(props: {
   options: Array<{ label: string; value: T } | T>;
   label: string | null;
   disabled?: boolean;
+  freeSolo?: boolean;
+  onInputChange?: (value?: T) => void;
   onSelectOption: (option?: T) => void;
   sx?: SxProps;
 }): JSX.Element {
@@ -13,6 +15,12 @@ export default function SearchableDropdown<T>(props: {
     <Autocomplete
       disablePortal
       disabled={props.disabled === true}
+      freeSolo={props.freeSolo === true}
+      onInputChange={(_a, value) => {
+        if (props.onInputChange !== undefined) {
+          props.onInputChange(value);
+        }
+      }}
       autoHighlight
       options={props.options.map((v) => {
         if (

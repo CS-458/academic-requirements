@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CourseType } from "../entities/four_year_plan";
 
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { extractCategories } from "../services/academic";
 import SearchableDropdown from "./SearchableDropdown";
@@ -52,7 +51,10 @@ function TabPanel(props: TabPanelProps): any {
 export default function CourseFiltering(props: CourseFilteringProps): JSX.Element {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number): void => {
+  const [filterCourseSubject, setFilterCourseSubject] = useState<string>();
+  const [filterCourseNumber, setFilterCourseNumber] = useState<string>();
+
+  const handleTabChange = (event: React.SyntheticEvent, newValue: number): void => {
     setValue(newValue);
   };
 
@@ -66,10 +68,63 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
     }
   };
 
+  const courseBySubject = (): void => {
+    if (filterCourseSubject !== undefined) {
+      const courses: CourseType[] =
+        props.courseData.filter((course: CourseType) => {
+          return course.subject === filterCourseSubject;
+        });
+      props.onFiltered(courses);
+    }
+  };
+
+  const courseByNumber = (): void => {
+    if (filterCourseNumber !== undefined) {
+      const courses: CourseType[] =
+        props.courseData.filter((course: CourseType) => {
+          // A bit more useful than a direct comparison
+          return course.number.includes(filterCourseNumber);
+        });
+      props.onFiltered(courses);
+    }
+  };
+
+  const coursesBySubjectNumber = (): void => {
+    // more complex
+    if (filterCourseSubject !== undefined && filterCourseNumber !== undefined) {
+      const courses: CourseType[] =
+        props.courseData.filter((course: CourseType) => {
+          // A bit more useful than a direct comparison
+          return (
+            course.subject === filterCourseSubject &&
+            course.number.includes(filterCourseNumber)
+          );
+        });
+      props.onFiltered(courses);
+    }
+  };
+
+  useEffect(() => {
+    // logic for filtering by subject, number, both, or neither
+    if (filterCourseSubject === undefined &&
+        (filterCourseNumber === undefined || filterCourseNumber === "")) {
+      props.onFiltered([]); // clear the results
+      return;
+    }
+
+    // Search using both if both are provided
+    if (filterCourseSubject !== undefined && filterCourseNumber !== undefined) {
+      return coursesBySubjectNumber();
+    }
+
+    if (filterCourseSubject !== undefined) { return courseBySubject(); }
+    if (filterCourseNumber !== undefined) { return courseByNumber(); }
+  }, [filterCourseSubject, filterCourseNumber]);
+
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
+        <Tabs value={value} onChange={handleTabChange} aria-label="filter tab options" centered>
           <Tab label="By Category" {...a11yProps(0)} />
           <Tab label="By Subject/Number" {...a11yProps(1)} />
           <Tab label="By Credit" {...a11yProps(2)} />
@@ -88,32 +143,40 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Grid container spacing={2} columns={2}>
-        <Grid item xs={1}>
-          <SearchableDropdown
-            options={extractCategories(props.courseData)}
-            label={"Subject"}
-            onSelectOption={coursesByCategory}
-            sx={{
-              maxWidth: "unset",
-              pt: "unset",
-              pl: "unset"
-            }}
-          />
-        </Grid>
-        <Grid item xs={1}>
-          <SearchableDropdown
-              options={extractCategories(props.courseData)}
-              label={"Number"}
-              onSelectOption={coursesByCategory}
+        <Grid container spacing={2} columns={2}>
+          <Grid item xs={1}>
+            <SearchableDropdown
+              /*
+                Get all subjects from supplied course data by mapping
+                Add the result of the map to a Set (to remove duplicates)
+                Convert set to an array
+                Sort the array (alphabetically)
+              */
+              options={ Array.from(new Set(props.courseData.map(c => c.subject))).sort() }
+              label={"Subject"}
+              onSelectOption={setFilterCourseSubject}
               sx={{
                 maxWidth: "unset",
                 pt: "unset",
                 pl: "unset"
               }}
             />
+          </Grid>
+          <Grid item xs={1}>
+            <SearchableDropdown
+                options={ Array.from(new Set(props.courseData.filter(c => c.subject === filterCourseSubject).map(c => c.number))).sort() }
+                label={"Number"}
+                onSelectOption={setFilterCourseNumber}
+                onInputChange={setFilterCourseNumber}
+                sx={{
+                  maxWidth: "unset",
+                  pt: "unset",
+                  pl: "unset"
+                }}
+                freeSolo = {true}
+              />
+          </Grid>
         </Grid>
-      </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
         By Credit

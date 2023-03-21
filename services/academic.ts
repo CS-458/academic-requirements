@@ -104,3 +104,5 @@ export function extractCategories(courses: CourseType[]): Array<string> {
   // Convert to an array of Strings
   return Array.from(i);
 }
+
+// TODO collapseCategoriesToParent()

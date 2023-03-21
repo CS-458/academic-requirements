@@ -1,4 +1,4 @@
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, SxProps, TextField } from "@mui/material";
 import React from "react";
 
 // Note: drop down often key-value pair behind scenes.
@@ -7,6 +7,7 @@ export default function SearchableDropdown<T>(props: {
   label: string | null;
   disabled?: boolean;
   onSelectOption: (option?: T) => void;
+  sx?: SxProps;
 }): JSX.Element {
   return (
     <Autocomplete
@@ -37,7 +38,8 @@ export default function SearchableDropdown<T>(props: {
         maxWidth: 400,
         pt: 6,
         pl: 3,
-        textAlign: "center"
+        textAlign: "center",
+        ...props.sx // sx styles from props will override the defaults
       }}
       isOptionEqualToValue={(a, b) => a.value === b.value}
       renderInput={(params) => <TextField {...params} label={props.label} />}

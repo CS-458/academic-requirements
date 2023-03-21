@@ -139,23 +139,23 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }
 
     //  Removes duplicate strings from an array
-    function RemoveDuplicates(strings: string[]): string[] {
-      return strings.filter((value, index, tempArr) => {
-        return !tempArr.includes(value, index + 1);
-      });
-    }
+    // function RemoveDuplicates(strings: string[]): string[] {
+    //   return strings.filter((value, index, tempArr) => {
+    //     return !tempArr.includes(value, index + 1);
+    //   });
+    // }
 
     // extractCategories function.
-    function extractCategories(): void {
-      // Initialize new array.
-      const i = new Array<string>();
-      // Push course categories from major and concentration course lists to array.
-      PassedCourseList.map((course, index) => {
-        i.push(course.category);
-      });
-      // Remove duplicate categories from the array.
-      setCategories(RemoveDuplicates(i));
-    }
+    // function extractCategories(): void {
+    //   // Initialize new array.
+    //   const i = new Array<string>();
+    //   // Push course categories from major and concentration course lists to array.
+    //   PassedCourseList.map((course, index) => {
+    //     i.push(course.category);
+    //   });
+    //   // Remove duplicate categories from the array.
+    //   setCategories(RemoveDuplicates(i));
+    // }
 
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
@@ -811,7 +811,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             </div> */}
             <CourseFiltering
               courseData={PassedCourseList}
-              onFiltered={(courses) => { setCoursesInCategory(courses); }}
+              onFiltered={(courses: CourseType[]) => { setCoursesInCategory(courses); }}
             />
             <CourseList
               accept={[ItemTypes.COURSE]}

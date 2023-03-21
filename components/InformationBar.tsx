@@ -16,26 +16,23 @@ import { userMajor } from "../services/user";
 
 const drawerWidth = "37%";
 
-const openedMixin = (theme: Theme): CSSObject => ({
+const openedDrawer = (theme: Theme): CSSObject => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen
   }),
-  overflowX: "hidden"
+  overflowX: "hidden",
+  boxShadow: "-5px 0px 20px gray"
 });
 
-const closedMixin = (theme: Theme): CSSObject => ({
+const closedDrawer = (theme: Theme): CSSObject => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
   }),
   overflowX: "hidden",
   width: "10%"
-  // width: `calc(${theme.spacing(13)} + 1px)`,
-  // [theme.breakpoints.up("sm")]: {
-  //   width: `calc(${theme.spacing(12)} + 1px)`
-  // }
 });
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -55,12 +52,12 @@ const Drawer = styled(MuiDrawer, {
   // whiteSpace: "nowrap",
   // boxSizing: "border-box",
   ...((open != null && open) && {
-    ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme)
+    ...openedDrawer(theme),
+    "& .MuiDrawer-paper": openedDrawer(theme)
   }),
   ...((open != null && !open) && {
-    ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme)
+    ...closedDrawer(theme),
+    "& .MuiDrawer-paper": closedDrawer(theme)
   })
 }));
 
@@ -101,13 +98,18 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
   const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
   const [open, setOpen] = useState<boolean>(false);
+  const [storedTab, setStoredTab] = useState<number>(0);
 
   const handleDrawerOpen = (): void => {
     setOpen(true);
+    if (storedTab !== 0) {
+      handleTabChange(undefined, storedTab);
+    }
   };
 
   const handleDrawerClose = (): void => {
     setOpen(false);
+    setStoredTab(value);
     handleTabChange(undefined, 0);
   };
 
@@ -124,7 +126,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
       <CssBaseline />
       <Drawer variant="permanent" anchor="right" open={open}>
         <DrawerHeader></DrawerHeader>
-        <DrawerHeader>
+        <DrawerHeader sx={{ p: 0 }}>
           { !open
             ? <IconButton onClick={handleDrawerOpen}>
                 <ChevronLeftIcon />
@@ -198,18 +200,21 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           </Typography>
           {completedCourses.map((completedCourse, index) => {
             return (
-              <a
-                href={
-                  "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
-                  completedCourse.split("-")[0] +
-                  "&filter%5B29%5D=" +
-                  completedCourse.split("-")[1] +
-                  "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                }
-                target="_blank"
-              >
-                {completedCourse}
-              </a>
+              <div>
+                <br/>
+                <a
+                  href={
+                    "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
+                    completedCourse.split("-")[0] +
+                    "&filter%5B29%5D=" +
+                    completedCourse.split("-")[1] +
+                    "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                  }
+                  target="_blank"
+                >
+                  {completedCourse}
+                </a>
+              </div>
             );
           })}
         </TabPanel> : undefined}

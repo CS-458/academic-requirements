@@ -175,8 +175,6 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
             maxWidth: "unset",
             pt: "unset",
             pl: "unset",
-            color: "red",
-            borderColor: "white"
           }}
         />
       </TabPanel>

@@ -5,10 +5,11 @@ import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
 import SearchableDropdown from "./SearchableDropdown";
-import ErrorPopup from "./ErrorPopup";
 import { Requirement } from "./Requirement";
+import { Snackbar } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
@@ -28,7 +29,30 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [semesters, setSemesters] = useState<SemesterType[]>(initializeSemesters());
     // The visibility of the error message
     const [visibility, setVisibility] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [severity, setSeverity] = useState<any>(undefined);
+    const [error, setError] = useState("");
+
+    function throwError(error: string, errorSeverity: string): void {
+      setVisibility(true);
+      setError(error);
+      setSeverity(errorSeverity);
+    }
+
+    const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+      props,
+      ref
+    ) {
+      return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+    const handleClose = (
+      event?: React.SyntheticEvent | Event,
+      reason?: string
+    ): void => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setVisibility(false);
+    };
 
     //  A list of courses that should have a warning color on them
     const [warningPrerequisiteCourses, setWarningPrerequisiteCourses] = useState<CourseType[]>([]);
@@ -99,7 +123,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // Whenever completed courses may update, determine
       // whether we need to display it in the dropdown
       const completedCourses = userMajor()?.completed_courses ?? 0;
-      if (completedCourses > 0) {
+      if (completedCourses !== 0) {
         console.log("Setting up completed courses", userMajor()?.completed_courses);
         setInformationTypes((prevInformationTypes) => {
           // the ... is a spread operator and essentially means "take everything up to this point"
@@ -353,7 +377,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               if (!course.repeatableForCred) {
                 //  Show the warning
                 setVisibility(true);
-                setErrorMessage("WARNING! " + course.subject + "-" + course.number + " is already in other semesters.");
+                throwError("WARNING! " + course.subject + "-" + course.number + " is already in other semesters.", "warning");
 
                 //  Append the course to the duplicate warning courses list
                 const temp = warningDuplicateCourses;
@@ -395,8 +419,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) === undefined) {
             warningFallvsSpringCourses.push(updateWarning.course);
             setVisibility(true);
-            setErrorMessage("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
-            " is not typically offered during the " + (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") + " semester");
+            throwError("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
+            " is not typically offered during the " + (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") + " semester", "warning");
           }
         } else {
           //  Otherwise remove it from the warning course list
@@ -458,8 +482,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);
-            setErrorMessage("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
-              " has failed the following prerequisites: " + satisfied.failedString);
+            throwError("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
+              " has failed the following prerequisites: " + satisfied.failedString, "error");
             //  Update the warning courses to include the just dragged course
             const temp = warningPrerequisiteCourses;
             temp.push(updateWarning.course);
@@ -481,7 +505,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           );
           if (response.vis) {
             setVisibility(response.vis);
-            setErrorMessage(response.error);
+            throwError(response.error, "error");
           }
           setWarningPrerequisiteCourses(response.warning);
         }
@@ -497,7 +521,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         );
         if (response.vis) {
           setVisibility(response.vis);
-          setErrorMessage(response.error);
+          throwError(response.error, "error");
         }
         setWarningPrerequisiteCourses(response.warning);
       }
@@ -572,7 +596,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       for (let i = 0; i < semesters.length; i++) {
         if (semesters[i].Warning !== null) {
           setVisibility(true);
-          setErrorMessage(semestersWithWarnings + "");
+          throwError(semestersWithWarnings + "", "warning");
         }
       }
     };
@@ -749,12 +773,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               scheduleData={info}
             />
           <div style={{ overflow: "hidden", clear: "both" }}>
-            <ErrorPopup
-              onClose={popupCloseHandler}
-              show={visibility}
-              title={"Warning"}
-              error={errorMessage}
-            />
+          <Snackbar
+        open={visibility}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+          {`${error}`}
+        </Alert>
+      </Snackbar>
             {semesters.map(
               (
                 {

@@ -1,15 +1,6 @@
 import { useState } from "react";
-import { styled, Theme, CSSObject } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { CssBaseline } from "@mui/material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { CssBaseline, IconButton, Divider, Typography, Tab, Tabs, Box, styled, Theme, CSSObject, Drawer } from "@mui/material";
 import { RequirementComponentType } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
 import { userMajor } from "../services/user";
@@ -44,7 +35,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar
 }));
 
-const Drawer = styled(MuiDrawer, {
+const MuiDrawer = styled(Drawer, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
   width: drawerWidth,
@@ -86,7 +77,7 @@ function TabPanel(props: TabPanelProps): any {
     >
       {value === index && (
         <Box sx={{ p: 1 }}>
-          <Typography>{children}</Typography>
+          {children}
         </Box>
       )}
     </div>
@@ -119,35 +110,33 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
     setValue(newValue);
   };
 
-  console.log(completedCourses);
-  console.log(userMajor()?.load_four_year_plan);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <Drawer variant="permanent" anchor="right" open={open}>
+      <MuiDrawer variant="permanent" anchor="right" open={open}>
         <DrawerHeader></DrawerHeader>
         <DrawerHeader sx={{ p: 0 }}>
           { !open
-            ? <IconButton onClick={handleDrawerOpen}>
-                <ChevronLeftIcon />
+            ? <IconButton data-testid="openDrawer" onClick={handleDrawerOpen}>
+                <ChevronLeft />
               </IconButton>
             : <>
-              <IconButton onClick={handleDrawerClose}>
-                <ChevronRightIcon />
+              <IconButton data-testid="closeDrawer" onClick={handleDrawerClose}>
+                <ChevronRight />
               </IconButton>
               <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
-                <Tab label="Requirements" {...a11yProps(0)} />
-                { completedCourses.length !== 0 ? <Tab label="Completed Courses" {...a11yProps(1)} /> : loadPlan ? <Tab label="Four Year Plan" {...a11yProps(1)} /> : undefined}
-                { completedCourses.length !== 0 && loadPlan ? <Tab label="Four Year Plan" {...a11yProps(2)} /> : undefined}
+                <Tab label="Requirements" {...a11yProps(0)} key={0}/>
+                { completedCourses.length !== 0 ? <Tab label="Completed Courses" {...a11yProps(1)} key={1} /> : loadPlan ? <Tab label="Four Year Plan" {...a11yProps(1)} key={1} /> : undefined}
+                { completedCourses.length !== 0 && loadPlan ? <Tab label="Four Year Plan" {...a11yProps(2)} key={2}/> : undefined}
               </Tabs>
               </>
           }
         </DrawerHeader>
         {open ? <Divider /> : undefined}
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0} key={0}>
           <Typography sx={{ color: "primary.main" }}>Major</Typography>
           <Divider sx={{ color: "primary.main" }}/>
-        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<>
+        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<div key={index}>
           { name === "Global Perspective (GLP)"
             ? <>
             <Typography sx={{ color: "primary.main" }}>General Education</Typography>
@@ -159,8 +148,8 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             percentage={percentage}
             digits={100}
             key={index}
-          /></>))
-          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<>
+          /></div>))
+          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<div key={index}>
           { shortName === "GLP"
             ? <>
             <Typography sx={{ color: "primary.main" }}>Gen Eds</Typography>
@@ -172,10 +161,10 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             percentage={percentage}
             digits={1}
             key={index}
-          /></>))
+          /></div>))
         }
         </TabPanel>
-        { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>
+        { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1} key={1}>
           <Typography sx={{ color: "primary.main" }}>
             The four year plan for your concentration recommends taking
             courses in the following categories in the respective
@@ -185,8 +174,8 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
               return (
                 <div style={{ margin: "5px" }} key={index}>
-                  <Typography>{key}</Typography>
-                  <Typography style={{ marginLeft: "10px", marginBottom: "25px" }}>
+                  <Typography key={index}>{key}</Typography>
+                  <Typography style={{ marginLeft: "10px", marginBottom: "25px" }} key={index}>
                     { fourYearPlan?.ClassPlan[key].Requirements.toString() }
                   </Typography>
                 </div>
@@ -194,13 +183,13 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             }
           })}
         </TabPanel> : undefined}
-        { completedCourses.length !== 0 ? <TabPanel value={value} index={1}>
+        { completedCourses.length !== 0 ? <TabPanel value={value} index={1} key={2}>
           <Typography sx={{ color: "primary.main" }}>
             These are courses you marked as complete.
           </Typography>
           {completedCourses.map((completedCourse, index) => {
             return (
-              <div>
+              <div key={index}>
                 <br/>
                 <a
                   href={
@@ -218,7 +207,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             );
           })}
         </TabPanel> : undefined}
-      </Drawer>
+      </MuiDrawer>
     </Box>
   );
 }

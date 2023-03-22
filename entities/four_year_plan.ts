@@ -65,13 +65,13 @@ export interface RequirementType {
 
 // Defines the saved information for each requirement
 export interface RequirementComponentType {
-  courseCount: number; // number of courses required to satisfy
-  courseReqs: string; // list of courses required to satisfy
+  courseCount: number | null; // number of courses required to satisfy
+  courseReqs: string | null; // list of courses required to satisfy
   creditCount: number; // number of credits required to satisfy
   idCategory: number; // Database id for requirement
   name: string; // name of the requirement
   shortName: string; // abbreviated version of the name for display
-  parentCategory: number; // Database id for parent requirement category
+  parentCategory: number | null; // Database id for parent requirement category
   percentage: number; // Percentage that requirement has been filled
   inheritedCredits: number; // Number of credits a parent req inherits from child req
   coursesTaken: string; // list of courses already used toward requirement

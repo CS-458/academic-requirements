@@ -5,7 +5,6 @@ import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
 import SearchableDropdown from "./SearchableDropdown";
-import ErrorPopup from "./ErrorPopup";
 import { Requirement } from "./Requirement";
 import { Snackbar } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
@@ -28,7 +27,30 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [semesters, setSemesters] = useState<SemesterType[]>(initializeSemesters());
     // The visibility of the error message
     const [visibility, setVisibility] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [severity, setSeverity] = useState<any>(undefined);
+    const [error, setError] = useState("");
+
+    function throwError(error: string, errorSeverity: string): void {
+      setVisibility(true);
+      setError(error);
+      setSeverity(errorSeverity);
+    }
+
+    const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+      props,
+      ref
+    ) {
+      return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+    const handleClose = (
+      event?: React.SyntheticEvent | Event,
+      reason?: string
+    ): void => {
+      if (reason === "clickaway") {
+        return;
+      }
+      setVisibility(false);
+    };
 
     //  A list of courses that should have a warning color on them
     const [warningPrerequisiteCourses, setWarningPrerequisiteCourses] = useState<CourseType[]>([]);
@@ -753,12 +775,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       <div>
         <div className="drag-drop">
           <div style={{ overflow: "hidden", clear: "both" }}>
-            <ErrorPopup
-              onClose={popupCloseHandler}
-              show={visibility}
-              title={"Warning"}
-              error={errorMessage}
-            />
+          <Snackbar
+        open={visibility}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+          {`${error}`}
+        </Alert>
+      </Snackbar>
             {semesters.map(
               (
                 {

@@ -58,13 +58,22 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
     setValue(newValue);
   };
 
+  const sendFilteredCourses = (courses: CourseType[]): void => {
+    // Duplicates can exist because the same course belongs to multiple categories
+    // Remove duplicates before sending
+    const arr = courses.filter((course1, index) =>
+      index === courses.findIndex(course2 => course1.idCourse === course2.idCourse)
+    );
+    props.onFiltered(arr);
+  };
+
   const coursesByCategory = (category: string | undefined): void => {
     if (category !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
           return course.category === category;
         });
-      props.onFiltered(courses);
+      sendFilteredCourses(courses);
     }
   };
 
@@ -74,7 +83,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         props.courseData.filter((course: CourseType) => {
           return course.subject === filterCourseSubject;
         });
-      props.onFiltered(courses);
+      sendFilteredCourses(courses);
     }
   };
 
@@ -85,7 +94,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           // A bit more useful than a direct comparison
           return course.number.includes(filterCourseNumber);
         });
-      props.onFiltered(courses);
+      sendFilteredCourses(courses);
     }
   };
 
@@ -100,7 +109,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
             course.number.includes(filterCourseNumber)
           );
         });
-      props.onFiltered(courses);
+      sendFilteredCourses(courses);
     }
   };
 
@@ -120,6 +129,16 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
     if (filterCourseSubject !== undefined) { return courseBySubject(); }
     if (filterCourseNumber !== undefined) { return courseByNumber(); }
   }, [filterCourseSubject, filterCourseNumber]);
+
+  const setFilterCredit = (credits: string | undefined): void => {
+    if (credits !== undefined) {
+      const courses: CourseType[] =
+        props.courseData.filter((course: CourseType) => {
+          return course.credits.toString() === credits;
+        });
+      sendFilteredCourses(courses);
+    }
+  };
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -165,7 +184,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           <Grid item xs={1}>
             <SearchableDropdown
                 options={ Array.from(new Set(props.courseData.filter(c => c.subject === filterCourseSubject).map(c => c.number))).sort() }
-                label={"Number"}
+                label={"Course Number"}
                 onSelectOption={setFilterCourseNumber}
                 onInputChange={setFilterCourseNumber}
                 sx={{
@@ -179,7 +198,19 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        By Credit
+        {/* A slider may be better for credit ranges */}
+        <SearchableDropdown
+            options={ Array.from(new Set(props.courseData.map(c => c.credits.toString()))).sort() }
+            label={"Course Credits"}
+            onSelectOption={setFilterCredit}
+            onInputChange={setFilterCredit}
+            sx={{
+              maxWidth: "unset",
+              pt: "unset",
+              pl: "unset"
+            }}
+            freeSolo = {true}
+          />
       </TabPanel>
     </Box>
   );

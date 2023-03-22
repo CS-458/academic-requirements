@@ -61,7 +61,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] = useState<MultipleCategoriesType[]>([]);
 
     // Stuff for category dropdown.
-    const [categories, setCategories] = useState<string[]>([]); // list of all categories
+    // const [categories, setCategories] = useState<string[]>([]); // list of all categories
     const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>([]); // courses in category that is selected
 
     // Used to keep track of which information to display in the far right area
@@ -126,17 +126,17 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // }, [importData]);
 
     // SelectedCategory function.
-    function selectedCategory(_category: string | undefined): void {
-      // New string array created.
-      const set = new Array<CourseType>();
-      // Iterate through major course list. If the index matches the category, push the course name of the index to array.
-      PassedCourseList.map((course, index) => {
-        if (course.category.valueOf() === _category) {
-          set.push(course);
-        }
-      });
-      setCoursesInCategory(set);
-    }
+    // function selectedCategory(_category: string | undefined): void {
+    //   // New string array created.
+    //   const set = new Array<CourseType>();
+    //   // Iterate through major course list. If the index matches the category, push the course name of the index to array.
+    //   PassedCourseList.map((course, index) => {
+    //     if (course.category.valueOf() === _category) {
+    //       set.push(course);
+    //     }
+    //   });
+    //   setCoursesInCategory(set);
+    // }
 
     //  Removes duplicate strings from an array
     // function RemoveDuplicates(strings: string[]): string[] {

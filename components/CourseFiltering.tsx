@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { CourseType } from "../entities/four_year_plan";
 
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
 import { extractCategories } from "../services/academic";
 import SearchableDropdown from "./SearchableDropdown";
 import {
-  Grid, TextField
+  Tabs, Tab, Box, Grid, TextField
 } from "@mui/material";
 
 interface CourseFilteringProps {

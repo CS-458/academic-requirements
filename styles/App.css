@@ -1,3 +1,7 @@
+.generic {
+  height: 100%;
+}
+
 .App {
   text-align: center;
   height: 100%;
@@ -70,6 +74,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 50% 25% 24.5%;
+  grid-template-rows: 100%;
   column-gap: 10px;
 }
 
@@ -80,12 +85,17 @@ body {
   row-gap: 1px;
 }
 
+.semester:not(:last-child) {
+  border-right: 1px lightgray solid;
+}
+
+.semester:not(:first-child) {
+  border-left: 1px lightgray solid;
+}
+
 .page {
+  padding-top: 1em;
   height: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
-  column-gap: 1px;
-  text-align: center;
 }
 .right-information-box {
   background-color: gainsboro;
@@ -93,6 +103,7 @@ body {
   width: 95%;
   border-radius: 2%;
   padding-top: 0.3rem;
+  overflow-y: scroll;
 }
 .right-information-box-content {
   padding-top: 1rem;
@@ -202,20 +213,6 @@ It makes only the information box on the second screen look good.
   text-align: right;
 }
 
-/* an attempt to reconfigure and fix the semester boxes, doesn't work*/
-.semester {
-  height: 11rem;
-  width: 17%;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1rem;
-  line-height: normal;
-  float: left;
-  border-radius: 0.5rem;
-}
 .CourseList {
   height: 400px;
   overflow-y: auto;

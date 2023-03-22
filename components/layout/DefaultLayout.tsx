@@ -32,44 +32,53 @@ export default function DefaultLayout(props: {
   }
 
   return (
-    <UserLogin.Provider value={user}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <MenuDrawer/>
-            <LogoLink/>
-            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} />
-            {user === undefined ? (
-              <GoogleLogin
-                onSuccess={responseMessage}
-                onError={errorMessage}
-                useOneTap
-              />
-            ) : (
-              <Typography variant="h5" component="div">
-                <Box sx={{ m: 0 }}>
-                  <span
-                    style={{
-                      margin: 0,
-                      position: "absolute",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                      right: "5rem"
-                    }}
-                  >
-                    {user.info.name}
-                  </span>
-                  <img
-                    src={user.info.picture}
-                    style={{ height: "2em", borderRadius: "50%" }}
-                  />
-                </Box>
-              </Typography>
-            )}
-          </Toolbar>
-        </AppBar>
-      </Box>
-      {props.children}
-    </UserLogin.Provider>
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        display: "grid",
+        gridAutoRows: "minmax(0px, auto)"
+      }}
+    >
+      <UserLogin.Provider value={user}>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              <MenuDrawer />
+              <LogoLink />
+              <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} />
+              {user === undefined ? (
+                <GoogleLogin
+                  onSuccess={responseMessage}
+                  onError={errorMessage}
+                  useOneTap
+                />
+              ) : (
+                <Typography variant="h5" component="div">
+                  <Box sx={{ m: 0 }}>
+                    <span
+                      style={{
+                        margin: 0,
+                        position: "absolute",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        right: "5rem"
+                      }}
+                    >
+                      {user.info.name}
+                    </span>
+                    <img
+                      src={user.info.picture}
+                      style={{ height: "2em", borderRadius: "50%" }}
+                    />
+                  </Box>
+                </Typography>
+              )}
+            </Toolbar>
+          </AppBar>
+        </Box>
+        {props.children}
+      </UserLogin.Provider>
+    </div>
   );
 }

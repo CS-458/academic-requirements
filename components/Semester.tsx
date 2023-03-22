@@ -4,10 +4,12 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
+import { palette, styled } from "@mui/system";
+import { useTheme } from "@emotion/react";
 // styling for the semester
 const style: CSSProperties = {
   height: "15rem",
-  width: "19%",
+  width: "25%",
   marginRight: ".5rem",
   marginBottom: ".5rem",
   color: "white",
@@ -45,23 +47,18 @@ export const Semester: FC<SemesterProps> = function Semester({
   });
 
   // Changes the background color when you're hovering over the semester
-  const isActive: boolean = isOver;
-  let backgroundColor = "#004990";
-  if (isActive) {
-    backgroundColor = "darkgreen";
-  }
+  const backgroundColor = isOver ? "" : "white";
 
   return (
     <div
       ref={drop}
-      style={{ ...style, backgroundColor }}
-      data-testid="semester"
+      className="semester"
+      style={{ backgroundColor }}
+      data-testid={`semester${semesterNumber}`}
     >
-      {isActive
-        ? "Release to drop"
-        : `Semester ${semesterNumber} \n ${season} \n Credits ${SemesterCredits}`}
-      {Warning !== null ? ` (${Warning})` : ""}
-
+      <p>
+        {season} ({SemesterCredits})
+      </p>
       {courses.map((course, index) => (
         <Course
           name={course.name}
@@ -72,10 +69,12 @@ export const Semester: FC<SemesterProps> = function Semester({
           type={ItemTypes.COURSE}
           credits={course.credits}
           preReq={course.preReq}
-          dragSource={`Semester ${semesterNumber - 1}`}
+          dragSource={`Semester ${semesterNumber}`}
           key={index}
           warningYellowColor={warningDuplicateCourses.find((x) => x === course)}
-          warningOrangeColor={warningFallvsSpringCourses.find((x) => x === course)}
+          warningOrangeColor={warningFallvsSpringCourses.find(
+            (x) => x === course
+          )}
           warningRedColor={warningPrerequisiteCourses.find((x) => x === course)}
           repeatableForCred={course.repeatableForCred}
         />

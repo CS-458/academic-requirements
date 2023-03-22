@@ -375,7 +375,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               if (!course.repeatableForCred) {
                 //  Show the warning
                 setVisibility(true);
-                setErrorMessage("WARNING! " + course.subject + "-" + course.number + " is already in other semesters.");
+                throwError("WARNING! " + course.subject + "-" + course.number + " is already in other semesters.", "warning");
 
                 //  Append the course to the duplicate warning courses list
                 const temp = warningDuplicateCourses;
@@ -417,8 +417,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           if (warningFallvsSpringCourses.find((x) => x === updateWarning.course) === undefined) {
             warningFallvsSpringCourses.push(updateWarning.course);
             setVisibility(true);
-            setErrorMessage("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
-            " is not typically offered during the " + (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") + " semester");
+            throwError("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
+            " is not typically offered during the " + (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") + " semester", "warning");
           }
         } else {
           //  Otherwise remove it from the warning course list
@@ -480,8 +480,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           //  If the prereq for that moved course is not satisfied, have that course throw the error
           if (!satisfied.returnValue) {
             setVisibility(true);
-            setErrorMessage("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
-              " has failed the following prerequisites: " + satisfied.failedString);
+            throwError("WARNING! " + updateWarning.course.subject + "-" + updateWarning.course.number +
+              " has failed the following prerequisites: " + satisfied.failedString, "error");
             //  Update the warning courses to include the just dragged course
             const temp = warningPrerequisiteCourses;
             temp.push(updateWarning.course);
@@ -503,7 +503,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           );
           if (response.vis) {
             setVisibility(response.vis);
-            setErrorMessage(response.error);
+            throwError(response.error, "error");
           }
           setWarningPrerequisiteCourses(response.warning);
         }
@@ -519,7 +519,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         );
         if (response.vis) {
           setVisibility(response.vis);
-          setErrorMessage(response.error);
+          throwError(response.error, "error");
         }
         setWarningPrerequisiteCourses(response.warning);
       }
@@ -589,7 +589,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       for (let i = 0; i < semesters.length; i++) {
         if (semesters[i].Warning !== null) {
           setVisibility(true);
-          setErrorMessage(semestersWithWarnings + "");
+          throwError(semestersWithWarnings + "", "warning");
         }
       }
     };

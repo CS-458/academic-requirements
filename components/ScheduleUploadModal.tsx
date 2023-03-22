@@ -6,22 +6,29 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle
+  DialogTitle,
+  Alert
 } from "@mui/material";
-import ErrorPopup from "./ErrorPopup";
 import SaveIcon from "@mui/icons-material/Save";
 import { uploadSchedule, userToken } from "../services/user";
 import { UserSavedSchedule } from "../entities/four_year_plan";
 
 export default function FormDialog(props: {
-  scheduleData: UserSavedSchedule["scheduleData"]
+  scheduleData: UserSavedSchedule["scheduleData"],
+  setAlertData: (msg: string, severity: string) => void
 }): any {
   const [open, setOpen] = React.useState(false);
 
   const [scheduleName, setScheduleName] = React.useState(getDateTime());
+
+  // The visibility, severity/color, and error message of the error message
   const [visibility, setVisibility] = React.useState(false);
-  const [errorMessage, setErrorMessage] = React.useState("");
-  const [title, setTitle] = React.useState("Warning");
+  const [severity, setSeverity] = React.useState<any>(undefined);
+  const [error, setError] = React.useState("");
+
+  function throwError(error: string, errorSeverity: string): void {
+    props.setAlertData(error, errorSeverity);
+  }
 
   // makes the modal pop up
   const handleClickOpen = (): void => {
@@ -33,7 +40,13 @@ export default function FormDialog(props: {
     setOpen(false);
   };
 
-  const popupCloseHandler = (): void => {
+  const handleAlertClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ): void => {
+    if (reason === "clickaway") {
+      return;
+    }
     setVisibility(false);
   };
 
@@ -60,23 +73,19 @@ export default function FormDialog(props: {
   // function that Uploads the Schedule to the Database
   async function exportSchedule(): Promise<void> {
     if (scheduleName === null || scheduleName === "") {
-      setVisibility(true);
-      setErrorMessage("Schedule MUST have a name!");
+      throwError("Schedule MUST have a name!", "warning");
       setScheduleName(getDateTime());
     } else {
       try {
         await uploadSchedule(token, scheduleName, props.scheduleData);
       } catch (err: any) {
         if (err.message === "User is not logged in") {
-          setVisibility(true);
-          setErrorMessage("Not Logged in. Please Log in");
+          throwError("User Not Logged in! Please Log in to save your Schedule.", "warning");
           console.log("not logged in error");
           return;
         }
       }
-      setVisibility(true);
-      setErrorMessage("Saved Successfully");
-      setTitle("Success!");
+      throwError("Successfully Saved Schedule!", "success");
       handleClose();
       console.log("Saved successfully");
     }
@@ -93,8 +102,7 @@ export default function FormDialog(props: {
       <Button onClick={handleClickOpen}>
         <SaveIcon/>
       </Button>
-      <Dialog open={open} onClose={handleClose}
-          sx ={{ zIndex: "1" }}>
+      <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -116,12 +124,6 @@ export default function FormDialog(props: {
           <Button onClick={onClickExportSchedule}>Save</Button>
         </DialogActions>
       </Dialog>
-      <ErrorPopup
-          onClose={popupCloseHandler}
-          show={visibility}
-          title={title}
-          error={errorMessage}
-        />
     </div>
   );
 }

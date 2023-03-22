@@ -4,7 +4,8 @@ import ScheduleUpload from "./ScheduleUploadModal";
 import { UserSavedSchedule } from "../entities/four_year_plan";
 
 export default function BoxSx(props: {
-  scheduleData: UserSavedSchedule["scheduleData"]
+  scheduleData: UserSavedSchedule["scheduleData"],
+  setAlertData: (msg: string, severity: string) => void
 }): any {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function BoxSx(props: {
       >
         <ScheduleUpload
           scheduleData={props.scheduleData}
+          setAlertData={props.setAlertData}
         />
       </Box>
     </div>

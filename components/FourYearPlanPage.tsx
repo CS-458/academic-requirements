@@ -771,6 +771,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         <div className="drag-drop">
         <ActionBar
               scheduleData={info}
+              setAlertData={throwError}
             />
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar

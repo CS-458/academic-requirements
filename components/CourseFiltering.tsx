@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import { extractCategories } from "../services/academic";
 import SearchableDropdown from "./SearchableDropdown";
 import {
-  Grid
+  Grid, TextField
 } from "@mui/material";
 
 interface CourseFilteringProps {
@@ -65,6 +65,18 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
       index === courses.findIndex(course2 => course1.idCourse === course2.idCourse)
     );
     props.onFiltered(arr);
+  };
+
+  const setFilterCourseName = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    if (event.target.value === "") {
+      sendFilteredCourses([]);
+      return;
+    }
+    const courses: CourseType[] =
+      props.courseData.filter((course: CourseType) => {
+        return course.name.toLowerCase().includes(event.target.value.toLowerCase());
+      });
+    sendFilteredCourses(courses);
   };
 
   const coursesByCategory = (category: string | undefined): void => {
@@ -143,10 +155,15 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={value} onChange={handleTabChange} aria-label="filter tab options" centered>
-          <Tab label="By Category" {...a11yProps(0)} />
-          <Tab label="By Subject/Number" {...a11yProps(1)} />
-          <Tab label="By Credit" {...a11yProps(2)} />
+        <Tabs value={value}
+              onChange={handleTabChange}
+              aria-label="filter tab options"
+              variant="scrollable"
+              scrollButtons="auto">
+          <Tab label="Category" {...a11yProps(0)} />
+          <Tab label="Subject/Number" {...a11yProps(1)} />
+          <Tab label="Name" {...a11yProps(2)} />
+          <Tab label="Credit" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -198,6 +215,15 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={2}>
+        <TextField
+          label={"Course Name"}
+          onChange={setFilterCourseName}
+          sx={{
+            width: "100%"
+          }}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
         {/* A slider may be better for credit ranges */}
         <SearchableDropdown
             options={ Array.from(new Set(props.courseData.map(c => c.credits.toString()))).sort() }

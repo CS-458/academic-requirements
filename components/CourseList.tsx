@@ -7,7 +7,7 @@ import { CourseListType } from "../entities/four_year_plan";
 // Styling for the course list
 const style: CSSProperties = {
   height: "30rem",
-  width: "90%",
+  width: "100%",
   marginRight: ".5rem",
   marginBottom: ".5rem",
   color: "white",

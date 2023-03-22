@@ -21,14 +21,13 @@ import { PromisedDatabase } from "promised-sqlite3";
 import { setUserDb } from "../services/sql";
 
 import "../pages/api";
+import { dragAndDrop } from "./dragDrop";
 
 interface UserExt {
   /// Select an element from an `AutoComplete` dropdown
-  selectAutocomplete: (
-    this: UserEvent,
-    label: Matcher,
-    option: Matcher
-  ) => Promise<void>;
+  selectAutocomplete: typeof selectAutocomplete;
+  /// Drag an element from one place to another
+  drag: typeof dragAndDrop;
 }
 
 async function selectAutocomplete(
@@ -43,7 +42,9 @@ async function selectAutocomplete(
   });
   await this.click(input);
   try {
-    await this.click(await screen.findByText(option));
+    await this.click(
+      await screen.findByText(option, undefined, { timeout: 10000 })
+    );
   } catch (e) {
     const rootEl = screen.getByTestId("test-root-element");
     const popper = rootEl?.querySelector(".MuiAutocomplete-popper");
@@ -54,11 +55,23 @@ async function selectAutocomplete(
   }
 }
 
+export function parentEl(el: HTMLElement, name: string): HTMLElement {
+  while (!el.classList.contains(`${name}-root`)) {
+    const next = el.parentElement;
+    if (next == null) {
+      throw new Error(`Element does not have a wrapper with name ${name}`);
+    }
+    el = next;
+  }
+  return el;
+}
+
 /// userEvent.setup(), but with some additional convience methods
 export function setupUser(): UserEvent & UserExt {
   return {
     ...userEvent.setup(),
-    selectAutocomplete
+    selectAutocomplete,
+    drag: dragAndDrop
   };
 }
 
@@ -241,16 +254,44 @@ const toBeUnique: MatcherFunction<[]> = (actual) => {
   };
 };
 
+const toBeHidden: MatcherFunction<[]> = (actual) => {
+  if (!(actual instanceof HTMLElement)) {
+    throw new Error("actual is not an HTMLElement");
+  }
+  let cur = actual;
+  console.log("child", cur.ariaHidden);
+  while (cur.ariaHidden == null || cur.ariaHidden === "false") {
+    if (cur.dataset.testid === "Semester") {
+      console.log(cur.ariaHidden);
+    }
+    const next = cur.parentElement;
+    if (next === null) {
+      return {
+        message: () => "Element (or parent) is not aria-hidden",
+        pass: false
+      };
+    }
+    cur = next;
+  }
+  return {
+    message: () => "Element (or parent) is aria-hidden",
+    pass: true
+  };
+};
+
 expect.extend({
-  toBeUnique
+  toBeUnique,
+  toBeHidden
 });
 
 declare module "expect" {
   interface AsymmetricMatchers {
     toBeUnique: () => void;
+    toBeHidden: () => void;
   }
   interface Matchers<R> {
     toBeUnique: () => R;
+    toBeHidden: () => R;
   }
 }
 

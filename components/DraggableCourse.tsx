@@ -65,10 +65,16 @@ export const Course: FC<DragCourseType> = memo(function Course({
       data-testid="course"
       className={clsx(
         "CourseText",
-        warningYellowColor !== undefined && warningRedColor === undefined && warningOrangeColor === undefined && "CourseWarningYellow",
-        warningOrangeColor !== undefined && warningRedColor === undefined && "CourseWarningOrange",
+        warningYellowColor !== undefined &&
+        warningRedColor === undefined &&
+        warningOrangeColor === undefined &&
+        "CourseWarningYellow",
+        warningOrangeColor !== undefined &&
+        warningRedColor === undefined &&
+        "CourseWarningOrange",
         warningRedColor !== undefined && "CourseWarningRed"
       )}
+      key={`course-${idCourse}`}
     >
       {/* {isDropped ? <s>{name}</s> : name}  */}
       {subject}-{number}

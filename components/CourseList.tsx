@@ -43,10 +43,27 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
   }
 
   return (
-    <div ref={drop} style={{ ...style, backgroundColor }}>
+    <div
+      ref={drop}
+      style={{ ...style, backgroundColor }}
+      data-testid="courseListDropTarget"
+    >
       {isActive ? "Release to drop" : ""}
       {courses.map(
-        ({ name, subject, number, semesters, credits, preReq, idCourse, idCategory, repeatableForCred }, index) => (
+        (
+          {
+            name,
+            subject,
+            number,
+            semesters,
+            credits,
+            preReq,
+            idCourse,
+            idCategory,
+            repeatableForCred
+          },
+          index
+        ) => (
           <Course
             name={name}
             subject={subject}

@@ -4,25 +4,6 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
-import { palette, styled } from "@mui/system";
-import { useTheme } from "@emotion/react";
-// styling for the semester
-const style: CSSProperties = {
-  height: "15rem",
-  width: "25%",
-  marginRight: ".5rem",
-  marginBottom: ".5rem",
-  color: "white",
-  padding: "1rem",
-  textAlign: "center",
-  fontSize: "1rem",
-  lineHeight: "normal",
-  float: "left",
-  whiteSpace: "pre",
-  background: "#004990",
-  borderRadius: ".5rem",
-  overflow: "auto"
-};
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -30,7 +11,6 @@ export const Semester: FC<SemesterProps> = function Semester({
   semesterNumber,
   courses,
   SemesterCredits,
-  Warning,
   warningPrerequisiteCourses,
   warningFallvsSpringCourses,
   warningDuplicateCourses,
@@ -52,14 +32,15 @@ export const Semester: FC<SemesterProps> = function Semester({
   return (
     <div
       ref={drop}
-      className="semester"
+      className="semester Semester-root"
       style={{ backgroundColor }}
       data-testid={`semester${semesterNumber}`}
+      key={`semester-${year}-${season}`}
     >
       <p>
         {season} ({SemesterCredits})
       </p>
-      {courses.map((course, index) => (
+      {courses.map((course) => (
         <Course
           name={course.name}
           subject={course.subject}
@@ -70,7 +51,6 @@ export const Semester: FC<SemesterProps> = function Semester({
           credits={course.credits}
           preReq={course.preReq}
           dragSource={`Semester ${semesterNumber}`}
-          key={index}
           warningYellowColor={warningDuplicateCourses.find((x) => x === course)}
           warningOrangeColor={warningFallvsSpringCourses.find(
             (x) => x === course

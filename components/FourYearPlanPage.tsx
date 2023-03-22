@@ -1,6 +1,5 @@
 import update from "immutability-helper";
 import React, { FC, useEffect, memo, useCallback, useState } from "react";
-import { Semester } from "./Semester";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -16,11 +15,9 @@ import {
   FourYearPlanType,
   MultipleCategoriesType,
   warning,
-  season,
-  seasonNum
+  season
 } from "../entities/four_year_plan";
 import {
-  courseAlreadyInSemester,
   getSemesterCoursesNames,
   preReqCheckAllCoursesPastSemester
 } from "../entities/prereqHelperFunctions";
@@ -34,12 +31,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
     PassedCourseList, // The combination of major, concentration, and gen ed
     requirements, // List of requirements for major/concentration
-    requirementsGen, // List of requirements for gen-eds
-    importData
+    requirementsGen // List of requirements for gen-eds
   }) {
     // this will update if you pull in a saved schedule with more than 8 semesters
     // defaults to 8 for a standard schedule
-    const [semestersLength] = useState<number>(8);
     const [semesters, setSemesters] = useState<SemesterType[]>(
       initializeSemesters()
     );
@@ -48,13 +43,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [errorMessage, setErrorMessage] = useState("");
 
     //  A list of courses that should have a warning color on them
-    const [warningPrerequisiteCourses, setWarningPrerequisiteCourses] =
+    const [warningPrereqCourses, setWarningPrereqCourses] =
       useState<CourseType[]>([]);
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
       useState<CourseType[]>([]);
-    const [warningDuplicateCourses, setWarningDuplicateCourses] = useState<
-      CourseType[]
-    >([]);
+    const [warningDupCourses, setWarningDupCourses] =
+      useState<CourseType[]>([]);
     //  Warning for spring/fall semester
     const [updateWarning, setUpdateWarning] = useState<{
       course: CourseType | undefined;
@@ -72,20 +66,17 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     // fourYearPlan parsed as a JSON
     const [fourYearPlan] = useState(
-      JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "")
+      JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "null")
     );
     // The list of requirements and their completion for display
-    const [requirementsDisplay, setRequirementsDisplay] = useState<
-      RequirementComponentType[]
-    >([]);
+    const [requirementsDisplay, setRequirementsDisplay] =
+      useState<RequirementComponentType[]>([]);
 
     // Requirements that are manipulated
-    const [reqList, setReqList] = useState<
-      RequirementComponentType[] | null | undefined
-    >(requirements);
-    const [reqGenList, setReqGenList] = useState<
-      RequirementComponentType[] | null | undefined
-    >(requirementsGen);
+    const [reqList, setReqList] =
+      useState<RequirementComponentType[] | null | undefined>(requirements);
+    const [reqGenList, setReqGenList] =
+      useState<RequirementComponentType[] | null | undefined>(requirementsGen);
 
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
@@ -102,9 +93,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [informationTypes, setInformationTypes] = useState<string[]>([
       defaultInformationType
     ]);
-    const [displayedInformationType, setDisplayedInformationType] = useState<
-      string | undefined
-    >(defaultInformationType);
+    const [displayedInformationType, setDisplayedInformationType] =
+      useState<string | undefined>(defaultInformationType);
 
     // create 8 semesters for four years of type Fall and Spring
     // used for the empty schedule or load fourYearPlan
@@ -166,7 +156,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // New string array created.
       const set = new Array<CourseType>();
       // Iterate through major course list. If the index matches the category, push the course name of the index to array.
-      PassedCourseList.map((course, index) => {
+      PassedCourseList.map((course) => {
         if (course.category.valueOf() === _category) {
           set.push(course);
         }
@@ -186,11 +176,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // Initialize new array.
       const i = new Array<string>();
       // Push course categories from major and concentration course lists to array.
-      PassedCourseList.map((course, index) => {
+      PassedCourseList.map((course) => {
         i.push(course.category);
       });
       // Remove duplicate categories from the array.
-      setCategories(RemoveDuplicates(i));
+      const tmp = RemoveDuplicates(i);
+      console.log("Categories", tmp);
+      setCategories(tmp);
     }
 
     // handle a drop into the course list from a semester
@@ -300,9 +292,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 );
 
                 //  Append the course to the duplicate warning courses list
-                const temp = warningDuplicateCourses;
+                const temp = warningDupCourses;
                 temp.push(course);
-                setWarningDuplicateCourses(temp);
+                setWarningDupCourses(temp);
                 duplicateFound = true;
               }
             }
@@ -312,12 +304,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (!duplicateFound) {
           //  Remove the course from the duplicates warning list
           const temp = new Array<CourseType>();
-          warningDuplicateCourses.forEach((x) => {
+          warningDupCourses.forEach((x) => {
             if (x !== updateWarning.course) {
               temp.push(x);
             }
           });
-          setWarningDuplicateCourses(temp);
+          setWarningDupCourses(temp);
         }
       }
       // Reset the warning
@@ -426,9 +418,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               satisfied.failedString
             );
             //  Update the warning courses to include the just dragged course
-            const temp = warningPrerequisiteCourses;
+            const temp = warningPrereqCourses;
             temp.push(updateWarning.course);
-            setWarningPrerequisiteCourses(temp);
+            setWarningPrereqCourses(temp);
           }
         }
 
@@ -445,13 +437,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             true,
             false,
             semesters,
-            warningPrerequisiteCourses
+            warningPrereqCourses
           );
           if (response.vis) {
             setVisibility(response.vis);
             setErrorMessage(response.error);
           }
-          setWarningPrerequisiteCourses(response.warning);
+          setWarningPrereqCourses(response.warning);
         }
         //  Check all semesters past the new moved semester
         const response = preReqCheckAllCoursesPastSemester(
@@ -461,13 +453,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           false,
           updateWarning.draggedOut,
           semesters,
-          warningPrerequisiteCourses
+          warningPrereqCourses
         );
         if (response.vis) {
           setVisibility(response.vis);
           setErrorMessage(response.error);
         }
-        setWarningPrerequisiteCourses(response.warning);
+        setWarningPrereqCourses(response.warning);
       }
       // Reset the warning
       setUpdateWarning({
@@ -760,9 +752,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           />
           <SemesterList
             semesters={semesters}
-            warningPrerequisiteCourses={warningPrerequisiteCourses}
+            warningPrerequisiteCourses={warningPrereqCourses}
             warningFallvsSpringCourses={warningFallvsSpringCourses}
-            warningDuplicateCourses={warningDuplicateCourses}
+            warningDuplicateCourses={warningDupCourses}
             PassedCourseList={PassedCourseList}
             setSemesters={setSemesters}
             checkRequirements={checkRequirements}
@@ -785,7 +777,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                     label: c,
                     value: c
                   }))}
-                  label={null}
+                  label="Select Course"
                   onSelectOption={selectedCategory} // If option chosen, selected Category activated.
                 />
               </div>
@@ -850,7 +842,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                     These are courses you marked as complete.
                   </p>
                   {userMajor()?.completed_courses?.map(
-                    (completedCourse, index) => {
+                    (completedCourse) => {
                       return (
                         <div className="info-box-completed-course">
                           <a

@@ -4,11 +4,9 @@ import {
   AccordionProps,
   AccordionSummary as MuiAccordionSummary,
   AccordionSummaryProps,
-  Divider,
-  Stack,
   styled
 } from "@mui/material";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+// import { ArrowForwardIosSharpIcon } from "@mui/icons-material";
 import update from "immutability-helper";
 import { useCallback, useState } from "react";
 import {
@@ -23,6 +21,7 @@ import { courseAlreadyInSemester } from "../entities/prereqHelperFunctions";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
+import { isCaseOrDefaultClause } from "typescript";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -38,7 +37,7 @@ const Accordion = styled((props: AccordionProps) => (
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
+    // expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -92,132 +91,64 @@ export default function SemesterList({
     }
   };
 
-  //  A Function that grabs the total credits for the semester
-  const getSemesterTotalCredits = (semesterIndex: number): number => {
-    return semesters[semesterIndex].courses.reduce(
-      (total, x) => total + x.credits,
-      0
-    );
-  };
+  function deepCopy(s: SemesterType[]): SemesterType[] {
+    const ret: SemesterType[] = [];
+    s.forEach((s) => {
+      ret.push({
+        SemesterCredits: s.SemesterCredits,
+        Warning: s.Warning,
+        courses: s.courses.map((c) => c),
+        semesterNumber: s.semesterNumber,
+        accepts: s.accepts,
+        season: s.season,
+        year: s.year
+      });
+    });
+    return ret;
+  }
 
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
-      const index = semesters.findIndex(
+      const { idCourse, dragSource } = item;
+      console.log("Drop", semNumber, idCourse, dragSource);
+      const tmpSemesters = deepCopy(semesters);
+
+      const target = tmpSemesters.find(
         (sem) => sem.semesterNumber === semNumber
       );
-      if (index == null) return;
-      const { idCourse } = item;
-      const { dragSource } = item;
-      console.log("id", idCourse);
-      let movedFromIndex = -1;
-      let course: CourseType | undefined;
+      if (target == null) throw new Error("Drop target not found");
+      const course = PassedCourseList.find((c) => c.idCourse === idCourse);
+      if (course == null) throw new Error("Course not found");
+      if (target.courses.some((c) => c.idCourse === idCourse)) return;
+
       if (dragSource !== "CourseList") {
-        // index of semester it was moved from
-        movedFromIndex = +dragSource.split(" ")[1];
-        course = semesters[movedFromIndex].courses.find(
-          (item: any) => item.idCourse === idCourse
+        const sourceId = +dragSource.split(" ")[1];
+        const source = tmpSemesters.find(
+          (sem) => sem.semesterNumber === sourceId
         );
-      } else {
-        // find the course by name in the master list of all courses
-        course = PassedCourseList.find((item) => item.idCourse === idCourse);
+        if (source == null) throw new Error("Source semester not found");
+        source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
+        source.SemesterCredits = source.courses.reduce(
+          (a, b) => a + b.credits,
+          0
+        );
+        source.Warning = getWarning(source.SemesterCredits);
       }
-      if (course !== undefined) {
-        //  Get all course subject and acronyms in current semester (excluding the course to be added)
-        const currentCourses = new Array<string>();
-        semesters[index].courses.forEach((x: CourseType) => {
-          currentCourses.push(x.subject + "-" + x.number);
-        });
-
-        if (
-          dragSource === "CourseList" &&
-          !courseAlreadyInSemester(course, index, semesters)
-        ) {
-          const newSemesterCount =
-            getSemesterTotalCredits(index) + course.credits;
-          const newWarningState = getWarning(newSemesterCount);
-          // Add the course to the semester
-          course.dragSource = "Semester " + index;
-          checkRequirements(course, coursesInMultipleCategories);
-          setSemesters(
-            update(semesters, {
-              [index]: {
-                courses: {
-                  $push: [course]
-                },
-                Warning: {
-                  $set: newWarningState
-                },
-                SemesterCredits: {
-                  $set: newSemesterCount
-                }
-              }
-            })
-          );
-        } else {
-          // Course was not found in the courses list, which means it currently occupies a semester
-          // Only proceed if the course isn't moved to the same semester
-          if (!courseAlreadyInSemester(course, index, semesters)) {
-            // Update the semester with the new dragged course
-            const pushCourse = semesters[index].courses;
-            pushCourse.push(course);
-            const newSemesterCount2 = getSemesterTotalCredits(index);
-            const newWarningState2 = getWarning(newSemesterCount2);
-            setSemesters(
-              update(semesters, {
-                [index]: {
-                  courses: {
-                    $push: [course]
-                  },
-                  Warning: {
-                    $set: newWarningState2
-                  },
-                  SemesterCredits: {
-                    $set: newSemesterCount2
-                  }
-                }
-              })
-            );
-
-            const tempSemesters = semesters;
-            tempSemesters[index].SemesterCredits = newSemesterCount2;
-            tempSemesters[index].Warning = newWarningState2;
-            setSemesters(tempSemesters);
-
-            // Then remove the course from its previous semester spot
-            const coursesRemove = semesters[movedFromIndex].courses.filter(
-              (item: any) => item !== course
-            );
-            const removedNewCredits =
-              getSemesterTotalCredits(movedFromIndex) - course.credits;
-            const updatedWarning = getWarning(removedNewCredits);
-            setSemesters(
-              update(semesters, {
-                [index]: {
-                  courses: {
-                    $set: coursesRemove
-                  },
-                  SemesterCredits: {
-                    $set: removedNewCredits
-                  },
-                  Warning: {
-                    $set: updatedWarning
-                  }
-                }
-              })
-            );
-          }
-        }
-        console.log("setting");
-        setUpdateWarning({
-          course,
-          oldSemester: courseAlreadyInSemester(course, index, semesters)
-            ? movedFromIndex
-            : -1,
-          newSemester: index,
-          draggedOut: false,
-          newCheck: true
-        });
-      }
+      course.dragSource = `Semester ${semNumber}`;
+      target.courses.push(course);
+      target.SemesterCredits = target.courses.reduce(
+        (a, b) => a + b.credits,
+        0
+      );
+      target.Warning = getWarning(target.SemesterCredits);
+      setSemesters(tmpSemesters);
+      setUpdateWarning({
+        course,
+        oldSemester: -1,
+        newSemester: -1,
+        draggedOut: true,
+        newCheck: true
+      });
     },
     [
       semesters,
@@ -245,12 +176,7 @@ export default function SemesterList({
     parts.push(
       <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)}>
         <div ref={drop}>
-          <AccordionSummary
-            sx={{ bgcolor: "primary.main" }}
-            expandIcon={
-              <ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />
-            }
-          >
+          <AccordionSummary sx={{ bgcolor: "primary.main" }}>
             Year {i}
           </AccordionSummary>
         </div>
@@ -267,11 +193,11 @@ export default function SemesterList({
               .sort(sortSemester)
               .map((sem, index) => (
                 <Semester
+                  key={index}
                   accept={sem.accepts}
                   onDrop={(item) => handleDrop(sem.semesterNumber, item)}
                   semesterNumber={sem.semesterNumber}
                   courses={sem.courses}
-                  key={index}
                   SemesterCredits={sem.SemesterCredits}
                   Warning={sem.Warning}
                   warningPrerequisiteCourses={warningPrerequisiteCourses}

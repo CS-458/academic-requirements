@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import React, { memo } from "react";
-
+// import CircularProgressWithLabel from "@mui/material/CircularProgress";
 export const Requirement: FC<any> = memo(function Requirement({
   name,
   percentage,
@@ -12,7 +12,8 @@ export const Requirement: FC<any> = memo(function Requirement({
     <div data-testid="requirement" className="RequirementText">
       <div className="requirementName">{name}</div>
       <div className="percentage">
-        {percentage > 0 ? `${Math.round(percentage * digits) / digits}%` : "0%"}
+      {/* <CircularProgressWithLabel value={Math.round(percentage * digits) / digits} /> */}
+      {`${Math.round(percentage * digits) / digits}%`}
       </div>
     </div>
   );

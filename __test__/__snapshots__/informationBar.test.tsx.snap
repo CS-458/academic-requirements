@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render the Information Bar on the Schedule Page 1`] = `
+exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
 <body>
   <div>
     <div
@@ -103,6 +103,246 @@ exports[`Render the Information Bar on the Schedule Page 1`] = `
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Test Switching Tabs on Information Bar 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="MuiBox-root css-k008qs"
+      >
+        <div
+          class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
+          >
+            <div
+              class="css-15lei78"
+            />
+            <div
+              class="css-ak1ss8"
+            >
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="openDrawer"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ChevronLeftIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <div
+              aria-labelledby="simple-tab-0"
+              id="simple-tabpanel-0"
+              role="tabpanel"
+            >
+              <div
+                class="MuiBox-root css-hpgf8j"
+              >
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                >
+                  Major
+                </p>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                />
+                <div>
+                  <div
+                    class="RequirementText"
+                    data-testid="requirement"
+                  >
+                    <div
+                      class="requirementName"
+                    >
+                      CS CSSSD
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      0%
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                  >
+                    Gen Eds
+                  </p>
+                  <hr
+                    class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                  />
+                  <div
+                    class="RequirementText"
+                    data-testid="requirement"
+                  >
+                    <div
+                      class="requirementName"
+                    >
+                      GLP
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      0%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="simple-tab-2"
+              hidden=""
+              id="simple-tabpanel-2"
+              role="tabpanel"
+            />
+            <div
+              aria-labelledby="simple-tab-1"
+              hidden=""
+              id="simple-tabpanel-1"
+              role="tabpanel"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Test Switching Tabs on Information Bar 2`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="MuiBox-root css-k008qs"
+      >
+        <div
+          class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
+        >
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
+          >
+            <div
+              class="css-15lei78"
+            />
+            <div
+              class="css-ak1ss8"
+            >
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="openDrawer"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ChevronLeftIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <div
+              aria-labelledby="simple-tab-0"
+              id="simple-tabpanel-0"
+              role="tabpanel"
+            >
+              <div
+                class="MuiBox-root css-hpgf8j"
+              >
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                >
+                  Major
+                </p>
+                <hr
+                  class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                />
+                <div>
+                  <div
+                    class="RequirementText"
+                    data-testid="requirement"
+                  >
+                    <div
+                      class="requirementName"
+                    >
+                      CS CSSSD
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      0%
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                  >
+                    Gen Eds
+                  </p>
+                  <hr
+                    class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                  />
+                  <div
+                    class="RequirementText"
+                    data-testid="requirement"
+                  >
+                    <div
+                      class="requirementName"
+                    >
+                      GLP
+                    </div>
+                    <div
+                      class="percentage"
+                    >
+                      0%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="simple-tab-1"
+              hidden=""
+              id="simple-tabpanel-1"
+              role="tabpanel"
+            />
           </div>
         </div>
       </div>

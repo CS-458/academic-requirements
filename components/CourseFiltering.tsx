@@ -157,16 +157,24 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
               aria-label="filter tab options"
               variant="scrollable"
               scrollButtons="auto">
-          <Tab label="Category" {...a11yProps(0)} />
-          <Tab label="Subject/Number" {...a11yProps(1)} />
-          <Tab label="Name" {...a11yProps(2)} />
-          <Tab label="Credit" {...a11yProps(3)} />
+          <Tab label="Category"
+               data-testid="category-tab"
+               {...a11yProps(0)} />
+          <Tab label="Subject/Number"
+               data-testid="subjectnumber-tab"
+               {...a11yProps(1)} />
+          <Tab label="Name"
+               data-testid="name-tab"
+               {...a11yProps(2)} />
+          <Tab label="Credit"
+               data-testid="credit-tab"
+               {...a11yProps(3)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} data-testid="category-panel">
         <SearchableDropdown
           options={extractCategories(props.courseData)}
-          label={"Category"}
+          label={"Course Category"}
           onSelectOption={coursesByCategory}
           sx={{
             maxWidth: "unset",
@@ -175,7 +183,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           }}
         />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} data-testid="subjectnumber-panel">
         <Grid container spacing={2} columns={2}>
           <Grid item xs={1}>
             <SearchableDropdown
@@ -186,7 +194,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
                 Sort the array (alphabetically)
               */
               options={ Array.from(new Set(props.courseData.map(c => c.subject))).sort() }
-              label={"Subject"}
+              label={"Course Subject"}
               onSelectOption={setFilterCourseSubject}
               sx={{
                 maxWidth: "unset",
@@ -211,7 +219,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           </Grid>
         </Grid>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} data-testid="name-panel">
         <TextField
           label={"Course Name"}
           onChange={setFilterCourseName}
@@ -220,7 +228,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           }}
         />
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={3} data-testid="credit-panel">
         {/* A slider may be better for credit ranges */}
         <SearchableDropdown
             options={ Array.from(new Set(props.courseData.map(c => c.credits.toString()))).sort() }

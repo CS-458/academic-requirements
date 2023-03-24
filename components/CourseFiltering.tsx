@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 
 interface CourseFilteringProps {
-  courseData: CourseType[],
-  onFiltered: (courses: CourseType[]) => void
+  courseData: CourseType[], // The Courses to be filtered
+  onFiltered: (courses: CourseType[]) => void // Send filtered courses to this function
 }
 
 interface TabPanelProps {
@@ -48,9 +48,10 @@ function TabPanel(props: TabPanelProps): any {
 export default function CourseFiltering(props: CourseFilteringProps): JSX.Element {
   const [value, setValue] = useState(0);
 
-  const [filterCourseSubject, setFilterCourseSubject] = useState<string>();
-  const [filterCourseNumber, setFilterCourseNumber] = useState<string>();
+  const [courseSubjectFilter, setCourseSubjectFilter] = useState<string>();
+  const [courseNumberFilter, setCourseNumberFilter] = useState<string>();
 
+  // Handle transition between filter options
   const handleTabChange = (event: React.SyntheticEvent, newValue: number): void => {
     setValue(newValue);
   };
@@ -58,91 +59,105 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
   const sendFilteredCourses = (courses: CourseType[]): void => {
     // Duplicates can exist because the same course belongs to multiple categories
     // Remove duplicates before sending
-    const arr = courses.filter((course1, index) =>
-      index === courses.findIndex(course2 => course1.idCourse === course2.idCourse)
-    );
+    const arr = courses.filter((course1, index) => {
+      // Only keep courses if it's current index is the first instance of that ID
+      return index === courses.findIndex(course2 => course1.idCourse === course2.idCourse);
+    });
     props.onFiltered(arr);
   };
 
+  // Filter based on the name
   const setFilterCourseName = (event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event.target.value === "") {
+      // If no name if provided, clear the filtered array
       sendFilteredCourses([]);
       return;
     }
     const courses: CourseType[] =
       props.courseData.filter((course: CourseType) => {
+        // Convert everything to lowercase to ignore letter case
+        // Using .includes() offers better results than pure equality
         return course.name.toLowerCase().includes(event.target.value.toLowerCase());
       });
     sendFilteredCourses(courses);
   };
 
-  const coursesByCategory = (category: string | undefined): void => {
+  // Filter based on the category
+  const filterByCategory = (category: string | undefined): void => {
     if (category !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
+          // Category name is not user entered, it should match exactly
           return course.category === category;
         });
       sendFilteredCourses(courses);
     }
   };
 
-  const courseBySubject = (): void => {
-    if (filterCourseSubject !== undefined) {
+  // Filter by subject (CS, BIO, etc.)
+  const filterBySubject = (): void => {
+    if (courseSubjectFilter !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
-          return course.subject === filterCourseSubject;
+          // Subject is not user entered, it should match exactly
+          return course.subject === courseSubjectFilter;
         });
       sendFilteredCourses(courses);
     }
   };
 
-  const courseByNumber = (): void => {
-    if (filterCourseNumber !== undefined) {
+  // FIlter by number (101, 404, etc.)
+  const filterByNumber = (): void => {
+    if (courseNumberFilter !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
           // A bit more useful than a direct comparison
-          return course.number.includes(filterCourseNumber);
+          // Using .includes() offers better results than pure equality
+          return course.number.includes(courseNumberFilter);
         });
       sendFilteredCourses(courses);
     }
   };
 
-  const coursesBySubjectNumber = (): void => {
+  // Filter by a subject and a number
+  const filterBySubjectNumber = (): void => {
     // more complex
-    if (filterCourseSubject !== undefined && filterCourseNumber !== undefined) {
+    if (courseSubjectFilter !== undefined && courseNumberFilter !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
-          // A bit more useful than a direct comparison
+          // Combination of filterBySubject & filterByNumber
           return (
-            course.subject === filterCourseSubject &&
-            course.number.includes(filterCourseNumber)
+            course.subject === courseSubjectFilter &&
+            course.number.includes(courseNumberFilter)
           );
         });
       sendFilteredCourses(courses);
     }
   };
 
+  // Logic for filtering by subject, number, both, or neither
   useEffect(() => {
-    // logic for filtering by subject, number, both, or neither
-    if (filterCourseSubject === undefined &&
-        (filterCourseNumber === undefined || filterCourseNumber === "")) {
+    if (courseSubjectFilter === undefined &&
+        (courseNumberFilter === undefined || courseNumberFilter === "")) {
       props.onFiltered([]); // clear the results
       return;
     }
 
     // Search using both if both are provided
-    if (filterCourseSubject !== undefined && filterCourseNumber !== undefined) {
-      return coursesBySubjectNumber();
+    if (courseSubjectFilter !== undefined && courseNumberFilter !== undefined) {
+      return filterBySubjectNumber();
     }
 
-    if (filterCourseSubject !== undefined) { return courseBySubject(); }
-    if (filterCourseNumber !== undefined) { return courseByNumber(); }
-  }, [filterCourseSubject, filterCourseNumber]);
+    if (courseSubjectFilter !== undefined) { return filterBySubject(); }
+    if (courseNumberFilter !== undefined) { return filterByNumber(); }
+  }, [courseSubjectFilter, courseNumberFilter]);
 
-  const setFilterCredit = (credits: string | undefined): void => {
+  // Filter by  credit value
+  const filterByCredit = (credits: string | undefined): void => {
     if (credits !== undefined) {
       const courses: CourseType[] =
         props.courseData.filter((course: CourseType) => {
+          // Convert to string because SearchableDropdown return a string
           return course.credits.toString() === credits;
         });
       sendFilteredCourses(courses);
@@ -175,7 +190,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         <SearchableDropdown
           options={extractCategories(props.courseData)}
           label={"Course Category"}
-          onSelectOption={coursesByCategory}
+          onSelectOption={filterByCategory}
           sx={{
             maxWidth: "unset",
             pt: "unset",
@@ -195,7 +210,7 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
               */
               options={ Array.from(new Set(props.courseData.map(c => c.subject))).sort() }
               label={"Course Subject"}
-              onSelectOption={setFilterCourseSubject}
+              onSelectOption={setCourseSubjectFilter}
               sx={{
                 maxWidth: "unset",
                 pt: "unset",
@@ -205,10 +220,10 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
           </Grid>
           <Grid item xs={1}>
             <SearchableDropdown
-                options={ Array.from(new Set(props.courseData.filter(c => c.subject === filterCourseSubject).map(c => c.number))).sort() }
+                options={ Array.from(new Set(props.courseData.filter(c => c.subject === courseSubjectFilter).map(c => c.number))).sort() }
                 label={"Course Number"}
-                onSelectOption={setFilterCourseNumber}
-                onInputChange={setFilterCourseNumber}
+                onSelectOption={setCourseNumberFilter}
+                onInputChange={setCourseNumberFilter}
                 sx={{
                   maxWidth: "unset",
                   pt: "unset",
@@ -233,8 +248,8 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
         <SearchableDropdown
             options={ Array.from(new Set(props.courseData.map(c => c.credits.toString()))).sort() }
             label={"Course Credits"}
-            onSelectOption={setFilterCredit}
-            onInputChange={setFilterCredit}
+            onSelectOption={filterByCredit}
+            onInputChange={filterByCredit}
             sx={{
               maxWidth: "unset",
               pt: "unset",

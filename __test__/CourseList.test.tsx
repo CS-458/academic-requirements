@@ -2,8 +2,10 @@ import "@testing-library/jest-dom";
 import { jest } from "@jest/globals";
 import { setupUser, render } from "./util";
 import { CourseList } from "../components/CourseList";
-import { CourseType } from "../entities/four_year_plan";
+import { Course } from "../components/DraggableCourse";
+import { CourseType, DragCourseType } from "../entities/four_year_plan";
 import { ItemTypes } from "../entities/Constants";
+import { fireEvent, screen } from "@testing-library/react";
 
 const testCourseData: CourseType[] = [
   {
@@ -69,4 +71,29 @@ test("CourseList Renders", () => {
     />
   );
   expect(index.baseElement).toMatchSnapshot();
+});
+
+test("CourseList onDrop is called on drop", () => {
+  const onDropMock = jest.fn();
+  const index = render(
+    <CourseList
+      accept={[ItemTypes.COURSE]}
+      onDrop={onDropMock}
+      courses={testCourseData}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  // The outermost dive within the CourseList component
+  const root = screen.getByTestId("test-root-element").children[0];
+
+  testCourseData.forEach((c, index) => {
+    fireEvent.dragStart(root.children[index]);
+    fireEvent.dragEnter(root);
+    fireEvent.dragOver(root);
+    expect(root).toHaveStyle("background-color: darkgreen");
+    fireEvent.drop(root);
+    console.log(onDropMock.mock.calls);
+    expect(onDropMock).toHaveBeenCalled();
+    // expect(onDropMock).toHaveBeenCalledWith(c as unknown as DragCourseType);
+  });
 });

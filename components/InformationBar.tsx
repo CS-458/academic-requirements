@@ -85,6 +85,7 @@ function TabPanel(props: TabPanelProps): any {
 }
 
 export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[] }): JSX.Element {
+  console.log(userMajor()?.concentration?.fourYearPlan);
   const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
   const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
@@ -146,7 +147,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           <Requirement
             name={name}
             percentage={percentage}
-            digits={100}
+            digits={10}
             key={index}
           /></div>))
           : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<div key={index}>

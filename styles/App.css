@@ -54,7 +54,7 @@ body {
 /* The words inside of the requirements box in the schedule generator*/
 .RequirementText {
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 0;
   display: grid;
   grid-template-columns: 75% 25%;
   text-align: center;

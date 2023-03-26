@@ -85,7 +85,6 @@ function TabPanel(props: TabPanelProps): any {
 }
 
 export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[] }): JSX.Element {
-  console.log(userMajor()?.concentration?.fourYearPlan);
   const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
   const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
@@ -165,7 +164,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           /></div>))
         }
         </TabPanel>
-        { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1} key={1}>
+        { loadPlan ? <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>
           <Typography sx={{ color: "primary.main" }}>
             The four year plan for your concentration recommends taking
             courses in the following categories in the respective
@@ -175,7 +174,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
               return (
                 <div style={{ margin: "5px" }} key={index}>
-                  <Typography key={index}>{key}</Typography>
+                  <Typography key={index + 0.5}>{key}</Typography>
                   <Typography style={{ marginLeft: "10px", marginBottom: "25px" }} key={index}>
                     { fourYearPlan?.ClassPlan[key].Requirements.toString() }
                   </Typography>
@@ -184,7 +183,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
             }
           })}
         </TabPanel> : undefined}
-        { completedCourses.length !== 0 ? <TabPanel value={value} index={1} key={2}>
+        { completedCourses.length !== 0 ? <TabPanel value={value} index={1}>
           <Typography sx={{ color: "primary.main" }}>
             These are courses you marked as complete.
           </Typography>

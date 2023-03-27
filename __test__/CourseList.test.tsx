@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom";
 import { jest } from "@jest/globals";
-import { setupUser, render } from "./util";
+import { render } from "./util";
 import { CourseList } from "../components/CourseList";
-import { Course } from "../components/DraggableCourse";
 import { CourseType, DragCourseType } from "../entities/four_year_plan";
 import { ItemTypes } from "../entities/Constants";
 import { fireEvent, screen } from "@testing-library/react";
@@ -19,7 +18,7 @@ const testCourseData: CourseType[] = [
     repeatableForCred: false,
     category: "TEST-CATEGORY-1",
     idCategory: 20,
-    dragSource: ""
+    dragSource: "CourseList"
   },
   {
     subject: "TEST-SUB-2",
@@ -32,7 +31,7 @@ const testCourseData: CourseType[] = [
     repeatableForCred: false,
     category: "TEST-CATEGORY-2",
     idCategory: 20,
-    dragSource: ""
+    dragSource: "CourseList"
   },
   {
     subject: "TEST-SUB-2",
@@ -45,7 +44,7 @@ const testCourseData: CourseType[] = [
     repeatableForCred: false,
     category: "TEST-CATEGORY-3",
     idCategory: 20,
-    dragSource: ""
+    dragSource: "CourseList"
   },
   {
     subject: "TEST-SUB-3",
@@ -58,7 +57,7 @@ const testCourseData: CourseType[] = [
     repeatableForCred: false,
     category: "TEST-CATEGORY-3",
     idCategory: 20,
-    dragSource: ""
+    dragSource: "CourseList"
   }
 ];
 
@@ -83,7 +82,7 @@ test("CourseList onDrop is called on drop", () => {
     />
   );
   expect(index.baseElement).toMatchSnapshot();
-  // The outermost dive within the CourseList component
+  // The outermost div within the CourseList component
   const root = screen.getByTestId("test-root-element").children[0];
 
   testCourseData.forEach((c, index) => {
@@ -94,6 +93,19 @@ test("CourseList onDrop is called on drop", () => {
     fireEvent.drop(root);
     console.log(onDropMock.mock.calls);
     expect(onDropMock).toHaveBeenCalled();
-    // expect(onDropMock).toHaveBeenCalledWith(c as unknown as DragCourseType);
+
+    // Need to convert CourseType to DragCourseType
+    // Values expected/actual are type any to access things using obj[key] syntax
+    const expected: any = {
+      ...c,
+      type: ItemTypes.COURSE,
+      warningYellowColor: undefined,
+      warningOrangeColor: undefined,
+      warningRedColor: undefined
+    };
+    const actual: any = onDropMock.mock.calls[0][0] as DragCourseType;
+    Object.keys(actual).forEach((key: string) => {
+      actual[key] = expected[key];
+    });
   });
 });

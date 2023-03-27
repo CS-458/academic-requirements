@@ -4,10 +4,11 @@ import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
 import { Course } from "./DraggableCourse";
 import { CourseListType } from "../entities/four_year_plan";
+import { Box } from "@mui/material";
 // Styling for the course list
 const style: CSSProperties = {
   height: "30rem",
-  width: "90%",
+  width: "100%",
   marginRight: ".5rem",
   marginBottom: ".5rem",
   color: "white",
@@ -16,7 +17,6 @@ const style: CSSProperties = {
   fontSize: "1rem",
   lineHeight: "normal",
   float: "left",
-  background: "#004990",
   borderRadius: ".5rem",
   overflow: "auto"
 };
@@ -37,13 +37,13 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
 
   // changes the background color on hover over course list
   const isActive: boolean = isOver;
-  let backgroundColor = "#004990";
+  let bgcolor = "primary.main";
   if (isActive) {
-    backgroundColor = "darkgreen";
+    bgcolor = "darkgreen";
   }
 
   return (
-    <div ref={drop} style={{ ...style, backgroundColor }}>
+    <Box ref={drop} sx={{ ...style, bgcolor }}>
       {isActive ? "Release to drop" : ""}
       {courses.map(
         ({ name, subject, number, semesters, credits, preReq, idCourse, idCategory, repeatableForCred }, index) => (
@@ -66,6 +66,6 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
           />
         )
       )}
-    </div>
+    </Box>
   );
 });

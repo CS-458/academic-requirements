@@ -92,3 +92,15 @@ export function courseCategoryRequirements(
 export function genedCategoryRequirements(): UseQueryResult<RequirementComponentType[]> {
   return useQuery("genedRequirements", async () => await fetchApi("/api/requirements/gen"));
 }
+
+// From a list of courses, get all the unique categories
+export function extractCategories(courses: CourseType[]): Array<string> {
+  // Initialize new set (no duplicates).
+  const i = new Set<string>();
+  // Add course categories from courses array
+  courses.map((course, index) => {
+    i.add(course.category);
+  });
+  // Convert to an array of Strings
+  return Array.from(i);
+}

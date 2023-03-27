@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseList Renders 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="MuiBox-root css-1w0cc5a"
+      >
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-1
+          -
+          100HON
+          <br />
+          Course 1
+          <br />
+          credits: 
+          1
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-2
+          -
+          200
+          <br />
+          Course 2
+          <br />
+          credits: 
+          2
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-2&filter%5B29%5D=200&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-2
+          -
+          200
+          <br />
+          Course 2
+          <br />
+          credits: 
+          2
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-2&filter%5B29%5D=200&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-3
+          -
+          300
+          <br />
+          Course 3
+          <br />
+          credits: 
+          3
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-3&filter%5B29%5D=300&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CourseList onDrop is called on drop 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="MuiBox-root css-1w0cc5a"
+      >
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-1
+          -
+          100HON
+          <br />
+          Course 1
+          <br />
+          credits: 
+          1
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-2
+          -
+          200
+          <br />
+          Course 2
+          <br />
+          credits: 
+          2
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-2&filter%5B29%5D=200&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-2
+          -
+          200
+          <br />
+          Course 2
+          <br />
+          credits: 
+          2
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-2&filter%5B29%5D=200&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+        <div
+          class="CourseText"
+          data-testid="course"
+          draggable="true"
+          style="opacity: 1;"
+        >
+          TEST-SUB-3
+          -
+          300
+          <br />
+          Course 3
+          <br />
+          credits: 
+          3
+          <br />
+          <a
+            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-3&filter%5B29%5D=300&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+            target="_blank"
+          >
+            Description
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

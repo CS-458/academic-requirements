@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Draggable Course Renders 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="CourseText"
+        data-testid="course"
+        draggable="true"
+        style="opacity: 1;"
+      >
+        TEST-SUB-1
+        -
+        100HON
+        <br />
+        Course 1
+        <br />
+        credits: 
+        1
+        <br />
+        <a
+          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+          target="_blank"
+        >
+          Description
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DraggableCourse - Orange Warning 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="CourseText CourseWarningOrange"
+        data-testid="course"
+        draggable="true"
+        style="opacity: 1;"
+      >
+        TEST-SUB-1
+        -
+        100HON
+        <br />
+        Course 1
+        <br />
+        credits: 
+        1
+        <br />
+        <a
+          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+          target="_blank"
+        >
+          Description
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DraggableCourse - Red Warning 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="CourseText CourseWarningRed"
+        data-testid="course"
+        draggable="true"
+        style="opacity: 1;"
+      >
+        TEST-SUB-1
+        -
+        100HON
+        <br />
+        Course 1
+        <br />
+        credits: 
+        1
+        <br />
+        <a
+          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+          target="_blank"
+        >
+          Description
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DraggableCourse - Yellow Warning 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="CourseText CourseWarningYellow"
+        data-testid="course"
+        draggable="true"
+        style="opacity: 1;"
+      >
+        TEST-SUB-1
+        -
+        100HON
+        <br />
+        Course 1
+        <br />
+        credits: 
+        1
+        <br />
+        <a
+          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=TEST-SUB-1&filter%5B29%5D=100HON&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+          target="_blank"
+        >
+          Description
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;

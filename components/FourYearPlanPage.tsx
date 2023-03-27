@@ -5,7 +5,7 @@ import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
 import SearchableDropdown from "./SearchableDropdown";
 import { Requirement } from "./Requirement";
-import { AlertProps, Snackbar, Alert } from "@mui/material";
+import { AlertProps, Snackbar, Alert as MuiAlert } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import {

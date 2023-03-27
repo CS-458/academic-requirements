@@ -3,7 +3,8 @@ import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
-import { SemesterProps } from "../entities/four_year_plan";
+import { SemesterProps, warning } from "../entities/four_year_plan";
+import { Box } from "@mui/material";
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -14,6 +15,7 @@ export const Semester: FC<SemesterProps> = function Semester({
   warningPrerequisiteCourses,
   warningFallvsSpringCourses,
   warningDuplicateCourses,
+  Warning,
   year,
   season
 }) {
@@ -27,18 +29,20 @@ export const Semester: FC<SemesterProps> = function Semester({
   });
 
   // Changes the background color when you're hovering over the semester
-  const backgroundColor = isOver ? "" : "white";
+  let bgcolor = "";
+  if (Warning !== null) bgcolor = "warning.main";
+  if (isOver) bgcolor = "success.main";
 
   return (
-    <div
+    <Box
       ref={drop}
       className="semester Semester-root"
-      style={{ backgroundColor }}
+      sx={{ bgcolor, minHeight: "7em" }}
       data-testid={`semester${semesterNumber}`}
       key={`semester-${year}-${season}`}
     >
       <p>
-        {season} ({SemesterCredits})
+        {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
       </p>
       {courses.map((course) => (
         <Course
@@ -59,6 +63,6 @@ export const Semester: FC<SemesterProps> = function Semester({
           repeatableForCred={course.repeatableForCred}
         />
       ))}
-    </div>
+    </Box>
   );
 };

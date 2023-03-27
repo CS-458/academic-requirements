@@ -6,7 +6,7 @@ import {
   AccordionSummaryProps,
   styled
 } from "@mui/material";
-// import { ArrowForwardIosSharpIcon } from "@mui/icons-material";
+import { ArrowForwardIosSharp } from "@mui/icons-material";
 import update from "immutability-helper";
 import { useCallback, useState } from "react";
 import {
@@ -23,6 +23,7 @@ import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
 import { isCaseOrDefaultClause } from "typescript";
 
+/// Modified MUI accordian
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -35,9 +36,10 @@ const Accordion = styled((props: AccordionProps) => (
   }
 }));
 
+/// Modified MUI Summary
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    // expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
+    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -53,6 +55,22 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
     marginLeft: theme.spacing(1)
   }
 }));
+
+function deepCopy(s: SemesterType[]): SemesterType[] {
+  const ret: SemesterType[] = [];
+  s.forEach((s) => {
+    ret.push({
+      SemesterCredits: s.SemesterCredits,
+      Warning: s.Warning,
+      courses: s.courses.map((c) => c),
+      semesterNumber: s.semesterNumber,
+      accepts: s.accepts,
+      season: s.season,
+      year: s.year
+    });
+  });
+  return ret;
+}
 
 export default function SemesterList({
   semesters,
@@ -72,9 +90,8 @@ export default function SemesterList({
   warningFallvsSpringCourses: CourseType[];
   warningDuplicateCourses: CourseType[];
   PassedCourseList: CourseType[];
-  // TODO
   setSemesters: (s: SemesterType[]) => void;
-  checkRequirements: (a: any, b: any) => any;
+  checkRequirements: (a: CourseType, b: MultipleCategoriesType[]) => any;
   coursesInMultipleCategories: MultipleCategoriesType[];
   setUpdateWarning: (a: any) => any;
   reqList: RequirementComponentType[];
@@ -91,22 +108,6 @@ export default function SemesterList({
     }
   };
 
-  function deepCopy(s: SemesterType[]): SemesterType[] {
-    const ret: SemesterType[] = [];
-    s.forEach((s) => {
-      ret.push({
-        SemesterCredits: s.SemesterCredits,
-        Warning: s.Warning,
-        courses: s.courses.map((c) => c),
-        semesterNumber: s.semesterNumber,
-        accepts: s.accepts,
-        season: s.season,
-        year: s.year
-      });
-    });
-    return ret;
-  }
-
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
       const { idCourse, dragSource } = item;
@@ -121,11 +122,10 @@ export default function SemesterList({
       if (course == null) throw new Error("Course not found");
       if (target.courses.some((c) => c.idCourse === idCourse)) return;
 
+      let source: SemesterType | undefined;
       if (dragSource !== "CourseList") {
         const sourceId = +dragSource.split(" ")[1];
-        const source = tmpSemesters.find(
-          (sem) => sem.semesterNumber === sourceId
-        );
+        source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
         if (source == null) throw new Error("Source semester not found");
         source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
         source.SemesterCredits = source.courses.reduce(
@@ -133,6 +133,8 @@ export default function SemesterList({
           0
         );
         source.Warning = getWarning(source.SemesterCredits);
+      } else {
+        checkRequirements(course, coursesInMultipleCategories);
       }
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
@@ -144,9 +146,13 @@ export default function SemesterList({
       setSemesters(tmpSemesters);
       setUpdateWarning({
         course,
-        oldSemester: -1,
-        newSemester: -1,
-        draggedOut: true,
+        oldSemester: tmpSemesters.findIndex(
+          (s) => s.semesterNumber === source?.semesterNumber
+        ),
+        newSemester: tmpSemesters.findIndex(
+          (s) => s.semesterNumber === target.semesterNumber
+        ),
+        draggedOut: false,
         newCheck: true
       });
     },
@@ -161,6 +167,7 @@ export default function SemesterList({
 
   const parts = [];
   const expandedArr: Array<(v: boolean) => void> = [];
+  // Build semester lists
   for (let i = 0; i < 4; i++) {
     const [expanded, setExpanded] = useState(i === 0);
     expandedArr.push(setExpanded);
@@ -168,8 +175,9 @@ export default function SemesterList({
       accept: [ItemTypes.COURSE],
       drop: () => { },
       collect: (monitor) => {
-        if (monitor.isOver({ shallow: true })) {
-          expandedArr.forEach((v, index) => v(index === i));
+        if (monitor.isOver({ shallow: true }) && !expanded) {
+          setExpanded(true);
+          // expandedArr.forEach((v, index) => v(index === i));
         }
       }
     });
@@ -177,7 +185,7 @@ export default function SemesterList({
       <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)}>
         <div ref={drop}>
           <AccordionSummary sx={{ bgcolor: "primary.main" }}>
-            Year {i}
+            Year {i + 1}
           </AccordionSummary>
         </div>
         <AccordionDetails sx={{ p: 0 }}>
@@ -220,38 +228,5 @@ export default function SemesterList({
     >
       {parts}
     </div>
-    // <>
-    //   <div style={{ overflow: "hidden", clear: "both" }}>
-    //     {semesters.map(
-    //       (
-    //         {
-    //           accepts,
-    //           semesterNumber,
-    //           courses,
-    //           SemesterCredits,
-    //           Warning,
-    //           year,
-    //           season
-    //         },
-    //         index
-    //       ) => (
-    //         <Semester
-    //           accept={accepts}
-    //           onDrop={(item) => handleDrop(index, item)}
-    //           semesterNumber={semesterNumber}
-    //           courses={courses}
-    //           key={index}
-    //           SemesterCredits={SemesterCredits}
-    //           Warning={Warning}
-    //           warningPrerequisiteCourses={warningPrerequisiteCourses}
-    //           warningFallvsSpringCourses={warningFallvsSpringCourses}
-    //           warningDuplicateCourses={warningDuplicateCourses}
-    //           year={year}
-    //           season={season}
-    //         />
-    //       )
-    //     )}
-    //   </div>
-    // </>
   );
 }

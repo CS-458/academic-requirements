@@ -43,12 +43,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [errorMessage, setErrorMessage] = useState("");
 
     //  A list of courses that should have a warning color on them
-    const [warningPrereqCourses, setWarningPrereqCourses] =
-      useState<CourseType[]>([]);
+    const [warningPrereqCourses, setWarningPrereqCourses] = useState<
+      CourseType[]
+    >([]);
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
       useState<CourseType[]>([]);
-    const [warningDupCourses, setWarningDupCourses] =
-      useState<CourseType[]>([]);
+    const [warningDupCourses, setWarningDupCourses] = useState<CourseType[]>(
+      []
+    );
     //  Warning for spring/fall semester
     const [updateWarning, setUpdateWarning] = useState<{
       course: CourseType | undefined;
@@ -69,14 +71,17 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "null")
     );
     // The list of requirements and their completion for display
-    const [requirementsDisplay, setRequirementsDisplay] =
-      useState<RequirementComponentType[]>([]);
+    const [requirementsDisplay, setRequirementsDisplay] = useState<
+      RequirementComponentType[]
+    >([]);
 
     // Requirements that are manipulated
-    const [reqList, setReqList] =
-      useState<RequirementComponentType[] | null | undefined>(requirements);
-    const [reqGenList, setReqGenList] =
-      useState<RequirementComponentType[] | null | undefined>(requirementsGen);
+    const [reqList, setReqList] = useState<
+      RequirementComponentType[] | null | undefined
+    >(requirements);
+    const [reqGenList, setReqGenList] = useState<
+      RequirementComponentType[] | null | undefined
+    >(requirementsGen);
 
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
@@ -93,8 +98,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [informationTypes, setInformationTypes] = useState<string[]>([
       defaultInformationType
     ]);
-    const [displayedInformationType, setDisplayedInformationType] =
-      useState<string | undefined>(defaultInformationType);
+    const [displayedInformationType, setDisplayedInformationType] = useState<
+      string | undefined
+    >(defaultInformationType);
 
     // create 8 semesters for four years of type Fall and Spring
     // used for the empty schedule or load fourYearPlan
@@ -102,7 +108,20 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       const tempSemesters: SemesterType[] = [];
       let i = 0;
       for (let year = 1; year < 5; year++) {
-        Object.values(season).forEach((s) => {
+        [season.Fall, season.Spring].forEach((s) => {
+          tempSemesters.push({
+            accepts: [ItemTypes.COURSE],
+            courses: [],
+            semesterNumber: i++,
+            SemesterCredits: 0,
+            Warning: null,
+            year,
+            season: s
+          });
+        });
+      }
+      for (let year = 1; year < 5; year++) {
+        [season.Winter, season.Summer].forEach((s) => {
           tempSemesters.push({
             accepts: [ItemTypes.COURSE],
             courses: [],
@@ -320,10 +339,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         draggedOut: true,
         newCheck: false
       });
-    }, [semesters]);
-
-    //  This useEffect handles fall vs spring course placement
-    useEffect(() => {
       if (updateWarning.newCheck && updateWarning.course !== undefined) {
         //  Check if the course is offered in the semester it was dragged to
         if (
@@ -602,8 +617,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           semesters.forEach((semester, index) => {
             const tempArr: CourseType[] = [];
             // Get the semester data from the json
-            const courseStringArr =
-              fourYearPlan.ClassPlan["Semester" + (index + 1)].Courses;
+            const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+            if (classPlan == null) return;
+            const courseStringArr = classPlan.Courses;
             let credits = 0;
             // loop through each course in the list
             courseStringArr.forEach((courseString: String) => {
@@ -841,26 +857,24 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   <p className="right-information-box-description">
                     These are courses you marked as complete.
                   </p>
-                  {userMajor()?.completed_courses?.map(
-                    (completedCourse) => {
-                      return (
-                        <div className="info-box-completed-course">
-                          <a
-                            href={
-                              "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
-                              completedCourse.split("-")[0] +
-                              "&filter%5B29%5D=" +
-                              completedCourse.split("-")[1] +
-                              "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                            }
-                            target="_blank"
-                          >
-                            {completedCourse}
-                          </a>
-                        </div>
-                      );
-                    }
-                  )}
+                  {userMajor()?.completed_courses?.map((completedCourse) => {
+                    return (
+                      <div className="info-box-completed-course">
+                        <a
+                          href={
+                            "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
+                            completedCourse.split("-")[0] +
+                            "&filter%5B29%5D=" +
+                            completedCourse.split("-")[1] +
+                            "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                          }
+                          target="_blank"
+                        >
+                          {completedCourse}
+                        </a>
+                      </div>
+                    );
+                  })}
                 </>
               )}
               {displayedInformationType === "Requirements (Calculated)" && (

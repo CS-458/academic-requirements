@@ -37,7 +37,7 @@ export default function DefaultLayout(props: {
         height: "100vh",
         width: "100vw",
         display: "grid",
-        gridAutoRows: "minmax(0px, auto)"
+        gridTemplateRows: "min-content minmax(0px, auto)"
       }}
     >
       <UserLogin.Provider value={user}>

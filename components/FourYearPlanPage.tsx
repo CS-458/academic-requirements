@@ -126,7 +126,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       defaultInformationType
     ]);
     type DispInfo = string | undefined;
-    const [displayedInformationType, setDisplayedInformationType] = useState<DispInfo>(defaultInformationType);
+    const [displayedInformationType, setDisplayedInformationType] =
+      useState<DispInfo>(defaultInformationType);
 
     // create 8 semesters for four years of type Fall and Spring
     // used for the empty schedule or load fourYearPlan
@@ -610,6 +611,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               autoHideDuration={6000}
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              data-testid="snackbar"
             >
               <Alert
                 onClose={handleClose}

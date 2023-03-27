@@ -215,7 +215,7 @@ export default function SemesterList({
   return (
     <div
       className="generic"
-      style={{ overflow: "scroll auto", height: "100%" }}
+      style={{ overflow: "auto scroll", height: "100%" }}
     >
       {parts}
     </div>

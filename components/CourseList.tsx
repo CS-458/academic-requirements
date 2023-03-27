@@ -7,7 +7,6 @@ import { CourseListType } from "../entities/four_year_plan";
 import { Box } from "@mui/material";
 // Styling for the course list
 const style: CSSProperties = {
-  height: "30rem",
   width: "100%",
   marginRight: ".5rem",
   marginBottom: ".5rem",
@@ -18,7 +17,8 @@ const style: CSSProperties = {
   lineHeight: "normal",
   float: "left",
   borderRadius: ".5rem",
-  overflow: "auto"
+  overflow: "auto",
+  flexGrow: 1
 };
 
 export const CourseList: FC<CourseListType> = memo(function CourseList({

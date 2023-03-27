@@ -55,7 +55,7 @@ exports[`Render Semester List 1`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: scroll auto; height: 100%;"
+                    style="overflow: auto scroll; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -825,7 +825,7 @@ exports[`Render Semester List 2`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: scroll auto; height: 100%;"
+                    style="overflow: auto scroll; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -2553,7 +2553,7 @@ exports[`Render Semester List 3`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: scroll auto; height: 100%;"
+                    style="overflow: auto scroll; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -4281,7 +4281,7 @@ exports[`Render Semester List 4`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: scroll auto; height: 100%;"
+                    style="overflow: auto scroll; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -5826,7 +5826,7 @@ exports[`Render Semester List 4`] = `
                       <div
                         class="percentage"
                       >
-                        50%
+                        0%
                       </div>
                     </div>
                     <div
@@ -5886,7 +5886,7 @@ exports[`Render Semester List 4`] = `
                       <div
                         class="percentage"
                       >
-                        50%
+                        0%
                       </div>
                     </div>
                     <div
@@ -5916,7 +5916,7 @@ exports[`Render Semester List 4`] = `
                       <div
                         class="percentage"
                       >
-                        100%
+                        0%
                       </div>
                     </div>
                   </div>

@@ -67,6 +67,8 @@ body {
   padding: 5px;
   border-color: black;
   border-width: 2px;
+  display: flex;
+  flex-direction: column;
   /* background-color: #004990; */
 }
 

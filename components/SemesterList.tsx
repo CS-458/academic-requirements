@@ -22,6 +22,7 @@ import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
 import { isCaseOrDefaultClause } from "typescript";
+import { CourseError } from "./FourYearPlanPage";
 
 /// Modified MUI accordian
 const Accordion = styled((props: AccordionProps) => (
@@ -86,9 +87,9 @@ export default function SemesterList({
   reqGenList
 }: {
   semesters: SemesterType[];
-  warningPrerequisiteCourses: CourseType[];
-  warningFallvsSpringCourses: Array<{ id: number; sem: number }>;
-  warningDuplicateCourses: CourseType[];
+  warningPrerequisiteCourses: CourseError[];
+  warningFallvsSpringCourses: CourseError[];
+  warningDuplicateCourses: CourseError[];
   PassedCourseList: CourseType[];
   setSemesters: (s: SemesterType[]) => void;
   checkRequirements: (a: CourseType, b: MultipleCategoriesType[]) => any;

@@ -1,4 +1,5 @@
 import type { TargetType } from "dnd-core";
+import { CourseError } from "../components/FourYearPlanPage";
 
 // Defines the major object we are passing between files
 export interface MajorType {
@@ -123,9 +124,9 @@ export interface SemesterProps {
   courses: CourseType[]; // a list of courses in the semester
   SemesterCredits: number; // total credits of all courses in semester
   Warning: warning | null; // credit warning (low or high)
-  warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
-  warningFallvsSpringCourses: Array<{ id: number; sem: number }>;
-  warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
+  warningPrerequisiteCourses: CourseError[]; // list of courses in with prereq issues
+  warningFallvsSpringCourses: CourseError[];
+  warningDuplicateCourses: CourseError[]; // list of courses in more than one semester
   year: number; // year number 1,2,3,4,etc.
   season: season; // Season the semester is (Fall, Winter, Spring, Summer)
 }

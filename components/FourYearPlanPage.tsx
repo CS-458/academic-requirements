@@ -742,7 +742,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
            />
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar
-        Data-testId = "snackbar"
+        data-testid = "snackbar"
         open={visibility}
         autoHideDuration={6000}
         onClose={handleClose}

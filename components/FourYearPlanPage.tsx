@@ -8,7 +8,7 @@ import SearchableDropdown from "./SearchableDropdown";
 import ErrorPopup from "./ErrorPopup";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
 import InformationDrawer from "./InformationBar";
@@ -64,14 +64,21 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     function initializeSemesters(): SemesterType[] {
       const tempSemesters = [];
+      let year: number = 0;
       for (let i = 0; i < semestersLength; i++) {
+        // increment year every two semesters
+        if (i % 2 === 0) {
+          year++;
+        }
         tempSemesters.push(
           {
             accepts: [ItemTypes.COURSE],
             courses: [],
             semesterNumber: i + 1,
             SemesterCredits: 0,
-            Warning: ""
+            Warning: null,
+            year,
+            season: i % 2 === 0 ? season.Fall : season.Spring
           }
         );
       }
@@ -491,14 +498,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     };
 
     //  This function sets the correct warning for the semester
-    const getWarning = (SemesterCredits: number): string => {
-      let Warning = "";
+    const getWarning = (SemesterCredits: number): warning | null => {
+      let Warning = null;
       if (SemesterCredits <= 11 && SemesterCredits > 0) {
-        Warning = " (Low)";
+        Warning = warning.Low;
       } else if (SemesterCredits >= 19) {
-        Warning = " (High)";
-      } else {
-        Warning = "";
+        Warning = warning.High;
       }
       return Warning;
     };
@@ -516,7 +521,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const checkWarnings = (): void => {
       const semestersWithWarnings: string[] = [];
       for (let i = 0; i < semesters.length; i++) {
-        if (semesters[i].Warning !== "") {
+        if (semesters[i].Warning !== null) {
           semestersWithWarnings.push(
             " Semester " + (i + 1) + " is " + semesters[i].Warning
           );
@@ -525,7 +530,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       semestersWithWarnings.push(" Schedule still exported.");
 
       for (let i = 0; i < semesters.length; i++) {
-        if (semesters[i].Warning !== "") {
+        if (semesters[i].Warning !== null) {
           setVisibility(true);
           setErrorMessage(semestersWithWarnings + "");
         }
@@ -725,7 +730,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   accepts,
                   courses,
                   SemesterCredits,
-                  Warning
+                  Warning,
+                  year,
+                  season
                 },
                 index
               ) => (
@@ -740,6 +747,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   warningPrerequisiteCourses={warningPrerequisiteCourses}
                   warningFallvsSpringCourses={warningFallvsSpringCourses}
                   warningDuplicateCourses={warningDuplicateCourses}
+                  year={year}
+                  season={season}
                 />
               )
             )}

@@ -51,10 +51,6 @@ body {
   column-gap: 10px;
 }
 
-.drag-drop > *:not(:first-child) {
-  padding: 5%;
-}
-
 .schedule {
   height: 100%;
   width: 100%;

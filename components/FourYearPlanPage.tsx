@@ -26,7 +26,7 @@ import {
   processRequirementLists,
   createMultipleCategoryList
 } from "../entities/requirementsHelperFunctions";
-import SemesterList from "./SemesterList";
+import SemesterList, { deepCopy } from "./SemesterList";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -212,68 +212,28 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Calling return drop", idCourse, dragSource);
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
-          // get the semester index from the drag source
-          const movedFromIndex = +dragSource.split(" ")[1];
-          const found = semesters[movedFromIndex].courses.find(
-            (item: any) => item.idCourse === idCourse
+          const tempSemesters = deepCopy(semesters);
+          const movedFromNum = +dragSource.split(" ")[1];
+          const semesterIndex = tempSemesters.findIndex(
+            (s) => s.semesterNumber === movedFromNum
           );
-          if (found !== undefined) {
-            // set the drag source to course list (may be redundant but I'm scared to mess with it)
-            found.dragSource = "CourseList";
+          const courseIndex = tempSemesters[semesterIndex].courses.findIndex(
+            (c) => c.idCourse === idCourse
+          );
 
-            //  Update semesters to have the course removed
-            const itemArr = semesters[movedFromIndex].courses.filter(
-              (course: any) => course !== found
-            );
-            const newSemesterCount =
-              getSemesterTotalCredits(movedFromIndex) - found.credits;
-            const updatedWarning = getWarning(newSemesterCount);
-            setSemesters(
-              update(semesters, {
-                [movedFromIndex]: {
-                  courses: {
-                    $set: itemArr
-                  },
-                  SemesterCredits: {
-                    $set: newSemesterCount
-                  },
-                  Warning: {
-                    $set: updatedWarning
-                  }
-                }
-              })
-            );
-            let noRemove = false;
-            let count = 0;
-            semesters.forEach((x) =>
-              x.courses.forEach((y: any) => {
-                if (y.idCourse === found.idCourse) {
-                  count++;
-                }
-              })
-            );
-            if (count > 1 && !found.repeatableForCred) {
-              noRemove = true;
-            }
-            userMajor()?.completed_courses.forEach((x) => {
-              const subject = x.split("-")[0];
-              const number = x.split("-")[1];
-              if (subject === found.subject && number === found.number) {
-                noRemove = true;
-              }
-            });
-            if (!noRemove) {
-              removeFromRequirements(found);
-            }
-
+          if (courseIndex !== -1) {
+            const course = tempSemesters[semesterIndex]?.courses[courseIndex];
+            checkRequirements(course, coursesInMultipleCategories);
             setUpdateWarning({
-              course: found,
-              oldSemester: movedFromIndex,
+              course,
+              oldSemester: semesterIndex,
               newSemester: -1,
               draggedOut: true,
               newCheck: true
             });
           }
+          tempSemesters[semesterIndex].courses.splice(courseIndex, 1);
+          setSemesters(tempSemesters);
         }
       },
       [PassedCourseList, semesters]
@@ -286,6 +246,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         (course.semesters === "SP" && semNum % 2 === 0)
       );
     }
+
+    const [savedErrors, setSavedErrors] = useState<string[]>([]);
 
     useEffect(() => {
       if (updateWarning.newCheck) {
@@ -331,26 +293,40 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         setWarningFallvsSpringCourses(fallSpringCourses);
 
         const preReqCourses: CourseType[] = [];
-        const takenCourses: string[] = userMajor()?.completed_courses ?? [];
+        let takenCourses: string[] = userMajor()?.completed_courses ?? [];
         const sp = new StringProcessing();
         semesters.sort(sortSemester).forEach((sem) => {
+          const concurrent = sem.courses.map((c) => `${c.subject}-${c.number}`);
           sem.courses.forEach((c) => {
-            const val = sp.courseInListCheck(c.preReq, takenCourses, []);
+            const val = sp.courseInListCheck(
+              c.preReq,
+              takenCourses,
+              concurrent
+            );
             if (!val.returnValue) {
               preReqCourses.push(c);
               errors.push(
                 `${c.subject}-${c.number} requires: ${val.failedString}`
               );
             }
-            takenCourses.push(`${c.subject}-${c.number}`);
           });
+          takenCourses = takenCourses.concat(concurrent);
         });
         setWarningPrereqCourses(preReqCourses);
 
-        if (errors.length > 0) {
+        const tempSemesters = deepCopy(semesters);
+        tempSemesters.forEach((sem) => {
+          sem.SemesterCredits = sem.courses.reduce((a, b) => a + b.credits, 0);
+          sem.Warning = getWarning(sem);
+        });
+        setSemesters(tempSemesters);
+
+        const newErrors = errors.filter((e) => !savedErrors.includes(e));
+        if (newErrors.length > 0) {
           setVisibility(true);
-          setErrorMessage(errors.join("\n"));
+          setErrorMessage(newErrors.join("\n"));
         }
+        setSavedErrors(errors);
       }
       setUpdateWarning({
         course: undefined,
@@ -360,186 +336,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         newCheck: false
       });
     }, [semesters]);
-
-    //  This useEffect is in charge of checking for duplicate courses
-    // useEffect(() => {
-    //   if (updateWarning.newCheck) {
-    //     let duplicateFound = false;
-    //     //  Compare each course to courses in future semesters to see if there are any duplicates
-    //     semesters.forEach((semester, index) => {
-    //       semester.courses.forEach((course: CourseType) => {
-    //         //  If the course is found in future semesters, then it has a duplicate
-    //         if (
-    //           updateWarning.course === course &&
-    //           updateWarning.newSemester !== index &&
-    //           updateWarning.newSemester !== -1
-    //         ) {
-    //           if (!course.repeatableForCred) {
-    //             //  Show the warning
-    //             setVisibility(true);
-    //             setErrorMessage(
-    //               "WARNING! " +
-    //               course.subject +
-    //               "-" +
-    //               course.number +
-    //               " is already in other semesters."
-    //             );
-    //
-    //             //  Append the course to the duplicate warning courses list
-    //             const temp = warningDupCourses;
-    //             temp.push(course);
-    //             setWarningDupCourses(temp);
-    //             duplicateFound = true;
-    //           }
-    //         }
-    //       });
-    //     });
-    //     //  If there was not a duplicate course found
-    //     if (!duplicateFound) {
-    //       //  Remove the course from the duplicates warning list
-    //       const temp = new Array<CourseType>();
-    //       warningDupCourses.forEach((x) => {
-    //         if (x !== updateWarning.course) {
-    //           temp.push(x);
-    //         }
-    //       });
-    //       setWarningDupCourses(temp);
-    //     }
-    //   }
-    //   if (updateWarning.newCheck && updateWarning.course !== undefined) {
-    //     //  Check if the course is offered in the semester it was dragged to
-    //     if (
-    //       checkCourseSemester(updateWarning.course, updateWarning.newSemester)
-    //     ) {
-    //       //  If the course is not offered during the semester, add it to the warning course list
-    //       if (
-    //         warningFallvsSpringCourses.find(
-    //           (x) => x === updateWarning.course
-    //         ) === undefined
-    //       ) {
-    //         warningFallvsSpringCourses.push(updateWarning.course);
-    //         setVisibility(true);
-    //         setErrorMessage(
-    //           "WARNING! " +
-    //           updateWarning.course.subject +
-    //           "-" +
-    //           updateWarning.course.number +
-    //           " is not typically offered during the " +
-    //           (updateWarning.newSemester % 2 === 0 ? "Fall" : "Spring") +
-    //           " semester"
-    //         );
-    //       }
-    //     } else {
-    //       //  Otherwise remove it from the warning course list
-    //       const temp = new Array<CourseType>();
-    //       const removeCourse = warningFallvsSpringCourses.find(
-    //         (x) => x === updateWarning.course
-    //       );
-    //       warningFallvsSpringCourses.forEach((x) => {
-    //         if (x !== removeCourse) {
-    //           temp.push(x);
-    //         }
-    //       });
-    //       setWarningFallvsSpringCourses(temp);
-    //     }
-    //   }
-    //   if (updateWarning.newCheck && updateWarning.course !== undefined) {
-    //     //  This will store if the prerequisites for the changed course have been satisfied
-    //     let satisfied;
-    //     //  If the course is not dragged out, check its prerequisites
-    //     if (!updateWarning.draggedOut) {
-    //       //  Get all courses in current semester and previous semesters
-    //       const currCourses = new Array<string>();
-    //       const pastCourses = new Array<string>();
-    //       semesters.forEach((x, index) => {
-    //         if (index < updateWarning.newSemester) {
-    //           x.courses.forEach((y: any) => {
-    //             pastCourses.push(y.subject + "-" + y.number);
-    //           });
-    //         }
-    //         if (index === updateWarning.newSemester) {
-    //           x.courses.forEach((y: any) => {
-    //             currCourses.push(y.subject + "-" + y.number);
-    //           });
-    //         }
-    //       });
-    //
-    //       //  Append the already taken courses
-    //       userMajor()?.completed_courses.forEach((x) => {
-    //         pastCourses.push(x);
-    //       });
-    //
-    //       //  Find if the course has met its prerequisites
-    //       const stringProcess = new StringProcessing();
-    //       satisfied = stringProcess.courseInListCheck(
-    //         updateWarning.course.preReq,
-    //         pastCourses,
-    //         currCourses
-    //       );
-    //       //  If the prereq for that moved course is not satisfied, have that course throw the error
-    //       if (!satisfied.returnValue) {
-    //         setVisibility(true);
-    //         setErrorMessage(
-    //           "WARNING! " +
-    //           updateWarning.course.subject +
-    //           "-" +
-    //           updateWarning.course.number +
-    //           " has failed the following prerequisites: " +
-    //           satisfied.failedString
-    //         );
-    //         //  Update the warning courses to include the just dragged course
-    //         const temp = warningPrereqCourses;
-    //         temp.push(updateWarning.course);
-    //         setWarningPrereqCourses(temp);
-    //       }
-    //     }
-    //
-    //     //  If the course has been dragged from earlier to later
-    //     if (
-    //       updateWarning.oldSemester < updateWarning.newSemester &&
-    //       satisfied !== undefined
-    //     ) {
-    //       //  Check all semesters past the old moved semester
-    //       const response = preReqCheckAllCoursesPastSemester(
-    //         updateWarning.course,
-    //         updateWarning.oldSemester,
-    //         updateWarning.oldSemester === -1 ? false : satisfied.returnValue,
-    //         true,
-    //         false,
-    //         semesters,
-    //         warningPrereqCourses
-    //       );
-    //       if (response.vis) {
-    //         setVisibility(response.vis);
-    //         setErrorMessage(response.error);
-    //       }
-    //       setWarningPrereqCourses(response.warning);
-    //     }
-    //     //  Check all semesters past the new moved semester
-    //     const response = preReqCheckAllCoursesPastSemester(
-    //       updateWarning.course,
-    //       updateWarning.newSemester,
-    //       true,
-    //       false,
-    //       updateWarning.draggedOut,
-    //       semesters,
-    //       warningPrereqCourses
-    //     );
-    //     if (response.vis) {
-    //       setVisibility(response.vis);
-    //       setErrorMessage(response.error);
-    //     }
-    //     setWarningPrereqCourses(response.warning);
-    //   }
-    //   // Reset the warning
-    //   setUpdateWarning({
-    //     course: undefined,
-    //     oldSemester: -1,
-    //     newSemester: -1,
-    //     draggedOut: true,
-    //     newCheck: false
-    //   });
-    // }, [semesters]);
 
     const popupCloseHandler = (): void => {
       setVisibility(false);
@@ -563,14 +359,19 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     };
 
     //  This function sets the correct warning for the semester
-    const getWarning = (SemesterCredits: number): warning | null => {
-      let Warning = null;
-      if (SemesterCredits <= 11 && SemesterCredits > 0) {
-        Warning = warning.Low;
-      } else if (SemesterCredits >= 19) {
-        Warning = warning.High;
+    const getWarning = (sem: SemesterType): warning | null => {
+      const credits = sem.SemesterCredits;
+      if (credits === 0) {
+        return null;
+      } else if (sem.season === season.Fall || sem.season === season.Spring) {
+        if (credits <= 11) return warning.Low;
+        else if (credits >= 19) return warning.High;
+        else return null;
+      } else {
+        // TODO: check high number of credits for extra semesters
+        if (credits >= 8) return warning.High;
+        else return null;
       }
-      return Warning;
     };
 
     //  A Function that grabs the total credits for the semester
@@ -711,7 +512,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             // update the necessary semester values
             semester.courses = tempArr;
             semester.SemesterCredits = credits;
-            const newWarningState = getWarning(credits);
+            const newWarningState = getWarning(semester);
             semester.Warning = newWarningState;
           });
         }

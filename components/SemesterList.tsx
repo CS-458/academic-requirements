@@ -56,7 +56,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   }
 }));
 
-function deepCopy(s: SemesterType[]): SemesterType[] {
+export function deepCopy(s: SemesterType[]): SemesterType[] {
   const ret: SemesterType[] = [];
   s.forEach((s) => {
     ret.push({
@@ -128,20 +128,10 @@ export default function SemesterList({
         source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
         if (source == null) throw new Error("Source semester not found");
         source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
-        source.SemesterCredits = source.courses.reduce(
-          (a, b) => a + b.credits,
-          0
-        );
-        source.Warning = getWarning(source.SemesterCredits);
       }
       checkRequirements(course, coursesInMultipleCategories);
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
-      target.SemesterCredits = target.courses.reduce(
-        (a, b) => a + b.credits,
-        0
-      );
-      target.Warning = getWarning(target.SemesterCredits);
       setSemesters(tmpSemesters);
       setUpdateWarning({
         course,

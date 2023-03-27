@@ -97,7 +97,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       // Whenever completed courses may update, determine
       // whether we need to display it in the dropdown
       const completedCourses = userMajor()?.completed_courses ?? 0;
-      if (completedCourses > 0) {
+      if (completedCourses !== 0) {
         console.log("Setting up completed courses", userMajor()?.completed_courses);
         setInformationTypes((prevInformationTypes) => {
           // the ... is a spread operator and essentially means "take everything up to this point"

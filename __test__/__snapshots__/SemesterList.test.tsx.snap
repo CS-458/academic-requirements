@@ -55,7 +55,7 @@ exports[`Render Semester List 1`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: auto scroll; height: 100%;"
+                    style="overflow-y: auto; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -801,7 +801,7 @@ exports[`Render Semester List 2`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: auto scroll; height: 100%;"
+                    style="overflow-y: auto; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -2793,7 +2793,7 @@ exports[`Render Semester List 3`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: auto scroll; height: 100%;"
+                    style="overflow-y: auto; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
@@ -4785,7 +4785,7 @@ exports[`Render Semester List 4`] = `
                 >
                   <div
                     class="generic"
-                    style="overflow: auto scroll; height: 100%;"
+                    style="overflow-y: auto; height: 100%;"
                   >
                     <div
                       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"

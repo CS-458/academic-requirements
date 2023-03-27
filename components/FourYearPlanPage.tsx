@@ -9,11 +9,9 @@ import { Requirement } from "./Requirement";
 import { Snackbar, Alert as MuiAlert, AlertProps } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
-import ScheduleUpload from "./ScheduleUploadModal";
 import ActionBar from "./ActionBar";
 import CourseFiltering from "./CourseFiltering";
 

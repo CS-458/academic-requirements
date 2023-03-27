@@ -72,7 +72,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     });
 
     // fourYearPlan parsed as a JSON
-    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? ""));
+    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<RequirementComponentType[]>([]);
 

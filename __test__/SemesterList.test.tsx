@@ -29,7 +29,7 @@ test("Render Semester List", async () => {
 
   expect(index.baseElement).toMatchSnapshot();
 
-  const firstYear = parentEl(screen.getByText(/Year 0/i), "MuiAccordion");
+  const firstYear = parentEl(screen.getByText(/Year 1/i), "MuiAccordion");
   expect(firstYear).toBeInTheDocument();
   const fallSemester = parentEl(
     within(firstYear).getByText(/Fall/i),
@@ -83,12 +83,12 @@ test("Only first year is visible", async () => {
   });
   render(<PassThrough showing={true} />);
 
-  const firstYear = parentEl(screen.getByText(/Year 0/i), "MuiAccordion");
+  const firstYear = parentEl(screen.getByText(/Year 1/i), "MuiAccordion");
   expect(firstYear).toBeInTheDocument();
   const fallSemester = within(firstYear).getByText(/Fall/i);
   expect(fallSemester).toBeVisible();
 
-  const secondYear = parentEl(screen.getByText(/Year 1/i), "MuiAccordion");
+  const secondYear = parentEl(screen.getByText(/Year 2/i), "MuiAccordion");
   expect(secondYear).toBeInTheDocument();
   const fallSemester1 = within(secondYear).getByText(/Fall/i);
   expect(fallSemester1).not.toBeVisible();

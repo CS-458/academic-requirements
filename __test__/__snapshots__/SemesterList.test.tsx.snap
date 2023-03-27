@@ -53,7 +53,22 @@ exports[`Render Semester List 1`] = `
                           class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                         >
                           Year 
-                          0
+                          1
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -78,144 +93,47 @@ exports[`Render Semester List 1`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester0"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester8"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester1"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester2"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester3"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester9"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                  >
-                    <div>
-                      <div
-                        aria-expanded="false"
-                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                        >
-                          Year 
-                          1
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                      style="min-height: 0px;"
-                    >
-                      <div
-                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                      >
-                        <div
-                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                        >
-                          <div
-                            class="MuiAccordion-region"
-                            role="region"
-                          >
-                            <div
-                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
-                            >
-                              <div
-                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
-                              >
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester4"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Fall
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester5"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester6"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Spring
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester7"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Summer
-                                     (
-                                    0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -241,6 +159,21 @@ exports[`Render Semester List 1`] = `
                           Year 
                           2
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -264,51 +197,47 @@ exports[`Render Semester List 1`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester8"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester2"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester9"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester10"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester10"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester3"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester11"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -334,6 +263,21 @@ exports[`Render Semester List 1`] = `
                           Year 
                           3
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -357,51 +301,151 @@ exports[`Render Semester List 1`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester12"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester4"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester13"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester12"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester14"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester5"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester15"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester13"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          4
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester6"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester14"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester7"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester15"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -643,7 +687,22 @@ exports[`Render Semester List 2`] = `
                           class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                         >
                           Year 
-                          0
+                          1
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -668,15 +727,15 @@ exports[`Render Semester List 2`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-12qoa1o"
                                   data-testid="semester0"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Fall
                                      (
                                     3
-                                    )
+                                    ) 
+                                    Low
                                   </p>
                                   <div
                                     class="CourseText"
@@ -702,132 +761,36 @@ exports[`Render Semester List 2`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester8"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester1"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester2"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester3"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester9"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                  >
-                    <div>
-                      <div
-                        aria-expanded="false"
-                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                        >
-                          Year 
-                          1
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                      style="min-height: 0px;"
-                    >
-                      <div
-                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                      >
-                        <div
-                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                        >
-                          <div
-                            class="MuiAccordion-region"
-                            role="region"
-                          >
-                            <div
-                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
-                            >
-                              <div
-                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
-                              >
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester4"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Fall
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester5"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester6"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Spring
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester7"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Summer
-                                     (
-                                    0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -853,6 +816,21 @@ exports[`Render Semester List 2`] = `
                           Year 
                           2
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -876,51 +854,47 @@ exports[`Render Semester List 2`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester8"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester2"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester9"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester10"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester10"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester3"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester11"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -946,6 +920,21 @@ exports[`Render Semester List 2`] = `
                           Year 
                           3
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -969,51 +958,151 @@ exports[`Render Semester List 2`] = `
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester12"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester4"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester13"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester12"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester14"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester5"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester15"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester13"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          4
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester6"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester14"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester7"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester15"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -2190,7 +2279,22 @@ exports[`Render Semester List 3`] = `
                           class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                         >
                           Year 
-                          0
+                          1
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
@@ -2212,149 +2316,73 @@ exports[`Render Semester List 3`] = `
                               class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
                             >
                               <div
-                                aria-hidden="false"
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester0"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester8"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-12qoa1o"
                                   data-testid="semester1"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester2"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Spring
                                      (
-                                    0
-                                    )
+                                    3
+                                    ) 
+                                    Low
                                   </p>
+                                  <div
+                                    class="CourseText"
+                                    data-testid="course"
+                                    draggable="true"
+                                    style="opacity: 1;"
+                                  >
+                                    ANTH
+                                    -
+                                    230
+                                    <br />
+                                    Anthropology of the Contemporary United States
+                                    <br />
+                                    credits: 
+                                    3
+                                    <br />
+                                    <a
+                                      href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ANTH&filter%5B29%5D=230&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                      target="_blank"
+                                    >
+                                      Description
+                                    </a>
+                                  </div>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester3"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester9"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                  >
-                    <div>
-                      <div
-                        aria-expanded="false"
-                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                        >
-                          Year 
-                          1
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                      style="min-height: 0px;"
-                    >
-                      <div
-                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                      >
-                        <div
-                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                        >
-                          <div
-                            class="MuiAccordion-region"
-                            role="region"
-                          >
-                            <div
-                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
-                            >
-                              <div
-                                aria-hidden="true"
-                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
-                              >
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester4"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Fall
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester5"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Winter
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester6"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Spring
-                                     (
-                                    0
-                                    )
-                                  </p>
-                                </div>
-                                <div
-                                  class="semester Semester-root"
-                                  data-testid="semester7"
-                                  style="background-color: white;"
-                                >
-                                  <p>
-                                    Summer
-                                     (
-                                    0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -2380,6 +2408,21 @@ exports[`Render Semester List 3`] = `
                           Year 
                           2
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -2400,55 +2443,50 @@ exports[`Render Semester List 3`] = `
                               class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
                             >
                               <div
-                                aria-hidden="true"
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester8"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester2"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester9"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester10"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester10"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester3"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
                                   data-testid="semester11"
-                                  style="background-color: white;"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                               </div>
@@ -2474,6 +2512,21 @@ exports[`Render Semester List 3`] = `
                           Year 
                           3
                         </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -2494,55 +2547,1723 @@ exports[`Render Semester List 3`] = `
                               class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
                             >
                               <div
-                                aria-hidden="true"
                                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                               >
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester12"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester4"
                                 >
                                   <p>
                                     Fall
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester13"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester12"
                                 >
                                   <p>
                                     Winter
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester14"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester5"
                                 >
                                   <p>
                                     Spring
                                      (
                                     0
-                                    )
+                                    ) 
                                   </p>
                                 </div>
                                 <div
-                                  class="semester Semester-root"
-                                  data-testid="semester15"
-                                  style="background-color: white;"
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester13"
                                 >
                                   <p>
                                     Summer
                                      (
                                     0
-                                    )
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          4
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester6"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester14"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester7"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester15"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="class-dropdown generic"
+                  style="overflow: hidden; clear: both;"
+                >
+                  <div>
+                    <div
+                      class="course-box-header"
+                    >
+                      <div
+                        class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                      >
+                        <div
+                          class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                        >
+                          <label
+                            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
+                            data-shrink="true"
+                            for=":r0:"
+                            id=":r0:-label"
+                          >
+                            Select Course
+                          </label>
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-expanded="false"
+                              aria-invalid="false"
+                              autocapitalize="none"
+                              autocomplete="off"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                              id=":r0:"
+                              role="combobox"
+                              spellcheck="false"
+                              type="text"
+                              value="RES - Category A (RESA)"
+                            />
+                            <div
+                              class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                            >
+                              <button
+                                aria-label="Clear"
+                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"
+                                tabindex="-1"
+                                title="Clear"
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                                  data-testid="CloseIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                  />
+                                </svg>
+                                <span
+                                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                />
+                              </button>
+                              <button
+                                aria-label="Open"
+                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                                tabindex="-1"
+                                title="Open"
+                                type="button"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  data-testid="ArrowDropDownIcon"
+                                  focusable="false"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M7 10l5 5 5-5z"
+                                  />
+                                </svg>
+                                <span
+                                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                />
+                              </button>
+                            </div>
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                            >
+                              <legend
+                                class="css-14lo706"
+                              >
+                                <span>
+                                  Select Course
+                                </span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-testid="courseListDropTarget"
+                    style="height: 30rem; width: 90%; margin-right: .5rem; margin-bottom: .5rem; color: white; padding: 1rem; text-align: center; font-size: 1rem; line-height: normal; float: left; background: rgb(0, 73, 144); border-radius: .5rem; overflow: auto; background-color: rgb(0, 73, 144);"
+                  >
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      ANTH
+                      -
+                      230
+                      <br />
+                      Anthropology of the Contemporary United States
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ANTH&filter%5B29%5D=230&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      ANTH
+                      -
+                      293
+                      <br />
+                      Environmental Justice
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ANTH&filter%5B29%5D=293&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      ANTH
+                      -
+                      300
+                      <br />
+                      Native Americans
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ANTH&filter%5B29%5D=300&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      COMST
+                      -
+                      312
+                      <br />
+                      Intercultural Communication
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=312&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      EDUC
+                      -
+                      320
+                      <br />
+                      Racism and Colonialism: Impact on Communities and Education
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=EDUC&filter%5B29%5D=320&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      EDUC
+                      -
+                      330
+                      <br />
+                      Multiculturalism: Dialogue and Field Experience
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=EDUC&filter%5B29%5D=330&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      EDUC
+                      -
+                      336
+                      <br />
+                      Multiculturalism: Issues & Perspectives
+                      <br />
+                      credits: 
+                      2
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=EDUC&filter%5B29%5D=336&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      GEOG
+                      -
+                      310
+                      <br />
+                      Food Justice
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=GEOG&filter%5B29%5D=310&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HDFS
+                      -
+                      275
+                      <br />
+                      Race Matters: Interdisciplinary Investigations
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HDFS&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HDFS
+                      -
+                      335
+                      <br />
+                      Cultural Awareness in Practice
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HDFS&filter%5B29%5D=335&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      296
+                      <br />
+                      U.S. Labor History in a Global Context
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=296&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      321
+                      <br />
+                      United States Women's History
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=321&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      322
+                      <br />
+                      African-American History
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=322&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      323
+                      <br />
+                      American Immigration and Ethnic History
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=323&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      340
+                      <br />
+                      Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=340&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HIST
+                      -
+                      391
+                      <br />
+                      History of Social Science and Race
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HIST&filter%5B29%5D=391&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      HT
+                      -
+                      375
+                      <br />
+                      Tourism, Culture & Place
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=HT&filter%5B29%5D=375&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      LIT
+                      -
+                      273
+                      <br />
+                      American Multicultural Literature
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=LIT&filter%5B29%5D=273&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      LIT
+                      -
+                      307
+                      <br />
+                      After 9/11: American Literature of Public Crisis and Trauma
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=LIT&filter%5B29%5D=307&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      LIT
+                      -
+                      308
+                      <br />
+                      Alice Walker: Beyond Purple
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=LIT&filter%5B29%5D=308&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      LIT
+                      -
+                      309
+                      <br />
+                      Multicultural Shakespeare: Plays and Replays
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=LIT&filter%5B29%5D=309&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      MUSIC
+                      -
+                      231
+                      <br />
+                      Honors Jazz History
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MUSIC&filter%5B29%5D=231&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PAX
+                      -
+                      210
+                      <br />
+                      Nonviolence and the Civil Rights Movement
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PAX&filter%5B29%5D=210&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PAX
+                      -
+                      278
+                      <br />
+                      Social Change Leadership
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PAX&filter%5B29%5D=278&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PAX
+                      -
+                      302
+                      <br />
+                      Applied Nonviolent Activism
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PAX&filter%5B29%5D=302&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PAX
+                      -
+                      310
+                      <br />
+                      Food Justice
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PAX&filter%5B29%5D=310&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PE
+                      -
+                      206
+                      <br />
+                      Diversity and Controversies in Sport and Exercise
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PE&filter%5B29%5D=206&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      PHIL
+                      -
+                      220
+                      <br />
+                      Multicultural Philosophy
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=PHIL&filter%5B29%5D=220&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      POLS
+                      -
+                      250
+                      <br />
+                      History of Race, Politics and Technology
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=POLS&filter%5B29%5D=250&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      SOC
+                      -
+                      291
+                      <br />
+                      Sociology of Health and Illness
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=SOC&filter%5B29%5D=291&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      SOC
+                      -
+                      293
+                      <br />
+                      Environmental Justice
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=SOC&filter%5B29%5D=293&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      SOC
+                      -
+                      375
+                      <br />
+                      Sociology Of Minority Groups
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=SOC&filter%5B29%5D=375&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      SPAN
+                      -
+                      296
+                      <br />
+                      Business Spanish in Oaxaca
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=SPAN&filter%5B29%5D=296&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      SPAN
+                      -
+                      296
+                      <br />
+                      Mestizaje: Myth and Reality of the Mexican Nation-State
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=SPAN&filter%5B29%5D=296&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      THEA
+                      -
+                      340
+                      <br />
+                      Multiculturalism and Diversity in American Theatre
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=THEA&filter%5B29%5D=340&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                    <div
+                      class="CourseText"
+                      data-testid="course"
+                      draggable="true"
+                      style="opacity: 1;"
+                    >
+                      WGS
+                      -
+                      210
+                      <br />
+                      Introduction to Women and Gender Studies
+                      <br />
+                      credits: 
+                      3
+                      <br />
+                      <a
+                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=WGS&filter%5B29%5D=210&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                        target="_blank"
+                      >
+                        Description
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="right-information-box generic"
+                >
+                  <div
+                    class="right-information-box-header"
+                  >
+                    <div
+                      class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                    >
+                      <div
+                        class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                      >
+                        <div
+                          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                        >
+                          <input
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-invalid="false"
+                            autocapitalize="none"
+                            autocomplete="off"
+                            class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                            id=":r2:"
+                            role="combobox"
+                            spellcheck="false"
+                            type="text"
+                            value=""
+                          />
+                          <div
+                            class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                          >
+                            <button
+                              aria-label="Open"
+                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                              tabindex="-1"
+                              title="Open"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                data-testid="ArrowDropDownIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M7 10l5 5 5-5z"
+                                />
+                              </svg>
+                              <span
+                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                              />
+                            </button>
+                          </div>
+                          <fieldset
+                            aria-hidden="true"
+                            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                          >
+                            <legend
+                              class="css-ihdtdm"
+                            >
+                              <span
+                                class="notranslate"
+                              >
+                                ​
+                              </span>
+                            </legend>
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="right-information-box-content"
+                  >
+                    <p
+                      class="right-information-box-description"
+                    >
+                      Select a category and drag a course onto a semester to begin planning.
+                    </p>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Global Perspective (GLP)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        0%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Racial and Ethnic Studies (RES)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        50%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Communication Studies (COMSK)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        0%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Analytical Reasoning and Natural Science (ARNS)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        0%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Arts and Humanities (ARHU)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        0%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Social and Behavioral Sciences (SBSCI)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        50%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Cross-disciplinary Issues (CDI)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        0%
+                      </div>
+                    </div>
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Social Responsibility and Ethical Reasoning (SRER)
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        100%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Render Semester List 4`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="generic"
+      >
+        <div
+          class="screen"
+        >
+          <div
+            class="page"
+          >
+            <div
+              class="generic"
+            >
+              <div
+                class="drag-drop"
+              >
+                <div
+                  data-testid="popup"
+                  style="visibility: hidden; opacity: 0;"
+                >
+                  <div>
+                    <h2>
+                      Warning
+                    </h2>
+                    <span>
+                      ×
+                    </span>
+                    <div />
+                  </div>
+                </div>
+                <div
+                  class="generic"
+                  style="overflow: scroll auto; height: 100%;"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="true"
+                        class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          1
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester0"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester8"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester1"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester9"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          2
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester2"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester10"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester3"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester11"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          3
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester4"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester12"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester5"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester13"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                  >
+                    <div>
+                      <div
+                        aria-expanded="false"
+                        class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                        >
+                          Year 
+                          4
+                        </div>
+                        <div
+                          class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                            data-testid="ArrowForwardIosSharpIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="MuiAccordion-region"
+                            role="region"
+                          >
+                            <div
+                              class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                            >
+                              <div
+                                style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                              >
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester6"
+                                >
+                                  <p>
+                                    Fall
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester14"
+                                >
+                                  <p>
+                                    Winter
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester7"
+                                >
+                                  <p>
+                                    Spring
+                                     (
+                                    0
+                                    ) 
+                                  </p>
+                                </div>
+                                <div
+                                  class="semester Semester-root MuiBox-root css-17txp1g"
+                                  data-testid="semester15"
+                                >
+                                  <p>
+                                    Summer
+                                     (
+                                    0
+                                    ) 
                                   </p>
                                 </div>
                               </div>

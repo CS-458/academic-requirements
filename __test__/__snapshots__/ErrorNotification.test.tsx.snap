@@ -10,6 +10,35 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
         <div
           class="drag-drop"
         >
+          <div>
+            <div
+              class="MuiBox-root css-6um5jb"
+            >
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
           <div
             style="overflow: hidden; clear: both;"
           >
@@ -77,11 +106,6 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
  Spring 
  Credits 0
             </div>
-            <button
-              data-testid="ExportButton"
-            >
-              Export Schedule
-            </button>
           </div>
           <div
             class="class-dropdown"
@@ -195,8 +219,8 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r8:"
-                        id=":r8:-label"
+                        for=":rb:"
+                        id=":rb:-label"
                       >
                         Course Category
                       </label>
@@ -210,7 +234,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r8:"
+                          id=":rb:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -307,7 +331,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":ra:"
+                      id=":rd:"
                       role="combobox"
                       spellcheck="false"
                       type="text"
@@ -384,6 +408,35 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
         <div
           class="drag-drop"
         >
+          <div>
+            <div
+              class="MuiBox-root css-6um5jb"
+            >
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
           <div
             style="overflow: hidden; clear: both;"
           >
@@ -451,11 +504,6 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
  Spring 
  Credits 0
             </div>
-            <button
-              data-testid="ExportButton"
-            >
-              Export Schedule
-            </button>
           </div>
           <div
             class="class-dropdown"
@@ -569,8 +617,8 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r4:"
-                        id=":r4:-label"
+                        for=":r6:"
+                        id=":r6:-label"
                       >
                         Course Category
                       </label>
@@ -584,7 +632,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r4:"
+                          id=":r6:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -681,7 +729,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":r6:"
+                      id=":r8:"
                       role="combobox"
                       spellcheck="false"
                       type="text"
@@ -758,6 +806,35 @@ exports[`Four Year Plan Page renders 1`] = `
         <div
           class="drag-drop"
         >
+          <div>
+            <div
+              class="MuiBox-root css-6um5jb"
+            >
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
           <div
             style="overflow: hidden; clear: both;"
           >
@@ -825,11 +902,6 @@ exports[`Four Year Plan Page renders 1`] = `
  Spring 
  Credits 0
             </div>
-            <button
-              data-testid="ExportButton"
-            >
-              Export Schedule
-            </button>
           </div>
           <div
             class="class-dropdown"
@@ -943,8 +1015,8 @@ exports[`Four Year Plan Page renders 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r0:"
-                        id=":r0:-label"
+                        for=":r1:"
+                        id=":r1:-label"
                       >
                         Course Category
                       </label>
@@ -958,7 +1030,7 @@ exports[`Four Year Plan Page renders 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r0:"
+                          id=":r1:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -1055,7 +1127,7 @@ exports[`Four Year Plan Page renders 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":r2:"
+                      id=":r3:"
                       role="combobox"
                       spellcheck="false"
                       type="text"
@@ -1132,6 +1204,35 @@ exports[`Four Year Plan incompatible Season 1`] = `
         <div
           class="drag-drop"
         >
+          <div>
+            <div
+              class="MuiBox-root css-6um5jb"
+            >
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
           <div
             style="overflow: hidden; clear: both;"
           >
@@ -1199,11 +1300,6 @@ exports[`Four Year Plan incompatible Season 1`] = `
  Spring 
  Credits 0
             </div>
-            <button
-              data-testid="ExportButton"
-            >
-              Export Schedule
-            </button>
           </div>
           <div
             class="class-dropdown"
@@ -1317,8 +1413,8 @@ exports[`Four Year Plan incompatible Season 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rc:"
-                        id=":rc:-label"
+                        for=":rg:"
+                        id=":rg:-label"
                       >
                         Course Category
                       </label>
@@ -1332,7 +1428,7 @@ exports[`Four Year Plan incompatible Season 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rc:"
+                          id=":rg:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -1429,7 +1525,7 @@ exports[`Four Year Plan incompatible Season 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":re:"
+                      id=":ri:"
                       role="combobox"
                       spellcheck="false"
                       type="text"

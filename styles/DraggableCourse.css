@@ -3,16 +3,16 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 90%;
+  width: 100%;
   /*display: -webkit-box;*/
   -webkit-line-clamp: 3;
   -webkit-box-orient: horizontal;
-  outline-width: 2px;
-  outline-color: #004990;
-  outline-style: auto;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
   border-radius: 5px;
-  padding: "5rem 1rem";
-  margin: 5px;
+  padding: .1em 1em;
+  margin: 5px 0px;
   color: black;
 }
 

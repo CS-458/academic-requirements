@@ -28,6 +28,11 @@ import {
 } from "../entities/requirementsHelperFunctions";
 import SemesterList, { deepCopy } from "./SemesterList";
 
+export interface CourseError {
+  id: number;
+  sem: number;
+}
+
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
     PassedCourseList, // The combination of major, concentration, and gen ed
@@ -45,11 +50,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     //  A list of courses that should have a warning color on them
     const [warningPrereqCourses, setWarningPrereqCourses] = useState<
-      CourseType[]
+      CourseError[]
     >([]);
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
-      useState<CourseType[]>([]);
-    const [warningDupCourses, setWarningDupCourses] = useState<CourseType[]>(
+      useState<CourseError[]>([]);
+    const [warningDupCourses, setWarningDupCourses] = useState<CourseError[]>(
       []
     );
     //  Warning for spring/fall semester
@@ -253,7 +258,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       if (updateWarning.newCheck) {
         const errors: string[] = [];
 
-        const duplicateCourses: CourseType[] = [];
+        const duplicateCourses: CourseError[] = [];
         for (let i = 0; i < semesters.length; i++) {
           for (let j = i + 1; j < semesters.length; j++) {
             semesters[i].courses.forEach((c) => {
@@ -265,8 +270,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   errors.push(
                     `Duplicate Course found: ${c.subject}-${c.number}`
                   );
-                  duplicateCourses.push(c);
-                  duplicateCourses.push(dup);
+                  duplicateCourses.push({
+                    id: c.idCourse,
+                    sem: semesters[i].semesterNumber
+                  });
+                  duplicateCourses.push({
+                    id: dup.idCourse,
+                    sem: semesters[j].semesterNumber
+                  });
                 }
               }
             });
@@ -274,16 +285,22 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         }
         setWarningDupCourses(duplicateCourses);
 
-        const fallSpringCourses: CourseType[] = [];
+        const fallSpringCourses: CourseError[] = [];
         semesters.forEach((sem) => {
           sem.courses.forEach((c) => {
             if (c.semesters === "FA" && sem.season !== season.Fall) {
-              fallSpringCourses.push(c);
+              fallSpringCourses.push({
+                id: c.idCourse,
+                sem: sem.semesterNumber
+              });
               errors.push(
                 `${c.subject}-${c.number} is only offered in the fall`
               );
             } else if (c.semesters === "SP" && sem.season !== season.Spring) {
-              fallSpringCourses.push(c);
+              fallSpringCourses.push({
+                id: c.idCourse,
+                sem: sem.semesterNumber
+              });
               errors.push(
                 `${c.subject}-${c.number} is only offered in the spring`
               );
@@ -292,7 +309,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         });
         setWarningFallvsSpringCourses(fallSpringCourses);
 
-        const preReqCourses: CourseType[] = [];
+        const preReqCourses: CourseError[] = [];
         let takenCourses: string[] = userMajor()?.completed_courses ?? [];
         const sp = new StringProcessing();
         semesters.sort(sortSemester).forEach((sem) => {
@@ -304,7 +321,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               concurrent
             );
             if (!val.returnValue) {
-              preReqCourses.push(c);
+              preReqCourses.push({ id: c.idCourse, sem: sem.semesterNumber });
               errors.push(
                 `${c.subject}-${c.number} requires: ${val.failedString}`
               );

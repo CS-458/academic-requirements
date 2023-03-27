@@ -55,11 +55,15 @@ export const Semester: FC<SemesterProps> = function Semester({
           credits={course.credits}
           preReq={course.preReq}
           dragSource={`Semester ${semesterNumber}`}
-          warningYellowColor={warningDuplicateCourses.find((x) => x === course)}
-          warningOrangeColor={warningFallvsSpringCourses.find(
-            (x) => x === course
+          warningYellowColor={warningDuplicateCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
           )}
-          warningRedColor={warningPrerequisiteCourses.find((x) => x === course)}
+          warningOrangeColor={warningFallvsSpringCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
+          )}
+          warningRedColor={warningPrerequisiteCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
+          )}
           repeatableForCred={course.repeatableForCred}
         />
       ))}

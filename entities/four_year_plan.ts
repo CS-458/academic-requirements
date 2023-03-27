@@ -124,7 +124,7 @@ export interface SemesterProps {
   SemesterCredits: number; // total credits of all courses in semester
   Warning: warning | null; // credit warning (low or high)
   warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
-  warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
+  warningFallvsSpringCourses: Array<{ id: number; sem: number }>;
   warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
   year: number; // year number 1,2,3,4,etc.
   season: season; // Season the semester is (Fall, Winter, Spring, Summer)

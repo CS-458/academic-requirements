@@ -87,7 +87,7 @@ export default function SemesterList({
 }: {
   semesters: SemesterType[];
   warningPrerequisiteCourses: CourseType[];
-  warningFallvsSpringCourses: CourseType[];
+  warningFallvsSpringCourses: Array<{ id: number; sem: number }>;
   warningDuplicateCourses: CourseType[];
   PassedCourseList: CourseType[];
   setSemesters: (s: SemesterType[]) => void;

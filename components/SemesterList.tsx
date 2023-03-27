@@ -133,9 +133,8 @@ export default function SemesterList({
           0
         );
         source.Warning = getWarning(source.SemesterCredits);
-      } else {
-        checkRequirements(course, coursesInMultipleCategories);
       }
+      checkRequirements(course, coursesInMultipleCategories);
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
       target.SemesterCredits = target.courses.reduce(
@@ -152,7 +151,7 @@ export default function SemesterList({
         newSemester: tmpSemesters.findIndex(
           (s) => s.semesterNumber === target.semesterNumber
         ),
-        draggedOut: false,
+        draggedOut: true,
         newCheck: true
       });
     },

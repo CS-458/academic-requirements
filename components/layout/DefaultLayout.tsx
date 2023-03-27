@@ -55,7 +55,7 @@ export default function DefaultLayout(props: {
     >
       <UserLogin.Provider value={user}>
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, position: "relative" }}>
             <Toolbar>
               <MenuDrawer />
               <LogoLink />

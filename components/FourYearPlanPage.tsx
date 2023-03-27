@@ -4,10 +4,9 @@ import { Semester } from "./Semester";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Alert as MuiAlert, AlertProps } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
@@ -699,12 +698,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div>
         <div className="drag-drop">
-        <ActionBar
+          <ActionBar
               scheduleData={info}
               setAlertData={throwError}
-            />
+           />
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar
+        data-testid = "snackbar"
         open={visibility}
         autoHideDuration={6000}
         onClose={handleClose}

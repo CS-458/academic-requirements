@@ -49,7 +49,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
               role="tabpanel"
             >
               <div
-                class="MuiBox-root css-hpgf8j"
+                class="MuiBox-root css-9sn6pt"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
@@ -57,7 +57,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                   Major
                 </p>
                 <hr
-                  class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                  class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                 />
                 <div>
                   <div
@@ -116,7 +116,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                     Gen Eds
                   </p>
                   <hr
-                    class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                    class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
                     class="RequirementText"
@@ -232,7 +232,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
               role="tabpanel"
             >
               <div
-                class="MuiBox-root css-hpgf8j"
+                class="MuiBox-root css-9sn6pt"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
@@ -240,7 +240,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                   Major
                 </p>
                 <hr
-                  class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                  class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                 />
                 <div>
                   <div
@@ -299,7 +299,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                     Gen Eds
                   </p>
                   <hr
-                    class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                    class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
                     class="RequirementText"
@@ -409,7 +409,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
               role="tabpanel"
             >
               <div
-                class="MuiBox-root css-hpgf8j"
+                class="MuiBox-root css-9sn6pt"
               >
                 <p
                   class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
@@ -417,7 +417,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                   Major
                 </p>
                 <hr
-                  class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                  class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                 />
                 <div>
                   <div
@@ -476,7 +476,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                     Gen Eds
                   </p>
                   <hr
-                    class="MuiDivider-root MuiDivider-fullWidth css-a5zps3-MuiDivider-root"
+                    class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
                     class="RequirementText"

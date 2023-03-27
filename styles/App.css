@@ -34,7 +34,7 @@ body {
   padding: 5px;
   border-color: black;
   border-width: 2px;
-  background-color: #004990;
+  /* background-color: #004990; */
 }
 
 .drag-drop {

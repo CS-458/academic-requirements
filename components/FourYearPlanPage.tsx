@@ -71,9 +71,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     };
 
     //  A list of courses that should have a warning color on them
-    const [warningPrereqCourses, setWarningPrereqCourses] = useState<
-      CourseError[]
-    >([]);
+    const [warningPrereq, setWarningPrereq] = useState<CourseError[]>([]);
     const [warningFallvsSpringCourses, setWarningFallvsSpringCourses] =
       useState<CourseError[]>([]);
     const [warningDupCourses, setWarningDupCourses] = useState<CourseError[]>(
@@ -355,7 +353,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           });
           takenCourses = takenCourses.concat(concurrent);
         });
-        setWarningPrereqCourses(preReqCourses);
+        setWarningPrereq(preReqCourses);
 
         const tempSemesters = deepCopy(semesters);
         tempSemesters.forEach((sem) => {
@@ -623,7 +621,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             </Snackbar>
             <SemesterList
               semesters={semesters}
-              warningPrerequisiteCourses={warningPrereqCourses}
+              warningPrerequisiteCourses={warningPrereq}
               warningFallvsSpringCourses={warningFallvsSpringCourses}
               warningDuplicateCourses={warningDupCourses}
               PassedCourseList={PassedCourseList}

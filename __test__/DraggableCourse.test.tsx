@@ -1,9 +1,8 @@
 import "@testing-library/jest-dom";
-import { jest } from "@jest/globals";
 import { screen } from "@testing-library/react";
 import { Course } from "../components/DraggableCourse";
-import { CourseType, DragCourseType } from "../entities/four_year_plan";
-import { setupUser, render } from "./util";
+import { DragCourseType } from "../entities/four_year_plan";
+import { render } from "./util";
 import { ItemTypes } from "../entities/Constants";
 
 const mockCourse: DragCourseType = {

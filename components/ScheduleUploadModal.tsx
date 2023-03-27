@@ -62,31 +62,25 @@ export default function FormDialog(props: {
 
   // function that Uploads the Schedule to the Database
   async function exportSchedule(): Promise<void> {
+    let name = scheduleName;
     // if the name space is empty/null, or only contains white space
     if (scheduleName === null || scheduleName.replace(/\s/g, "").length === 0) {
-      throwAlert("Schedule saved as " + getDateTime().toString(), "success");
-      setScheduleName(getDateTime());
-      try {
-        await uploadSchedule(token, getDateTime(), props.scheduleData);
-      } catch (err: any) {
-        if (err.msg === "User is not logged in") {
-          throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
-        }
-      }
-    } else {
-      // try to upload the schedule
-      try {
-        await uploadSchedule(token, scheduleName, props.scheduleData);
-      } catch (err: any) {
-        // if the not logged in error is caught throw it
-        if (err.message === "User is not logged in") {
-          throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
-          return;
-        }
-      }
-      throwAlert("Successfully Saved Schedule!", "success");
-      handleClose();
+      name = getDateTime();
+
+      setScheduleName(name);
     }
+    // try to upload the schedule
+    try {
+      await uploadSchedule(token, name, props.scheduleData);
+    } catch (err: any) {
+      // if the not logged in error is caught throw it
+      if (err.message === "User is not logged in") {
+        throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
+        return;
+      }
+    }
+    throwAlert("Successfully Saved Schedule as " + name + "!", "success");
+    handleClose();
   }
 
   // this is needed because so we don"t get an error for calling a function that

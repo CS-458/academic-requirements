@@ -7,6 +7,27 @@ import ActionBar from "../components/ActionBar";
 import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "./util";
 import { userMajor, UserLogin, User } from "../services/user";
 
+jest.useFakeTimers({
+  doNotFake: [
+    "hrtime",
+    "nextTick",
+    "performance",
+    "queueMicrotask",
+    "requestAnimationFrame",
+    "cancelAnimationFrame",
+    "requestIdleCallback",
+    "cancelIdleCallback",
+    "setImmediate",
+    "clearImmediate",
+    "setInterval",
+    "clearInterval",
+    "setTimeout",
+    "clearTimeout"
+  ],
+  advanceTimers: false,
+  now: new Date("2020-01-01")
+});
+
 //  MOCKED JSON Data for the Courses
 const infoMocked = {
   Major: userMajor()?.major.name,
@@ -55,7 +76,7 @@ test("Saving A Schedule with out being signed in", async () => {
   expect(alertMocked).toBeCalledWith("User Not Logged in! Please Log in to save your Schedule.", "warning");
 });
 
-test("Saving A Schedule Successfully", async () => {
+test("Saving A Schedule Successfully & No Name auto saves as Date/Time", async () => {
   const alertMocked = jest.fn();
   await setupMockUserDB();
   const userLogin: User = {
@@ -86,16 +107,11 @@ test("Saving A Schedule Successfully", async () => {
   await waitFor(async () => {
     expect(alertMocked).toBeCalled();
   });
-  expect(alertMocked).toBeCalledWith("Successfully Saved Schedule!", "success");
+  expect(alertMocked).toBeCalledWith("Successfully Saved Schedule as " + getDateTime() + "!", "success");
 });
 
-test("No Schedule Name error", async () => {
+test("Saving A Schedule Successfully with a custom name", async () => {
   const alertMocked = jest.fn();
-
-  jest.useFakeTimers({
-    advanceTimers: true
-  }).setSystemTime(new Date("2020-01-01"));
-
   await setupMockUserDB();
   const userLogin: User = {
     info: {
@@ -116,15 +132,18 @@ test("No Schedule Name error", async () => {
     </UserLogin.Provider>);
 
   const saveButton = screen.getByTestId("saveButton");
+  const name = "Custom";
 
   expect(index.baseElement).toBeInTheDocument();
   await user.click(saveButton);
   expect(index.getByText("Save Schedule")).toBeInTheDocument();
-
   const textEntry = screen.getByLabelText("Schedule Name");
   await user.clear(textEntry);
+  await user.type(textEntry, name);
   await user.click(index.getByText("Save"));
+
   await waitFor(async () => {
-    expect(alertMocked).toBeCalledWith("Schedule saved as " + getDateTime(), "success");
+    expect(alertMocked).toBeCalled();
   });
+  expect(alertMocked).toBeCalledWith("Successfully Saved Schedule as " + name + "!", "success");
 });

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import popupStyles from "./ImportPopup.module.css";
 import PropTypes from "prop-types";
-import ErrorPopup from "../ErrorPopup";
 
 const ImportPopup = (props: {
   onClose: (value: boolean) => void;
@@ -113,12 +112,6 @@ const ImportPopup = (props: {
 
   return (
     <div data-testid="errorPagePopup">
-      <ErrorPopup
-        onClose={popupCloseHandler}
-        show={visibility}
-        title="Error"
-        error={error}
-      />
       <div
         style={{
           visibility: show ? "visible" : "hidden",

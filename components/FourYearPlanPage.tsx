@@ -9,9 +9,12 @@ import { Requirement } from "./Requirement";
 import { Snackbar, Alert as MuiAlert, AlertProps } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
+import ScheduleUpload from "./ScheduleUploadModal";
+import ActionBar from "./ActionBar";
 import CourseFiltering from "./CourseFiltering";
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
@@ -542,6 +545,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return SemesterCredits;
     };
 
+    /*
+    ***
+        This is commented out because it is not needed currently
+        however, we may want to use it in the futur ***
+    ***
     //  Checks for a warning in semester and then throws a warning popup
     const checkWarnings = (): void => {
       const semestersWithWarnings: string[] = [];
@@ -561,19 +569,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         }
       }
     };
-
-    //  Creates the File and downloads it to user PC
-    function exportSchedule(): void {
-      checkWarnings();
-
-      const fileData = JSON.stringify(info);
-      const blob = new Blob([fileData], { type: "json" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.download = "schedule.json";
-      link.href = url;
-      link.click();
-    }
+    */
 
     // this prevents the requirements from resetting on a page rerender (leaving page and coming back)
     const [ran, setRan] = useState<boolean>(false);
@@ -742,6 +738,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div>
         <div className="drag-drop">
+          <ActionBar
+              scheduleData={info}
+              setAlertData={throwError}
+           />
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar
         Data-testId = "snackbar"
@@ -783,9 +783,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 />
               )
             )}
-            <button data-testid="ExportButton" onClick={exportSchedule}>
-              Export Schedule
-            </button>
           </div>
           <div
             style={{ overflow: "hidden", clear: "both" }}

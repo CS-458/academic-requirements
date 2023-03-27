@@ -135,12 +135,12 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
         {open ? <Divider /> : undefined}
         <TabPanel value={value} index={0} key={0}>
           <Typography sx={{ color: "primary.main" }}>Major</Typography>
-          <Divider sx={{ color: "primary.main" }}/>
+          <Divider sx={{ color: "primary.main", mb: "10px" }}/>
         { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<div key={index}>
           { name === "Global Perspective (GLP)"
             ? <>
             <Typography sx={{ color: "primary.main" }}>General Education</Typography>
-            <Divider sx={{ color: "primary.main" }}/>
+            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
             </> : <></>
           }
           <Requirement
@@ -153,7 +153,7 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
           { shortName === "GLP"
             ? <>
             <Typography sx={{ color: "primary.main" }}>Gen Eds</Typography>
-            <Divider sx={{ color: "primary.main" }}/>
+            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
             </> : <></>
           }
           <Requirement

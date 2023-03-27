@@ -7,7 +7,7 @@ export default function SearchableDropdown<T>(props: {
   label: string | null;
   disabled?: boolean;
   freeSolo?: boolean;
-  onInputChange?: (value?: T) => void;
+  onInputChange?: (value: string) => void;
   onSelectOption: (option?: T) => void;
   sx?: SxProps;
 }): JSX.Element {
@@ -38,7 +38,9 @@ export default function SearchableDropdown<T>(props: {
         }
       })}
       onChange={(_a, value) => {
-        props.onSelectOption(value?.value);
+        if (typeof value !== "string") {
+          props.onSelectOption(value?.value);
+        }
       }}
       sx={{
         "& .MuiAutocomplete-inputRoot": { paddingRight: "10px!important" },

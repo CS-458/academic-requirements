@@ -142,9 +142,9 @@ export interface UserSavedSchedule {
   name: string,
   timestamp: number,
   scheduleData: {
-    Major: string,
-    Concentration: string,
-    "Completed Courses": string[],
+    Major: string | undefined,
+    Concentration: string | undefined,
+    "Completed Courses": string[] | undefined,
     ClassPlan: {
       Semester1: string[],
       Semester2: string[],

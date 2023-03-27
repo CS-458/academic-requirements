@@ -40,7 +40,7 @@ body {
 .drag-drop {
   height: 100%;
   display: grid;
-  grid-template-columns: 63% 25% 10%;
+  grid-template-columns: 1fr 58% 25% 10%;
   column-gap: 10px;
 }
 

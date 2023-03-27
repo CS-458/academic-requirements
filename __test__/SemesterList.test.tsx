@@ -39,7 +39,7 @@ test("Render Semester List", async () => {
 
   const courseList = screen.getByTestId("courseListDropTarget");
 
-  await user.selectAutocomplete(/Select Course/i, /RESA/i);
+  await user.selectAutocomplete(/Course Category/i, /RESA/i);
   await user.drag(within(courseList).getByText(/ANTH-230/i), fallSemester);
   const course = within(fallSemester).getByText(/ANTH-230/i);
   expect(course).toBeInTheDocument();

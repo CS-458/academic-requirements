@@ -18,9 +18,7 @@ import {
   season,
   sortSemester
 } from "../entities/four_year_plan";
-import {
-  getSemesterCoursesNames
-} from "../entities/prereqHelperFunctions";
+import { getSemesterCoursesNames } from "../entities/prereqHelperFunctions";
 import {
   processRequirementLists,
   createMultipleCategoryList
@@ -252,7 +250,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
           if (courseIndex !== -1) {
             const course = tempSemesters[semesterIndex]?.courses[courseIndex];
-            checkRequirements(course, coursesInMultipleCategories);
+            removeFromRequirements(course);
             setUpdateWarning({
               course,
               oldSemester: semesterIndex,
@@ -650,10 +648,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar
-            scheduleData={info}
-            setAlertData={throwError}
-          />
+          <ActionBar scheduleData={info} setAlertData={throwError} />
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}
@@ -661,7 +656,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+              <Alert
+                onClose={handleClose}
+                severity={severity}
+                sx={{ width: "100%" }}
+              >
                 {`${error}`}
               </Alert>
             </Snackbar>
@@ -678,140 +677,143 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               reqList={reqList ?? []}
               reqGenList={reqGenList ?? []}
             />
-            <div
-              style={{ overflow: "hidden", clear: "both" }}
-              className="class-dropdown generic"
-            >
-              <CourseFiltering
-                courseData={PassedCourseList}
-                onFiltered={(courses: CourseType[]) => { setCoursesInCategory(courses); }}
-              />
-              <CourseList
-                accept={[ItemTypes.COURSE]}
-                onDrop={(item) => handleReturnDrop(item)}
-                courses={coursesInCategory}
-                key={0}
-              />
-            </div >
-            <div className="right-information-box generic">
-              <div className="right-information-box-header">
-                {informationTypes.length === 1 && (
-                  <p
-                    style={{
-                      textAlign: "center",
-                      padding: "0px",
-                      fontSize: "1.1em"
-                    }}
-                  >
-                    {displayedInformationType}
+          </div>
+          <div
+            style={{ overflow: "hidden", clear: "both" }}
+            className="class-dropdown generic"
+          >
+            <CourseFiltering
+              courseData={PassedCourseList}
+              onFiltered={(courses: CourseType[]) => {
+                setCoursesInCategory(courses);
+              }}
+            />
+            <CourseList
+              accept={[ItemTypes.COURSE]}
+              onDrop={(item) => handleReturnDrop(item)}
+              courses={coursesInCategory}
+              key={0}
+            />
+          </div>
+          <div className="right-information-box generic">
+            <div className="right-information-box-header">
+              {informationTypes.length === 1 && (
+                <p
+                  style={{
+                    textAlign: "center",
+                    padding: "0px",
+                    fontSize: "1.1em"
+                  }}
+                >
+                  {displayedInformationType}
+                </p>
+              )}
+              {informationTypes.length > 1 && (
+                <SearchableDropdown
+                  options={informationTypes}
+                  label={null}
+                  onSelectOption={setDisplayedInformationType}
+                />
+              )}
+            </div>
+            <div className="right-information-box-content">
+              {displayedInformationType === "Requirements (Four Year Plan)" && (
+                <>
+                  <p className="right-information-box-description">
+                    The four year plan for your concentration recommends taking
+                    courses in the following categories in the respective
+                    semesters.
                   </p>
-                )}
-                {informationTypes.length > 1 && (
-                  <SearchableDropdown
-                    options={informationTypes}
-                    label={null}
-                    onSelectOption={setDisplayedInformationType}
-                  />
-                )}
-              </div>
-              <div className="right-information-box-content">
-                {displayedInformationType === "Requirements (Four Year Plan)" && (
-                  <>
-                    <p className="right-information-box-description">
-                      The four year plan for your concentration recommends taking
-                      courses in the following categories in the respective
-                      semesters.
-                    </p>
-                    {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
-                      if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
-                        return (
-                          <div style={{ margin: "5px" }} key={index}>
-                            <p>{key}</p>
-                            <p
-                              style={{ marginLeft: "10px", marginBottom: "25px" }}
-                            >
-                              {fourYearPlan?.ClassPlan[
-                                key
-                              ].Requirements.toString()}
-                            </p>
-                          </div>
-                        );
-                      }
-                    })}
-                  </>
-                )}
-                {displayedInformationType === "Completed Courses" && (
-                  <>
-                    <p className="right-information-box-description">
-                      These are courses you marked as complete.
-                    </p>
-                    {userMajor()?.completed_courses?.map((completedCourse) => {
+                  {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
+                    if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
                       return (
-                        <div className="info-box-completed-course">
-                          <a
-                            href={
-                              "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
-                              completedCourse.split("-")[0] +
-                              "&filter%5B29%5D=" +
-                              completedCourse.split("-")[1] +
-                              "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                            }
-                            target="_blank"
+                        <div style={{ margin: "5px" }} key={index}>
+                          <p>{key}</p>
+                          <p
+                            style={{ marginLeft: "10px", marginBottom: "25px" }}
                           >
-                            {completedCourse}
-                          </a>
+                            {fourYearPlan?.ClassPlan[
+                              key
+                            ].Requirements.toString()}
+                          </p>
                         </div>
                       );
-                    })}
-                  </>
-                )}
-                {displayedInformationType === "Requirements (Calculated)" && (
-                  <>
-                    <p className="right-information-box-description">
-                      Select a category and drag a course onto a semester to begin
-                      planning.
-                    </p>
-                    {requirementsDisplay?.map(
-                      (
-                        {
-                          name,
-                          courseCount,
-                          courseReqs,
-                          creditCount,
-                          idCategory,
-                          parentCategory,
-                          percentage,
-                          inheritedCredits,
-                          coursesTaken,
-                          courseCountTaken,
-                          creditCountTaken
-                        },
-                        index
-                      ) => (
-                        <Requirement
-                          courseCount={courseCount}
-                          courseReqs={courseReqs}
-                          creditCount={creditCount}
-                          idCategory={idCategory}
-                          name={name}
-                          parentCategory={parentCategory}
-                          percentage={percentage}
-                          inheritedCredits={inheritedCredits}
-                          coursesTaken={coursesTaken}
-                          courseCountTaken={courseCountTaken}
-                          creditCountTaken={creditCountTaken}
-                          key={index}
-                        />
-                      )
-                    )}
-                  </>
-                )}
-              </div>
+                    }
+                  })}
+                </>
+              )}
+              {displayedInformationType === "Completed Courses" && (
+                <>
+                  <p className="right-information-box-description">
+                    These are courses you marked as complete.
+                  </p>
+                  {userMajor()?.completed_courses?.map((completedCourse) => {
+                    return (
+                      <div className="info-box-completed-course">
+                        <a
+                          href={
+                            "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
+                            completedCourse.split("-")[0] +
+                            "&filter%5B29%5D=" +
+                            completedCourse.split("-")[1] +
+                            "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                          }
+                          target="_blank"
+                        >
+                          {completedCourse}
+                        </a>
+                      </div>
+                    );
+                  })}
+                </>
+              )}
+              {displayedInformationType === "Requirements (Calculated)" && (
+                <>
+                  <p className="right-information-box-description">
+                    Select a category and drag a course onto a semester to begin
+                    planning.
+                  </p>
+                  {requirementsDisplay?.map(
+                    (
+                      {
+                        name,
+                        courseCount,
+                        courseReqs,
+                        creditCount,
+                        idCategory,
+                        parentCategory,
+                        percentage,
+                        inheritedCredits,
+                        coursesTaken,
+                        courseCountTaken,
+                        creditCountTaken
+                      },
+                      index
+                    ) => (
+                      <Requirement
+                        courseCount={courseCount}
+                        courseReqs={courseReqs}
+                        creditCount={creditCount}
+                        idCategory={idCategory}
+                        name={name}
+                        parentCategory={parentCategory}
+                        percentage={percentage}
+                        inheritedCredits={inheritedCredits}
+                        coursesTaken={coursesTaken}
+                        courseCountTaken={courseCountTaken}
+                        creditCountTaken={creditCountTaken}
+                        key={index}
+                      />
+                    )
+                  )}
+                </>
+              )}
             </div>
-          </div >
-        </div >
+          </div>
+        </div>
       </div>
     );
-  });
+  }
+);
 
 export { FourYearPlanPage as default };

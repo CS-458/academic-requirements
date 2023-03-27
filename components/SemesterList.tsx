@@ -129,8 +129,9 @@ export default function SemesterList({
         source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
         if (source == null) throw new Error("Source semester not found");
         source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
+      } else {
+        checkRequirements(course, coursesInMultipleCategories);
       }
-      checkRequirements(course, coursesInMultipleCategories);
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
       setSemesters(tmpSemesters);

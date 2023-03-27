@@ -6,10 +6,9 @@ import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
 import SearchableDropdown from "./SearchableDropdown";
 import { Requirement } from "./Requirement";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Alert as MuiAlert, AlertProps } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
@@ -745,6 +744,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         <div className="drag-drop">
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar
+        Data-testId = "snackbar"
         open={visibility}
         autoHideDuration={6000}
         onClose={handleClose}
@@ -779,6 +779,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   warningDuplicateCourses={warningDuplicateCourses}
                   year={year}
                   season={season}
+                  data-testid={`semester-${index}`}
                 />
               )
             )}

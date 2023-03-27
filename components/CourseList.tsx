@@ -63,6 +63,7 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
             warningOrangeColor={undefined}
             warningRedColor={undefined}
             repeatableForCred={repeatableForCred}
+            data-testid="course"
           />
         )
       )}

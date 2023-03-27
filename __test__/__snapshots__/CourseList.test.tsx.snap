@@ -7,7 +7,7 @@ exports[`CourseList Renders 1`] = `
       data-testid="test-root-element"
     >
       <div
-        style="height: 30rem; width: 100%; margin-right: .5rem; margin-bottom: .5rem; color: white; padding: 1rem; text-align: center; font-size: 1rem; line-height: normal; float: left; background: rgb(0, 73, 144); border-radius: .5rem; overflow: auto; background-color: rgb(0, 73, 144);"
+        class="MuiBox-root css-1w0cc5a"
       >
         <div
           class="CourseText"
@@ -110,7 +110,7 @@ exports[`CourseList onDrop is called on drop 1`] = `
       data-testid="test-root-element"
     >
       <div
-        style="height: 30rem; width: 100%; margin-right: .5rem; margin-bottom: .5rem; color: white; padding: 1rem; text-align: center; font-size: 1rem; line-height: normal; float: left; background: rgb(0, 73, 144); border-radius: .5rem; overflow: auto; background-color: rgb(0, 73, 144);"
+        class="MuiBox-root css-1w0cc5a"
       >
         <div
           class="CourseText"

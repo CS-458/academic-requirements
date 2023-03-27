@@ -777,7 +777,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   warningDuplicateCourses={warningDuplicateCourses}
                   year={year}
                   season={season}
-                  data-testid={`semester-${index}`}
                 />
               )
             )}

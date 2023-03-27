@@ -99,17 +99,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}")
     );
     // The list of requirements and their completion for display
-    const [requirementsDisplay, setRequirementsDisplay] = useState<
-      RequirementComponentType[]
-    >([]);
+    type Reqs = RequirementComponentType[];
+    const [requirementsDisplay, setRequirementsDisplay] = useState<Reqs>([]);
 
     // Requirements that are manipulated
-    const [reqList, setReqList] = useState<
-      RequirementComponentType[] | null | undefined
-    >(requirements);
-    const [reqGenList, setReqGenList] = useState<
-      RequirementComponentType[] | null | undefined
-    >(requirementsGen);
+    const [reqList, setReqList] = useState<Reqs | null | undefined>(
+      requirements
+    );
+    const [reqGenList, setReqGenList] = useState<Reqs | null | undefined>(
+      requirementsGen
+    );
 
     //  A list of all courses that are in more than one categories, for use with requirements
     const [coursesInMultipleCategories, setCoursesInMultipleCategories] =
@@ -126,9 +125,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [informationTypes, setInformationTypes] = useState<string[]>([
       defaultInformationType
     ]);
-    const [displayedInformationType, setDisplayedInformationType] = useState<
-      string | undefined
-    >(defaultInformationType);
+    type DispInfo = string | undefined;
+    const [displayedInformationType, setDisplayedInformationType] = useState<DispInfo>(defaultInformationType);
 
     // create 8 semesters for four years of type Fall and Spring
     // used for the empty schedule or load fourYearPlan

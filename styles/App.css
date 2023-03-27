@@ -11,13 +11,8 @@
   text-align: center;
 }
 
-.completedCourses {
-  height: 300px;
-}
-
-.courseList {
-  display: grid;
-  border-radius: 15px;
+.css-ak1ss8 {
+  min-height: 40px;
 }
 
 button {
@@ -29,32 +24,8 @@ button {
   border-radius: 15px;
 }
 
-.addCourseButton {
-  margin-top: 40px;
-  margin-bottom: -40px;
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.grid-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 60% auto auto;
-  column-gap: 1px;
-  row-gap: 50px;
-  background-color: #004990;
-}
-
-.semesters-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  column-gap: 1px;
-  row-gap: 100px;
-  overflow: auto;
-  background-color: #004990;
 }
 
 .class-dropdown {
@@ -69,178 +40,33 @@ body {
 .drag-drop {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 50% 25% 5fr;
+  grid-template-columns: 1fr 59% 25% 10%;
   column-gap: 10px;
 }
 
-.drag-drop > *:not(:first-child) {
-  padding: 5%;
-}
-
-.schedule {
-  height: 100%;
-  width: 100%;
-  column-gap: 1px;
-  row-gap: 1px;
-}
-
-.page {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
-  column-gap: 1px;
-  text-align: center;
-}
-.right-information-box {
-  background-color: gainsboro;
-  text-align: left;
-  width: 95%;
-  border-radius: 2%;
-  padding-top: 0.3rem;
-}
-.right-information-box-content {
-  padding-top: 1rem;
-}
-.right-information-box-description {
-  font-size: 0.8em;
-  margin: 5px;
-  text-align: center;
-  overflow: auto;
-  border-radius: 2%;
-}
-
-.course-box-header > .thinContainer {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  float: none;
-  clear: left;
-  width: unset;
-  padding: 0px 25px;
-}
-
-.course-box-header > .thinContainer > .thinLabel {
-  width: unset;
-  padding: 0px;
-  margin: 15px;
-  align-self: center;
-}
-
-/*
-These styles override the default SearchableDropdown styles.
-It makes only the information box on the second screen look good. 
-*/
-.right-information-box-header > .thinContainer {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  float: none;
-  clear: left;
-  width: unset;
-  padding: 0px 25px;
-}
-.right-information-box-header > .thinContainer > .thinLabel {
-  width: unset;
-  padding: 0px;
-  margin: 15px;
-  align-self: center;
-}
-.info-box-completed-course {
-  font-size: 15px;
-  text-align: center;
-  border: 2px solid #004990;
-  border-radius: 5px;
-  padding: 0.5em;
-  margin: 5px;
-  color: black;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: auto auto 33.33%;
-  grid-template-rows: 50% 45%;
-  column-gap: 15px;
-  row-gap: 0px;
-  justify-items: center;
-}
-/* boxes where the import schedule, generate schedule and course subject and number buttons/ elements are held.*/
-.input-grid-item {
-  text-align: center;
-  height: 100%;
-}
-/* both the major and concentration boxes, this is the backgound box*/
-.input-grid-dropdown {
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-}
-/* the completed courses box on the first page, on the bottom right */
-.input-grid-item-courses {
-  height: 150%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #004990;
-  border-color: black;
-  color: white;
-  border-radius: 15px;
-  width: 100%;
-}
 /* Text inside the course dropdown menu*/
 .courseDropdowns {
   text-align: center;
   width: 100%;
   float: center;
 }
+
 /* The words inside of the requirements box in the schedule generator*/
 .RequirementText {
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 0;
   display: grid;
   grid-template-columns: 75% 25%;
   text-align: center;
+  font-size: 11pt;
+  padding-left: 0;
 }
+
 /* the percent sign in the requirements category*/
 .percentage {
   text-align: right;
 }
 
-/* an attempt to reconfigure and fix the semester boxes, doesn't work*/
-.semester {
-  height: 11rem;
-  width: 17%;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1rem;
-  line-height: normal;
-  float: left;
-  border-radius: 0.5rem;
-}
-.CourseList {
-  height: 400px;
-  overflow-y: auto;
-  background-color: #004990;
-}
-.RequirementText {
-  width: 100%;
-  padding-bottom: 15px;
-  display: grid;
-  grid-template-columns: 75% 25%;
-}
-.percentage {
-  text-align: right;
-}
-
-.RequirementText {
-  width: 100%;
-  padding-bottom: 15px;
-  display: grid;
-  grid-template-columns: 75% 25%;
-}
-.percentage {
-  text-align: right;
+.requirementName {
+  text-align: left;
 }

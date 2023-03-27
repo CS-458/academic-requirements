@@ -27,7 +27,7 @@ export function processRequirementLists(
           tempGen[i].inheritedCredits = x.creditCount;
           if (tempGen[i].courseReqs === null) {
             tempGen[i].courseReqs = x.courseReqs;
-          } else if (tempGen[i].courseReqs.includes(x.courseReqs) !== undefined) {
+          } else if (tempGen[i].courseReqs?.includes(x.courseReqs ?? "") !== undefined) {
             tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
           }
           tempGen[i].inheritedCredits = x.creditCount;

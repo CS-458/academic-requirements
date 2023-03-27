@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 import { jest } from "@jest/globals";
-import { render } from "./util";
-import { CourseList } from "../components/CourseList";
-import { CourseType, DragCourseType } from "../entities/four_year_plan";
-import { ItemTypes } from "../entities/Constants";
+import { render } from "../util";
+import { CourseList } from "../../components/CourseList";
+import { CourseType, DragCourseType } from "../../entities/four_year_plan";
+import { ItemTypes } from "../../entities/Constants";
 import { fireEvent, screen } from "@testing-library/react";
 
 const testCourseData: CourseType[] = [

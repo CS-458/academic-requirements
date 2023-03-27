@@ -1,11 +1,13 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
+import {
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  IconButton
+} from "@mui/material";
+import { Menu } from "@mui/icons-material";
 import Link from "next/link";
 type Anchor = "left";
 
@@ -20,14 +22,6 @@ export default function MenuDrawer(): any {
   const toggleDrawer = (anchor: Anchor, open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent
   ) => {
-    if (
-      event.type === "keydown" &&
-      ((event as React.KeyboardEvent).key === "Tab" ||
-        (event as React.KeyboardEvent).key === "Shift")
-    ) {
-      return;
-    }
-
     setState({ ...state, [anchor]: open });
   };
 
@@ -40,7 +34,7 @@ export default function MenuDrawer(): any {
       <List>
         <ListItem key={"Button Text"} disablePadding>
         <Link href="/">
-          <ListItemButton>
+          <ListItemButton data-testid="inputPageButton">
             Input Page
           </ListItemButton>
         </Link>
@@ -70,15 +64,17 @@ export default function MenuDrawer(): any {
   return (
     <div>
       <React.Fragment key={"left"}>
-      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer("left", true)}>
-            <MenuIcon/>
+        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer("left", true)} data-testid="menu">
+          <Menu />
         </IconButton>
         <Drawer
           anchor={"left"}
           open={state.left}
           onClose={toggleDrawer("left", false)}
         >
-            {list("left")}
+          <br/>
+          <br/>
+          {list("left")}
         </Drawer>
       </React.Fragment>
     </div>

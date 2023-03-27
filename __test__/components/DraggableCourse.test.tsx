@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
-import { Course } from "../components/DraggableCourse";
-import { DragCourseType } from "../entities/four_year_plan";
-import { render } from "./util";
-import { ItemTypes } from "../entities/Constants";
+import { Course } from "../../components/DraggableCourse";
+import { DragCourseType } from "../../entities/four_year_plan";
+import { render } from "../util";
+import { ItemTypes } from "../../entities/Constants";
 
 const mockCourse: DragCourseType = {
   subject: "TEST-SUB-1",

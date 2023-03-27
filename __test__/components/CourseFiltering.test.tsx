@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 import { jest } from "@jest/globals";
 import { screen } from "@testing-library/react";
-import CourseFiltering from "../components/CourseFiltering";
-import { CourseType } from "../entities/four_year_plan";
-import { setupUser, render } from "./util";
+import CourseFiltering from "../../components/CourseFiltering";
+import { CourseType } from "../../entities/four_year_plan";
+import { setupUser, render } from "../util";
 
 const testCourseData: CourseType[] = [
   {

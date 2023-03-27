@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Render of the account page 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div>
+        <h1>
+          The Account Page
+        </h1>
+      </div>
+    </div>
+  </div>
+</body>
+`;

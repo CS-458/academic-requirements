@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 import { fireEvent, screen } from "@testing-library/react";
-import { CourseType } from "../entities/four_year_plan";
-import { setupUser, render } from "./util";
-import { FourYearPlanPage } from "../components/FourYearPlanPage";
+import { CourseType } from "../../entities/four_year_plan";
+import { setupUser, render } from "../util";
+import { FourYearPlanPage } from "../../components/FourYearPlanPage";
 
 const mockCourses: CourseType[] = [
   {

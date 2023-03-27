@@ -219,8 +219,8 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rb:"
-                        id=":rb:-label"
+                        for=":r7:"
+                        id=":r7:-label"
                       >
                         Course Category
                       </label>
@@ -234,7 +234,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rb:"
+                          id=":r7:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -310,85 +310,61 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
             />
           </div>
           <div
-            class="right-information-box"
+            class="MuiBox-root css-k008qs"
           >
             <div
-              class="right-information-box-header"
+              class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
             >
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
               >
                 <div
-                  class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                  class="css-15lei78"
+                />
+                <div
+                  class="css-ak1ss8"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="openDrawer"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="ChevronLeftIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      />
+                    </svg>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <div
+                  aria-labelledby="simple-tab-0"
+                  id="simple-tabpanel-0"
+                  role="tabpanel"
                 >
                   <div
-                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                    class="MuiBox-root css-9sn6pt"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      aria-invalid="false"
-                      autocapitalize="none"
-                      autocomplete="off"
-                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":rd:"
-                      role="combobox"
-                      spellcheck="false"
-                      type="text"
-                      value=""
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                    >
+                      Major
+                    </p>
+                    <hr
+                      class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                     />
-                    <div
-                      class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
-                    >
-                      <button
-                        aria-label="Open"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
-                        tabindex="-1"
-                        title="Open"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="ArrowDropDownIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M7 10l5 5 5-5z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                    <fieldset
-                      aria-hidden="true"
-                      class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                    >
-                      <legend
-                        class="css-ihdtdm"
-                      >
-                        <span
-                          class="notranslate"
-                        >
-                          ​
-                        </span>
-                      </legend>
-                    </fieldset>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="right-information-box-content"
-            >
-              <p
-                class="right-information-box-description"
-              >
-                Select a category and drag a course onto a semester to begin planning.
-              </p>
             </div>
           </div>
         </div>
@@ -617,8 +593,8 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r6:"
-                        id=":r6:-label"
+                        for=":r4:"
+                        id=":r4:-label"
                       >
                         Course Category
                       </label>
@@ -632,7 +608,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r6:"
+                          id=":r4:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -708,85 +684,61 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
             />
           </div>
           <div
-            class="right-information-box"
+            class="MuiBox-root css-k008qs"
           >
             <div
-              class="right-information-box-header"
+              class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
             >
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
               >
                 <div
-                  class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                  class="css-15lei78"
+                />
+                <div
+                  class="css-ak1ss8"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="openDrawer"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="ChevronLeftIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      />
+                    </svg>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <div
+                  aria-labelledby="simple-tab-0"
+                  id="simple-tabpanel-0"
+                  role="tabpanel"
                 >
                   <div
-                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                    class="MuiBox-root css-9sn6pt"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      aria-invalid="false"
-                      autocapitalize="none"
-                      autocomplete="off"
-                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":r8:"
-                      role="combobox"
-                      spellcheck="false"
-                      type="text"
-                      value=""
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                    >
+                      Major
+                    </p>
+                    <hr
+                      class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                     />
-                    <div
-                      class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
-                    >
-                      <button
-                        aria-label="Open"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
-                        tabindex="-1"
-                        title="Open"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="ArrowDropDownIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M7 10l5 5 5-5z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                    <fieldset
-                      aria-hidden="true"
-                      class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                    >
-                      <legend
-                        class="css-ihdtdm"
-                      >
-                        <span
-                          class="notranslate"
-                        >
-                          ​
-                        </span>
-                      </legend>
-                    </fieldset>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="right-information-box-content"
-            >
-              <p
-                class="right-information-box-description"
-              >
-                Select a category and drag a course onto a semester to begin planning.
-              </p>
             </div>
           </div>
         </div>
@@ -1106,85 +1058,61 @@ exports[`Four Year Plan Page renders 1`] = `
             />
           </div>
           <div
-            class="right-information-box"
+            class="MuiBox-root css-k008qs"
           >
             <div
-              class="right-information-box-header"
+              class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
             >
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
               >
                 <div
-                  class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                  class="css-15lei78"
+                />
+                <div
+                  class="css-ak1ss8"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="openDrawer"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="ChevronLeftIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      />
+                    </svg>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <div
+                  aria-labelledby="simple-tab-0"
+                  id="simple-tabpanel-0"
+                  role="tabpanel"
                 >
                   <div
-                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                    class="MuiBox-root css-9sn6pt"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      aria-invalid="false"
-                      autocapitalize="none"
-                      autocomplete="off"
-                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":r3:"
-                      role="combobox"
-                      spellcheck="false"
-                      type="text"
-                      value=""
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                    >
+                      Major
+                    </p>
+                    <hr
+                      class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                     />
-                    <div
-                      class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
-                    >
-                      <button
-                        aria-label="Open"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
-                        tabindex="-1"
-                        title="Open"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="ArrowDropDownIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M7 10l5 5 5-5z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                    <fieldset
-                      aria-hidden="true"
-                      class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                    >
-                      <legend
-                        class="css-ihdtdm"
-                      >
-                        <span
-                          class="notranslate"
-                        >
-                          ​
-                        </span>
-                      </legend>
-                    </fieldset>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="right-information-box-content"
-            >
-              <p
-                class="right-information-box-description"
-              >
-                Select a category and drag a course onto a semester to begin planning.
-              </p>
             </div>
           </div>
         </div>
@@ -1413,8 +1341,8 @@ exports[`Four Year Plan incompatible Season 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rg:"
-                        id=":rg:-label"
+                        for=":ra:"
+                        id=":ra:-label"
                       >
                         Course Category
                       </label>
@@ -1428,7 +1356,7 @@ exports[`Four Year Plan incompatible Season 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rg:"
+                          id=":ra:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -1504,85 +1432,61 @@ exports[`Four Year Plan incompatible Season 1`] = `
             />
           </div>
           <div
-            class="right-information-box"
+            class="MuiBox-root css-k008qs"
           >
             <div
-              class="right-information-box-header"
+              class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
             >
               <div
-                class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1pskylb-MuiAutocomplete-root"
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
               >
                 <div
-                  class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                  class="css-15lei78"
+                />
+                <div
+                  class="css-ak1ss8"
+                >
+                  <button
+                    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="openDrawer"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="ChevronLeftIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      />
+                    </svg>
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+                <div
+                  aria-labelledby="simple-tab-0"
+                  id="simple-tabpanel-0"
+                  role="tabpanel"
                 >
                   <div
-                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                    class="MuiBox-root css-9sn6pt"
                   >
-                    <input
-                      aria-autocomplete="list"
-                      aria-expanded="false"
-                      aria-invalid="false"
-                      autocapitalize="none"
-                      autocomplete="off"
-                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                      id=":ri:"
-                      role="combobox"
-                      spellcheck="false"
-                      type="text"
-                      value=""
+                    <p
+                      class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                    >
+                      Major
+                    </p>
+                    <hr
+                      class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                     />
-                    <div
-                      class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
-                    >
-                      <button
-                        aria-label="Open"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
-                        tabindex="-1"
-                        title="Open"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="ArrowDropDownIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M7 10l5 5 5-5z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
-                    </div>
-                    <fieldset
-                      aria-hidden="true"
-                      class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                    >
-                      <legend
-                        class="css-ihdtdm"
-                      >
-                        <span
-                          class="notranslate"
-                        >
-                          ​
-                        </span>
-                      </legend>
-                    </fieldset>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="right-information-box-content"
-            >
-              <p
-                class="right-information-box-description"
-              >
-                Select a category and drag a course onto a semester to begin planning.
-              </p>
             </div>
           </div>
         </div>

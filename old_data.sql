@@ -136,4 +136,3 @@ CREATE TABLE `minorcategory` (
   CONSTRAINT `fk_minCat_category_id` FOREIGN KEY (`categoryId`) REFERENCES `category` (`idCategory`),
   CONSTRAINT `fk_minCat_minor_id` FOREIGN KEY (`minorId`) REFERENCES `minor` (`idMinor`)
 );
-

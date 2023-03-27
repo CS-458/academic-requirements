@@ -6,14 +6,12 @@ import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
 import SearchableDropdown from "./SearchableDropdown";
 import { Requirement } from "./Requirement";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Alert as MuiAlert, AlertProps } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { CourseType, RequirementComponentType, SemesterType, FourYearPlanType, MultipleCategoriesType, warning, season } from "../entities/four_year_plan";
 import { courseAlreadyInSemester, getSemesterCoursesNames, preReqCheckAllCoursesPastSemester } from "../entities/prereqHelperFunctions";
 import { processRequirementLists, createMultipleCategoryList } from "../entities/requirementsHelperFunctions";
-import ScheduleUpload from "./ScheduleUploadModal";
 import ActionBar from "./ActionBar";
 import CourseFiltering from "./CourseFiltering";
 
@@ -75,7 +73,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     });
 
     // fourYearPlan parsed as a JSON
-    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? ""));
+    const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
     // The list of requirements and their completion for display
     const [requirementsDisplay, setRequirementsDisplay] = useState<RequirementComponentType[]>([]);
 
@@ -738,12 +736,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div>
         <div className="drag-drop">
-        <ActionBar
+          <ActionBar
               scheduleData={info}
               setAlertData={throwError}
-            />
+           />
           <div style={{ overflow: "hidden", clear: "both" }}>
           <Snackbar
+        data-testid = "snackbar"
         open={visibility}
         autoHideDuration={6000}
         onClose={handleClose}

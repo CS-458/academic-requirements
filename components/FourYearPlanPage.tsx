@@ -280,12 +280,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             if (c.semesters === "FA" && sem.season !== season.Fall) {
               fallSpringCourses.push(c);
               errors.push(
-                `${c.subject}-${c.number} is not offered in the fall`
+                `${c.subject}-${c.number} is only offered in the fall`
               );
             } else if (c.semesters === "SP" && sem.season !== season.Spring) {
               fallSpringCourses.push(c);
               errors.push(
-                `${c.subject}-${c.number} is not offered in the spring`
+                `${c.subject}-${c.number} is only offered in the spring`
               );
             }
           });

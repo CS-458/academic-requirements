@@ -1,15 +1,18 @@
-import * as React from "react";
+/*
+  Nick Raffel
+  This is the modal for saving the schedule
+*/
+
+import React from "react";
 import {
   Button,
   TextField,
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Alert
+  DialogTitle
 } from "@mui/material";
-import SaveIcon from "@mui/icons-material/Save";
+import { Save as SaveIcon } from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
 import { UserSavedSchedule } from "../entities/four_year_plan";
 
@@ -19,14 +22,11 @@ export default function FormDialog(props: {
 }): any {
   const [open, setOpen] = React.useState(false);
 
+  // sets the schdeule name if there is a custom name
   const [scheduleName, setScheduleName] = React.useState(getDateTime());
 
-  // The visibility, severity/color, and error message of the error message
-  const [visibility, setVisibility] = React.useState(false);
-  const [severity, setSeverity] = React.useState<any>(undefined);
-  const [error, setError] = React.useState("");
-
-  function throwError(error: string, errorSeverity: string): void {
+  // Function that sets the alert
+  function throwAlert(error: string, errorSeverity: string): void {
     props.setAlertData(error, errorSeverity);
   }
 
@@ -38,16 +38,6 @@ export default function FormDialog(props: {
   // closes/hides the modal
   const handleClose = (): void => {
     setOpen(false);
-  };
-
-  const handleAlertClose = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
-  ): void => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setVisibility(false);
   };
 
   // gets the user token
@@ -72,22 +62,23 @@ export default function FormDialog(props: {
 
   // function that Uploads the Schedule to the Database
   async function exportSchedule(): Promise<void> {
-    if (scheduleName === null || scheduleName === "") {
-      throwError("Schedule MUST have a name!", "warning");
+    // if the name space is empty/null, or only contains white space
+    if (scheduleName === null || scheduleName.replace(/\s/g, "").length === 0) {
+      throwAlert("Schedule MUST have a name!", "warning");
       setScheduleName(getDateTime());
     } else {
+      // try to upload the schedule
       try {
         await uploadSchedule(token, scheduleName, props.scheduleData);
       } catch (err: any) {
+        // if the not logged in error is caught throw it
         if (err.message === "User is not logged in") {
-          throwError("User Not Logged in! Please Log in to save your Schedule.", "warning");
-          console.log("not logged in error");
+          throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
           return;
         }
       }
-      throwError("Successfully Saved Schedule!", "success");
+      throwAlert("Successfully Saved Schedule!", "success");
       handleClose();
-      console.log("Saved successfully");
     }
   }
 
@@ -99,21 +90,19 @@ export default function FormDialog(props: {
 
   return (
     <div>
-      <Button onClick={handleClickOpen}>
+      <Button onClick={handleClickOpen} data-testid="saveButton">
         <SaveIcon/>
       </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Schedule Name
-          </DialogContentText>
-          <TextField
+          <TextField data-testid="textfeild"
             autoFocus
             id="schedule-name"
             value={scheduleName}
             fullWidth
             variant="standard"
+            label="Schedule Name"
             onChange={e => {
               setScheduleName(e.target.value);
             }}

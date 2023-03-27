@@ -16,6 +16,23 @@ import { Save as SaveIcon } from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
 import { UserSavedSchedule } from "../entities/four_year_plan";
 
+// Function that gets the current Date and time
+// returns mm/dd/yyyy/hour:min:sec
+export function getDateTime(): string {
+  // calls to get the date
+  const today = new Date();
+  // Parses the correct data from today var
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const year = today.getFullYear();
+  const hour = today.getHours() % 12;
+  const min = today.getMinutes();
+  const sec = today.getSeconds();
+  // concats the hour min and sec
+  const time = `${hour}:${min}:${sec}`;
+  return `${month}-${day}-${year}/${time}`;
+}
+
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"],
   setAlertData: (msg: string, severity: string) => void
@@ -43,29 +60,19 @@ export default function FormDialog(props: {
   // gets the user token
   const token = userToken();
 
-  // Function that gets the current Date and time
-  // returns mm/dd/yyyy/hour:min:sec
-  function getDateTime(): string {
-    // calls to get the date
-    const today = new Date();
-    // Parses the correct data from today var
-    const day = String(today.getDate()).padStart(2, "0");
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const year = today.getFullYear();
-    const hour = today.getHours() % 12;
-    const min = today.getMinutes();
-    const sec = today.getSeconds();
-    // concats the hour min and sec
-    const time = `${hour}:${min}:${sec}`;
-    return `${month}-${day}-${year}/${time}`;
-  }
-
   // function that Uploads the Schedule to the Database
   async function exportSchedule(): Promise<void> {
     // if the name space is empty/null, or only contains white space
     if (scheduleName === null || scheduleName.replace(/\s/g, "").length === 0) {
-      throwAlert("Schedule MUST have a name!", "warning");
+      throwAlert("Schedule saved as " + getDateTime().toString(), "success");
       setScheduleName(getDateTime());
+      try {
+        await uploadSchedule(token, getDateTime(), props.scheduleData);
+      } catch (err: any) {
+        if (err.msg === "User is not logged in") {
+          throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
+        }
+      }
     } else {
       // try to upload the schedule
       try {

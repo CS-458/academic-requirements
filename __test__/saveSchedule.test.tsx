@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
 import { jest } from "@jest/globals";
 
-import ScheduleUploadModal from "../components/ScheduleUploadModal";
+import ScheduleUploadModal, { getDateTime } from "../components/ScheduleUploadModal";
 import ActionBar from "../components/ActionBar";
 import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "./util";
 import { userMajor, UserLogin, User } from "../services/user";
@@ -91,6 +91,11 @@ test("Saving A Schedule Successfully", async () => {
 
 test("No Schedule Name error", async () => {
   const alertMocked = jest.fn();
+
+  jest.useFakeTimers({
+    advanceTimers: true
+  }).setSystemTime(new Date("2020-01-01"));
+
   await setupMockUserDB();
   const userLogin: User = {
     info: {
@@ -120,6 +125,6 @@ test("No Schedule Name error", async () => {
   await user.clear(textEntry);
   await user.click(index.getByText("Save"));
   await waitFor(async () => {
-    expect(alertMocked).toBeCalledWith("Schedule MUST have a name!", "warning");
+    expect(alertMocked).toBeCalledWith("Schedule saved as " + getDateTime(), "success");
   });
 });

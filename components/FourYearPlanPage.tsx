@@ -116,7 +116,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       useState<MultipleCategoriesType[]>([]);
 
     // Stuff for category dropdown.
-    // const [categories, setCategories] = useState<string[]>([]); // list of all categories
+    const [categories, setCategories] = useState<string[]>([]); // list of all categories
     const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>(
       []
     ); // courses in category that is selected
@@ -250,7 +250,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
           if (courseIndex !== -1) {
             const course = tempSemesters[semesterIndex]?.courses[courseIndex];
-            removeFromRequirements(course);
+            if (
+              warningDupCourses.findIndex((c) => c.id === course.idCourse) ===
+              -1
+            ) {
+              removeFromRequirements(course);
+            }
             setUpdateWarning({
               course,
               oldSemester: semesterIndex,
@@ -548,54 +553,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             semester.Warning = newWarningState;
           });
         }
-        // check now that we have multiple category data
-        // if (importData !== undefined) {
-        //   // fill in the schedule
-        //   semesters.forEach((semester) => {
-        //     const tempArr: CourseType[] = [];
-        //     // Get the semester data from the json
-        //     const courseStringArr =
-        //       importData.ClassPlan["Semester" + semester.semesterNumber];
-        //     let credits = 0;
-        //     // loop through each course in the list
-        //     courseStringArr?.forEach((courseString: any) => {
-        //       const subject = courseString.split("-")[0];
-        //       const number = courseString.split("-")[1];
-        //       let course;
-        //       // This variable prevents the course being added twice if it is in
-        //       // more than one category
-        //       let foundOnce = false;
-        //       // Find the course in the master list of courses
-        //       PassedCourseList.forEach((x) => {
-        //         if (
-        //           x.subject === subject &&
-        //           x.number === number &&
-        //           userMajor()?.completed_courses.find(
-        //             (y) => y === x.subject + "-" + x.number
-        //           ) === null
-        //         ) {
-        //           if (!foundOnce) {
-        //             // define the course and update it as needed
-        //             course = x;
-        //             course.dragSource = "Semester" + semester.semesterNumber;
-        //             checkRequirements(course, coursesInMultipleCategories);
-        //             foundOnce = true;
-        //           }
-        //         }
-        //       });
-        //       // If there is a course add it to the temporary array for the semester
-        //       if (course !== undefined) {
-        //         tempArr.push(course);
-        //         credits += course.credits;
-        //       }
-        //     });
-        //     // update the necessary semester values
-        //     semester.courses = tempArr;
-        //     semester.SemesterCredits = credits;
-        //     const newWarningState = getWarning(credits);
-        //     semester.Warning = newWarningState;
-        //   });
-        // }
         setAlreadySetThisData(true);
       }
     }, [coursesInMultipleCategories]);

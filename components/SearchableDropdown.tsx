@@ -6,6 +6,8 @@ export default function SearchableDropdown<T>(props: {
   options: Array<{ label: string; value: T } | T>;
   label: string | null;
   disabled?: boolean;
+  // freeSolo allows the user to type whatever they want (see docs for MUI autocomplete)
+  // it works with onInputChange
   freeSolo?: boolean;
   onInputChange?: (value: string) => void;
   onSelectOption: (option?: T) => void;

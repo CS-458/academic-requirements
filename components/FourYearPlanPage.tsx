@@ -125,38 +125,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     //   }
     // }, [importData]);
 
-    // SelectedCategory function.
-    // function selectedCategory(_category: string | undefined): void {
-    //   // New string array created.
-    //   const set = new Array<CourseType>();
-    //   // Iterate through major course list. If the index matches the category, push the course name of the index to array.
-    //   PassedCourseList.map((course, index) => {
-    //     if (course.category.valueOf() === _category) {
-    //       set.push(course);
-    //     }
-    //   });
-    //   setCoursesInCategory(set);
-    // }
-
-    //  Removes duplicate strings from an array
-    // function RemoveDuplicates(strings: string[]): string[] {
-    //   return strings.filter((value, index, tempArr) => {
-    //     return !tempArr.includes(value, index + 1);
-    //   });
-    // }
-
-    // extractCategories function.
-    // function extractCategories(): void {
-    //   // Initialize new array.
-    //   const i = new Array<string>();
-    //   // Push course categories from major and concentration course lists to array.
-    //   PassedCourseList.map((course, index) => {
-    //     i.push(course.category);
-    //   });
-    //   // Remove duplicate categories from the array.
-    //   setCategories(RemoveDuplicates(i));
-    // }
-
     // Handle a drop into a semester from a semester or the course list
     const handleDrop = useCallback(
       (index: number, item: { idCourse: number; dragSource: string }) => {
@@ -794,21 +762,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             style={{ overflow: "hidden", clear: "both" }}
             className="class-dropdown"
           >
-            {/* <div>
-              <div
-                onClick={() => extractCategories()}
-                className="course-box-header"
-              >
-                <SearchableDropdown
-                  options={categories.map((c) => ({
-                    label: c,
-                    value: c
-                  }))}
-                  label={null}
-                  onSelectOption={selectedCategory} // If option chosen, selected Category activated.
-                />
-              </div>
-            </div> */}
             <CourseFiltering
               courseData={PassedCourseList}
               onFiltered={(courses: CourseType[]) => { setCoursesInCategory(courses); }}

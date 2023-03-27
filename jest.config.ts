@@ -30,5 +30,8 @@ export default createJestConfig({
     "./public/**",
     "./services/**",
     "./styles/**"
+  ],
+  coveragePathIgnorePatterns: [
+    "./components/ImportPopup/*"
   ]
 });

@@ -7,9 +7,10 @@ import {
   Paper,
   Snackbar,
   Switch,
-  FormControlLabel
+  FormControlLabel,
+  AlertProps,
+  Alert
 } from "@mui/material";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
 // import ImportPopup from "./ImportPopup";
@@ -56,11 +57,11 @@ export default function InputPage(): JSX.Element {
     setSeverity(errorSeverity);
   }
 
-  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  const CustomAlert = React.forwardRef<HTMLDivElement, AlertProps>(function CustomAlert(
     props,
     ref
   ) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    return <Alert elevation={6} ref={ref} variant="filled" {...props} />;
   });
   const handleClose = (
     event?: React.SyntheticEvent | Event,
@@ -169,10 +170,11 @@ export default function InputPage(): JSX.Element {
         autoHideDuration={6000}
         onClose={handleClose}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        data-testid="error"
       >
-        <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+        <CustomAlert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
           {`${error}`}
-        </Alert>
+        </CustomAlert>
       </Snackbar>
       <Grid container spacing={3} pt={5}>
         <Grid container item sm={4} flexDirection="column" alignItems="center">
@@ -224,6 +226,7 @@ export default function InputPage(): JSX.Element {
                   <Switch
                     onChange={handleUseFourYearPlan}
                     inputProps={{ "aria-label": "controlled" }}
+                    data-testid="FourYearPlanSwitch"
                   />
                 }
                 label="Use Suggested Four Year Plan"

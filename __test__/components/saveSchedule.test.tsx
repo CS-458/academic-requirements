@@ -2,10 +2,10 @@ import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
 import { jest } from "@jest/globals";
 
-import ScheduleUploadModal, { getDateTime } from "../components/ScheduleUploadModal";
-import ActionBar from "../components/ActionBar";
-import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "./util";
-import { userMajor, UserLogin, User } from "../services/user";
+import ScheduleUploadModal, { getDateTime } from "../../components/ScheduleUploadModal";
+import ActionBar from "../../components/ActionBar";
+import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "../util";
+import { userMajor, UserLogin, User } from "../../services/user";
 
 jest.useFakeTimers({
   doNotFake: [

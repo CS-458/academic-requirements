@@ -26,6 +26,7 @@ import {
 import SemesterList, { deepCopy } from "./SemesterList";
 import CourseFiltering from "./CourseFiltering";
 import ActionBar from "./ActionBar";
+import InformationDrawer from "./InformationBar";
 
 export interface CourseError {
   id: number;
@@ -91,7 +92,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       draggedOut: true,
       newCheck: false
     });
-
     // fourYearPlan parsed as a JSON
     const [fourYearPlan] = useState(
       JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}")
@@ -118,17 +118,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       []
     ); // courses in category that is selected
 
-    // Used to keep track of which information to display in the far right area
-    const defaultInformationType = "Requirements (Calculated)"; // The default
-    const [informationTypes, setInformationTypes] = useState<string[]>([
-      defaultInformationType
-    ]);
-    type DispInfo = string | undefined;
-    const [displayedInformationType, setDisplayedInformationType] =
-      useState<DispInfo>(defaultInformationType);
-
-    // create 8 semesters for four years of type Fall and Spring
-    // used for the empty schedule or load fourYearPlan
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
       let i = 0;
@@ -160,34 +149,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
       return tempSemesters;
     }
-
-    useEffect(() => {
-      // Whenever completed courses may update, determine
-      // whether we need to display it in the dropdown
-      const completedCourses = userMajor()?.completed_courses ?? 0;
-      if (completedCourses > 0) {
-        console.log(
-          "Setting up completed courses",
-          userMajor()?.completed_courses
-        );
-        setInformationTypes((prevInformationTypes) => {
-          // the ... is a spread operator and essentially means "take everything up to this point"
-          if (!prevInformationTypes.includes("Completed Courses")) {
-            return [...prevInformationTypes, "Completed Courses"];
-          }
-          return [...prevInformationTypes];
-        });
-      }
-      if (userMajor()?.load_four_year_plan !== false) {
-        setInformationTypes((prevInformationTypes) => {
-          // the ... is a spread operator and essentially means "take everything up to this point"
-          if (!prevInformationTypes.includes("Requirements (Four Year Plan)")) {
-            return [...prevInformationTypes, "Requirements (Four Year Plan)"];
-          }
-          return [...prevInformationTypes];
-        });
-      }
-    }, []);
 
     // useEffect(() => {
     //   if (importData !== undefined) {
@@ -377,10 +338,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         newCheck: false
       });
     }, [semesters]);
-
-    const popupCloseHandler = (): void => {
-      setVisibility(false);
-    };
 
     //  JSON Data for the Courses
     const info = {
@@ -650,121 +607,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               key={0}
             />
           </div>
-          <div className="right-information-box generic">
-            <div className="right-information-box-header">
-              {informationTypes.length === 1 && (
-                <p
-                  style={{
-                    textAlign: "center",
-                    padding: "0px",
-                    fontSize: "1.1em"
-                  }}
-                >
-                  {displayedInformationType}
-                </p>
-              )}
-              {informationTypes.length > 1 && (
-                <SearchableDropdown
-                  options={informationTypes}
-                  label={null}
-                  onSelectOption={setDisplayedInformationType}
-                />
-              )}
-            </div>
-            <div className="right-information-box-content">
-              {displayedInformationType === "Requirements (Four Year Plan)" && (
-                <>
-                  <p className="right-information-box-description">
-                    The four year plan for your concentration recommends taking
-                    courses in the following categories in the respective
-                    semesters.
-                  </p>
-                  {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
-                    if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
-                      return (
-                        <div style={{ margin: "5px" }} key={index}>
-                          <p>{key}</p>
-                          <p
-                            style={{ marginLeft: "10px", marginBottom: "25px" }}
-                          >
-                            {fourYearPlan?.ClassPlan[
-                              key
-                            ].Requirements.toString()}
-                          </p>
-                        </div>
-                      );
-                    }
-                  })}
-                </>
-              )}
-              {displayedInformationType === "Completed Courses" && (
-                <>
-                  <p className="right-information-box-description">
-                    These are courses you marked as complete.
-                  </p>
-                  {userMajor()?.completed_courses?.map((completedCourse) => {
-                    return (
-                      <div className="info-box-completed-course">
-                        <a
-                          href={
-                            "https://bulletin.uwstout.edu/content.php?filter%5B27%5D=" +
-                            completedCourse.split("-")[0] +
-                            "&filter%5B29%5D=" +
-                            completedCourse.split("-")[1] +
-                            "&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                          }
-                          target="_blank"
-                        >
-                          {completedCourse}
-                        </a>
-                      </div>
-                    );
-                  })}
-                </>
-              )}
-              {displayedInformationType === "Requirements (Calculated)" && (
-                <>
-                  <p className="right-information-box-description">
-                    Select a category and drag a course onto a semester to begin
-                    planning.
-                  </p>
-                  {requirementsDisplay?.map(
-                    (
-                      {
-                        name,
-                        courseCount,
-                        courseReqs,
-                        creditCount,
-                        idCategory,
-                        parentCategory,
-                        percentage,
-                        inheritedCredits,
-                        coursesTaken,
-                        courseCountTaken,
-                        creditCountTaken
-                      },
-                      index
-                    ) => (
-                      <Requirement
-                        courseCount={courseCount}
-                        courseReqs={courseReqs}
-                        creditCount={creditCount}
-                        idCategory={idCategory}
-                        name={name}
-                        parentCategory={parentCategory}
-                        percentage={percentage}
-                        inheritedCredits={inheritedCredits}
-                        coursesTaken={coursesTaken}
-                        courseCountTaken={courseCountTaken}
-                        creditCountTaken={creditCountTaken}
-                        key={index}
-                      />
-                    )
-                  )}
-                </>
-              )}
-            </div>
-          </div>
+          <InformationDrawer requirementsDisplay={requirementsDisplay} />
         </div>
       </div>
     );

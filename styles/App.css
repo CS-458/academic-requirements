@@ -15,13 +15,8 @@
   text-align: center;
 }
 
-.completedCourses {
-  height: 300px;
-}
-
-.courseList {
-  display: grid;
-  border-radius: 15px;
+.css-ak1ss8 {
+  min-height: 40px;
 }
 
 button {
@@ -33,32 +28,8 @@ button {
   border-radius: 15px;
 }
 
-.addCourseButton {
-  margin-top: 40px;
-  margin-bottom: -40px;
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.grid-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 60% auto auto;
-  column-gap: 1px;
-  row-gap: 50px;
-  background-color: #004990;
-}
-
-.semesters-container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  column-gap: 1px;
-  row-gap: 100px;
-  overflow: auto;
-  background-color: #004990;
 }
 
 .class-dropdown {
@@ -200,20 +171,25 @@ It makes only the information box on the second screen look good.
   border-radius: 15px;
   width: 100%;
 }
+
 /* Text inside the course dropdown menu*/
 .courseDropdowns {
   text-align: center;
   width: 100%;
   float: center;
 }
+
 /* The words inside of the requirements box in the schedule generator*/
 .RequirementText {
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 0;
   display: grid;
   grid-template-columns: 75% 25%;
   text-align: center;
+  font-size: 11pt;
+  padding-left: 0;
 }
+
 /* the percent sign in the requirements category*/
 .percentage {
   text-align: right;
@@ -242,4 +218,8 @@ It makes only the information box on the second screen look good.
 }
 .percentage {
   text-align: right;
+}
+
+.requirementName {
+  text-align: left;
 }

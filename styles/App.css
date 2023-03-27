@@ -67,15 +67,19 @@ body {
   padding: 5px;
   border-color: black;
   border-width: 2px;
-  background-color: #004990;
+  /* background-color: #004990; */
 }
 
 .drag-drop {
   height: 100%;
   display: grid;
-  grid-template-columns: 50% 25% 24.5%;
   grid-template-rows: 100%;
+  grid-template-columns: 1fr 50% 25% 5fr;
   column-gap: 10px;
+}
+
+.drag-drop > *:not(:first-child) {
+  padding: 5%;
 }
 
 .schedule {

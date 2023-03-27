@@ -50,8 +50,7 @@ export function userToken(): string | undefined {
 }
 
 // Calls the API to upload the schedule to the Database
-export async function uploadSchedule(name: string, schedule: any): Promise<void> {
-  const token = userToken();
+export async function uploadSchedule(token: string | undefined, name: string, schedule: any): Promise<void> {
   if (token === undefined) {
     throw new Error("User is not logged in");
   }

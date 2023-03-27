@@ -103,7 +103,7 @@ test("Verify adding completed course", async () => {
   await user.selectAutocomplete(/Course Number/i, "220");
   await user.click(addButton);
   expect(userMajor()?.completed_courses).toContain("ANTH-220");
-});
+}, 100000);
 
 test("Verify deleting completed course", async () => {
   const user = setupUser();

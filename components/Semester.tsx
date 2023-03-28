@@ -3,24 +3,8 @@ import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
-import { SemesterProps } from "../entities/four_year_plan";
-// styling for the semester
-const style: CSSProperties = {
-  height: "15rem",
-  width: "19%",
-  marginRight: ".5rem",
-  marginBottom: ".5rem",
-  color: "white",
-  padding: "1rem",
-  textAlign: "center",
-  fontSize: "1rem",
-  lineHeight: "normal",
-  float: "left",
-  whiteSpace: "pre",
-  background: "#004990",
-  borderRadius: ".5rem",
-  overflow: "auto"
-};
+import { SemesterProps, warning } from "../entities/four_year_plan";
+import { Box } from "@mui/material";
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -28,10 +12,10 @@ export const Semester: FC<SemesterProps> = function Semester({
   semesterNumber,
   courses,
   SemesterCredits,
-  Warning,
   warningPrerequisiteCourses,
   warningFallvsSpringCourses,
   warningDuplicateCourses,
+  Warning,
   year,
   season
 }) {
@@ -45,24 +29,22 @@ export const Semester: FC<SemesterProps> = function Semester({
   });
 
   // Changes the background color when you're hovering over the semester
-  const isActive: boolean = isOver;
-  let backgroundColor = "#004990";
-  if (isActive) {
-    backgroundColor = "darkgreen";
-  }
+  let bgcolor = "";
+  if (Warning !== null) bgcolor = "warning.main";
+  if (isOver) bgcolor = "success.main";
 
   return (
-    <div
+    <Box
       ref={drop}
-      style={{ ...style, backgroundColor }}
-      data-testid="semester"
+      className="semester Semester-root"
+      sx={{ bgcolor, minHeight: "7em" }}
+      data-testid={`semester${semesterNumber}`}
+      key={`semester-${year}-${season}`}
     >
-      {isActive
-        ? "Release to drop"
-        : `Semester ${semesterNumber} \n ${season} \n Credits ${SemesterCredits}`}
-      {Warning !== null ? ` (${Warning})` : ""}
-
-      {courses.map((course, index) => (
+      <p>
+        {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
+      </p>
+      {courses.map((course) => (
         <Course
           name={course.name}
           subject={course.subject}
@@ -72,14 +54,19 @@ export const Semester: FC<SemesterProps> = function Semester({
           type={ItemTypes.COURSE}
           credits={course.credits}
           preReq={course.preReq}
-          dragSource={`Semester ${semesterNumber - 1}`}
-          key={index}
-          warningYellowColor={warningDuplicateCourses.find((x) => x === course)}
-          warningOrangeColor={warningFallvsSpringCourses.find((x) => x === course)}
-          warningRedColor={warningPrerequisiteCourses.find((x) => x === course)}
+          dragSource={`Semester ${semesterNumber}`}
+          warningYellowColor={warningDuplicateCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
+          )}
+          warningOrangeColor={warningFallvsSpringCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
+          )}
+          warningRedColor={warningPrerequisiteCourses.find(
+            (x) => x.id === course.idCourse && x.sem === semesterNumber
+          )}
           repeatableForCred={course.repeatableForCred}
         />
       ))}
-    </div>
+    </Box>
   );
 };

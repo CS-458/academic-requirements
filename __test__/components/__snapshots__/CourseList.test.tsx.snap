@@ -7,7 +7,8 @@ exports[`CourseList Renders 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="MuiBox-root css-1w0cc5a"
+        class="MuiBox-root css-bqc3e2"
+        data-testid="courseListDropTarget"
       >
         <div
           class="CourseText"
@@ -110,7 +111,8 @@ exports[`CourseList onDrop is called on drop 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="MuiBox-root css-1w0cc5a"
+        class="MuiBox-root css-bqc3e2"
+        data-testid="courseListDropTarget"
       >
         <div
           class="CourseText"

@@ -1,4 +1,5 @@
 import type { TargetType } from "dnd-core";
+import { CourseError } from "../components/FourYearPlanPage";
 
 // Defines the major object we are passing between files
 export interface MajorType {
@@ -30,19 +31,19 @@ export interface CourseType {
 
 // Defines the actual draggable course object type
 export interface DragCourseType {
-  name: string, // see CourseType
-  subject: string, // see CourseType
-  number: string, // see CourseType
-  type: string, // Don't worry about this, all assigned to course
-  credits: number, // see CourseType
-  semesters: string, // see CourseType
-  preReq: string, // see CourseType
-  dragSource: string, // see CourseType
-  warningYellowColor: number | undefined, // If the course is in multiple semesters
-  warningOrangeColor: number | undefined, // If the course is in the wrong semester fall vs spring
-  warningRedColor: number | undefined, // If the course has a prereq error
-  idCourse: number, // see CourseType
-  idCategory: number // see CourseType
+  name: string; // see CourseType
+  subject: string; // see CourseType
+  number: string; // see CourseType
+  type: string; // Don't worry about this, all assigned to course
+  credits: number; // see CourseType
+  semesters: string; // see CourseType
+  preReq: string; // see CourseType
+  dragSource: string; // see CourseType
+  warningYellowColor: number | undefined; // If the course is in multiple semesters
+  warningOrangeColor: number | undefined; // If the course is in the wrong semester fall vs spring
+  warningRedColor: number | undefined; // If the course has a prereq error
+  idCourse: number; // see CourseType
+  idCategory: number; // see CourseType
   repeatableForCred: boolean; // see CourseType
 }
 
@@ -95,12 +96,25 @@ export enum season {
   Fall = "Fall",
   Winter = "Winter",
   Spring = "Spring",
-  Summer = "Summer",
-};
+  Summer = "Summer"
+}
 // define
 export enum warning {
   Low = "Low",
   High = "High"
+}
+
+export function seasonNum(s: season): number {
+  switch (s) {
+    case season.Fall:
+      return 0;
+    case season.Winter:
+      return 1;
+    case season.Spring:
+      return 2;
+    case season.Summer:
+      return 3;
+  }
 }
 
 // Defines the properties of a semester component
@@ -111,22 +125,28 @@ export interface SemesterProps {
   courses: CourseType[]; // a list of courses in the semester
   SemesterCredits: number; // total credits of all courses in semester
   Warning: warning | null; // credit warning (low or high)
-  warningPrerequisiteCourses: CourseType[]; // list of courses in with prereq issues
-  warningFallvsSpringCourses: CourseType[]; // list of courses with semester issues
-  warningDuplicateCourses: CourseType[]; // list of courses in more than one semester
+  warningPrerequisiteCourses: CourseError[]; // list of courses in with prereq issues
+  warningFallvsSpringCourses: CourseError[];
+  warningDuplicateCourses: CourseError[]; // list of courses in more than one semester
   year: number; // year number 1,2,3,4,etc.
-  season: season;// Season the semester is (Fall, Winter, Spring, Summer)
+  season: season; // Season the semester is (Fall, Winter, Spring, Summer)
 }
 
 // Defines the properties of a semester object
 export interface SemesterType {
-  accepts: string[], // this is just a course constant
-  semesterNumber: number, // number of the semester
-  courses: CourseType[], // list of courses in semester
-  SemesterCredits: number, // number of credits in the semester
-  Warning: warning | null, // credit warning (high or low)
-  year: number, // year number 1,2,3,4,etc.
-  season: season // Season the semester is (Fall, Winter, Spring, Summer)
+  accepts: string[]; // this is just a course constant
+  semesterNumber: number; // number of the semester
+  courses: CourseType[]; // list of courses in semester
+  SemesterCredits: number; // number of credits in the semester
+  Warning: warning | null; // credit warning (high or low)
+  year: number; // year number 1,2,3,4,etc.
+  season: season; // Season the semester is (Fall, Winter, Spring, Summer)
+}
+
+export function sortSemester(a: SemesterType, b: SemesterType): number {
+  const aNum = seasonNum(a.season) + a.year * 4;
+  const bNum = seasonNum(b.season) + b.year * 4;
+  return aNum - bNum;
 }
 
 //  Defines the properties that should be passed in to the fourYearPlan page
@@ -138,22 +158,22 @@ export interface FourYearPlanType {
 }
 
 export interface UserSavedSchedule {
-  userID: string,
-  name: string,
-  timestamp: number,
+  userID: string;
+  name: string;
+  timestamp: number;
   scheduleData: {
-    Major: string | undefined,
-    Concentration: string | undefined,
-    "Completed Courses": string[] | undefined,
+    Major: string | undefined;
+    Concentration: string | undefined;
+    "Completed Courses": string[] | undefined;
     ClassPlan: {
-      Semester1: string[],
-      Semester2: string[],
-      Semester3: string[],
-      Semester4: string[],
-      Semester5: string[],
-      Semester6: string[],
-      Semester7: string[],
-      Semester8: string[]
-    }
-  }
+      Semester1: string[];
+      Semester2: string[];
+      Semester3: string[];
+      Semester4: string[];
+      Semester5: string[];
+      Semester6: string[];
+      Semester7: string[];
+      Semester8: string[];
+    };
+  };
 }

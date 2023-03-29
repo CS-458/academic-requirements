@@ -15,7 +15,6 @@ import {
   season,
   sortSemester
 } from "../entities/four_year_plan";
-import { getSemesterCoursesNames } from "../entities/prereqHelperFunctions";
 import {
   processRequirementLists,
   createMultipleCategoryList
@@ -287,6 +286,18 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         newCheck: false
       });
     }, [semesters]);
+
+    //  Get all courses (string) in current semester
+    //  param semesterIndex -> current semester index
+    function getSemesterCoursesNames(semesterIndex: number, semesters: SemesterType[]): Array<string> {
+      const semCourses = new Array<string>();
+      if (semesterIndex > -1 && semesterIndex < semesters.length) {
+        semesters[semesterIndex].courses.forEach((x: CourseType) => {
+          semCourses.push(x.subject + "-" + x.number);
+        });
+      }
+      return semCourses;
+    }
 
     function getSemesterDataForSaving(): any {
       const schedule = [];

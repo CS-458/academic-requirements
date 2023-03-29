@@ -7,7 +7,6 @@ import {
   styled
 } from "@mui/material";
 import { ArrowForwardIosSharp } from "@mui/icons-material";
-import update from "immutability-helper";
 import { useCallback, useState } from "react";
 import {
   CourseType,
@@ -21,10 +20,9 @@ import { courseAlreadyInSemester } from "../entities/prereqHelperFunctions";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
-import { isCaseOrDefaultClause } from "typescript";
 import { CourseError } from "./FourYearPlanPage";
 
-/// Modified MUI accordian
+/// Modified MUI accordion
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({

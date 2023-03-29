@@ -165,15 +165,6 @@ export interface UserSavedSchedule {
     Major: string | undefined;
     Concentration: string | undefined;
     "Completed Courses": string[] | undefined;
-    ClassPlan: {
-      Semester1: string[];
-      Semester2: string[];
-      Semester3: string[];
-      Semester4: string[];
-      Semester5: string[];
-      Semester6: string[];
-      Semester7: string[];
-      Semester8: string[];
-    };
+    schedule: [{ year: number, seasons: [{ season: string, classes: string[] }] }]
   };
 }

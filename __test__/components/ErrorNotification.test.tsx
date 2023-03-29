@@ -30,6 +30,19 @@ const mockCourses: CourseType[] = [
     category: "CAT-1",
     idCategory: 2,
     dragSource: "CourseList"
+  },
+  {
+    subject: "SUB",
+    number: "300",
+    name: "Course 3",
+    semesters: "SP",
+    credits: 2,
+    preReq: "",
+    idCourse: 3,
+    repeatableForCred: false,
+    category: "CAT-3",
+    idCategory: 3,
+    dragSource: "CourseList"
   }
 ];
 test("Four Year Plan Page renders", async () => {
@@ -117,7 +130,7 @@ test("Four Year Plan Page Prerequisite course", async () => {
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
 });
 
-test("Four Year Plan incompatible Season", async () => {
+test("Four Year Plan incompatible Season Fall", async () => {
   const user = setupUser();
   const index = render(
     <FourYearPlanPage
@@ -145,5 +158,36 @@ test("Four Year Plan incompatible Season", async () => {
   fireEvent.dragEnter(springSemester);
   fireEvent.dragOver(springSemester);
   fireEvent.drop(springSemester);
+  expect(screen.getByTestId("snackbar")).toBeInTheDocument();
+});
+
+test("Four Year Plan incompatible Season Spring", async () => {
+  const user = setupUser();
+  const index = render(
+    <FourYearPlanPage
+      PassedCourseList={mockCourses}
+      requirements={undefined}
+      requirementsGen={undefined}
+      importData={undefined}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const categoryTab = screen.getByTestId("category-tab");
+  await user.click(categoryTab);
+  await user.selectAutocomplete("Course Category", mockCourses[2].category);
+
+  const firstYear = parentEl(screen.getByText(/Year 1/i), "MuiAccordion");
+  expect(firstYear).toBeInTheDocument();
+  const fallSemester = parentEl(
+    within(firstYear).getByText(/Fall/i),
+    "Semester"
+  );
+  expect(fallSemester).toBeInTheDocument();
+
+  const course = screen.getAllByTestId("course");
+  fireEvent.dragStart(course[0]);
+  fireEvent.dragEnter(fallSemester);
+  fireEvent.dragOver(fallSemester);
+  fireEvent.drop(fallSemester);
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
 });

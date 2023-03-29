@@ -95,17 +95,6 @@ export default function SemesterList({
   reqList: RequirementComponentType[];
   reqGenList: RequirementComponentType[];
 }): JSX.Element {
-  //  This function sets the correct warning for the semester
-  const getWarning = (SemesterCredits: number): warning | null => {
-    if (SemesterCredits <= 11 && SemesterCredits > 0) {
-      return warning.Low;
-    } else if (SemesterCredits >= 19) {
-      return warning.High;
-    } else {
-      return null;
-    }
-  };
-
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
       const { idCourse, dragSource } = item;

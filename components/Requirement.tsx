@@ -32,6 +32,7 @@ export const Requirement: FC<any> = memo(function Requirement({
             variant="caption"
             component="div"
             color="text.primary"
+            data-testid="reqPercent"
           >{`${Math.round(percentage * digits) / digits}`}</Typography>
         </Box>
       </Box>

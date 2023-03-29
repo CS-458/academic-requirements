@@ -16,7 +16,6 @@ import {
   sortSemester,
   warning
 } from "../entities/four_year_plan";
-import { courseAlreadyInSemester } from "../entities/prereqHelperFunctions";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";

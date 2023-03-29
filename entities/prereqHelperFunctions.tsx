@@ -1,21 +1,6 @@
 import { SemesterType, CourseType } from "./four_year_plan";
 import { userMajor } from "../services/user";
 import StringProcessing from "./StringProcessing";
-//  Returns if a course is already in a semester's index
-export function courseAlreadyInSemester(course: CourseType, semesterIndex: number, semesters: SemesterType[]): boolean {
-  if (semesterIndex > -1 && semesterIndex < semesters.length) {
-    let found = false;
-    semesters[semesterIndex].courses.forEach((x: any) => {
-      if (x.idCourse === course.idCourse) {
-        found = true;
-      }
-    });
-    if (found) {
-      return true;
-    }
-  }
-  return false;
-}
 
 //  Get all courses in previous semesters
 //  param semesterIndex -> current semester index

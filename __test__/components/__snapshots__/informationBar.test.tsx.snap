@@ -101,6 +101,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>
@@ -159,6 +160,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>
@@ -284,6 +286,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>
@@ -342,6 +345,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>
@@ -461,6 +465,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>
@@ -519,6 +524,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                         >
                           <div
                             class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                            data-testid="reqPercent"
                           >
                             0
                           </div>

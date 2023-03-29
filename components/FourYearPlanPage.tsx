@@ -293,7 +293,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       let currentYear = 1;
       let seasons: any = [];
       for (let i = 0; i < semesters.length; i++) {
-        console.log(i, currentYear, semesters[i].year);
         if (currentYear === semesters[i].year) {
           seasons.push({ season: semesters[i].season, classes: getSemesterCoursesNames(i, semesters) });
         } else {
@@ -365,7 +364,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     const [alreadySetThisData, setAlreadySetThisData] = useState(false);
     // fill in the schedule and check requirements on import or four year plan
     useEffect(() => {
-      console.log("reqList", reqList);
       if (
         coursesInMultipleCategories.length !== 0 &&
         reqList != null &&
@@ -443,7 +441,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           reqGenList,
           reqList
         );
-        console.log(updatedRequirements);
         setReqGenList(updatedRequirements.gen);
         setReqList(updatedRequirements.major);
       },

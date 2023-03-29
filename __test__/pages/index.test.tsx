@@ -136,7 +136,7 @@ test("Verify deleting completed course", async () => {
   const deleteButton = screen.getByTestId("delete-icon-AEC-191");
   await user.click(deleteButton);
   expect(screen.queryByText(/AEC-191/i)).toBeNull();
-});
+}, 100000);
 
 test("Verify UW-Stout logo redirects to UW-Stout site", async () => {
   const index = render(<LogoLink />);

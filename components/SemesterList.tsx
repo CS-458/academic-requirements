@@ -7,7 +7,6 @@ import {
   styled
 } from "@mui/material";
 import { ArrowForwardIosSharp } from "@mui/icons-material";
-import update from "immutability-helper";
 import { useCallback, useState } from "react";
 import {
   CourseType,
@@ -17,14 +16,12 @@ import {
   sortSemester,
   warning
 } from "../entities/four_year_plan";
-import { courseAlreadyInSemester } from "../entities/prereqHelperFunctions";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
-import { isCaseOrDefaultClause } from "typescript";
 import { CourseError } from "./FourYearPlanPage";
 
-/// Modified MUI accordian
+/// Modified MUI accordion
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -98,17 +95,6 @@ export default function SemesterList({
   reqList: RequirementComponentType[];
   reqGenList: RequirementComponentType[];
 }): JSX.Element {
-  //  This function sets the correct warning for the semester
-  const getWarning = (SemesterCredits: number): warning | null => {
-    if (SemesterCredits <= 11 && SemesterCredits > 0) {
-      return warning.Low;
-    } else if (SemesterCredits >= 19) {
-      return warning.High;
-    } else {
-      return null;
-    }
-  };
-
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
       const { idCourse, dragSource } = item;

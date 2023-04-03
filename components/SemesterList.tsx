@@ -81,7 +81,9 @@ export default function SemesterList({
   coursesInMultipleCategories,
   setUpdateWarning,
   reqList,
-  reqGenList
+  reqGenList,
+  createCourseMoveRecord,
+  handleUndoCourse
 }: {
   semesters: SemesterType[];
   warningPrerequisiteCourses: CourseError[];
@@ -94,13 +96,16 @@ export default function SemesterList({
   setUpdateWarning: (a: any) => any;
   reqList: RequirementComponentType[];
   reqGenList: RequirementComponentType[];
+  createCourseMoveRecord: (a: number, b: number, c: number) => any;
+  handleUndoCourse: (a: any) => any;
 }): JSX.Element {
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
       const { idCourse, dragSource } = item;
       console.log("Drop", semNumber, idCourse, dragSource);
       const tmpSemesters = deepCopy(semesters);
-
+      const movedFrom = dragSource === undefined || dragSource === "CourseList" ? -1 : parseInt(dragSource.split(" ")[1]);
+      createCourseMoveRecord(semNumber, idCourse, movedFrom);
       const target = tmpSemesters.find(
         (sem) => sem.semesterNumber === semNumber
       );
@@ -118,6 +123,7 @@ export default function SemesterList({
       } else {
         checkRequirements(course, coursesInMultipleCategories);
       }
+      console.log(course.dragSource);
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
       setSemesters(tmpSemesters);
@@ -141,7 +147,6 @@ export default function SemesterList({
       PassedCourseList
     ]
   );
-
   const parts = [];
   const expandedArr: Array<(v: boolean) => void> = [];
   // Build semester lists

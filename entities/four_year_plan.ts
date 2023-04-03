@@ -168,3 +168,9 @@ export interface UserSavedSchedule {
     schedule: [{ year: number, seasons: [{ season: string, classes: string[] }] }]
   };
 }
+
+export interface movedCourse {
+  movedTo: number,
+  movedFrom: number,
+  course: number
+}

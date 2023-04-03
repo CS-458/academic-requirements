@@ -13,7 +13,8 @@ import {
   MultipleCategoriesType,
   warning,
   season,
-  sortSemester
+  sortSemester,
+  movedCourse
 } from "../entities/four_year_plan";
 import {
   processRequirementLists,
@@ -111,6 +112,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // Stuff for category dropdown.
     const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>([]); // courses in category that is selected
 
+    // lists of courses for undoing and redoing course moves
+    const [coursesMoved, setCoursesMoved] = useState<movedCourse[]>([]);
+    const [coursesForRedo, setCoursesForRedo] = useState<movedCourse[]>([]);
+
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
       let i = 0;
@@ -180,6 +185,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
           tempSemesters[semesterIndex].courses.splice(courseIndex, 1);
           setSemesters(tempSemesters);
+          createCourseMoveRecord(-1, idCourse, parseInt(dragSource.split(" ")[1]));
         }
       },
       [PassedCourseList, semesters]
@@ -487,10 +493,27 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [reqList, reqGenList, requirementsDisplay, PassedCourseList]
     );
 
+    function handleUndoCourse(): void {
+      console.log("undoing course move");
+      const move = coursesMoved.pop();
+      if (move !== undefined) {
+        const temp = coursesForRedo;
+        temp.push(move);
+        setCoursesForRedo(temp);
+      }
+    }
+
+    function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
+      const temp = coursesMoved;
+      temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
+      setCoursesMoved(temp);
+      console.log(coursesMoved);
+    }
+
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} />
+          <ActionBar scheduleData={info} setAlertData={throwError} handleUndoCourse={handleUndoCourse} />
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}
@@ -519,6 +542,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               setUpdateWarning={setUpdateWarning}
               reqList={reqList ?? []}
               reqGenList={reqGenList ?? []}
+              createCourseMoveRecord={createCourseMoveRecord}
+              handleUndoCourse={handleUndoCourse}
             />
           </div>
           <div

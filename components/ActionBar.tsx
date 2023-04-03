@@ -7,11 +7,14 @@ import React from "react";
 import { Box } from "@mui/material";
 import ScheduleUpload from "./ScheduleUploadModal";
 import { UserSavedSchedule } from "../entities/four_year_plan";
+import UndoButton from "./UndoButton";
+import RedoButton from "./RedoButton";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal
 export default function BoxSx(props: {
   scheduleData: UserSavedSchedule["scheduleData"],
-  setAlertData: (msg: string, severity: string) => void
+  setAlertData: (msg: string, severity: string) => void,
+  handleUndoCourse: () => any
 }): any {
   return (
     <div>
@@ -27,7 +30,10 @@ export default function BoxSx(props: {
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}
         />
+        <UndoButton handleUndoCourse={props.handleUndoCourse}/>
+        <RedoButton />
       </Box>
+
     </div>
   );
 }

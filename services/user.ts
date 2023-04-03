@@ -1,5 +1,9 @@
 import React from "react";
-import { ConcentrationType, MajorType, UserSavedSchedule } from "../entities/four_year_plan";
+import {
+  ConcentrationType,
+  MajorType,
+  UserSavedSchedule
+} from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 export interface UserMajor {
   /// Major ID number
@@ -50,7 +54,11 @@ export function userToken(): string | undefined {
 }
 
 // Calls the API to upload the schedule to the Database
-export async function uploadSchedule(token: string | undefined, name: string, schedule: any): Promise<void> {
+export async function uploadSchedule(
+  token: string | undefined,
+  name: string,
+  schedule: any
+): Promise<void> {
   if (token === undefined) {
     throw new Error("User is not logged in");
   }
@@ -80,7 +88,15 @@ export async function saveLoggedInUser(): Promise<void> {
   });
 }
 
-export async function getScheduleByName(name: string): Promise<UserSavedSchedule[]> {
+/// Returns a list of scheuldes that include the name
+export async function getScheduleByName(
+  name: string
+): Promise<UserSavedSchedule[]> {
+  return (await getSchedules()).filter((s) => s.name.includes(name));
+}
+
+/// Returns a list of all schedules saved by this user
+export async function getSchedules(): Promise<UserSavedSchedule[]> {
   const token = userToken();
   if (token === undefined) {
     throw new Error("User Token Not made");

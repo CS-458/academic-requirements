@@ -2,7 +2,7 @@ import React, { FC, useEffect, memo, useCallback, useState } from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
-import { AlertProps, Snackbar, Alert as MuiAlert } from "@mui/material";
+import { AlertProps, Snackbar, Alert as MuiAlert} from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import {
@@ -23,6 +23,7 @@ import SemesterList, { deepCopy } from "./SemesterList";
 import CourseFiltering from "./CourseFiltering";
 import ActionBar from "./ActionBar";
 import InformationDrawer from "./InformationBar";
+import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 
 export interface CourseError {
   id: number;
@@ -490,7 +491,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} />
+          <ActionBar scheduleData={info} setAlertData={throwError}>
+            <ScheduleErrorNotification errors={savedErrors}/>
+          </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}

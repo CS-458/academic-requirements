@@ -723,6 +723,55 @@ exports[`Test render of scheduler 1`] = `
                         <div
                           class="MuiBox-root css-9sn6pt"
                         >
+                          <div
+                            class="RequirementText"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="0"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    0
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <p
                             class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                           >

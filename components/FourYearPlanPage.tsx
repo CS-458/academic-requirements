@@ -538,7 +538,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               key={0}
             />
           </div>
-          <InformationDrawer requirementsDisplay={requirementsDisplay} />
+          <InformationDrawer
+            requirementsDisplay={requirementsDisplay}
+            semesters={semesters}
+          />
         </div>
       </div>
     );

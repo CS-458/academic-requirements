@@ -1,59 +1,12 @@
-import {
-  Accordion as MuiAccordion,
-  AccordionDetails,
-  AccordionProps,
-  AccordionSummary as MuiAccordionSummary,
-  AccordionSummaryProps,
-  styled
-} from "@mui/material";
-import { ArrowForwardIosSharp } from "@mui/icons-material";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import {
   CourseType,
   MultipleCategoriesType,
   RequirementComponentType,
-  SemesterType,
-  sortSemester,
-  warning
+  SemesterType
 } from "../entities/four_year_plan";
-import { Semester } from "./Semester";
-import { useDrop } from "react-dnd";
-import { ItemTypes } from "../entities/Constants";
 import { CourseError } from "./FourYearPlanPage";
 import DropTargetAccordian from "./DropAccordian";
-
-/// Modified MUI accordion
-const Accordion = styled((props: AccordionProps) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  "&:not(:last-child)": {
-    borderBottom: 0
-  },
-  "&:before": {
-    display: "none"
-  }
-}));
-
-/// Modified MUI Summary
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark"
-      ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
-  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)"
-  },
-  "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1)
-  }
-}));
 
 export function deepCopy(s: SemesterType[]): SemesterType[] {
   const ret: SemesterType[] = [];

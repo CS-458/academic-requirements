@@ -162,9 +162,13 @@ export interface UserSavedSchedule {
   name: string;
   timestamp: number;
   scheduleData: {
-    Major: string | undefined;
-    Concentration: string | undefined;
-    "Completed Courses": string[] | undefined;
-    schedule: [{ year: number, seasons: [{ season: string, classes: string[] }] }]
+    Major: number;
+    Concentration: number;
+    "Completed Courses": string[];
+    schedule: ScheduleData;
   };
 }
+export type ScheduleData = Array<{
+  year: number;
+  seasons: Array<{ season: season; classes: string[] }>;
+}>;

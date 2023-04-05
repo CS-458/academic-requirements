@@ -19,7 +19,7 @@ export interface UserMajor {
 export function userMajor(): UserMajor | undefined {
   const data = window.localStorage.getItem("user_major");
   if (data !== null) {
-    // console.log(data);
+    console.log(data);
     return JSON.parse(data);
   } else {
     return undefined;
@@ -90,21 +90,21 @@ export async function saveLoggedInUser(): Promise<void> {
 
 /// Returns a list of scheuldes that include the name
 export async function getScheduleByName(
+  token: User,
   name: string
 ): Promise<UserSavedSchedule[]> {
-  return (await getSchedules()).filter((s) => s.name.includes(name));
+  return (await getSchedules(token)).filter((s) => s.name.includes(name));
 }
 
 /// Returns a list of all schedules saved by this user
-export async function getSchedules(): Promise<UserSavedSchedule[]> {
-  const token = userToken();
+export async function getSchedules(token: User): Promise<UserSavedSchedule[]> {
   if (token === undefined) {
     throw new Error("User Token Not made");
   }
   return await fetchApi("/api/user/schedules", {
     method: "GET",
     headers: {
-      "X-Google-Token": token
+      "X-Google-Token": token.cred
     }
   });
 }

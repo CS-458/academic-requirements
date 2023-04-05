@@ -572,10 +572,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       console.log("Redo called");
       const move = coursesForRedo.pop();
       if (move !== undefined) {
+        setRedo(true);
         console.log("Redo", coursesForRedo);
         createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
         // course came from the courseList, so move it back
-        setRedo(true);
         if (move.movedFrom === -1) {
           handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
         } else if (move.movedTo === -1) {

@@ -160,7 +160,7 @@ export interface FourYearPlanType {
 export interface UserSavedSchedule {
   userID: string;
   name: string;
-  timestamp: number;
+  timestamp: string;
   scheduleData: {
     Major: number;
     Concentration: number;

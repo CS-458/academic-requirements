@@ -9,10 +9,10 @@ import { getSchedules, setUserMajor, User, UserLogin } from "../services/user";
 import { styled } from "@mui/material/styles";
 import { Delete, Edit } from "@mui/icons-material";
 import Router from "next/router";
-import { concentrationList, concentrationListAll, majorList } from "../services/academic";
+import { concentrationListAll, majorList } from "../services/academic";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#ffffff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   // textAlign: "center",
@@ -29,9 +29,19 @@ function scheduleRow(
 ): JSX.Element {
   return (
     <Item>
-      <Stack direction="row" sx={{ fontSize: "24px" }}>
+      <Stack
+        direction="row"
+        sx={{ fontSize: "24px" }}
+        className="Schedule-root"
+      >
         <Box sx={{ flexGrow: 1, pl: 2 }}>{s.name}</Box>
+        <Stack sx={{ pr: 2, alignItems: "center" }} direction="row">
+          <Typography component="span" variant="subtitle1">
+            {s.timestamp}
+          </Typography>
+        </Stack>
         <Button
+          sx={{ p: 0 }}
           onClick={() => {
             const data: UserSavedSchedule["scheduleData"] = JSON.parse(
               // @ts-expect-error TODO: fix this to actually have the right type
@@ -59,9 +69,15 @@ function scheduleRow(
             Router.push("/scheduler").then(console.log, console.error);
           }}
         >
-          <Edit fontSize="large" sx={{ pr: 1 }} />
+          <Edit
+            fontSize="large"
+            sx={{ pr: 1 }}
+            titleAccess="edit"
+            data-testid="edit"
+          />
         </Button>
         <Button
+          sx={{ p: 0 }}
           onClick={() => {
             fetch(`/api/user/delete?name=${encodeURIComponent(s.name)}`, {
               method: "POST",
@@ -74,7 +90,12 @@ function scheduleRow(
             );
           }}
         >
-          <Delete fontSize="large" sx={{ pr: 1 }} />
+          <Delete
+            fontSize="large"
+            sx={{ pr: 1 }}
+            titleAccess="delete"
+            data-testid="delete"
+          />
         </Button>
       </Stack>
     </Item>
@@ -91,7 +112,10 @@ function App(): JSX.Element {
   useEffect(() => {
     if (login !== undefined) {
       getSchedules(login)
-        .then((schedules) => setSchedules(schedules))
+        .then((schedules) => {
+          console.log(schedules);
+          setSchedules(schedules);
+        })
         .catch((e) => console.error(e));
       console.log("Loading schedules");
     } else {
@@ -119,7 +143,7 @@ function App(): JSX.Element {
         <Typography variant="h4" sx={{ pl: 2 }}>
           Saved Schedules
         </Typography>
-        <Stack>
+        <Stack spacing={1}>
           {schedules.map((s) =>
             scheduleRow(s, login, updateNum, update, majors.data, conns.data)
           )}

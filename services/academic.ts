@@ -14,10 +14,12 @@ export function majorList(): UseQueryResult<MajorType[]> {
   return useQuery("Major List", async () => await fetchApi("/api/major"));
 }
 
+export type Concentration = ConcentrationType[] | undefined;
+
 // Get and cache the list of concentrations
 export function concentrationList(
   majorId: number | undefined
-): UseQueryResult<ConcentrationType[] | null> {
+): UseQueryResult<Concentration> {
   return useQuery(
     ["concentrations", majorId],
     async () => await fetchApi(`/api/concentration?majid=${majorId}`)
@@ -25,7 +27,7 @@ export function concentrationList(
 }
 
 // Get and cache the list of concentrations
-export function concentrationListAll(): UseQueryResult<ConcentrationType[] | null> {
+export function concentrationListAll(): UseQueryResult<Concentration> {
   return useQuery(
     ["concentrations_all"],
     async () => await fetchApi("/api/concentration_all")
@@ -33,7 +35,7 @@ export function concentrationListAll(): UseQueryResult<ConcentrationType[] | nul
 }
 
 // Get and cache the list of subject acronyms
-export function courseSubjects(): UseQueryResult<Array<string>> {
+export function courseSubjects(): UseQueryResult<string[]> {
   return useQuery(
     "courseSubjects",
     async () => await fetchApi("/api/subjects")
@@ -43,7 +45,7 @@ export function courseSubjects(): UseQueryResult<Array<string>> {
 // Get and cache the list of numbers for a subject acronym
 export function courseNumbers(
   subject: string | undefined
-): UseQueryResult<Array<string> | null> {
+): UseQueryResult<string[] | undefined> {
   return useQuery(
     ["courseNumbers", subject],
     async () => await fetchApi(`/api/subjects/numbers?sub=${subject}`)
@@ -53,7 +55,7 @@ export function courseNumbers(
 // Get and cache the list of major courses
 export function majorCourseList(
   majorId: number | undefined
-): UseQueryResult<CourseType[] | null> {
+): UseQueryResult<CourseType[] | undefined> {
   return useQuery(
     ["majorCourseList", majorId],
     async () => await fetchApi(`/api/courses/major?majid=${majorId}`)
@@ -63,7 +65,7 @@ export function majorCourseList(
 // Get and cache the list of concentration courses
 export function concentrationCourseList(
   conId: number | undefined
-): UseQueryResult<CourseType[] | null> {
+): UseQueryResult<CourseType[] | undefined> {
   return useQuery(
     ["concentrationCourseList", conId],
     async () => await fetchApi(`/api/courses/concentration?conid=${conId}`)

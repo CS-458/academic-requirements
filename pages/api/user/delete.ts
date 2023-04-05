@@ -32,12 +32,19 @@ export default async function handler(
     res.status(401).json({ error: "Invalid user token" });
     return;
   }
+  let name = req.query.name;
+  if (typeof name !== "string") {
+    res.status(400).json({ error: "Invalid name specified" });
+    return;
+  }
+  name = decodeURIComponent(name);
 
-  console.log("Deleting ", req.query.name);
+  console.log("Deleting ", name);
   const result = await con.run(
     "DELETE FROM schedule WHERE userID = ? and name = ?",
-    [user, req.query.name]
+    [user, name]
   );
+  console.log(result);
   if (result.changes === 1) {
     // Returns a success message
     res.status(200).json({});

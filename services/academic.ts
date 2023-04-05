@@ -104,10 +104,10 @@ export function courseCategoryRequirements(
   );
 }
 
+type Req = RequirementComponentType[];
+
 // Get and cache the list of gen-ed requirements
-export function genedCategoryRequirements(): UseQueryResult<
-  RequirementComponentType[]
-> {
+export function genedCategoryRequirements(): UseQueryResult<Req> {
   return useQuery(
     "genedRequirements",
     async () => await fetchApi("/api/requirements/gen")

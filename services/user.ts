@@ -19,7 +19,6 @@ export interface UserMajor {
 export function userMajor(): UserMajor | undefined {
   const data = window.localStorage.getItem("user_major");
   if (data !== null) {
-    console.log(data);
     return JSON.parse(data);
   } else {
     return undefined;

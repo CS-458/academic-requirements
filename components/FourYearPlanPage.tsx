@@ -115,6 +115,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // lists of courses for undoing and redoing course moves
     const [coursesMoved, setCoursesMoved] = useState<movedCourse[]>([]);
     const [coursesForRedo, setCoursesForRedo] = useState<movedCourse[]>([]);
+    let undo = false;
 
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
@@ -154,11 +155,62 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     //   }
     // }, [importData]);
 
+    const handleDrop = useCallback(
+      (semNumber: number, item: { idCourse: number; dragSource: string }) => {
+        const { idCourse, dragSource } = item;
+        console.log("Drop", semNumber, idCourse, dragSource);
+        const tmpSemesters = deepCopy(semesters);
+        undo = false;
+        const target = tmpSemesters.find(
+          (sem) => sem.semesterNumber === semNumber
+        );
+        if (target == null) throw new Error("Drop target not found");
+        const course = PassedCourseList.find((c) => c.idCourse === idCourse);
+        if (course == null) throw new Error("Course not found");
+        if (target.courses.some((c) => c.idCourse === idCourse)) return;
+        let source: SemesterType | undefined;
+        if (dragSource !== "CourseList") {
+          const sourceId = +dragSource.split(" ")[1];
+          console.log(sourceId);
+          console.log(semNumber);
+          source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
+          if (source == null) throw new Error("Source semester not found");
+          source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
+        } else {
+          checkRequirements(course, coursesInMultipleCategories);
+        }
+        console.log(course.dragSource);
+        course.dragSource = `Semester ${semNumber}`;
+        target.courses.push(course);
+        setSemesters(tmpSemesters);
+        setUpdateWarning({
+          course,
+          oldSemester: tmpSemesters.findIndex(
+            (s) => s.semesterNumber === source?.semesterNumber
+          ),
+          newSemester: tmpSemesters.findIndex(
+            (s) => s.semesterNumber === target.semesterNumber
+          ),
+          draggedOut: true,
+          newCheck: true
+        });
+      },
+      [
+        semesters,
+        coursesInMultipleCategories,
+        reqList,
+        reqGenList,
+        PassedCourseList
+      ]
+    );
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
       (item: { idCourse: number; dragSource: string }) => {
         const { idCourse, dragSource } = item;
         console.log("Calling return drop", idCourse, dragSource);
+        if (undo) {
+          createCourseMoveRecord(-1, idCourse, parseInt(dragSource.split(" ")[1]));
+        }
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
           const tempSemesters = deepCopy(semesters);
@@ -185,7 +237,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
           tempSemesters[semesterIndex].courses.splice(courseIndex, 1);
           setSemesters(tempSemesters);
-          createCourseMoveRecord(-1, idCourse, parseInt(dragSource.split(" ")[1]));
         }
       },
       [PassedCourseList, semesters]
@@ -494,26 +545,65 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     );
 
     function handleUndoCourse(): void {
-      console.log("undoing course move");
+      console.log("undoing course move", coursesMoved);
       const move = coursesMoved.pop();
       if (move !== undefined) {
+        undo = true;
         const temp = coursesForRedo;
-        temp.push(move);
+        temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
         setCoursesForRedo(temp);
+        console.log("Redo", coursesForRedo);
+        console.log("undo from undo,", undo);
+        // course came from the courseList, so move it back
+        if (move.movedFrom === -1) {
+          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        } else if (move.movedTo === -1) {
+          console.log("moved to the course list, need to re-pull course");
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+        } else {
+          console.log("called");
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        }
+      }
+    }
+    function handleRedoCourse(): void {
+      console.log("Redo called");
+      const move = coursesForRedo.pop();
+      if (move !== undefined) {
+        console.log("Redo", coursesForRedo);
+        createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
+        // course came from the courseList, so move it back
+        if (move.movedFrom === -1) {
+          undo = true;
+          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        } else if (move.movedTo === -1) {
+          // was moved to course list
+          undo = true;
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+        } else {
+          undo = true;
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        }
       }
     }
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
-      const temp = coursesMoved;
-      temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
-      setCoursesMoved(temp);
-      console.log(coursesMoved);
+      console.log("undo from create,", undo);
+      if (!undo) {
+        setCoursesForRedo([]);
+        const temp = coursesMoved;
+        temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
+        setCoursesMoved(temp);
+        console.log("undo", coursesMoved);
+      } else {
+        undo = false;
+      }
     }
 
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} handleUndoCourse={handleUndoCourse} />
+          <ActionBar scheduleData={info} setAlertData={throwError} handleUndoCourse={handleUndoCourse} handleRedoCourse={handleRedoCourse} />
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}
@@ -543,7 +633,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               reqList={reqList ?? []}
               reqGenList={reqGenList ?? []}
               createCourseMoveRecord={createCourseMoveRecord}
-              handleUndoCourse={handleUndoCourse}
             />
           </div>
           <div

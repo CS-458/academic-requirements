@@ -13,8 +13,7 @@ import {
   MultipleCategoriesType,
   RequirementComponentType,
   SemesterType,
-  sortSemester,
-  warning
+  sortSemester
 } from "../entities/four_year_plan";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
@@ -82,8 +81,7 @@ export default function SemesterList({
   setUpdateWarning,
   reqList,
   reqGenList,
-  createCourseMoveRecord,
-  handleUndoCourse
+  createCourseMoveRecord
 }: {
   semesters: SemesterType[];
   warningPrerequisiteCourses: CourseError[];
@@ -97,7 +95,6 @@ export default function SemesterList({
   reqList: RequirementComponentType[];
   reqGenList: RequirementComponentType[];
   createCourseMoveRecord: (a: number, b: number, c: number) => any;
-  handleUndoCourse: (a: any) => any;
 }): JSX.Element {
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
@@ -164,7 +161,7 @@ export default function SemesterList({
       }
     });
     parts.push(
-      <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)}>
+      <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)} key={i}>
         <div ref={drop}>
           <AccordionSummary sx={{ bgcolor: "primary.main" }}>
             Year {i + 1}

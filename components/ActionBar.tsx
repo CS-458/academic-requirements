@@ -14,7 +14,8 @@ import RedoButton from "./RedoButton";
 export default function BoxSx(props: {
   scheduleData: UserSavedSchedule["scheduleData"],
   setAlertData: (msg: string, severity: string) => void,
-  handleUndoCourse: () => any
+  handleUndoCourse: () => any,
+  handleRedoCourse: () => any
 }): any {
   return (
     <div>
@@ -31,7 +32,7 @@ export default function BoxSx(props: {
           setAlertData={props.setAlertData}
         />
         <UndoButton handleUndoCourse={props.handleUndoCourse}/>
-        <RedoButton />
+        <RedoButton handleRedoCourse={props.handleRedoCourse}/>
       </Box>
 
     </div>

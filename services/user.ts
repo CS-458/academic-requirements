@@ -62,13 +62,19 @@ export async function uploadSchedule(
   if (token === undefined) {
     throw new Error("User is not logged in");
   }
-  await fetchApi(`/api/inserts/schedule?name=${name}`, {
-    method: "POST",
-    body: JSON.stringify(schedule),
-    headers: {
-      "X-Google-Token": token
+  const response: { error: string } | { message: string } = await fetchApi(
+    `/api/inserts/schedule?name=${name}`,
+    {
+      method: "POST",
+      body: JSON.stringify(schedule),
+      headers: {
+        "X-Google-Token": token
+      }
     }
-  });
+  );
+  if ("error" in response) {
+    throw new Error(`Request failed: ${response.error}`);
+  }
 }
 /*
   Function used to store user into the user table
@@ -101,10 +107,17 @@ export async function getSchedules(token: User): Promise<UserSavedSchedule[]> {
   if (token === undefined) {
     throw new Error("User Token Not made");
   }
-  return await fetchApi("/api/user/schedules", {
-    method: "GET",
-    headers: {
-      "X-Google-Token": token.cred
-    }
-  });
+  const response = await (
+    await fetch("/api/user/schedules", {
+      method: "GET",
+      headers: {
+        "X-Google-Token": token.cred
+      }
+    })
+  ).json();
+  if (response.error !== undefined) {
+    return [];
+  } else {
+    return response;
+  }
 }

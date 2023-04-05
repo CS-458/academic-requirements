@@ -33,7 +33,10 @@ export default async function handler(
     return;
   }
 
-  const rows = await con.all("SELECT * FROM schedule WHERE userID = ?", [user]);
+  const rows = await con.all(
+    "SELECT * FROM schedule WHERE userID = ? ORDER BY timestamp DESC",
+    [user]
+  );
 
   // Returns a success message
   res.status(200).json(rows);

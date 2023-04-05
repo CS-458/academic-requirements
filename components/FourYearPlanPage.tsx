@@ -2,7 +2,7 @@ import React, { FC, useEffect, memo, useCallback, useState } from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
-import { AlertProps, Snackbar, Alert as MuiAlert} from "@mui/material";
+import { AlertProps, Snackbar, Alert as MuiAlert } from "@mui/material";
 import RequirementsProcessing from "../entities/requirementsProcessing";
 import { userMajor } from "../services/user";
 import {
@@ -492,7 +492,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       <div className="generic">
         <div className="drag-drop">
           <ActionBar scheduleData={info} setAlertData={throwError}>
-            <ScheduleErrorNotification errors={savedErrors}/>
+            <ScheduleErrorNotification errors={savedErrors} />
           </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar

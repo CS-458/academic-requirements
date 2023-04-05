@@ -115,7 +115,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // lists of courses for undoing and redoing course moves
     const [coursesMoved, setCoursesMoved] = useState<movedCourse[]>([]);
     const [coursesForRedo, setCoursesForRedo] = useState<movedCourse[]>([]);
-    let undo = false;
+    const [undo, setUndo] = useState<boolean>(false);
+    const [redo, setRedo] = useState<boolean>(false);
 
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
@@ -160,7 +161,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         const { idCourse, dragSource } = item;
         console.log("Drop", semNumber, idCourse, dragSource);
         const tmpSemesters = deepCopy(semesters);
-        undo = false;
+        setUndo(false);
         const target = tmpSemesters.find(
           (sem) => sem.semesterNumber === semNumber
         );
@@ -209,6 +210,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         const { idCourse, dragSource } = item;
         console.log("Calling return drop", idCourse, dragSource);
         if (undo) {
+          console.log("creating record from return drop");
           createCourseMoveRecord(-1, idCourse, parseInt(dragSource.split(" ")[1]));
         }
         // ignore all drops from the course list
@@ -548,7 +550,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       console.log("undoing course move", coursesMoved);
       const move = coursesMoved.pop();
       if (move !== undefined) {
-        undo = true;
+        setUndo(true);
         const temp = coursesForRedo;
         temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
         setCoursesForRedo(temp);
@@ -573,15 +575,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Redo", coursesForRedo);
         createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
         // course came from the courseList, so move it back
+        setRedo(true);
         if (move.movedFrom === -1) {
-          undo = true;
           handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
         } else if (move.movedTo === -1) {
           // was moved to course list
-          undo = true;
           handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
         } else {
-          undo = true;
           handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
         }
       }
@@ -590,13 +590,17 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
       console.log("undo from create,", undo);
       if (!undo) {
-        setCoursesForRedo([]);
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
         setCoursesMoved(temp);
         console.log("undo", coursesMoved);
       } else {
-        undo = false;
+        setUndo(false);
+      }
+      if (!redo && !undo) {
+        console.log("undo ", undo, "redo", redo);
+        console.log("redo been reset");
+        setCoursesForRedo([]);
       }
     }
 

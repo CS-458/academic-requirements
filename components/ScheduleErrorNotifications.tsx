@@ -31,7 +31,7 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
 
   return (
     <>
-      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0}>
+      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton">
         <Tooltip title={`You Have ${errors.length} Errors`} arrow placement="right">
           <Badge badgeContent={errors?.length} color="primary">
             {errors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}
@@ -57,25 +57,26 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
           sx={{
             width: "100%"
           }}
+          data-testid="notificationPopover"
         >
           <Grid container justifyContent="space-between">
             <Typography sx={{
               alignSelf: "center",
               px: ".5em",
-              fontSize: "1.3em",
+              fontSize: "1.2em",
               fontWeight: "bold"
             }}>
               Errors & Warnings
             </Typography>
             <Grid item justifyContent="flex-end">
-              <IconButton onClick={handleCloseNotification}>
+              <IconButton onClick={handleCloseNotification} data-testid="notificationPopoverClose">
                 <Close />
               </IconButton>
             </Grid>
           </Grid>
           {errors.map((error, index) => {
             return (
-              <>
+              <div key={index}>
                 <Divider />
                 <Box
                   sx={{
@@ -84,12 +85,11 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
                 >
                   {error}
                 </Box>
-              </>
+              </div>
             );
           })}
         </Box>
       </Popover>
-
     </>
   );
 }

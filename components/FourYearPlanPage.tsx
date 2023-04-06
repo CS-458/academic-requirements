@@ -490,7 +490,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} />
+          <ActionBar
+            scheduleData={info}
+            sems={semesters}
+            requirementsData={requirementsDisplay}
+            setAlertData={throwError}
+            handleReturn={handleReturnDrop}
+            setSemesters={setSemesters}
+          />
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}
@@ -541,6 +548,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           <InformationDrawer
             requirementsDisplay={requirementsDisplay}
             semesters={semesters}
+            passedCourseList={PassedCourseList}
           />
         </div>
       </div>

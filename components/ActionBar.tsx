@@ -6,12 +6,17 @@
 import React from "react";
 import { Box } from "@mui/material";
 import ScheduleUpload from "./ScheduleUploadModal";
-import { UserSavedSchedule } from "../entities/four_year_plan";
+import ReloadPage from "./ReloadPage";
+import { CourseType, RequirementComponentType, SemesterType, UserSavedSchedule } from "../entities/four_year_plan";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal
 export default function BoxSx(props: {
   scheduleData: UserSavedSchedule["scheduleData"],
+  sems: SemesterType[],
+  requirementsData: RequirementComponentType[],
+  handleReturn: (y: CourseType) => void
   setAlertData: (msg: string, severity: string) => void
+  setSemesters: (v: SemesterType[]) => void;
 }): any {
   return (
     <div>
@@ -26,6 +31,13 @@ export default function BoxSx(props: {
         <ScheduleUpload
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}
+        />
+        <ReloadPage
+          scheduleData={props.scheduleData}
+          sems={props.sems}
+          handleReturn={props.handleReturn}
+          requirementsData={props.requirementsData}
+          setSemesters={props.setSemesters}
         />
       </Box>
     </div>

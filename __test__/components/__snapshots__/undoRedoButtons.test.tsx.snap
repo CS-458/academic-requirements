@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test whether requirements visually update on the screen 1`] = `
+exports[`Test undo and redo button 1`] = `
 <body>
   <div>
     <div
@@ -144,15 +144,38 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester0"
                             >
                               <p>
                                 Fall
                                  (
-                                0
+                                4
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                144
+                                <br />
+                                Computer Science I
+                                <br />
+                                Credits: 
+                                4
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -172,9 +195,75 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                               <p>
                                 Spring
                                  (
-                                0
+                                12
                                 ) 
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                145
+                                <br />
+                                Computer Science II
+                                <br />
+                                Credits: 
+                                4
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=145&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                ENGL
+                                -
+                                102
+                                <br />
+                                Composition 2
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=102&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                MATH
+                                -
+                                157
+                                <br />
+                                Calculus and Analytic Geometry II
+                                <br />
+                                Credits: 
+                                5
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=157&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -254,9 +343,97 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                               <p>
                                 Fall
                                  (
-                                0
+                                13
                                 ) 
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                COMST
+                                -
+                                100
+                                <br />
+                                Fundamentals of Speech
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=100&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                244
+                                <br />
+                                Data Structures
+                                <br />
+                                Credits: 
+                                4
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=244&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                248
+                                <br />
+                                Web and Internet Programming
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=248&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                MATH
+                                -
+                                270
+                                <br />
+                                Discrete Mathematics
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=270&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -270,15 +447,104 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester3"
                             >
                               <p>
                                 Spring
                                  (
-                                0
+                                10
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                324
+                                <br />
+                                Database Systems Manipulation and Design
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=324&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                290
+                                <br />
+                                Professional Seminar
+                                <br />
+                                Credits: 
+                                1
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=290&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                ICT
+                                -
+                                103
+                                <br />
+                                Information and Communication Technologies
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=103&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                MATH
+                                -
+                                275
+                                <br />
+                                Linear Algebra
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -352,15 +618,60 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester4"
                             >
                               <p>
                                 Fall
                                  (
-                                0
+                                6
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                254
+                                <br />
+                                Algorithm Design and Analysis
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=254&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                ICT
+                                -
+                                215
+                                <br />
+                                Cybertechnology Ethics
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=215&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -374,15 +685,60 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester5"
                             >
                               <p>
                                 Spring
                                  (
-                                0
+                                7
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                358
+                                <br />
+                                Software Engineering Principles
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=358&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                MATH
+                                -
+                                158
+                                <br />
+                                Calculus III
+                                <br />
+                                Credits: 
+                                4
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=158&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -456,15 +812,38 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester6"
                             >
                               <p>
                                 Fall
                                  (
-                                0
+                                4
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                441
+                                <br />
+                                Computer Architecture
+                                <br />
+                                Credits: 
+                                4
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=441&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -478,15 +857,38 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester7"
                             >
                               <p>
                                 Spring
                                  (
-                                0
+                                3
                                 ) 
+                                Low
                               </p>
+                              <div
+                                class="CourseText"
+                                data-testid="course"
+                                draggable="true"
+                                style="opacity: 1;"
+                              >
+                                CS
+                                -
+                                442
+                                <br />
+                                Operating Systems
+                                <br />
+                                Credits: 
+                                3
+                                <br />
+                                <a
+                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=442&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                  target="_blank"
+                                >
+                                  Description
+                                </a>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -832,7 +1234,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="82"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -848,7 +1250,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 22.398px;"
                                 />
                               </svg>
                             </span>
@@ -859,7 +1261,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                82
                               </div>
                             </div>
                           </div>
@@ -883,7 +1285,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="100"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -899,7 +1301,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
                                 />
                               </svg>
                             </span>
@@ -910,7 +1312,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                100
                               </div>
                             </div>
                           </div>
@@ -942,7 +1344,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="100"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -958,7 +1360,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
                                 />
                               </svg>
                             </span>
@@ -969,7 +1371,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                100
                               </div>
                             </div>
                           </div>
@@ -993,7 +1395,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="50"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1009,7 +1411,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 63.460px;"
                                 />
                               </svg>
                             </span>
@@ -1020,7 +1422,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                50
                               </div>
                             </div>
                           </div>
@@ -1044,7 +1446,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="67"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1060,7 +1462,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 42.307px;"
                                 />
                               </svg>
                             </span>
@@ -1071,7 +1473,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                67
                               </div>
                             </div>
                           </div>
@@ -1095,7 +1497,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="33"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1111,7 +1513,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 84.614px;"
                                 />
                               </svg>
                             </span>
@@ -1122,7 +1524,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                33
                               </div>
                             </div>
                           </div>
@@ -1197,7 +1599,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="50"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1213,7 +1615,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 63.460px;"
                                 />
                               </svg>
                             </span>
@@ -1224,7 +1626,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                50
                               </div>
                             </div>
                           </div>
@@ -1248,7 +1650,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="100"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1264,7 +1666,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
                                 />
                               </svg>
                             </span>
@@ -1275,7 +1677,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                100
                               </div>
                             </div>
                           </div>
@@ -1299,7 +1701,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="0"
+                              aria-valuenow="100"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1315,7 +1717,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
                                 />
                               </svg>
                             </span>
@@ -1326,7 +1728,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                0
+                                100
                               </div>
                             </div>
                           </div>
@@ -1335,6 +1737,18 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  aria-labelledby="simple-tab-2"
+                  hidden=""
+                  id="simple-tabpanel-2"
+                  role="tabpanel"
+                />
+                <div
+                  aria-labelledby="simple-tab-1"
+                  hidden=""
+                  id="simple-tabpanel-1"
+                  role="tabpanel"
+                />
               </div>
             </div>
           </div>

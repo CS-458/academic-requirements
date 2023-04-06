@@ -18,7 +18,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
             >
               <div>
                 <button
-                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                   data-testid="saveButton"
                   tabindex="0"
                   type="button"
@@ -39,6 +39,48 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   />
                 </button>
               </div>
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="undoButton"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="UndoIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="redoButton"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="RedoIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
             </div>
           </div>
           <div
@@ -123,7 +165,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Science I
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -145,7 +187,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Composition 1
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -167,7 +209,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus and Analytic Geometry I
                                 <br />
-                                credits: 
+                                Credits: 
                                 5
                                 <br />
                                 <a
@@ -211,7 +253,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Science II
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -233,7 +275,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Composition 2
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -255,7 +297,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus and Analytic Geometry II
                                 <br />
-                                credits: 
+                                Credits: 
                                 5
                                 <br />
                                 <a
@@ -359,7 +401,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Fundamentals of Speech
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -381,7 +423,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Data Structures
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -403,7 +445,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Web and Internet Programming
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -425,7 +467,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Discrete Mathematics
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -470,7 +512,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Database Systems Manipulation and Design
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -492,7 +534,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Professional Seminar
                                 <br />
-                                credits: 
+                                Credits: 
                                 1
                                 <br />
                                 <a
@@ -514,7 +556,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Information and Communication Technologies
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -536,7 +578,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Linear Algebra
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -641,7 +683,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Algorithm Design and Analysis
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -663,7 +705,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Cybertechnology Ethics
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -708,7 +750,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Software Engineering Principles
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -730,7 +772,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus III
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -835,7 +877,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Architecture
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -880,7 +922,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Operating Systems
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a

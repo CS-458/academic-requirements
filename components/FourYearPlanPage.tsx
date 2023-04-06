@@ -208,7 +208,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         const { idCourse, dragSource } = item;
         console.log("Calling return drop", idCourse, dragSource);
         if (undo || redo) {
-          console.log("creating record from return drop");
           createCourseMoveRecord(-1, idCourse, parseInt(dragSource.split(" ")[1]));
         }
         // ignore all drops from the course list
@@ -545,35 +544,27 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     );
 
     function handleUndoCourse(): void {
-      console.log("undoing course move", coursesMoved);
       const move = coursesMoved.pop();
       if (move !== undefined) {
         setUndo(true);
         const temp = coursesForRedo;
         temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
         setCoursesForRedo(temp);
-        console.log("Redo", coursesForRedo);
-        console.log("undo from undo,", undo);
         // course came from the courseList, so move it back
         if (move.movedFrom === -1) {
           handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
         } else if (move.movedTo === -1) {
-          console.log("moved to the course list, need to re-pull course");
           handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
         } else {
-          console.log("called");
           handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
         }
       }
     }
 
     function handleRedoCourse(): void {
-      console.log("Redo called");
       const move = coursesForRedo.pop();
       if (move !== undefined) {
         redo = true;
-        console.log("Redo", coursesForRedo);
-        console.log("are we redoing", redo);
         createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
         // course came from the courseList, so move it back
         if (move.movedFrom === -1) {
@@ -588,19 +579,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
-      console.log("undo from create,", undo);
-      console.log("redo from create", redo);
       if (!undo) {
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
         setCoursesMoved(temp);
-        console.log("undo", coursesMoved);
       } else {
         setUndo(false);
       }
       if (!redo && !undo) {
-        console.log("undo ", undo, "redo", redo);
-        console.log("redo been reset");
         setCoursesForRedo([]);
       }
     }

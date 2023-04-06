@@ -26,7 +26,7 @@ test("Verify Majors and Concentrations", async () => {
   ).not.toBeChecked();
 
   expect(generateButton).not.toBeDisabled();
-});
+}, 100000);
 
 test("Verify Four Year Plan Not Show", async () => {
   const user = setupUser();

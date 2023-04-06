@@ -39,6 +39,27 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   />
                 </button>
               </div>
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="rloadButton"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="RefreshIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
             </div>
           </div>
           <div
@@ -1175,7 +1196,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           class="MuiBox-root css-poat16"
                         >
                           <span
-                            aria-valuenow="56"
+                            aria-valuenow="63"
                             class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                             role="progressbar"
                             style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1191,7 +1212,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 fill="none"
                                 r="20.2"
                                 stroke-width="3.6"
-                                style="stroke-dasharray: 126.920; stroke-dashoffset: 56.056px;"
+                                style="stroke-dasharray: 126.920; stroke-dashoffset: 46.537px;"
                               />
                             </svg>
                           </span>
@@ -1202,7 +1223,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              55.8
+                              63.3
                             </div>
                           </div>
                         </div>

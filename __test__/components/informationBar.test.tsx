@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
 import { setupUser, render } from "../util";
 import InformationDrawer from "../../components/InformationBar";
-import { RequirementComponentType, season, SemesterType } from "../../entities/four_year_plan";
+import { CourseType, RequirementComponentType, season, SemesterType } from "../../entities/four_year_plan";
 import { setUserMajor } from "../../services/user";
 
 // eslint-disable-next-line @typescript-eslint/quotes, quotes
@@ -56,9 +56,11 @@ const mockedSem: SemesterType[] = [
     season: season.Spring
   }];
 
+const mockedPassedCourseList: CourseType[] = [];
+
 test("Test Requirements in the Information Bar on the Schedule Page", async () => {
   const user = setupUser();
-  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} />);
+  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} passedCourseList={mockedPassedCourseList}/>);
   expect(bar.baseElement).toMatchSnapshot();
   expect(screen.getByText(/Credits/i)).toBeInTheDocument();
   expect(screen.getByText(/Major/i)).toBeInTheDocument();
@@ -88,7 +90,7 @@ test("Test Switching Tabs on Information Bar", async () => {
     load_four_year_plan: true,
     completed_courses: ["ANTH-220"]
   });
-  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} />);
+  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} passedCourseList={mockedPassedCourseList}/>);
   expect(bar.baseElement).toMatchSnapshot();
   const openButton = screen.getByTestId("openDrawer");
   await user.click(openButton);
@@ -114,7 +116,7 @@ test("Test Add Only One Tab on Information Bar", async () => {
     load_four_year_plan: true,
     completed_courses: []
   });
-  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} />);
+  const bar = render(<InformationDrawer requirementsDisplay={requirementsDisplayList} semesters={mockedSem} passedCourseList={mockedPassedCourseList}/>);
   expect(bar.baseElement).toMatchSnapshot();
   const openButton = screen.getByTestId("openDrawer");
   await user.click(openButton);

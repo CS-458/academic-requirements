@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { CssBaseline, IconButton, Divider, Typography, Tab, Tabs, Box, styled, Theme, CSSObject, Drawer } from "@mui/material";
-import { RequirementComponentType, SemesterType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType, SemesterType } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
 import { userMajor } from "../services/user";
 
@@ -84,7 +84,10 @@ function TabPanel(props: TabPanelProps): any {
   );
 }
 
-export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[], semesters: SemesterType[] }): JSX.Element {
+export default function InformationDrawer(props: {
+  requirementsDisplay: RequirementComponentType[],
+  semesters: SemesterType[],
+  passedCourseList: CourseType[] }): JSX.Element {
   const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
   const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
@@ -112,6 +115,16 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
 
   function getTotalCredits(s: SemesterType[]): any {
     let total = 0;
+    completedCourses.forEach((c) => {
+      const courseSub: string = c.split("-")[0];
+      const courseNum: string = c.split("-")[1];
+      props.passedCourseList.forEach((pc) => {
+        if (pc.subject === courseSub && pc.number === courseNum) {
+          total += pc.credits;
+        }
+      });
+    });
+
     s.forEach((s) => {
       total += s.SemesterCredits;
     });

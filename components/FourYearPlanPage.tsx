@@ -24,6 +24,9 @@ import SemesterList, { deepCopy } from "./SemesterList";
 import CourseFiltering from "./CourseFiltering";
 import ActionBar from "./ActionBar";
 import InformationDrawer from "./InformationBar";
+import ScheduleErrorNotification from "./ScheduleErrorNotifications";
+import UndoButton from "./UndoButton";
+import RedoButton from "./RedoButton";
 
 export interface CourseError {
   id: number;
@@ -594,7 +597,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} handleUndoCourse={handleUndoCourse} handleRedoCourse={handleRedoCourse} />
+          <ActionBar scheduleData={info} setAlertData={throwError}>
+            <ScheduleErrorNotification errors={savedErrors} />
+            <UndoButton handleUndoCourse={handleUndoCourse}/>
+            <RedoButton handleRedoCourse={handleRedoCourse}/>
+          </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}

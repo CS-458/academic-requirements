@@ -16,29 +16,36 @@ exports[`Test whether requirements visually update on the screen 1`] = `
             <div
               class="MuiBox-root css-6um5jb"
             >
-              <div>
-                <button
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                  data-testid="saveButton"
-                  tabindex="0"
-                  type="button"
+              <button
+                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="notificationButton"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="You Have 0 Errors"
+                  class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                  data-mui-internal-clone-element="true"
                 >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SaveIcon"
+                    data-testid="NotificationsNoneIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                      d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
                     />
                   </svg>
                   <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                  />
-                </button>
-              </div>
+                    class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                  >
+                    0
+                  </span>
+                </span>
+              </button>
               <button
                 class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="undoButton"
@@ -81,6 +88,29 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -620,8 +650,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r1:"
-                        id=":r1:-label"
+                        for=":r2:"
+                        id=":r2:-label"
                       >
                         Course Category
                       </label>
@@ -635,7 +665,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r1:"
+                          id=":r2:"
                           role="combobox"
                           spellcheck="false"
                           type="text"

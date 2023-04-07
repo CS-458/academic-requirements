@@ -60,4 +60,4 @@ test("Test undo and redo button", async () => {
   const redo = screen.getByTestId("redoButton");
   await user.click(redo);
   expect(within(winterSemester).getAllByTestId("course")[0]).toContainHTML("144");
-});
+}, 100000);

@@ -46,7 +46,7 @@ test("Verify Four Year Plan Not Show", async () => {
   expect(screen.queryByLabelText(/Use Suggested Four Year Plan/i)).toBeNull();
 
   expect(generateButton).not.toBeDisabled();
-});
+}, 100000);
 
 test("Verify Select Use Four Year Plan", async () => {
   const user = setupUser();

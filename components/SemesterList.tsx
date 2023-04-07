@@ -101,8 +101,10 @@ export default function SemesterList({
       const { idCourse, dragSource } = item;
       console.log("Drop", semNumber, idCourse, dragSource);
       const tmpSemesters = deepCopy(semesters);
-      const movedFrom = dragSource === undefined || dragSource === "CourseList" ? -1 : parseInt(dragSource.split(" ")[1]);
-      createCourseMoveRecord(semNumber, idCourse, movedFrom);
+      const movedFrom = dragSource === undefined || dragSource === "CourseList" ? -2 : parseInt(dragSource.split(" ")[1]);
+      if (semNumber !== movedFrom) {
+        createCourseMoveRecord(semNumber, idCourse, movedFrom);
+      }
       const target = tmpSemesters.find(
         (sem) => sem.semesterNumber === semNumber
       );
@@ -120,7 +122,6 @@ export default function SemesterList({
       } else {
         checkRequirements(course, coursesInMultipleCategories);
       }
-      console.log(course.dragSource);
       course.dragSource = `Semester ${semNumber}`;
       target.courses.push(course);
       setSemesters(tmpSemesters);

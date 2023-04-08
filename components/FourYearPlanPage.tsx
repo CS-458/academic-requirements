@@ -210,13 +210,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       (item: { idCourse: number; dragSource: string }) => {
         const { idCourse, dragSource } = item;
         console.log("Calling return drop", idCourse, dragSource);
-        // if (undo || redo) {
-        if (dragSource !== undefined && dragSource !== "CourseList") {
-          createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
-        }
-        // }
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
+          if (undo || redo) {
+            createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
+          }
           const tempSemesters = deepCopy(semesters);
           const movedFromNum = +dragSource.split(" ")[1];
           const semesterIndex = tempSemesters.findIndex(
@@ -585,6 +583,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
       if (!undo) {
+        console.log(undo);
         console.log("creating record");
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });

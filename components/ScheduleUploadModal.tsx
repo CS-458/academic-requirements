@@ -36,11 +36,14 @@ export function getDateTime(): string {
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
+  defaultName?: string;
 }): any {
   const [open, setOpen] = React.useState(false);
 
   // sets the schdeule name if there is a custom name
-  const [scheduleName, setScheduleName] = React.useState(getDateTime());
+  const [scheduleName, setScheduleName] = React.useState(
+    props.defaultName ?? getDateTime()
+  );
 
   // Function that sets the alert
   function throwAlert(error: string, errorSeverity: string): void {

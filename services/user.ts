@@ -14,6 +14,8 @@ export interface UserMajor {
   load_four_year_plan: boolean;
   /// A list of completed courses taken
   completed_courses: string[];
+  /// Default schedule name, if provided
+  schedule_name?: string;
 }
 
 export function userMajor(): UserMajor | undefined {

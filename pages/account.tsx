@@ -60,7 +60,8 @@ function scheduleRow(
                 id: -1,
                 name: ""
               },
-              load_four_year_plan: false
+              load_four_year_plan: data.usedFourYearPlan,
+              schedule_name: s.name
             });
             localStorage.setItem(
               "current-schedule",

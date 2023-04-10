@@ -166,6 +166,7 @@ export interface UserSavedSchedule {
     Concentration: number;
     "Completed Courses": string[];
     schedule: ScheduleData;
+    usedFourYearPlan: boolean;
   };
 }
 export type ScheduleData = Array<{

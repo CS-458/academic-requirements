@@ -64,6 +64,7 @@ export const Course: FC<DragCourseType> = memo(function Course({
       style={{ opacity }}
       data-testid="course"
       className={clsx(
+        "Course-root",
         "CourseText",
         warningYellowColor !== undefined &&
         warningRedColor === undefined &&

@@ -14,7 +14,8 @@ import {
   warning,
   season,
   sortSemester,
-  ScheduleData
+  ScheduleData,
+  UserSavedSchedule
 } from "../entities/four_year_plan";
 import {
   processRequirementLists,
@@ -330,11 +331,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return schedule;
     }
     //  JSON Data for the Courses
-    const info = {
+    const info: UserSavedSchedule["scheduleData"] = {
       Major: userMajor()?.major.id ?? -1,
       Concentration: userMajor()?.concentration.idConcentration ?? -1,
       "Completed Courses": userMajor()?.completed_courses ?? [],
-      schedule: getSemesterDataForSaving()
+      schedule: getSemesterDataForSaving(),
+      usedFourYearPlan: userMajor()?.load_four_year_plan ?? false
     };
 
     //  This function sets the correct warning for the semester
@@ -578,7 +580,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError} />
+          <ActionBar
+            scheduleData={info}
+            setAlertData={throwError}
+            defaultName={userMajor()?.schedule_name}
+          />
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
               open={visibility}

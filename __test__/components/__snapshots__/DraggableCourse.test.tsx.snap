@@ -7,7 +7,7 @@ exports[`Draggable Course Renders 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="CourseText"
+        class="Course-root CourseText"
         data-testid="course"
         draggable="true"
         style="opacity: 1;"
@@ -40,7 +40,7 @@ exports[`DraggableCourse - Orange Warning 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="CourseText CourseWarningOrange"
+        class="Course-root CourseText CourseWarningOrange"
         data-testid="course"
         draggable="true"
         style="opacity: 1;"
@@ -73,7 +73,7 @@ exports[`DraggableCourse - Red Warning 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="CourseText CourseWarningRed"
+        class="Course-root CourseText CourseWarningRed"
         data-testid="course"
         draggable="true"
         style="opacity: 1;"
@@ -106,7 +106,7 @@ exports[`DraggableCourse - Yellow Warning 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="CourseText CourseWarningYellow"
+        class="Course-root CourseText CourseWarningYellow"
         data-testid="course"
         draggable="true"
         style="opacity: 1;"

@@ -178,7 +178,7 @@ export function buildLocalStorage(user?: UserMajor): void {
   window.localStorage.removeItem = removeMockStorage;
   window.localStorage.clear = clearMockStorage;
   if (user !== undefined) {
-    setMockStorage("user_major", JSON.stringify(user));
+    window.localStorage.setItem("user_major", JSON.stringify(user));
   }
 }
 

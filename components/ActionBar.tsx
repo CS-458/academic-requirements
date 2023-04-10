@@ -10,8 +10,9 @@ import { UserSavedSchedule } from "../entities/four_year_plan";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal
 export default function BoxSx(props: {
-  scheduleData: UserSavedSchedule["scheduleData"],
-  setAlertData: (msg: string, severity: string) => void
+  scheduleData: UserSavedSchedule["scheduleData"];
+  setAlertData: (msg: string, severity: string) => void;
+  defaultName?: string;
 }): any {
   return (
     <div>
@@ -26,6 +27,7 @@ export default function BoxSx(props: {
         <ScheduleUpload
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}
+          defaultName={props.defaultName}
         />
       </Box>
     </div>

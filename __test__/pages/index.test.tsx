@@ -4,7 +4,6 @@ import Home from "../../pages/index";
 import LogoLink from "../../components/layout/LogoLink";
 import { setupUser, render } from "../util";
 import { userMajor } from "../../services/user";
-import { jest } from "@jest/globals";
 // import DefaultLayout from "../components/layout/DefaultLayout";
 
 test("Verify Majors and Concentrations", async () => {

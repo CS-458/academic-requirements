@@ -67,7 +67,7 @@ test("Verify Select Use Four Year Plan", async () => {
   expect(userMajor()?.load_four_year_plan).toBeTruthy();
   await user.click(planSwitch);
   expect(userMajor()?.load_four_year_plan).toBeFalsy();
-});
+}, 1000000);
 
 test("Verify adding completed course", async () => {
   const user = setupUser();

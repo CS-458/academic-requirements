@@ -548,12 +548,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function handleUndoCourse(): void {
       const move = coursesMoved.pop();
       if (move !== undefined) {
-        console.log("setting undo true");
         undo = true;
         const temp = coursesForRedo;
         temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
         setCoursesForRedo(temp);
-        console.log("redo", coursesForRedo);
         // course came from the courseList, so move it back
         if (move.movedFrom === -2) {
           handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
@@ -583,13 +581,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
-      console.log(undo);
       if (!redo && !undo) {
-        console.log("reseting redo");
         setCoursesForRedo([]);
       }
       if (!undo) {
-        console.log("creating record");
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
         setCoursesMoved(temp);
@@ -597,7 +592,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         undo = false;
       }
     }
-    console.log(coursesMoved);
+
     return (
       <div className="generic">
         <div className="drag-drop">

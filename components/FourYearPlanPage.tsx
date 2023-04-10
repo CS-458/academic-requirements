@@ -583,8 +583,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
       if (!undo) {
-        console.log(undo);
-        console.log("creating record");
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
         setCoursesMoved(temp);
@@ -595,7 +593,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         setCoursesForRedo([]);
       }
     }
-    console.log(coursesMoved);
     return (
       <div className="generic">
         <div className="drag-drop">

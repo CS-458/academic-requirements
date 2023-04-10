@@ -97,6 +97,8 @@ class RequirementProcessing {
               const parent = reqGenList.find(
                 (item: RequirementComponentType) => item.idCategory === x.parentCategory
               );
+              console.log(x);
+              console.log(course);
               if (parent !== undefined) {
                 const parentIndex = reqGenList.indexOf(parent);
                 if (reqGenList[parentIndex].coursesTaken !== "") {
@@ -104,6 +106,7 @@ class RequirementProcessing {
                 } else {
                   reqGenList[parentIndex].coursesTaken += courseString;
                 }
+                console.log(parent);
                 // update for credits
                 if (parent?.creditCount != null) {
                   if (reqGenList[parentIndex].creditCountTaken === undefined) {

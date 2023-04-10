@@ -212,9 +212,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Calling return drop", idCourse, dragSource);
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
-          if (undo || redo) {
-            createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
-          }
+          createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
           const tempSemesters = deepCopy(semesters);
           const movedFromNum = +dragSource.split(" ")[1];
           const semesterIndex = tempSemesters.findIndex(

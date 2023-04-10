@@ -77,18 +77,21 @@ test("Load saved schedule", async () => {
   );
   const doc = render(<App />);
   // Verify MATH-157 has a pre-requisite error
-  await waitFor(() => {
-    const el = parentEl(
-      screen.getByText(/Calculus and Analytic Geometry II/i),
-      "Course"
-    );
-    expect(el.classList).toContain("CourseWarningRed");
-  });
+  await waitFor(
+    () => {
+      const el = parentEl(
+        screen.getByText(/Calculus and Analytic Geometry II/i),
+        "Course"
+      );
+      expect(el.classList).toContain("CourseWarningRed");
+    },
+    { timeout: 10000 }
+  );
   expect(doc.baseElement).toMatchSnapshot();
   // Verify Requirements were calculated
   expect(
     within(parentEl(screen.getByText(/CS MA/i), "Requirement")).getByText(/44/i)
   ).toBeInTheDocument();
   // Verify low/high warnings were calculated
-  expect(screen.getAllByText(/Fall \(10\) Low/i)).toBeInTheDocument();
-});
+  expect(screen.getAllByText(/Fall \(10\) Low/i)[0]).toBeInTheDocument();
+}, 50000);

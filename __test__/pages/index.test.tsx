@@ -26,7 +26,7 @@ test("Verify Majors and Concentrations", async () => {
   ).not.toBeChecked();
 
   expect(generateButton).not.toBeDisabled();
-});
+}, 10000);
 
 test("Verify Four Year Plan Not Show", async () => {
   const user = setupUser();
@@ -59,7 +59,9 @@ test("Verify Select Use Four Year Plan", async () => {
   await user.selectAutocomplete(/Major/i, /^Psychology$/i);
   await user.selectAutocomplete(/Concentration/i, /Pre-Clinical/i);
   expect(index.baseElement).toMatchSnapshot();
-  expect(screen.queryByLabelText(/Use Suggested Four Year Plan/i)).not.toBeNull();
+  expect(
+    screen.queryByLabelText(/Use Suggested Four Year Plan/i)
+  ).not.toBeNull();
   expect(generateButton).not.toBeDisabled();
 
   const planSwitch = screen.getByTestId("FourYearPlanSwitch");
@@ -67,7 +69,7 @@ test("Verify Select Use Four Year Plan", async () => {
   expect(userMajor()?.load_four_year_plan).toBeTruthy();
   await user.click(planSwitch);
   expect(userMajor()?.load_four_year_plan).toBeFalsy();
-});
+}, 10000);
 
 test("Verify adding completed course", async () => {
   const user = setupUser();

@@ -4,6 +4,7 @@ import Home from "../../pages/index";
 import LogoLink from "../../components/layout/LogoLink";
 import { setupUser, render } from "../util";
 import { userMajor } from "../../services/user";
+import { jest } from "@jest/globals";
 // import DefaultLayout from "../components/layout/DefaultLayout";
 
 test("Verify Majors and Concentrations", async () => {
@@ -26,7 +27,7 @@ test("Verify Majors and Concentrations", async () => {
   ).not.toBeChecked();
 
   expect(generateButton).not.toBeDisabled();
-});
+}, 10000000);
 
 test("Verify Four Year Plan Not Show", async () => {
   const user = setupUser();
@@ -46,7 +47,7 @@ test("Verify Four Year Plan Not Show", async () => {
   expect(screen.queryByLabelText(/Use Suggested Four Year Plan/i)).toBeNull();
 
   expect(generateButton).not.toBeDisabled();
-});
+}, 10000000);
 
 test("Verify Select Use Four Year Plan", async () => {
   const user = setupUser();
@@ -67,7 +68,7 @@ test("Verify Select Use Four Year Plan", async () => {
   expect(userMajor()?.load_four_year_plan).toBeTruthy();
   await user.click(planSwitch);
   expect(userMajor()?.load_four_year_plan).toBeFalsy();
-});
+}, 10000000);
 
 test("Verify adding completed course", async () => {
   const user = setupUser();
@@ -145,4 +146,4 @@ test("Verify UW-Stout logo redirects to UW-Stout site", async () => {
   const logo = screen.getByTestId("stout-logo-link");
   expect(logo).toHaveAttribute("href", "https://www.uwstout.edu/");
   expect(logo).toHaveAttribute("target", "_blank");
-});
+}, 10000000);

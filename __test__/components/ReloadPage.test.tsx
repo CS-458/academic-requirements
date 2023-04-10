@@ -1,11 +1,10 @@
 import "@testing-library/jest-dom";
-import { fireEvent, getByTestId, screen, within } from "@testing-library/react";
+import { fireEvent, screen, within } from "@testing-library/react";
 import { setupUser, render, fetchApiJson, parentEl } from "../util";
 import { jest } from "@jest/globals";
 import FourYearPlanPage from "../../components/FourYearPlanPage";
-import InformationDrawer from "../../components/InformationBar";
-import { CourseType, RequirementComponentType, season, SemesterType, UserSavedSchedule } from "../../entities/four_year_plan";
-import { setUserMajor, userMajor } from "../../services/user";
+import { CourseType, RequirementComponentType, season, SemesterType } from "../../entities/four_year_plan";
+import { userMajor } from "../../services/user";
 import ReloadPage from "../../components/ReloadPage";
 
 // eslint-disable-next-line @typescript-eslint/quotes, quotes

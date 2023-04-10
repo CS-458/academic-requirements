@@ -54,10 +54,9 @@ export const Semester: FC<SemesterProps> = function Semester({
           </Grid>
           <Grid item sx={{
             display: "flex",
-            height: "100%",
             position: "absolute",
-            top: "0px",
-            right: "0px"
+            width: "100%",
+            justifyContent: "end"
           }}>
             <IconButton>
               <Assistant color="primary"/>

@@ -55,9 +55,50 @@ exports[`Render Semester List 1`] = `
                         </span>
                       </span>
                     </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
                     <div>
                       <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="saveButton"
                         tabindex="0"
                         type="button"
@@ -831,9 +872,52 @@ exports[`Render Semester List 2`] = `
                         </span>
                       </span>
                     </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
                     <div>
                       <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="saveButton"
                         tabindex="0"
                         type="button"
@@ -939,7 +1023,7 @@ exports[`Render Semester List 2`] = `
                                       <br />
                                       Anthropology of the Contemporary United States
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -1540,7 +1624,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1562,7 +1646,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1584,7 +1668,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1606,7 +1690,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1628,7 +1712,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1650,7 +1734,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1672,7 +1756,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -1694,7 +1778,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1716,7 +1800,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1738,7 +1822,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1760,7 +1844,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1782,7 +1866,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1804,7 +1888,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1826,7 +1910,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1848,7 +1932,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1870,7 +1954,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1892,7 +1976,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1914,7 +1998,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1936,7 +2020,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1958,7 +2042,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1980,7 +2064,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2002,7 +2086,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2024,7 +2108,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2046,7 +2130,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2068,7 +2152,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2090,7 +2174,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2112,7 +2196,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2134,7 +2218,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2156,7 +2240,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2178,7 +2262,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2200,7 +2284,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2222,7 +2306,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2244,7 +2328,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2266,7 +2350,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2288,7 +2372,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2310,7 +2394,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2861,9 +2945,52 @@ exports[`Render Semester List 3`] = `
                         </span>
                       </span>
                     </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
                     <div>
                       <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="saveButton"
                         tabindex="0"
                         type="button"
@@ -2991,7 +3118,7 @@ exports[`Render Semester List 3`] = `
                                       <br />
                                       Anthropology of the Contemporary United States
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -3570,7 +3697,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3592,7 +3719,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3614,7 +3741,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3636,7 +3763,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3658,7 +3785,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3680,7 +3807,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3702,7 +3829,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -3724,7 +3851,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3746,7 +3873,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3768,7 +3895,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3790,7 +3917,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3812,7 +3939,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3834,7 +3961,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3856,7 +3983,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3878,7 +4005,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3900,7 +4027,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3922,7 +4049,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3944,7 +4071,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3966,7 +4093,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3988,7 +4115,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4010,7 +4137,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4032,7 +4159,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4054,7 +4181,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4076,7 +4203,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4098,7 +4225,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4120,7 +4247,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4142,7 +4269,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4164,7 +4291,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4186,7 +4313,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4208,7 +4335,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4230,7 +4357,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4252,7 +4379,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4274,7 +4401,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4296,7 +4423,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4318,7 +4445,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4340,7 +4467,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4891,9 +5018,52 @@ exports[`Render Semester List 4`] = `
                         </span>
                       </span>
                     </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
                     <div>
                       <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="saveButton"
                         tabindex="0"
                         type="button"
@@ -5577,7 +5747,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5599,7 +5769,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5621,7 +5791,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5643,7 +5813,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5665,7 +5835,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5687,7 +5857,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5709,7 +5879,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -5731,7 +5901,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5753,7 +5923,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5775,7 +5945,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5797,7 +5967,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5819,7 +5989,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5841,7 +6011,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5863,7 +6033,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5885,7 +6055,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5907,7 +6077,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5929,7 +6099,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5951,7 +6121,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5973,7 +6143,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5995,7 +6165,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6017,7 +6187,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6039,7 +6209,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6061,7 +6231,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6083,7 +6253,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6105,7 +6275,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6127,7 +6297,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6149,7 +6319,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6171,7 +6341,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6193,7 +6363,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6215,7 +6385,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6237,7 +6407,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6259,7 +6429,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6281,7 +6451,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6303,7 +6473,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6325,7 +6495,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6347,7 +6517,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a

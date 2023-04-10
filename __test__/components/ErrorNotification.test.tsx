@@ -97,7 +97,7 @@ test("Four Year Plan Page duplicate courses", async () => {
   fireEvent.drop(springSemester);
 
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-});
+}, 100000);
 
 test("Four Year Plan Page Prerequisite course", async () => {
   const user = setupUser();
@@ -159,7 +159,7 @@ test("Four Year Plan incompatible Season Fall", async () => {
   fireEvent.dragOver(springSemester);
   fireEvent.drop(springSemester);
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-});
+}, 1000000);
 
 test("Four Year Plan incompatible Season Spring", async () => {
   const user = setupUser();

@@ -30,6 +30,7 @@ export default function BoxSx(props: {
           setAlertData={props.setAlertData}
         />
       </Box>
+
     </div>
   );
 }

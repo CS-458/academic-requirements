@@ -576,13 +576,32 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [reqList, reqGenList, requirementsDisplay, PassedCourseList]
     );
 
+    function resetRequirements(): void {
+      const tempList = reqList;
+      tempList?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      const tempList2 = reqGenList;
+      tempList2?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      setReqList(tempList);
+      setReqGenList(tempList2);
+    }
+
     return (
       <div className="generic">
         <div className="drag-drop">
           <ActionBar
             scheduleData={info}
             sems={semesters}
-            requirementsData={requirementsDisplay}
+            resetRequirements={resetRequirements}
             setAlertData={throwError}
             handleReturn={handleReturnDrop}
             setSemesters={setSemesters}

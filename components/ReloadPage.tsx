@@ -8,14 +8,14 @@ import {
   IconButton
 } from "@mui/material";
 import { Refresh as RefreshIcon } from "@mui/icons-material";
-import { UserSavedSchedule, SemesterType, RequirementComponentType, CourseType } from "../entities/four_year_plan";
+import { UserSavedSchedule, SemesterType } from "../entities/four_year_plan";
 
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   sems: SemesterType[];
-  requirementsData: RequirementComponentType[];
+  resetRequirements: () => void;
   setSemesters: (v: SemesterType[]) => void;
-  handleReturn: (y: CourseType) => void;
+  handleReturn: (V: { idCourse: number, dragSource: string }) => void;
 }): any {
   // makes the modal pop up
   const handleReload = (): any => {
@@ -32,15 +32,8 @@ export default function FormDialog(props: {
         year: props.sems[i].year
       });
     }
-
-    props.sems.forEach((sem) => {
-      sem.courses.forEach((course) => {
-        console.log(course);
-        props.handleReturn(course);
-      });
-    });
-
     props.setSemesters(semesters);
+    props.resetRequirements();
   };
 
   return (

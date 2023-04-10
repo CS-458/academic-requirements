@@ -1,5 +1,9 @@
 import React from "react";
-import { ConcentrationType, MajorType, UserSavedSchedule } from "../entities/four_year_plan";
+import {
+  ConcentrationType,
+  MajorType,
+  UserSavedSchedule
+} from "../entities/four_year_plan";
 import { fetchApi } from "./util";
 export interface UserMajor {
   /// Major ID number
@@ -15,7 +19,6 @@ export interface UserMajor {
 export function userMajor(): UserMajor | undefined {
   const data = window.localStorage.getItem("user_major");
   if (data !== null) {
-    // console.log(data);
     return JSON.parse(data);
   } else {
     return undefined;
@@ -50,17 +53,27 @@ export function userToken(): string | undefined {
 }
 
 // Calls the API to upload the schedule to the Database
-export async function uploadSchedule(token: string | undefined, name: string, schedule: any): Promise<void> {
+export async function uploadSchedule(
+  token: string | undefined,
+  name: string,
+  schedule: any
+): Promise<void> {
   if (token === undefined) {
     throw new Error("User is not logged in");
   }
-  await fetchApi(`/api/inserts/schedule?name=${name}`, {
-    method: "POST",
-    body: JSON.stringify(schedule),
-    headers: {
-      "X-Google-Token": token
+  const response: { error: string } | { message: string } = await fetchApi(
+    `/api/inserts/schedule?name=${name}`,
+    {
+      method: "POST",
+      body: JSON.stringify(schedule),
+      headers: {
+        "X-Google-Token": token
+      }
     }
-  });
+  );
+  if ("error" in response) {
+    throw new Error(`Request failed: ${response.error}`);
+  }
 }
 /*
   Function used to store user into the user table
@@ -80,15 +93,30 @@ export async function saveLoggedInUser(): Promise<void> {
   });
 }
 
-export async function getScheduleByName(name: string): Promise<UserSavedSchedule[]> {
-  const token = userToken();
+/// Returns a list of scheuldes that include the name
+export async function getScheduleByName(
+  token: User,
+  name: string
+): Promise<UserSavedSchedule[]> {
+  return (await getSchedules(token)).filter((s) => s.name.includes(name));
+}
+
+/// Returns a list of all schedules saved by this user
+export async function getSchedules(token: User): Promise<UserSavedSchedule[]> {
   if (token === undefined) {
     throw new Error("User Token Not made");
   }
-  return await fetchApi("/api/user/schedules", {
-    method: "GET",
-    headers: {
-      "X-Google-Token": token
-    }
-  });
+  const response = await (
+    await fetch("/api/user/schedules", {
+      method: "GET",
+      headers: {
+        "X-Google-Token": token.cred
+      }
+    })
+  ).json();
+  if (response.error !== undefined) {
+    return [];
+  } else {
+    return response;
+  }
 }

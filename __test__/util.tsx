@@ -14,7 +14,7 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { UserEvent } from "@testing-library/user-event/dist/types/setup/setup";
-import { UserMajor } from "../services/user";
+import { User, UserMajor } from "../services/user";
 import { VerifyIdTokenOptions, LoginTicket } from "google-auth-library";
 import { updateClient } from "../services/login";
 import { PromisedDatabase } from "promised-sqlite3";
@@ -331,12 +331,25 @@ export function mockToken(id: string): string {
   return `TEST_TOKEN:${id}`;
 }
 
+export function mockUserInfo(id: string): User {
+  return {
+    cred: mockToken(id),
+    info: {
+      sub: id,
+      picture: "",
+      name: id,
+      email: `${id}@gmail.com`
+    }
+  };
+}
+
 const db = {
   db: new PromisedDatabase(),
   opened: false
 };
 
 export async function setupMockUserDB(): Promise<void> {
+  createMockToken();
   setUserDb(db.db);
   if (!db.opened) {
     db.opened = true;
@@ -345,7 +358,7 @@ export async function setupMockUserDB(): Promise<void> {
       "CREATE TABLE `user` ( `idUser` TEXT PRIMARY KEY, `role` TEXT NOT NULL)"
     );
     await db.db.run(
-      "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` INTEGER, `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
+      "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` DATE DEFAULT (datetime('now','localtime')), `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
     );
   }
 }

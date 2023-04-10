@@ -160,12 +160,12 @@ export interface FourYearPlanType {
 export interface UserSavedSchedule {
   userID: string;
   name: string;
-  timestamp: number;
+  timestamp: string;
   scheduleData: {
-    Major: string | undefined;
-    Concentration: string | undefined;
-    "Completed Courses": string[] | undefined;
-    schedule: [{ year: number, seasons: [{ season: string, classes: string[] }] }]
+    Major: number;
+    Concentration: number;
+    "Completed Courses": string[];
+    schedule: ScheduleData;
   };
 }
 
@@ -174,3 +174,7 @@ export interface movedCourse {
   movedFrom: number,
   course: number
 }
+export type ScheduleData = Array<{
+  year: number;
+  seasons: Array<{ season: season; classes: string[] }>;
+}>;

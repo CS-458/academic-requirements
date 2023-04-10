@@ -1,57 +1,12 @@
-import {
-  Accordion as MuiAccordion,
-  AccordionDetails,
-  AccordionProps,
-  AccordionSummary as MuiAccordionSummary,
-  AccordionSummaryProps,
-  styled
-} from "@mui/material";
-import { ArrowForwardIosSharp } from "@mui/icons-material";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import {
   CourseType,
   MultipleCategoriesType,
   RequirementComponentType,
-  SemesterType,
-  sortSemester
+  SemesterType
 } from "../entities/four_year_plan";
-import { Semester } from "./Semester";
-import { useDrop } from "react-dnd";
-import { ItemTypes } from "../entities/Constants";
 import { CourseError } from "./FourYearPlanPage";
-
-/// Modified MUI accordion
-const Accordion = styled((props: AccordionProps) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  "&:not(:last-child)": {
-    borderBottom: 0
-  },
-  "&:before": {
-    display: "none"
-  }
-}));
-
-/// Modified MUI Summary
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark"
-      ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
-  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)"
-  },
-  "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1)
-  }
-}));
+import DropTargetAccordian from "./DropAccordian";
 
 export function deepCopy(s: SemesterType[]): SemesterType[] {
   const ret: SemesterType[] = [];
@@ -146,66 +101,24 @@ export default function SemesterList({
     ]
   );
   const parts = [];
-  const expandedArr: Array<(v: boolean) => void> = [];
   // Build semester lists
-  for (let i = 0; i < 4; i++) {
-    const [expanded, setExpanded] = useState(i === 0);
-    expandedArr.push(setExpanded);
-    const [props, drop] = useDrop({
-      accept: [ItemTypes.COURSE],
-      drop: () => { },
-      collect: (monitor) => {
-        if (monitor.isOver({ shallow: true }) && !expanded) {
-          setExpanded(true);
-          // expandedArr.forEach((v, index) => v(index === i));
-        }
-      }
-    });
+  for (let i = 0; i < semesters.reduce((y, s) => Math.max(y, s.year), 0); i++) {
     parts.push(
-      <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)} key={i}>
-        <div ref={drop}>
-          <AccordionSummary sx={{ bgcolor: "primary.main" }}>
-            Year {i + 1}
-          </AccordionSummary>
-        </div>
-        <AccordionDetails sx={{ p: 0 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gridTemplateRows: "100%"
-            }}
-          >
-            {semesters
-              .filter((sem) => sem.year === i + 1)
-              .sort(sortSemester)
-              .map((sem, index) => (
-                <Semester
-                  key={index}
-                  accept={sem.accepts}
-                  onDrop={(item) => handleDrop(sem.semesterNumber, item)}
-                  semesterNumber={sem.semesterNumber}
-                  courses={sem.courses}
-                  SemesterCredits={sem.SemesterCredits}
-                  Warning={sem.Warning}
-                  warningPrerequisiteCourses={warningPrerequisiteCourses}
-                  warningFallvsSpringCourses={warningFallvsSpringCourses}
-                  warningDuplicateCourses={warningDuplicateCourses}
-                  year={sem.year}
-                  season={sem.season}
-                />
-              ))}
-          </div>
-        </AccordionDetails>
-      </Accordion>
+      <DropTargetAccordian
+        key={i}
+        defaultExpanded={i === 0}
+        semesters={semesters}
+        year={i}
+        handleDrop={handleDrop}
+        warningPrerequisiteCourses={warningPrerequisiteCourses}
+        warningFallvsSpringCourses={warningFallvsSpringCourses}
+        warningDuplicateCourses={warningDuplicateCourses}
+      />
     );
   }
 
   return (
-    <div
-      className="generic"
-      style={{ overflowY: "auto", height: "100%" }}
-    >
+    <div className="generic" style={{ overflowY: "auto", height: "100%" }}>
       {parts}
     </div>
   );

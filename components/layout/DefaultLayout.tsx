@@ -15,15 +15,33 @@ import { User, UserLogin, UserInfo } from "../../services/user";
 import LogoLink from "./LogoLink";
 import { Button } from "@mui/material";
 
+let curTimeout: undefined | NodeJS.Timeout;
+
 export default function DefaultLayout(props: {
   children: JSX.Element | JSX.Element[];
 }): JSX.Element {
   const [user, setUser] = useState<User | undefined>(undefined);
+  function setUserAndTimeout(user: User | undefined): void {
+    setUser(user);
+    if (user !== undefined) {
+      clearTimeout(curTimeout);
+      // settimeout for expiry
+      curTimeout = setTimeout(() => {
+        setUser(undefined);
+      }, user.info.exp * 1000 - Date.now());
+    }
+  }
+
   const [firstLoad, setFirstLoad] = useState(true);
   useEffect(() => {
     const loaded = localStorage.getItem("google-login");
     if (loaded !== null) {
-      setUser(JSON.parse(loaded));
+      const user: User = JSON.parse(loaded);
+      const now = Date.now() / 1000;
+      console.log("Loaded: ", user, now);
+      if (user.info.exp >= now && user.info.nbf <= now) {
+        setUserAndTimeout(user);
+      }
     }
     console.log("Checking login state");
     setFirstLoad(false);
@@ -31,7 +49,7 @@ export default function DefaultLayout(props: {
 
   function logout(): void {
     localStorage.removeItem("google-login");
-    setUser(undefined);
+    setUserAndTimeout(undefined);
     // Just in case
     googleLogout();
   }
@@ -42,8 +60,9 @@ export default function DefaultLayout(props: {
       const jwt: UserInfo = jwtDecode(token.credential);
       console.log(jwt);
       const user = { info: jwt, cred: token.credential };
-      setUser(user);
+      setUserAndTimeout(user);
       localStorage.setItem("google-login", JSON.stringify(user));
+      console.log("Login:", user);
     }
   }
   function errorMessage(): void {
@@ -77,7 +96,7 @@ export default function DefaultLayout(props: {
         <GoogleLogin
           onSuccess={responseMessage}
           onError={errorMessage}
-          useOneTap
+          useOneTap={false}
         />
       );
     }

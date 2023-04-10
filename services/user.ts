@@ -42,6 +42,8 @@ export interface UserInfo {
   sub: string;
   name: string;
   email: string;
+  exp: number;
+  nbf: number;
 }
 
 export interface User {

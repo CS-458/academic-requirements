@@ -577,6 +577,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     );
 
     function resetRequirements(): void {
+      // reset the major requirements
       const tempList = reqList;
       tempList?.forEach((req) => {
         req.courseCountTaken = 0;
@@ -584,6 +585,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         req.coursesTaken = "";
         req.percentage = 0;
       });
+      // reset the gen ed requirements
       const tempList2 = reqGenList;
       tempList2?.forEach((req) => {
         req.courseCountTaken = 0;
@@ -593,6 +595,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       });
       setReqList(tempList);
       setReqGenList(tempList2);
+      // add completed courses back in
+      userMajor()?.completed_courses.forEach((x) => {
+        const a = x.split("-");
+        const found = PassedCourseList.find(
+          (item) => item.subject === a[0] && item.number === a[1]
+        );
+        if (found !== undefined) {
+          checkRequirements(found, coursesInMultipleCategories);
+        }
+      });
     }
 
     return (

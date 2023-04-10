@@ -54,6 +54,9 @@ export default function CourseFiltering(props: CourseFilteringProps): JSX.Elemen
   // Handle transition between filter options
   const handleTabChange = (event: React.SyntheticEvent, newValue: number): void => {
     setValue(newValue);
+    // Reset states on tab change
+    setCourseSubjectFilter(undefined);
+    setCourseNumberFilter(undefined);
   };
 
   const sendFilteredCourses = (courses: CourseType[]): void => {

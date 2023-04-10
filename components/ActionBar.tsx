@@ -17,6 +17,7 @@ export default function BoxSx(props: {
   handleReturn: (y: CourseType) => void
   setAlertData: (msg: string, severity: string) => void
   setSemesters: (v: SemesterType[]) => void;
+  children: JSX.Element | JSX.Element[]
 }): any {
   return (
     <div>
@@ -28,6 +29,7 @@ export default function BoxSx(props: {
           boxShadow: 9
         }}
       >
+        {props.children}
         <ScheduleUpload
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}

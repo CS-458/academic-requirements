@@ -248,6 +248,50 @@ test("Subject/Number - Subject & Number", async () => {
   }
 }, 1000000);
 
+test("Subject/Number - Reset on Tab Change", async () => {
+  const user = setupUser();
+  const onFilteredMock = jest.fn();
+
+  const index = render(<CourseFiltering courseData={testCourseData} onFiltered={onFilteredMock}/>);
+  expect(index.baseElement).toMatchSnapshot();
+
+  const categoryTab = screen.getByTestId("category-tab");
+  const subjectNumberTab = screen.getByTestId("subjectnumber-tab");
+
+  // Select the filter by subject/number option
+  await user.click(subjectNumberTab);
+
+  // select a subject
+  // navigate to different tab
+  // navigate back to subnum tab
+  // type a number
+  // expect the results to be based only on number (subject is reset)
+
+  for (const courseForSubject of testCourseData) {
+    // Select a subject
+    await user.selectAutocomplete("Course Subject", courseForSubject.subject);
+    await user.click(categoryTab);
+    await user.click(subjectNumberTab);
+    const numberTextField = screen.getByLabelText("Course Number");
+
+    // Filtering should be on number only
+    for (const courseForNumber of testCourseData) {
+      // await user.selectAutocomplete("Course Number", course.number);
+      await user.type(numberTextField, courseForNumber.number);
+      expect(onFilteredMock).toHaveBeenCalled();
+      // Filter based on current course's number, remove duplicates
+      const expectedOutput = testCourseData
+        .filter(c => c.number.includes(courseForNumber.number))
+        .filter((c, index, arr) => {
+          return index === arr.findIndex(c2 => c.idCourse === c2.idCourse);
+        });
+      expect(onFilteredMock).toHaveBeenCalledWith(expectedOutput);
+      // Clear the previously typed text for the next course
+      await user.clear(numberTextField);
+    }
+  }
+}, 1000000);
+
 test("Name Filtering", async () => {
   const user = setupUser();
   const onFilteredMock = jest.fn();

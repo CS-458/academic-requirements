@@ -99,8 +99,13 @@ body {
 }
 .percentage {
   text-align: right;
+  display: flex;
+  align-items: center;
 }
 
 .requirementName {
   text-align: left;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
 }

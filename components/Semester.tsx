@@ -4,7 +4,8 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps, warning } from "../entities/four_year_plan";
-import { Box } from "@mui/material";
+import { Box, Grid, IconButton, Stack } from "@mui/material";
+import { Assistant } from '@mui/icons-material';
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -41,32 +42,52 @@ export const Semester: FC<SemesterProps> = function Semester({
       data-testid={`semester${semesterNumber}`}
       key={`semester-${year}-${season}`}
     >
-      <p>
-        {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
-      </p>
-      {courses.map((course) => (
-        <Course
-          name={course.name}
-          subject={course.subject}
-          number={course.number}
-          idCourse={course.idCourse}
-          semesters={course.semesters}
-          type={ItemTypes.COURSE}
-          credits={course.credits}
-          preReq={course.preReq}
-          dragSource={`Semester ${semesterNumber}`}
-          warningYellowColor={warningDuplicateCourses.find(
-            (x) => x.id === course.idCourse && x.sem === semesterNumber
-          )}
-          warningOrangeColor={warningFallvsSpringCourses.find(
-            (x) => x.id === course.idCourse && x.sem === semesterNumber
-          )}
-          warningRedColor={warningPrerequisiteCourses.find(
-            (x) => x.id === course.idCourse && x.sem === semesterNumber
-          )}
-          repeatableForCred={course.repeatableForCred}
-        />
-      ))}
+      <Stack>
+        <Grid container sx={{
+          alignItems: "center",
+          position: "relative"
+        }}>
+          <Grid item flexGrow={1}>
+            <p>
+              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
+            </p>
+          </Grid>
+          <Grid item sx={{
+            display: "flex",
+            height: "100%",
+            position: "absolute",
+            top: "0px",
+            right: "0px"
+          }}>
+            <IconButton>
+              <Assistant color="primary"/>
+            </IconButton>
+          </Grid>
+        </Grid>
+        {courses.map((course) => (
+          <Course
+            name={course.name}
+            subject={course.subject}
+            number={course.number}
+            idCourse={course.idCourse}
+            semesters={course.semesters}
+            type={ItemTypes.COURSE}
+            credits={course.credits}
+            preReq={course.preReq}
+            dragSource={`Semester ${semesterNumber}`}
+            warningYellowColor={warningDuplicateCourses.find(
+              (x) => x.id === course.idCourse && x.sem === semesterNumber
+            )}
+            warningOrangeColor={warningFallvsSpringCourses.find(
+              (x) => x.id === course.idCourse && x.sem === semesterNumber
+            )}
+            warningRedColor={warningPrerequisiteCourses.find(
+              (x) => x.id === course.idCourse && x.sem === semesterNumber
+            )}
+            repeatableForCred={course.repeatableForCred}
+          />
+        ))}
+      </Stack>
     </Box>
   );
 };

@@ -11,8 +11,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if (req.method !== "GET") {
-    res.status(405).json({ error: "Only Get requests allowed" });
+  if (req.method !== "POST") {
+    res.status(405).json({ error: "Only Post requests allowed" });
     return;
   }
 
@@ -32,12 +32,23 @@ export default async function handler(
     res.status(401).json({ error: "Invalid user token" });
     return;
   }
+  let name = req.query.name;
+  if (typeof name !== "string") {
+    res.status(400).json({ error: "Invalid name specified" });
+    return;
+  }
+  name = decodeURIComponent(name);
 
-  const rows = await con.all(
-    "SELECT * FROM schedule WHERE userID = ? ORDER BY timestamp DESC",
-    [user]
+  console.log("Deleting ", name);
+  const result = await con.run(
+    "DELETE FROM schedule WHERE userID = ? and name = ?",
+    [user, name]
   );
-
-  // Returns a success message
-  res.status(200).json(rows);
+  console.log(result);
+  if (result.changes === 1) {
+    // Returns a success message
+    res.status(200).json({});
+  } else {
+    res.status(404).json({ error: "schedule not found" });
+  }
 }

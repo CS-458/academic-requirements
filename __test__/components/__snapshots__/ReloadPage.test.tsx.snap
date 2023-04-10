@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test loading a four year plan into the semesters 1`] = `
+exports[`Reload Button is Functional 1`] = `
 <body>
   <div>
     <div
@@ -159,75 +159,9 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               <p>
                                 Fall
                                  (
-                                12
+                                0
                                 ) 
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                144
-                                <br />
-                                Computer Science I
-                                <br />
-                                credits: 
-                                4
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ENGL
-                                -
-                                101
-                                <br />
-                                Composition 1
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                156
-                                <br />
-                                Calculus and Analytic Geometry I
-                                <br />
-                                credits: 
-                                5
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -247,75 +181,9 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               <p>
                                 Spring
                                  (
-                                12
+                                0
                                 ) 
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                145
-                                <br />
-                                Computer Science II
-                                <br />
-                                credits: 
-                                4
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=145&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ENGL
-                                -
-                                102
-                                <br />
-                                Composition 2
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=102&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                157
-                                <br />
-                                Calculus and Analytic Geometry II
-                                <br />
-                                credits: 
-                                5
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=157&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -395,97 +263,9 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               <p>
                                 Fall
                                  (
-                                13
+                                0
                                 ) 
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                COMST
-                                -
-                                100
-                                <br />
-                                Fundamentals of Speech
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=100&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                244
-                                <br />
-                                Data Structures
-                                <br />
-                                credits: 
-                                4
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=244&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                248
-                                <br />
-                                Web and Internet Programming
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=248&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                270
-                                <br />
-                                Discrete Mathematics
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=270&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -499,104 +279,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-12qoa1o"
+                              class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
                               <p>
                                 Spring
                                  (
-                                10
+                                0
                                 ) 
-                                Low
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                324
-                                <br />
-                                Database Systems Manipulation and Design
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=324&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                290
-                                <br />
-                                Professional Seminar
-                                <br />
-                                credits: 
-                                1
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=290&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ICT
-                                -
-                                103
-                                <br />
-                                Information and Communication Technologies
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=103&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                275
-                                <br />
-                                Linear Algebra
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -670,60 +361,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-12qoa1o"
+                              class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
                               <p>
                                 Fall
                                  (
-                                6
+                                0
                                 ) 
-                                Low
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                254
-                                <br />
-                                Algorithm Design and Analysis
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=254&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ICT
-                                -
-                                215
-                                <br />
-                                Cybertechnology Ethics
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=215&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -737,60 +383,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-12qoa1o"
+                              class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
                               <p>
                                 Spring
                                  (
-                                7
+                                0
                                 ) 
-                                Low
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                358
-                                <br />
-                                Software Engineering Principles
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=358&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                158
-                                <br />
-                                Calculus III
-                                <br />
-                                credits: 
-                                4
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=158&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -864,38 +465,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-12qoa1o"
+                              class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
                               <p>
                                 Fall
                                  (
-                                4
+                                0
                                 ) 
-                                Low
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                441
-                                <br />
-                                Computer Architecture
-                                <br />
-                                credits: 
-                                4
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=441&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -909,38 +487,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               </p>
                             </div>
                             <div
-                              class="semester Semester-root MuiBox-root css-12qoa1o"
+                              class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
                               <p>
                                 Spring
                                  (
-                                3
+                                0
                                 ) 
-                                Low
                               </p>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                CS
-                                -
-                                442
-                                <br />
-                                Operating Systems
-                                <br />
-                                credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=442&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
@@ -1226,7 +781,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           class="MuiBox-root css-poat16"
                         >
                           <span
-                            aria-valuenow="63"
+                            aria-valuenow="0"
                             class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                             role="progressbar"
                             style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1242,7 +797,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 fill="none"
                                 r="20.2"
                                 stroke-width="3.6"
-                                style="stroke-dasharray: 126.920; stroke-dashoffset: 46.537px;"
+                                style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                               />
                             </svg>
                           </span>
@@ -1253,7 +808,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              63.3
+                              0
                             </div>
                           </div>
                         </div>
@@ -1335,7 +890,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="82"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1351,7 +906,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 22.398px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1362,7 +917,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                82
+                                0
                               </div>
                             </div>
                           </div>
@@ -1386,7 +941,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1402,7 +957,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1413,7 +968,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                100
+                                0
                               </div>
                             </div>
                           </div>
@@ -1445,7 +1000,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1461,7 +1016,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1472,7 +1027,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                100
+                                0
                               </div>
                             </div>
                           </div>
@@ -1496,7 +1051,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="50"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1512,7 +1067,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 63.460px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1523,7 +1078,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                50
+                                0
                               </div>
                             </div>
                           </div>
@@ -1547,7 +1102,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1563,7 +1118,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1574,7 +1129,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                100
+                                0
                               </div>
                             </div>
                           </div>
@@ -1598,7 +1153,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="67"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1614,7 +1169,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 42.307px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1625,7 +1180,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                67
+                                0
                               </div>
                             </div>
                           </div>
@@ -1700,7 +1255,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="50"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1716,7 +1271,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 63.460px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1727,7 +1282,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                50
+                                0
                               </div>
                             </div>
                           </div>
@@ -1751,7 +1306,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1767,7 +1322,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1778,7 +1333,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                100
+                                0
                               </div>
                             </div>
                           </div>
@@ -1802,7 +1357,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
+                              aria-valuenow="0"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
                               style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1818,7 +1373,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   fill="none"
                                   r="20.2"
                                   stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                 />
                               </svg>
                             </span>
@@ -1829,7 +1384,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                 data-testid="reqPercent"
                               >
-                                100
+                                0
                               </div>
                             </div>
                           </div>
@@ -1838,18 +1393,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  aria-labelledby="simple-tab-2"
-                  hidden=""
-                  id="simple-tabpanel-2"
-                  role="tabpanel"
-                />
-                <div
-                  aria-labelledby="simple-tab-1"
-                  hidden=""
-                  id="simple-tabpanel-1"
-                  role="tabpanel"
-                />
               </div>
             </div>
           </div>

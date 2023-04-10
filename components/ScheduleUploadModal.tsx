@@ -34,8 +34,8 @@ export function getDateTime(): string {
 }
 
 export default function FormDialog(props: {
-  scheduleData: UserSavedSchedule["scheduleData"],
-  setAlertData: (msg: string, severity: string) => void
+  scheduleData: UserSavedSchedule["scheduleData"];
+  setAlertData: (msg: string, severity: string) => void;
 }): any {
   const [open, setOpen] = React.useState(false);
 
@@ -75,7 +75,13 @@ export default function FormDialog(props: {
     } catch (err: any) {
       // if the not logged in error is caught throw it
       if (err.message === "User is not logged in") {
-        throwAlert("User Not Logged in! Please Log in to save your Schedule.", "warning");
+        throwAlert(
+          "User Not Logged in! Please Log in to save your Schedule.",
+          "warning"
+        );
+        return;
+      } else {
+        throwAlert(`${err.message}`, "warning");
         return;
       }
     }
@@ -92,19 +98,20 @@ export default function FormDialog(props: {
   return (
     <div>
       <Button onClick={handleClickOpen} data-testid="saveButton">
-        <SaveIcon/>
+        <SaveIcon />
       </Button>
       <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>
-          <TextField data-testid="textfeild"
+          <TextField
+            data-testid="textfeild"
             autoFocus
             id="schedule-name"
             value={scheduleName}
             fullWidth
             variant="standard"
             label="Schedule Name"
-            onChange={e => {
+            onChange={(e) => {
               setScheduleName(e.target.value);
             }}
           />

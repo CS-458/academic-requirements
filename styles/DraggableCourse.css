@@ -11,9 +11,10 @@
   border-color: black;
   border-style: solid;
   border-radius: 5px;
-  padding: .1em 1em;
+  padding: .5em 1em;
   margin: 5px 0px;
   color: black;
+  line-height: 1.1em;
 }
 
 .CourseText {

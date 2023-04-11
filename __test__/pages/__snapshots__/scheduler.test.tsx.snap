@@ -121,14 +121,13 @@ exports[`Test render of scheduler 1`] = `
                     </div>
                     <button
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="rloadButton"
                       tabindex="0"
                       type="button"
                     >
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="RefreshIcon"
+                        data-testid="reloadButton"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >

@@ -120,7 +120,7 @@ test("Reload Button is Functional", async () => {
   await user.click(categoryTab);
   await user.selectAutocomplete("Course Category", "CS - Computer Science Core");
 
-  const rb = screen.getByTestId("rloadButton");
+  const rb = screen.getByTestId("reloadButton");
 
   // creating the course and drags it to the semester
   const course = screen.getAllByTestId("course");

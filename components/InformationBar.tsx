@@ -115,12 +115,14 @@ export default function InformationDrawer(props: {
 
   function getTotalCredits(s: SemesterType[]): any {
     let total = 0;
+    const processedCourses = new Set<string>(); // list of all courses that have been read
     completedCourses.forEach((c) => {
       const courseSub: string = c.split("-")[0];
       const courseNum: string = c.split("-")[1];
       props.passedCourseList.forEach((pc) => {
-        if (pc.subject === courseSub && pc.number === courseNum) {
+        if (pc.subject === courseSub && pc.number === courseNum && !processedCourses.has(c)) {
           total += pc.credits;
+          processedCourses.add(c);
         }
       });
     });
@@ -158,7 +160,7 @@ export default function InformationDrawer(props: {
           <Requirement
             name={open ? "Credit Total: " + getTotalCredits(props.semesters) + " out of 120" : "Credits"}
             percentage={(getTotalCredits(props.semesters) / 120) * 100}
-            digits={10}
+            digits={ open ? 10 : 1 }
             key={0}
           />
           <Typography sx={{ color: "primary.main" }}>Major</Typography>

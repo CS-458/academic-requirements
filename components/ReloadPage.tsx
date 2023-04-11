@@ -37,8 +37,8 @@ export default function FormDialog(props: {
   };
 
   return (
-    <IconButton onClick={handleReload} data-testid="rloadButton">
-        <RefreshIcon/>
+    <IconButton onClick={handleReload}>
+        <RefreshIcon data-testid="reloadButton"/>
     </IconButton>
   );
 }

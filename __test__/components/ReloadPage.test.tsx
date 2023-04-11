@@ -1,14 +1,12 @@
 import "@testing-library/jest-dom";
-import { fireEvent, screen, within } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import { setupUser, render, fetchApiJson, parentEl } from "../util";
 import { jest } from "@jest/globals";
 import FourYearPlanPage from "../../components/FourYearPlanPage";
 import { CourseType, RequirementComponentType, season, SemesterType } from "../../entities/four_year_plan";
 import { userMajor } from "../../services/user";
+import { dragAndDrop } from "../dragDrop";
 import ReloadPage from "../../components/ReloadPage";
-
-// eslint-disable-next-line @typescript-eslint/quotes, quotes
-const concentration = { idConcentration: 1, name: "CSSSD", fourYearPlan: '{"Major": "Computer Science", "ClassPlan": {"Semester1": {"Courses": ["CS-144", "CNIT-133", "ENGL-101", "MATH-156"], "Requirements": []}, "Semester2": {"Courses": ["CS-145", "ENGL-102", "MATH-157", "CNIT-134"], "Requirements": []}, "Semester3": {"Courses": ["COMST-100", "CS-244", "CS-248", "MATH-270"], "Requirements": ["SBSCI"]}, "Semester4": {"Courses": ["CNIT-301", "CS-324", "CS-290", "ICT-103", "MATH-275"], "Requirements": []}, "Semester5": {"Courses": ["CNIT-382", "CS-254", "CS-480", "ICT-215"], "Requirements": ["ARHU"]}, "Semester6": {"Courses": ["CS-358", "CNIT-383", "CNIT-361", "MATH-158"], "Requirements": ["ARNS w/ Lab"]}, "Semester7": {"Courses": ["CS-458", "CS-441", "CNIT-484"], "Requirements": ["ARHU"]}, "Semester8": {"Courses": ["CS-458", "CS-442"], "Requirements": ["SBSCI", "ARNS", "CS-3XX"]}}, "Concentration": "Cyber Security and Secure Software Development"}' };
 
 const mockedRequirementsDisplayList: RequirementComponentType[] = [{
   courseCount: null,
@@ -58,23 +56,6 @@ const mockedSem: SemesterType[] = [
     season: season.Spring
   }];
 
-//  MOCKED JSON Data for the Courses
-const infoMocked = {
-  Major: userMajor()?.major.name,
-  Concentration: userMajor()?.concentration.name,
-  "Completed Courses": userMajor()?.completed_courses,
-  ClassPlan: {
-    Semester1: [],
-    Semester2: [],
-    Semester3: [],
-    Semester4: [],
-    Semester5: [],
-    Semester6: [],
-    Semester7: [],
-    Semester8: []
-  }
-};
-
 const mockedSchduleData = [{
   userID: "mocked",
   name: "mocked",
@@ -99,6 +80,7 @@ test("Reload Button is Visible", async () => {
   handleReturn={mockedHandleReturn}
   />);
   expect(reloadButton.baseElement).toBeInTheDocument();
+  expect(reloadButton.baseElement).toMatchSnapshot();
 });
 
 // Functional test
@@ -142,10 +124,7 @@ test("Reload Button is Functional", async () => {
 
   // creating the course and drags it to the semester
   const course = screen.getAllByTestId("course");
-  fireEvent.dragStart(course[0]);
-  fireEvent.dragEnter(fallSemester);
-  fireEvent.dragOver(fallSemester);
-  fireEvent.drop(fallSemester);
+  await dragAndDrop(course[0], fallSemester);
 
   // checking the course gets added
   const openButton = screen.getByTestId("openDrawer");
@@ -163,15 +142,9 @@ test("Reload Button is Functional", async () => {
   expect(reqPercentages[2]).toContainHTML("0");
   await user.click(closeButton);
 
-  // add 2 courses then retry
-  fireEvent.dragStart(course[0]);
-  fireEvent.dragEnter(fallSemester);
-  fireEvent.dragOver(fallSemester);
-  fireEvent.drop(fallSemester);
-  fireEvent.dragStart(course[1]);
-  fireEvent.dragEnter(fallSemester);
-  fireEvent.dragOver(fallSemester);
-  fireEvent.drop(fallSemester);
+  await dragAndDrop(course[0], fallSemester);
+  await dragAndDrop(course[1], fallSemester);
+
   await user.click(openButton);
   // reqPercentages = screen.getAllByTestId("reqPercent");
   expect(reqPercentages[0]).toContainHTML("6.7");

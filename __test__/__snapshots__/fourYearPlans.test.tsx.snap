@@ -1226,7 +1226,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           class="MuiBox-root css-poat16"
                         >
                           <span
-                            aria-valuenow="63"
+                            aria-valuenow="58"
                             class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                             role="progressbar"
                             style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -1242,7 +1242,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 fill="none"
                                 r="20.2"
                                 stroke-width="3.6"
-                                style="stroke-dasharray: 126.920; stroke-dashoffset: 46.537px;"
+                                style="stroke-dasharray: 126.920; stroke-dashoffset: 52.883px;"
                               />
                             </svg>
                           </span>
@@ -1253,7 +1253,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              63.3
+                              58
                             </div>
                           </div>
                         </div>

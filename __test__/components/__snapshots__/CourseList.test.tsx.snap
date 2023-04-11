@@ -22,7 +22,7 @@ exports[`CourseList Renders 1`] = `
           <br />
           Course 1
           <br />
-          credits: 
+          Credits: 
           1
           <br />
           <a
@@ -44,7 +44,7 @@ exports[`CourseList Renders 1`] = `
           <br />
           Course 2
           <br />
-          credits: 
+          Credits: 
           2
           <br />
           <a
@@ -66,7 +66,7 @@ exports[`CourseList Renders 1`] = `
           <br />
           Course 2
           <br />
-          credits: 
+          Credits: 
           2
           <br />
           <a
@@ -88,7 +88,7 @@ exports[`CourseList Renders 1`] = `
           <br />
           Course 3
           <br />
-          credits: 
+          Credits: 
           3
           <br />
           <a
@@ -126,7 +126,7 @@ exports[`CourseList onDrop is called on drop 1`] = `
           <br />
           Course 1
           <br />
-          credits: 
+          Credits: 
           1
           <br />
           <a
@@ -148,7 +148,7 @@ exports[`CourseList onDrop is called on drop 1`] = `
           <br />
           Course 2
           <br />
-          credits: 
+          Credits: 
           2
           <br />
           <a
@@ -170,7 +170,7 @@ exports[`CourseList onDrop is called on drop 1`] = `
           <br />
           Course 2
           <br />
-          credits: 
+          Credits: 
           2
           <br />
           <a
@@ -192,7 +192,7 @@ exports[`CourseList onDrop is called on drop 1`] = `
           <br />
           Course 3
           <br />
-          credits: 
+          Credits: 
           3
           <br />
           <a

@@ -42,6 +42,7 @@ export default function BoxSx(props: {
           setSemesters={props.setSemesters}
         />
       </Box>
+
     </div>
   );
 }

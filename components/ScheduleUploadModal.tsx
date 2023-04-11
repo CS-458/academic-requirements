@@ -6,6 +6,7 @@
 import React from "react";
 import {
   Button,
+  IconButton,
   TextField,
   Dialog,
   DialogActions,
@@ -97,9 +98,9 @@ export default function FormDialog(props: {
 
   return (
     <div>
-      <Button onClick={handleClickOpen} data-testid="saveButton">
-        <SaveIcon />
-      </Button>
+      <IconButton onClick={handleClickOpen} data-testid="saveButton" color="primary">
+        <SaveIcon/>
+      </IconButton>
       <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>

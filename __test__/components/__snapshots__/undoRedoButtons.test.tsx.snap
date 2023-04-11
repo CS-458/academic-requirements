@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test loading a four year plan into the semesters 1`] = `
+exports[`Test undo and redo button 1`] = `
 <body>
   <div>
     <div
@@ -110,27 +110,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   />
                 </button>
               </div>
-              <button
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="rloadButton"
-                tabindex="0"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="RefreshIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-                  />
-                </svg>
-                <span
-                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                />
-              </button>
             </div>
           </div>
           <div
@@ -194,14 +173,15 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester0"
                             >
                               <p>
                                 Fall
                                  (
-                                12
+                                4
                                 ) 
+                                Low
                               </p>
                               <div
                                 class="CourseText"
@@ -220,50 +200,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 <a
                                   href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ENGL
-                                -
-                                101
-                                <br />
-                                Composition 1
-                                <br />
-                                Credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                156
-                                <br />
-                                Calculus and Analytic Geometry I
-                                <br />
-                                Credits: 
-                                5
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
                                   target="_blank"
                                 >
                                   Description
@@ -1251,55 +1187,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   <div
                     class="MuiBox-root css-9sn6pt"
                   >
-                    <div
-                      class="RequirementText"
-                      data-testid="requirement"
-                    >
-                      <div
-                        class="requirementName"
-                      >
-                        Credits
-                      </div>
-                      <div
-                        class="percentage"
-                      >
-                        <div
-                          class="MuiBox-root css-poat16"
-                        >
-                          <span
-                            aria-valuenow="58"
-                            class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
-                            role="progressbar"
-                            style="width: 40px; height: 40px; transform: rotate(-90deg);"
-                          >
-                            <svg
-                              class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-                              viewBox="22 22 44 44"
-                            >
-                              <circle
-                                class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
-                                cx="44"
-                                cy="44"
-                                fill="none"
-                                r="20.2"
-                                stroke-width="3.6"
-                                style="stroke-dasharray: 126.920; stroke-dashoffset: 52.883px;"
-                              />
-                            </svg>
-                          </span>
-                          <div
-                            class="MuiBox-root css-17snrrl"
-                          >
-                            <div
-                              class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
-                              data-testid="reqPercent"
-                            >
-                              58
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <p
                       class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >
@@ -1588,57 +1475,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             class="MuiBox-root css-poat16"
                           >
                             <span
-                              aria-valuenow="100"
-                              class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
-                              role="progressbar"
-                              style="width: 40px; height: 40px; transform: rotate(-90deg);"
-                            >
-                              <svg
-                                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-                                viewBox="22 22 44 44"
-                              >
-                                <circle
-                                  class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
-                                  cx="44"
-                                  cy="44"
-                                  fill="none"
-                                  r="20.2"
-                                  stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
-                                />
-                              </svg>
-                            </span>
-                            <div
-                              class="MuiBox-root css-17snrrl"
-                            >
-                              <div
-                                class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
-                                data-testid="reqPercent"
-                              >
-                                100
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="RequirementText"
-                        data-testid="requirement"
-                      >
-                        <div
-                          class="requirementName"
-                        >
-                          ARNS
-                        </div>
-                        <div
-                          class="percentage"
-                        >
-                          <div
-                            class="MuiBox-root css-poat16"
-                          >
-                            <span
                               aria-valuenow="67"
                               class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                               role="progressbar"
@@ -1667,6 +1503,57 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 data-testid="reqPercent"
                               >
                                 67
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="RequirementText"
+                        data-testid="requirement"
+                      >
+                        <div
+                          class="requirementName"
+                        >
+                          ARNS
+                        </div>
+                        <div
+                          class="percentage"
+                        >
+                          <div
+                            class="MuiBox-root css-poat16"
+                          >
+                            <span
+                              aria-valuenow="33"
+                              class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                              role="progressbar"
+                              style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                            >
+                              <svg
+                                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                viewBox="22 22 44 44"
+                              >
+                                <circle
+                                  class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                  cx="44"
+                                  cy="44"
+                                  fill="none"
+                                  r="20.2"
+                                  stroke-width="3.6"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 84.614px;"
+                                />
+                              </svg>
+                            </span>
+                            <div
+                              class="MuiBox-root css-17snrrl"
+                            >
+                              <div
+                                class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                data-testid="reqPercent"
+                              >
+                                33
                               </div>
                             </div>
                           </div>

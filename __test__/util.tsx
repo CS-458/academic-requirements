@@ -338,7 +338,9 @@ export function mockUserInfo(id: string): User {
       sub: id,
       picture: "",
       name: id,
-      email: `${id}@gmail.com`
+      email: `${id}@gmail.com`,
+      exp: Date.now() / 1000 + 400,
+      nbf: Date.now() / 1000 - 10
     }
   };
 }

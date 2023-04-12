@@ -25,9 +25,82 @@ exports[`Load saved schedule 1`] = `
                   <div
                     class="MuiBox-root css-6um5jb"
                   >
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="notificationButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <span
+                        aria-label="You Have 2 Errors"
+                        class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                        data-mui-internal-clone-element="true"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="NotificationImportantIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                        >
+                          2
+                        </span>
+                      </span>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
                     <div>
                       <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="saveButton"
                         tabindex="0"
                         type="button"
@@ -189,7 +262,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Computer Science I
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -211,7 +284,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Fundamentals of Speech
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -233,7 +306,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Composition 1
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -277,7 +350,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Computer Science II
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -299,7 +372,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Composition 2
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -321,7 +394,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Calculus and Analytic Geometry II
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       5
                                       <br />
                                       <a
@@ -343,7 +416,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Calculus and Analytic Geometry I
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       5
                                       <br />
                                       <a
@@ -448,7 +521,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Data Structures
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -470,7 +543,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Web and Internet Programming
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -492,7 +565,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Linear Algebra
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -537,7 +610,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Algorithm Design and Analysis
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -559,7 +632,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Database Systems Manipulation and Design
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -581,7 +654,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Discrete Mathematics
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -603,7 +676,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Professional Seminar
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       1
                                       <br />
                                       <a
@@ -708,7 +781,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Mathematical Foundations of Computer Graphics
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -730,7 +803,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Cybertechnology Ethics
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -752,7 +825,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Mobile Development in Android
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -797,7 +870,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Software Engineering Principles
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -819,7 +892,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Advanced Web and Internet Programming
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -924,7 +997,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Software engineering Practicum
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -946,7 +1019,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Computer Architecture
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -991,7 +1064,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Software engineering Practicum
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       4
                                       <br />
                                       <a
@@ -1013,7 +1086,7 @@ exports[`Load saved schedule 1`] = `
                                       <br />
                                       Operating Systems
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -1156,8 +1229,8 @@ exports[`Load saved schedule 1`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="false"
-                              for=":r1:"
-                              id=":r1:-label"
+                              for=":r2:"
+                              id=":r2:-label"
                             >
                               Course Category
                             </label>
@@ -1171,7 +1244,7 @@ exports[`Load saved schedule 1`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r1:"
+                                id=":r2:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"

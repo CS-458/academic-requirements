@@ -83,6 +83,7 @@ class RequirementProcessing {
             }
             if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
               x.percentage = 100;
+              x.creditCountTaken += course.credits;
             } else {
               x.percentage = calculateNewPercentage(x, course, reqCheck);
             }
@@ -181,13 +182,13 @@ class RequirementProcessing {
                   let optionalCredits = 0;
                   reqGenList.forEach((y: RequirementComponentType) => {
                     if (y.parentCategory === 25) {
-                      if (y.courseReqs != null || y.courseCount != null || y.creditCount != null
-                      ) {
+                      if (y.courseReqs != null || y.courseCount != null || y.creditCount != null) {
                         percents.push(y.percentage);
                         requiredCredits += y.creditCountTaken;
                       } else {
                         optionalCredits += y.creditCountTaken;
                       }
+                      console.log(y);
                     }
                   });
                   let creditSum = 1000;
@@ -198,6 +199,7 @@ class RequirementProcessing {
                   percents.forEach((y) => {
                     sum = sum + y / percents.length;
                   });
+                  console.log(sum, creditSum);
                   reqGenList[parentIndex].percentage = sum < creditSum ? sum : creditSum;
                 } else if (parent?.idCategory === 26 || parent?.idCategory === 27) {
                   // ART/HUM or SBSCI

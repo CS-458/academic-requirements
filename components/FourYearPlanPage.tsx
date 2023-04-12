@@ -733,7 +733,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             setSavedErrors={setSavedErrors}
             resetRedo={setCoursesForRedo}
             resetMoved={setCoursesMoved}
-            pcl={PassedCourseList}
           >
             <ScheduleErrorNotification errors={savedErrors}/>
             <br/>

@@ -20,7 +20,6 @@ export default function BoxSx(props: {
   setSavedErrors: (e: string[]) => void;
   resetRedo: (r: movedCourse[]) => void;
   resetMoved: (u: movedCourse[]) => void;
-  pcl: any;
   children: JSX.Element | JSX.Element[]
 }): any {
   return (

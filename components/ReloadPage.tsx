@@ -23,15 +23,15 @@ export default function FormDialog(props: {
   loadFYP: (semesters: SemesterType[]) => void;
   initializeSemesters: () => any
 }): any {
-  // makes the modal pop up
+  // Handles the reloading of the FYPP
   const handleReload = (): any => {
-    // loops through the SemesterType[] json
+    // reset requirments
+    props.resetRequirements();
     const semesters: SemesterType[] = [];
+    // if the user has a FYP
     if (userMajor()?.load_four_year_plan === true) {
       const semestersReload = props.initializeSemesters();
-      // props.setSemesters(semestersReload);
       props.loadFYP(semestersReload);
-      console.log(semesters + "INSIDE IF");
     } else {
       for (let i = 0; i < props.sems.length; i++) {
         semesters.push({
@@ -44,12 +44,9 @@ export default function FormDialog(props: {
           year: props.sems[i].year
         });
       };
-      console.log(semesters + "INSIDE ELSE");
       props.setSemesters(semesters);
     }
-    console.log(semesters + "BASSE");
     props.setSavedErrors([]);
-    props.resetRequirements();
     props.resetRedo([]);
     props.resetMoved([]);
   };

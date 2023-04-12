@@ -540,13 +540,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           });
         } else if (userMajor()?.load_four_year_plan === true) {
           console.log("LOAD FYP+++++++++++");
-          loadFYP();
+          loadFYP(semesters);
         }
         setAlreadySetThisData(true);
       }
     }, [coursesInMultipleCategories]);
 
-    function loadFYP(): void {
+    function loadFYP(semesters: SemesterType[]): void {
       console.log("INSIDE -- sCALLEDEDDEDED");
       // fill in the schedule
       semesters.forEach((semester, index) => {
@@ -594,6 +594,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         const newWarningState = getWarning(semester);
         semester.Warning = newWarningState;
       });
+      setSemesters(semesters);
     }
 
     // called when a course is removed from the schedule to remove it from reqs
@@ -669,11 +670,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           checkRequirements(found, coursesInMultipleCategories);
         }
       });
-      if (userMajor()?.load_four_year_plan === true) {
-        console.log("LOAD FYP )))))))))))))))))))))))");
-        initializeSemesters();
-        loadFYP();
-      }
     }
 
     function handleUndoCourse(): void {
@@ -754,7 +750,8 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               setSavedErrors={setSavedErrors}
               resetRedo={setCoursesForRedo}
               resetMoved={setCoursesMoved}
-              loadFYP={initializeSemesters}
+              loadFYP={loadFYP}
+              initializeSemesters={initializeSemesters}
             />
           </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>

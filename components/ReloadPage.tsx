@@ -20,14 +20,17 @@ export default function FormDialog(props: {
   handleReturn: (V: { idCourse: number, dragSource: string }) => void;
   resetRedo: (r: movedCourse[]) => void;
   resetMoved: (u: movedCourse[]) => void;
-  loadFYP: () => void;
+  loadFYP: (semesters: SemesterType[]) => void;
+  initializeSemesters: () => any
 }): any {
   // makes the modal pop up
   const handleReload = (): any => {
     // loops through the SemesterType[] json
     const semesters: SemesterType[] = [];
     if (userMajor()?.load_four_year_plan === true) {
-      props.loadFYP();
+      const semestersReload = props.initializeSemesters();
+      // props.setSemesters(semestersReload);
+      props.loadFYP(semestersReload);
       console.log(semesters + "INSIDE IF");
     } else {
       for (let i = 0; i < props.sems.length; i++) {

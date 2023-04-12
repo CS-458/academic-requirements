@@ -539,7 +539,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             newCheck: true
           });
         } else if (userMajor()?.load_four_year_plan === true) {
-          console.log("LOAD FYP+++++++++++");
           loadFYP(semesters);
         }
         setAlreadySetThisData(true);
@@ -547,7 +546,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }, [coursesInMultipleCategories]);
 
     function loadFYP(semesters: SemesterType[]): void {
-      console.log("INSIDE -- sCALLEDEDDEDED");
       // fill in the schedule
       semesters.forEach((semester, index) => {
         const tempArr: CourseType[] = [];
@@ -692,17 +690,25 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     function handleRedoCourse(): void {
       const move = coursesForRedo.pop();
-      if (move !== undefined) {
-        redo = true;
-        createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
-        // course came from the courseList, so move it back
-        if (move.movedFrom === -2) {
-          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
-        } else if (move.movedTo === -2) {
-          // was moved to course list
-          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+      try {
+        if (move !== undefined) {
+          redo = true;
+          createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
+          // course came from the courseList, so move it back
+          if (move.movedFrom === -2) {
+            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+          } else if (move.movedTo === -2) {
+            // was moved to course list
+            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+          } else {
+            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+          }
+        }
+      } catch (error: any) {
+        if (error.message === "Drop target not found") {
+          throwError("Redo Error: It's possible the semester has been deleted", "warning");
         } else {
-          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+          throwError("Wait... something aint right?", "warning");
         }
       }
     }
@@ -782,6 +788,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               reqList={reqList ?? []}
               reqGenList={reqGenList ?? []}
               createCourseMoveRecord={createCourseMoveRecord}
+              error={throwError}
             />
           </div>
           <div

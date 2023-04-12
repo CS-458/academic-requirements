@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test loading a four year plan into the semesters 1`] = `
+exports[`Test undo and redo button 1`] = `
 <body>
   <div>
     <div
@@ -173,17 +173,18 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                           >
                             <div
-                              class="semester Semester-root MuiBox-root css-17txp1g"
+                              class="semester Semester-root MuiBox-root css-12qoa1o"
                               data-testid="semester0"
                             >
                               <p>
                                 Fall
                                  (
-                                12
+                                4
                                 ) 
+                                Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -199,50 +200,6 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 <a
                                   href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="Course-root CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                ENGL
-                                -
-                                101
-                                <br />
-                                Composition 1
-                                <br />
-                                Credits: 
-                                3
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                  target="_blank"
-                                >
-                                  Description
-                                </a>
-                              </div>
-                              <div
-                                class="Course-root CourseText"
-                                data-testid="course"
-                                draggable="true"
-                                style="opacity: 1;"
-                              >
-                                MATH
-                                -
-                                156
-                                <br />
-                                Calculus and Analytic Geometry I
-                                <br />
-                                Credits: 
-                                5
-                                <br />
-                                <a
-                                  href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
                                   target="_blank"
                                 >
                                   Description
@@ -271,7 +228,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 ) 
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -293,7 +250,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -315,7 +272,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -419,7 +376,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 ) 
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -441,7 +398,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -463,7 +420,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -485,7 +442,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -530,7 +487,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -552,7 +509,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -574,7 +531,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -596,7 +553,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -701,7 +658,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -723,7 +680,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -768,7 +725,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -790,7 +747,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 </a>
                               </div>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -895,7 +852,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -940,7 +897,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 Low
                               </p>
                               <div
-                                class="Course-root CourseText"
+                                class="CourseText"
                                 data-testid="course"
                                 draggable="true"
                                 style="opacity: 1;"
@@ -1240,7 +1197,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1291,7 +1248,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1342,7 +1299,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1401,7 +1358,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1452,7 +1409,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1503,64 +1460,13 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
                         >
                           COMSK
-                        </div>
-                        <div
-                          class="percentage"
-                        >
-                          <div
-                            class="MuiBox-root css-poat16"
-                          >
-                            <span
-                              aria-valuenow="100"
-                              class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
-                              role="progressbar"
-                              style="width: 40px; height: 40px; transform: rotate(-90deg);"
-                            >
-                              <svg
-                                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-                                viewBox="22 22 44 44"
-                              >
-                                <circle
-                                  class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
-                                  cx="44"
-                                  cy="44"
-                                  fill="none"
-                                  r="20.2"
-                                  stroke-width="3.6"
-                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
-                                />
-                              </svg>
-                            </span>
-                            <div
-                              class="MuiBox-root css-17snrrl"
-                            >
-                              <div
-                                class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
-                                data-testid="reqPercent"
-                              >
-                                100
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="RequirementText Requirement-root"
-                        data-testid="requirement"
-                      >
-                        <div
-                          class="requirementName"
-                        >
-                          ARNS
                         </div>
                         <div
                           class="percentage"
@@ -1605,7 +1511,58 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
+                        data-testid="requirement"
+                      >
+                        <div
+                          class="requirementName"
+                        >
+                          ARNS
+                        </div>
+                        <div
+                          class="percentage"
+                        >
+                          <div
+                            class="MuiBox-root css-poat16"
+                          >
+                            <span
+                              aria-valuenow="33"
+                              class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                              role="progressbar"
+                              style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                            >
+                              <svg
+                                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                viewBox="22 22 44 44"
+                              >
+                                <circle
+                                  class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                  cx="44"
+                                  cy="44"
+                                  fill="none"
+                                  r="20.2"
+                                  stroke-width="3.6"
+                                  style="stroke-dasharray: 126.920; stroke-dashoffset: 84.614px;"
+                                />
+                              </svg>
+                            </span>
+                            <div
+                              class="MuiBox-root css-17snrrl"
+                            >
+                              <div
+                                class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                data-testid="reqPercent"
+                              >
+                                33
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1656,7 +1613,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1707,7 +1664,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div
@@ -1758,7 +1715,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText Requirement-root"
+                        class="RequirementText"
                         data-testid="requirement"
                       >
                         <div

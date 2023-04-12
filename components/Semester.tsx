@@ -1,9 +1,9 @@
-import React, { CSSProperties, FC } from "react";
+import React, { FC } from "react";
 import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
-import { SemesterProps, warning } from "../entities/four_year_plan";
+import { SemesterProps } from "../entities/four_year_plan";
 import { Box } from "@mui/material";
 
 export const Semester: FC<SemesterProps> = function Semester({
@@ -46,6 +46,7 @@ export const Semester: FC<SemesterProps> = function Semester({
       </p>
       {courses.map((course) => (
         <Course
+          key={course.idCourse}
           name={course.name}
           subject={course.subject}
           number={course.number}

@@ -18,7 +18,7 @@ exports[`Draggable Course Renders 1`] = `
         <br />
         Course 1
         <br />
-        credits: 
+        Credits: 
         1
         <br />
         <a
@@ -51,7 +51,7 @@ exports[`DraggableCourse - Orange Warning 1`] = `
         <br />
         Course 1
         <br />
-        credits: 
+        Credits: 
         1
         <br />
         <a
@@ -84,7 +84,7 @@ exports[`DraggableCourse - Red Warning 1`] = `
         <br />
         Course 1
         <br />
-        credits: 
+        Credits: 
         1
         <br />
         <a
@@ -117,7 +117,7 @@ exports[`DraggableCourse - Yellow Warning 1`] = `
         <br />
         Course 1
         <br />
-        credits: 
+        Credits: 
         1
         <br />
         <a

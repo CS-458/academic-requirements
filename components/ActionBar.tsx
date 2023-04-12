@@ -13,6 +13,7 @@ export default function BoxSx(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
   defaultName?: string;
+  children: JSX.Element | JSX.Element[];
 }): any {
   return (
     <div>
@@ -24,6 +25,7 @@ export default function BoxSx(props: {
           boxShadow: 9
         }}
       >
+        {props.children}
         <ScheduleUpload
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}

@@ -23,8 +23,8 @@ export default function DefaultLayout(props: {
   const [user, setUser] = useState<User | undefined>(undefined);
   function setUserAndTimeout(user: User | undefined): void {
     setUser(user);
+    clearTimeout(curTimeout);
     if (user !== undefined) {
-      clearTimeout(curTimeout);
       // settimeout for expiry
       curTimeout = setTimeout(() => {
         setUser(undefined);
@@ -62,7 +62,6 @@ export default function DefaultLayout(props: {
       const user = { info: jwt, cred: token.credential };
       setUserAndTimeout(user);
       localStorage.setItem("google-login", JSON.stringify(user));
-      console.log("Login:", user);
     }
   }
   function errorMessage(): void {
@@ -96,7 +95,7 @@ export default function DefaultLayout(props: {
         <GoogleLogin
           onSuccess={responseMessage}
           onError={errorMessage}
-          useOneTap={false}
+          useOneTap
         />
       );
     }

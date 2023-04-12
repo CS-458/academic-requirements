@@ -169,6 +169,13 @@ export interface UserSavedSchedule {
     usedFourYearPlan: boolean;
   };
 }
+
+export interface movedCourse {
+  movedTo: number;
+  movedFrom: number;
+  course: number;
+}
+
 export type ScheduleData = Array<{
   year: number;
   seasons: Array<{ season: season; classes: string[] }>;

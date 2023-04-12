@@ -81,7 +81,6 @@ class RequirementProcessing {
             } else {
               x.coursesTaken = x.coursesTaken + "," + courseString;
             }
-            x.creditCountTaken += course.credits;
             if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
               x.percentage = 100;
             } else {
@@ -444,8 +443,8 @@ function calculateNewPercentage(requirement: RequirementComponentType, course: C
   let temp2 = 1000;
   let temp3 = 1000;
   // if there is a credit count requirement calculate its percentage
+  requirement.creditCountTaken = requirement.creditCountTaken + course.credits;
   if (requirement.creditCount !== null) {
-    requirement.creditCountTaken = requirement.creditCountTaken + course.credits;
     temp1 = requirement.creditCountTaken / requirement.creditCount;
   }
   // if there is a course count requirement calculate its percentage

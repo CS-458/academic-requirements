@@ -76,6 +76,10 @@ export default function DropTargetAccordian(props: {
   });
 
   const getSuggestedCourses = (semNum: number): CourseType[] => {
+    // get four year plan
+    // get all courses up to this point
+    // get all available courses
+    // convert FYP text to course objects using all available courses
     return [];
   };
 

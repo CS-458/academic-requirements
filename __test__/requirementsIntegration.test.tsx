@@ -50,7 +50,8 @@ test("Test whether requirements visually update on the screen", async () => {
   const openButton = screen.getByTestId("openDrawer");
   await user.click(openButton);
   let reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[1]).toContainHTML("9.1");
+  expect(reqPercentages[0]).toContainHTML("3.3");
+  expect(reqPercentages[2]).toContainHTML("9.1");
   const closeButton = screen.getByTestId("closeDrawer");
   await user.click(closeButton);
 
@@ -60,7 +61,8 @@ test("Test whether requirements visually update on the screen", async () => {
   fireEvent.drop(fallSemester);
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[1]).toContainHTML("18.2");
+  expect(reqPercentages[0]).toContainHTML("6.7");
+  expect(reqPercentages[2]).toContainHTML("18.2");
   await user.click(closeButton);
 
   const courseList = screen.getByTestId("courseListDropTarget");
@@ -71,7 +73,8 @@ test("Test whether requirements visually update on the screen", async () => {
   fireEvent.drop(courseList);
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[1]).toContainHTML("9.1");
+  expect(reqPercentages[0]).toContainHTML("3.3");
+  expect(reqPercentages[2]).toContainHTML("9.1");
   await user.click(closeButton);
 
   const CS145 = screen.getAllByTestId("course")[0];
@@ -81,7 +84,8 @@ test("Test whether requirements visually update on the screen", async () => {
   fireEvent.drop(courseList);
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[1]).toContainHTML("0");
+  expect(reqPercentages[0]).toContainHTML("0");
+  expect(reqPercentages[2]).toContainHTML("0");
   await user.click(closeButton);
 
   // This section tests that GenEd Reqs update
@@ -96,9 +100,10 @@ test("Test whether requirements visually update on the screen", async () => {
 
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[3]).toContainHTML("50");
+  expect(reqPercentages[0]).toContainHTML("2.5");
   expect(reqPercentages[4]).toContainHTML("50");
-  expect(reqPercentages[8]).toContainHTML("50");
+  expect(reqPercentages[5]).toContainHTML("50");
+  expect(reqPercentages[9]).toContainHTML("50");
   await user.click(closeButton);
 
   fireEvent.dragStart(genCourse[1]);
@@ -107,7 +112,8 @@ test("Test whether requirements visually update on the screen", async () => {
   fireEvent.drop(fallSemester);
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[3]).toContainHTML("100");
+  expect(reqPercentages[0]).toContainHTML("5");
+  expect(reqPercentages[4]).toContainHTML("100");
   await user.click(closeButton);
 
   const ANTH220 = screen.getAllByTestId("course")[0];
@@ -117,8 +123,9 @@ test("Test whether requirements visually update on the screen", async () => {
   fireEvent.drop(courseList);
   await user.click(openButton);
   reqPercentages = screen.getAllByTestId("reqPercent");
-  expect(reqPercentages[3]).toContainHTML("50");
-  expect(reqPercentages[4]).toContainHTML("0");
-  expect(reqPercentages[8]).toContainHTML("0");
+  expect(reqPercentages[0]).toContainHTML("2.5");
+  expect(reqPercentages[4]).toContainHTML("50");
+  expect(reqPercentages[5]).toContainHTML("0");
+  expect(reqPercentages[9]).toContainHTML("0");
   await user.click(closeButton);
 }, 1000000);

@@ -29,6 +29,7 @@ import InformationDrawer from "./InformationBar";
 import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
+import ReloadPage from "./ReloadPage";
 
 export interface CourseError {
   id: number;
@@ -531,56 +532,63 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             newCheck: true
           });
         } else if (userMajor()?.load_four_year_plan === true) {
-          // fill in the schedule
-          semesters.forEach((semester, index) => {
-            const tempArr: CourseType[] = [];
-            // Get the semester data from the json
-            const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
-            if (classPlan == null) return;
-            const courseStringArr = classPlan.Courses;
-            let credits = 0;
-            // loop through each course in the list
-            courseStringArr.forEach((courseString: String) => {
-              const subject = courseString.split("-")[0];
-              const number = courseString.split("-")[1];
-              let course: CourseType | undefined;
-              // This variable prevents the course being added twice if it is in
-              // more than one category
-              let foundOnce = false;
-              // Find the course in the master list of courses
-              PassedCourseList.forEach((x) => {
-                if (
-                  x.subject === subject &&
-                  x.number === number &&
-                  userMajor()?.completed_courses.find(
-                    (y) => y === x.subject + "-" + x.number
-                  ) === undefined
-                ) {
-                  if (!foundOnce) {
-                    // define the course and update it as needed
-                    course = x;
-                    course.dragSource = "Semester" + (index + 1);
-                    checkRequirements(course, coursesInMultipleCategories);
-                    foundOnce = true;
-                  }
-                }
-                // If there is a course add it to the temporary array for the semester
-              });
-              if (course !== undefined) {
-                tempArr.push(course);
-                credits += course.credits;
-              }
-            });
-            // update the necessary semester values
-            semester.courses = tempArr;
-            semester.SemesterCredits = credits;
-            const newWarningState = getWarning(semester);
-            semester.Warning = newWarningState;
-          });
+          console.log("LOAD FYP+++++++++++");
+          loadFYP(semesters);
         }
         setAlreadySetThisData(true);
       }
     }, [coursesInMultipleCategories]);
+
+    function loadFYP(semesters: SemesterType[]): void {
+      console.log("INSIDE -- sCALLEDEDDEDED");
+      // fill in the schedule
+      semesters.forEach((semester, index) => {
+        const tempArr: CourseType[] = [];
+        // Get the semester data from the json
+        const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+        if (classPlan == null) return;
+        const courseStringArr = classPlan.Courses;
+        let credits = 0;
+        // loop through each course in the list
+        courseStringArr.forEach((courseString: String) => {
+          const subject = courseString.split("-")[0];
+          const number = courseString.split("-")[1];
+          let course: CourseType | undefined;
+          // This variable prevents the course being added twice if it is in
+          // more than one category
+          let foundOnce = false;
+          // Find the course in the master list of courses
+          PassedCourseList.forEach((x) => {
+            if (
+              x.subject === subject &&
+              x.number === number &&
+              userMajor()?.completed_courses.find(
+                (y) => y === x.subject + "-" + x.number
+              ) === undefined
+            ) {
+              if (!foundOnce) {
+                // define the course and update it as needed
+                course = x;
+                course.dragSource = "Semester" + (index + 1);
+                checkRequirements(course, coursesInMultipleCategories);
+                foundOnce = true;
+              }
+            }
+            // If there is a course add it to the temporary array for the semester
+          });
+          if (course !== undefined) {
+            tempArr.push(course);
+            credits += course.credits;
+          }
+        });
+        // update the necessary semester values
+        semester.courses = tempArr;
+        semester.SemesterCredits = credits;
+        const newWarningState = getWarning(semester);
+        semester.Warning = newWarningState;
+      });
+      setSemesters(semesters);
+    }
 
     // called when a course is removed from the schedule to remove it from reqs
     const removeFromRequirements = useCallback(
@@ -625,6 +633,37 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       },
       [reqList, reqGenList, requirementsDisplay, PassedCourseList]
     );
+
+    function resetRequirements(): void {
+      // reset the major requirements
+      const tempList = reqList;
+      tempList?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      // reset the gen ed requirements
+      const tempList2 = reqGenList;
+      tempList2?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      setReqList(tempList);
+      setReqGenList(tempList2);
+      // add completed courses back in
+      userMajor()?.completed_courses.forEach((x) => {
+        const a = x.split("-");
+        const found = PassedCourseList.find(
+          (item) => item.subject === a[0] && item.number === a[1]
+        );
+        if (found !== undefined) {
+          checkRequirements(found, coursesInMultipleCategories);
+        }
+      });
+    }
 
     function handleUndoCourse(): void {
       const move = coursesMoved.pop();
@@ -709,7 +748,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         <div className="drag-drop">
           <ActionBar
             scheduleData={info}
+            sems={semesters}
+            resetRequirements={resetRequirements}
             setAlertData={throwError}
+            handleReturn={handleReturnDrop}
+            setSemesters={setSemesters}
+            setSavedErrors={setSavedErrors}
+            resetRedo={setCoursesForRedo}
+            resetMoved={setCoursesMoved}
             defaultName={userMajor()?.schedule_name}
           >
             <ScheduleErrorNotification errors={savedErrors} />
@@ -724,6 +770,18 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               courses={coursesForRedo}
             />
             <br />
+            <ReloadPage
+              scheduleData={info}
+              sems={semesters}
+              resetRequirements={resetRequirements}
+              handleReturn={handleReturnDrop}
+              setSemesters={setSemesters}
+              setSavedErrors={setSavedErrors}
+              resetRedo={setCoursesForRedo}
+              resetMoved={setCoursesMoved}
+              loadFYP={loadFYP}
+              initializeSemesters={initializeSemesters}
+            />
           </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
@@ -773,7 +831,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               key={0}
             />
           </div>
-          <InformationDrawer requirementsDisplay={requirementsDisplay} />
+          <InformationDrawer
+            requirementsDisplay={requirementsDisplay}
+            semesters={semesters}
+            passedCourseList={PassedCourseList}
+          />
         </div>
       </div>
     );

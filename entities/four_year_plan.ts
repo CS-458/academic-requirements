@@ -1,5 +1,6 @@
 import type { TargetType } from "dnd-core";
 import { CourseError } from "../components/FourYearPlanPage";
+import { SxProps } from "@mui/material";
 
 // Defines the major object we are passing between files
 export interface MajorType {
@@ -45,6 +46,8 @@ export interface DragCourseType {
   idCourse: number; // see CourseType
   idCategory: number; // see CourseType
   repeatableForCred: boolean; // see CourseType
+  onDrag?: (item: any) => void; // Used to track when a course is being dragged
+  onDragEnd?: (item: any) => void; // Used to track when a course is done dragging
 }
 
 // Defines the props for the course list component
@@ -52,6 +55,9 @@ export interface CourseListType {
   accept: TargetType; // makes it a drop target
   onDrop: (item: any) => void; // function for what to do on drop
   courses: CourseType[]; // list of courses it displays for dragging
+  onCourseDrag?: (item: any) => void; // Used to track when a course is being dragged
+  onCourseDragEnd?: (item: any) => void; // Used to track when a course is done dragging
+  sx?: SxProps; // custom styling for CourseList
 }
 
 // Defines a requirement as it comes from the database

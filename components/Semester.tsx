@@ -1,11 +1,12 @@
-import React, { CSSProperties, FC } from "react";
+import React, { CSSProperties, FC, SyntheticEvent, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps, warning } from "../entities/four_year_plan";
-import { Box, Grid, IconButton, Stack } from "@mui/material";
+import { Box, Grid, Grow, IconButton, Popover, Popper, Stack } from "@mui/material";
 import { Assistant } from '@mui/icons-material';
+import { CourseList } from "./CourseList";
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -20,6 +21,10 @@ export const Semester: FC<SemesterProps> = function Semester({
   year,
   season
 }) {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [quickDrop, setQuickDrop] = useState(false);
+
+  const refPopper = useRef<null | HTMLDivElement>(null);
   // defines the drop action
   const [{ isOver }, drop] = useDrop({
     accept,
@@ -33,6 +38,28 @@ export const Semester: FC<SemesterProps> = function Semester({
   let bgcolor = "";
   if (Warning !== null) bgcolor = "warning.main";
   if (isOver) bgcolor = "success.main";
+
+  const handleOpenSuggester = (event: React.MouseEvent<HTMLElement>): void => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseSuggester = (event: any, reason: string): void => {
+    if (reason === "quickDrop") {
+      setQuickDrop(true);
+    }
+    setAnchorEl(null);
+  };
+
+  const handleCourseDrag = (event: React.DragEvent<HTMLElement>): void => {
+    if (refPopper.current !== null) {
+      if (event.clientX < refPopper.current.offsetLeft ||
+          event.clientX > refPopper.current.offsetLeft + refPopper.current.offsetWidth ||
+          event.clientY < refPopper.current.offsetTop ||
+          event.clientY > refPopper.current.offsetTop + refPopper.current.offsetHeight) {
+        handleCloseSuggester(null, "quickDrop");
+      }
+    }
+  };
 
   return (
     <Box
@@ -55,12 +82,42 @@ export const Semester: FC<SemesterProps> = function Semester({
           <Grid item sx={{
             display: "flex",
             position: "absolute",
+            right: ".5em",
             width: "100%",
             justifyContent: "end"
           }}>
-            <IconButton>
+            <IconButton onClick={handleOpenSuggester}>
               <Assistant color="primary"/>
             </IconButton>
+            <Popover
+              anchorEl={anchorEl}
+              open={anchorEl !== null}
+              onClose={handleCloseSuggester}
+              PaperProps={{
+                ref: refPopper,
+                sx: {
+                  borderRadius: ".5em"
+                }
+              }}
+              transitionDuration={quickDrop ? 0 : "auto"}
+            >
+              <Box
+                sx={{
+                  width: "100%"
+                }}
+              >
+                <CourseList
+                  accept={ItemTypes.COURSE}
+                  onDrop={console.log}
+                  onCourseDrag={handleCourseDrag}
+                  onCourseDragEnd={() => setQuickDrop(false)}
+                  courses={[]}
+                  sx={{
+                    marginBottom: "0px"
+                  }}
+                />
+              </Box>
+            </Popover>
           </Grid>
         </Grid>
         {courses.map((course) => (

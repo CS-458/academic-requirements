@@ -136,6 +136,7 @@ export interface SemesterProps {
   warningDuplicateCourses: CourseError[]; // list of courses in more than one semester
   year: number; // year number 1,2,3,4,etc.
   season: season; // Season the semester is (Fall, Winter, Spring, Summer)
+  suggestedCourses: CourseType[]; // A list of course suggestions for a semester
 }
 
 // Defines the properties of a semester object

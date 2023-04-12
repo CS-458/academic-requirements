@@ -74,6 +74,11 @@ export default function DropTargetAccordian(props: {
       }
     }
   });
+
+  const getSuggestedCourses = (semNum: number): CourseType[] => {
+    return [];
+  };
+
   return (
     <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)}>
       <div ref={drop}>
@@ -106,6 +111,7 @@ export default function DropTargetAccordian(props: {
                 warningDuplicateCourses={props.warningDuplicateCourses}
                 year={sem.year}
                 season={sem.season}
+                suggestedCourses={getSuggestedCourses(sem.semesterNumber)}
               />
             ))}
         </div>

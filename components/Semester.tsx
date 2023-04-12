@@ -1,11 +1,11 @@
-import React, { CSSProperties, FC, SyntheticEvent, useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 // @ts-expect-error
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
-import { SemesterProps, warning } from "../entities/four_year_plan";
-import { Box, Grid, Grow, IconButton, Popover, Popper, Stack } from "@mui/material";
-import { Assistant } from '@mui/icons-material';
+import { SemesterProps } from "../entities/four_year_plan";
+import { Box, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
+import { Assistant } from "@mui/icons-material";
 import { CourseList } from "./CourseList";
 
 export const Semester: FC<SemesterProps> = function Semester({
@@ -19,7 +19,8 @@ export const Semester: FC<SemesterProps> = function Semester({
   warningDuplicateCourses,
   Warning,
   year,
-  season
+  season,
+  suggestedCourses
 }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [quickDrop, setQuickDrop] = useState(false);
@@ -106,14 +107,25 @@ export const Semester: FC<SemesterProps> = function Semester({
                   width: "100%"
                 }}
               >
+                <Typography sx={{
+                  px: "1em",
+                  py: ".5em",
+                  textAlign: "center",
+                  fontSize: "1.2em",
+                  fontWeight: "bold"
+                }}>
+                  {suggestedCourses?.length > 0 ? "Suggested Courses" : "No Suggested Courses"}
+                </Typography>
                 <CourseList
                   accept={ItemTypes.COURSE}
                   onDrop={console.log}
                   onCourseDrag={handleCourseDrag}
                   onCourseDragEnd={() => setQuickDrop(false)}
-                  courses={[]}
+                  courses={suggestedCourses}
                   sx={{
-                    marginBottom: "0px"
+                    marginBottom: "0px",
+                    borderTopLeftRadius: "0px",
+                    borderTopRightRadius: "0px"
                   }}
                 />
               </Box>

@@ -1,12 +1,11 @@
 import "@testing-library/jest-dom";
-import { getByText, screen, waitFor, within } from "@testing-library/react";
+import { screen, waitFor, within } from "@testing-library/react";
 import { setupUser, render, buildLocalStorage, parentEl, fetchApiJson } from "./util";
 import PassThrough from "../components/PassThrough";
 import { academicDb } from "../services/sql";
 import FourYearPlanPage from "../components/FourYearPlanPage";
 import { CourseType, RequirementComponentType } from "../entities/four_year_plan";
 import { dragAndDrop } from "./dragDrop";
-import { jest } from "@jest/globals";
 
 test("Render Semester List", async () => {
   const db = await academicDb();
@@ -164,7 +163,6 @@ test("Testing adding and Removing a year", async () => {
 }, 100000);
 
 test("Try removing a year that has a course", async () => {
-  const alertMocked = jest.fn();
   const db = await academicDb();
   const major = await db.get("SELECT * FROM major WHERE idMajor=2");
   const concentration = await db.get(

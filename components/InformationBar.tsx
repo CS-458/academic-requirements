@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { CssBaseline, IconButton, Divider, Typography, Tab, Tabs, Box, styled, Theme, CSSObject, Drawer } from "@mui/material";
-import { RequirementComponentType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType, SemesterType } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
 import { userMajor } from "../services/user";
 
@@ -84,7 +84,10 @@ function TabPanel(props: TabPanelProps): any {
   );
 }
 
-export default function InformationDrawer(props: { requirementsDisplay: RequirementComponentType[] }): JSX.Element {
+export default function InformationDrawer(props: {
+  requirementsDisplay: RequirementComponentType[],
+  semesters: SemesterType[],
+  passedCourseList: CourseType[] }): JSX.Element {
   const [fourYearPlan] = useState(JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}"));
   const [completedCourses] = useState(userMajor()?.completed_courses ?? []);
   const [loadPlan] = useState(userMajor()?.load_four_year_plan ?? false);
@@ -110,6 +113,26 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
     setValue(newValue);
   };
 
+  function getTotalCredits(s: SemesterType[]): any {
+    let total = 0;
+    const processedCourses = new Set<string>(); // list of all courses that have been read
+    completedCourses.forEach((c) => {
+      const courseSub: string = c.split("-")[0];
+      const courseNum: string = c.split("-")[1];
+      props.passedCourseList.forEach((pc) => {
+        if (pc.subject === courseSub && pc.number === courseNum && !processedCourses.has(c)) {
+          total += pc.credits;
+          processedCourses.add(c);
+        }
+      });
+    });
+
+    s.forEach((s) => {
+      total += s.SemesterCredits;
+    });
+    return total;
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -134,6 +157,12 @@ export default function InformationDrawer(props: { requirementsDisplay: Requirem
         </DrawerHeader>
         {open ? <Divider /> : undefined}
         <TabPanel value={value} index={0} key={0}>
+          <Requirement
+            name={open ? "Credit Total: " + getTotalCredits(props.semesters) + " out of 120" : "Credits"}
+            percentage={(getTotalCredits(props.semesters) / 120) * 100}
+            digits={ open ? 10 : 1 }
+            key={0}
+          />
           <Typography sx={{ color: "primary.main" }}>Major</Typography>
           <Divider sx={{ color: "primary.main", mb: "10px" }}/>
         { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<div key={index}>

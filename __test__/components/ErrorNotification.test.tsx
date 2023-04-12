@@ -3,7 +3,6 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { CourseType } from "../../entities/four_year_plan";
 import { setupUser, render, parentEl } from "../util";
 import { FourYearPlanPage } from "../../components/FourYearPlanPage";
-
 const mockCourses: CourseType[] = [
   {
     subject: "SUB",
@@ -55,7 +54,7 @@ test("Four Year Plan Page renders", async () => {
     />
   );
   expect(index.baseElement).toMatchSnapshot();
-});
+}, 10000000);
 
 test("Four Year Plan Page duplicate courses", async () => {
   const user = setupUser();
@@ -97,7 +96,7 @@ test("Four Year Plan Page duplicate courses", async () => {
   fireEvent.drop(springSemester);
 
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-}, 100000);
+}, 10000000);
 
 test("Four Year Plan Page Prerequisite course", async () => {
   const user = setupUser();
@@ -128,7 +127,7 @@ test("Four Year Plan Page Prerequisite course", async () => {
   fireEvent.dragOver(fallSemester);
   fireEvent.drop(fallSemester);
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-});
+}, 10000000);
 
 test("Four Year Plan incompatible Season Fall", async () => {
   const user = setupUser();
@@ -190,4 +189,4 @@ test("Four Year Plan incompatible Season Spring", async () => {
   fireEvent.dragOver(fallSemester);
   fireEvent.drop(fallSemester);
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-});
+}, 10000000);

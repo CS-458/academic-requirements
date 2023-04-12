@@ -83,6 +83,7 @@ class RequirementProcessing {
             }
             if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
               x.percentage = 100;
+              x.creditCountTaken += course.credits;
             } else {
               x.percentage = calculateNewPercentage(x, course, reqCheck);
             }
@@ -177,19 +178,29 @@ class RequirementProcessing {
                   // ARNS
                   // Must include one nat lab and one math/stat
                   const percents: number[] = [];
+                  let requiredCredits = 0;
+                  let optionalCredits = 0;
                   reqGenList.forEach((y: RequirementComponentType) => {
                     if (y.parentCategory === 25) {
-                      if (y.courseReqs != null || y.courseCount != null || y.creditCount != null
-                      ) {
+                      if (y.courseReqs != null || y.courseCount != null || y.creditCount != null) {
                         percents.push(y.percentage);
+                        requiredCredits += y.creditCountTaken;
+                      } else {
+                        optionalCredits += y.creditCountTaken;
                       }
+                      console.log(y);
                     }
                   });
+                  let creditSum = 1000;
+                  if (requiredCredits < parent.creditCount) {
+                    creditSum = ((requiredCredits + optionalCredits) / parent.creditCount) * 100;
+                  }
                   let sum = 0;
                   percents.forEach((y) => {
-                    sum = sum + (y * 1) / percents.length;
+                    sum = sum + y / percents.length;
                   });
-                  reqGenList[parentIndex].percentage = sum;
+                  console.log(sum, creditSum);
+                  reqGenList[parentIndex].percentage = sum < creditSum ? sum : creditSum;
                 } else if (parent?.idCategory === 26 || parent?.idCategory === 27) {
                   // ART/HUM or SBSCI
                   // Must come from two different subcategories
@@ -305,8 +316,8 @@ class RequirementProcessing {
           if (index > -1 && index !== undefined) {
             // remove the course from the requirement
             coursesTaken.splice(index, 1);
+            reqGenList[i].creditCountTaken = reqGenList[i].creditCountTaken - course.credits;
             if (reqGenList[i].creditCount !== null) {
-              reqGenList[i].creditCountTaken = reqGenList[i].creditCountTaken - course.credits;
               temp1 = reqGenList[i].creditCountTaken / reqGenList[i].creditCount;
             }
             if (reqGenList[i].courseCount !== null) {
@@ -434,8 +445,8 @@ function calculateNewPercentage(requirement: RequirementComponentType, course: C
   let temp2 = 1000;
   let temp3 = 1000;
   // if there is a credit count requirement calculate its percentage
+  requirement.creditCountTaken = requirement.creditCountTaken + course.credits;
   if (requirement.creditCount !== null) {
-    requirement.creditCountTaken = requirement.creditCountTaken + course.credits;
     temp1 = requirement.creditCountTaken / requirement.creditCount;
   }
   // if there is a course count requirement calculate its percentage

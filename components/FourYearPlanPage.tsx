@@ -14,7 +14,8 @@ import {
   warning,
   season,
   sortSemester,
-  movedCourse
+  movedCourse,
+  ScheduleData
 } from "../entities/four_year_plan";
 import {
   processRequirementLists,
@@ -32,6 +33,9 @@ export interface CourseError {
   id: number;
   sem: number;
 }
+
+let undo = false;
+let redo = false;
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -113,13 +117,13 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       useState<MultipleCategoriesType[]>([]);
 
     // Stuff for category dropdown.
-    const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>([]); // courses in category that is selected
+    const [coursesInCategory, setCoursesInCategory] = useState<CourseType[]>(
+      []
+    ); // courses in category that is selected
 
     // lists of courses for undoing and redoing course moves
     const [coursesMoved, setCoursesMoved] = useState<movedCourse[]>([]);
     const [coursesForRedo, setCoursesForRedo] = useState<movedCourse[]>([]);
-    const [undo, setUndo] = useState<boolean>(false);
-    let redo = false;
 
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
@@ -164,7 +168,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         const { idCourse, dragSource } = item;
         console.log("Drop", semNumber, idCourse, dragSource);
         const tmpSemesters = deepCopy(semesters);
-        setUndo(false);
+        undo = false;
         redo = false;
         const target = tmpSemesters.find(
           (sem) => sem.semesterNumber === semNumber
@@ -212,9 +216,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Calling return drop", idCourse, dragSource);
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
-          if (undo || redo) {
-            createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
-          }
+          createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
           const tempSemesters = deepCopy(semesters);
           const movedFromNum = +dragSource.split(" ")[1];
           const semesterIndex = tempSemesters.findIndex(
@@ -226,7 +228,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
           if (courseIndex !== -1) {
             const course = tempSemesters[semesterIndex]?.courses[courseIndex];
-            if (warningDupCourses.findIndex((c) => c.id === course.idCourse) === -1) {
+            if (
+              warningDupCourses.findIndex((c) => c.id === course.idCourse) ===
+              -1
+            ) {
               removeFromRequirements(course);
             }
             setUpdateWarning({
@@ -348,7 +353,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     //  Get all courses (string) in current semester
     //  param semesterIndex -> current semester index
-    function getSemesterCoursesNames(semesterIndex: number, semesters: SemesterType[]): Array<string> {
+    function getSemesterCoursesNames(
+      semesterIndex: number,
+      semesters: SemesterType[]
+    ): Array<string> {
       const semCourses = new Array<string>();
       if (semesterIndex > -1 && semesterIndex < semesters.length) {
         semesters[semesterIndex].courses.forEach((x: CourseType) => {
@@ -358,28 +366,32 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return semCourses;
     }
 
-    function getSemesterDataForSaving(): any {
-      const schedule = [];
-      let currentYear = 1;
-      let seasons: any = [];
-      for (let i = 0; i < semesters.length; i++) {
-        if (currentYear === semesters[i].year) {
-          seasons.push({ season: semesters[i].season, classes: getSemesterCoursesNames(i, semesters) });
-        } else {
-          schedule.push({ year: currentYear, semesters: seasons });
-          currentYear++;
-          seasons = [];
-          seasons.push({ season: semesters[i].season, classes: getSemesterCoursesNames(i, semesters) });
+    function getSemesterDataForSaving(): ScheduleData {
+      const schedule: ScheduleData = [];
+      semesters.forEach((s) => {
+        let saveYear = schedule.find((y) => y.year === s.year);
+        if (saveYear === undefined) {
+          saveYear = { year: s.year, seasons: [] };
+          schedule.push(saveYear);
         }
-      }
-      schedule.push({ year: currentYear, semesters: seasons });
+        let saveSeason = saveYear.seasons.find(
+          (season) => season.season === s.season
+        );
+        if (saveSeason === undefined) {
+          saveSeason = { season: s.season, classes: [] };
+          saveYear.seasons.push(saveSeason);
+        }
+        s.courses.forEach((c) => {
+          saveSeason?.classes.push(`${c.subject}-${c.number}`);
+        });
+      });
       return schedule;
     }
     //  JSON Data for the Courses
     const info = {
-      Major: userMajor()?.major.name,
-      Concentration: userMajor()?.concentration.name,
-      "Completed Courses": userMajor()?.completed_courses,
+      Major: userMajor()?.major.id ?? -1,
+      Concentration: userMajor()?.concentration.idConcentration ?? -1,
+      "Completed Courses": userMajor()?.completed_courses ?? [],
       schedule: getSemesterDataForSaving()
     };
 
@@ -449,8 +461,83 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             checkRequirements(found, coursesInMultipleCategories);
           }
         });
-        // check now that we have multiple category data
-        if (userMajor()?.load_four_year_plan === true) {
+        const scheduleToLoad = localStorage.getItem("current-schedule");
+        if (scheduleToLoad !== null) {
+          const semesters: SemesterType[] = [];
+          const schedule: ScheduleData = JSON.parse(scheduleToLoad);
+          console.log("Loading", schedule);
+          schedule.forEach(({ year, seasons }) =>
+            seasons.forEach(({ season, classes }) => {
+              let semester = semesters.find(
+                (s) => s.season === season && s.year === year
+              );
+              if (semester === undefined) {
+                semester = {
+                  year,
+                  season,
+                  accepts: [ItemTypes.COURSE],
+                  courses: [],
+                  SemesterCredits: 0,
+                  Warning: null,
+                  semesterNumber:
+                    semesters.reduce(
+                      (max, s) => Math.max(max, s.semesterNumber),
+                      0
+                    ) + 1
+                };
+                semesters.push(semester);
+              }
+              classes.forEach((c) => {
+                const [subject, number] = c.split("-");
+                const course = PassedCourseList.find(
+                  (c) => c.subject === subject && c.number === number
+                );
+                if (course !== undefined) {
+                  semester?.courses.push(course);
+                  checkRequirements(course, coursesInMultipleCategories);
+                }
+              });
+            })
+          );
+          for (let year = 0; year < 4; year++) {
+            Object.values(season).forEach((season) => {
+              if (
+                semesters.find(
+                  (s) => s.year === year && s.season === season
+                ) === undefined
+              ) {
+                semesters.push({
+                  year,
+                  season,
+                  accepts: [ItemTypes.COURSE],
+                  courses: [],
+                  SemesterCredits: 0,
+                  Warning: null,
+                  semesterNumber:
+                    semesters.reduce(
+                      (max, s) => Math.max(max, s.semesterNumber),
+                      0
+                    ) + 1
+                });
+              }
+            });
+          }
+          semesters.forEach((s) => {
+            s.SemesterCredits = s.courses.reduce(
+              (sum, c) => c.credits + sum,
+              0
+            );
+            s.Warning = getWarning(s);
+          });
+          setSemesters(semesters);
+          setUpdateWarning({
+            course: undefined,
+            oldSemester: -1,
+            newSemester: -1,
+            draggedOut: true,
+            newCheck: true
+          });
+        } else if (userMajor()?.load_four_year_plan === true) {
           // fill in the schedule
           semesters.forEach((semester, index) => {
             const tempArr: CourseType[] = [];
@@ -549,7 +636,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function handleUndoCourse(): void {
       const move = coursesMoved.pop();
       if (move !== undefined) {
-        setUndo(true);
+        undo = true;
         const temp = coursesForRedo;
         temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
         setCoursesForRedo(temp);
@@ -582,15 +669,15 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }
 
     function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
+      if (!redo && !undo) {
+        setCoursesForRedo([]);
+      }
       if (!undo) {
         const temp = coursesMoved;
         temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
         setCoursesMoved(temp);
       } else {
-        setUndo(false);
-      }
-      if (!redo && !undo) {
-        setCoursesForRedo([]);
+        undo = false;
       }
     }
     return (

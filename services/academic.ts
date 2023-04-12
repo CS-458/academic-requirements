@@ -14,25 +14,38 @@ export function majorList(): UseQueryResult<MajorType[]> {
   return useQuery("Major List", async () => await fetchApi("/api/major"));
 }
 
+export type Concentration = ConcentrationType[] | undefined;
+
 // Get and cache the list of concentrations
 export function concentrationList(
   majorId: number | undefined
-): UseQueryResult<ConcentrationType[] | null> {
+): UseQueryResult<Concentration> {
   return useQuery(
     ["concentrations", majorId],
     async () => await fetchApi(`/api/concentration?majid=${majorId}`)
   );
 }
 
+// Get and cache the list of concentrations
+export function concentrationListAll(): UseQueryResult<Concentration> {
+  return useQuery(
+    ["concentrations_all"],
+    async () => await fetchApi("/api/concentration_all")
+  );
+}
+
 // Get and cache the list of subject acronyms
-export function courseSubjects(): UseQueryResult<Array<string>> {
-  return useQuery("courseSubjects", async () => await fetchApi("/api/subjects"));
+export function courseSubjects(): UseQueryResult<string[]> {
+  return useQuery(
+    "courseSubjects",
+    async () => await fetchApi("/api/subjects")
+  );
 }
 
 // Get and cache the list of numbers for a subject acronym
 export function courseNumbers(
   subject: string | undefined
-): UseQueryResult<Array<string> | null> {
+): UseQueryResult<string[] | undefined> {
   return useQuery(
     ["courseNumbers", subject],
     async () => await fetchApi(`/api/subjects/numbers?sub=${subject}`)
@@ -42,7 +55,7 @@ export function courseNumbers(
 // Get and cache the list of major courses
 export function majorCourseList(
   majorId: number | undefined
-): UseQueryResult<CourseType[] | null> {
+): UseQueryResult<CourseType[] | undefined> {
   return useQuery(
     ["majorCourseList", majorId],
     async () => await fetchApi(`/api/courses/major?majid=${majorId}`)
@@ -52,7 +65,7 @@ export function majorCourseList(
 // Get and cache the list of concentration courses
 export function concentrationCourseList(
   conId: number | undefined
-): UseQueryResult<CourseType[] | null> {
+): UseQueryResult<CourseType[] | undefined> {
   return useQuery(
     ["concentrationCourseList", conId],
     async () => await fetchApi(`/api/courses/concentration?conid=${conId}`)
@@ -61,7 +74,10 @@ export function concentrationCourseList(
 
 // Get and cache the list of gened courses
 export function genedCourseList(): UseQueryResult<CourseType[]> {
-  return useQuery("genedCourseList", async () => await fetchApi("/api/courses/geneds"));
+  return useQuery(
+    "genedCourseList",
+    async () => await fetchApi("/api/courses/geneds")
+  );
 }
 
 export function masterCourseList(
@@ -88,9 +104,14 @@ export function courseCategoryRequirements(
   );
 }
 
+type Req = RequirementComponentType[];
+
 // Get and cache the list of gen-ed requirements
-export function genedCategoryRequirements(): UseQueryResult<RequirementComponentType[]> {
-  return useQuery("genedRequirements", async () => await fetchApi("/api/requirements/gen"));
+export function genedCategoryRequirements(): UseQueryResult<Req> {
+  return useQuery(
+    "genedRequirements",
+    async () => await fetchApi("/api/requirements/gen")
+  );
 }
 
 // From a list of courses, get all the unique categories

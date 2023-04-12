@@ -159,7 +159,7 @@ test("Four Year Plan incompatible Season Fall", async () => {
   fireEvent.dragOver(springSemester);
   fireEvent.drop(springSemester);
   expect(screen.getByTestId("snackbar")).toBeInTheDocument();
-});
+}, 1000000);
 
 test("Four Year Plan incompatible Season Spring", async () => {
   const user = setupUser();

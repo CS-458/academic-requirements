@@ -7,7 +7,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import ScheduleUpload from "./ScheduleUploadModal";
 import ReloadPage from "./ReloadPage";
-import { SemesterType, UserSavedSchedule } from "../entities/four_year_plan";
+import { SemesterType, UserSavedSchedule, movedCourse } from "../entities/four_year_plan";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal
 export default function BoxSx(props: {
@@ -17,6 +17,10 @@ export default function BoxSx(props: {
   resetRequirements: () => void
   setAlertData: (msg: string, severity: string) => void
   setSemesters: (v: SemesterType[]) => void;
+  setSavedErrors: (e: string[]) => void;
+  resetRedo: (r: movedCourse[]) => void;
+  resetMoved: (u: movedCourse[]) => void;
+  pcl: any;
   children: JSX.Element | JSX.Element[]
 }): any {
   return (
@@ -29,18 +33,11 @@ export default function BoxSx(props: {
           boxShadow: 9
         }}
       >
-        {props.children}
         <ScheduleUpload
           scheduleData={props.scheduleData}
           setAlertData={props.setAlertData}
         />
-        <ReloadPage
-          scheduleData={props.scheduleData}
-          sems={props.sems}
-          resetRequirements={props.resetRequirements}
-          handleReturn={props.handleReturn}
-          setSemesters={props.setSemesters}
-        />
+        {props.children}
       </Box>
 
     </div>

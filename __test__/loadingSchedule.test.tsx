@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { screen, waitFor, within } from "@testing-library/react";
-import { buildLocalStorage, parentEl, render } from "./util";
+import { buildLocalStorage, parentEl, render, setupUser } from "./util";
 import App from "../pages/scheduler";
 import { academicDb } from "../services/sql";
 
@@ -75,6 +75,7 @@ test("Load saved schedule", async () => {
     "current-schedule",
     JSON.stringify(savedSchedule)
   );
+  const user = setupUser();
   const doc = render(<App />);
   // Verify MATH-157 has a pre-requisite error
   await waitFor(
@@ -94,4 +95,7 @@ test("Load saved schedule", async () => {
   ).toBeInTheDocument();
   // Verify low/high warnings were calculated
   expect(screen.getAllByText(/Fall \(10\) Low/i)[0]).toBeInTheDocument();
+
+  await user.click(screen.getByTestId("saveButton"));
+  expect(screen.getByLabelText(/Schedule Name/i)).toHaveValue("Test Name");
 }, 50000);

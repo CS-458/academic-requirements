@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import React, { memo } from "react";
-import { CircularProgress, Box, Typography } from "@mui/material";
+import { CircularProgress, Box, Typography, Tooltip } from "@mui/material";
 
 export const Requirement: FC<any> = memo(function Requirement({
   name,
@@ -11,7 +11,9 @@ export const Requirement: FC<any> = memo(function Requirement({
 }) {
   return (
     <div data-testid="requirement" className="RequirementText">
-      <div className="requirementName">{name}</div>
+      <Tooltip title={"Requirements"} placement={"left"} arrow>
+        <div className="requirementName">{name}</div>
+      </Tooltip>
       <div className="percentage">
         <Box sx={{ position: "relative", display: "inline-flex", p: 0 }}>
         <CircularProgress variant="determinate" value={percentage} sx={{ p: 0 }}/>

@@ -88,12 +88,11 @@ export const Course: FC<DragCourseType> = memo(function Course({
       )}
       key={`course-${idCourse}`}
     >
-      {/* {isDropped ? <s>{name}</s> : name}  */}
       {subject}-{number}
       <br />
       {name}
       <br />
-      credits: {credits}
+      Credits: {credits}
       <br />
       <a href={getURL(subject, `${number}`)} target="_blank">
         Description

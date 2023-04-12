@@ -16,6 +16,29 @@ exports[`Test loading a four year plan into the semesters 1`] = `
             <div
               class="MuiBox-root css-6um5jb"
             >
+              <div>
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="saveButton"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="SaveIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
               <button
                 class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="notificationButton"
@@ -46,29 +69,67 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   </span>
                 </span>
               </button>
-              <div>
-                <button
-                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                  data-testid="saveButton"
-                  tabindex="0"
-                  type="button"
+              <br />
+              <button
+                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="undoButton"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="UndoIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SaveIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                    />
-                  </svg>
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  <path
+                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
                   />
-                </button>
-              </div>
+                </svg>
+              </button>
+              <br />
+              <button
+                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-testid="redoButton"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="RedoIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                  />
+                </svg>
+              </button>
+              <br />
+              <button
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="reloadButton"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                  />
+                </svg>
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
             </div>
           </div>
           <div
@@ -153,7 +214,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Science I
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -175,7 +236,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Composition 1
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -197,7 +258,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus and Analytic Geometry I
                                 <br />
-                                credits: 
+                                Credits: 
                                 5
                                 <br />
                                 <a
@@ -241,7 +302,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Science II
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -263,7 +324,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Composition 2
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -285,7 +346,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus and Analytic Geometry II
                                 <br />
-                                credits: 
+                                Credits: 
                                 5
                                 <br />
                                 <a
@@ -389,7 +450,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Fundamentals of Speech
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -411,7 +472,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Data Structures
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -433,7 +494,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Web and Internet Programming
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -455,7 +516,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Discrete Mathematics
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -500,7 +561,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Database Systems Manipulation and Design
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -522,7 +583,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Professional Seminar
                                 <br />
-                                credits: 
+                                Credits: 
                                 1
                                 <br />
                                 <a
@@ -544,7 +605,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Information and Communication Technologies
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -566,7 +627,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Linear Algebra
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -671,7 +732,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Algorithm Design and Analysis
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -693,7 +754,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Cybertechnology Ethics
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -738,7 +799,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Software Engineering Principles
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -760,7 +821,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Calculus III
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -865,7 +926,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Computer Architecture
                                 <br />
-                                credits: 
+                                Credits: 
                                 4
                                 <br />
                                 <a
@@ -910,7 +971,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                 <br />
                                 Operating Systems
                                 <br />
-                                credits: 
+                                Credits: 
                                 3
                                 <br />
                                 <a
@@ -1189,6 +1250,55 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   <div
                     class="MuiBox-root css-9sn6pt"
                   >
+                    <div
+                      class="RequirementText"
+                      data-testid="requirement"
+                    >
+                      <div
+                        class="requirementName"
+                      >
+                        Credits
+                      </div>
+                      <div
+                        class="percentage"
+                      >
+                        <div
+                          class="MuiBox-root css-poat16"
+                        >
+                          <span
+                            aria-valuenow="58"
+                            class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                            role="progressbar"
+                            style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                          >
+                            <svg
+                              class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                              viewBox="22 22 44 44"
+                            >
+                              <circle
+                                class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                cx="44"
+                                cy="44"
+                                fill="none"
+                                r="20.2"
+                                stroke-width="3.6"
+                                style="stroke-dasharray: 126.920; stroke-dashoffset: 52.883px;"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="MuiBox-root css-17snrrl"
+                          >
+                            <div
+                              class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                              data-testid="reqPercent"
+                            >
+                              58
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <p
                       class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                     >

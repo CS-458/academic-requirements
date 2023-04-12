@@ -175,6 +175,12 @@ export interface UserSavedSchedule {
     schedule: ScheduleData;
   };
 }
+
+export interface movedCourse {
+  movedTo: number,
+  movedFrom: number,
+  course: number
+}
 export type ScheduleData = Array<{
   year: number;
   seasons: Array<{ season: season; classes: string[] }>;

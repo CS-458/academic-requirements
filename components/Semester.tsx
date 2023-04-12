@@ -134,6 +134,7 @@ export const Semester: FC<SemesterProps> = function Semester({
         </Grid>
         {courses.map((course) => (
           <Course
+            key={course.idCourse}
             name={course.name}
             subject={course.subject}
             number={course.number}

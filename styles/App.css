@@ -92,15 +92,23 @@ body {
   width: 100%;
   padding-bottom: 0;
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 80% 20%;
   text-align: center;
   font-size: 11pt;
   padding-left: 0;
+  vertical-align: center;
 }
 .percentage {
   text-align: right;
+  display: flex;
+  align-items: center;
 }
 
 .requirementName {
   text-align: left;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
+  vertical-align: center;
+
 }

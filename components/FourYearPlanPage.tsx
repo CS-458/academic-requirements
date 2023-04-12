@@ -14,6 +14,7 @@ import {
   warning,
   season,
   sortSemester,
+  movedCourse,
   ScheduleData
 } from "../entities/four_year_plan";
 import {
@@ -25,11 +26,17 @@ import CourseFiltering from "./CourseFiltering";
 import ActionBar from "./ActionBar";
 import InformationDrawer from "./InformationBar";
 import ScheduleErrorNotification from "./ScheduleErrorNotifications";
+import UndoButton from "./UndoButton";
+import RedoButton from "./RedoButton";
+import ReloadPage from "./ReloadPage";
 
 export interface CourseError {
   id: number;
   sem: number;
 }
+
+let undo = false;
+let redo = false;
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -115,6 +122,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       []
     ); // courses in category that is selected
 
+    // lists of courses for undoing and redoing course moves
+    const [coursesMoved, setCoursesMoved] = useState<movedCourse[]>([]);
+    const [coursesForRedo, setCoursesForRedo] = useState<movedCourse[]>([]);
+
     function initializeSemesters(): SemesterType[] {
       const tempSemesters: SemesterType[] = [];
       let i = 0;
@@ -153,6 +164,52 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     //   }
     // }, [importData]);
 
+    const handleDrop = useCallback(
+      (semNumber: number, item: { idCourse: number; dragSource: string }) => {
+        const { idCourse, dragSource } = item;
+        console.log("Drop", semNumber, idCourse, dragSource);
+        const tmpSemesters = deepCopy(semesters);
+        undo = false;
+        redo = false;
+        const target = tmpSemesters.find(
+          (sem) => sem.semesterNumber === semNumber
+        );
+        if (target == null) throw new Error("Drop target not found");
+        const course = PassedCourseList.find((c) => c.idCourse === idCourse);
+        if (course == null) throw new Error("Course not found");
+        if (target.courses.some((c) => c.idCourse === idCourse)) return;
+        let source: SemesterType | undefined;
+        if (dragSource !== "CourseList") {
+          const sourceId = +dragSource.split(" ")[1];
+          source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
+          if (source == null) throw new Error("Source semester not found");
+          source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
+        } else {
+          checkRequirements(course, coursesInMultipleCategories);
+        }
+        course.dragSource = `Semester ${semNumber}`;
+        target.courses.push(course);
+        setSemesters(tmpSemesters);
+        setUpdateWarning({
+          course,
+          oldSemester: tmpSemesters.findIndex(
+            (s) => s.semesterNumber === source?.semesterNumber
+          ),
+          newSemester: tmpSemesters.findIndex(
+            (s) => s.semesterNumber === target.semesterNumber
+          ),
+          draggedOut: true,
+          newCheck: true
+        });
+      },
+      [
+        semesters,
+        coursesInMultipleCategories,
+        reqList,
+        reqGenList,
+        PassedCourseList
+      ]
+    );
     // handle a drop into the course list from a semester
     const handleReturnDrop = useCallback(
       (item: { idCourse: number; dragSource: string }) => {
@@ -160,6 +217,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Calling return drop", idCourse, dragSource);
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
+          createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
           const tempSemesters = deepCopy(semesters);
           const movedFromNum = +dragSource.split(" ")[1];
           const semesterIndex = tempSemesters.findIndex(
@@ -481,56 +539,63 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             newCheck: true
           });
         } else if (userMajor()?.load_four_year_plan === true) {
-          // fill in the schedule
-          semesters.forEach((semester, index) => {
-            const tempArr: CourseType[] = [];
-            // Get the semester data from the json
-            const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
-            if (classPlan == null) return;
-            const courseStringArr = classPlan.Courses;
-            let credits = 0;
-            // loop through each course in the list
-            courseStringArr.forEach((courseString: String) => {
-              const subject = courseString.split("-")[0];
-              const number = courseString.split("-")[1];
-              let course: CourseType | undefined;
-              // This variable prevents the course being added twice if it is in
-              // more than one category
-              let foundOnce = false;
-              // Find the course in the master list of courses
-              PassedCourseList.forEach((x) => {
-                if (
-                  x.subject === subject &&
-                  x.number === number &&
-                  userMajor()?.completed_courses.find(
-                    (y) => y === x.subject + "-" + x.number
-                  ) === undefined
-                ) {
-                  if (!foundOnce) {
-                    // define the course and update it as needed
-                    course = x;
-                    course.dragSource = "Semester" + (index + 1);
-                    checkRequirements(course, coursesInMultipleCategories);
-                    foundOnce = true;
-                  }
-                }
-                // If there is a course add it to the temporary array for the semester
-              });
-              if (course !== undefined) {
-                tempArr.push(course);
-                credits += course.credits;
-              }
-            });
-            // update the necessary semester values
-            semester.courses = tempArr;
-            semester.SemesterCredits = credits;
-            const newWarningState = getWarning(semester);
-            semester.Warning = newWarningState;
-          });
+          console.log("LOAD FYP+++++++++++");
+          loadFYP(semesters);
         }
         setAlreadySetThisData(true);
       }
     }, [coursesInMultipleCategories]);
+
+    function loadFYP(semesters: SemesterType[]): void {
+      console.log("INSIDE -- sCALLEDEDDEDED");
+      // fill in the schedule
+      semesters.forEach((semester, index) => {
+        const tempArr: CourseType[] = [];
+        // Get the semester data from the json
+        const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+        if (classPlan == null) return;
+        const courseStringArr = classPlan.Courses;
+        let credits = 0;
+        // loop through each course in the list
+        courseStringArr.forEach((courseString: String) => {
+          const subject = courseString.split("-")[0];
+          const number = courseString.split("-")[1];
+          let course: CourseType | undefined;
+          // This variable prevents the course being added twice if it is in
+          // more than one category
+          let foundOnce = false;
+          // Find the course in the master list of courses
+          PassedCourseList.forEach((x) => {
+            if (
+              x.subject === subject &&
+              x.number === number &&
+              userMajor()?.completed_courses.find(
+                (y) => y === x.subject + "-" + x.number
+              ) === undefined
+            ) {
+              if (!foundOnce) {
+                // define the course and update it as needed
+                course = x;
+                course.dragSource = "Semester" + (index + 1);
+                checkRequirements(course, coursesInMultipleCategories);
+                foundOnce = true;
+              }
+            }
+            // If there is a course add it to the temporary array for the semester
+          });
+          if (course !== undefined) {
+            tempArr.push(course);
+            credits += course.credits;
+          }
+        });
+        // update the necessary semester values
+        semester.courses = tempArr;
+        semester.SemesterCredits = credits;
+        const newWarningState = getWarning(semester);
+        semester.Warning = newWarningState;
+      });
+      setSemesters(semesters);
+    }
 
     // called when a course is removed from the schedule to remove it from reqs
     const removeFromRequirements = useCallback(
@@ -576,11 +641,117 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [reqList, reqGenList, requirementsDisplay, PassedCourseList]
     );
 
+    function resetRequirements(): void {
+      // reset the major requirements
+      const tempList = reqList;
+      tempList?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      // reset the gen ed requirements
+      const tempList2 = reqGenList;
+      tempList2?.forEach((req) => {
+        req.courseCountTaken = 0;
+        req.creditCountTaken = 0;
+        req.coursesTaken = "";
+        req.percentage = 0;
+      });
+      setReqList(tempList);
+      setReqGenList(tempList2);
+      // add completed courses back in
+      userMajor()?.completed_courses.forEach((x) => {
+        const a = x.split("-");
+        const found = PassedCourseList.find(
+          (item) => item.subject === a[0] && item.number === a[1]
+        );
+        if (found !== undefined) {
+          checkRequirements(found, coursesInMultipleCategories);
+        }
+      });
+    }
+
+    function handleUndoCourse(): void {
+      const move = coursesMoved.pop();
+      if (move !== undefined) {
+        undo = true;
+        const temp = coursesForRedo;
+        temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
+        setCoursesForRedo(temp);
+        // course came from the courseList, so move it back
+        if (move.movedFrom === -2) {
+          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        } else if (move.movedTo === -2) {
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+        } else {
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        }
+      }
+    }
+
+    function handleRedoCourse(): void {
+      const move = coursesForRedo.pop();
+      if (move !== undefined) {
+        redo = true;
+        createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
+        // course came from the courseList, so move it back
+        if (move.movedFrom === -2) {
+          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        } else if (move.movedTo === -2) {
+          // was moved to course list
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+        } else {
+          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+        }
+      }
+    }
+
+    function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
+      if (!redo && !undo) {
+        setCoursesForRedo([]);
+      }
+      if (!undo) {
+        const temp = coursesMoved;
+        temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
+        setCoursesMoved(temp);
+      } else {
+        undo = false;
+      }
+    }
+    console.log(semesters);
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar scheduleData={info} setAlertData={throwError}>
-            <ScheduleErrorNotification errors={savedErrors} />
+          <ActionBar
+            scheduleData={info}
+            sems={semesters}
+            resetRequirements={resetRequirements}
+            setAlertData={throwError}
+            handleReturn={handleReturnDrop}
+            setSemesters={setSemesters}
+            setSavedErrors={setSavedErrors}
+            resetRedo={setCoursesForRedo}
+            resetMoved={setCoursesMoved}
+          >
+            <ScheduleErrorNotification errors={savedErrors}/>
+            <br/>
+            <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved}/>
+            <br/>
+            <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo}/>
+            <br/>
+            <ReloadPage
+              scheduleData={info}
+              sems={semesters}
+              resetRequirements={resetRequirements}
+              handleReturn={handleReturnDrop}
+              setSemesters={setSemesters}
+              setSavedErrors={setSavedErrors}
+              resetRedo={setCoursesForRedo}
+              resetMoved={setCoursesMoved}
+              loadFYP={loadFYP}
+              initializeSemesters={initializeSemesters}
+            />
           </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
             <Snackbar
@@ -610,6 +781,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               setUpdateWarning={setUpdateWarning}
               reqList={reqList ?? []}
               reqGenList={reqGenList ?? []}
+              createCourseMoveRecord={createCourseMoveRecord}
             />
           </div>
           <div
@@ -629,7 +801,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               key={0}
             />
           </div>
-          <InformationDrawer requirementsDisplay={requirementsDisplay} />
+          <InformationDrawer
+            requirementsDisplay={requirementsDisplay}
+            semesters={semesters}
+            passedCourseList={PassedCourseList}
+          />
         </div>
       </div>
     );

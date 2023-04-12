@@ -25,6 +25,29 @@ exports[`Render Semester List 1`] = `
                   <div
                     class="MuiBox-root css-6um5jb"
                   >
+                    <div>
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="saveButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SaveIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
                     <button
                       class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
@@ -55,29 +78,67 @@ exports[`Render Semester List 1`] = `
                         </span>
                       </span>
                     </button>
-                    <div>
-                      <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
                         />
-                      </button>
-                    </div>
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="reloadButton"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div
@@ -753,6 +814,55 @@ exports[`Render Semester List 1`] = `
                         <div
                           class="MuiBox-root css-9sn6pt"
                         >
+                          <div
+                            class="RequirementText"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="0"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    0
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <p
                             class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                           >
@@ -801,6 +911,29 @@ exports[`Render Semester List 2`] = `
                   <div
                     class="MuiBox-root css-6um5jb"
                   >
+                    <div>
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="saveButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SaveIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
                     <button
                       class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
@@ -831,29 +964,69 @@ exports[`Render Semester List 2`] = `
                         </span>
                       </span>
                     </button>
-                    <div>
-                      <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
                         />
-                      </button>
-                    </div>
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="reloadButton"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div
@@ -939,7 +1112,7 @@ exports[`Render Semester List 2`] = `
                                       <br />
                                       Anthropology of the Contemporary United States
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -1540,7 +1713,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1562,7 +1735,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1584,7 +1757,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1606,7 +1779,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1628,7 +1801,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1650,7 +1823,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1672,7 +1845,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -1694,7 +1867,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1716,7 +1889,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1738,7 +1911,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1760,7 +1933,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1782,7 +1955,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1804,7 +1977,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1826,7 +1999,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1848,7 +2021,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1870,7 +2043,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1892,7 +2065,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1914,7 +2087,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1936,7 +2109,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1958,7 +2131,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -1980,7 +2153,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2002,7 +2175,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2024,7 +2197,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2046,7 +2219,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2068,7 +2241,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2090,7 +2263,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2112,7 +2285,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2134,7 +2307,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2156,7 +2329,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2178,7 +2351,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2200,7 +2373,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2222,7 +2395,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2244,7 +2417,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2266,7 +2439,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2288,7 +2461,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2310,7 +2483,7 @@ exports[`Render Semester List 2`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -2367,6 +2540,55 @@ exports[`Render Semester List 2`] = `
                         <div
                           class="MuiBox-root css-9sn6pt"
                         >
+                          <div
+                            class="RequirementText"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="3"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 123.747px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    3
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <p
                             class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                           >
@@ -2831,6 +3053,29 @@ exports[`Render Semester List 3`] = `
                   <div
                     class="MuiBox-root css-6um5jb"
                   >
+                    <div>
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="saveButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SaveIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
                     <button
                       class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
@@ -2861,29 +3106,69 @@ exports[`Render Semester List 3`] = `
                         </span>
                       </span>
                     </button>
-                    <div>
-                      <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
                         />
-                      </button>
-                    </div>
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="reloadButton"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2991,7 +3276,7 @@ exports[`Render Semester List 3`] = `
                                       <br />
                                       Anthropology of the Contemporary United States
                                       <br />
-                                      credits: 
+                                      Credits: 
                                       3
                                       <br />
                                       <a
@@ -3570,7 +3855,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3592,7 +3877,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3614,7 +3899,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3636,7 +3921,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3658,7 +3943,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3680,7 +3965,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3702,7 +3987,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -3724,7 +4009,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3746,7 +4031,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3768,7 +4053,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3790,7 +4075,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3812,7 +4097,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3834,7 +4119,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3856,7 +4141,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3878,7 +4163,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3900,7 +4185,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3922,7 +4207,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3944,7 +4229,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3966,7 +4251,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -3988,7 +4273,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4010,7 +4295,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4032,7 +4317,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4054,7 +4339,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4076,7 +4361,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4098,7 +4383,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4120,7 +4405,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4142,7 +4427,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4164,7 +4449,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4186,7 +4471,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4208,7 +4493,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4230,7 +4515,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4252,7 +4537,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4274,7 +4559,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4296,7 +4581,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4318,7 +4603,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4340,7 +4625,7 @@ exports[`Render Semester List 3`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -4397,6 +4682,55 @@ exports[`Render Semester List 3`] = `
                         <div
                           class="MuiBox-root css-9sn6pt"
                         >
+                          <div
+                            class="RequirementText"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="3"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 123.747px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    3
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <p
                             class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                           >
@@ -4861,6 +5195,29 @@ exports[`Render Semester List 4`] = `
                   <div
                     class="MuiBox-root css-6um5jb"
                   >
+                    <div>
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="saveButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SaveIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
                     <button
                       class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
@@ -4891,29 +5248,69 @@ exports[`Render Semester List 4`] = `
                         </span>
                       </span>
                     </button>
-                    <div>
-                      <button
-                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="undoButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="UndoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        <path
+                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
                         />
-                      </button>
-                    </div>
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="redoButton"
+                      disabled=""
+                      tabindex="-1"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="RedoIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                        />
+                      </svg>
+                    </button>
+                    <br />
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="reloadButton"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div
@@ -5577,7 +5974,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Anthropology of the Contemporary United States
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5599,7 +5996,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5621,7 +6018,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Native Americans
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5643,7 +6040,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Intercultural Communication
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5665,7 +6062,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Racism and Colonialism: Impact on Communities and Education
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5687,7 +6084,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism: Dialogue and Field Experience
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5709,7 +6106,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism: Issues & Perspectives
                       <br />
-                      credits: 
+                      Credits: 
                       2
                       <br />
                       <a
@@ -5731,7 +6128,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5753,7 +6150,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Race Matters: Interdisciplinary Investigations
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5775,7 +6172,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Cultural Awareness in Practice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5797,7 +6194,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       U.S. Labor History in a Global Context
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5819,7 +6216,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       United States Women's History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5841,7 +6238,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       African-American History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5863,7 +6260,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       American Immigration and Ethnic History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5885,7 +6282,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Constructed Identities: History of Race, Ethnicities and Mixed-Race Peoples
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5907,7 +6304,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       History of Social Science and Race
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5929,7 +6326,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Tourism, Culture & Place
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5951,7 +6348,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       American Multicultural Literature
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5973,7 +6370,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       After 9/11: American Literature of Public Crisis and Trauma
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -5995,7 +6392,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Alice Walker: Beyond Purple
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6017,7 +6414,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multicultural Shakespeare: Plays and Replays
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6039,7 +6436,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Honors Jazz History
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6061,7 +6458,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Nonviolence and the Civil Rights Movement
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6083,7 +6480,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Social Change Leadership
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6105,7 +6502,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Applied Nonviolent Activism
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6127,7 +6524,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Food Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6149,7 +6546,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Diversity and Controversies in Sport and Exercise
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6171,7 +6568,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multicultural Philosophy
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6193,7 +6590,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       History of Race, Politics and Technology
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6215,7 +6612,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Sociology of Health and Illness
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6237,7 +6634,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Environmental Justice
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6259,7 +6656,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Sociology Of Minority Groups
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6281,7 +6678,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Business Spanish in Oaxaca
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6303,7 +6700,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Mestizaje: Myth and Reality of the Mexican Nation-State
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6325,7 +6722,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Multiculturalism and Diversity in American Theatre
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6347,7 +6744,7 @@ exports[`Render Semester List 4`] = `
                       <br />
                       Introduction to Women and Gender Studies
                       <br />
-                      credits: 
+                      Credits: 
                       3
                       <br />
                       <a
@@ -6404,6 +6801,55 @@ exports[`Render Semester List 4`] = `
                         <div
                           class="MuiBox-root css-9sn6pt"
                         >
+                          <div
+                            class="RequirementText"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="0"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    0
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <p
                             class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                           >

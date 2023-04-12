@@ -12,12 +12,16 @@ import Router from "next/router";
 import { concentrationListAll, majorList } from "../services/academic";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#ffffff",
+  backgroundColor: "#ffffff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   // textAlign: "center",
   color: theme.palette.text.secondary
 }));
+
+function throwError(p?: string): never {
+  throw new Error(p);
+}
 
 function scheduleRow(
   s: UserSavedSchedule,
@@ -43,31 +47,36 @@ function scheduleRow(
         <Button
           sx={{ p: 0 }}
           onClick={() => {
-            const data: UserSavedSchedule["scheduleData"] = JSON.parse(
-              // @ts-expect-error TODO: fix this to actually have the right type
-              s.scheduleData
-            );
-            setUserMajor({
-              completed_courses: data["Completed Courses"] ?? [],
-              concentration: conns?.find(
-                (m) => m.idConcentration === data.Concentration
-              ) ?? {
-                idConcentration: -1,
-                name: "",
-                fourYearPlan: "null"
-              },
-              major: majors?.find((m) => m.id === data.Major) ?? {
-                id: -1,
-                name: ""
-              },
-              load_four_year_plan: data.usedFourYearPlan,
-              schedule_name: s.name
-            });
-            localStorage.setItem(
-              "current-schedule",
-              JSON.stringify(data.schedule)
-            );
-            Router.push("/scheduler").then(console.log, console.error);
+            try {
+              const data: UserSavedSchedule["scheduleData"] = JSON.parse(
+                // @ts-expect-error TODO: fix this to actually have the right type
+                s.scheduleData
+              );
+              setUserMajor({
+                completed_courses: data["Completed Courses"],
+                concentration:
+                  conns?.find(
+                    (m) => m.idConcentration === data.Concentration
+                  ) ?? throwError("Concentration not found"),
+                major:
+                  majors?.find((m) => m.id === data.Major) ??
+                  throwError("Major not found"),
+                load_four_year_plan: data.usedFourYearPlan,
+                schedule_name: s.name
+              });
+              localStorage.setItem(
+                "current-schedule",
+                JSON.stringify(data.schedule)
+              );
+              Router.push("/scheduler").then(console.log, console.error);
+            } catch {
+              fetch(`/api/user/delete?name=${encodeURIComponent(s.name)}`, {
+                method: "POST",
+                headers: {
+                  "X-Google-Token": login.cred
+                }
+              }).then(() => update(updateNum + 1), console.error);
+            }
           }}
         >
           <Edit
@@ -85,10 +94,7 @@ function scheduleRow(
               headers: {
                 "X-Google-Token": login.cred
               }
-            }).then(
-              () => update(updateNum + 1),
-              () => console.error("TODO")
-            );
+            }).then(() => update(updateNum + 1), console.error);
           }}
         >
           <Delete
@@ -112,17 +118,15 @@ function App(): JSX.Element {
   const login = React.useContext(UserLogin);
   useEffect(() => {
     if (login !== undefined) {
-      getSchedules(login)
-        .then((schedules) => {
-          console.log(schedules);
-          setSchedules(schedules);
-        })
-        .catch((e) => console.error(e));
+      getSchedules(login).then((schedules) => {
+        console.log(schedules);
+        setSchedules(schedules);
+      }, console.error);
       console.log("Loading schedules");
     } else {
       setSchedules([]);
       if (localStorage.getItem("google-login") == null) {
-        Router.replace("/").catch(console.error);
+        Router.push("/").catch(console.error);
       }
     }
   }, [login, updateNum]);
@@ -132,14 +136,6 @@ function App(): JSX.Element {
 
   return (
     <Stack direction="column" sx={{ p: 20, pt: 1, pb: 1 }}>
-      {
-        // <Stack direction="row" sx={{ p: 1 }}>
-        //   <Typography variant="h3" sx={{ pl: 2 }}>
-        //     Account Actions
-        //   </Typography>
-        //   <p>TODO</p>
-        // </Stack>
-      }
       <Stack direction="column">
         <Typography variant="h4" sx={{ pl: 2 }}>
           Saved Schedules

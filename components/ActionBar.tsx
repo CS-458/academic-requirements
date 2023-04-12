@@ -6,7 +6,6 @@
 import React from "react";
 import { Box } from "@mui/material";
 import ScheduleUpload from "./ScheduleUploadModal";
-import ReloadPage from "./ReloadPage";
 import { SemesterType, UserSavedSchedule, movedCourse } from "../entities/four_year_plan";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal

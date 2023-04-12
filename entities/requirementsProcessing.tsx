@@ -81,6 +81,7 @@ class RequirementProcessing {
             } else {
               x.coursesTaken = x.coursesTaken + "," + courseString;
             }
+            x.creditCountTaken += course.credits;
             if (x.courseCount === null && x.courseReqs === null && x.creditCount === null) {
               x.percentage = 100;
             } else {
@@ -97,8 +98,6 @@ class RequirementProcessing {
               const parent = reqGenList.find(
                 (item: RequirementComponentType) => item.idCategory === x.parentCategory
               );
-              console.log(x);
-              console.log(course);
               if (parent !== undefined) {
                 const parentIndex = reqGenList.indexOf(parent);
                 if (reqGenList[parentIndex].coursesTaken !== "") {
@@ -106,7 +105,6 @@ class RequirementProcessing {
                 } else {
                   reqGenList[parentIndex].coursesTaken += courseString;
                 }
-                console.log(parent);
                 // update for credits
                 if (parent?.creditCount != null) {
                   if (reqGenList[parentIndex].creditCountTaken === undefined) {
@@ -180,19 +178,28 @@ class RequirementProcessing {
                   // ARNS
                   // Must include one nat lab and one math/stat
                   const percents: number[] = [];
+                  let requiredCredits = 0;
+                  let optionalCredits = 0;
                   reqGenList.forEach((y: RequirementComponentType) => {
                     if (y.parentCategory === 25) {
                       if (y.courseReqs != null || y.courseCount != null || y.creditCount != null
                       ) {
                         percents.push(y.percentage);
+                        requiredCredits += y.creditCountTaken;
+                      } else {
+                        optionalCredits += y.creditCountTaken;
                       }
                     }
                   });
+                  let creditSum = 1000;
+                  if (requiredCredits < parent.creditCount) {
+                    creditSum = ((requiredCredits + optionalCredits) / parent.creditCount) * 100;
+                  }
                   let sum = 0;
                   percents.forEach((y) => {
-                    sum = sum + (y * 1) / percents.length;
+                    sum = sum + y / percents.length;
                   });
-                  reqGenList[parentIndex].percentage = sum;
+                  reqGenList[parentIndex].percentage = sum < creditSum ? sum : creditSum;
                 } else if (parent?.idCategory === 26 || parent?.idCategory === 27) {
                   // ART/HUM or SBSCI
                   // Must come from two different subcategories
@@ -308,8 +315,8 @@ class RequirementProcessing {
           if (index > -1 && index !== undefined) {
             // remove the course from the requirement
             coursesTaken.splice(index, 1);
+            reqGenList[i].creditCountTaken = reqGenList[i].creditCountTaken - course.credits;
             if (reqGenList[i].creditCount !== null) {
-              reqGenList[i].creditCountTaken = reqGenList[i].creditCountTaken - course.credits;
               temp1 = reqGenList[i].creditCountTaken / reqGenList[i].creditCount;
             }
             if (reqGenList[i].courseCount !== null) {

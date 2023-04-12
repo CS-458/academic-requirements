@@ -1428,7 +1428,7 @@ exports[`Load saved schedule 1`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    64.2
+                                    64
                                   </div>
                                 </div>
                               </div>

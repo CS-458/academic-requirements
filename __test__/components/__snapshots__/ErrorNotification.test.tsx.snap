@@ -848,7 +848,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              0.0
+                              0
                             </div>
                           </div>
                         </div>
@@ -1722,7 +1722,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              0.0
+                              0
                             </div>
                           </div>
                         </div>
@@ -2596,7 +2596,7 @@ exports[`Four Year Plan Page renders 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              0.0
+                              0
                             </div>
                           </div>
                         </div>
@@ -3470,7 +3470,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              0.0
+                              0
                             </div>
                           </div>
                         </div>
@@ -4344,7 +4344,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              0.0
+                              0
                             </div>
                           </div>
                         </div>

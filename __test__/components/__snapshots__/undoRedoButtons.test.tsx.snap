@@ -1250,7 +1250,7 @@ exports[`Test undo and redo button 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              51.7
+                              52
                             </div>
                           </div>
                         </div>

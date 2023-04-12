@@ -1293,7 +1293,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                               class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                               data-testid="reqPercent"
                             >
-                              58.3
+                              58
                             </div>
                           </div>
                         </div>

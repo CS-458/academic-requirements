@@ -94,7 +94,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                           class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                           data-testid="reqPercent"
                         >
-                          8.3
+                          8
                         </div>
                       </div>
                     </div>
@@ -328,7 +328,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                           class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                           data-testid="reqPercent"
                         >
-                          8.3
+                          8
                         </div>
                       </div>
                     </div>
@@ -556,7 +556,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                           class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                           data-testid="reqPercent"
                         >
-                          8.3
+                          8
                         </div>
                       </div>
                     </div>

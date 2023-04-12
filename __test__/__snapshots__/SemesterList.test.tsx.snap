@@ -857,7 +857,7 @@ exports[`Render Semester List 1`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    0.0
+                                    0
                                   </div>
                                 </div>
                               </div>
@@ -2583,7 +2583,7 @@ exports[`Render Semester List 2`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    2.5
+                                    3
                                   </div>
                                 </div>
                               </div>
@@ -4878,7 +4878,7 @@ exports[`Render Semester List 3`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    2.5
+                                    3
                                   </div>
                                 </div>
                               </div>
@@ -7150,7 +7150,7 @@ exports[`Render Semester List 4`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    0.0
+                                    0
                                   </div>
                                 </div>
                               </div>

@@ -857,7 +857,7 @@ exports[`Test render of scheduler 1`] = `
                                     class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                     data-testid="reqPercent"
                                   >
-                                    0.0
+                                    0
                                   </div>
                                 </div>
                               </div>

@@ -22,6 +22,8 @@ import { setUserDb } from "../services/sql";
 
 import "../pages/api";
 import { dragAndDrop } from "./dragDrop";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import secrets from "../secrets.json";
 
 interface UserExt {
   /// Select an element from an `AutoComplete` dropdown
@@ -144,9 +146,11 @@ export function render(children: JSX.Element | JSX.Element[]): RenderResult {
   window.fetch = fetchApiRoute;
   return testRender(
     <div data-testid="test-root-element">
-      <QueryClientProvider client={new QueryClient()}>
-        <DndProvider backend={HTML5Backend}>{children}</DndProvider>
-      </QueryClientProvider>
+      <GoogleOAuthProvider clientId={secrets.client.id}>
+        <QueryClientProvider client={new QueryClient()}>
+          <DndProvider backend={HTML5Backend}>{children}</DndProvider>
+        </QueryClientProvider>
+      </GoogleOAuthProvider>
     </div>
   );
 }

@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Default Layout 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                data-testid="google-login-button"
+              >
+                <div
+                  style="height: 40px;"
+                />
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+</body>
+`;
+
+exports[`Render Default Layout w/expiring user 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1r5njk-MuiTypography-root"
+              >
+                <div
+                  class="css-1kpaxel-MuiStack-root"
+                >
+                  <img
+                    src=""
+                    style="height: 2em; border-radius: 50%;"
+                  />
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1r1xm43-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    Logout
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+</body>
+`;
+
+exports[`Render Default Layout w/user 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1r5njk-MuiTypography-root"
+              >
+                <div
+                  class="css-1kpaxel-MuiStack-root"
+                >
+                  <img
+                    src=""
+                    style="height: 2em; border-radius: 50%;"
+                  />
+                  <button
+                    class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1r1xm43-MuiButtonBase-root-MuiButton-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    Logout
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+</body>
+`;

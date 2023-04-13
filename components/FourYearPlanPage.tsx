@@ -30,6 +30,7 @@ import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
 import ReloadPage from "./ReloadPage";
+import { Router } from "next/router";
 
 export interface CourseError {
   id: number;

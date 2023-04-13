@@ -161,7 +161,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -265,7 +265,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -369,7 +369,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -473,7 +473,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -1440,5 +1440,9 @@ exports[`Test whether requirements visually update on the screen 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

@@ -170,7 +170,7 @@ exports[`Render Semester List 1`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -274,7 +274,7 @@ exports[`Render Semester List 1`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -378,7 +378,7 @@ exports[`Render Semester List 1`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -482,7 +482,7 @@ exports[`Render Semester List 1`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -883,6 +883,10 @@ exports[`Render Semester List 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1058,7 +1062,7 @@ exports[`Render Semester List 2`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -1185,7 +1189,7 @@ exports[`Render Semester List 2`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -1289,7 +1293,7 @@ exports[`Render Semester List 2`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -1393,7 +1397,7 @@ exports[`Render Semester List 2`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -3178,6 +3182,10 @@ exports[`Render Semester List 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3353,7 +3361,7 @@ exports[`Render Semester List 3`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -3480,7 +3488,7 @@ exports[`Render Semester List 3`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -3584,7 +3592,7 @@ exports[`Render Semester List 3`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -3688,7 +3696,7 @@ exports[`Render Semester List 3`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -5473,6 +5481,10 @@ exports[`Render Semester List 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -5648,7 +5660,7 @@ exports[`Render Semester List 4`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -5752,7 +5764,7 @@ exports[`Render Semester List 4`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -5856,7 +5868,7 @@ exports[`Render Semester List 4`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -5960,7 +5972,7 @@ exports[`Render Semester List 4`] = `
                             <svg
                               aria-hidden="true"
                               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
+                              data-testid="expand-year"
                               focusable="false"
                               viewBox="0 0 24 24"
                             >
@@ -7745,5 +7757,9 @@ exports[`Render Semester List 4`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

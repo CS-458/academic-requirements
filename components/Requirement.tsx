@@ -24,9 +24,12 @@ export const Requirement: FC<any> = memo(function Requirement({
   };
   return (
     <div data-testid="requirement" className="RequirementText">
-      <Tooltip title={<div style={{ whiteSpace: "pre-line" }}>{requirementDisplayString}</div>} placement={"left"} arrow>
-        <div className="requirementName">{name}</div>
-      </Tooltip>
+      {requirementDisplayString !== ""
+        ? <Tooltip title={<div style={{ whiteSpace: "pre-line" }}>{requirementDisplayString}</div>} placement={"left"} arrow>
+          <div className="requirementName">{name}</div>
+        </Tooltip>
+        : <div className="requirementName">{name}</div>
+      }
       <div className="percentage">
         <Box sx={{ position: "relative", display: "inline-flex", p: 0 }}>
         <CircularProgress variant="determinate" value={percentage} sx={{ p: 0 }}/>

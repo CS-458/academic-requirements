@@ -4,7 +4,8 @@ import {
   fetchApiJson,
   fetchApiRoute,
   mockToken,
-  setupMockUserDB
+  setupMockUserDB,
+  userId
 } from "../../util";
 
 beforeAll(async () => {
@@ -25,7 +26,7 @@ test("Insert and remove schedule", async () => {
   expect(upload).toStrictEqual({ message: "Successfully uploaded schedule" });
   expect(
     await db.get(
-      "SELECT name FROM schedule WHERE userID='InsTestUser' and name='S1'"
+      `SELECT name FROM schedule WHERE userID='${userId()}' and name='S1'`
     )
   ).toEqual({ name: "S1" });
 
@@ -39,7 +40,7 @@ test("Insert and remove schedule", async () => {
   expect(del).toStrictEqual({ message: "Successfully removed schedule" });
   expect(
     await db.get(
-      "SELECT name FROM schedule WHERE userID='InsTestUser' and name='S1'"
+      `SELECT name FROM schedule WHERE userID='${userId()}' and name='S1'`
     )
   ).not.toBeDefined();
 });
@@ -64,7 +65,7 @@ test("Invalid test user id", async () => {
 
   const db = await userDb();
   expect(
-    await db.get("SELECT idUser FROM user WHERE idUser='InsTestUser2'")
+    await db.get(`SELECT idUser FROM user WHERE idUser='${userId()}'`)
   ).not.toBeDefined();
 });
 
@@ -79,7 +80,7 @@ test("Invalid method", async () => {
   expect(response.status).toBe(405);
   const db = await userDb();
   expect(
-    await db.get("SELECT idUser FROM user WHERE idUser='InsTestUser3'")
+    await db.get(`SELECT idUser FROM user WHERE idUser='${userId()}'`)
   ).not.toBeDefined();
 });
 

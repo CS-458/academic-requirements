@@ -33,8 +33,8 @@ export default function FormDialog(props: {
       const semestersReload = props.initializeSemesters();
       props.loadFYP(semestersReload);
     } else {
-      const thing = props.initializeSemesters();
-      props.setSemesters(thing);
+      const semesterReload = props.initializeSemesters();
+      props.setSemesters(semesterReload);
     }
   };
 

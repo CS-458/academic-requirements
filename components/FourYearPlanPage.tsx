@@ -104,7 +104,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // The list of requirements and their completion for display
     type Reqs = RequirementComponentType[];
     const [requirementsDisplay, setRequirementsDisplay] = useState<Reqs>([]);
-    console.log(requirementsDisplay);
     // Requirements that are manipulated
     const [reqList, setReqList] = useState<Reqs | null | undefined>(
       requirements
@@ -524,7 +523,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             newCheck: true
           });
         } else if (userMajor()?.load_four_year_plan === true) {
-          console.log("LOAD FYP+++++++++++");
           loadFYP(semesters);
         }
         setAlreadySetThisData(true);
@@ -532,7 +530,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     }, [coursesInMultipleCategories]);
 
     function loadFYP(semesters: SemesterType[]): void {
-      console.log("INSIDE -- sCALLEDEDDEDED");
       // fill in the schedule
       semesters.forEach((semester, index) => {
         const tempArr: CourseType[] = [];

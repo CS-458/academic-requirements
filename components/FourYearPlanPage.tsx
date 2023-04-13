@@ -352,21 +352,6 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       });
     }, [semesters]);
 
-    //  Get all courses (string) in current semester
-    //  param semesterIndex -> current semester index
-    function getSemesterCoursesNames(
-      semesterIndex: number,
-      semesters: SemesterType[]
-    ): Array<string> {
-      const semCourses = new Array<string>();
-      if (semesterIndex > -1 && semesterIndex < semesters.length) {
-        semesters[semesterIndex].courses.forEach((x: CourseType) => {
-          semCourses.push(x.subject + "-" + x.number);
-        });
-      }
-      return semCourses;
-    }
-
     function getSemesterDataForSaving(): ScheduleData {
       const schedule: ScheduleData = [];
       semesters.forEach((s) => {
@@ -725,7 +710,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         undo = false;
       }
     }
-    console.log(semesters);
+
     return (
       <div className="generic">
         <div className="drag-drop">

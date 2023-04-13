@@ -350,7 +350,7 @@ const db = {
   opened: false
 };
 
-export async function setupMockUserDB(): Promise<void> {
+export async function setupMockUserDB(): Promise<PromisedDatabase> {
   createMockToken();
   setUserDb(db.db);
   if (!db.opened) {
@@ -363,4 +363,5 @@ export async function setupMockUserDB(): Promise<void> {
       "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` DATE DEFAULT (datetime('now','localtime')), `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
     );
   }
+  return db.db;
 }

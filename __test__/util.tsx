@@ -327,8 +327,23 @@ export function createMockToken(): void {
   });
 }
 
-export function mockToken(id: string): string {
-  return `TEST_TOKEN:${id}`;
+/// Create a mock token. If no id is passed, this will use the name of current test,
+/// which is almost guarnteed to be unique
+export function mockToken(id?: string): string {
+  if (id !== undefined) {
+    return `TEST_TOKEN:${id}`;
+  } else {
+    return `TEST_TOKEN:${userId()}`;
+  }
+}
+
+/// Gets the user id of a mock token generated with no parameters
+export function userId(): string {
+  const ret = expect.getState().currentTestName;
+  if (ret === undefined) {
+    throw new Error("userId was called from outside a Jest test");
+  }
+  return ret;
 }
 
 export function mockUserInfo(id: string): User {

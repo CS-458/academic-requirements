@@ -672,19 +672,23 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     function handleUndoCourse(): void {
       const move = coursesMoved.pop();
-      if (move !== undefined) {
-        undo = true;
-        const temp = coursesForRedo;
-        temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
-        setCoursesForRedo(temp);
-        // course came from the courseList, so move it back
-        if (move.movedFrom === -2) {
-          handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
-        } else if (move.movedTo === -2) {
-          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
-        } else {
-          handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+      try {
+        if (move !== undefined) {
+          undo = true;
+          const temp = coursesForRedo;
+          temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
+          setCoursesForRedo(temp);
+          // course came from the courseList, so move it back
+          if (move.movedFrom === -2) {
+            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+          } else if (move.movedTo === -2) {
+            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+          } else {
+            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+          }
         }
+      } catch (error: any) {
+        throwError("Undo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
       }
     }
 
@@ -705,7 +709,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
         }
       } catch (error: any) {
-        throwError("Undo/Redo Error: It's possible the semester has been deleted", "warning");
+        throwError("Redo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
       }
     }
 

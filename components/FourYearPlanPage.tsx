@@ -705,11 +705,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           }
         }
       } catch (error: any) {
-        if (error.message === "Drop target not found") {
-          throwError("Redo Error: It's possible the semester has been deleted", "warning");
-        } else {
-          throwError("Wait... something aint right?", "warning");
-        }
+        throwError("Undo/Redo Error: It's possible the semester has been deleted", "warning");
       }
     }
 

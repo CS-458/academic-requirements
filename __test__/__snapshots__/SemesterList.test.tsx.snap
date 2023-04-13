@@ -820,6 +820,7 @@ exports[`Render Semester List 1`] = `
                           >
                             <div
                               class="requirementName"
+                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -2546,6 +2547,7 @@ exports[`Render Semester List 2`] = `
                           >
                             <div
                               class="requirementName"
+                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -2612,6 +2614,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 GLP
                               </div>
@@ -2663,6 +2666,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 RES
                               </div>
@@ -2714,6 +2718,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 COMSK
                               </div>
@@ -2765,6 +2770,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARNS
                               </div>
@@ -2816,6 +2822,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARHU
                               </div>
@@ -2867,6 +2874,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SBSCI
                               </div>
@@ -2918,6 +2926,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 CDI
                               </div>
@@ -2969,6 +2978,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SRER
                               </div>
@@ -4688,6 +4698,7 @@ exports[`Render Semester List 3`] = `
                           >
                             <div
                               class="requirementName"
+                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -4754,6 +4765,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 GLP
                               </div>
@@ -4805,6 +4817,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 RES
                               </div>
@@ -4856,6 +4869,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 COMSK
                               </div>
@@ -4907,6 +4921,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARNS
                               </div>
@@ -4958,6 +4973,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARHU
                               </div>
@@ -5009,6 +5025,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SBSCI
                               </div>
@@ -5060,6 +5077,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 CDI
                               </div>
@@ -5111,6 +5129,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SRER
                               </div>
@@ -6807,6 +6826,7 @@ exports[`Render Semester List 4`] = `
                           >
                             <div
                               class="requirementName"
+                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -6873,6 +6893,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 GLP
                               </div>
@@ -6924,6 +6945,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 RES
                               </div>
@@ -6975,6 +6997,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 COMSK
                               </div>
@@ -7026,6 +7049,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARNS
                               </div>
@@ -7077,6 +7101,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 ARHU
                               </div>
@@ -7128,6 +7153,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SBSCI
                               </div>
@@ -7179,6 +7205,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 CDI
                               </div>
@@ -7230,6 +7257,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
                               >
                                 SRER
                               </div>

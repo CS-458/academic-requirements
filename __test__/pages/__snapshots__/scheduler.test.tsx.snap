@@ -820,6 +820,7 @@ exports[`Test render of scheduler 1`] = `
                           >
                             <div
                               class="requirementName"
+                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>

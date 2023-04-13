@@ -174,6 +174,7 @@ export default function InformationDrawer(props: {
           }
           <Requirement
             name={name}
+            reqs={props.requirementsDisplay[index]}
             percentage={percentage}
             digits={10}
             key={index}
@@ -187,6 +188,7 @@ export default function InformationDrawer(props: {
           }
           <Requirement
             name={shortName}
+            reqs={props.requirementsDisplay[index]}
             percentage={percentage}
             digits={1}
             key={index}

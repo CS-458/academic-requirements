@@ -1213,6 +1213,7 @@ exports[`Test undo and redo button 1`] = `
                     >
                       <div
                         class="requirementName"
+                        data-mui-internal-clone-element="true"
                       >
                         Credits
                       </div>
@@ -1271,6 +1272,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           CS CSSSD
                         </div>
@@ -1322,6 +1324,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           CS Core
                         </div>
@@ -1373,6 +1376,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           Math Core
                         </div>
@@ -1432,6 +1436,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           GLP
                         </div>
@@ -1483,6 +1488,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           RES
                         </div>
@@ -1534,6 +1540,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           COMSK
                         </div>
@@ -1585,6 +1592,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           ARNS
                         </div>
@@ -1636,6 +1644,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           ARHU
                         </div>
@@ -1687,6 +1696,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           SBSCI
                         </div>
@@ -1738,6 +1748,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           CDI
                         </div>
@@ -1789,6 +1800,7 @@ exports[`Test undo and redo button 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
                         >
                           SRER
                         </div>

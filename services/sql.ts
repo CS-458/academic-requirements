@@ -13,10 +13,6 @@ export async function academicDb(): Promise<Database> {
   return academic.db;
 }
 
-export function setAcademicDb(db: Database): void {
-  academic.db = db;
-}
-
 const user = {
   db: new Database(),
   opened: false

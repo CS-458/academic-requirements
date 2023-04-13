@@ -25,30 +25,17 @@ export default function FormDialog(props: {
 }): any {
   // Handles the reloading of the FYPP
   const handleReload = (): any => {
-    // reset requirments
+    props.setSavedErrors([]);
+    props.resetRedo([]);
+    props.resetMoved([]);
     props.resetRequirements();
-    const semesters: SemesterType[] = [];
-    // if the user has a FYP
     if (userMajor()?.load_four_year_plan === true) {
       const semestersReload = props.initializeSemesters();
       props.loadFYP(semestersReload);
     } else {
-      for (let i = 0; i < props.sems.length; i++) {
-        semesters.push({
-          accepts: props.sems[i].accepts,
-          courses: [],
-          season: props.sems[i].season,
-          SemesterCredits: 0,
-          semesterNumber: props.sems[i].semesterNumber,
-          Warning: null,
-          year: props.sems[i].year
-        });
-      };
-      props.setSemesters(semesters);
+      const thing = props.initializeSemesters();
+      props.setSemesters(thing);
     }
-    props.setSavedErrors([]);
-    props.resetRedo([]);
-    props.resetMoved([]);
   };
 
   return (

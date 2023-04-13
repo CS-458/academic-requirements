@@ -79,37 +79,35 @@ export async function uploadSchedule(
     throw new Error(`Request failed: ${response.error}`);
   }
 }
+
 /*
   Function used to store user into the user table
   May not be needed since we are checking if the user exists
   when uploading the schedule
 */
-export async function saveLoggedInUser(): Promise<void> {
-  const token = userToken();
-  if (token === undefined) {
-    throw new Error("User Token Not made");
-  }
-  await fetchApi("/api/inserts/user", {
-    method: "POST",
-    headers: {
-      "X-Google-Token": token
-    }
-  });
-}
+// export async function saveLoggedInUser(): Promise<void> {
+//   const token = userToken();
+//   if (token === undefined) {
+//     throw new Error("User Token Not made");
+//   }
+//   await fetchApi("/api/inserts/user", {
+//     method: "POST",
+//     headers: {
+//       "X-Google-Token": token
+//     }
+//   });
+// }
 
 /// Returns a list of scheuldes that include the name
-export async function getScheduleByName(
-  token: User,
-  name: string
-): Promise<UserSavedSchedule[]> {
-  return (await getSchedules(token)).filter((s) => s.name.includes(name));
-}
+// export async function getScheduleByName(
+//   token: User,
+//   name: string
+// ): Promise<UserSavedSchedule[]> {
+//   return (await getSchedules(token)).filter((s) => s.name.includes(name));
+// }
 
 /// Returns a list of all schedules saved by this user
 export async function getSchedules(token: User): Promise<UserSavedSchedule[]> {
-  if (token === undefined) {
-    throw new Error("User Token Not made");
-  }
   const response = await (
     await fetch("/api/user/schedules", {
       method: "GET",

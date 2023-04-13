@@ -1,4 +1,4 @@
-import { academicDb, userDb } from "../services/sql";
+import { academicDb, userDb } from "../../services/sql";
 
 test("Load databases", async () => {
   const academic = await academicDb();

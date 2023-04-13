@@ -1,5 +1,5 @@
-import { fetchApi } from "../services/util";
-import { fetchApiRoute } from "./util";
+import { fetchApi } from "../../services/util";
+import { fetchApiRoute } from "../util";
 
 beforeAll(() => {
   window.fetch = fetchApiRoute;

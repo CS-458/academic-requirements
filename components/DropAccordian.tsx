@@ -11,6 +11,7 @@ import { useContext, useState } from "react";
 import {
   CourseType,
   SemesterType,
+  season,
   sortSemester
 } from "../entities/four_year_plan";
 import { Semester } from "./Semester";
@@ -79,22 +80,40 @@ export default function DropTargetAccordian(props: {
     courses: CourseType[];
     requirements: String[];
   } => {
-    const fourYearPlan = JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}");
-    const classPlan = fourYearPlan.ClassPlan["Semester" + (semNum + 1)];
+    const fourYearPlan = JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "null");
+    const classPlan = fourYearPlan?.ClassPlan["Semester" + (semNum + 1)];
+
+    const completedCourses = userMajor()?.completed_courses ?? [];
+
+    const semester = props.semesters.find((sem) => sem.semesterNumber === semNum);
 
     // get all course objects given subject-number in classPlan.Courses
     const suggestedCourses: CourseType[] = [];
     classPlan?.Courses.forEach((courseString: String) => {
       const subject = courseString.split("-")[0];
       const number = courseString.split("-")[1];
-      PassedCourseList.forEach((course: CourseType) => {
-        if (course.subject === subject && course.number === number) {
-          // Course is not in the suggestions already
-          if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
-            suggestedCourses.push(course);
+
+      // Only add the course to suggestions if it can't be found in the list of completed courses
+      if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
+        PassedCourseList.forEach((course: CourseType) => {
+          if (course.subject === subject && course.number === number) {
+            // Course is not in the suggestions already
+            if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+              suggestedCourses.push(course);
+            }
           }
+        });
+      }
+    });
+
+    // Suggest courses that are available in Winter/Summer
+    PassedCourseList.forEach((course: CourseType) => {
+      if ((semester?.season === season.Winter && course.semesters?.includes("WI")) ||
+          (semester?.season === season.Summer && course.semesters?.includes("SU"))) {
+        if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+          suggestedCourses.push(course);
         }
-      });
+      }
     });
 
     // remove a suggestion if it already exists in the schedule
@@ -109,6 +128,7 @@ export default function DropTargetAccordian(props: {
         }
       });
     });
+
     return {
       courses: suggestedCourses,
       requirements: classPlan !== undefined ? classPlan.Requirements : []

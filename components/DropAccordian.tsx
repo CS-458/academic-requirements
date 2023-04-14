@@ -7,19 +7,17 @@ import {
   styled
 } from "@mui/material";
 import { ArrowForwardIosSharp } from "@mui/icons-material";
-import { useCallback, useState } from "react";
+import { useContext, useState } from "react";
 import {
   CourseType,
-  MultipleCategoriesType,
-  RequirementComponentType,
   SemesterType,
-  sortSemester,
-  warning
+  sortSemester
 } from "../entities/four_year_plan";
 import { Semester } from "./Semester";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../entities/Constants";
-import { CourseError } from "./FourYearPlanPage";
+import { CourseError, PassedCourseListContext } from "./FourYearPlanPage";
+import { userMajor } from "../services/user";
 
 /// Modified MUI accordion
 const Accordion = styled((props: AccordionProps) => (
@@ -75,12 +73,46 @@ export default function DropTargetAccordian(props: {
     }
   });
 
-  const getSuggestedCourses = (semNum: number): CourseType[] => {
-    // get four year plan
-    // get all courses up to this point
-    // get all available courses
-    // convert FYP text to course objects using all available courses
-    return [];
+  const PassedCourseList = useContext(PassedCourseListContext);
+
+  const getSuggestedContent = (semNum: number): {
+    courses: CourseType[];
+    requirements: String[];
+  } => {
+    const fourYearPlan = JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "{}");
+    const classPlan = fourYearPlan.ClassPlan["Semester" + (semNum + 1)];
+
+    // get all course objects given subject-number in classPlan.Courses
+    const suggestedCourses: CourseType[] = [];
+    classPlan?.Courses.forEach((courseString: String) => {
+      const subject = courseString.split("-")[0];
+      const number = courseString.split("-")[1];
+      PassedCourseList.forEach((course: CourseType) => {
+        if (course.subject === subject && course.number === number) {
+          // Course is not in the suggestions already
+          if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+            suggestedCourses.push(course);
+          }
+        }
+      });
+    });
+
+    // remove a suggestion if it already exists in the schedule
+    props.semesters.forEach((sem) => {
+      sem.courses.forEach((semCourse) => {
+        const foundIndex = suggestedCourses.findIndex((suggestedCourse) => {
+          return suggestedCourse.idCourse === semCourse.idCourse;
+        });
+        if (foundIndex !== -1) {
+          // Course is already on the schedule, remove it
+          suggestedCourses.splice(foundIndex, 1);
+        }
+      });
+    });
+    return {
+      courses: suggestedCourses,
+      requirements: classPlan !== undefined ? classPlan.Requirements : []
+    };
   };
 
   return (
@@ -115,7 +147,7 @@ export default function DropTargetAccordian(props: {
                 warningDuplicateCourses={props.warningDuplicateCourses}
                 year={sem.year}
                 season={sem.season}
-                suggestedCourses={getSuggestedCourses(sem.semesterNumber)}
+                suggestedContent={getSuggestedContent(sem.semesterNumber)}
               />
             ))}
         </div>

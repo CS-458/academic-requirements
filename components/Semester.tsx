@@ -4,7 +4,7 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
-import { Box, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
+import { Box, Chip, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
 import { Assistant } from "@mui/icons-material";
 import { CourseList } from "./CourseList";
 
@@ -20,7 +20,7 @@ export const Semester: FC<SemesterProps> = function Semester({
   Warning,
   year,
   season,
-  suggestedCourses
+  suggestedContent
 }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [quickDrop, setQuickDrop] = useState(false);
@@ -62,6 +62,10 @@ export const Semester: FC<SemesterProps> = function Semester({
     }
   };
 
+  const suggestedContentExists = (): boolean => {
+    return suggestedContent?.courses.length > 0 || suggestedContent?.requirements.length > 0;
+  };
+
   return (
     <Box
       ref={drop}
@@ -87,9 +91,11 @@ export const Semester: FC<SemesterProps> = function Semester({
             width: "100%",
             justifyContent: "end"
           }}>
-            <IconButton onClick={handleOpenSuggester}>
-              <Assistant color="primary"/>
-            </IconButton>
+            {suggestedContentExists() &&
+              <IconButton onClick={handleOpenSuggester}>
+                <Assistant color="primary"/>
+              </IconButton>
+            }
             <Popover
               anchorEl={anchorEl}
               open={anchorEl !== null}
@@ -102,33 +108,54 @@ export const Semester: FC<SemesterProps> = function Semester({
               }}
               transitionDuration={quickDrop ? 0 : "auto"}
             >
-              <Box
+              <Stack
                 sx={{
                   width: "100%"
                 }}
               >
                 <Typography sx={{
                   px: "1em",
-                  py: ".5em",
+                  pt: ".5em",
+                  pb: suggestedContent?.requirements.length > 0 ? "0em" : ".5em",
                   textAlign: "center",
                   fontSize: "1.2em",
                   fontWeight: "bold"
                 }}>
-                  {suggestedCourses?.length > 0 ? "Suggested Courses" : "No Suggested Courses"}
+                  {suggestedContentExists()
+                    ? "Suggested Content" : "No Suggested Content"
+                  }
                 </Typography>
+                <Box sx={{
+                  pb: suggestedContent?.requirements.length > 0 ? ".25em" : "0em"
+                }}>
+                  {suggestedContent?.requirements.map((reqText, index) => {
+                    return (
+                      <Chip
+                        key={index}
+                        label={reqText}
+                        variant="outlined"
+                        sx={{
+                          margin: ".5em"
+                        }}
+                        size={"small"}
+                      />
+                    );
+                  })}
+                </Box>
+                {suggestedContent?.courses?.length > 0 && (
                 <CourseList
                   accept={ItemTypes.COURSE}
                   onDrop={console.log}
                   onCourseDrag={handleCourseDrag}
                   onCourseDragEnd={() => setQuickDrop(false)}
-                  courses={suggestedCourses}
+                  courses={suggestedContent?.courses}
                   sx={{
                     marginBottom: "0px",
-                    borderTopLeftRadius: "0px",
-                    borderTopRightRadius: "0px"
+                    borderRadius: "0px"
                   }}
                 />
-              </Box>
+                )}
+              </Stack>
             </Popover>
           </Grid>
         </Grid>

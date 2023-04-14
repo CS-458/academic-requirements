@@ -85,7 +85,7 @@ export default function DropTargetAccordian(props: {
 
     const completedCourses = userMajor()?.completed_courses ?? [];
 
-    const semester = props.semesters.find((sem) => sem.semesterNumber === semNum);
+    const curSemester = props.semesters.find((sem) => sem.semesterNumber === semNum);
 
     // get all course objects given subject-number in classPlan.Courses
     const suggestedCourses: CourseType[] = [];
@@ -98,7 +98,7 @@ export default function DropTargetAccordian(props: {
         PassedCourseList.forEach((course: CourseType) => {
           if (course.subject === subject && course.number === number) {
             // Course is not in the suggestions already
-            if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+            if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1 || course.repeatableForCred) {
               suggestedCourses.push(course);
             }
           }
@@ -108,8 +108,8 @@ export default function DropTargetAccordian(props: {
 
     // Suggest courses that are available in Winter/Summer
     PassedCourseList.forEach((course: CourseType) => {
-      if ((semester?.season === season.Winter && course.semesters?.includes("WI")) ||
-          (semester?.season === season.Summer && course.semesters?.includes("SU"))) {
+      if ((curSemester?.season === season.Winter && course.semesters?.includes("WI")) ||
+          (curSemester?.season === season.Summer && course.semesters?.includes("SU"))) {
         if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
           suggestedCourses.push(course);
         }
@@ -119,12 +119,21 @@ export default function DropTargetAccordian(props: {
     // remove a suggestion if it already exists in the schedule
     props.semesters.forEach((sem) => {
       sem.courses.forEach((semCourse) => {
+        // We found the suggested course in the schedule
         const foundIndex = suggestedCourses.findIndex((suggestedCourse) => {
           return suggestedCourse.idCourse === semCourse.idCourse;
         });
         if (foundIndex !== -1) {
-          // Course is already on the schedule, remove it
-          suggestedCourses.splice(foundIndex, 1);
+          // Handle repeatable courses differently
+          if (semCourse.repeatableForCred) {
+            // Only remove a repeatable course if we are looking in the current semester
+            if (sem.semesterNumber === curSemester?.semesterNumber) {
+              suggestedCourses.splice(foundIndex, 1);
+            }
+          } else {
+            // Non-repeatable courses
+            suggestedCourses.splice(foundIndex, 1);
+          }
         }
       });
     });

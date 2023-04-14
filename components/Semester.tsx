@@ -4,7 +4,7 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
-import { Box, Chip, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
+import { Badge, Box, Chip, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
 import { Assistant } from "@mui/icons-material";
 import { CourseList } from "./CourseList";
 
@@ -93,7 +93,9 @@ export const Semester: FC<SemesterProps> = function Semester({
           }}>
             {suggestedContentExists() &&
               <IconButton onClick={handleOpenSuggester}>
-                <Assistant color="primary"/>
+                <Badge badgeContent={suggestedContent?.courses.length} color="primary">
+                  <Assistant color="primary"/>
+                </Badge>
               </IconButton>
             }
             <Popover

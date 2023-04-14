@@ -22,18 +22,26 @@ export function processRequirementLists(
     }
 
     if (x.parentCategory !== null) {
-      for (let i = 0; i < tempGen.length; i++) {
-        if (tempGen[i].idCategory === x.parentCategory) {
-          tempGen[i].inheritedCredits = x.creditCount;
-          if (tempGen[i].courseReqs === null) {
-            tempGen[i].courseReqs = x.courseReqs;
-          } else if (tempGen[i].courseReqs?.includes(x.courseReqs ?? "") !== undefined) {
-            tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
+      function moveReqs(x: RequirementComponentType): void {
+        let parent: RequirementComponentType | null = null;
+        for (let i = 0; i < tempGen.length; i++) {
+          if (tempGen[i].idCategory === x.parentCategory) {
+            parent = tempGen[i];
+            tempGen[i].inheritedCredits = x.creditCount;
+            if (tempGen[i].courseReqs === null) {
+              tempGen[i].courseReqs = x.courseReqs;
+            } else if (tempGen[i].courseReqs?.includes(x.courseReqs ?? "") !== undefined) {
+              tempGen[i].courseReqs = tempGen[i].courseReqs + "," + x.courseReqs;
+            }
+            tempGen[i].inheritedCredits = x.creditCount;
+            tempReqList = tempReqList.filter((item) => item.idCategory !== x.idCategory);
           }
-          tempGen[i].inheritedCredits = x.creditCount;
-          tempReqList = tempReqList.filter((item) => item.idCategory !== x.idCategory);
+        }
+        if (parent?.parentCategory !== null && parent !== null) {
+          moveReqs(parent);
         }
       }
+      moveReqs(x);
     }
   });
   tempReqList.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });

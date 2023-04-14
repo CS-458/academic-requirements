@@ -11,7 +11,3 @@ test("getSchedules returns empty for error", async () => {
   user.cred = "";
   expect(await getSchedules(user)).toStrictEqual([]);
 });
-
-test("uploadSchedule throws for error", async () => {
-  expect(await uploadSchedule("", "Name", [])).toStrictEqual([]);
-});

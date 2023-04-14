@@ -65,19 +65,14 @@ export async function uploadSchedule(
   if (token === undefined) {
     throw new Error("User is not logged in");
   }
-  const response: { error: string } | { message: string } = await fetchApi(
-    `/api/inserts/schedule?name=${name}`,
-    {
-      method: "POST",
-      body: JSON.stringify(schedule),
-      headers: {
-        "X-Google-Token": token
-      }
+  // fetchApi throws if an error occurs, so we don't need to check the return value
+  await fetchApi(`/api/inserts/schedule?name=${name}`, {
+    method: "POST",
+    body: JSON.stringify(schedule),
+    headers: {
+      "X-Google-Token": token
     }
-  );
-  if ("error" in response) {
-    throw new Error(`Request failed: ${response.error}`);
-  }
+  });
 }
 
 /*

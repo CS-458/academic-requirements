@@ -7,7 +7,8 @@ import {
   CourseType,
   RequirementComponentType,
   season,
-  SemesterType
+  SemesterType,
+  UserSavedSchedule
 } from "../../entities/four_year_plan";
 import { userMajor } from "../../services/user";
 import { dragAndDrop } from "../dragDrop";
@@ -66,20 +67,13 @@ const mockedSem: SemesterType[] = [
   }
 ];
 
-const mockedSchduleData = [
-  {
-    userID: "mocked",
-    name: "mocked",
-    timestamp: 1,
-    scheduleData: {
-      Major: userMajor()?.major.name,
-      Concentration: userMajor()?.concentration.name,
-      "Completed Courses": userMajor()?.completed_courses,
-      schedule: [{ year: 1, seasons: [{ season: "Fall", classes: [] }] }]
-    }
-  }
-];
-
+const mockedSchduleData: UserSavedSchedule["scheduleData"] = {
+  Major: userMajor()?.major.id ?? -1,
+  Concentration: userMajor()?.concentration.idConcentration ?? -1,
+  "Completed Courses": userMajor()?.completed_courses ?? [],
+  schedule: [{ year: 1, seasons: [{ season: season.Fall, classes: [] }] }],
+  usedFourYearPlan: false
+};
 const mockedSetSemesters = jest.fn();
 const mockedHandleReturn = jest.fn();
 

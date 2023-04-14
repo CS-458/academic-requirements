@@ -10,17 +10,24 @@ export const Requirement: FC<any> = memo(function Requirement({
   // number of digits displayed on screen use 1000000 with number of zeros
   // being the number of digits you want displayed
 }) {
+  // Formats the failed string to be more readable
+  function prettyString(req: string): string {
+    let updateString = req.replace(/_/g, "-");
+    updateString = updateString.replace(/,/g, ", ");
+    updateString = updateString.replace(/\|/g, " or ");
+    return updateString;
+  }
   console.log(reqs);
   let requirementDisplayString = "";
   if (reqs !== undefined) {
     requirementDisplayString = "Requirements To Fill: \n";
     requirementDisplayString += "Credits: " + (reqs.creditCount ?? 0) + "\n";
     requirementDisplayString += "Course Count: " + (reqs.courseCount ?? 0) + "\n";
-    requirementDisplayString += "Required Courses: " + (reqs.courseReqs ?? "none") + "\n\n";
+    requirementDisplayString += "Required Courses: " + (reqs.courseReqs !== null ? prettyString(reqs.courseReqs) : "none") + "\n\n";
     requirementDisplayString += "Requirements Currently Filled: \n";
     requirementDisplayString += "Credits: " + (reqs.creditCountTaken ?? 0) + "\n";
     requirementDisplayString += "Course Count: " + (reqs.courseCountTaken ?? 0) + "\n";
-    requirementDisplayString += "Required Courses: " + (reqs.coursesTaken ?? "none") + "\n";
+    requirementDisplayString += "Courses Taken: " + (reqs.coursesTaken !== null ? prettyString(reqs.coursesTaken) : "none") + "\n";
   };
   return (
     <div data-testid="requirement" className="RequirementText">

@@ -670,7 +670,7 @@ exports[`Render Semester List 1`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -820,7 +820,6 @@ exports[`Render Semester List 1`] = `
                           >
                             <div
                               class="requirementName"
-                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -1582,7 +1581,7 @@ exports[`Render Semester List 2`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2547,7 +2546,6 @@ exports[`Render Semester List 2`] = `
                           >
                             <div
                               class="requirementName"
-                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -3733,7 +3731,7 @@ exports[`Render Semester List 3`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -4698,7 +4696,6 @@ exports[`Render Semester List 3`] = `
                           >
                             <div
                               class="requirementName"
-                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>
@@ -5861,7 +5858,7 @@ exports[`Render Semester List 4`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -6826,7 +6823,6 @@ exports[`Render Semester List 4`] = `
                           >
                             <div
                               class="requirementName"
-                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>

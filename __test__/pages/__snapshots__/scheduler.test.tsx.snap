@@ -670,7 +670,7 @@ exports[`Test render of scheduler 1`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -820,7 +820,6 @@ exports[`Test render of scheduler 1`] = `
                           >
                             <div
                               class="requirementName"
-                              data-mui-internal-clone-element="true"
                             >
                               Credits
                             </div>

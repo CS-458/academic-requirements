@@ -57,7 +57,6 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                 >
                   <div
                     class="requirementName"
-                    data-mui-internal-clone-element="true"
                   >
                     Credits
                   </div>
@@ -294,7 +293,6 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                 >
                   <div
                     class="requirementName"
-                    data-mui-internal-clone-element="true"
                   >
                     Credits
                   </div>
@@ -525,7 +523,6 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                 >
                   <div
                     class="requirementName"
-                    data-mui-internal-clone-element="true"
                   >
                     Credits
                   </div>

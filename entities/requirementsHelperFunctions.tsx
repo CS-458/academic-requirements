@@ -22,10 +22,13 @@ export function processRequirementLists(
     }
 
     if (x.parentCategory !== null) {
+      // recursively moves gen ed requirements to their parent req
       function moveReqs(x: RequirementComponentType): void {
         let parent: RequirementComponentType | null = null;
         for (let i = 0; i < tempGen.length; i++) {
+          // locate the parent requirement
           if (tempGen[i].idCategory === x.parentCategory) {
+            // add any child reqs to the parent's reqs
             parent = tempGen[i];
             tempGen[i].inheritedCredits = x.creditCount;
             if (tempGen[i].courseReqs === null) {
@@ -37,6 +40,7 @@ export function processRequirementLists(
             tempReqList = tempReqList.filter((item) => item.idCategory !== x.idCategory);
           }
         }
+        // if the parent has a parent call the function again
         if (parent?.parentCategory !== null && parent !== null) {
           moveReqs(parent);
         }

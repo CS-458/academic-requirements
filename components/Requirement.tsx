@@ -10,14 +10,17 @@ export const Requirement: FC<any> = memo(function Requirement({
   // number of digits displayed on screen use 1000000 with number of zeros
   // being the number of digits you want displayed
 }) {
-  // Formats the failed string to be more readable
+  // Formats the list of required courses string to be more readable
   function prettyString(req: string): string {
+    // ensures easier reading for all symbols currently in database
     let updateString = req.replace(/_/g, "-");
     updateString = updateString.replace(/,/g, ", ");
     updateString = updateString.replace(/\|/g, " or ");
     return updateString;
   }
-  console.log(reqs);
+
+  // create the text for the tooltip
+  // shows all 3 types of reqs and the amount they are filled
   let requirementDisplayString = "";
   if (reqs !== undefined) {
     requirementDisplayString = "Requirements To Fill: \n";
@@ -31,7 +34,8 @@ export const Requirement: FC<any> = memo(function Requirement({
   };
   return (
     <div data-testid="requirement" className="RequirementText">
-      {requirementDisplayString !== ""
+      { // show the tooltip only if there is something to show (all but 120 credit req)
+      requirementDisplayString !== ""
         ? <Tooltip title={<div style={{ whiteSpace: "pre-line" }}>{requirementDisplayString}</div>} placement={"left"} arrow>
           <div className="requirementName">{name}</div>
         </Tooltip>

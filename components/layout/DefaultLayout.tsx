@@ -166,7 +166,7 @@ export default function DefaultLayout(props: {
             aria-labelledby="composition-button"
             onKeyDown={handleListKeyDown}
           >
-            <MenuItem onClick={toAccountPage}>Accout</MenuItem>
+            <MenuItem onClick={toAccountPage}>Account</MenuItem>
             <MenuItem onClick={logout}>Logout</MenuItem>
           </MenuList>
         </Popover>

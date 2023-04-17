@@ -154,7 +154,11 @@ function App(): JSX.Element {
             Saved Schedules
           </Typography>
           <Typography variant="h5" sx={{ pl: 2 }}>
-            <Button onClick={() => Router.push("/")}>
+            <Button
+              onClick={() => {
+                Router.push("/").catch(console.error);
+              }}
+            >
               Create new schedule
             </Button>
           </Typography>

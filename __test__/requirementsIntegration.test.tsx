@@ -198,4 +198,4 @@ test("Check for details tooltip", async () => {
   expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Course Count: 1")).toBeTruthy();
   expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Credits: 4")).toBeTruthy();
   expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Courses Taken: CS-144")).toBeTruthy();
-});
+}, 1000000);

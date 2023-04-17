@@ -178,7 +178,7 @@ export function buildLocalStorage(user?: UserMajor): void {
   window.localStorage.removeItem = removeMockStorage;
   window.localStorage.clear = clearMockStorage;
   if (user !== undefined) {
-    setMockStorage("user_major", JSON.stringify(user));
+    window.localStorage.setItem("user_major", JSON.stringify(user));
   }
 }
 
@@ -338,7 +338,9 @@ export function mockUserInfo(id: string): User {
       sub: id,
       picture: "",
       name: id,
-      email: `${id}@gmail.com`
+      email: `${id}@gmail.com`,
+      exp: Date.now() / 1000 + 400,
+      nbf: Date.now() / 1000 - 10
     }
   };
 }
@@ -348,7 +350,7 @@ const db = {
   opened: false
 };
 
-export async function setupMockUserDB(): Promise<void> {
+export async function setupMockUserDB(): Promise<PromisedDatabase> {
   createMockToken();
   setUserDb(db.db);
   if (!db.opened) {
@@ -361,4 +363,5 @@ export async function setupMockUserDB(): Promise<void> {
       "CREATE TABLE `schedule` ( `userID` TEXT, `name` TEXT, `timestamp` DATE DEFAULT (datetime('now','localtime')), `scheduleData` TEXT NOT NULL, PRIMARY KEY(`userID`, `name`))"
     );
   }
+  return db.db;
 }

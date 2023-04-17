@@ -166,14 +166,16 @@ export interface UserSavedSchedule {
     Concentration: number;
     "Completed Courses": string[];
     schedule: ScheduleData;
+    usedFourYearPlan: boolean;
   };
 }
 
 export interface movedCourse {
-  movedTo: number,
-  movedFrom: number,
-  course: number
+  movedTo: number;
+  movedFrom: number;
+  course: number;
 }
+
 export type ScheduleData = Array<{
   year: number;
   seasons: Array<{ season: season; classes: string[] }>;

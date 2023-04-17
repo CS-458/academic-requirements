@@ -1,8 +1,16 @@
 import type { FC } from "react";
 import React, { memo } from "react";
 import { CircularProgress, Box, Typography, Tooltip } from "@mui/material";
+import { RequirementComponentType } from "../entities/four_year_plan";
 
-export const Requirement: FC<any> = memo(function Requirement({
+interface ReqProps {
+  name: string;
+  percentage: number;
+  digits: number;
+  reqs: RequirementComponentType | undefined;
+}
+
+export const Requirement: FC<ReqProps> = memo(function Requirement({
   name,
   percentage,
   digits,
@@ -43,28 +51,34 @@ export const Requirement: FC<any> = memo(function Requirement({
       }
       <div className="percentage">
         <Box sx={{ position: "relative", display: "inline-flex", p: 0 }}>
-        <CircularProgress variant="determinate" value={percentage} sx={{ p: 0 }}/>
-        <Box
-          sx={{
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            pt: 0,
-            position: "absolute",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <Typography
-            variant="caption"
-            component="div"
-            color="text.primary"
-            data-testid="reqPercent"
-          >{`${Math.round(percentage * digits) / digits}`}</Typography>
+          <CircularProgress
+            variant="determinate"
+            value={percentage}
+            sx={{ p: 0 }}
+          />
+          <Box
+            sx={{
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              pt: 0,
+              position: "absolute",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <Typography
+              variant="caption"
+              component="div"
+              color="text.primary"
+              data-testid="reqPercent"
+            >
+              {percentage.toFixed(digits)}
+            </Typography>
+          </Box>
         </Box>
-      </Box>
       </div>
     </div>
   );

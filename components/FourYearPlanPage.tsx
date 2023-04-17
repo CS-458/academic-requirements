@@ -1,4 +1,4 @@
-import React, { FC, useEffect, memo, useCallback, useState } from "react";
+import React, { FC, useEffect, memo, useCallback, useState, useRef } from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -29,6 +29,7 @@ import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
 import ReloadPage from "./ReloadPage";
+import ScheduleUpload from "./ScheduleUploadModal";
 
 export interface CourseError {
   id: number;
@@ -711,20 +712,16 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }
 
+    const semListRef = useRef<HTMLDivElement>();
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar
-            scheduleData={info}
-            sems={semesters}
-            resetRequirements={resetRequirements}
-            setAlertData={throwError}
-            handleReturn={handleReturnDrop}
-            setSemesters={setSemesters}
-            setSavedErrors={setSavedErrors}
-            resetRedo={setCoursesForRedo}
-            resetMoved={setCoursesMoved}
-          >
+          <ActionBar>
+            <ScheduleUpload
+              scheduleData={info}
+              setAlertData={throwError}
+              semRef={semListRef?.current}
+            />
             <ScheduleErrorNotification errors={savedErrors}/>
             <br/>
             <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved}/>
@@ -761,6 +758,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               </Alert>
             </Snackbar>
             <SemesterList
+              sref={semListRef}
               semesters={semesters}
               warningPrerequisiteCourses={warningPrereq}
               warningFallvsSpringCourses={warningFallvsSpringCourses}

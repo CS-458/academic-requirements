@@ -3,7 +3,7 @@
   This is the modal for saving the schedule
 */
 
-import React from "react";
+import React, { useRef } from "react";
 import {
   Button,
   IconButton,
@@ -15,7 +15,8 @@ import {
 } from "@mui/material";
 import { Save as SaveIcon } from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
-import { UserSavedSchedule } from "../entities/four_year_plan";
+import { UserSavedSchedule, FourYearPlanType } from "../entities/four_year_plan";
+import { toPng, toJpeg } from "html-to-image";
 
 // Function that gets the current Date and time
 // returns mm/dd/yyyy/hour:min:sec
@@ -37,6 +38,7 @@ export function getDateTime(): string {
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
+  semRef: any;
 }): any {
   const [open, setOpen] = React.useState(false);
 
@@ -96,6 +98,25 @@ export default function FormDialog(props: {
     void exportSchedule();
   };
 
+  const downloadJpg = (): void => {
+    const ref = props.semRef;
+    if (ref !== undefined) {
+      toJpeg(ref, { quality: 0.95 }).then(function(dataUrl) {
+        const link = document.createElement("a");
+        link.download = scheduleName + ".jpg";
+        link.href = dataUrl;
+        link.click();
+        console.log("DWAD");
+      });
+    } else {
+      console.log("WRONG");
+    }
+  };
+
+  const handlePDF = (): void => {
+
+  };
+
   return (
     <div>
       <IconButton onClick={handleClickOpen} data-testid="saveButton" color="primary">
@@ -119,6 +140,8 @@ export default function FormDialog(props: {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={downloadJpg}>Image</Button>
+          <Button onClick={handlePDF}>PDF</Button>
           <Button onClick={onClickExportSchedule}>Save</Button>
         </DialogActions>
       </Dialog>

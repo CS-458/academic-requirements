@@ -40,7 +40,8 @@ export default function SemesterList({
   reqList,
   reqGenList,
   createCourseMoveRecord,
-  error
+  error,
+  sref
 }: {
   semesters: SemesterType[];
   warningPrerequisiteCourses: CourseError[];
@@ -55,6 +56,7 @@ export default function SemesterList({
   reqGenList: RequirementComponentType[];
   createCourseMoveRecord: (a: number, b: number, c: number) => any;
   error: (m: string, s: string) => void;
+  sref: any;
 }): JSX.Element {
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
@@ -165,7 +167,7 @@ export default function SemesterList({
   }
 
   return (
-    <div className="generic" style={{ overflowY: "auto", height: "100%" }}>
+    <div className="generic" style={{ overflowY: "auto", height: "100%" }} ref={sref}>
       {parts}
       <Stack direction="row" justifyContent="space-around">
         <Button

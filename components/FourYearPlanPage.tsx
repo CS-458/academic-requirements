@@ -395,8 +395,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         else if (credits >= 5) return warning.High;
         else return null;
       } else if (sem.season === season.Summer) {
-        if (credits <= 6) return warning.Low;
-        else if (credits >= 13) return warning.High;
+        if (credits >= 13) return warning.High;
         else return null;
       } else {
         if (credits >= 8) return warning.High;

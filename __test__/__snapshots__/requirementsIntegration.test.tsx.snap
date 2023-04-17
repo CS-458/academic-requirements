@@ -17,27 +17,31 @@ exports[`Test whether requirements visually update on the screen 1`] = `
               class="MuiBox-root css-6um5jb"
             >
               <div>
-                <button
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                  data-testid="saveButton"
-                  tabindex="0"
-                  type="button"
+                <span
+                  aria-label="Must be logged in to save"
+                  class=""
+                  data-mui-internal-clone-element="true"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SaveIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
+                  <button
+                    class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="saveButton"
+                    disabled=""
+                    tabindex="-1"
+                    type="button"
                   >
-                    <path
-                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                    />
-                  </svg>
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                  />
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="SaveIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                      />
+                    </svg>
+                  </button>
+                </span>
               </div>
               <button
                 class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -70,48 +74,62 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                 </span>
               </button>
               <br />
-              <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="undoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
+              <span
+                aria-label="Undo"
+                class=""
+                data-mui-internal-clone-element="true"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="UndoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="undoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="UndoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                    />
+                  </svg>
+                </button>
+              </span>
+              <br />
+              <span
+                aria-label="Redo"
+                class=""
+                data-mui-internal-clone-element="true"
+              >
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="redoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="RedoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                    />
+                  </svg>
+                </button>
+              </span>
               <br />
               <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="redoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="RedoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                  />
-                </svg>
-              </button>
-              <br />
-              <button
+                aria-label="Reload initial schedule"
                 class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-mui-internal-clone-element="true"
                 tabindex="0"
                 type="button"
               >
@@ -695,8 +713,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r2:"
-                        id=":r2:-label"
+                        for=":r6:"
+                        id=":r6:-label"
                       >
                         Course Category
                       </label>
@@ -710,7 +728,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r2:"
+                          id=":r6:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -832,7 +850,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirement-root"
                       data-testid="requirement"
                     >
                       <div
@@ -890,7 +908,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -941,7 +959,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -992,7 +1010,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1051,7 +1069,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1102,7 +1120,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1153,7 +1171,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1204,7 +1222,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1255,7 +1273,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1306,7 +1324,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1357,7 +1375,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1408,7 +1426,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div

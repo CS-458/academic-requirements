@@ -59,7 +59,9 @@ test("Verify Select Use Four Year Plan", async () => {
   await user.selectAutocomplete(/Major/i, /^Psychology$/i);
   await user.selectAutocomplete(/Concentration/i, /Pre-Clinical/i);
   expect(index.baseElement).toMatchSnapshot();
-  expect(screen.queryByLabelText(/Use Suggested Four Year Plan/i)).not.toBeNull();
+  expect(
+    screen.queryByLabelText(/Use Suggested Four Year Plan/i)
+  ).not.toBeNull();
   expect(generateButton).not.toBeDisabled();
 
   const planSwitch = screen.getByTestId("FourYearPlanSwitch");

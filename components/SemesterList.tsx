@@ -61,7 +61,10 @@ export default function SemesterList({
       const { idCourse, dragSource } = item;
       console.log("Drop", semNumber, idCourse, dragSource);
       const tmpSemesters = deepCopy(semesters);
-      const movedFrom = dragSource === undefined || dragSource === "CourseList" ? -2 : parseInt(dragSource.split(" ")[1]);
+      const movedFrom =
+        dragSource === undefined || dragSource === "CourseList"
+          ? -2
+          : parseInt(dragSource.split(" ")[1]);
       if (semNumber !== movedFrom) {
         createCourseMoveRecord(semNumber, idCourse, movedFrom);
       }

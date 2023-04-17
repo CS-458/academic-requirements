@@ -34,11 +34,11 @@ export const Requirement: FC<ReqProps> = memo(function Requirement({
     requirementDisplayString = "Requirements To Fill: \n";
     requirementDisplayString += "Credits: " + (reqs.creditCount ?? 0) + "\n";
     requirementDisplayString += "Course Count: " + (reqs.courseCount ?? 0) + "\n";
-    requirementDisplayString += "Required Courses: " + (reqs.courseReqs !== null ? prettyString(reqs.courseReqs) : "none") + "\n\n";
+    requirementDisplayString += "Required Courses: " + ((reqs.courseReqs !== "" && reqs.courseReqs !== null) ? prettyString(reqs.courseReqs) : "none") + "\n\n";
     requirementDisplayString += "Requirements Currently Filled: \n";
-    requirementDisplayString += "Credits: " + (reqs.creditCountTaken ?? 0) + "\n";
-    requirementDisplayString += "Course Count: " + (reqs.courseCountTaken ?? 0) + "\n";
-    requirementDisplayString += "Courses Taken: " + (reqs.coursesTaken !== null ? prettyString(reqs.coursesTaken) : "none") + "\n";
+    requirementDisplayString += "Credits: " + reqs.creditCountTaken + "\n";
+    requirementDisplayString += "Course Count: " + reqs.courseCountTaken + "\n";
+    requirementDisplayString += "Courses Taken: " + (reqs.coursesTaken !== "" ? prettyString(reqs.coursesTaken) : "none") + "\n";
   };
   return (
     <div data-testid="requirement" className="RequirementText Requirements-root">

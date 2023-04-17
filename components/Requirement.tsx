@@ -41,7 +41,7 @@ export const Requirement: FC<ReqProps> = memo(function Requirement({
     requirementDisplayString += "Courses Taken: " + (reqs.coursesTaken !== "" ? prettyString(reqs.coursesTaken) : "none") + "\n";
   };
   return (
-    <div data-testid="requirement" className="RequirementText Requirements-root">
+    <div data-testid="requirement" className="RequirementText Requirement-root">
       { // show the tooltip only if there is something to show (all but 120 credit req)
       requirementDisplayString !== ""
         ? <Tooltip title={<div style={{ whiteSpace: "pre-line" }} data-testid="requirementsTooltip">{requirementDisplayString}</div>} placement={"left"} arrow>

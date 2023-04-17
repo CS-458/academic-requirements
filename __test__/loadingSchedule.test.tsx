@@ -54,7 +54,7 @@ test("Load saved schedule", async () => {
   expect(doc.baseElement).toMatchSnapshot();
   // Verify Requirements were calculated
   expect(
-    within(parentEl(screen.getByText(/CS MA/i), "Requirements")).getByText(/44/i)
+    within(parentEl(screen.getByText(/CS MA/i), "Requirement")).getByText(/44/i)
   ).toBeInTheDocument();
   // Verify low/high warnings were calculated
   expect(screen.getAllByText(/Fall \(10\) Low/i)[0]).toBeInTheDocument();

@@ -40,9 +40,9 @@ export interface DragCourseType {
   semesters: string; // see CourseType
   preReq: string; // see CourseType
   dragSource: string; // see CourseType
-  warningYellowColor: number | undefined; // If the course is in multiple semesters
-  warningOrangeColor: number | undefined; // If the course is in the wrong semester fall vs spring
-  warningRedColor: number | undefined; // If the course has a prereq error
+  warningYellowColor: CourseError | undefined; // If the course is in multiple semesters
+  warningOrangeColor: CourseError | undefined; // If the course is in the wrong semester fall vs spring
+  warningRedColor: CourseError | undefined; // If the course has a prereq error
   idCourse: number; // see CourseType
   idCategory: number; // see CourseType
   repeatableForCred: boolean; // see CourseType

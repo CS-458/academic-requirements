@@ -183,6 +183,7 @@ export const Semester: FC<SemesterProps> = function Semester({
               (x) => x.id === course.idCourse && x.sem === semesterNumber
             )}
             repeatableForCred={course.repeatableForCred}
+            idCategory={course.idCategory}
           />
         ))}
       </Stack>

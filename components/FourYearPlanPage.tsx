@@ -105,6 +105,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     // The list of requirements and their completion for display
     type Reqs = RequirementComponentType[];
     const [requirementsDisplay, setRequirementsDisplay] = useState<Reqs>([]);
+    
     // Requirements that are manipulated
     const [reqList, setReqList] = useState<Reqs | null | undefined>(
       requirements

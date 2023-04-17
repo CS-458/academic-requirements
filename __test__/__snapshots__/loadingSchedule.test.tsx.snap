@@ -1432,7 +1432,7 @@ exports[`Load saved schedule 1`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText Requirements-root"
+                            class="RequirementText Requirement-root"
                             data-testid="requirement"
                           >
                             <div
@@ -1490,7 +1490,7 @@ exports[`Load saved schedule 1`] = `
                           />
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1543,7 +1543,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1596,7 +1596,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1657,7 +1657,7 @@ exports[`Load saved schedule 1`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1710,7 +1710,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1763,7 +1763,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1816,7 +1816,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1869,7 +1869,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1922,7 +1922,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -1975,7 +1975,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2028,7 +2028,7 @@ exports[`Load saved schedule 1`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText Requirements-root"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div

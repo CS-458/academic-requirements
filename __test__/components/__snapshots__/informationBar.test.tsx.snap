@@ -52,7 +52,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                 class="MuiBox-root css-9sn6pt"
               >
                 <div
-                  class="RequirementText Requirements-root"
+                  class="RequirementText Requirement-root"
                   data-testid="requirement"
                 >
                   <div
@@ -110,7 +110,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                 />
                 <div>
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div
@@ -171,7 +171,7 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                     class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div
@@ -290,7 +290,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                 class="MuiBox-root css-9sn6pt"
               >
                 <div
-                  class="RequirementText Requirements-root"
+                  class="RequirementText Requirement-root"
                   data-testid="requirement"
                 >
                   <div
@@ -348,7 +348,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                 />
                 <div>
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div
@@ -409,7 +409,7 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                     class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div
@@ -522,7 +522,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                 class="MuiBox-root css-9sn6pt"
               >
                 <div
-                  class="RequirementText Requirements-root"
+                  class="RequirementText Requirement-root"
                   data-testid="requirement"
                 >
                   <div
@@ -580,7 +580,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                 />
                 <div>
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div
@@ -641,7 +641,7 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                     class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                   />
                   <div
-                    class="RequirementText Requirements-root"
+                    class="RequirementText Requirement-root"
                     data-testid="requirement"
                   >
                     <div

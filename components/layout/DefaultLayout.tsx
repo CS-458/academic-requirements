@@ -1,8 +1,14 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  Popover,
+  MenuList,
+  MenuItem
+} from "@mui/material";
+
 import MenuDrawer from "../NavigationMenu";
 import {
   CredentialResponse,
@@ -13,7 +19,7 @@ import { useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 import { User, UserLogin, UserInfo } from "../../services/user";
 import LogoLink from "./LogoLink";
-import { Button } from "@mui/material";
+import Router from "next/router";
 
 let curTimeout: undefined | NodeJS.Timeout;
 
@@ -87,6 +93,16 @@ export default function DefaultLayout(props: {
 
   function UserLoginElement(): JSX.Element {
     // First load is true until we have attempted to load a user from localStorage.
+    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+      setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     if (firstLoad) {
       return <></>;
     }
@@ -99,9 +115,24 @@ export default function DefaultLayout(props: {
         />
       );
     }
+
+    const open = anchorEl !== null;
+    const id = open ? "simple-popover" : undefined;
+    function handleListKeyDown(event: React.KeyboardEvent): void {
+      if (event.key === "Tab") {
+        event.preventDefault();
+        setAnchorEl(null);
+      } else if (event.key === "Escape") {
+        setAnchorEl(null);
+      }
+    }
+    function toAccountPage(): void {
+      Router.push("/account").catch(console.error);
+    }
+
     return (
       <Typography variant="h5" component="div" sx={{ fontSize: "1rem" }}>
-        <Stack sx={{ m: 0 }} direction="row" spacing={1}>
+        <Button aria-describedby={id} onClick={handleClick}>
           <img
             src={picture}
             onError={() => {
@@ -114,18 +145,31 @@ export default function DefaultLayout(props: {
             }}
             style={{ height: "2em", borderRadius: "50%" }}
           />
-          <Button
-            onClick={logout}
-            sx={{
-              color: "text.primary",
-              bgcolor: "white",
-              pr: 2,
-              pl: 2
-            }}
+        </Button>
+        <Popover
+          id={id}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right"
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right"
+          }}
+        >
+          <MenuList
+            autoFocusItem={open}
+            id="composition-menu"
+            aria-labelledby="composition-button"
+            onKeyDown={handleListKeyDown}
           >
-            Logout
-          </Button>
-        </Stack>
+            <MenuItem onClick={toAccountPage}>Accout</MenuItem>
+            <MenuItem onClick={logout}>Logout</MenuItem>
+          </MenuList>
+        </Popover>
       </Typography>
     );
   }

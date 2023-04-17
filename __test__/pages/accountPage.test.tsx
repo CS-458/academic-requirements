@@ -94,6 +94,7 @@ test("Test Edit button", async () => {
   const schedule = parentEl(await screen.findByText(/Schedule 2/i), "Schedule");
   expect(schedule).toBeInTheDocument();
   await user.click(within(schedule).getByTestId("edit"));
+  await waitFor(() => expect(Router.push).toHaveBeenCalled());
   expect(Router.push).toHaveBeenCalledWith("/scheduler");
 
   const academic = await academicDb();

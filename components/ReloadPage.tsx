@@ -4,11 +4,13 @@
 */
 
 import React from "react";
-import {
-  IconButton
-} from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import { Refresh as RefreshIcon } from "@mui/icons-material";
-import { UserSavedSchedule, SemesterType, movedCourse } from "../entities/four_year_plan";
+import {
+  UserSavedSchedule,
+  SemesterType,
+  movedCourse
+} from "../entities/four_year_plan";
 import { userMajor } from "../services/user";
 
 export default function FormDialog(props: {
@@ -17,11 +19,11 @@ export default function FormDialog(props: {
   setSavedErrors: (e: string[]) => void;
   resetRequirements: () => void;
   setSemesters: (v: SemesterType[]) => void;
-  handleReturn: (V: { idCourse: number, dragSource: string }) => void;
+  handleReturn: (V: { idCourse: number; dragSource: string }) => void;
   resetRedo: (r: movedCourse[]) => void;
   resetMoved: (u: movedCourse[]) => void;
   loadFYP: (semesters: SemesterType[]) => void;
-  initializeSemesters: () => any
+  initializeSemesters: () => any;
 }): any {
   // Handles the reloading of the FYPP
   const handleReload = (): any => {
@@ -43,7 +45,7 @@ export default function FormDialog(props: {
           Warning: null,
           year: props.sems[i].year
         });
-      };
+      }
       props.setSemesters(semesters);
     }
     props.setSavedErrors([]);
@@ -52,8 +54,10 @@ export default function FormDialog(props: {
   };
 
   return (
-    <IconButton onClick={handleReload}>
-        <RefreshIcon data-testid="reloadButton"/>
-    </IconButton>
+    <Tooltip title="Reload initial schedule" placement="right" arrow>
+      <IconButton onClick={handleReload}>
+        <RefreshIcon data-testid="reloadButton" />
+      </IconButton>
+    </Tooltip>
   );
 }

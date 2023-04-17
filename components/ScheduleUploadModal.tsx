@@ -11,7 +11,8 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle
+  DialogTitle,
+  Tooltip
 } from "@mui/material";
 import { Save as SaveIcon } from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
@@ -99,15 +100,23 @@ export default function FormDialog(props: {
     void exportSchedule();
   };
 
+  const saveTooltip =
+    token === undefined ? "Must be logged in to save" : "Save";
+
   return (
     <div>
-      <IconButton
-        onClick={handleClickOpen}
-        data-testid="saveButton"
-        color="primary"
-      >
-        <SaveIcon />
-      </IconButton>
+      <Tooltip title={saveTooltip} placement="right" arrow>
+        <span>
+          <IconButton
+            onClick={handleClickOpen}
+            disabled={token === undefined}
+            data-testid="saveButton"
+            color="primary"
+          >
+            <SaveIcon />
+          </IconButton>
+        </span>
+      </Tooltip>
       <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>

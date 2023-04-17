@@ -1295,7 +1295,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirements-root"
                       data-testid="requirement"
                     >
                       <div
@@ -1353,7 +1353,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1406,7 +1406,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1459,7 +1459,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1520,7 +1520,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1573,7 +1573,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1626,7 +1626,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1679,7 +1679,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1732,7 +1732,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1785,7 +1785,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1838,7 +1838,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -1891,7 +1891,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div

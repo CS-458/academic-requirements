@@ -859,7 +859,7 @@ exports[`Test render of scheduler 1`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirements-root"
                             data-testid="requirement"
                           >
                             <div

@@ -859,7 +859,7 @@ exports[`Render Semester List 1`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirements-root"
                             data-testid="requirement"
                           >
                             <div
@@ -2629,7 +2629,7 @@ exports[`Render Semester List 2`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirements-root"
                             data-testid="requirement"
                           >
                             <div
@@ -2687,7 +2687,7 @@ exports[`Render Semester List 2`] = `
                           />
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2740,7 +2740,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2793,7 +2793,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2854,7 +2854,7 @@ exports[`Render Semester List 2`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2907,7 +2907,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -2960,7 +2960,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -3013,7 +3013,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -3066,7 +3066,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -3119,7 +3119,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -3172,7 +3172,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -3225,7 +3225,7 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -4990,7 +4990,7 @@ exports[`Render Semester List 3`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirements-root"
                             data-testid="requirement"
                           >
                             <div
@@ -5048,7 +5048,7 @@ exports[`Render Semester List 3`] = `
                           />
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5101,7 +5101,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5154,7 +5154,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5215,7 +5215,7 @@ exports[`Render Semester List 3`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5268,7 +5268,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5321,7 +5321,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5374,7 +5374,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5427,7 +5427,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5480,7 +5480,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5533,7 +5533,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -5586,7 +5586,7 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7328,7 +7328,7 @@ exports[`Render Semester List 4`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirements-root"
                             data-testid="requirement"
                           >
                             <div
@@ -7386,7 +7386,7 @@ exports[`Render Semester List 4`] = `
                           />
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7439,7 +7439,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7492,7 +7492,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7553,7 +7553,7 @@ exports[`Render Semester List 4`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7606,7 +7606,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7659,7 +7659,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7712,7 +7712,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7765,7 +7765,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7818,7 +7818,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7871,7 +7871,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -7924,7 +7924,7 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirements-root"
                               data-testid="requirement"
                             >
                               <div
@@ -8840,7 +8840,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirements-root"
                       data-testid="requirement"
                     >
                       <div
@@ -8898,7 +8898,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -8951,7 +8951,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9004,7 +9004,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9065,7 +9065,7 @@ exports[`Testing adding and Removing a year 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9118,7 +9118,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9171,7 +9171,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9224,7 +9224,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9277,7 +9277,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9330,7 +9330,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9383,7 +9383,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -9436,7 +9436,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10349,7 +10349,7 @@ exports[`Try removing a year that has a course 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirements-root"
                       data-testid="requirement"
                     >
                       <div
@@ -10407,7 +10407,7 @@ exports[`Try removing a year that has a course 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10460,7 +10460,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10513,7 +10513,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10574,7 +10574,7 @@ exports[`Try removing a year that has a course 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10627,7 +10627,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10680,7 +10680,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10733,7 +10733,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10786,7 +10786,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10839,7 +10839,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10892,7 +10892,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div
@@ -10945,7 +10945,7 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirements-root"
                         data-testid="requirement"
                       >
                         <div

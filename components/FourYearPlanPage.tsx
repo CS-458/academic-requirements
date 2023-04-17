@@ -712,7 +712,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }
 
-    const semListRef = useRef<HTMLDivElement>();
+    const semListRef = useRef(null);
     return (
       <div className="generic">
         <div className="drag-drop">
@@ -720,14 +720,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             <ScheduleUpload
               scheduleData={info}
               setAlertData={throwError}
-              semRef={semListRef?.current}
+              semRef={semListRef}
             />
-            <ScheduleErrorNotification errors={savedErrors}/>
-            <br/>
-            <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved}/>
-            <br/>
-            <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo}/>
-            <br/>
+            <ScheduleErrorNotification errors={savedErrors} />
+            <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
+            <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
             <ReloadPage
               scheduleData={info}
               sems={semesters}

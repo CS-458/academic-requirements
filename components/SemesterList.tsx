@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import {
   CourseType,
   MultipleCategoriesType,
@@ -10,6 +10,7 @@ import { CourseError } from "./FourYearPlanPage";
 import DropTargetAccordian from "./DropAccordian";
 import { Button, Stack } from "@mui/material";
 import { ItemTypes } from "../entities/Constants";
+import { Box } from "@mui/system";
 
 export function deepCopy(s: SemesterType[]): SemesterType[] {
   const ret: SemesterType[] = [];
@@ -56,14 +57,17 @@ export default function SemesterList({
   reqGenList: RequirementComponentType[];
   createCourseMoveRecord: (a: number, b: number, c: number) => any;
   error: (m: string, s: string) => void;
-  sref: any;
+  sref: React.RefObject<React.ReactInstance>;
 }): JSX.Element {
   const handleDrop = useCallback(
     (semNumber: number, item: { idCourse: number; dragSource: string }) => {
       const { idCourse, dragSource } = item;
       console.log("Drop", semNumber, idCourse, dragSource);
       const tmpSemesters = deepCopy(semesters);
-      const movedFrom = dragSource === undefined || dragSource === "CourseList" ? -2 : parseInt(dragSource.split(" ")[1]);
+      const movedFrom =
+        dragSource === undefined || dragSource === "CourseList"
+          ? -2
+          : parseInt(dragSource.split(" ")[1]);
       if (semNumber !== movedFrom) {
         createCourseMoveRecord(semNumber, idCourse, movedFrom);
       }
@@ -160,24 +164,30 @@ export default function SemesterList({
     if (!tmpSem.some((c) => c.year === year && c.courses.length > 0)) {
       const year = tmpSem.reduce((max, s) => Math.max(max, s.year), 0);
       setSemesters(tmpSem.filter((s) => s.year < year));
-    // else throw error warning user about having courses in the removing year
+      // else throw error warning user about having courses in the removing year
     } else {
       error("Cannot remove a year that contains courses!", "warning");
     }
   }
 
   return (
-    <div className="generic" style={{ overflowY: "auto", height: "100%" }} ref={sref}>
-      {parts}
+    <div className="generic" style={{ overflowY: "auto", height: "100%" }}>
+      <Box ref={sref} className="printed">
+        {parts}
+      </Box>
       <Stack direction="row" justifyContent="space-around">
         <Button
-          onClick={() => { addYear(); }}
+          onClick={() => {
+            addYear();
+          }}
           data-testid="addButton"
         >
           Add Year
         </Button>
         <Button
-          onClick={() => { removeYear(); }}
+          onClick={() => {
+            removeYear();
+          }}
           disabled={semesters.length <= 4}
           data-testid="removeButton"
         >

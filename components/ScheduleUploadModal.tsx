@@ -3,7 +3,7 @@
   This is the modal for saving the schedule
 */
 
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   IconButton,
@@ -11,12 +11,74 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle
+  DialogTitle,
+  Tooltip
 } from "@mui/material";
-import { Save as SaveIcon } from "@mui/icons-material";
+import {
+  Collections,
+  PictureAsPdf,
+  Save as SaveIcon
+} from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
-import { UserSavedSchedule, FourYearPlanType } from "../entities/four_year_plan";
-import { toPng, toJpeg } from "html-to-image";
+import { UserSavedSchedule } from "../entities/four_year_plan";
+
+function show(el: Element): void {
+  if (el instanceof HTMLElement) {
+    if (el.matches(".MuiCollapse-root") || el.matches(".MuiCollapse-wrapper")) {
+      el.style.visibility = "visible";
+      el.style.height = "auto";
+      el.style.overflow = "auto";
+    }
+  }
+  for (let i = 0; i < el.children.length; i++) {
+    show(el.children[i]);
+  }
+}
+
+function hide(el: Element): void {
+  if (!el.matches(".printed")) {
+    if (el.querySelector(".printed") !== null) {
+      for (let i = 0; i < el.children.length; i++) {
+        hide(el.children[i]);
+      }
+    } else {
+      if (el instanceof HTMLElement) {
+        el.setAttribute("data-screen-display", el.style.display);
+        el.style.display = "none";
+      }
+    }
+  } else if (el instanceof HTMLElement) {
+    el.setAttribute("data-screen-pos", el.style.position);
+    el.style.position = "absolute";
+    el.style.top = "0";
+    el.style.left = "0";
+    show(el);
+  }
+}
+
+function unHide(): void {
+  document.querySelectorAll("*").forEach((el) => {
+    if (el instanceof HTMLElement) {
+      const display = el.getAttribute("data-screen-display");
+      if (display !== null) {
+        el.style.display = "";
+      }
+      const pos = el.getAttribute("data-screen-pos");
+      if (pos !== null) {
+        el.style.position = "";
+        el.style.top = "";
+        el.style.left = "";
+      }
+      if (
+        el.matches(".MuiCollapse-root") ||
+        el.matches(".MuiCollapse-wrapper")
+      ) {
+        el.style.visibility = "";
+        el.style.height = "";
+      }
+    }
+  });
+}
 
 // Function that gets the current Date and time
 // returns mm/dd/yyyy/hour:min:sec
@@ -38,7 +100,7 @@ export function getDateTime(): string {
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
-  semRef: any;
+  semRef: React.RefObject<React.ReactInstance>;
 }): any {
   const [open, setOpen] = React.useState(false);
 
@@ -101,26 +163,39 @@ export default function FormDialog(props: {
   const downloadJpg = (): void => {
     const ref = props.semRef;
     if (ref !== undefined) {
-      toJpeg(ref, { quality: 0.95 }).then(function(dataUrl) {
-        const link = document.createElement("a");
-        link.download = scheduleName + ".jpg";
-        link.href = dataUrl;
-        link.click();
-        console.log("DWAD");
-      });
+      import("react-component-export-image")
+        .then(async (res) => {
+          hide(document.body);
+          await res.exportComponentAsPNG(ref);
+          unHide();
+        })
+        .catch(console.error);
     } else {
       console.log("WRONG");
     }
   };
 
   const handlePDF = (): void => {
-
+    window.print();
   };
+
+  useEffect(() => {
+    window.addEventListener("beforeprint", () => {
+      hide(document.body);
+    });
+    window.addEventListener("afterprint", () => {
+      unHide();
+    });
+  }, []);
 
   return (
     <div>
-      <IconButton onClick={handleClickOpen} data-testid="saveButton" color="primary">
-        <SaveIcon/>
+      <IconButton
+        onClick={handleClickOpen}
+        data-testid="saveButton"
+        color="primary"
+      >
+        <SaveIcon />
       </IconButton>
       <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
@@ -145,6 +220,16 @@ export default function FormDialog(props: {
           <Button onClick={onClickExportSchedule}>Save</Button>
         </DialogActions>
       </Dialog>
+      <Tooltip title="Save as PDF" placement="right" arrow>
+        <IconButton onClick={handlePDF} color="primary">
+          <PictureAsPdf data-testid="SavePdf" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Save as PNG" placement="right" arrow>
+        <IconButton onClick={downloadJpg} color="primary">
+          <Collections data-testid="SavePng" />
+        </IconButton>
+      </Tooltip>
     </div>
   );
 }

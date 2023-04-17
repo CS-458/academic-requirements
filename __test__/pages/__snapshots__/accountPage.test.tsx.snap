@@ -12,14 +12,38 @@ exports[`Test Edit button 1`] = `
         <div
           class="css-nen11g-MuiStack-root"
         >
-          <h4
-            class="MuiTypography-root MuiTypography-h4 css-nyqf5m-MuiTypography-root"
+          <div
+            class="css-18tjb19-MuiStack-root"
           >
-            Saved Schedules
-          </h4>
+            <h4
+              class="MuiTypography-root MuiTypography-h4 css-q6p5o2-MuiTypography-root"
+            >
+              Saved Schedules
+            </h4>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-c7gliu-MuiTypography-root"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                tabindex="0"
+                type="button"
+              >
+                Create new schedule
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </h5>
+          </div>
           <div
             class="css-1okj3ks-MuiStack-root"
-          />
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-xk8wv1-MuiTypography-root"
+            >
+              No schedules saved
+            </h5>
+          </div>
         </div>
       </div>
     </div>
@@ -49,14 +73,38 @@ exports[`Test Render of the account page 1`] = `
         <div
           class="css-nen11g-MuiStack-root"
         >
-          <h4
-            class="MuiTypography-root MuiTypography-h4 css-nyqf5m-MuiTypography-root"
+          <div
+            class="css-18tjb19-MuiStack-root"
           >
-            Saved Schedules
-          </h4>
+            <h4
+              class="MuiTypography-root MuiTypography-h4 css-q6p5o2-MuiTypography-root"
+            >
+              Saved Schedules
+            </h4>
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-c7gliu-MuiTypography-root"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                tabindex="0"
+                type="button"
+              >
+                Create new schedule
+                <span
+                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                />
+              </button>
+            </h5>
+          </div>
           <div
             class="css-1okj3ks-MuiStack-root"
-          />
+          >
+            <h5
+              class="MuiTypography-root MuiTypography-h5 css-xk8wv1-MuiTypography-root"
+            >
+              No schedules saved
+            </h5>
+          </div>
         </div>
       </div>
     </div>

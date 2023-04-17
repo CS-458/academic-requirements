@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 import { jest } from "@jest/globals";
 import { screen, waitFor, within } from "@testing-library/react";
 import {
-  fetchApiRoute,
   mockUserInfo,
   parentEl,
   render,
@@ -159,6 +158,19 @@ test("Test Redirect", async () => {
     </UserLogin.Provider>
   );
   expect(bar.baseElement).toMatchSnapshot();
+  await waitFor(() => expect(Router.push).toHaveBeenCalled());
+  expect(Router.push).toHaveBeenCalledWith("/");
+});
+
+test("Empty schedule list", async () => {
+  const user = setupUser();
+  render(
+    <UserLogin.Provider value={mockUserInfo("b")}>
+      <App />
+    </UserLogin.Provider>
+  );
+  expect(screen.getByText(/No schedules saved/i)).toBeInTheDocument();
+  await user.click(screen.getByText(/Create new schedule/i));
   await waitFor(() => expect(Router.push).toHaveBeenCalled());
   expect(Router.push).toHaveBeenCalledWith("/");
 });

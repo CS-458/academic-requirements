@@ -154,9 +154,9 @@ function App(): JSX.Element {
             Saved Schedules
           </Typography>
           <Typography variant="h5" sx={{ pl: 2 }}>
-            <Link href="/">
-              <Button>Create new schedule</Button>
-            </Link>
+            <Button onClick={() => Router.push("/")}>
+              Create new schedule
+            </Button>
           </Typography>
         </Stack>
         <Stack spacing={1}>{rows}</Stack>

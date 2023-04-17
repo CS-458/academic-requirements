@@ -3,7 +3,7 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { setupUser, render, fetchApiJson, parentEl } from "./util";
 import FourYearPlanPage from "../components/FourYearPlanPage";
 import { RequirementComponentType, CourseType } from "../entities/four_year_plan";
-
+import { dragAndDrop } from "./dragDrop";
 test("Test whether requirements visually update on the screen", async () => {
   const user = setupUser();
   const reqs: RequirementComponentType[] = await fetchApiJson(
@@ -129,3 +129,73 @@ test("Test whether requirements visually update on the screen", async () => {
   expect(reqPercentages[9]).toContainHTML("0");
   await user.click(closeButton);
 }, 1000000);
+
+test("Check for details tooltip", async () => {
+  const user = setupUser();
+  const reqs: RequirementComponentType[] = await fetchApiJson(
+    "/api/requirements?conid=14"
+  );
+  // update database reqs to the req type we use
+  reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
+
+  // Get general requirements
+  const reqsGen: RequirementComponentType[] = await fetchApiJson(
+    "/api/requirements/gen"
+  );
+  // update database reqs to the req type we use
+  reqs.forEach((req) => { req.courseCountTaken = 0; req.coursesTaken = ""; req.creditCountTaken = 0; req.percentage = 0; });
+
+  const courses = [{
+    subject: "CS",
+    number: "144",
+    name: "Computer Science I",
+    semesters: "",
+    credits: 4,
+    preReq: "",
+    idCourse: 202,
+    repeatableForCred: false,
+    category: "ARNS - Analytic Reasoning",
+    idCategory: 34,
+    dragSource: "CourseList"
+  }];
+  // render the four year plan page with the requirements
+  const page = render(<FourYearPlanPage PassedCourseList={courses} requirements={reqs} requirementsGen={reqsGen} />);
+  expect(page.baseElement).toMatchSnapshot();
+
+  // check a major requirement
+  let req = page.getByTestId("requirementName-CS CSSSD");
+  // tooltip is not present before hover
+  expect(screen.queryByRole("tooltip")).toBeNull();
+  fireEvent.mouseEnter(req);
+  await screen.findByRole("tooltip");
+  // tooltip exists during hover
+  expect(screen.getByRole("tooltip")).toBeInTheDocument();
+  expect(screen.getByRole("tooltip").innerHTML.includes("Course Count: 0")).toBeTruthy();
+
+  // check a gen ed requirement with all 3 types of requirements
+  req = page.getByTestId("requirementName-ARNS");
+  fireEvent.mouseEnter(req);
+  await screen.findByRole("tooltip");
+  // tooltip exists during hover
+  expect(screen.getByRole("tooltip")).toBeInTheDocument();
+  expect(screen.getByRole("tooltip").innerHTML.includes("Course Count: 0")).toBeTruthy();
+
+  // Move a course and check the tooltip has updated
+  const categoryTab = screen.getByTestId("category-tab");
+  await user.click(categoryTab);
+  await user.selectAutocomplete("Course Category", "ARNS - Analytic Reasoning");
+  const course = screen.getByTestId("course");
+  const firstYear = parentEl(screen.getByText(/Year 1/i), "MuiAccordion");
+  expect(firstYear).toBeInTheDocument();
+  const springSemester = parentEl(
+    within(firstYear).getByText(/Spring/i),
+    "Semester"
+  );
+  await dragAndDrop(course, springSemester);
+
+  // check that the tooltip has updated
+  expect(screen.getAllByRole("tooltip")[1]).toBeInTheDocument();
+  expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Course Count: 1")).toBeTruthy();
+  expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Credits: 4")).toBeTruthy();
+  expect(screen.getAllByRole("tooltip")[1].innerHTML.includes("Courses Taken: CS-144")).toBeTruthy();
+});

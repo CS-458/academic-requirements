@@ -870,6 +870,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -922,6 +923,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -974,6 +976,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -1034,6 +1037,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -1086,6 +1090,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -1138,6 +1143,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -1190,6 +1196,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -1242,6 +1249,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -1294,6 +1302,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -1346,6 +1355,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -1398,6 +1408,7 @@ exports[`Reload Button is Functional 1`] = `
                         <div
                           class="requirementName"
                           data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>

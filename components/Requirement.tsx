@@ -36,8 +36,8 @@ export const Requirement: FC<any> = memo(function Requirement({
     <div data-testid="requirement" className="RequirementText">
       { // show the tooltip only if there is something to show (all but 120 credit req)
       requirementDisplayString !== ""
-        ? <Tooltip title={<div style={{ whiteSpace: "pre-line" }}>{requirementDisplayString}</div>} placement={"left"} arrow>
-          <div className="requirementName">{name}</div>
+        ? <Tooltip title={<div style={{ whiteSpace: "pre-line" }} data-testid="requirementsTooltip">{requirementDisplayString}</div>} placement={"left"} arrow>
+          <div className="requirementName" data-testid={`requirementName-${name}`}>{name}</div>
         </Tooltip>
         : <div className="requirementName">{name}</div>
       }

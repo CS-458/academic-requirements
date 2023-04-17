@@ -10,6 +10,7 @@ import { styled } from "@mui/material/styles";
 import { Delete, Edit } from "@mui/icons-material";
 import Router from "next/router";
 import { concentrationListAll, majorList } from "../services/academic";
+import Link from "next/link";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#ffffff",
@@ -134,17 +135,31 @@ function App(): JSX.Element {
     return <></>;
   }
 
+  const rows =
+    schedules.length === 0 ? (
+      <Typography variant="h5" sx={{ pt: 2, pl: 2, color: "gray" }}>
+        No schedules saved
+      </Typography>
+    ) : (
+      schedules.map((s) =>
+        scheduleRow(s, login, updateNum, update, majors.data, conns.data)
+      )
+    );
+
   return (
     <Stack direction="column" sx={{ p: 20, pt: 1, pb: 1 }}>
       <Stack direction="column">
-        <Typography variant="h4" sx={{ pl: 2 }}>
-          Saved Schedules
-        </Typography>
-        <Stack spacing={1}>
-          {schedules.map((s) =>
-            scheduleRow(s, login, updateNum, update, majors.data, conns.data)
-          )}
+        <Stack direction="row" alignItems="end">
+          <Typography variant="h4" sx={{ pl: 2 }} flexGrow={1}>
+            Saved Schedules
+          </Typography>
+          <Typography variant="h5" sx={{ pl: 2 }}>
+            <Link href="/">
+              <Button>Create new schedule</Button>
+            </Link>
+          </Typography>
         </Stack>
+        <Stack spacing={1}>{rows}</Stack>
       </Stack>
     </Stack>
   );

@@ -82,32 +82,34 @@ export default function DropTargetAccordian(props: {
   } => {
     const fourYearPlan = JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "null");
     const classPlan = fourYearPlan?.ClassPlan["Semester" + (semNum + 1)];
-
     const completedCourses = userMajor()?.completed_courses ?? [];
-
     const curSemester = props.semesters.find((sem) => sem.semesterNumber === semNum);
-
-    // get all course objects given subject-number in classPlan.Courses
     const suggestedCourses: CourseType[] = [];
-    classPlan?.Courses.forEach((courseString: String) => {
-      const subject = courseString.split("-")[0];
-      const number = courseString.split("-")[1];
 
-      // Only add the course to suggestions if it can't be found in the list of completed courses
-      if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
-        PassedCourseList.forEach((course: CourseType) => {
-          if (course.subject === subject && course.number === number) {
-            // Course is not in the suggestions already
-            if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1 || course.repeatableForCred) {
+    PassedCourseList.forEach((course: CourseType) => {
+      // Suggest courses based on the four year plan
+      classPlan?.Courses.forEach((courseString: String) => {
+        const subject = courseString.split("-")[0];
+        const number = courseString.split("-")[1];
+
+        // We found the full course object for a course in the four year plan
+        if (course.subject === subject && course.number === number) {
+          // Course is not already marked as complete
+          if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
+            // Course is not already suggested (or is repeatable and can be suggested again)
+            if (course.repeatableForCred || suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+              suggestedCourses.push(course);
+            }
+          } else {
+            // Only suggest a completed course if it's repeatable
+            if (course.repeatableForCred) {
               suggestedCourses.push(course);
             }
           }
-        });
-      }
-    });
+        }
+      });
 
-    // Suggest courses that are available in Winter/Summer
-    PassedCourseList.forEach((course: CourseType) => {
+      // Suggest all courses that are available in Winter/Summer for a winter/summer semester
       if ((curSemester?.season === season.Winter && course.semesters?.includes("WI")) ||
           (curSemester?.season === season.Summer && course.semesters?.includes("SU"))) {
         if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {

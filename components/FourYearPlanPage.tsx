@@ -756,7 +756,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 initializeSemesters={initializeSemesters}
               />
             </ActionBar>
-            <div style={{ overflow: "hidden", clear: "both" }}>
+            <div style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}>
               <Snackbar
                 open={visibility}
                 autoHideDuration={6000}
@@ -788,7 +788,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               />
             </div>
             <div
-              style={{ overflow: "hidden", clear: "both" }}
+              style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}
               className="class-dropdown generic"
             >
               <CourseFiltering

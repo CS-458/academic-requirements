@@ -390,8 +390,15 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (credits <= 11) return warning.Low;
         else if (credits >= 19) return warning.High;
         else return null;
+      } else if (sem.season === season.Winter) {
+        if (credits <= 3) return warning.Low;
+        else if (credits >= 5) return warning.High;
+        else return null;
+      } else if (sem.season === season.Summer) {
+        if (credits <= 6) return warning.Low;
+        else if (credits >= 13) return warning.High;
+        else return null;
       } else {
-        // TODO: check high number of credits for extra semesters
         if (credits >= 8) return warning.High;
         else return null;
       }

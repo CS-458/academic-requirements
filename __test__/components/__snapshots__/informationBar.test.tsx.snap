@@ -115,6 +115,8 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-CS CSSSD"
                     >
                       CS CSSSD
                     </div>
@@ -174,6 +176,8 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-GLP"
                     >
                       GLP
                     </div>
@@ -349,6 +353,8 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-CS CSSSD"
                     >
                       CS CSSSD
                     </div>
@@ -408,6 +414,8 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-GLP"
                     >
                       GLP
                     </div>
@@ -577,6 +585,8 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-CS CSSSD"
                     >
                       CS CSSSD
                     </div>
@@ -636,6 +646,8 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
                   >
                     <div
                       class="requirementName"
+                      data-mui-internal-clone-element="true"
+                      data-testid="requirementName-GLP"
                     >
                       GLP
                     </div>

@@ -50,7 +50,7 @@ export default function SearchableDropdown<T>(props: {
         maxWidth: 400,
         pt: 6,
         pl: 3,
-        textAlign: "center",
+        textAlign: "left",
         ...props.sx // sx styles from props will override the defaults
       }}
       isOptionEqualToValue={(a, b) => a.value === b.value}

@@ -762,6 +762,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }
 
+    function errorBreaks(): JSX.Element[] {
+      return error.split("<br>").map((s) => <div>{s}</div>);
+    }
+
     return (
       <div className="generic">
         <div className="drag-drop">
@@ -815,7 +819,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 severity={severity}
                 sx={{ width: "100%" }}
               >
-                {`${error}`}
+                {errorBreaks()}
               </Alert>
             </Snackbar>
             <SemesterList

@@ -1150,7 +1150,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                   class="MuiBox-root css-19midj6"
                 >
                   <div
-                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                   >
                     <div
                       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1358,6 +1358,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -1409,6 +1411,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -1460,6 +1464,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -1519,6 +1525,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -1570,6 +1578,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -1621,6 +1631,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -1672,6 +1684,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -1723,6 +1737,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -1774,6 +1790,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -1825,6 +1843,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -1876,6 +1896,8 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>

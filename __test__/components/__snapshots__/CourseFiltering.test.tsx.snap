@@ -106,7 +106,7 @@ exports[`Category Filtering 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -315,7 +315,7 @@ exports[`Clicking Tabs Change Tab Panel 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -524,7 +524,7 @@ exports[`Credit Filtering 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -733,7 +733,7 @@ exports[`Ensure Initial Render is Correct 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -919,7 +919,7 @@ exports[`Ensure Initial Render is Correct 6`] = `
     class="MuiBox-root css-19midj6"
   >
     <div
-      class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+      class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
     >
       <div
         class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1099,7 +1099,7 @@ exports[`Name Filtering 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1308,7 +1308,7 @@ exports[`Subject/Number - Number filtering 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1517,7 +1517,7 @@ exports[`Subject/Number - Reset on Tab Change 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1726,7 +1726,7 @@ exports[`Subject/Number - Subject & Number 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1935,7 +1935,7 @@ exports[`Subject/Number - Subject filtering 1`] = `
             class="MuiBox-root css-19midj6"
           >
             <div
-              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+              class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
             >
               <div
                 class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"

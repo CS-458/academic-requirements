@@ -714,7 +714,7 @@ exports[`Render Semester List 1`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1673,7 +1673,7 @@ exports[`Render Semester List 2`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -2696,6 +2696,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
                               >
                                 CS CSSSD
                               </div>
@@ -2747,6 +2749,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
                               >
                                 CS Core
                               </div>
@@ -2798,6 +2802,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
                               >
                                 Math Core
                               </div>
@@ -2857,6 +2863,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -2908,6 +2916,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -2959,6 +2969,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -3010,6 +3022,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -3061,6 +3075,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -3112,6 +3128,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -3163,6 +3181,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -3214,6 +3234,8 @@ exports[`Render Semester List 2`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -4016,7 +4038,7 @@ exports[`Render Semester List 3`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -5039,6 +5061,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
                               >
                                 CS CSSSD
                               </div>
@@ -5090,6 +5114,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
                               >
                                 CS Core
                               </div>
@@ -5141,6 +5167,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
                               >
                                 Math Core
                               </div>
@@ -5200,6 +5228,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -5251,6 +5281,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -5302,6 +5334,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -5353,6 +5387,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -5404,6 +5440,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -5455,6 +5493,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -5506,6 +5546,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -5557,6 +5599,8 @@ exports[`Render Semester List 3`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -6336,7 +6380,7 @@ exports[`Render Semester List 4`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -7359,6 +7403,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
                               >
                                 CS CSSSD
                               </div>
@@ -7410,6 +7456,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
                               >
                                 CS Core
                               </div>
@@ -7461,6 +7509,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
                               >
                                 Math Core
                               </div>
@@ -7520,6 +7570,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -7571,6 +7623,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -7622,6 +7676,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -7673,6 +7729,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -7724,6 +7782,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -7775,6 +7835,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -7826,6 +7888,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -7877,6 +7941,8 @@ exports[`Render Semester List 4`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -8645,7 +8711,7 @@ exports[`Testing adding and Removing a year 1`] = `
                   class="MuiBox-root css-19midj6"
                 >
                   <div
-                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                   >
                     <div
                       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -8653,8 +8719,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rm:"
-                        id=":rm:-label"
+                        for=":r11:"
+                        id=":r11:-label"
                       >
                         Course Category
                       </label>
@@ -8668,7 +8734,7 @@ exports[`Testing adding and Removing a year 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rm:"
+                          id=":r11:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -8853,6 +8919,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -8904,6 +8972,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -8955,6 +9025,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -9014,6 +9086,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -9065,6 +9139,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -9116,6 +9192,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -9167,6 +9245,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -9218,6 +9298,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -9269,6 +9351,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -9320,6 +9404,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -9371,6 +9457,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>
@@ -10136,7 +10224,7 @@ exports[`Try removing a year that has a course 1`] = `
                   class="MuiBox-root css-19midj6"
                 >
                   <div
-                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                   >
                     <div
                       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -10144,8 +10232,8 @@ exports[`Try removing a year that has a course 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":ru:"
-                        id=":ru:-label"
+                        for=":r1k:"
+                        id=":r1k:-label"
                       >
                         Course Category
                       </label>
@@ -10159,7 +10247,7 @@ exports[`Try removing a year that has a course 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":ru:"
+                          id=":r1k:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -10344,6 +10432,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -10395,6 +10485,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -10446,6 +10538,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -10505,6 +10599,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -10556,6 +10652,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -10607,6 +10705,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -10658,6 +10758,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -10709,6 +10811,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -10760,6 +10864,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -10811,6 +10917,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -10862,6 +10970,8 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>

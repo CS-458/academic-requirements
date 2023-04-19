@@ -44,12 +44,10 @@ export default function DefaultLayout(props: {
     if (loaded !== null) {
       const user: User = JSON.parse(loaded);
       const now = Date.now() / 1000;
-      // console.log("Loaded: ", user, now);
       if (user.info.exp >= now && user.info.nbf <= now) {
         setUserAndTimeout(user);
       }
     }
-    // console.log("Checking login state");
     setFirstLoad(false);
   }, []);
 
@@ -61,10 +59,8 @@ export default function DefaultLayout(props: {
   }
 
   function responseMessage(token: CredentialResponse): void {
-    // console.log(token);
     if (token.credential !== undefined) {
       const jwt: UserInfo = jwtDecode(token.credential);
-      // console.log(jwt);
       const user = { info: jwt, cred: token.credential };
       setUserAndTimeout(user);
       localStorage.setItem("google-login", JSON.stringify(user));

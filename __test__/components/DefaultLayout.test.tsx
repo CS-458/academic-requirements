@@ -26,6 +26,8 @@ test("Render Default Layout w/user", async () => {
     </DefaultLayout>
   );
 
+  await user.click(screen.getByTestId("account-picture"));
+
   expect(screen.getByText(/Logout/i)).toBeInTheDocument();
   expect(page.baseElement).toMatchSnapshot();
 
@@ -54,12 +56,14 @@ test("Render Default Layout w/expiring user", async () => {
   token.info.exp = Date.now() / 1000 + 1;
   localStorage.setItem("google-login", JSON.stringify(token));
 
+  const user = setupUser();
   const page = render(
     <DefaultLayout>
       <div />
     </DefaultLayout>
   );
 
+  await user.click(screen.getByTestId("account-picture"));
   expect(screen.getByText(/Logout/i)).toBeInTheDocument();
   expect(page.baseElement).toMatchSnapshot();
 

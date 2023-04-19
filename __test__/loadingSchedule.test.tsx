@@ -1,10 +1,17 @@
 import "@testing-library/jest-dom";
 import { screen, waitFor, within } from "@testing-library/react";
-import { buildLocalStorage, parentEl, render, setupUser } from "./util";
+import {
+  buildLocalStorage,
+  mockUserInfo,
+  parentEl,
+  render,
+  setupUser
+} from "./util";
 import App from "../pages/scheduler";
 import { academicDb } from "../services/sql";
 
 import { savedSchedule } from "./sampleData";
+import { UserLogin } from "../services/user";
 
 test("Load saved schedule", async () => {
   const con = await academicDb();
@@ -27,7 +34,12 @@ test("Load saved schedule", async () => {
     JSON.stringify(savedSchedule)
   );
   const user = setupUser();
-  const doc = render(<App />);
+  const userLogin = mockUserInfo("aslkdfj");
+  const doc = render(
+    <UserLogin.Provider value={userLogin}>
+      <App />
+    </UserLogin.Provider>
+  );
   // Verify MATH-157 has a pre-requisite error
   await waitFor(
     () => {

@@ -1,3 +1,15 @@
+html {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  @page {
+    /* size: portrait; */
+    size: landscape;
+  }
+}
+
 .generic {
   height: 100%;
 }
@@ -111,5 +123,4 @@ body {
   align-items: center;
   padding-top: 1px;
   vertical-align: center;
-
 }

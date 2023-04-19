@@ -1,4 +1,4 @@
-import React, { FC, useEffect, memo, useCallback, useState } from "react";
+import React, { FC, useEffect, memo, useCallback, useState, useRef } from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -30,6 +30,7 @@ import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
 import ReloadPage from "./ReloadPage";
+import ScheduleUpload from "./ScheduleUploadModal";
 
 export interface CourseError {
   id: number;
@@ -766,33 +767,20 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return error.split("<br>").map((s) => <div>{s}</div>);
     }
 
+    const semListRef = useRef(null);
     return (
       <div className="generic">
         <div className="drag-drop">
-          <ActionBar
-            scheduleData={info}
-            sems={semesters}
-            resetRequirements={resetRequirements}
-            setAlertData={throwError}
-            handleReturn={handleReturnDrop}
-            setSemesters={setSemesters}
-            setSavedErrors={setSavedErrors}
-            resetRedo={setCoursesForRedo}
-            resetMoved={setCoursesMoved}
-            defaultName={userMajor()?.schedule_name}
-          >
+          <ActionBar>
+            <ScheduleUpload
+              scheduleData={info}
+              setAlertData={throwError}
+              semRef={semListRef}
+              defaultName={userMajor()?.schedule_name}
+            />
             <ScheduleErrorNotification errors={savedErrors} />
-            <br />
-            <UndoButton
-              handleUndoCourse={handleUndoCourse}
-              courses={coursesMoved}
-            />
-            <br />
-            <RedoButton
-              handleRedoCourse={handleRedoCourse}
-              courses={coursesForRedo}
-            />
-            <br />
+            <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
+            <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
             <ReloadPage
               scheduleData={info}
               sems={semesters}
@@ -804,6 +792,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               resetMoved={setCoursesMoved}
               loadFYP={loadFYP}
               initializeSemesters={initializeSemesters}
+              setWarningPreReq={setWarningPrereq}
+              setWarningFallvsSpring={setWarningFallvsSpringCourses}
+              setWarningDupCourses={setWarningDupCourses}
             />
           </ActionBar>
           <div style={{ overflow: "hidden", clear: "both" }}>
@@ -823,6 +814,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               </Alert>
             </Snackbar>
             <SemesterList
+              sref={semListRef}
               semesters={semesters}
               warningPrerequisiteCourses={warningPrereq}
               warningFallvsSpringCourses={warningFallvsSpringCourses}

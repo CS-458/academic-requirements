@@ -7,7 +7,7 @@ exports[`Render DropAccordian 1`] = `
       data-testid="test-root-element"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
       >
         <div>
           <div
@@ -54,7 +54,7 @@ exports[`Render DropAccordian 1`] = `
                 role="region"
               >
                 <div
-                  class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
                 >
                   <div
                     style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"

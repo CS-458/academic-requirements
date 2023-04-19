@@ -31,7 +31,8 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
 
   return (
     <>
-      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton">
+      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton"
+        sx={{ width: "fit-content" }}>
         <Tooltip title={`You Have ${errors.length} Errors`} arrow placement="right">
           <Badge badgeContent={errors?.length} color="primary">
             {errors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}

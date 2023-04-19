@@ -42,8 +42,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
         idCategory,
         repeatableForCred
       },
-      collect: (monitor: any) => ({
-        opacity: monitor.isDragging() !== false ? 0.8 : 1
+      collect: (monitor) => ({
+        opacity: monitor.isDragging() ? 0.8 : 1
       }),
       end: (e: any) => {
         if (onDragEnd !== undefined) {
@@ -76,6 +76,7 @@ export const Course: FC<DragCourseType> = memo(function Course({
       style={{ opacity }}
       data-testid="course"
       className={clsx(
+        "Course-root",
         "CourseText",
         warningYellowColor !== undefined &&
         warningRedColor === undefined &&

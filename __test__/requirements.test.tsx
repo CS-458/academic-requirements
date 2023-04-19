@@ -268,14 +268,17 @@ test("Check ARNS Requirements Processing", async () => {
   // ARNS - NAT SCI LAB
   category = response?.find((x) => x.idCategory === 33);
   expect(category?.percentage).toBeCloseTo(100, 2);
+  // ARNS parent
+  category = response?.find((x) => x.idCategory === 25);
+  expect(category?.percentage).toBeCloseTo(40, 2);
 
-  // physics astronomy
-  course = courses.find((x) => x.idCourse === 194);
+  // Nat Sci (non lab)
+  course = courses.find((x) => x.idCourse === 207);
   if (course !== undefined) {
     response = reqCheck.checkRequirementsGen(course, multipleCats, reqs, courses);
   }
-  // ARNS NAT SCI lab
-  category = response?.find((x) => x.idCategory === 33);
+  // ARNS NAT SCI
+  category = response?.find((x) => x.idCategory === 35);
   expect(category?.percentage).toBeCloseTo(100, 2);
   // ARNS parent
   category = response?.find((x) => x.idCategory === 25);

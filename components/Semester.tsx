@@ -4,7 +4,16 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
-import { Badge, Box, Chip, Grid, IconButton, Popover, Stack, Typography } from "@mui/material";
+import {
+  Badge,
+  Box,
+  Chip,
+  Grid,
+  IconButton,
+  Popover,
+  Stack,
+  Typography
+} from "@mui/material";
 import { Assistant } from "@mui/icons-material";
 import { CourseList } from "./CourseList";
 
@@ -53,17 +62,24 @@ export const Semester: FC<SemesterProps> = function Semester({
 
   const handleCourseDrag = (event: React.DragEvent<HTMLElement>): void => {
     if (refPopper.current !== null) {
-      if (event.clientX < refPopper.current.offsetLeft ||
-          event.clientX > refPopper.current.offsetLeft + refPopper.current.offsetWidth ||
-          event.clientY < refPopper.current.offsetTop ||
-          event.clientY > refPopper.current.offsetTop + refPopper.current.offsetHeight) {
+      if (
+        event.clientX < refPopper.current.offsetLeft ||
+        event.clientX >
+        refPopper.current.offsetLeft + refPopper.current.offsetWidth ||
+        event.clientY < refPopper.current.offsetTop ||
+        event.clientY >
+        refPopper.current.offsetTop + refPopper.current.offsetHeight
+      ) {
         handleCloseSuggester(null, "quickDrop");
       }
     }
   };
 
   const suggestedContentExists = (): boolean => {
-    return suggestedContent?.courses.length > 0 || suggestedContent?.requirements.length > 0;
+    return (
+      suggestedContent?.courses.length > 0 ||
+      suggestedContent?.requirements.length > 0
+    );
   };
 
   return (
@@ -75,29 +91,39 @@ export const Semester: FC<SemesterProps> = function Semester({
       key={`semester-${year}-${season}`}
     >
       <Stack>
-        <Grid container sx={{
-          alignItems: "center",
-          position: "relative"
-        }}>
+        <Grid
+          container
+          sx={{
+            alignItems: "center",
+            position: "relative"
+          }}
+        >
           <Grid item flexGrow={1}>
             <p>
-              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
+              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""} [
+              {semesterNumber}]
             </p>
           </Grid>
-          <Grid item sx={{
-            display: "flex",
-            position: "absolute",
-            right: ".5em",
-            width: "100%",
-            justifyContent: "end"
-          }}>
-            {suggestedContentExists() &&
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              position: "absolute",
+              right: ".5em",
+              width: "100%",
+              justifyContent: "end"
+            }}
+          >
+            {suggestedContentExists() && (
               <IconButton onClick={handleOpenSuggester}>
-                <Badge badgeContent={suggestedContent?.courses.length} color="primary">
-                  <Assistant color="primary"/>
+                <Badge
+                  badgeContent={suggestedContent?.courses.length}
+                  color="primary"
+                >
+                  <Assistant color="primary" />
                 </Badge>
               </IconButton>
-            }
+            )}
             <Popover
               anchorEl={anchorEl}
               open={anchorEl !== null}
@@ -115,21 +141,31 @@ export const Semester: FC<SemesterProps> = function Semester({
                   width: "100%"
                 }}
               >
-                <Typography sx={{
-                  px: "1em",
-                  pt: ".5em",
-                  pb: suggestedContent?.requirements.length > 0 ? "0em" : ".5em",
-                  textAlign: "center",
-                  fontSize: "1.2em",
-                  fontWeight: "bold"
-                }}>
+                <Typography
+                  sx={{
+                    px: "1em",
+                    pt: ".5em",
+                    pb:
+                      suggestedContent?.requirements.length > 0
+                        ? "0em"
+                        : ".5em",
+                    textAlign: "center",
+                    fontSize: "1.2em",
+                    fontWeight: "bold"
+                  }}
+                >
                   {suggestedContentExists()
-                    ? "Suggested Content" : "No Suggested Content"
-                  }
+                    ? "Suggested Content"
+                    : "No Suggested Content"}
                 </Typography>
-                <Box sx={{
-                  pb: suggestedContent?.requirements.length > 0 ? ".25em" : "0em"
-                }}>
+                <Box
+                  sx={{
+                    pb:
+                      suggestedContent?.requirements.length > 0
+                        ? ".25em"
+                        : "0em"
+                  }}
+                >
                   {suggestedContent?.requirements.map((reqText, index) => {
                     return (
                       <Chip
@@ -145,17 +181,17 @@ export const Semester: FC<SemesterProps> = function Semester({
                   })}
                 </Box>
                 {suggestedContent?.courses?.length > 0 && (
-                <CourseList
-                  accept={ItemTypes.COURSE}
-                  onDrop={console.log}
-                  onCourseDrag={handleCourseDrag}
-                  onCourseDragEnd={() => setQuickDrop(false)}
-                  courses={suggestedContent?.courses}
-                  sx={{
-                    marginBottom: "0px",
-                    borderRadius: "0px"
-                  }}
-                />
+                  <CourseList
+                    accept={ItemTypes.COURSE}
+                    onDrop={console.log}
+                    onCourseDrag={handleCourseDrag}
+                    onCourseDragEnd={() => setQuickDrop(false)}
+                    courses={suggestedContent?.courses}
+                    sx={{
+                      marginBottom: "0px",
+                      borderRadius: "0px"
+                    }}
+                  />
                 )}
               </Stack>
             </Popover>

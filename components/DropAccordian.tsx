@@ -76,14 +76,23 @@ export default function DropTargetAccordian(props: {
 
   const PassedCourseList = useContext(PassedCourseListContext);
 
-  const getSuggestedContent = (semNum: number): {
+  const getSuggestedContent = (
+    semNum: number
+  ): {
     courses: CourseType[];
     requirements: String[];
   } => {
-    const fourYearPlan = JSON.parse(userMajor()?.concentration?.fourYearPlan ?? "null");
-    const classPlan = fourYearPlan?.ClassPlan["Semester" + (semNum + 1)];
+    const fourYearPlan = JSON.parse(
+      userMajor()?.concentration?.fourYearPlan ?? "null"
+    );
+    const classPlan =
+      semNum % 2 === 0
+        ? fourYearPlan?.ClassPlan["Semester" + (semNum / 2 + 1)]
+        : undefined;
     const completedCourses = userMajor()?.completed_courses ?? [];
-    const curSemester = props.semesters.find((sem) => sem.semesterNumber === semNum);
+    const curSemester = props.semesters.find(
+      (sem) => sem.semesterNumber === semNum
+    );
     const suggestedCourses: CourseType[] = [];
 
     PassedCourseList.forEach((course: CourseType) => {
@@ -97,7 +106,12 @@ export default function DropTargetAccordian(props: {
           // Course is not already marked as complete
           if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
             // Course is not already suggested (or is repeatable and can be suggested again)
-            if (course.repeatableForCred || suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+            if (
+              course.repeatableForCred ||
+              suggestedCourses.findIndex(
+                (sc) => sc.idCourse === course.idCourse
+              ) === -1
+            ) {
               suggestedCourses.push(course);
             }
           } else {
@@ -110,9 +124,17 @@ export default function DropTargetAccordian(props: {
       });
 
       // Suggest all courses that are available in Winter/Summer for a winter/summer semester
-      if ((curSemester?.season === season.Winter && course.semesters?.includes("WI")) ||
-          (curSemester?.season === season.Summer && course.semesters?.includes("SU"))) {
-        if (suggestedCourses.findIndex(sc => sc.idCourse === course.idCourse) === -1) {
+      if (
+        (curSemester?.season === season.Winter &&
+          course.semesters?.includes("WI")) ||
+        (curSemester?.season === season.Summer &&
+          course.semesters?.includes("SU"))
+      ) {
+        if (
+          suggestedCourses.findIndex(
+            (sc) => sc.idCourse === course.idCourse
+          ) === -1
+        ) {
           suggestedCourses.push(course);
         }
       }

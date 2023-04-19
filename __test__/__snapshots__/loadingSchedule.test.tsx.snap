@@ -195,7 +195,12 @@ exports[`Load saved schedule 1`] = `
                       <div
                         class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
                       >
-                        MATH-157 requires: MATH-151 or MATH-153 or MATH-156&lt;br&gt;CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        <div>
+                          MATH-157 requires: MATH-151 or MATH-153 or MATH-156
+                        </div>
+                        <div>
+                          CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        </div>
                       </div>
                       <div
                         class="MuiAlert-action css-ki1hdl-MuiAlert-action"

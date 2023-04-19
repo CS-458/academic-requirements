@@ -302,38 +302,7 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        >
-                                          <button
-                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester5-suggestBtn"
-                                            tabindex="0"
-                                            type="button"
-                                          >
-                                            <span
-                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-                                            >
-                                              <svg
-                                                aria-hidden="true"
-                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
-                                                data-testid="AssistantIcon"
-                                                focusable="false"
-                                                viewBox="0 0 24 24"
-                                              >
-                                                <path
-                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
-                                                />
-                                              </svg>
-                                              <span
-                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
-                                              >
-                                                0
-                                              </span>
-                                            </span>
-                                            <span
-                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                            />
-                                          </button>
-                                        </div>
+                                        />
                                       </div>
                                       <div
                                         class="Course-root CourseText"
@@ -447,9 +416,9 @@ exports[`Load saved schedule 1`] = `
                                                 />
                                               </svg>
                                               <span
-                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
                                               >
-                                                1
+                                                0
                                               </span>
                                             </span>
                                             <span
@@ -482,38 +451,7 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        >
-                                          <button
-                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester7-suggestBtn"
-                                            tabindex="0"
-                                            type="button"
-                                          >
-                                            <span
-                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-                                            >
-                                              <svg
-                                                aria-hidden="true"
-                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
-                                                data-testid="AssistantIcon"
-                                                focusable="false"
-                                                viewBox="0 0 24 24"
-                                              >
-                                                <path
-                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
-                                                />
-                                              </svg>
-                                              <span
-                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
-                                              >
-                                                1
-                                              </span>
-                                            </span>
-                                            <span
-                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                            />
-                                          </button>
-                                        </div>
+                                        />
                                       </div>
                                       <div
                                         class="Course-root CourseText"
@@ -627,7 +565,38 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                            data-testid="semester8-suggestBtn"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                data-testid="AssistantIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                />
+                                              </svg>
+                                              <span
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                              >
+                                                0
+                                              </span>
+                                            </span>
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -806,7 +775,38 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                            data-testid="semester10-suggestBtn"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                data-testid="AssistantIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                />
+                                              </svg>
+                                              <span
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                              >
+                                                0
+                                              </span>
+                                            </span>
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -947,7 +947,38 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                            data-testid="semester12-suggestBtn"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                data-testid="AssistantIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                />
+                                              </svg>
+                                              <span
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                                              >
+                                                1
+                                              </span>
+                                            </span>
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -1126,7 +1157,38 @@ exports[`Load saved schedule 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                            data-testid="semester14-suggestBtn"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                data-testid="AssistantIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                />
+                                              </svg>
+                                              <span
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                                              >
+                                                1
+                                              </span>
+                                            </span>
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>

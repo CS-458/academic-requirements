@@ -304,7 +304,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester8"
+                              data-testid="semester1"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -330,7 +330,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester1"
+                              data-testid="semester2"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -422,7 +422,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester9"
+                              data-testid="semester3"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -508,7 +508,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           >
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester2"
+                              data-testid="semester4"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -531,7 +531,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   >
                                     <button
                                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                      data-testid="semester2-suggestBtn"
+                                      data-testid="semester4-suggestBtn"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -653,7 +653,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester10"
+                              data-testid="semester5"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -679,7 +679,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-12qoa1o"
-                              data-testid="semester3"
+                              data-testid="semester6"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -794,7 +794,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester11"
+                              data-testid="semester7"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -880,7 +880,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           >
                             <div
                               class="semester Semester-root MuiBox-root css-12qoa1o"
-                              data-testid="semester4"
+                              data-testid="semester8"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -904,7 +904,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   >
                                     <button
                                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                      data-testid="semester4-suggestBtn"
+                                      data-testid="semester8-suggestBtn"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -982,7 +982,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester12"
+                              data-testid="semester9"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1008,7 +1008,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-12qoa1o"
-                              data-testid="semester5"
+                              data-testid="semester10"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1032,7 +1032,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   >
                                     <button
                                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                      data-testid="semester5-suggestBtn"
+                                      data-testid="semester10-suggestBtn"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -1110,7 +1110,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester13"
+                              data-testid="semester11"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1196,7 +1196,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                           >
                             <div
                               class="semester Semester-root MuiBox-root css-12qoa1o"
-                              data-testid="semester6"
+                              data-testid="semester12"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1220,7 +1220,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   >
                                     <button
                                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                      data-testid="semester6-suggestBtn"
+                                      data-testid="semester12-suggestBtn"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -1276,7 +1276,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
-                              data-testid="semester14"
+                              data-testid="semester13"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1302,7 +1302,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-12qoa1o"
-                              data-testid="semester7"
+                              data-testid="semester14"
                             >
                               <div
                                 class="css-nen11g-MuiStack-root"
@@ -1326,7 +1326,7 @@ exports[`Test loading a four year plan into the semesters 1`] = `
                                   >
                                     <button
                                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                      data-testid="semester7-suggestBtn"
+                                      data-testid="semester14-suggestBtn"
                                       tabindex="0"
                                       type="button"
                                     >

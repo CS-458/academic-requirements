@@ -247,7 +247,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester8"
+                                    data-testid="semester1"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -273,7 +273,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester1"
+                                    data-testid="semester2"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -299,7 +299,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester9"
+                                    data-testid="semester3"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -345,201 +345,6 @@ exports[`Test render of scheduler 1`] = `
                           >
                             Year 
                             2
-                          </div>
-                          <div
-                            class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                        style="min-height: 0px;"
-                      >
-                        <div
-                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                        >
-                          <div
-                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                          >
-                            <div
-                              class="MuiAccordion-region"
-                              role="region"
-                            >
-                              <div
-                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
-                              >
-                                <div
-                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
-                                >
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester2"
-                                  >
-                                    <div
-                                      class="css-nen11g-MuiStack-root"
-                                    >
-                                      <div
-                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
-                                      >
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
-                                        >
-                                          <p>
-                                            Fall
-                                             (
-                                            0
-                                            ) 
-                                          </p>
-                                        </div>
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        >
-                                          <button
-                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester2-suggestBtn"
-                                            tabindex="0"
-                                            type="button"
-                                          >
-                                            <span
-                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-                                            >
-                                              <svg
-                                                aria-hidden="true"
-                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
-                                                data-testid="AssistantIcon"
-                                                focusable="false"
-                                                viewBox="0 0 24 24"
-                                              >
-                                                <path
-                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
-                                                />
-                                              </svg>
-                                              <span
-                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
-                                              >
-                                                0
-                                              </span>
-                                            </span>
-                                            <span
-                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                            />
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester10"
-                                  >
-                                    <div
-                                      class="css-nen11g-MuiStack-root"
-                                    >
-                                      <div
-                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
-                                      >
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
-                                        >
-                                          <p>
-                                            Winter
-                                             (
-                                            0
-                                            ) 
-                                          </p>
-                                        </div>
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester3"
-                                  >
-                                    <div
-                                      class="css-nen11g-MuiStack-root"
-                                    >
-                                      <div
-                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
-                                      >
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
-                                        >
-                                          <p>
-                                            Spring
-                                             (
-                                            0
-                                            ) 
-                                          </p>
-                                        </div>
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester11"
-                                  >
-                                    <div
-                                      class="css-nen11g-MuiStack-root"
-                                    >
-                                      <div
-                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
-                                      >
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
-                                        >
-                                          <p>
-                                            Summer
-                                             (
-                                            0
-                                            ) 
-                                          </p>
-                                        </div>
-                                        <div
-                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                    >
-                      <div>
-                        <div
-                          aria-expanded="false"
-                          class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                          >
-                            Year 
-                            3
                           </div>
                           <div
                             class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
@@ -637,7 +442,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester12"
+                                    data-testid="semester5"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -663,7 +468,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester5"
+                                    data-testid="semester6"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -683,10 +488,122 @@ exports[`Test render of scheduler 1`] = `
                                         </div>
                                         <div
                                           class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="semester Semester-root MuiBox-root css-17txp1g"
+                                    data-testid="semester7"
+                                  >
+                                    <div
+                                      class="css-nen11g-MuiStack-root"
+                                    >
+                                      <div
+                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                      >
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                        >
+                                          <p>
+                                            Summer
+                                             (
+                                            0
+                                            ) 
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                    >
+                      <div>
+                        <div
+                          aria-expanded="false"
+                          class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <div
+                            class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                          >
+                            Year 
+                            3
+                          </div>
+                          <div
+                            class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="ArrowForwardIosSharpIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                        style="min-height: 0px;"
+                      >
+                        <div
+                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                        >
+                          <div
+                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                          >
+                            <div
+                              class="MuiAccordion-region"
+                              role="region"
+                            >
+                              <div
+                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                              >
+                                <div
+                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                >
+                                  <div
+                                    class="semester Semester-root MuiBox-root css-17txp1g"
+                                    data-testid="semester8"
+                                  >
+                                    <div
+                                      class="css-nen11g-MuiStack-root"
+                                    >
+                                      <div
+                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                      >
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                        >
+                                          <p>
+                                            Fall
+                                             (
+                                            0
+                                            ) 
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
                                         >
                                           <button
                                             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester5-suggestBtn"
+                                            data-testid="semester8-suggestBtn"
                                             tabindex="0"
                                             type="button"
                                           >
@@ -720,7 +637,90 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester13"
+                                    data-testid="semester9"
+                                  >
+                                    <div
+                                      class="css-nen11g-MuiStack-root"
+                                    >
+                                      <div
+                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                      >
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                        >
+                                          <p>
+                                            Winter
+                                             (
+                                            0
+                                            ) 
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="semester Semester-root MuiBox-root css-17txp1g"
+                                    data-testid="semester10"
+                                  >
+                                    <div
+                                      class="css-nen11g-MuiStack-root"
+                                    >
+                                      <div
+                                        class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                      >
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                        >
+                                          <p>
+                                            Spring
+                                             (
+                                            0
+                                            ) 
+                                          </p>
+                                        </div>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                        >
+                                          <button
+                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                            data-testid="semester10-suggestBtn"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                data-testid="AssistantIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                />
+                                              </svg>
+                                              <span
+                                                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                              >
+                                                0
+                                              </span>
+                                            </span>
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="semester Semester-root MuiBox-root css-17txp1g"
+                                    data-testid="semester11"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -806,7 +806,7 @@ exports[`Test render of scheduler 1`] = `
                                 >
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester6"
+                                    data-testid="semester12"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -829,7 +829,7 @@ exports[`Test render of scheduler 1`] = `
                                         >
                                           <button
                                             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester6-suggestBtn"
+                                            data-testid="semester12-suggestBtn"
                                             tabindex="0"
                                             type="button"
                                           >
@@ -863,7 +863,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester14"
+                                    data-testid="semester13"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -889,7 +889,7 @@ exports[`Test render of scheduler 1`] = `
                                   </div>
                                   <div
                                     class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester7"
+                                    data-testid="semester14"
                                   >
                                     <div
                                       class="css-nen11g-MuiStack-root"
@@ -912,7 +912,7 @@ exports[`Test render of scheduler 1`] = `
                                         >
                                           <button
                                             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                            data-testid="semester7-suggestBtn"
+                                            data-testid="semester14-suggestBtn"
                                             tabindex="0"
                                             type="button"
                                           >

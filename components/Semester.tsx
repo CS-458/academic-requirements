@@ -100,8 +100,7 @@ export const Semester: FC<SemesterProps> = function Semester({
         >
           <Grid item flexGrow={1}>
             <p>
-              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""} [
-              {semesterNumber}]
+              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
             </p>
           </Grid>
           <Grid
@@ -115,7 +114,10 @@ export const Semester: FC<SemesterProps> = function Semester({
             }}
           >
             {suggestedContentExists() && (
-              <IconButton onClick={handleOpenSuggester}>
+              <IconButton
+                onClick={handleOpenSuggester}
+                data-testid={`semester${semesterNumber}-suggestBtn`}
+              >
                 <Badge
                   badgeContent={suggestedContent?.courses.length}
                   color="primary"

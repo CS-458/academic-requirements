@@ -26,11 +26,9 @@ test("Test Navigation menu to close upon clicking Nav menu", async () => {
 
   const menu = screen.getByTestId("menu");
   await user.click(menu);
-  expect(screen.getByText("Schedule Page")).toBeInTheDocument();
-  expect(screen.getByText("Input Page")).toBeInTheDocument();
+  expect(page.getByTestId("drawer-true")).toBeInTheDocument();
   await user.click(menu);
-  console.log(page.container.getElementsByClassName("MuiBackdrop-root MuiModal-backdrop css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop")[0].getAttribute("style"));
-  // expect(page.getByText("Account Page")).toBeInTheDocument();
+  expect(page.getByTestId("drawer-false")).toBeInTheDocument();
 });
 
 test("Test Account page appears", async () => {

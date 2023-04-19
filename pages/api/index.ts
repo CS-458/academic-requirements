@@ -16,5 +16,4 @@ import "./user/delete";
 
 import "./concentration";
 import "./concentration_all";
-import "./login";
 import "./major";

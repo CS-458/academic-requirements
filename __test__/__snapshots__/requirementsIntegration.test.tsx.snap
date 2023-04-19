@@ -212,6 +212,7 @@ exports[`Check for details tooltip 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                       >
@@ -233,6 +234,19 @@ exports[`Check for details tooltip 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -316,6 +330,7 @@ exports[`Check for details tooltip 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -337,6 +352,19 @@ exports[`Check for details tooltip 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -420,6 +448,7 @@ exports[`Check for details tooltip 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -441,6 +470,19 @@ exports[`Check for details tooltip 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -524,6 +566,7 @@ exports[`Check for details tooltip 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -545,6 +588,19 @@ exports[`Check for details tooltip 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -1552,6 +1608,10 @@ exports[`Check for details tooltip 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1767,6 +1827,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                       >
@@ -1788,6 +1849,19 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -1871,6 +1945,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -1892,6 +1967,19 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -1975,6 +2063,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -1996,6 +2085,19 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -2079,6 +2181,7 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
                       >
@@ -2100,6 +2203,19 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                           />
                         </svg>
                       </div>
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                        />
+                      </svg>
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                     </div>
                   </div>
                   <div
@@ -3107,5 +3223,9 @@ exports[`Test whether requirements visually update on the screen 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

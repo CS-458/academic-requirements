@@ -37,7 +37,12 @@ const Accordion = styled((props: AccordionProps) => (
 /// Modified MUI Summary
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
+    expandIcon={
+      <ArrowForwardIosSharp
+        sx={{ fontSize: "0.9rem" }}
+        data-testid="expand-year"
+      />
+    }
     {...props}
   />
 ))(({ theme }) => ({

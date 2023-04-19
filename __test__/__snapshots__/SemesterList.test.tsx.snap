@@ -221,8 +221,17 @@ exports[`Render Semester List 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               1
@@ -325,8 +334,17 @@ exports[`Render Semester List 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -429,8 +447,17 @@ exports[`Render Semester List 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -533,8 +560,17 @@ exports[`Render Semester List 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -973,6 +1009,10 @@ exports[`Render Semester List 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1199,6 +1239,7 @@ exports[`Render Semester List 2`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                             >
@@ -1207,6 +1248,14 @@ exports[`Render Semester List 2`] = `
                             </div>
                             <div
                               class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               <svg
                                 aria-hidden="true"
@@ -1326,8 +1375,17 @@ exports[`Render Semester List 2`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -1430,8 +1488,17 @@ exports[`Render Semester List 2`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -1534,8 +1601,17 @@ exports[`Render Semester List 2`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -3380,6 +3456,10 @@ exports[`Render Semester List 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3606,6 +3686,7 @@ exports[`Render Semester List 3`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                             >
@@ -3614,6 +3695,14 @@ exports[`Render Semester List 3`] = `
                             </div>
                             <div
                               class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               <svg
                                 aria-hidden="true"
@@ -3733,8 +3822,17 @@ exports[`Render Semester List 3`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -3837,8 +3935,17 @@ exports[`Render Semester List 3`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -3941,8 +4048,17 @@ exports[`Render Semester List 3`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -5787,6 +5903,10 @@ exports[`Render Semester List 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -6013,6 +6133,7 @@ exports[`Render Semester List 4`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
                             >
@@ -6021,6 +6142,14 @@ exports[`Render Semester List 4`] = `
                             </div>
                             <div
                               class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               <svg
                                 aria-hidden="true"
@@ -6117,8 +6246,17 @@ exports[`Render Semester List 4`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -6221,8 +6359,17 @@ exports[`Render Semester List 4`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -6325,8 +6472,17 @@ exports[`Render Semester List 4`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -8171,6 +8327,10 @@ exports[`Render Semester List 4`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -8386,8 +8546,17 @@ exports[`Testing adding and Removing a year 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         1
@@ -8490,8 +8659,17 @@ exports[`Testing adding and Removing a year 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         2
@@ -8594,8 +8772,17 @@ exports[`Testing adding and Removing a year 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         3
@@ -8698,8 +8885,17 @@ exports[`Testing adding and Removing a year 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         4
@@ -9726,6 +9922,10 @@ exports[`Testing adding and Removing a year 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -9941,8 +10141,17 @@ exports[`Try removing a year that has a course 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         1
@@ -10045,8 +10254,17 @@ exports[`Try removing a year that has a course 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         2
@@ -10149,8 +10367,17 @@ exports[`Try removing a year that has a course 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         3
@@ -10253,8 +10480,17 @@ exports[`Try removing a year that has a course 1`] = `
                       role="button"
                       tabindex="0"
                     >
+<<<<<<< HEAD
                       <div
                         class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                        data-testid="expand-year"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                       >
                         Year 
                         4
@@ -11281,5 +11517,9 @@ exports[`Try removing a year that has a course 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

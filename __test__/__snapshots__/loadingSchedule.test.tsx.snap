@@ -237,7 +237,12 @@ exports[`Load saved schedule 1`] = `
                       <div
                         class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
                       >
-                        MATH-157 requires: MATH-151 or MATH-153 or MATH-156&lt;br&gt;CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        <div>
+                          MATH-157 requires: MATH-151 or MATH-153 or MATH-156
+                        </div>
+                        <div>
+                          CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        </div>
                       </div>
                       <div
                         class="MuiAlert-action css-ki1hdl-MuiAlert-action"
@@ -281,8 +286,17 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               1
@@ -540,8 +554,17 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -800,8 +823,17 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -1016,8 +1048,17 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
+<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+=======
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                              data-testid="expand-year"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+>>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -2143,5 +2184,9 @@ exports[`Load saved schedule 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

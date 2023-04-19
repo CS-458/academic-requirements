@@ -354,6 +354,10 @@ exports[`Verify Four Year Plan Not Show 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -732,6 +736,10 @@ exports[`Verify Four Year Plan Not Show 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1135,6 +1143,10 @@ exports[`Verify Four Year Plan Not Show 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1492,6 +1504,10 @@ exports[`Verify Majors and Concentrations 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1870,6 +1886,10 @@ exports[`Verify Majors and Concentrations 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -2305,6 +2325,10 @@ exports[`Verify Majors and Concentrations 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -2662,6 +2686,10 @@ exports[`Verify Select Use Four Year Plan 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3097,6 +3125,10 @@ exports[`Verify Select Use Four Year Plan 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3119,6 +3151,10 @@ exports[`Verify UW-Stout logo redirects to UW-Stout site 1`] = `
       </a>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3476,6 +3512,10 @@ exports[`Verify adding completed course 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -3855,6 +3895,10 @@ exports[`Verify adding completed course 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -4258,6 +4302,10 @@ exports[`Verify adding completed course 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -4688,6 +4736,10 @@ exports[`Verify adding completed course 4`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -5045,6 +5097,10 @@ exports[`Verify deleting completed course 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -5424,6 +5480,10 @@ exports[`Verify deleting completed course 2`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -5827,6 +5887,10 @@ exports[`Verify deleting completed course 3`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -6233,6 +6297,10 @@ exports[`Verify deleting completed course 4`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -6663,5 +6731,9 @@ exports[`Verify deleting completed course 5`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

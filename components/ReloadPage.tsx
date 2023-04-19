@@ -12,6 +12,7 @@ import {
   movedCourse
 } from "../entities/four_year_plan";
 import { userMajor } from "../services/user";
+import { CourseError } from "./FourYearPlanPage";
 
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
@@ -24,6 +25,9 @@ export default function FormDialog(props: {
   resetMoved: (u: movedCourse[]) => void;
   loadFYP: (semesters: SemesterType[]) => void;
   initializeSemesters: () => any;
+  setWarningPreReq: (ce: CourseError[]) => any;
+  setWarningFallvsSpring: (ce: CourseError[]) => any;
+  setWarningDupCourses: (ce: CourseError[]) => any;
 }): any {
   // Handles the reloading of the FYPP
   const handleReload = (): any => {
@@ -31,6 +35,9 @@ export default function FormDialog(props: {
     props.resetRedo([]);
     props.resetMoved([]);
     props.resetRequirements();
+    props.setWarningDupCourses([]);
+    props.setWarningFallvsSpring([]);
+    props.setWarningPreReq([]);
     if (userMajor()?.load_four_year_plan === true) {
       const semestersReload = props.initializeSemesters();
       props.loadFYP(semestersReload);

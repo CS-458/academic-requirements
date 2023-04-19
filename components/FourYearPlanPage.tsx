@@ -1,4 +1,11 @@
-import React, { FC, useEffect, memo, useCallback, useState, createContext } from "react";
+import React, {
+  FC,
+  useEffect,
+  memo,
+  useCallback,
+  useState,
+  createContext
+} from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -133,20 +140,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       const tempSemesters: SemesterType[] = [];
       let i = 0;
       for (let year = 1; year < 5; year++) {
-        [season.Fall, season.Spring].forEach((s) => {
-          tempSemesters.push({
-            accepts: [ItemTypes.COURSE],
-            courses: [],
-            semesterNumber: i++,
-            SemesterCredits: 0,
-            Warning: null,
-            year,
-            season: s
-          });
-        });
-      }
-      for (let year = 1; year < 5; year++) {
-        [season.Winter, season.Summer].forEach((s) => {
+        Object.values(season).forEach((s) => {
           tempSemesters.push({
             accepts: [ItemTypes.COURSE],
             courses: [],
@@ -550,9 +544,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function loadFYP(semesters: SemesterType[]): void {
       // fill in the schedule
       semesters.forEach((semester, index) => {
+        if (index % 2 === 1) return;
         const tempArr: CourseType[] = [];
+        console.log("FYP", fourYearPlan);
         // Get the semester data from the json
-        const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+        const classPlan = fourYearPlan.ClassPlan["Semester" + (index / 2 + 1)];
         if (classPlan == null) return;
         const courseStringArr = classPlan.Courses;
         let credits = 0;
@@ -678,19 +674,35 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (move !== undefined) {
           undo = true;
           const temp = coursesForRedo;
-          temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
+          temp.push({
+            movedTo: move.movedFrom,
+            movedFrom: move.movedTo,
+            course: move.course
+          });
           setCoursesForRedo(temp);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Undo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Undo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -702,16 +714,28 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
             // was moved to course list
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Redo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Redo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -751,18 +775,18 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               resetRedo={setCoursesForRedo}
               resetMoved={setCoursesMoved}
               defaultName={userMajor()?.schedule_name}
-          >
+            >
               <ScheduleErrorNotification errors={savedErrors} />
               <br />
               <UndoButton
-              handleUndoCourse={handleUndoCourse}
-              courses={coursesMoved}
-            />
+                handleUndoCourse={handleUndoCourse}
+                courses={coursesMoved}
+              />
               <br />
               <RedoButton
-              handleRedoCourse={handleRedoCourse}
-              courses={coursesForRedo}
-            />
+                handleRedoCourse={handleRedoCourse}
+                courses={coursesForRedo}
+              />
               <br />
               <ReloadPage
                 scheduleData={info}
@@ -777,7 +801,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 initializeSemesters={initializeSemesters}
               />
             </ActionBar>
-            <div style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}>
+            <div
+              style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}
+            >
               <Snackbar
                 open={visibility}
                 autoHideDuration={6000}
@@ -807,7 +833,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 reqGenList={reqGenList ?? []}
                 createCourseMoveRecord={createCourseMoveRecord}
                 error={throwError}
-            />
+              />
             </div>
             <div
               style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}

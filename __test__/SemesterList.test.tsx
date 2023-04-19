@@ -1,11 +1,13 @@
 import "@testing-library/jest-dom";
-import { screen, waitFor, within } from "@testing-library/react";
+import { jest } from "@jest/globals";
+import { fireEvent, screen, waitFor, within } from "@testing-library/react";
 import { setupUser, render, buildLocalStorage, parentEl, fetchApiJson } from "./util";
 import PassThrough from "../components/PassThrough";
 import { academicDb } from "../services/sql";
 import FourYearPlanPage from "../components/FourYearPlanPage";
-import { CourseType, RequirementComponentType } from "../entities/four_year_plan";
+import { CourseType, RequirementComponentType, season } from "../entities/four_year_plan";
 import { dragAndDrop } from "./dragDrop";
+import { Semester } from "../components/Semester";
 
 test("Render Semester List", async () => {
   const db = await academicDb();
@@ -244,4 +246,262 @@ test("Try removing a year that has a course", async () => {
   await user.click(closeButton);
   await user.click(removeButt);
   await waitFor(() => expect(screen.getByText("Cannot remove a year that contains courses!")).toBeInTheDocument());
+}, 100000);
+
+test("Semester Has Suggestions", async () => {
+  const user = setupUser();
+  const mockSuggestedContent = {
+    courses: [
+      {
+        credits: 3,
+        name: "mock course",
+        number: "999",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 1,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: false
+      },
+      {
+        credits: 3,
+        name: "mock course-repeatable",
+        number: "998",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 2,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: true
+      }
+    ],
+    requirements: ["mock-req"]
+  };
+  const semNum = 1;
+  const index = render(
+    <Semester
+      accept={["course"]}
+      onDrop={() => {}}
+      semesterNumber={semNum}
+      courses={[]}
+      SemesterCredits={0}
+      warningPrerequisiteCourses={[]}
+      warningFallvsSpringCourses={[]}
+      warningDuplicateCourses={[]}
+      Warning={null}
+      year={1}
+      season={season.Fall}
+      suggestedContent={mockSuggestedContent}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const suggestContentBtn = screen.getByTestId(`semester${semNum}-suggestBtn`);
+  // open the suggestion box
+  await user.click(suggestContentBtn);
+  const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
+  expect(suggestionBox).not.toBeNull();
+  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox).toContainHTML(mockSuggestedContent.requirements[0]);
+}, 100000);
+
+test("Semester Has No Suggestions", async () => {
+  const user = setupUser();
+  const mockSuggestedContent = {
+    courses: [],
+    requirements: []
+  };
+  const semNum = 1;
+  const index = render(
+    <Semester
+      accept={["course"]}
+      onDrop={() => {}}
+      semesterNumber={semNum}
+      courses={[]}
+      SemesterCredits={0}
+      warningPrerequisiteCourses={[]}
+      warningFallvsSpringCourses={[]}
+      warningDuplicateCourses={[]}
+      Warning={null}
+      year={1}
+      season={season.Fall}
+      suggestedContent={mockSuggestedContent}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const suggestContentBtn = screen.queryByTestId(`semester${semNum}-suggestBtn`);
+  expect(suggestContentBtn).toBeNull();
+}, 100000);
+
+test("Semester Has Only Requirements Suggestions", async () => {
+  const user = setupUser();
+  const mockSuggestedContent = {
+    courses: [],
+    requirements: ["mock-req"]
+  };
+  const semNum = 1;
+  const index = render(
+    <Semester
+      accept={["course"]}
+      onDrop={() => {}}
+      semesterNumber={semNum}
+      courses={[]}
+      SemesterCredits={0}
+      warningPrerequisiteCourses={[]}
+      warningFallvsSpringCourses={[]}
+      warningDuplicateCourses={[]}
+      Warning={null}
+      year={1}
+      season={season.Fall}
+      suggestedContent={mockSuggestedContent}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const suggestContentBtn = screen.queryByTestId(`semester${semNum}-suggestBtn`);
+  expect(suggestContentBtn).not.toBeNull();
+  // open the suggestion box
+  if (suggestContentBtn !== null) {
+    await user.click(suggestContentBtn);
+  }
+  const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
+  expect(suggestionBox).not.toBeNull();
+  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox?.children.length).toBe(2);
+  expect(suggestionBox).toContainHTML(mockSuggestedContent.requirements[0]);
+}, 100000);
+
+test("Semester Has Only Course Suggestions", async () => {
+  const user = setupUser();
+  const mockSuggestedContent = {
+    courses: [
+      {
+        credits: 3,
+        name: "mock course",
+        number: "999",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 1,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: false
+      },
+      {
+        credits: 3,
+        name: "mock course-repeatable",
+        number: "998",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 2,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: true
+      }
+    ],
+    requirements: []
+  };
+  const semNum = 1;
+  const index = render(
+    <Semester
+      accept={["course"]}
+      onDrop={() => {}}
+      semesterNumber={semNum}
+      courses={[]}
+      SemesterCredits={0}
+      warningPrerequisiteCourses={[]}
+      warningFallvsSpringCourses={[]}
+      warningDuplicateCourses={[]}
+      Warning={null}
+      year={1}
+      season={season.Fall}
+      suggestedContent={mockSuggestedContent}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const suggestContentBtn = screen.queryByTestId(`semester${semNum}-suggestBtn`);
+  expect(suggestContentBtn).not.toBeNull();
+  // open the suggestion box
+  if (suggestContentBtn !== null) {
+    await user.click(suggestContentBtn);
+  }
+  const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
+  expect(suggestionBox).not.toBeNull();
+  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox?.children.length).toBe(3);
+  const courses = screen.queryAllByTestId("course");
+  expect(courses.length).toBe(mockSuggestedContent.courses.length);
+}, 100000);
+
+test("Semester Drag a Suggested Course", async () => {
+  const user = setupUser();
+  const onDropMock = jest.fn();
+  const mockSuggestedContent = {
+    courses: [
+      {
+        credits: 3,
+        name: "mock course",
+        number: "999",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 1,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: false
+      },
+      {
+        credits: 3,
+        name: "mock course-repeatable",
+        number: "998",
+        semesters: "",
+        subject: "COR",
+        preReq: "",
+        category: "cat-1",
+        idCourse: 2,
+        idCategory: 1,
+        dragSource: "CourseList",
+        repeatableForCred: true
+      }
+    ],
+    requirements: []
+  };
+  const semNum = 1;
+  const index = render(
+    <Semester
+      accept={["course"]}
+      onDrop={onDropMock}
+      semesterNumber={semNum}
+      courses={[]}
+      SemesterCredits={0}
+      warningPrerequisiteCourses={[]}
+      warningFallvsSpringCourses={[]}
+      warningDuplicateCourses={[]}
+      Warning={null}
+      year={1}
+      season={season.Fall}
+      suggestedContent={mockSuggestedContent}
+    />
+  );
+  expect(index.baseElement).toMatchSnapshot();
+  const baseSemester = screen.getByTestId(`semester${semNum}`);
+  const suggestContentBtn = screen.getByTestId(`semester${semNum}-suggestBtn`);
+
+  // open the suggestions
+  await user.click(suggestContentBtn);
+  const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
+  expect(suggestionBox).not.toBeNull();
+
+  const courses = screen.queryAllByTestId("course");
+  expect(courses.length).toBe(mockSuggestedContent.courses.length);
+
+  // Drag a course onto a semester
+  await user.drag(courses[0], baseSemester);
+  expect(onDropMock).toHaveBeenCalledTimes(1);
 }, 100000);

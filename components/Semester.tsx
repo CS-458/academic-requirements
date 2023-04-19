@@ -92,7 +92,9 @@ export const Semester: FC<SemesterProps> = function Semester({
             justifyContent: "end"
           }}>
             {suggestedContentExists() &&
-              <IconButton onClick={handleOpenSuggester}>
+              <IconButton
+                onClick={handleOpenSuggester}
+                data-testid={`semester${semesterNumber}-suggestBtn`}>
                 <Badge badgeContent={suggestedContent?.courses.length} color="primary">
                   <Assistant color="primary"/>
                 </Badge>
@@ -114,6 +116,7 @@ export const Semester: FC<SemesterProps> = function Semester({
                 sx={{
                   width: "100%"
                 }}
+                data-testid={`semester${semesterNumber}-suggestPopover`}
               >
                 <Typography sx={{
                   px: "1em",

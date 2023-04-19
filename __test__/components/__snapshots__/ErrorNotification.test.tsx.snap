@@ -151,7 +151,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
             </div>
           </div>
           <div
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="generic"
@@ -214,45 +214,105 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester0"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester8"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester1"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester9"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -318,45 +378,105 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester2"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester10"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester11"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -422,45 +542,105 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester12"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester13"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -526,45 +706,105 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester14"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester15"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -603,7 +843,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
           </div>
           <div
             class="class-dropdown generic"
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="MuiBox-root css-8atqhb"
@@ -1069,7 +1309,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
             </div>
           </div>
           <div
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="generic"
@@ -1132,45 +1372,105 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester0"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester8"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester1"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester9"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1236,45 +1536,105 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester2"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester10"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester11"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1340,45 +1700,105 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester12"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester13"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1444,45 +1864,105 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester14"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester15"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1521,7 +2001,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
           </div>
           <div
             class="class-dropdown generic"
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="MuiBox-root css-8atqhb"
@@ -1987,7 +2467,7 @@ exports[`Four Year Plan Page renders 1`] = `
             </div>
           </div>
           <div
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="generic"
@@ -2050,45 +2530,105 @@ exports[`Four Year Plan Page renders 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester0"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester8"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester1"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester9"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2154,45 +2694,105 @@ exports[`Four Year Plan Page renders 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester2"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester10"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester11"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2258,45 +2858,105 @@ exports[`Four Year Plan Page renders 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester12"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester13"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2362,45 +3022,105 @@ exports[`Four Year Plan Page renders 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester14"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester15"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2439,7 +3159,7 @@ exports[`Four Year Plan Page renders 1`] = `
           </div>
           <div
             class="class-dropdown generic"
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="MuiBox-root css-8atqhb"
@@ -2905,7 +3625,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
             </div>
           </div>
           <div
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="generic"
@@ -2968,45 +3688,105 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester0"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester8"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester1"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester9"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3072,45 +3852,105 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester2"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester10"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester11"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3176,45 +4016,105 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester12"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester13"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3280,45 +4180,105 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester14"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester15"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3357,7 +4317,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
           </div>
           <div
             class="class-dropdown generic"
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="MuiBox-root css-8atqhb"
@@ -3823,7 +4783,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
             </div>
           </div>
           <div
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="generic"
@@ -3886,45 +4846,105 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester0"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester8"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester1"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester9"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3990,45 +5010,105 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester2"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester10"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester3"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester11"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4094,45 +5174,105 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester4"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester12"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester5"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester13"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4198,45 +5338,105 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester6"
                             >
-                              <p>
-                                Fall
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Fall
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester14"
                             >
-                              <p>
-                                Winter
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Winter
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester7"
                             >
-                              <p>
-                                Spring
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Spring
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="semester Semester-root MuiBox-root css-17txp1g"
                               data-testid="semester15"
                             >
-                              <p>
-                                Summer
-                                 (
-                                0
-                                ) 
-                              </p>
+                              <div
+                                class="css-nen11g-MuiStack-root"
+                              >
+                                <div
+                                  class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                >
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                  >
+                                    <p>
+                                      Summer
+                                       (
+                                      0
+                                      ) 
+                                    </p>
+                                  </div>
+                                  <div
+                                    class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4275,7 +5475,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
           </div>
           <div
             class="class-dropdown generic"
-            style="overflow: hidden; clear: both;"
+            style="overflow: hidden; clear: both; padding-top: 1em;"
           >
             <div
               class="MuiBox-root css-8atqhb"

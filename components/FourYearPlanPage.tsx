@@ -676,19 +676,35 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (move !== undefined) {
           undo = true;
           const temp = coursesForRedo;
-          temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
+          temp.push({
+            movedTo: move.movedFrom,
+            movedFrom: move.movedTo,
+            course: move.course
+          });
           setCoursesForRedo(temp);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Undo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Undo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -700,16 +716,28 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
             // was moved to course list
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Redo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Redo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -732,6 +760,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       } else {
         undo = false;
       }
+    }
+
+    function errorBreaks(): JSX.Element[] {
+      return error.split("<br>").map((s) => <div>{s}</div>);
     }
 
     return (
@@ -787,7 +819,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 severity={severity}
                 sx={{ width: "100%" }}
               >
-                {`${error}`}
+                {errorBreaks()}
               </Alert>
             </Snackbar>
             <SemesterList

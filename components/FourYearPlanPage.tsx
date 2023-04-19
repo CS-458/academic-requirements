@@ -14,6 +14,7 @@ import {
   warning,
   season,
   sortSemester,
+  UserSavedSchedule,
   movedCourse,
   ScheduleData
 } from "../entities/four_year_plan";
@@ -68,7 +69,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
     });
     const handleClose = (
-      event?: React.SyntheticEvent | Event,
+      _event?: React.SyntheticEvent | Event,
       reason?: string
     ): void => {
       if (reason === "clickaway") {
@@ -184,7 +185,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           const sourceId = +dragSource.split(" ")[1];
           source = tmpSemesters.find((sem) => sem.semesterNumber === sourceId);
           if (source == null) throw new Error("Source semester not found");
-          source.courses = source.courses.filter((c) => c.idCourse !== idCourse);
+          source.courses = source.courses.filter(
+            (c) => c.idCourse !== idCourse
+          );
         } else {
           checkRequirements(course, coursesInMultipleCategories);
         }
@@ -218,7 +221,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         console.log("Calling return drop", idCourse, dragSource);
         // ignore all drops from the course list
         if (dragSource !== "CourseList") {
-          createCourseMoveRecord(-2, idCourse, parseInt(dragSource.split(" ")[1]));
+          createCourseMoveRecord(
+            -2,
+            idCourse,
+            parseInt(dragSource.split(" ")[1])
+          );
           const tempSemesters = deepCopy(semesters);
           const movedFromNum = +dragSource.split(" ")[1];
           const semesterIndex = tempSemesters.findIndex(
@@ -375,11 +382,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       return schedule;
     }
     //  JSON Data for the Courses
-    const info = {
+    const info: UserSavedSchedule["scheduleData"] = {
       Major: userMajor()?.major.id ?? -1,
       Concentration: userMajor()?.concentration.idConcentration ?? -1,
       "Completed Courses": userMajor()?.completed_courses ?? [],
-      schedule: getSemesterDataForSaving()
+      schedule: getSemesterDataForSaving(),
+      usedFourYearPlan: userMajor()?.load_four_year_plan ?? false
     };
 
     //  This function sets the correct warning for the semester
@@ -391,8 +399,15 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (credits <= 11) return warning.Low;
         else if (credits >= 19) return warning.High;
         else return null;
+        // This if statement below adds in a upper limit for the Winter Semester
+      } else if (sem.season === season.Winter) {
+        if (credits >= 5) return warning.High;
+        else return null;
+        // The Else if below adds in a upper limit for Summer Semester
+      } else if (sem.season === season.Summer) {
+        if (credits >= 13) return warning.High;
+        else return null;
       } else {
-        // TODO: check high number of credits for extra semesters
         if (credits >= 8) return warning.High;
         else return null;
       }
@@ -699,13 +714,21 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }
 
-    function createCourseMoveRecord(semNumber: number, courseId: number, dragSource: number): void {
+    function createCourseMoveRecord(
+      semNumber: number,
+      courseId: number,
+      dragSource: number
+    ): void {
       if (!redo && !undo) {
         setCoursesForRedo([]);
       }
       if (!undo) {
         const temp = coursesMoved;
-        temp.push({ movedTo: semNumber, movedFrom: dragSource, course: courseId });
+        temp.push({
+          movedTo: semNumber,
+          movedFrom: dragSource,
+          course: courseId
+        });
         setCoursesMoved(temp);
       } else {
         undo = false;
@@ -721,6 +744,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
               scheduleData={info}
               setAlertData={throwError}
               semRef={semListRef}
+              defaultName={userMajor()?.schedule_name}
             />
             <ScheduleErrorNotification errors={savedErrors} />
             <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />

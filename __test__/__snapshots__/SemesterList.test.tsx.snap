@@ -26,27 +26,31 @@ exports[`Render Semester List 1`] = `
                     class="MuiBox-root css-6um5jb"
                   >
                     <div>
-                      <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                      <span
+                        aria-label="Must be logged in to save"
+                        class=""
+                        data-mui-internal-clone-element="true"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                        <button
+                          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="saveButton"
+                          disabled=""
+                          tabindex="-1"
+                          type="button"
                         >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="SaveIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                            />
+                          </svg>
+                        </button>
+                      </span>
                       <button
                         aria-label="Save as PDF"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -73,13 +77,14 @@ exports[`Render Semester List 1`] = `
                         aria-label="Save as PNG"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
+                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SavePng"
+                          data-testid="CollectionsIcon"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -122,46 +127,60 @@ exports[`Render Semester List 1`] = `
                         </span>
                       </span>
                     </button>
-                    <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="undoButton"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
+                    <span
+                      aria-label="Undo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="UndoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="undoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
                       >
-                        <path
-                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="redoButton"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="UndoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                    <span
+                      aria-label="Redo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="RedoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="redoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
                       >
-                        <path
-                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="RedoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
                     <button
+                      aria-label="Reload initial schedule"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
                     >
@@ -741,7 +760,7 @@ exports[`Render Semester List 1`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -749,8 +768,8 @@ exports[`Render Semester List 1`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="false"
-                              for=":r4:"
-                              id=":r4:-label"
+                              for=":r8:"
+                              id=":r8:-label"
                             >
                               Course Category
                             </label>
@@ -764,7 +783,7 @@ exports[`Render Semester List 1`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r4:"
+                                id=":r8:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"
@@ -886,7 +905,7 @@ exports[`Render Semester List 1`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirement-root"
                             data-testid="requirement"
                           >
                             <div
@@ -983,27 +1002,31 @@ exports[`Render Semester List 2`] = `
                     class="MuiBox-root css-6um5jb"
                   >
                     <div>
-                      <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                      <span
+                        aria-label="Must be logged in to save"
+                        class=""
+                        data-mui-internal-clone-element="true"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                        <button
+                          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="saveButton"
+                          disabled=""
+                          tabindex="-1"
+                          type="button"
                         >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="SaveIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                            />
+                          </svg>
+                        </button>
+                      </span>
                       <button
                         aria-label="Save as PDF"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -1030,13 +1053,14 @@ exports[`Render Semester List 2`] = `
                         aria-label="Save as PNG"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
+                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SavePng"
+                          data-testid="CollectionsIcon"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -1079,48 +1103,62 @@ exports[`Render Semester List 2`] = `
                         </span>
                       </span>
                     </button>
-                    <button
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="undoButton"
-                      tabindex="0"
-                      type="button"
+                    <span
+                      aria-label="Undo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="UndoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="undoButton"
+                        tabindex="0"
+                        type="button"
                       >
-                        <path
-                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="UndoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                         />
-                      </svg>
-                      <span
-                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                      />
-                    </button>
-                    <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="redoButton"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
+                      </button>
+                    </span>
+                    <span
+                      aria-label="Redo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="RedoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="redoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
                       >
-                        <path
-                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="RedoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
                     <button
+                      aria-label="Reload initial schedule"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
                     >
@@ -1216,7 +1254,7 @@ exports[`Render Semester List 2`] = `
                                         Low
                                       </p>
                                       <div
-                                        class="CourseText"
+                                        class="Course-root CourseText"
                                         data-testid="course"
                                         draggable="true"
                                         style="opacity: 1;"
@@ -1723,7 +1761,7 @@ exports[`Render Semester List 2`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1731,8 +1769,8 @@ exports[`Render Semester List 2`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="true"
-                              for=":r4:"
-                              id=":r4:-label"
+                              for=":r8:"
+                              id=":r8:-label"
                             >
                               Course Category
                             </label>
@@ -1746,7 +1784,7 @@ exports[`Render Semester List 2`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r4:"
+                                id=":r8:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"
@@ -1844,7 +1882,7 @@ exports[`Render Semester List 2`] = `
                     data-testid="courseListDropTarget"
                   >
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1866,7 +1904,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1888,7 +1926,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1910,7 +1948,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1932,7 +1970,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1954,7 +1992,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1976,7 +2014,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -1998,7 +2036,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2020,7 +2058,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2042,7 +2080,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2064,7 +2102,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2086,7 +2124,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2108,7 +2146,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2130,7 +2168,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2152,7 +2190,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2174,7 +2212,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2196,7 +2234,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2218,7 +2256,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2240,7 +2278,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2262,7 +2300,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2284,7 +2322,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2306,7 +2344,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2328,7 +2366,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2350,7 +2388,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2372,7 +2410,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2394,7 +2432,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2416,7 +2454,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2438,7 +2476,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2460,7 +2498,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2482,7 +2520,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2504,7 +2542,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2526,7 +2564,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2548,7 +2586,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2570,7 +2608,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2592,7 +2630,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2614,7 +2652,7 @@ exports[`Render Semester List 2`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -2683,7 +2721,7 @@ exports[`Render Semester List 2`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirement-root"
                             data-testid="requirement"
                           >
                             <div
@@ -2740,6 +2778,165 @@ exports[`Render Semester List 2`] = `
                             class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                           />
                           <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
+                              >
+                                CS CSSSD
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
+                              >
+                                CS Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
+                              >
+                                Math Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
                             <p
                               class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                             >
@@ -2749,11 +2946,13 @@ exports[`Render Semester List 2`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -2800,11 +2999,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -2851,11 +3052,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -2902,11 +3105,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -2953,11 +3158,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -3004,11 +3211,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -3055,11 +3264,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -3106,11 +3317,13 @@ exports[`Render Semester List 2`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -3121,7 +3334,7 @@ exports[`Render Semester List 2`] = `
                                   class="MuiBox-root css-poat16"
                                 >
                                   <span
-                                    aria-valuenow="100"
+                                    aria-valuenow="0"
                                     class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                                     role="progressbar"
                                     style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -3137,7 +3350,7 @@ exports[`Render Semester List 2`] = `
                                         fill="none"
                                         r="20.2"
                                         stroke-width="3.6"
-                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                       />
                                     </svg>
                                   </span>
@@ -3148,7 +3361,7 @@ exports[`Render Semester List 2`] = `
                                       class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                       data-testid="reqPercent"
                                     >
-                                      100
+                                      0
                                     </div>
                                   </div>
                                 </div>
@@ -3196,27 +3409,31 @@ exports[`Render Semester List 3`] = `
                     class="MuiBox-root css-6um5jb"
                   >
                     <div>
-                      <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                      <span
+                        aria-label="Must be logged in to save"
+                        class=""
+                        data-mui-internal-clone-element="true"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                        <button
+                          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="saveButton"
+                          disabled=""
+                          tabindex="-1"
+                          type="button"
                         >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="SaveIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                            />
+                          </svg>
+                        </button>
+                      </span>
                       <button
                         aria-label="Save as PDF"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -3243,13 +3460,14 @@ exports[`Render Semester List 3`] = `
                         aria-label="Save as PNG"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
+                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SavePng"
+                          data-testid="CollectionsIcon"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -3292,48 +3510,62 @@ exports[`Render Semester List 3`] = `
                         </span>
                       </span>
                     </button>
-                    <button
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="undoButton"
-                      tabindex="0"
-                      type="button"
+                    <span
+                      aria-label="Undo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="UndoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="undoButton"
+                        tabindex="0"
+                        type="button"
                       >
-                        <path
-                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="UndoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                         />
-                      </svg>
-                      <span
-                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                      />
-                    </button>
-                    <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="redoButton"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
+                      </button>
+                    </span>
+                    <span
+                      aria-label="Redo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="RedoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="redoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
                       >
-                        <path
-                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="RedoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
                     <button
+                      aria-label="Reload initial schedule"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
                     >
@@ -3451,7 +3683,7 @@ exports[`Render Semester List 3`] = `
                                         Low
                                       </p>
                                       <div
-                                        class="CourseText"
+                                        class="Course-root CourseText"
                                         data-testid="course"
                                         draggable="true"
                                         style="opacity: 1;"
@@ -3936,7 +4168,7 @@ exports[`Render Semester List 3`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -3944,8 +4176,8 @@ exports[`Render Semester List 3`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="true"
-                              for=":r4:"
-                              id=":r4:-label"
+                              for=":r8:"
+                              id=":r8:-label"
                             >
                               Course Category
                             </label>
@@ -3959,7 +4191,7 @@ exports[`Render Semester List 3`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r4:"
+                                id=":r8:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"
@@ -4057,7 +4289,7 @@ exports[`Render Semester List 3`] = `
                     data-testid="courseListDropTarget"
                   >
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4079,7 +4311,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4101,7 +4333,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4123,7 +4355,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4145,7 +4377,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4167,7 +4399,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4189,7 +4421,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4211,7 +4443,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4233,7 +4465,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4255,7 +4487,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4277,7 +4509,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4299,7 +4531,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4321,7 +4553,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4343,7 +4575,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4365,7 +4597,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4387,7 +4619,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4409,7 +4641,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4431,7 +4663,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4453,7 +4685,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4475,7 +4707,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4497,7 +4729,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4519,7 +4751,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4541,7 +4773,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4563,7 +4795,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4585,7 +4817,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4607,7 +4839,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4629,7 +4861,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4651,7 +4883,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4673,7 +4905,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4695,7 +4927,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4717,7 +4949,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4739,7 +4971,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4761,7 +4993,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4783,7 +5015,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4805,7 +5037,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4827,7 +5059,7 @@ exports[`Render Semester List 3`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -4896,7 +5128,7 @@ exports[`Render Semester List 3`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirement-root"
                             data-testid="requirement"
                           >
                             <div
@@ -4953,6 +5185,165 @@ exports[`Render Semester List 3`] = `
                             class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                           />
                           <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
+                              >
+                                CS CSSSD
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
+                              >
+                                CS Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
+                              >
+                                Math Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
                             <p
                               class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                             >
@@ -4962,11 +5353,13 @@ exports[`Render Semester List 3`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -5013,11 +5406,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -5064,11 +5459,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -5115,11 +5512,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -5166,11 +5565,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -5217,11 +5618,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -5268,11 +5671,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -5319,11 +5724,13 @@ exports[`Render Semester List 3`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -5334,7 +5741,7 @@ exports[`Render Semester List 3`] = `
                                   class="MuiBox-root css-poat16"
                                 >
                                   <span
-                                    aria-valuenow="100"
+                                    aria-valuenow="0"
                                     class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
                                     role="progressbar"
                                     style="width: 40px; height: 40px; transform: rotate(-90deg);"
@@ -5350,7 +5757,7 @@ exports[`Render Semester List 3`] = `
                                         fill="none"
                                         r="20.2"
                                         stroke-width="3.6"
-                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
                                       />
                                     </svg>
                                   </span>
@@ -5361,7 +5768,7 @@ exports[`Render Semester List 3`] = `
                                       class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
                                       data-testid="reqPercent"
                                     >
-                                      100
+                                      0
                                     </div>
                                   </div>
                                 </div>
@@ -5409,27 +5816,31 @@ exports[`Render Semester List 4`] = `
                     class="MuiBox-root css-6um5jb"
                   >
                     <div>
-                      <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                        data-testid="saveButton"
-                        tabindex="0"
-                        type="button"
+                      <span
+                        aria-label="Must be logged in to save"
+                        class=""
+                        data-mui-internal-clone-element="true"
                       >
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SaveIcon"
-                          focusable="false"
-                          viewBox="0 0 24 24"
+                        <button
+                          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="saveButton"
+                          disabled=""
+                          tabindex="-1"
+                          type="button"
                         >
-                          <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                          />
-                        </svg>
-                        <span
-                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                        />
-                      </button>
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="SaveIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                            />
+                          </svg>
+                        </button>
+                      </span>
                       <button
                         aria-label="Save as PDF"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -5456,13 +5867,14 @@ exports[`Render Semester List 4`] = `
                         aria-label="Save as PNG"
                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
+                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="SavePng"
+                          data-testid="CollectionsIcon"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -5505,48 +5917,62 @@ exports[`Render Semester List 4`] = `
                         </span>
                       </span>
                     </button>
-                    <button
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="undoButton"
-                      tabindex="0"
-                      type="button"
+                    <span
+                      aria-label="Undo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="UndoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="undoButton"
+                        tabindex="0"
+                        type="button"
                       >
-                        <path
-                          d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="UndoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                         />
-                      </svg>
-                      <span
-                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                      />
-                    </button>
-                    <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="redoButton"
-                      disabled=""
-                      tabindex="-1"
-                      type="button"
+                      </button>
+                    </span>
+                    <span
+                      aria-label="Redo"
+                      class=""
+                      data-mui-internal-clone-element="true"
                     >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                        data-testid="RedoIcon"
-                        focusable="false"
-                        viewBox="0 0 24 24"
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="redoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
                       >
-                        <path
-                          d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="RedoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
                     <button
+                      aria-label="Reload initial schedule"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
                     >
@@ -6126,7 +6552,7 @@ exports[`Render Semester List 4`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root Mui-focused MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -6134,8 +6560,8 @@ exports[`Render Semester List 4`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-focused MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="true"
-                              for=":r4:"
-                              id=":r4:-label"
+                              for=":r8:"
+                              id=":r8:-label"
                             >
                               Course Category
                             </label>
@@ -6149,7 +6575,7 @@ exports[`Render Semester List 4`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r4:"
+                                id=":r8:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"
@@ -6247,7 +6673,7 @@ exports[`Render Semester List 4`] = `
                     data-testid="courseListDropTarget"
                   >
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6269,7 +6695,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6291,7 +6717,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6313,7 +6739,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6335,7 +6761,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6357,7 +6783,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6379,7 +6805,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6401,7 +6827,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6423,7 +6849,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6445,7 +6871,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6467,7 +6893,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6489,7 +6915,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6511,7 +6937,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6533,7 +6959,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6555,7 +6981,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6577,7 +7003,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6599,7 +7025,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6621,7 +7047,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6643,7 +7069,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6665,7 +7091,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6687,7 +7113,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6709,7 +7135,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6731,7 +7157,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6753,7 +7179,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6775,7 +7201,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6797,7 +7223,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6819,7 +7245,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6841,7 +7267,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6863,7 +7289,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6885,7 +7311,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6907,7 +7333,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6929,7 +7355,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6951,7 +7377,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6973,7 +7399,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -6995,7 +7421,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -7017,7 +7443,7 @@ exports[`Render Semester List 4`] = `
                       </a>
                     </div>
                     <div
-                      class="CourseText"
+                      class="Course-root CourseText"
                       data-testid="course"
                       draggable="true"
                       style="opacity: 1;"
@@ -7086,7 +7512,7 @@ exports[`Render Semester List 4`] = `
                           class="MuiBox-root css-9sn6pt"
                         >
                           <div
-                            class="RequirementText"
+                            class="RequirementText Requirement-root"
                             data-testid="requirement"
                           >
                             <div
@@ -7143,6 +7569,165 @@ exports[`Render Semester List 4`] = `
                             class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                           />
                           <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS CSSSD"
+                              >
+                                CS CSSSD
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
+                              >
+                                CS Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
+                              >
+                                Math Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
                             <p
                               class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
                             >
@@ -7152,11 +7737,13 @@ exports[`Render Semester List 4`] = `
                               class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                             />
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -7203,11 +7790,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -7254,11 +7843,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -7305,11 +7896,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -7356,11 +7949,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -7407,11 +8002,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -7458,11 +8055,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -7509,11 +8108,13 @@ exports[`Render Semester List 4`] = `
                           </div>
                           <div>
                             <div
-                              class="RequirementText"
+                              class="RequirementText Requirement-root"
                               data-testid="requirement"
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -7590,27 +8191,31 @@ exports[`Testing adding and Removing a year 1`] = `
               class="MuiBox-root css-6um5jb"
             >
               <div>
-                <button
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                  data-testid="saveButton"
-                  tabindex="0"
-                  type="button"
+                <span
+                  aria-label="Must be logged in to save"
+                  class=""
+                  data-mui-internal-clone-element="true"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SaveIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
+                  <button
+                    class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="saveButton"
+                    disabled=""
+                    tabindex="-1"
+                    type="button"
                   >
-                    <path
-                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                    />
-                  </svg>
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                  />
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="SaveIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                      />
+                    </svg>
+                  </button>
+                </span>
                 <button
                   aria-label="Save as PDF"
                   class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -7637,13 +8242,14 @@ exports[`Testing adding and Removing a year 1`] = `
                   aria-label="Save as PNG"
                   class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
+                  data-testid="SavePng"
                   tabindex="0"
                   type="button"
                 >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SavePng"
+                    data-testid="CollectionsIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -7686,46 +8292,60 @@ exports[`Testing adding and Removing a year 1`] = `
                   </span>
                 </span>
               </button>
-              <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="undoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
+              <span
+                aria-label="Undo"
+                class=""
+                data-mui-internal-clone-element="true"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="UndoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="undoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
-                  />
-                </svg>
-              </button>
-              <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="redoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="UndoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                    />
+                  </svg>
+                </button>
+              </span>
+              <span
+                aria-label="Redo"
+                class=""
+                data-mui-internal-clone-element="true"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="RedoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="redoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="RedoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                    />
+                  </svg>
+                </button>
+              </span>
               <button
+                aria-label="Reload initial schedule"
                 class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-mui-internal-clone-element="true"
                 tabindex="0"
                 type="button"
               >
@@ -8305,7 +8925,7 @@ exports[`Testing adding and Removing a year 1`] = `
                   class="MuiBox-root css-19midj6"
                 >
                   <div
-                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                   >
                     <div
                       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -8313,8 +8933,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rg:"
-                        id=":rg:-label"
+                        for=":r17:"
+                        id=":r17:-label"
                       >
                         Course Category
                       </label>
@@ -8328,7 +8948,7 @@ exports[`Testing adding and Removing a year 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rg:"
+                          id=":r17:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -8450,7 +9070,7 @@ exports[`Testing adding and Removing a year 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirement-root"
                       data-testid="requirement"
                     >
                       <div
@@ -8508,11 +9128,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -8559,11 +9181,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -8610,11 +9234,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -8669,11 +9295,13 @@ exports[`Testing adding and Removing a year 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -8720,11 +9348,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -8771,11 +9401,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -8822,11 +9454,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -8873,11 +9507,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -8924,11 +9560,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -8975,11 +9613,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -9026,11 +9666,13 @@ exports[`Testing adding and Removing a year 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>
@@ -9104,27 +9746,31 @@ exports[`Try removing a year that has a course 1`] = `
               class="MuiBox-root css-6um5jb"
             >
               <div>
-                <button
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                  data-testid="saveButton"
-                  tabindex="0"
-                  type="button"
+                <span
+                  aria-label="Must be logged in to save"
+                  class=""
+                  data-mui-internal-clone-element="true"
                 >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SaveIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
+                  <button
+                    class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                    data-testid="saveButton"
+                    disabled=""
+                    tabindex="-1"
+                    type="button"
                   >
-                    <path
-                      d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
-                    />
-                  </svg>
-                  <span
-                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                  />
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="SaveIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                      />
+                    </svg>
+                  </button>
+                </span>
                 <button
                   aria-label="Save as PDF"
                   class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
@@ -9151,13 +9797,14 @@ exports[`Try removing a year that has a course 1`] = `
                   aria-label="Save as PNG"
                   class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
+                  data-testid="SavePng"
                   tabindex="0"
                   type="button"
                 >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="SavePng"
+                    data-testid="CollectionsIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -9200,46 +9847,60 @@ exports[`Try removing a year that has a course 1`] = `
                   </span>
                 </span>
               </button>
-              <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="undoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
+              <span
+                aria-label="Undo"
+                class=""
+                data-mui-internal-clone-element="true"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="UndoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="undoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
-                  />
-                </svg>
-              </button>
-              <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                data-testid="redoButton"
-                disabled=""
-                tabindex="-1"
-                type="button"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="UndoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                    />
+                  </svg>
+                </button>
+              </span>
+              <span
+                aria-label="Redo"
+                class=""
+                data-mui-internal-clone-element="true"
               >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                  data-testid="RedoIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
+                <button
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="redoButton"
+                  disabled=""
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="RedoIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                    />
+                  </svg>
+                </button>
+              </span>
               <button
+                aria-label="Reload initial schedule"
                 class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                data-mui-internal-clone-element="true"
                 tabindex="0"
                 type="button"
               >
@@ -9819,7 +10480,7 @@ exports[`Try removing a year that has a course 1`] = `
                   class="MuiBox-root css-19midj6"
                 >
                   <div
-                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                    class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                   >
                     <div
                       class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -9827,8 +10488,8 @@ exports[`Try removing a year that has a course 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rm:"
-                        id=":rm:-label"
+                        for=":r1s:"
+                        id=":r1s:-label"
                       >
                         Course Category
                       </label>
@@ -9842,7 +10503,7 @@ exports[`Try removing a year that has a course 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rm:"
+                          id=":r1s:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -9964,7 +10625,7 @@ exports[`Try removing a year that has a course 1`] = `
                     class="MuiBox-root css-9sn6pt"
                   >
                     <div
-                      class="RequirementText"
+                      class="RequirementText Requirement-root"
                       data-testid="requirement"
                     >
                       <div
@@ -10022,11 +10683,13 @@ exports[`Try removing a year that has a course 1`] = `
                     />
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS CSSSD"
                         >
                           CS CSSSD
                         </div>
@@ -10073,11 +10736,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CS Core"
                         >
                           CS Core
                         </div>
@@ -10124,11 +10789,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-Math Core"
                         >
                           Math Core
                         </div>
@@ -10183,11 +10850,13 @@ exports[`Try removing a year that has a course 1`] = `
                         class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
                       />
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-GLP"
                         >
                           GLP
                         </div>
@@ -10234,11 +10903,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-RES"
                         >
                           RES
                         </div>
@@ -10285,11 +10956,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-COMSK"
                         >
                           COMSK
                         </div>
@@ -10336,11 +11009,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARNS"
                         >
                           ARNS
                         </div>
@@ -10387,11 +11062,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-ARHU"
                         >
                           ARHU
                         </div>
@@ -10438,11 +11115,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SBSCI"
                         >
                           SBSCI
                         </div>
@@ -10489,11 +11168,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-CDI"
                         >
                           CDI
                         </div>
@@ -10540,11 +11221,13 @@ exports[`Try removing a year that has a course 1`] = `
                     </div>
                     <div>
                       <div
-                        class="RequirementText"
+                        class="RequirementText Requirement-root"
                         data-testid="requirement"
                       >
                         <div
                           class="requirementName"
+                          data-mui-internal-clone-element="true"
+                          data-testid="requirementName-SRER"
                         >
                           SRER
                         </div>

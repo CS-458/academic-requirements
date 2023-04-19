@@ -1,7 +1,5 @@
-/*
-  Nick Raffel
-  This is the modal for saving the schedule
-*/
+// Nick Raffel
+// This is the modal for saving the schedule
 
 import React, { useEffect } from "react";
 import {
@@ -101,11 +99,14 @@ export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
   semRef: React.RefObject<React.ReactInstance>;
+  defaultName?: string;
 }): any {
   const [open, setOpen] = React.useState(false);
 
   // sets the schdeule name if there is a custom name
-  const [scheduleName, setScheduleName] = React.useState(getDateTime());
+  const [scheduleName, setScheduleName] = React.useState(
+    props.defaultName ?? getDateTime()
+  );
 
   // Function that sets the alert
   function throwAlert(error: string, errorSeverity: string): void {
@@ -129,7 +130,7 @@ export default function FormDialog(props: {
   async function exportSchedule(): Promise<void> {
     let name = scheduleName;
     // if the name space is empty/null, or only contains white space
-    if (scheduleName === null || scheduleName.replace(/\s/g, "").length === 0) {
+    if (scheduleName.replace(/\s/g, "").length === 0) {
       name = getDateTime();
 
       setScheduleName(name);
@@ -188,15 +189,23 @@ export default function FormDialog(props: {
     });
   }, []);
 
+  const saveTooltip =
+    token === undefined ? "Must be logged in to save" : "Save";
+
   return (
     <div>
-      <IconButton
-        onClick={handleClickOpen}
-        data-testid="saveButton"
-        color="primary"
-      >
-        <SaveIcon />
-      </IconButton>
+      <Tooltip title={saveTooltip} placement="right" arrow>
+        <span>
+          <IconButton
+            onClick={handleClickOpen}
+            disabled={token === undefined}
+            data-testid="saveButton"
+            color="primary"
+          >
+            <SaveIcon />
+          </IconButton>
+        </span>
+      </Tooltip>
       <Dialog open={open} onClose={handleClose} data-testid="saveModal">
         <DialogTitle>Save Schedule</DialogTitle>
         <DialogContent>

@@ -22,7 +22,6 @@ export default function BoxSx(props: {
       >
         {props.children}
       </Box>
-
     </div>
   );
 }

@@ -1,0 +1,2147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Load saved schedule 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="generic"
+      >
+        <div
+          class="screen"
+        >
+          <div
+            class="page"
+          >
+            <div
+              class="generic"
+            >
+              <div
+                class="drag-drop"
+              >
+                <div>
+                  <div
+                    class="MuiBox-root css-6um5jb"
+                  >
+                    <div>
+                      <span
+                        aria-label="Save"
+                        class=""
+                        data-mui-internal-clone-element="true"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="saveButton"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="SaveIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </span>
+                      <button
+                        aria-label="Save as PDF"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-mui-internal-clone-element="true"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SavePdf"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                      <button
+                        aria-label="Save as PNG"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        data-mui-internal-clone-element="true"
+                        data-testid="SavePng"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="CollectionsIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4 2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                    <button
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      data-testid="notificationButton"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <span
+                        aria-label="You Have 2 Errors"
+                        class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                        data-mui-internal-clone-element="true"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="NotificationImportantIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                        >
+                          2
+                        </span>
+                      </span>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                    <span
+                      aria-label="Undo"
+                      class=""
+                      data-mui-internal-clone-element="true"
+                    >
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="undoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="UndoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                    <span
+                      aria-label="Redo"
+                      class=""
+                      data-mui-internal-clone-element="true"
+                    >
+                      <button
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="redoButton"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="RedoIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                    <button
+                      aria-label="Reload initial schedule"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      data-mui-internal-clone-element="true"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="reloadButton"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        />
+                      </svg>
+                      <span
+                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style="overflow: hidden; clear: both;"
+                >
+                  <div
+                    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter css-1t20nyk-MuiSnackbar-root"
+                    data-testid="snackbar"
+                    role="presentation"
+                  >
+                    <div
+                      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 MuiAlert-root MuiAlert-filledError MuiAlert-filled css-1i9p219-MuiPaper-root-MuiAlert-root"
+                      direction="up"
+                      role="alert"
+                      style="opacity: 1; transform: scale(1, 1);"
+                    >
+                      <div
+                        class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                          data-testid="ErrorOutlineIcon"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
+                      >
+                        MATH-157 requires: MATH-151 or MATH-153 or MATH-156&lt;br&gt;CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                      </div>
+                      <div
+                        class="MuiAlert-action css-ki1hdl-MuiAlert-action"
+                      >
+                        <button
+                          aria-label="Close"
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                          tabindex="0"
+                          title="Close"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                            data-testid="CloseIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="generic"
+                    style="overflow-y: auto; height: 100%;"
+                  >
+                    <div
+                      class="printed MuiBox-root css-0"
+                    >
+                      <div
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-odo8ha-MuiPaper-root-MuiAccordion-root"
+                      >
+                        <div>
+                          <div
+                            aria-expanded="true"
+                            class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
+                          >
+                            <div
+                              class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              1
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="ArrowForwardIosSharpIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            >
+                              <div
+                                class="MuiAccordion-region"
+                                role="region"
+                              >
+                                <div
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
+                                >
+                                  <div
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  >
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester5"
+                                    >
+                                      <p>
+                                        Fall
+                                         (
+                                        10
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        144
+                                        <br />
+                                        Computer Science I
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        COMST
+                                        -
+                                        100
+                                        <br />
+                                        Fundamentals of Speech
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=100&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        ENGL
+                                        -
+                                        101
+                                        <br />
+                                        Composition 1
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester6"
+                                    >
+                                      <p>
+                                        Winter
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester7"
+                                    >
+                                      <p>
+                                        Spring
+                                         (
+                                        17
+                                        ) 
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        145
+                                        <br />
+                                        Computer Science II
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=145&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        ENGL
+                                        -
+                                        102
+                                        <br />
+                                        Composition 2
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=102&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText CourseWarningRed"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        MATH
+                                        -
+                                        157
+                                        <br />
+                                        Calculus and Analytic Geometry II
+                                        <br />
+                                        Credits: 
+                                        5
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=157&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        MATH
+                                        -
+                                        156
+                                        <br />
+                                        Calculus and Analytic Geometry I
+                                        <br />
+                                        Credits: 
+                                        5
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester8"
+                                    >
+                                      <p>
+                                        Summer
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
+                      >
+                        <div>
+                          <div
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
+                          >
+                            <div
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              2
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="ArrowForwardIosSharpIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            >
+                              <div
+                                class="MuiAccordion-region"
+                                role="region"
+                              >
+                                <div
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
+                                >
+                                  <div
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  >
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester9"
+                                    >
+                                      <p>
+                                        Fall
+                                         (
+                                        10
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        244
+                                        <br />
+                                        Data Structures
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=244&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        248
+                                        <br />
+                                        Web and Internet Programming
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=248&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        MATH
+                                        -
+                                        275
+                                        <br />
+                                        Linear Algebra
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester10"
+                                    >
+                                      <p>
+                                        Winter
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester11"
+                                    >
+                                      <p>
+                                        Spring
+                                         (
+                                        10
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        254
+                                        <br />
+                                        Algorithm Design and Analysis
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=254&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        324
+                                        <br />
+                                        Database Systems Manipulation and Design
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=324&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        MATH
+                                        -
+                                        270
+                                        <br />
+                                        Discrete Mathematics
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=270&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        290
+                                        <br />
+                                        Professional Seminar
+                                        <br />
+                                        Credits: 
+                                        1
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=290&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester12"
+                                    >
+                                      <p>
+                                        Summer
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
+                      >
+                        <div>
+                          <div
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
+                          >
+                            <div
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              3
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="ArrowForwardIosSharpIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            >
+                              <div
+                                class="MuiAccordion-region"
+                                role="region"
+                              >
+                                <div
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
+                                >
+                                  <div
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  >
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester13"
+                                    >
+                                      <p>
+                                        Fall
+                                         (
+                                        9
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText CourseWarningRed"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        343
+                                        <br />
+                                        Mathematical Foundations of Computer Graphics
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=343&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        ICT
+                                        -
+                                        215
+                                        <br />
+                                        Cybertechnology Ethics
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=215&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        364
+                                        <br />
+                                        Mobile Development in Android
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=364&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester14"
+                                    >
+                                      <p>
+                                        Winter
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester15"
+                                    >
+                                      <p>
+                                        Spring
+                                         (
+                                        6
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        358
+                                        <br />
+                                        Software Engineering Principles
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=358&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        404
+                                        <br />
+                                        Advanced Web and Internet Programming
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=404&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester16"
+                                    >
+                                      <p>
+                                        Summer
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
+                      >
+                        <div>
+                          <div
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
+                          >
+                            <div
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              4
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="ArrowForwardIosSharpIcon"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            >
+                              <div
+                                class="MuiAccordion-region"
+                                role="region"
+                              >
+                                <div
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
+                                >
+                                  <div
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  >
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester17"
+                                    >
+                                      <p>
+                                        Fall
+                                         (
+                                        8
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        458
+                                        <br />
+                                        Software engineering Practicum
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        441
+                                        <br />
+                                        Computer Architecture
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=441&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester18"
+                                    >
+                                      <p>
+                                        Winter
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      data-testid="semester19"
+                                    >
+                                      <p>
+                                        Spring
+                                         (
+                                        7
+                                        ) 
+                                        Low
+                                      </p>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        458
+                                        <br />
+                                        Software engineering Practicum
+                                        <br />
+                                        Credits: 
+                                        4
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                      <div
+                                        class="Course-root CourseText"
+                                        data-testid="course"
+                                        draggable="true"
+                                        style="opacity: 1;"
+                                      >
+                                        CS
+                                        -
+                                        442
+                                        <br />
+                                        Operating Systems
+                                        <br />
+                                        Credits: 
+                                        3
+                                        <br />
+                                        <a
+                                          href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=442&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                          target="_blank"
+                                        >
+                                          Description
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester20"
+                                    >
+                                      <p>
+                                        Summer
+                                         (
+                                        0
+                                        ) 
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-48anut-MuiStack-root"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        data-testid="addButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        Add Year
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                      <button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                        data-testid="removeButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        Remove Year
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="class-dropdown generic"
+                  style="overflow: hidden; clear: both;"
+                >
+                  <div
+                    class="MuiBox-root css-8atqhb"
+                  >
+                    <div
+                      class="MuiBox-root css-1gsv261"
+                    >
+                      <div
+                        class="MuiTabs-root css-1ujnqem-MuiTabs-root"
+                      >
+                        <div
+                          class="MuiTabs-scrollableX MuiTabs-hideScrollbar css-agdkjh-MuiTabs-scrollbarSize"
+                          style="width: 99px; height: 99px; position: absolute; top: -9999px; overflow: scroll;"
+                        />
+                        <div
+                          class="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableX css-69z67c-MuiTabs-scroller"
+                          style="margin-bottom: 0px;"
+                        >
+                          <div
+                            aria-label="filter tab options"
+                            class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+                            role="tablist"
+                          >
+                            <button
+                              aria-controls="simple-tabpanel-0"
+                              aria-selected="true"
+                              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                              data-testid="category-tab"
+                              id="simple-tab-0"
+                              role="tab"
+                              tabindex="0"
+                              type="button"
+                            >
+                              Category
+                              <span
+                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                              />
+                            </button>
+                            <button
+                              aria-controls="simple-tabpanel-1"
+                              aria-selected="false"
+                              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                              data-testid="subjectnumber-tab"
+                              id="simple-tab-1"
+                              role="tab"
+                              tabindex="-1"
+                              type="button"
+                            >
+                              Subject/Number
+                              <span
+                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                              />
+                            </button>
+                            <button
+                              aria-controls="simple-tabpanel-2"
+                              aria-selected="false"
+                              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                              data-testid="name-tab"
+                              id="simple-tab-2"
+                              role="tab"
+                              tabindex="-1"
+                              type="button"
+                            >
+                              Name
+                              <span
+                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                              />
+                            </button>
+                            <button
+                              aria-controls="simple-tabpanel-3"
+                              aria-selected="false"
+                              class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1h9z7r5-MuiButtonBase-root-MuiTab-root"
+                              data-testid="credit-tab"
+                              id="simple-tab-3"
+                              role="tab"
+                              tabindex="-1"
+                              type="button"
+                            >
+                              Credit
+                              <span
+                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                              />
+                            </button>
+                          </div>
+                          <span
+                            class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+                            style="left: 0px; width: 0px;"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-labelledby="simple-tab-0"
+                      data-testid="category-panel"
+                      id="simple-tabpanel-0"
+                      role="tabpanel"
+                    >
+                      <div
+                        class="MuiBox-root css-19midj6"
+                      >
+                        <div
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
+                        >
+                          <div
+                            class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                          >
+                            <label
+                              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
+                              data-shrink="false"
+                              for=":r8:"
+                              id=":r8:-label"
+                            >
+                              Course Category
+                            </label>
+                            <div
+                              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-expanded="false"
+                                aria-invalid="false"
+                                autocapitalize="none"
+                                autocomplete="off"
+                                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
+                                id=":r8:"
+                                role="combobox"
+                                spellcheck="false"
+                                type="text"
+                                value=""
+                              />
+                              <div
+                                class="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+                              >
+                                <button
+                                  aria-label="Open"
+                                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"
+                                  tabindex="-1"
+                                  title="Open"
+                                  type="button"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                    data-testid="ArrowDropDownIcon"
+                                    focusable="false"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      d="M7 10l5 5 5-5z"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                  />
+                                </button>
+                              </div>
+                              <fieldset
+                                aria-hidden="true"
+                                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                              >
+                                <legend
+                                  class="css-yjsfm1"
+                                >
+                                  <span>
+                                    Course Category
+                                  </span>
+                                </legend>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-labelledby="simple-tab-1"
+                      data-testid="subjectnumber-panel"
+                      hidden=""
+                      id="simple-tabpanel-1"
+                      role="tabpanel"
+                    />
+                    <div
+                      aria-labelledby="simple-tab-2"
+                      data-testid="name-panel"
+                      hidden=""
+                      id="simple-tabpanel-2"
+                      role="tabpanel"
+                    />
+                    <div
+                      aria-labelledby="simple-tab-3"
+                      data-testid="credit-panel"
+                      hidden=""
+                      id="simple-tabpanel-3"
+                      role="tabpanel"
+                    />
+                  </div>
+                  <div
+                    class="MuiBox-root css-bqc3e2"
+                    data-testid="courseListDropTarget"
+                  />
+                </div>
+                <div
+                  class="MuiBox-root css-k008qs"
+                >
+                  <div
+                    class="MuiDrawer-root MuiDrawer-docked css-1txhcbl-MuiDrawer-docked"
+                  >
+                    <div
+                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorRight MuiDrawer-paperAnchorDockedRight css-18sg6k4-MuiPaper-root-MuiDrawer-paper"
+                    >
+                      <div
+                        class="css-15lei78"
+                      />
+                      <div
+                        class="css-ak1ss8"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                          data-testid="openDrawer"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="ChevronLeftIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        aria-labelledby="simple-tab-0"
+                        id="simple-tabpanel-0"
+                        role="tabpanel"
+                      >
+                        <div
+                          class="MuiBox-root css-9sn6pt"
+                        >
+                          <div
+                            class="RequirementText Requirement-root"
+                            data-testid="requirement"
+                          >
+                            <div
+                              class="requirementName"
+                            >
+                              Credits
+                            </div>
+                            <div
+                              class="percentage"
+                            >
+                              <div
+                                class="MuiBox-root css-poat16"
+                              >
+                                <span
+                                  aria-valuenow="64"
+                                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                  role="progressbar"
+                                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                >
+                                  <svg
+                                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                    viewBox="22 22 44 44"
+                                  >
+                                    <circle
+                                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                      cx="44"
+                                      cy="44"
+                                      fill="none"
+                                      r="20.2"
+                                      stroke-width="3.6"
+                                      style="stroke-dasharray: 126.920; stroke-dashoffset: 45.480px;"
+                                    />
+                                  </svg>
+                                </span>
+                                <div
+                                  class="MuiBox-root css-17snrrl"
+                                >
+                                  <div
+                                    class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                    data-testid="reqPercent"
+                                  >
+                                    64
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p
+                            class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                          >
+                            Major
+                          </p>
+                          <hr
+                            class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
+                          />
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS MA"
+                              >
+                                CS MA
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="44"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 71.393px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      44
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
+                              >
+                                CS Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="91"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 11.199px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      91
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
+                              >
+                                Math Core
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="75"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 31.730px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      75
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 css-vkc4v8-MuiTypography-root"
+                            >
+                              Gen Eds
+                            </p>
+                            <hr
+                              class="MuiDivider-root MuiDivider-fullWidth css-1ck9kc3-MuiDivider-root"
+                            />
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
+                              >
+                                GLP
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="50"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 63.460px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      50
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
+                              >
+                                RES
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
+                              >
+                                COMSK
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="100"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      100
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
+                              >
+                                ARNS
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="67"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 42.307px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      67
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
+                              >
+                                ARHU
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
+                              >
+                                SBSCI
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
+                              >
+                                CDI
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="0"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 126.920px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      0
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="RequirementText Requirement-root"
+                              data-testid="requirement"
+                            >
+                              <div
+                                class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
+                              >
+                                SRER
+                              </div>
+                              <div
+                                class="percentage"
+                              >
+                                <div
+                                  class="MuiBox-root css-poat16"
+                                >
+                                  <span
+                                    aria-valuenow="100"
+                                    class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-1i5hnxo-MuiCircularProgress-root"
+                                    role="progressbar"
+                                    style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                                  >
+                                    <svg
+                                      class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                                      viewBox="22 22 44 44"
+                                    >
+                                      <circle
+                                        class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                                        cx="44"
+                                        cy="44"
+                                        fill="none"
+                                        r="20.2"
+                                        stroke-width="3.6"
+                                        style="stroke-dasharray: 126.920; stroke-dashoffset: 0.000px;"
+                                      />
+                                    </svg>
+                                  </span>
+                                  <div
+                                    class="MuiBox-root css-17snrrl"
+                                  >
+                                    <div
+                                      class="MuiTypography-root MuiTypography-caption css-x3aacn-MuiTypography-root"
+                                      data-testid="reqPercent"
+                                    >
+                                      100
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-labelledby="simple-tab-1"
+                        hidden=""
+                        id="simple-tabpanel-1"
+                        role="tabpanel"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

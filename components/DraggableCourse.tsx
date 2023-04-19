@@ -40,8 +40,8 @@ export const Course: FC<DragCourseType> = memo(function Course({
         idCategory,
         repeatableForCred
       },
-      collect: (monitor: any) => ({
-        opacity: monitor.isDragging() !== false ? 0.8 : 1
+      collect: (monitor) => ({
+        opacity: monitor.isDragging() ? 0.8 : 1
       })
     }),
     [idCourse, type, dragSource] // what is collected by the semester and course list when you drop it
@@ -64,6 +64,7 @@ export const Course: FC<DragCourseType> = memo(function Course({
       style={{ opacity }}
       data-testid="course"
       className={clsx(
+        "Course-root",
         "CourseText",
         warningYellowColor !== undefined &&
         warningRedColor === undefined &&

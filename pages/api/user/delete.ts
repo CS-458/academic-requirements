@@ -39,16 +39,14 @@ export default async function handler(
   }
   name = decodeURIComponent(name);
 
-  console.log("Deleting ", name);
   const result = await con.run(
     "DELETE FROM schedule WHERE userID = ? and name = ?",
     [user, name]
   );
-  console.log(result);
   if (result.changes === 1) {
     // Returns a success message
-    res.status(200).json({});
+    res.status(200).json({ message: "Successfully removed schedule" });
   } else {
-    res.status(404).json({ error: "schedule not found" });
+    res.status(404).json({ error: "Schedule not found" });
   }
 }

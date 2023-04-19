@@ -1,13 +1,23 @@
-import * as React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Drawer,
   List,
   ListItem,
   ListItemButton,
-  IconButton
+  ListItemIcon,
+  IconButton,
+  Divider,
+  Typography,
+  createTheme,
+  ThemeProvider
 } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import {
+  Menu,
+  List as ListIcon,
+  Schedule as ScheduleIcon,
+  AccountCircle as AccountCircleIcon
+} from "@mui/icons-material";
 import Link from "next/link";
 import { userToken } from "../services/user";
 type Anchor = "left";
@@ -19,15 +29,33 @@ export default function MenuDrawer(): any {
     bottom: false,
     right: false
   });
-
+  const [opened, setOpened] = useState<boolean>(false);
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
       (event: React.KeyboardEvent | React.MouseEvent) => {
         setState({ ...state, [anchor]: open });
+        setOpened(open);
       };
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        "cursive",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol"
+      ].join(",")
+    }
+  });
+
   const list = (anchor: Anchor): any => (
-    <Box
+    <Box data-testid="box"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -35,29 +63,51 @@ export default function MenuDrawer(): any {
     >
       <List>
         <ListItem key={"Button Text"} disablePadding>
-          <Link href="/">
-            <ListItemButton data-testid="inputPageButton">
-              Input Page
-            </ListItemButton>
-          </Link>
+        <Link href="/">
+          <ListItemButton data-testid="inputPageButton">
+          <ListItemIcon>
+          <ListIcon/>
+        </ListItemIcon>
+          <ThemeProvider theme = {theme}>
+            <Typography fontFamily="cursive">Input Page</Typography>
+          </ThemeProvider>
+          </ListItemButton>
+        </Link>
         </ListItem>
       </List>
+      <Divider />
       <List>
         <ListItem key={"Button Text"} disablePadding>
-          <Link href="/scheduler">
-            <ListItemButton>Schedule Page</ListItemButton>
-          </Link>
+        <Link href="/scheduler">
+          <ListItemButton>
+            <ListItemIcon>
+              <ScheduleIcon/>
+            </ListItemIcon>
+            <ThemeProvider theme = {theme}>
+            <Typography fontFamily="cursive">Schedule Page</Typography>
+            </ThemeProvider>
+          </ListItemButton>
+        </Link>
         </ListItem>
       </List>
-      {userToken() !== undefined && (
-        <List>
+      <Divider />
+      {userToken() !== undefined &&
+      (<List>
           <ListItem key={"Button Text"} disablePadding>
-            <Link href="/account">
-              <ListItemButton>Account</ListItemButton>
-            </Link>
+          <Link href="/account">
+            <ListItemButton>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ThemeProvider theme = {theme}>
+              <Typography fontFamily = "cursive">Account</Typography>
+              </ThemeProvider>
+            </ListItemButton>
+          </Link>
           </ListItem>
-        </List>
+      </List>
       )}
+      <Divider />
     </Box>
   );
 
@@ -69,7 +119,7 @@ export default function MenuDrawer(): any {
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
-          onClick={toggleDrawer("left", true)}
+          onClick={toggleDrawer("left", !state.left)}
           data-testid="menu"
         >
           <Menu />
@@ -78,6 +128,7 @@ export default function MenuDrawer(): any {
           anchor={"left"}
           open={state.left}
           onClose={toggleDrawer("left", false)}
+          data-testid={`drawer-${opened}`}
         >
           {list("left")}
         </Drawer>

@@ -170,7 +170,7 @@ test("Check for details tooltip", async () => {
   await screen.findByRole("tooltip");
   // tooltip exists during hover
   expect(screen.getByRole("tooltip")).toBeInTheDocument();
-  expect(screen.getByRole("tooltip").innerHTML.includes("Course Count: 0")).toBeTruthy();
+  expect(screen.getByRole("tooltip").innerHTML.includes("Credits: 32")).toBeTruthy();
 
   // check a gen ed requirement with all 3 types of requirements
   req = page.getByTestId("requirementName-ARNS");
@@ -178,7 +178,7 @@ test("Check for details tooltip", async () => {
   await screen.findByRole("tooltip");
   // tooltip exists during hover
   expect(screen.getByRole("tooltip")).toBeInTheDocument();
-  expect(screen.getByRole("tooltip").innerHTML.includes("Course Count: 0")).toBeTruthy();
+  expect(screen.getByRole("tooltip").innerHTML.includes("Credits:")).toBeTruthy();
 
   // Move a course and check the tooltip has updated
   const categoryTab = screen.getByTestId("category-tab");

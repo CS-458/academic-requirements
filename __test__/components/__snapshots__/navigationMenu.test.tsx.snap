@@ -114,5 +114,9 @@ exports[`Test Navigation menu to close upon clicking Nav menu 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

@@ -51,6 +51,7 @@ export function hide(el: Element): void {
     el.style.position = "absolute";
     el.style.top = "0";
     el.style.left = "0";
+    el.style.width = "100vw";
     show(el);
   }
 }
@@ -67,6 +68,7 @@ export function unHide(): void {
         el.style.position = "";
         el.style.top = "";
         el.style.left = "";
+        el.style.width = "";
       }
       if (
         el.matches(".MuiCollapse-root") ||

@@ -226,7 +226,7 @@ export default function FormDialog(props: {
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={downloadPng}>Image</Button>
           <Button onClick={handlePDF}>PDF</Button>
-          <Button onClick={onClickExportSchedule}>Save</Button>
+          <Button onClick={onClickExportSchedule} data-testid="nestedSavedButton">Save</Button>
         </DialogActions>
       </Dialog>
       <Tooltip title="Save as PDF" placement="right" arrow>

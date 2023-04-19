@@ -286,17 +286,8 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
-<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
-=======
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="expand-year"
-                              focusable="false"
-                              viewBox="0 0 24 24"
->>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               1
@@ -307,7 +298,7 @@ exports[`Load saved schedule 1`] = `
                               <svg
                                 aria-hidden="true"
                                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                                data-testid="ArrowForwardIosSharpIcon"
+                                data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
                               >
@@ -554,17 +545,8 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
-<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-=======
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="expand-year"
-                              focusable="false"
-                              viewBox="0 0 24 24"
->>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               2
@@ -575,7 +557,7 @@ exports[`Load saved schedule 1`] = `
                               <svg
                                 aria-hidden="true"
                                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                                data-testid="ArrowForwardIosSharpIcon"
+                                data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
                               >
@@ -823,17 +805,8 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
-<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-=======
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="expand-year"
-                              focusable="false"
-                              viewBox="0 0 24 24"
->>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               3
@@ -844,7 +817,7 @@ exports[`Load saved schedule 1`] = `
                               <svg
                                 aria-hidden="true"
                                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                                data-testid="ArrowForwardIosSharpIcon"
+                                data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
                               >
@@ -1048,17 +1021,8 @@ exports[`Load saved schedule 1`] = `
                             role="button"
                             tabindex="0"
                           >
-<<<<<<< HEAD
                             <div
                               class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-=======
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="expand-year"
-                              focusable="false"
-                              viewBox="0 0 24 24"
->>>>>>> ecb35a7e19fdff215e174458ef2df6d1ee4d4733
                             >
                               Year 
                               4
@@ -1069,7 +1033,7 @@ exports[`Load saved schedule 1`] = `
                               <svg
                                 aria-hidden="true"
                                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                                data-testid="ArrowForwardIosSharpIcon"
+                                data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
                               >

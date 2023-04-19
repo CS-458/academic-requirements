@@ -154,7 +154,8 @@ test("Saving A Schedule Successfully & No Name auto saves as Date/Time", async (
   expect(index.baseElement).toBeInTheDocument();
   await user.click(saveButton);
   expect(index.getByText("Save Schedule")).toBeInTheDocument();
-  await user.click(index.getByText("Save"));
+  const nestedSavedButton = screen.getByTestId("nestedSavedButton");
+  await user.click(nestedSavedButton);
 
   await waitFor(async () => {
     expect(alertMocked).toBeCalled();

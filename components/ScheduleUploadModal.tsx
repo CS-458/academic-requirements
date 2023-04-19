@@ -1,9 +1,7 @@
-/*
-  Nick Raffel
-  This is the modal for saving the schedule
-*/
+// Nick Raffel
+// This is the modal for saving the schedule
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   IconButton,
@@ -12,11 +10,76 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  Tooltip
+  Tooltip,
+  Stack
 } from "@mui/material";
-import { Save as SaveIcon } from "@mui/icons-material";
+import {
+  Collections,
+  PictureAsPdf,
+  Save as SaveIcon
+} from "@mui/icons-material";
 import { uploadSchedule, userToken } from "../services/user";
 import { UserSavedSchedule } from "../entities/four_year_plan";
+
+function show(el: Element): void {
+  if (el instanceof HTMLElement) {
+    if (el.matches(".MuiCollapse-root") || el.matches(".MuiCollapse-wrapper")) {
+      el.style.visibility = "visible";
+      el.style.height = "auto";
+      el.style.overflow = "auto";
+    }
+  }
+  for (let i = 0; i < el.children.length; i++) {
+    show(el.children[i]);
+  }
+}
+
+export function hide(el: Element): void {
+  if (!el.matches(".printed")) {
+    if (el.querySelector(".printed") !== null) {
+      for (let i = 0; i < el.children.length; i++) {
+        hide(el.children[i]);
+      }
+    } else {
+      if (el instanceof HTMLElement) {
+        el.setAttribute("data-screen-display", el.style.display);
+        el.style.display = "none";
+      }
+    }
+  } else if (el instanceof HTMLElement) {
+    el.setAttribute("data-screen-pos", el.style.position);
+    el.style.position = "absolute";
+    el.style.top = "0";
+    el.style.left = "0";
+    el.style.width = "100vw";
+    show(el);
+  }
+}
+
+export function unHide(): void {
+  document.querySelectorAll("*").forEach((el) => {
+    if (el instanceof HTMLElement) {
+      const display = el.getAttribute("data-screen-display");
+      if (display !== null) {
+        el.style.display = "";
+      }
+      const pos = el.getAttribute("data-screen-pos");
+      if (pos !== null) {
+        el.style.position = "";
+        el.style.top = "";
+        el.style.left = "";
+        el.style.width = "";
+      }
+      if (
+        el.matches(".MuiCollapse-root") ||
+        el.matches(".MuiCollapse-wrapper")
+      ) {
+        el.style.visibility = "";
+        el.style.height = "";
+      }
+    }
+  });
+}
 
 // Function that gets the current Date and time
 // returns mm/dd/yyyy/hour:min:sec
@@ -38,6 +101,7 @@ export function getDateTime(): string {
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   setAlertData: (msg: string, severity: string) => void;
+  semRef: React.RefObject<React.ReactInstance>;
   defaultName?: string;
 }): any {
   const [open, setOpen] = React.useState(false);
@@ -69,7 +133,7 @@ export default function FormDialog(props: {
   async function exportSchedule(): Promise<void> {
     let name = scheduleName;
     // if the name space is empty/null, or only contains white space
-    if (scheduleName === null || scheduleName.replace(/\s/g, "").length === 0) {
+    if (scheduleName.replace(/\s/g, "").length === 0) {
       name = getDateTime();
 
       setScheduleName(name);
@@ -100,11 +164,39 @@ export default function FormDialog(props: {
     void exportSchedule();
   };
 
+  const downloadPng = (): void => {
+    const ref = props.semRef;
+    if (ref !== undefined) {
+      import("react-component-export-image")
+        .then(async (res) => {
+          hide(document.body);
+          await res.exportComponentAsPNG(ref, { fileName: scheduleName });
+          unHide();
+        })
+        .catch(console.error);
+    } else {
+      console.log("WRONG");
+    }
+  };
+
+  const handlePDF = (): void => {
+    window.print();
+  };
+
+  useEffect(() => {
+    window.addEventListener("beforeprint", () => {
+      hide(document.body);
+    });
+    window.addEventListener("afterprint", () => {
+      unHide();
+    });
+  }, []);
+
   const saveTooltip =
     token === undefined ? "Must be logged in to save" : "Save";
 
   return (
-    <div>
+<Stack direction="column" alignItems="center">
       <Tooltip title={saveTooltip} placement="right" arrow>
         <span>
           <IconButton
@@ -135,9 +227,29 @@ export default function FormDialog(props: {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={onClickExportSchedule}>Save</Button>
+          <Button onClick={downloadPng}>Image</Button>
+          <Button onClick={handlePDF}>PDF</Button>
+          <Button onClick={onClickExportSchedule} data-testid="nestedSavedButton">Save</Button>
         </DialogActions>
       </Dialog>
-    </div>
+      <Tooltip title="Save as PDF" placement="right" arrow>
+        <IconButton
+          onClick={handlePDF}
+          color="primary"
+          sx={{ width: "fit-content" }}
+        >
+          <PictureAsPdf data-testid="SavePdf" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Save as PNG" placement="right" arrow>
+        <IconButton
+          onClick={downloadPng}
+          color="primary"
+          sx={{ width: "fit-content" }}
+        >
+          <Collections data-testid="SavePng" />
+        </IconButton>
+      </Tooltip>
+    </Stack>
   );
 }

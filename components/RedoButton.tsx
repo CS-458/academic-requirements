@@ -12,6 +12,7 @@ export default function UndoButton(props: {
           onClick={props.handleRedoCourse}
           data-testid="redoButton"
           disabled={props.courses.length === 0}
+          sx={{ width: "fit-content" }}
         >
           <Redo />
         </IconButton>

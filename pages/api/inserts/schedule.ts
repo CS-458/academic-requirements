@@ -33,16 +33,12 @@ export default async function handler(
   const name = req.query.name;
   if (typeof name === "string" && req.body != null) {
     // Inserts Data into the Schedule page
-    const sqlRes = await con.run(
+    await con.run(
       `INSERT INTO schedule (userID, name, scheduleData) 
         VALUES (?, ?, ?) 
         ON CONFLICT(userID, name) DO UPDATE SET scheduleData = excluded.scheduleData, timestamp = datetime('now', 'localtime')`,
       [user, name, req.body]
     );
-    if (sqlRes.changes !== 1) {
-      res.status(500).json({ error: "Internal Database Error" });
-      return;
-    }
     // Returns a success message
     res.status(200).json({ message: "Successfully uploaded schedule" });
     return;

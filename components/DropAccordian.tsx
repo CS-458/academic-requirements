@@ -36,7 +36,12 @@ const Accordion = styled((props: AccordionProps) => (
 /// Modified MUI Summary
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharp sx={{ fontSize: "0.9rem" }} />}
+    expandIcon={
+      <ArrowForwardIosSharp
+        sx={{ fontSize: "0.9rem" }}
+        data-testid="expand-year"
+      />
+    }
     {...props}
   />
 ))(({ theme }) => ({
@@ -169,13 +174,17 @@ export default function DropTargetAccordian(props: {
   };
 
   return (
-    <Accordion expanded={expanded} onChange={(_, e) => setExpanded(e)}>
+    <Accordion
+      expanded={expanded}
+      onChange={(_, e) => setExpanded(e)}
+      sx={{ pageBreakInside: "avoid" }}
+    >
       <div ref={drop}>
         <AccordionSummary sx={{ bgcolor: "primary.main" }}>
           Year {props.year + 1}
         </AccordionSummary>
       </div>
-      <AccordionDetails sx={{ p: 0 }}>
+      <AccordionDetails sx={{ p: 0, pageBreakInside: "auto" }}>
         <div
           style={{
             display: "grid",

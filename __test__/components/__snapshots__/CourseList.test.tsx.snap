@@ -101,6 +101,10 @@ exports[`CourseList Renders 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -205,5 +209,9 @@ exports[`CourseList onDrop is called on drop 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

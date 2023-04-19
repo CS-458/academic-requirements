@@ -200,55 +200,42 @@ export default function InformationDrawer(props: {
                 " out of 120"
                 : "Credits"
             }
+            reqs={undefined}
             percentage={(getTotalCredits(props.semesters) / 120) * 100}
             digits={open ? 1 : 0}
             key={0}
           />
           <Typography sx={{ color: "primary.main" }}>Major</Typography>
-          <Divider sx={{ color: "primary.main", mb: "10px" }} />
-          {open
-            ? props.requirementsDisplay?.map(({ name, percentage }, index) => (
-              <div key={index}>
-                {name === "Global Perspective (GLP)" ? (
-                  <>
-                    <Typography sx={{ color: "primary.main" }}>
-                      General Education
-                    </Typography>
-                    <Divider sx={{ color: "primary.main", mb: "10px" }} />
-                  </>
-                ) : (
-                  <></>
-                )}
-                <Requirement
-                  name={name}
-                  percentage={percentage}
-                  digits={1}
-                  key={index}
-                />
-              </div>
-            ))
-            : props.requirementsDisplay?.map(
-              ({ shortName, percentage }, index) => (
-                <div key={index}>
-                  {shortName === "GLP" ? (
-                    <>
-                      <Typography sx={{ color: "primary.main" }}>
-                        Gen Eds
-                      </Typography>
-                      <Divider sx={{ color: "primary.main", mb: "10px" }} />
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                  <Requirement
-                    name={shortName}
-                    percentage={percentage}
-                    digits={0}
-                    key={index}
-                  />
-                </div>
-              )
-            )}
+          <Divider sx={{ color: "primary.main", mb: "10px" }}/>
+        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<div key={index}>
+          { name === "Global Perspective (GLP)"
+            ? <>
+            <Typography sx={{ color: "primary.main" }}>General Education</Typography>
+            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
+            </> : <></>
+          }
+          <Requirement
+            name={name}
+            reqs={props.requirementsDisplay[index]}
+            percentage={percentage}
+            digits={1}
+            key={index}
+          /></div>))
+          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<div key={index}>
+          { shortName === "GLP"
+            ? <>
+            <Typography sx={{ color: "primary.main" }}>Gen Eds</Typography>
+            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
+            </> : <></>
+          }
+          <Requirement
+            name={shortName}
+            reqs={props.requirementsDisplay[index]}
+            percentage={percentage}
+            digits={0}
+            key={index}
+          /></div>))
+        }
         </TabPanel>
         {loadPlan ? (
           <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>

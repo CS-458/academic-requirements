@@ -35,7 +35,7 @@ function show(el: Element): void {
   }
 }
 
-function hide(el: Element): void {
+export function hide(el: Element): void {
   if (!el.matches(".printed")) {
     if (el.querySelector(".printed") !== null) {
       for (let i = 0; i < el.children.length; i++) {
@@ -56,7 +56,7 @@ function hide(el: Element): void {
   }
 }
 
-function unHide(): void {
+export function unHide(): void {
   document.querySelectorAll("*").forEach((el) => {
     if (el instanceof HTMLElement) {
       const display = el.getAttribute("data-screen-display");
@@ -160,13 +160,13 @@ export default function FormDialog(props: {
     void exportSchedule();
   };
 
-  const downloadJpg = (): void => {
+  const downloadPng = (): void => {
     const ref = props.semRef;
     if (ref !== undefined) {
       import("react-component-export-image")
         .then(async (res) => {
           hide(document.body);
-          await res.exportComponentAsPNG(ref);
+          await res.exportComponentAsPNG(ref, { fileName: scheduleName });
           unHide();
         })
         .catch(console.error);
@@ -215,7 +215,7 @@ export default function FormDialog(props: {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={downloadJpg}>Image</Button>
+          <Button onClick={downloadPng}>Image</Button>
           <Button onClick={handlePDF}>PDF</Button>
           <Button onClick={onClickExportSchedule}>Save</Button>
         </DialogActions>
@@ -226,8 +226,8 @@ export default function FormDialog(props: {
         </IconButton>
       </Tooltip>
       <Tooltip title="Save as PNG" placement="right" arrow>
-        <IconButton onClick={downloadJpg} color="primary">
-          <Collections data-testid="SavePng" />
+        <IconButton onClick={downloadPng} color="primary" data-testid="SavePng">
+          <Collections />
         </IconButton>
       </Tooltip>
     </div>

@@ -2,10 +2,11 @@ import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
 import { jest } from "@jest/globals";
 
-import ScheduleUploadModal, { getDateTime } from "../../components/ScheduleUploadModal";
+import ScheduleUploadModal, { getDateTime, hide, unHide } from "../../components/ScheduleUploadModal";
 import ActionBar from "../../components/ActionBar";
 import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "../util";
 import { userMajor, UserLogin, User } from "../../services/user";
+import { exportComponentAsPNG } from "react-component-export-image";
 
 jest.useFakeTimers({
   doNotFake: [
@@ -50,7 +51,7 @@ beforeAll(async () => {
   createMockToken();
 });
 
-test("Action Bar Visible", async () => {
+test("Action Bar Visible and other buttons are visible", async () => {
   const alertMocked = jest.fn();
   const index = render(<ActionBar
     scheduleData={infoMocked}
@@ -74,6 +75,32 @@ test("Saving A Schedule with out being signed in", async () => {
   expect(index.getByText("Save Schedule")).toBeVisible();
   await user.click(index.getByText("Save"));
   expect(alertMocked).toBeCalledWith("User Not Logged in! Please Log in to save your Schedule.", "warning");
+});
+
+test("Saving as a PNG and PDF", async () => {
+  const alertMocked = jest.fn();
+
+  const scheduleName = "epic";
+  const props = { semRef: {} };
+  const exportMock = jest.fn<typeof exportComponentAsPNG>().mockResolvedValue(jest.fn());
+  jest.mock("react-component-export-image", () => ({
+    exportComponentAsPNG: exportMock
+  }));
+  const user = setupUser();
+  const index = render(<ScheduleUploadModal
+    scheduleData={infoMocked}
+    setAlertData={alertMocked}
+  />);
+
+  const savePDF = screen.getByTestId("SavePdf");
+  const savePNG = screen.getByTestId("SavePng");
+
+  expect(index.baseElement).toBeInTheDocument();
+  expect(savePDF).toBeInTheDocument();
+  expect(savePNG).toBeInTheDocument();
+
+  await user.click(savePNG);
+  expect(savePDF).not.toBeVisible();
 });
 
 test("Saving A Schedule Successfully & No Name auto saves as Date/Time", async () => {

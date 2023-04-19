@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Default Layout 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                data-testid="google-login-button"
+              >
+                <div
+                  style="height: 40px;"
+                />
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+</body>
+`;
+
+exports[`Render Default Layout w/expiring user 1`] = `
+<body
+  style="padding-right: 1024px; overflow: hidden;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+            style="padding-right: 1024px;"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1r5njk-MuiTypography-root"
+              >
+                <button
+                  aria-describedby="simple-popover"
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <img
+                    data-testid="account-picture"
+                    src=""
+                    style="height: 2em; border-radius: 50%;"
+                  />
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  >
+                    <span
+                      class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+                      style="width: 2.8284271247461903px; height: 2.8284271247461903px; top: -1.4142135623730951px; left: -1.4142135623730951px;"
+                    >
+                      <span
+                        class="MuiTouchRipple-child MuiTouchRipple-childLeaving"
+                      />
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+  <div
+    class="MuiPopover-root MuiModal-root css-1i0e6f3-MuiModal-root-MuiPopover-root"
+    id="simple-popover"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    />
+    <div
+      data-testid="sentinelStart"
+      tabindex="0"
+    />
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
+      style="opacity: 1; transform: none; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+      tabindex="-1"
+    >
+      <ul
+        aria-labelledby="composition-button"
+        class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+        id="composition-menu"
+        role="menu"
+        tabindex="-1"
+      >
+        <li
+          class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
+          role="menuitem"
+          tabindex="0"
+        >
+          Account
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Logout
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </li>
+      </ul>
+    </div>
+    <div
+      data-testid="sentinelEnd"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;
+
+exports[`Render Default Layout w/user 1`] = `
+<body
+  style="padding-right: 1024px; overflow: hidden;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        style="height: 100vh; width: 100vw; display: grid; grid-template-rows: min-content minmax(0px, auto);"
+      >
+        <div
+          class="MuiBox-root css-i9gxme"
+        >
+          <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-i1wygj-MuiPaper-root-MuiAppBar-root"
+            style="padding-right: 1024px;"
+          >
+            <div
+              class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+            >
+              <div>
+                <button
+                  aria-label="menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-134qg7o-MuiButtonBase-root-MuiIconButton-root"
+                  data-testid="menu"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                    data-testid="MenuIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    />
+                  </svg>
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <a
+                data-testid="stout-logo-link"
+                href="https://www.uwstout.edu/"
+                target="_blank"
+              >
+                <img
+                  alt="logo"
+                  height="60"
+                  src="/logo-new.svg"
+                />
+              </a>
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1f8a19r-MuiTypography-root"
+              />
+              <div
+                class="MuiTypography-root MuiTypography-h5 css-1r5njk-MuiTypography-root"
+              >
+                <button
+                  aria-describedby="simple-popover"
+                  class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <img
+                    data-testid="account-picture"
+                    src=""
+                    style="height: 2em; border-radius: 50%;"
+                  />
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  >
+                    <span
+                      class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible"
+                      style="width: 2.8284271247461903px; height: 2.8284271247461903px; top: -1.4142135623730951px; left: -1.4142135623730951px;"
+                    >
+                      <span
+                        class="MuiTouchRipple-child MuiTouchRipple-childLeaving"
+                      />
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+  <div
+    class="MuiPopover-root MuiModal-root css-1i0e6f3-MuiModal-root-MuiPopover-root"
+    id="simple-popover"
+    role="presentation"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root MuiBackdrop-invisible MuiModal-backdrop css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    />
+    <div
+      data-testid="sentinelStart"
+      tabindex="0"
+    />
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
+      style="opacity: 1; transform: none; transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+      tabindex="-1"
+    >
+      <ul
+        aria-labelledby="composition-button"
+        class="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+        id="composition-menu"
+        role="menu"
+        tabindex="-1"
+      >
+        <li
+          class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
+          role="menuitem"
+          tabindex="0"
+        >
+          Account
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Logout
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </li>
+      </ul>
+    </div>
+    <div
+      data-testid="sentinelEnd"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;

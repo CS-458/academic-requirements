@@ -40,6 +40,10 @@ exports[`Default Error Notification Behavior 1`] = `
         </button>
       </div>
     </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
   </body>,
   "container": <div>
     <div
@@ -173,6 +177,10 @@ exports[`Error Notification - Badge Number 1`] = `
         </button>
       </div>
     </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
   </body>,
   "container": <div>
     <div
@@ -310,6 +318,10 @@ exports[`Error Notification - Close Popover 1`] = `
         </button>
       </div>
     </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
   </body>,
   "container": <div>
     <div
@@ -447,6 +459,10 @@ exports[`Error Notification - Errors Displayed 1`] = `
         </button>
       </div>
     </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
   </body>,
   "container": <div>
     <div
@@ -582,6 +598,10 @@ exports[`Error Notification - Open Popover 1`] = `
         </button>
       </div>
     </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
   </body>,
   "container": <div>
     <div

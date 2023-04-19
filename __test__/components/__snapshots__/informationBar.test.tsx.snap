@@ -235,6 +235,10 @@ exports[`Test Add Only One Tab on Information Bar 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -467,6 +471,10 @@ exports[`Test Requirements in the Information Bar on the Schedule Page 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -711,5 +719,9 @@ exports[`Test Switching Tabs on Information Bar 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

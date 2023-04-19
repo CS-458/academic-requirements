@@ -179,7 +179,7 @@ exports[`Reload Button is Functional 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -283,7 +283,7 @@ exports[`Reload Button is Functional 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -387,7 +387,7 @@ exports[`Reload Button is Functional 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -491,7 +491,7 @@ exports[`Reload Button is Functional 1`] = `
                       <svg
                         aria-hidden="true"
                         class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                        data-testid="ArrowForwardIosSharpIcon"
+                        data-testid="expand-year"
                         focusable="false"
                         viewBox="0 0 24 24"
                       >
@@ -1506,6 +1506,10 @@ exports[`Reload Button is Functional 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -1539,5 +1543,9 @@ exports[`Reload Button is Visible 1`] = `
       </button>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

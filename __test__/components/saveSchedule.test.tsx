@@ -7,6 +7,7 @@ import ActionBar from "../../components/ActionBar";
 import { setupUser, render, createMockToken, setupMockUserDB, mockToken } from "../util";
 import { userMajor, UserLogin, User } from "../../services/user";
 import { exportComponentAsPNG } from "react-component-export-image";
+import { ECDH } from "crypto";
 
 jest.useFakeTimers({
   doNotFake: [
@@ -79,14 +80,8 @@ test("Saving A Schedule with out being signed in", async () => {
 
 test("Saving as a PNG and PDF", async () => {
   const alertMocked = jest.fn();
-
-  const scheduleName = "epic";
-  const props = { semRef: {} };
-  const exportMock = jest.fn<typeof exportComponentAsPNG>().mockResolvedValue(jest.fn());
-  jest.mock("react-component-export-image", () => ({
-    exportComponentAsPNG: exportMock
-  }));
   const user = setupUser();
+  window.print = jest.fn();
   const index = render(<ScheduleUploadModal
     scheduleData={infoMocked}
     setAlertData={alertMocked}
@@ -99,8 +94,13 @@ test("Saving as a PNG and PDF", async () => {
   expect(savePDF).toBeInTheDocument();
   expect(savePNG).toBeInTheDocument();
 
-  await user.click(savePNG);
+  dispatchEvent(new Event("beforeprint"));
   expect(savePDF).not.toBeVisible();
+  dispatchEvent(new Event("afterprint"));
+  expect(savePDF).toBeVisible();
+
+  await user.click(savePDF);
+  expect(window.print).toHaveBeenCalled();
 });
 
 test("Saving A Schedule Successfully & No Name auto saves as Date/Time", async () => {

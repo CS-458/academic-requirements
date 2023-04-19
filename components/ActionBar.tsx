@@ -4,7 +4,7 @@
 */
 
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 // Schedule Data and SetAlertData are being passed through here into the Schedule Upload Modal
 export default function BoxSx(props: {
@@ -12,16 +12,18 @@ export default function BoxSx(props: {
 }): any {
   return (
     <div>
-      <Box
+      <Stack
         sx={{
           height: "100%",
           backgroundColor: "white",
           paddingTop: "2em",
           boxShadow: 9
         }}
+        direction="column"
+        alignItems="center"
       >
         {props.children}
-      </Box>
+      </Stack>
     </div>
   );
 }

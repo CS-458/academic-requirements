@@ -9,6 +9,7 @@ export default function UndoButton(props: {
     <Tooltip title="Undo" placement="right" arrow>
       <span>
         <IconButton
+          sx={{ width: "fit-content" }}
           onClick={props.handleUndoCourse}
           data-testid="undoButton"
           disabled={props.courses.length === 0}

@@ -49,7 +49,7 @@ export default function FormDialog(props: {
 
   return (
     <Tooltip title="Reload initial schedule" placement="right" arrow>
-      <IconButton onClick={handleReload}>
+      <IconButton onClick={handleReload} sx={{ width: "fit-content" }}>
         <RefreshIcon data-testid="reloadButton" />
       </IconButton>
     </Tooltip>

@@ -10,7 +10,8 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  Tooltip
+  Tooltip,
+  Stack
 } from "@mui/material";
 import {
   Collections,
@@ -193,7 +194,7 @@ export default function FormDialog(props: {
     token === undefined ? "Must be logged in to save" : "Save";
 
   return (
-    <div>
+<Stack direction="column" alignItems="center">
       <Tooltip title={saveTooltip} placement="right" arrow>
         <span>
           <IconButton
@@ -230,15 +231,23 @@ export default function FormDialog(props: {
         </DialogActions>
       </Dialog>
       <Tooltip title="Save as PDF" placement="right" arrow>
-        <IconButton onClick={handlePDF} color="primary">
+        <IconButton
+          onClick={handlePDF}
+          color="primary"
+          sx={{ width: "fit-content" }}
+        >
           <PictureAsPdf data-testid="SavePdf" />
         </IconButton>
       </Tooltip>
       <Tooltip title="Save as PNG" placement="right" arrow>
-        <IconButton onClick={downloadPng} color="primary" data-testid="SavePng">
-          <Collections />
+        <IconButton
+          onClick={downloadJpg}
+          color="primary"
+          sx={{ width: "fit-content" }}
+        >
+          <Collections data-testid="SavePng" />
         </IconButton>
       </Tooltip>
-    </div>
+    </Stack>
   );
 }

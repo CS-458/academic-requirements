@@ -23,9 +23,11 @@ exports[`Render Semester List 1`] = `
               >
                 <div>
                   <div
-                    class="MuiBox-root css-6um5jb"
+                    class="css-1bnuhlb-MuiStack-root"
                   >
-                    <div>
+                    <div
+                      class="css-163ljxj-MuiStack-root"
+                    >
                       <span
                         aria-label="Must be logged in to save"
                         class=""
@@ -53,7 +55,7 @@ exports[`Render Semester List 1`] = `
                       </span>
                       <button
                         aria-label="Save as PDF"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
                         tabindex="0"
                         type="button"
@@ -75,16 +77,15 @@ exports[`Render Semester List 1`] = `
                       </button>
                       <button
                         aria-label="Save as PNG"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
-                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="CollectionsIcon"
+                          data-testid="SavePng"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -98,7 +99,7 @@ exports[`Render Semester List 1`] = `
                       </button>
                     </div>
                     <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
                       disabled=""
                       tabindex="-1"
@@ -133,7 +134,7 @@ exports[`Render Semester List 1`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="undoButton"
                         disabled=""
                         tabindex="-1"
@@ -158,7 +159,7 @@ exports[`Render Semester List 1`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="redoButton"
                         disabled=""
                         tabindex="-1"
@@ -179,7 +180,7 @@ exports[`Render Semester List 1`] = `
                     </span>
                     <button
                       aria-label="Reload initial schedule"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                       data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
@@ -1003,9 +1004,11 @@ exports[`Render Semester List 2`] = `
               >
                 <div>
                   <div
-                    class="MuiBox-root css-6um5jb"
+                    class="css-1bnuhlb-MuiStack-root"
                   >
-                    <div>
+                    <div
+                      class="css-163ljxj-MuiStack-root"
+                    >
                       <span
                         aria-label="Must be logged in to save"
                         class=""
@@ -1033,7 +1036,7 @@ exports[`Render Semester List 2`] = `
                       </span>
                       <button
                         aria-label="Save as PDF"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
                         tabindex="0"
                         type="button"
@@ -1055,16 +1058,15 @@ exports[`Render Semester List 2`] = `
                       </button>
                       <button
                         aria-label="Save as PNG"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
-                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="CollectionsIcon"
+                          data-testid="SavePng"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -1078,7 +1080,7 @@ exports[`Render Semester List 2`] = `
                       </button>
                     </div>
                     <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
                       disabled=""
                       tabindex="-1"
@@ -1113,7 +1115,7 @@ exports[`Render Semester List 2`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="undoButton"
                         tabindex="0"
                         type="button"
@@ -1140,7 +1142,7 @@ exports[`Render Semester List 2`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="redoButton"
                         disabled=""
                         tabindex="-1"
@@ -1161,7 +1163,7 @@ exports[`Render Semester List 2`] = `
                     </span>
                     <button
                       aria-label="Reload initial schedule"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                       data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
@@ -3414,9 +3416,11 @@ exports[`Render Semester List 3`] = `
               >
                 <div>
                   <div
-                    class="MuiBox-root css-6um5jb"
+                    class="css-1bnuhlb-MuiStack-root"
                   >
-                    <div>
+                    <div
+                      class="css-163ljxj-MuiStack-root"
+                    >
                       <span
                         aria-label="Must be logged in to save"
                         class=""
@@ -3444,7 +3448,7 @@ exports[`Render Semester List 3`] = `
                       </span>
                       <button
                         aria-label="Save as PDF"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
                         tabindex="0"
                         type="button"
@@ -3466,16 +3470,15 @@ exports[`Render Semester List 3`] = `
                       </button>
                       <button
                         aria-label="Save as PNG"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
-                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="CollectionsIcon"
+                          data-testid="SavePng"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -3489,7 +3492,7 @@ exports[`Render Semester List 3`] = `
                       </button>
                     </div>
                     <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
                       disabled=""
                       tabindex="-1"
@@ -3524,7 +3527,7 @@ exports[`Render Semester List 3`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="undoButton"
                         tabindex="0"
                         type="button"
@@ -3551,7 +3554,7 @@ exports[`Render Semester List 3`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="redoButton"
                         disabled=""
                         tabindex="-1"
@@ -3572,7 +3575,7 @@ exports[`Render Semester List 3`] = `
                     </span>
                     <button
                       aria-label="Reload initial schedule"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                       data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
@@ -5825,9 +5828,11 @@ exports[`Render Semester List 4`] = `
               >
                 <div>
                   <div
-                    class="MuiBox-root css-6um5jb"
+                    class="css-1bnuhlb-MuiStack-root"
                   >
-                    <div>
+                    <div
+                      class="css-163ljxj-MuiStack-root"
+                    >
                       <span
                         aria-label="Must be logged in to save"
                         class=""
@@ -5855,7 +5860,7 @@ exports[`Render Semester List 4`] = `
                       </span>
                       <button
                         aria-label="Save as PDF"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
                         tabindex="0"
                         type="button"
@@ -5877,16 +5882,15 @@ exports[`Render Semester List 4`] = `
                       </button>
                       <button
                         aria-label="Save as PNG"
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
-                        data-testid="SavePng"
                         tabindex="0"
                         type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="CollectionsIcon"
+                          data-testid="SavePng"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
@@ -5900,7 +5904,7 @@ exports[`Render Semester List 4`] = `
                       </button>
                     </div>
                     <button
-                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                       data-testid="notificationButton"
                       disabled=""
                       tabindex="-1"
@@ -5935,7 +5939,7 @@ exports[`Render Semester List 4`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="undoButton"
                         tabindex="0"
                         type="button"
@@ -5962,7 +5966,7 @@ exports[`Render Semester List 4`] = `
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="redoButton"
                         disabled=""
                         tabindex="-1"
@@ -5983,7 +5987,7 @@ exports[`Render Semester List 4`] = `
                     </span>
                     <button
                       aria-label="Reload initial schedule"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                       data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
@@ -8204,9 +8208,11 @@ exports[`Testing adding and Removing a year 1`] = `
         >
           <div>
             <div
-              class="MuiBox-root css-6um5jb"
+              class="css-1bnuhlb-MuiStack-root"
             >
-              <div>
+              <div
+                class="css-163ljxj-MuiStack-root"
+              >
                 <span
                   aria-label="Must be logged in to save"
                   class=""
@@ -8234,7 +8240,7 @@ exports[`Testing adding and Removing a year 1`] = `
                 </span>
                 <button
                   aria-label="Save as PDF"
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
                   tabindex="0"
                   type="button"
@@ -8256,16 +8262,15 @@ exports[`Testing adding and Removing a year 1`] = `
                 </button>
                 <button
                   aria-label="Save as PNG"
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
-                  data-testid="SavePng"
                   tabindex="0"
                   type="button"
                 >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="CollectionsIcon"
+                    data-testid="SavePng"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -8279,7 +8284,7 @@ exports[`Testing adding and Removing a year 1`] = `
                 </button>
               </div>
               <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="notificationButton"
                 disabled=""
                 tabindex="-1"
@@ -8314,7 +8319,7 @@ exports[`Testing adding and Removing a year 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <button
-                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                   data-testid="undoButton"
                   disabled=""
                   tabindex="-1"
@@ -8339,7 +8344,7 @@ exports[`Testing adding and Removing a year 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <button
-                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                   data-testid="redoButton"
                   disabled=""
                   tabindex="-1"
@@ -8360,7 +8365,7 @@ exports[`Testing adding and Removing a year 1`] = `
               </span>
               <button
                 aria-label="Reload initial schedule"
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element="true"
                 tabindex="0"
                 type="button"
@@ -9763,9 +9768,11 @@ exports[`Try removing a year that has a course 1`] = `
         >
           <div>
             <div
-              class="MuiBox-root css-6um5jb"
+              class="css-1bnuhlb-MuiStack-root"
             >
-              <div>
+              <div
+                class="css-163ljxj-MuiStack-root"
+              >
                 <span
                   aria-label="Must be logged in to save"
                   class=""
@@ -9793,7 +9800,7 @@ exports[`Try removing a year that has a course 1`] = `
                 </span>
                 <button
                   aria-label="Save as PDF"
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
                   tabindex="0"
                   type="button"
@@ -9815,16 +9822,15 @@ exports[`Try removing a year that has a course 1`] = `
                 </button>
                 <button
                   aria-label="Save as PNG"
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                   data-mui-internal-clone-element="true"
-                  data-testid="SavePng"
                   tabindex="0"
                   type="button"
                 >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                    data-testid="CollectionsIcon"
+                    data-testid="SavePng"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -9838,7 +9844,7 @@ exports[`Try removing a year that has a course 1`] = `
                 </button>
               </div>
               <button
-                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="notificationButton"
                 disabled=""
                 tabindex="-1"
@@ -9873,7 +9879,7 @@ exports[`Try removing a year that has a course 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <button
-                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                   data-testid="undoButton"
                   disabled=""
                   tabindex="-1"
@@ -9898,7 +9904,7 @@ exports[`Try removing a year that has a course 1`] = `
                 data-mui-internal-clone-element="true"
               >
                 <button
-                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                  class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                   data-testid="redoButton"
                   disabled=""
                   tabindex="-1"
@@ -9919,7 +9925,7 @@ exports[`Try removing a year that has a course 1`] = `
               </span>
               <button
                 aria-label="Reload initial schedule"
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element="true"
                 tabindex="0"
                 type="button"

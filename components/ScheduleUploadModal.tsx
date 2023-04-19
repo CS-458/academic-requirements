@@ -243,7 +243,7 @@ export default function FormDialog(props: {
       </Tooltip>
       <Tooltip title="Save as PNG" placement="right" arrow>
         <IconButton
-          onClick={downloadJpg}
+          onClick={downloadPng}
           color="primary"
           sx={{ width: "fit-content" }}
         >

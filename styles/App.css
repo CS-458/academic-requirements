@@ -3,6 +3,13 @@ html {
   -webkit-print-color-adjust: exact;
 }
 
+@media print {
+  @page {
+    /* size: portrait; */
+    size: landscape;
+  }
+}
+
 .generic {
   height: 100%;
 }

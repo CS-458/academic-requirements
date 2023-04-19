@@ -32,9 +32,9 @@ export const Requirement: FC<ReqProps> = memo(function Requirement({
   let requirementDisplayString = "";
   if (reqs !== undefined) {
     requirementDisplayString = "Requirements To Fill: \n";
-    requirementDisplayString += "Credits: " + (reqs.creditCount ?? 0) + "\n";
-    requirementDisplayString += "Course Count: " + (reqs.courseCount ?? 0) + "\n";
-    requirementDisplayString += "Required Courses: " + ((reqs.courseReqs !== "" && reqs.courseReqs !== null) ? prettyString(reqs.courseReqs) : "none") + "\n\n";
+    requirementDisplayString += reqs.creditCount === null ? "" : "Credits: " + reqs.creditCount + "\n";
+    requirementDisplayString += reqs.courseCount === null ? "" : "Course Count: " + reqs.courseCount + "\n";
+    requirementDisplayString += (reqs.courseReqs !== "" && reqs.courseReqs !== null) ? ("Required Courses: " + prettyString(reqs.courseReqs) + "\n\n") : "\n";
     requirementDisplayString += "Requirements Currently Filled: \n";
     requirementDisplayString += "Credits: " + reqs.creditCountTaken + "\n";
     requirementDisplayString += "Course Count: " + reqs.courseCountTaken + "\n";

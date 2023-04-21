@@ -160,6 +160,7 @@ export const Semester: FC<SemesterProps> = function Semester({
                 <Box
                   sx={{
                     bgcolor: "primary.main",
+                    px: "1em",
                     pt:
                       suggestedContent?.requirements.length > 0
                         ? ".25em"
@@ -178,6 +179,7 @@ export const Semester: FC<SemesterProps> = function Semester({
                         variant="outlined"
                         sx={{
                           margin: ".5em",
+                          marginLeft: index === 0 ? "0em" : ".5em",
                           color: "black",
                           bgcolor: "gainsboro",
                           borderColor: "black"

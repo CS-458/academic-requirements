@@ -9,7 +9,8 @@ import {
   Switch,
   FormControlLabel,
   AlertProps,
-  Alert
+  Alert,
+  Box
 } from "@mui/material";
 import SearchableDropdown from "./SearchableDropdown";
 import DeleteableInput from "./DeleteableInput";
@@ -219,7 +220,7 @@ export default function InputPage(): JSX.Element {
               }
             }}
           />
-          <div>
+          <Box textAlign={"center"}>
             {concentration?.fourYearPlan != null && (
               <FormControlLabel
                 control={
@@ -236,7 +237,7 @@ export default function InputPage(): JSX.Element {
             <Link href="/scheduler">
               <Button disabled={!canMoveOn}>Generate Schedule</Button>
             </Link>
-          </div>
+          </Box>
         </Grid>
         <Grid container item sm={4} flexDirection="column" alignItems="Center">
           <Typography variant="h6" component="div">

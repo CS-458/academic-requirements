@@ -305,7 +305,7 @@ test("Semester Has Suggestions", async () => {
   await user.click(suggestContentBtn);
   const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
   expect(suggestionBox).not.toBeNull();
-  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox).toContainHTML("Suggested Courses");
   expect(suggestionBox).toContainHTML(mockSuggestedContent.requirements[0]);
 }, 100000);
 
@@ -369,7 +369,7 @@ test("Semester Has Only Requirements Suggestions", async () => {
   }
   const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
   expect(suggestionBox).not.toBeNull();
-  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox).toContainHTML("Suggested Courses");
   expect(suggestionBox?.children.length).toBe(2);
   expect(suggestionBox).toContainHTML(mockSuggestedContent.requirements[0]);
 }, 100000);
@@ -433,7 +433,7 @@ test("Semester Has Only Course Suggestions", async () => {
   }
   const suggestionBox = screen.queryByTestId(`semester${semNum}-suggestPopover`);
   expect(suggestionBox).not.toBeNull();
-  expect(suggestionBox).toContainHTML("Suggested Content");
+  expect(suggestionBox).toContainHTML("Suggested Courses");
   expect(suggestionBox?.children.length).toBe(3);
   const courses = screen.queryAllByTestId("course");
   expect(courses.length).toBe(mockSuggestedContent.courses.length);

@@ -147,26 +147,27 @@ export const Semester: FC<SemesterProps> = function Semester({
                 <Typography
                   sx={{
                     px: "1em",
-                    pt: ".5em",
-                    pb:
-                      suggestedContent?.requirements.length > 0
-                        ? "0em"
-                        : ".5em",
+                    py: ".5em",
                     textAlign: "center",
                     fontSize: "1.2em",
                     fontWeight: "bold"
                   }}
                 >
                   {suggestedContentExists()
-                    ? "Suggested Content"
-                    : "No Suggested Content"}
+                    ? "Suggested Courses"
+                    : "No Suggested Courses"}
                 </Typography>
                 <Box
                   sx={{
-                    pb:
+                    bgcolor: "primary.main",
+                    pt:
                       suggestedContent?.requirements.length > 0
                         ? ".25em"
-                        : "0em"
+                        : "0em",
+                    pb:
+                      suggestedContent?.courses.length > 0
+                        ? "0em"
+                        : ".25em"
                   }}
                 >
                   {suggestedContent?.requirements.map((reqText, index) => {
@@ -176,7 +177,10 @@ export const Semester: FC<SemesterProps> = function Semester({
                         label={reqText}
                         variant="outlined"
                         sx={{
-                          margin: ".5em"
+                          margin: ".5em",
+                          color: "black",
+                          bgcolor: "gainsboro",
+                          borderColor: "black"
                         }}
                         size={"small"}
                       />
@@ -192,7 +196,9 @@ export const Semester: FC<SemesterProps> = function Semester({
                     courses={suggestedContent?.courses}
                     sx={{
                       marginBottom: "0px",
-                      borderRadius: "0px"
+                      borderRadius: "0px",
+                      padding: "1em",
+                      pt: suggestedContent?.requirements.length > 0 ? "0em" : "1em"
                     }}
                   />
                 )}

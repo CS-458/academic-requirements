@@ -161,7 +161,9 @@ exports[`Verify Four Year Plan Not Show 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -544,7 +546,9 @@ exports[`Verify Four Year Plan Not Show 2`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -949,7 +953,9 @@ exports[`Verify Four Year Plan Not Show 3`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -1311,7 +1317,9 @@ exports[`Verify Majors and Concentrations 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -1694,7 +1702,9 @@ exports[`Verify Majors and Concentrations 2`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -2099,7 +2109,9 @@ exports[`Verify Majors and Concentrations 3`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <label
                 class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
               >
@@ -2493,7 +2505,9 @@ exports[`Verify Select Use Four Year Plan 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -2899,7 +2913,9 @@ exports[`Verify Select Use Four Year Plan 2`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <label
                 class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
               >
@@ -3319,7 +3335,9 @@ exports[`Verify adding completed course 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -3680,7 +3698,9 @@ exports[`Verify adding completed course 2`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -4063,7 +4083,9 @@ exports[`Verify adding completed course 3`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -4470,7 +4492,9 @@ exports[`Verify adding completed course 4`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -4904,7 +4928,9 @@ exports[`Verify deleting completed course 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -5265,7 +5291,9 @@ exports[`Verify deleting completed course 2`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -5648,7 +5676,9 @@ exports[`Verify deleting completed course 3`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -6055,7 +6085,9 @@ exports[`Verify deleting completed course 4`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
@@ -6465,7 +6497,9 @@ exports[`Verify deleting completed course 5`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              class="MuiBox-root css-xi606m"
+            >
               <br />
               <button
                 class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"

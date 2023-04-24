@@ -3,6 +3,7 @@ import "@testing-library/jest-dom";
 import { screen, waitFor } from "@testing-library/react";
 import { mockUserInfo, render, setupUser, userId } from "../util";
 import DefaultLayout from "../../components/layout/DefaultLayout";
+import { act } from "react-test-renderer";
 
 test("Render Default Layout", async () => {
   // const user = setupUser();
@@ -70,4 +71,26 @@ test("Render Default Layout w/expiring user", async () => {
   await waitFor(() =>
     expect(screen.getByTestId("google-login-button")).toBeInTheDocument()
   );
+});
+
+test("Render Default Layout w/error for picture", async () => {
+  const token = mockUserInfo(userId());
+  // Default timeout is 5000, and we need to wait at least 1000. We don't do anything else here, so it isn't an issue.
+  localStorage.setItem("google-login", JSON.stringify(token));
+
+  const user = setupUser();
+  const page = render(
+    <DefaultLayout>
+      <div />
+    </DefaultLayout>
+  );
+
+  const image = screen.getByTestId("account-picture") as HTMLImageElement;
+
+  await user.click(image);
+  expect(screen.getByText(/Logout/i)).toBeInTheDocument();
+  await act(() => {
+    image.dispatchEvent(new UIEvent("error"));
+  });
+  expect(image.src.endsWith("/defaultProfile.png")).toBe(true);
 });

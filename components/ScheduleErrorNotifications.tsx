@@ -31,14 +31,16 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
 
   return (
     <>
-      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton"
-        sx={{ width: "fit-content" }}>
-        <Tooltip title={`You Have ${errors.length} Errors`} arrow placement="right">
-          <Badge badgeContent={errors?.length} color="primary">
-            {errors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}
-          </Badge>
-        </Tooltip>
-      </IconButton>
+      <Tooltip title={`You Have ${errors.length} Errors`} arrow placement="right" data-testid="errorBellTooltip">
+        <span>
+          <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton"
+            sx={{ width: "fit-content" }}>
+              <Badge badgeContent={errors?.length} color="primary">
+                {errors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}
+              </Badge>
+          </IconButton>
+        </span>
+      </Tooltip>
       <Popover
         anchorEl={anchorEl}
         anchorReference="anchorPosition"

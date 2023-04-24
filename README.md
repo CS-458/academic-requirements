@@ -1,5 +1,6 @@
-# Scheduling App
-
+# Four Year Schedule Planner
+This is a Web Application that allows a UW-Stout student to create a Four Year Plan (or a custom number of years).
+It is designed to help a student create their desired path into UW-Stout's various programs.
 ## Development resources
 
 ### Web-based scheduling app that is highly mobile friendly and accessible

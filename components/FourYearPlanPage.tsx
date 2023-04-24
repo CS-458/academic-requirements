@@ -1,4 +1,12 @@
-import React, { FC, useEffect, memo, useCallback, useState, useRef } from "react";
+import React, {
+  FC,
+  useEffect,
+  memo,
+  useCallback,
+  useState,
+  useRef,
+  createContext
+} from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -39,6 +47,8 @@ export interface CourseError {
 
 let undo = false;
 let redo = false;
+
+export const PassedCourseListContext = createContext<CourseType[]>([]);
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -132,20 +142,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       const tempSemesters: SemesterType[] = [];
       let i = 0;
       for (let year = 1; year < 5; year++) {
-        [season.Fall, season.Spring].forEach((s) => {
-          tempSemesters.push({
-            accepts: [ItemTypes.COURSE],
-            courses: [],
-            semesterNumber: i++,
-            SemesterCredits: 0,
-            Warning: null,
-            year,
-            season: s
-          });
-        });
-      }
-      for (let year = 1; year < 5; year++) {
-        [season.Winter, season.Summer].forEach((s) => {
+        Object.values(season).forEach((s) => {
           tempSemesters.push({
             accepts: [ItemTypes.COURSE],
             courses: [],
@@ -549,9 +546,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function loadFYP(semesters: SemesterType[]): void {
       // fill in the schedule
       semesters.forEach((semester, index) => {
+        if (index % 2 === 1) return;
         const tempArr: CourseType[] = [];
+        console.log("FYP", fourYearPlan);
         // Get the semester data from the json
-        const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+        const classPlan = fourYearPlan.ClassPlan["Semester" + (index / 2 + 1)];
         if (classPlan == null) return;
         const courseStringArr = classPlan.Courses;
         let credits = 0;
@@ -769,91 +768,93 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
     const semListRef = useRef(null);
     return (
-      <div className="generic">
-        <div className="drag-drop">
-          <ActionBar>
-            <ScheduleUpload
-              scheduleData={info}
-              setAlertData={throwError}
-              semRef={semListRef}
-              defaultName={userMajor()?.schedule_name}
-            />
-            <ScheduleErrorNotification errors={savedErrors} />
-            <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
-            <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
-            <ReloadPage
-              scheduleData={info}
-              sems={semesters}
-              resetRequirements={resetRequirements}
-              handleReturn={handleReturnDrop}
-              setSemesters={setSemesters}
-              setSavedErrors={setSavedErrors}
-              resetRedo={setCoursesForRedo}
-              resetMoved={setCoursesMoved}
-              loadFYP={loadFYP}
-              initializeSemesters={initializeSemesters}
-              setWarningPreReq={setWarningPrereq}
-              setWarningFallvsSpring={setWarningFallvsSpringCourses}
-              setWarningDupCourses={setWarningDupCourses}
-            />
-          </ActionBar>
-          <div style={{ overflow: "hidden", clear: "both" }}>
-            <Snackbar
-              open={visibility}
-              autoHideDuration={6000}
-              onClose={handleClose}
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-              data-testid="snackbar"
-            >
-              <Alert
+      <PassedCourseListContext.Provider value={PassedCourseList}>
+        <div className="generic">
+          <div className="drag-drop">
+            <ActionBar>
+              <ScheduleUpload
+                scheduleData={info}
+                setAlertData={throwError}
+                semRef={semListRef}
+                defaultName={userMajor()?.schedule_name}
+              />
+              <ScheduleErrorNotification errors={savedErrors} />
+              <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
+              <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
+              <ReloadPage
+                scheduleData={info}
+                sems={semesters}
+                resetRequirements={resetRequirements}
+                handleReturn={handleReturnDrop}
+                setSemesters={setSemesters}
+                setSavedErrors={setSavedErrors}
+                resetRedo={setCoursesForRedo}
+                resetMoved={setCoursesMoved}
+                loadFYP={loadFYP}
+                initializeSemesters={initializeSemesters}
+                setWarningPreReq={setWarningPrereq}
+                setWarningFallvsSpring={setWarningFallvsSpringCourses}
+                setWarningDupCourses={setWarningDupCourses}
+              />
+            </ActionBar>
+            <div style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}>
+              <Snackbar
+                open={visibility}
+                autoHideDuration={6000}
                 onClose={handleClose}
-                severity={severity}
-                sx={{ width: "100%" }}
+                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                data-testid="snackbar"
               >
-                {errorBreaks()}
-              </Alert>
-            </Snackbar>
-            <SemesterList
-              sref={semListRef}
+                <Alert
+                  onClose={handleClose}
+                  severity={severity}
+                  sx={{ width: "100%" }}
+                >
+                  {errorBreaks()}
+                </Alert>
+              </Snackbar>
+              <SemesterList
+                sref={semListRef}
+                semesters={semesters}
+                warningPrerequisiteCourses={warningPrereq}
+                warningFallvsSpringCourses={warningFallvsSpringCourses}
+                warningDuplicateCourses={warningDupCourses}
+                PassedCourseList={PassedCourseList}
+                setSemesters={setSemesters}
+                checkRequirements={checkRequirements}
+                coursesInMultipleCategories={coursesInMultipleCategories}
+                setUpdateWarning={setUpdateWarning}
+                reqList={reqList ?? []}
+                reqGenList={reqGenList ?? []}
+                createCourseMoveRecord={createCourseMoveRecord}
+                error={throwError}
+              />
+            </div>
+            <div
+              style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}
+              className="class-dropdown generic"
+            >
+              <CourseFiltering
+                courseData={PassedCourseList}
+                onFiltered={(courses: CourseType[]) => {
+                  setCoursesInCategory(courses);
+                }}
+              />
+              <CourseList
+                accept={[ItemTypes.COURSE]}
+                onDrop={(item) => handleReturnDrop(item)}
+                courses={coursesInCategory}
+                key={0}
+              />
+            </div>
+            <InformationDrawer
+              requirementsDisplay={requirementsDisplay}
               semesters={semesters}
-              warningPrerequisiteCourses={warningPrereq}
-              warningFallvsSpringCourses={warningFallvsSpringCourses}
-              warningDuplicateCourses={warningDupCourses}
-              PassedCourseList={PassedCourseList}
-              setSemesters={setSemesters}
-              checkRequirements={checkRequirements}
-              coursesInMultipleCategories={coursesInMultipleCategories}
-              setUpdateWarning={setUpdateWarning}
-              reqList={reqList ?? []}
-              reqGenList={reqGenList ?? []}
-              createCourseMoveRecord={createCourseMoveRecord}
-              error={throwError}
+              passedCourseList={PassedCourseList}
             />
           </div>
-          <div
-            style={{ overflow: "hidden", clear: "both" }}
-            className="class-dropdown generic"
-          >
-            <CourseFiltering
-              courseData={PassedCourseList}
-              onFiltered={(courses: CourseType[]) => {
-                setCoursesInCategory(courses);
-              }}
-            />
-            <CourseList
-              accept={[ItemTypes.COURSE]}
-              onDrop={(item) => handleReturnDrop(item)}
-              courses={coursesInCategory}
-              key={0}
-            />
-          </div>
-          <InformationDrawer
-            requirementsDisplay={requirementsDisplay}
-            semesters={semesters}
-            passedCourseList={PassedCourseList}
-          />
         </div>
-      </div>
+      </PassedCourseListContext.Provider>
     );
   }
 );

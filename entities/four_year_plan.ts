@@ -1,5 +1,6 @@
 import type { TargetType } from "dnd-core";
 import { CourseError } from "../components/FourYearPlanPage";
+import { SxProps } from "@mui/material";
 
 // Defines the major object we are passing between files
 export interface MajorType {
@@ -39,12 +40,14 @@ export interface DragCourseType {
   semesters: string; // see CourseType
   preReq: string; // see CourseType
   dragSource: string; // see CourseType
-  warningYellowColor: number | undefined; // If the course is in multiple semesters
-  warningOrangeColor: number | undefined; // If the course is in the wrong semester fall vs spring
-  warningRedColor: number | undefined; // If the course has a prereq error
+  warningYellowColor: CourseError | undefined; // If the course is in multiple semesters
+  warningOrangeColor: CourseError | undefined; // If the course is in the wrong semester fall vs spring
+  warningRedColor: CourseError | undefined; // If the course has a prereq error
   idCourse: number; // see CourseType
   idCategory: number; // see CourseType
   repeatableForCred: boolean; // see CourseType
+  onDrag?: (item: any) => void; // Used to track when a course is being dragged
+  onDragEnd?: (item: any) => void; // Used to track when a course is done dragging
 }
 
 // Defines the props for the course list component
@@ -52,6 +55,9 @@ export interface CourseListType {
   accept: TargetType; // makes it a drop target
   onDrop: (item: any) => void; // function for what to do on drop
   courses: CourseType[]; // list of courses it displays for dragging
+  onCourseDrag?: (item: any) => void; // Used to track when a course is being dragged
+  onCourseDragEnd?: (item: any) => void; // Used to track when a course is done dragging
+  sx?: SxProps; // custom styling for CourseList
 }
 
 // Defines a requirement as it comes from the database
@@ -130,6 +136,10 @@ export interface SemesterProps {
   warningDuplicateCourses: CourseError[]; // list of courses in more than one semester
   year: number; // year number 1,2,3,4,etc.
   season: season; // Season the semester is (Fall, Winter, Spring, Summer)
+  suggestedContent: {
+    courses: CourseType[];
+    requirements: String[];
+  }; // A list of course suggestions for a semester
 }
 
 // Defines the properties of a semester object

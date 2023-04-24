@@ -15,7 +15,6 @@ html {
 }
 
 .App {
-  text-align: center;
   height: 100%;
   margin-right: 10px;
   margin-left: 10px;
@@ -79,7 +78,6 @@ body {
 }
 
 .page {
-  padding-top: 1em;
   height: 100%;
 }
 

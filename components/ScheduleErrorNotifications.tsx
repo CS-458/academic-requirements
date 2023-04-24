@@ -1,11 +1,10 @@
-import { Close, NotificationImportant, NotificationsNone } from "@mui/icons-material";
-import { Badge, Box, Divider, Grid, IconButton, Popover, Tooltip, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Close, Error, NotificationImportant, NotificationsNone } from "@mui/icons-material";
+import { Badge, Box, Divider, Grid, IconButton, Popover, Stack, Tooltip, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
-export default function ScheduleErrorNotification(props: { errors: string[] }): JSX.Element {
+export default function ScheduleErrorNotification(props: { errors: string[][] }): JSX.Element {
   const { errors } = props;
-  /* Will have tooltip and popper */
-  // TODO, mui tooltips (no max width) and popover
+  const [displayedErrors, setDisplayedErrors] = useState<string[][]>([]);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleOpenNotification = (event: React.MouseEvent<HTMLElement>): void => {
@@ -29,13 +28,25 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
     };
   };
 
+  useEffect(() => {
+    // remove errors with the same name errors[n][0]
+    const tempErrors: string[][] = [];
+    errors.forEach((error) => {
+      const found = tempErrors.findIndex((tmpErr) => tmpErr[0] === error[0]);
+      if (found === -1) {
+        tempErrors.push(error);
+      }
+    });
+    setDisplayedErrors(tempErrors);
+  }, [errors]);
+
   return (
     <>
-      <IconButton onClick={handleOpenNotification} color="primary" disabled={errors?.length === 0} data-testid="notificationButton"
+      <IconButton onClick={handleOpenNotification} color="primary" disabled={displayedErrors?.length === 0} data-testid="notificationButton"
         sx={{ width: "fit-content" }}>
-        <Tooltip title={`You Have ${errors.length} Errors`} arrow placement="right">
-          <Badge badgeContent={errors?.length} color="primary">
-            {errors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}
+        <Tooltip title={`You Have ${displayedErrors.length} Errors`} arrow placement="right">
+          <Badge badgeContent={displayedErrors?.length} color="primary">
+            {displayedErrors?.length === 0 ? <NotificationsNone /> : <NotificationImportant />}
           </Badge>
         </Tooltip>
       </IconButton>
@@ -75,7 +86,7 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
               </IconButton>
             </Grid>
           </Grid>
-          {errors.map((error, index) => {
+          {displayedErrors.map((error, index) => {
             return (
               <div key={index}>
                 <Divider />
@@ -84,7 +95,15 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
                     padding: ".5em"
                   }}
                 >
-                  {error[0]}
+                  <Stack direction="row">
+                    <Error
+                      sx={{
+                        mr: ".25em",
+                        color: error[1] === "error" ? "error.main" : "warning.main"
+                      }}
+                    />
+                    {error[0]}
+                  </Stack>
                 </Box>
               </div>
             );

@@ -17,7 +17,7 @@ import { CourseError } from "./FourYearPlanPage";
 export default function FormDialog(props: {
   scheduleData: UserSavedSchedule["scheduleData"];
   sems: SemesterType[];
-  setSavedErrors: (e: string[]) => void;
+  setSavedErrors: (e: string[][]) => void;
   resetRequirements: () => void;
   setSemesters: (v: SemesterType[]) => void;
   handleReturn: (V: { idCourse: number; dragSource: string }) => void;

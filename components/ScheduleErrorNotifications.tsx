@@ -84,7 +84,7 @@ export default function ScheduleErrorNotification(props: { errors: string[] }): 
                     padding: ".5em"
                   }}
                 >
-                  {error}
+                  {error[0]}
                 </Box>
               </div>
             );

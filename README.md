@@ -1,3 +1,4 @@
+# Four Year Schedule Planner
 This is a web-based scheduling application designed for University of Wisconsin-Stout students who wish to create a personalized academic plan for a specific program offered by the institution.
 
 The application features a user-friendly interface that enables users to create a four-year plan or a plan spanning a custom number of years. Users can save one or multiple schedules for future reference or editing, while pre-generated four-year plans are available to facilitate the planning process.

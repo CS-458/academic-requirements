@@ -4,14 +4,14 @@
 - Users can save one or multiple schedules for future reference or editing.
 - Pre-generated four-year plans are available to help users initiate their planning process.
 - The application provides users with tools to ensure all necessary requirements mandated by UW-Stout are met. 
-## Development resources
-
 ### Web-based scheduling app that is highly mobile friendly and accessible
 
 - Web Application
-- Free to use, publicly accessible
-- Mobile accessible
+- Free to use, publicly accessible 
+- Mobile accessible (However, you can add a mouse and it will work)
 - Modern UI
+## Development resources
+- The internet
 
 ### Links
 

@@ -10,8 +10,7 @@ The application features:
     - A requirments side bar with a dynamically updating percentages
     - Can be expanded to show more information.
 
-The application is publicly accessible and free to use. Its responsive design makes it accessible on both desktop and mobile devices
-(so long as it has access to a mouse), providing a modern UI that is optimized for a variety of platforms.
+The application is publicly accessible and free to use.
 ## Development resources
 - The internet
 

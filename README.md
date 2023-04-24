@@ -13,11 +13,7 @@ The application features:
 The application is publicly accessible and free to use.
 ## Development resources
 - The internet
-
-### Links
-
-- [Confluence](https://schedule-planner-capstone.atlassian.net/l/cp/Aw0TPPu3)
-- [Jira](https://schedule-planner-capstone.atlassian.net/jira/software/projects/TIME/boards/2)
+- [Jira](https://academic-cs458.atlassian.net/jira/software/projects/AR/boards/1/backlog)
 
 ## Running
 

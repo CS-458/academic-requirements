@@ -6,7 +6,8 @@ The application features a user-friendly interface that enables users to create 
 The application is equipped with a set of tools aimed at ensuring all mandatory requirements mandated by UW-Stout are met. Such as a 
 requirments side bar with a dynamically updating percentages, this can also be expanded to show more information.
 
-The application is publicly accessible and free to use. Its responsive design makes it accessible on both desktop and mobile devices, providing a modern UI that is optimized for a variety of platforms.
+The application is publicly accessible and free to use. Its responsive design makes it accessible on both desktop and mobile devices
+(so long as it has access to a mouse), providing a modern UI that is optimized for a variety of platforms.
 ## Development resources
 - The internet
 

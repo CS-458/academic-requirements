@@ -28,7 +28,8 @@ test("Error Notification - Badge Number", () => {
   expect(index).toMatchSnapshot();
   const notificationButton = screen.getByTestId("notificationButton");
   expect(notificationButton).not.toBeDisabled();
-  expect(notificationButton).toContainHTML(`You Have ${errorsMock.length} Errors`);
+  const errorBell = screen.getByTestId("errorBellTooltip");
+  expect(errorBell).toContainHTML(`You Have ${errorsMock.length} Errors`);
 });
 
 test("Error Notification - Open Popover", async () => {

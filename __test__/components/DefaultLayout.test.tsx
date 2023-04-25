@@ -54,7 +54,7 @@ test("Render Default Layout w/expired user", async () => {
 test("Render Default Layout w/expiring user", async () => {
   const token = mockUserInfo(userId());
   // Default timeout is 5000, and we need to wait at least 1000. We don't do anything else here, so it isn't an issue.
-  token.info.exp = Date.now() / 1000 + 1;
+  token.info.exp = Date.now() / 1000 + 2;
   localStorage.setItem("google-login", JSON.stringify(token));
 
   const user = setupUser();

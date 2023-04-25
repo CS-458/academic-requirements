@@ -29,11 +29,14 @@ export default function ScheduleErrorNotification(props: { errors: string[][] })
   };
 
   useEffect(() => {
-    // remove errors with the same name errors[n][0]
+    // remove errors with the same name
+    // error name: errors[n][0]
+    // error severity: errors[n][1]
     const tempErrors: string[][] = [];
     errors.forEach((error) => {
       const found = tempErrors.findIndex((tmpErr) => tmpErr[0] === error[0]);
       if (found === -1) {
+        // We haven't seen this error before, add it to the list
         tempErrors.push(error);
       }
     });

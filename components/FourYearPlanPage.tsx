@@ -358,11 +358,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           return savedErrors.findIndex((se) => {
             return se[0].includes(e[0]);
           }) === -1;
-          // !savedErrors.includes(e)
         });
         if (newErrors.length > 0) {
           setVisibility(true);
-          // loop through new errors to determine severity
+          // loop through new errors to determine max severity
           let severity = "warning";
           newErrors.forEach((e) => {
             if (e[1] === "error") {

@@ -118,8 +118,8 @@ export default function DefaultLayout(props: {
 
     return (
       <Typography variant="h5" component="div" sx={{ fontSize: "1rem" }}>
-        <Button aria-describedby={id} onClick={handleClick}>
-          <Tooltip title={"Manage Profile"}>
+        <Tooltip title={"Manage Profile"}>
+          <Button aria-describedby={id} onClick={handleClick}>
             <img
               src={picture}
               onError={() => {
@@ -133,8 +133,8 @@ export default function DefaultLayout(props: {
               style={{ height: "2em", borderRadius: "50%" }}
               data-testid="account-picture"
             />
-          </Tooltip>
-        </Button>
+          </Button>
+        </Tooltip>
         <Popover
           id={id}
           anchorEl={anchorEl}

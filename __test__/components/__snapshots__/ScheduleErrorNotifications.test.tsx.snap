@@ -37,7 +37,9 @@ exports[`Default Error Notification Behavior 1`] = `
               </svg>
               <span
                 class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
-              />
+              >
+                0
+              </span>
             </span>
           </button>
         </span>
@@ -81,7 +83,9 @@ exports[`Default Error Notification Behavior 1`] = `
             </svg>
             <span
               class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
-            />
+            >
+              0
+            </span>
           </span>
         </button>
       </span>

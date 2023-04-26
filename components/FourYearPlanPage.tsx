@@ -255,11 +255,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [PassedCourseList, semesters]
     );
 
-    const [savedErrors, setSavedErrors] = useState<string[]>([]);
+    const [savedErrors, setSavedErrors] = useState<string[][]>([]);
 
     useEffect(() => {
       if (updateWarning.newCheck) {
-        const errors: string[] = [];
+        const errors: string[][] = [];
 
         const duplicateCourses: CourseError[] = [];
         for (let i = 0; i < semesters.length; i++) {
@@ -271,7 +271,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 );
                 if (dup !== undefined) {
                   errors.push(
-                    `Duplicate Course found: ${c.subject}-${c.number}`
+                    [
+                      `Duplicate Course found: ${c.subject}-${c.number}`,
+                      "warning"
+                    ]
                   );
                   duplicateCourses.push({
                     id: c.idCourse,
@@ -297,7 +300,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 sem: sem.semesterNumber
               });
               errors.push(
-                `${c.subject}-${c.number} is only offered in the fall`
+                [
+                  `${c.subject}-${c.number} is only offered in the fall`,
+                  "warning"
+                ]
               );
             } else if (c.semesters === "SP" && sem.season !== season.Spring) {
               fallSpringCourses.push({
@@ -305,7 +311,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 sem: sem.semesterNumber
               });
               errors.push(
-                `${c.subject}-${c.number} is only offered in the spring`
+                [
+                  `${c.subject}-${c.number} is only offered in the spring`,
+                  "warning"
+                ]
               );
             }
           });
@@ -326,7 +335,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             if (!val.returnValue) {
               preReqCourses.push({ id: c.idCourse, sem: sem.semesterNumber });
               errors.push(
-                `${c.subject}-${c.number} requires: ${val.failedString}`
+                [
+                  `${c.subject}-${c.number} requires: ${val.failedString}`,
+                  "error"
+                ]
               );
             }
           });
@@ -341,10 +353,22 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         });
         setSemesters(tempSemesters);
 
-        const newErrors = errors.filter((e) => !savedErrors.includes(e));
+        // errors that have not been seen before
+        const newErrors: string[][] = errors.filter((e) => {
+          return savedErrors.findIndex((se) => {
+            return se[0].includes(e[0]);
+          }) === -1;
+        });
         if (newErrors.length > 0) {
           setVisibility(true);
-          throwError(newErrors.join("<br>"), "error");
+          // loop through new errors to determine max severity
+          let severity = "warning";
+          newErrors.forEach((e) => {
+            if (e[1] === "error") {
+              severity = "error";
+            }
+          });
+          throwError(newErrors.map((e) => e[0]).join("<br>"), severity);
         }
         setSavedErrors(errors);
       }

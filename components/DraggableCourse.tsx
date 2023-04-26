@@ -18,7 +18,9 @@ export const Course: FC<DragCourseType> = memo(function Course({
   warningRedColor,
   idCourse,
   idCategory,
-  repeatableForCred
+  repeatableForCred,
+  onDrag,
+  onDragEnd
 }) {
   // defines the drag action
   const [{ opacity }, drag] = useDrag(
@@ -42,7 +44,12 @@ export const Course: FC<DragCourseType> = memo(function Course({
       },
       collect: (monitor) => ({
         opacity: monitor.isDragging() ? 0.8 : 1
-      })
+      }),
+      end: (e: any) => {
+        if (onDragEnd !== undefined) {
+          onDragEnd(e);
+        }
+      }
     }),
     [idCourse, type, dragSource] // what is collected by the semester and course list when you drop it
   );
@@ -61,6 +68,11 @@ export const Course: FC<DragCourseType> = memo(function Course({
   return (
     <div
       ref={drag}
+      onDrag={(e: any) => {
+        if (onDrag !== undefined) {
+          onDrag(e);
+        }
+      }}
       style={{ opacity }}
       data-testid="course"
       className={clsx(

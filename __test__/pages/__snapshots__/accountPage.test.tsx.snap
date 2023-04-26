@@ -48,6 +48,10 @@ exports[`Test Edit button 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -58,6 +62,10 @@ exports[`Test Redirect 1`] = `
       data-testid="test-root-element"
     />
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;
 
@@ -109,5 +117,9 @@ exports[`Test Render of the account page 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

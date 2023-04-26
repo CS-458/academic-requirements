@@ -6,7 +6,8 @@ import {
   Button,
   Popover,
   MenuList,
-  MenuItem
+  MenuItem,
+  Tooltip
 } from "@mui/material";
 
 import MenuDrawer from "../NavigationMenu";
@@ -44,12 +45,10 @@ export default function DefaultLayout(props: {
     if (loaded !== null) {
       const user: User = JSON.parse(loaded);
       const now = Date.now() / 1000;
-      console.log("Loaded: ", user, now);
       if (user.info.exp >= now && user.info.nbf <= now) {
         setUserAndTimeout(user);
       }
     }
-    console.log("Checking login state");
     setFirstLoad(false);
   }, []);
 
@@ -61,10 +60,8 @@ export default function DefaultLayout(props: {
   }
 
   function responseMessage(token: CredentialResponse): void {
-    console.log(token);
     if (token.credential !== undefined) {
       const jwt: UserInfo = jwtDecode(token.credential);
-      console.log(jwt);
       const user = { info: jwt, cred: token.credential };
       setUserAndTimeout(user);
       localStorage.setItem("google-login", JSON.stringify(user));
@@ -73,19 +70,6 @@ export default function DefaultLayout(props: {
   function errorMessage(): void {
     console.error("Login failed");
   }
-  // interface AppBarProps extends MuiAppBarProps {
-  //   open?: boolean;
-  // }
-
-  // const AppBar = styled(MuiAppBar, {
-  //   shouldForwardProp: (prop) => prop !== "open"
-  // })<AppBarProps>(({ theme, open }) => ({
-  //   zIndex: theme.zIndex.drawer + 1,
-  //   transition: theme.transitions.create(["width", "margin"], {
-  //     easing: theme.transitions.easing.sharp,
-  //     duration: theme.transitions.duration.leavingScreen
-  //   })
-  // }));
   const [picture, setPicture] = useState(user?.info.picture);
   useEffect(() => {
     setPicture(user?.info.picture);
@@ -99,7 +83,7 @@ export default function DefaultLayout(props: {
       setAnchorEl(event.currentTarget);
     };
 
-    const handleClose = () => {
+    const handleClose = (): void => {
       setAnchorEl(null);
     };
 
@@ -108,11 +92,13 @@ export default function DefaultLayout(props: {
     }
     if (user === undefined) {
       return (
-        <GoogleLogin
-          onSuccess={responseMessage}
-          onError={errorMessage}
-          useOneTap
-        />
+        <div data-testid="google-login-button">
+          <GoogleLogin
+            onSuccess={responseMessage}
+            onError={errorMessage}
+            useOneTap
+          />
+        </div>
       );
     }
 
@@ -132,20 +118,22 @@ export default function DefaultLayout(props: {
 
     return (
       <Typography variant="h5" component="div" sx={{ fontSize: "1rem" }}>
-        <Button aria-describedby={id} onClick={handleClick}>
-          <img
-            src={picture}
-            onError={() => {
-              if (picture === undefined) return;
-              if (picture.startsWith("https://lh3")) {
-                setPicture(picture.replace("lh3", "lh4"));
-              } else if (picture.startsWith("https://lh4")) {
-                setPicture(picture.replace("lh4", "lh5"));
-              }
-            }}
-            style={{ height: "2em", borderRadius: "50%" }}
-          />
-        </Button>
+        <Tooltip title={"Manage Profile"}>
+          <Button aria-describedby={id} onClick={handleClick}>
+            <img
+              src={picture}
+              onError={(e) => {
+                console.log(e);
+                const target = e.target;
+                if (target instanceof HTMLImageElement) {
+                  target.src = "/defaultProfile.png";
+                }
+              }}
+              style={{ height: "2em", borderRadius: "50%" }}
+              data-testid="account-picture"
+            />
+          </Button>
+        </Tooltip>
         <Popover
           id={id}
           anchorEl={anchorEl}

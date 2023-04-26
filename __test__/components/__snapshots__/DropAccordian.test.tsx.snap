@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render DropAccordian 1`] = `
+<body>
+  <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
+      >
+        <div>
+          <div
+            aria-expanded="false"
+            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+            >
+              Year 
+              1
+            </div>
+            <div
+              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                data-testid="expand-year"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+          style="min-height: 0px;"
+        >
+          <div
+            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+          >
+            <div
+              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+            >
+              <div
+                class="MuiAccordion-region"
+                role="region"
+              >
+                <div
+                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
+                >
+                  <div
+                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                  >
+                    <div
+                      class="semester Semester-root MuiBox-root css-17txp1g"
+                      data-testid="semester0"
+                    >
+                      <div
+                        class="css-nen11g-MuiStack-root"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                          >
+                            <p>
+                              Fall
+                               (
+                              0
+                              )
+                               
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="semester Semester-root MuiBox-root css-17txp1g"
+                      data-testid="semester0"
+                    >
+                      <div
+                        class="css-nen11g-MuiStack-root"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                          >
+                            <p>
+                              Winter
+                               (
+                              0
+                              )
+                               
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="semester Semester-root MuiBox-root css-17txp1g"
+                      data-testid="semester0"
+                    >
+                      <div
+                        class="css-nen11g-MuiStack-root"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                          >
+                            <p>
+                              Spring
+                               (
+                              0
+                              )
+                               
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="semester Semester-root MuiBox-root css-17txp1g"
+                      data-testid="semester0"
+                    >
+                      <div
+                        class="css-nen11g-MuiStack-root"
+                      >
+                        <div
+                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                        >
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                          >
+                            <p>
+                              Summer
+                               (
+                              0
+                              )
+                               
+                            </p>
+                          </div>
+                          <div
+                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
+</body>
+`;

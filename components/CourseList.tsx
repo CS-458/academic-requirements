@@ -24,7 +24,10 @@ const style: CSSProperties = {
 export const CourseList: FC<CourseListType> = memo(function CourseList({
   accept,
   onDrop,
-  courses
+  courses,
+  onCourseDrag,
+  onCourseDragEnd,
+  sx
 }) {
   // defines the drop
   const [{ isOver }, drop] = useDrop({
@@ -45,7 +48,7 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
   return (
     <Box
       ref={drop}
-      sx={{ ...style, bgcolor }}
+      sx={{ ...style, bgcolor, ...sx }}
       data-testid="courseListDropTarget"
     >
       {isActive ? "Release to drop" : ""}
@@ -81,6 +84,8 @@ export const CourseList: FC<CourseListType> = memo(function CourseList({
             warningRedColor={undefined}
             repeatableForCred={repeatableForCred}
             data-testid="course"
+            onDrag={onCourseDrag}
+            onDragEnd={onCourseDragEnd}
           />
         )
       )}

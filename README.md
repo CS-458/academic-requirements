@@ -1,18 +1,19 @@
-# Scheduling App
+# Four Year Schedule Planner
+This is a web-based scheduling application designed for University of Wisconsin-Stout students who wish to create a personalized academic plan for a specific program offered by the institution.
 
+The application features:
+- A user-friendly interface
+- Ability to create a four-year plan or a plan spanning a custom number of years 
+- Ability to save schedules for future reference or editing
+- Pre-generated four-year plans that are available to help aid in the planning process
+- Tools aimed at ensuring all mandatory requirements mandated by UW-Stout are met.
+    - A requirments side bar with a dynamically updating percentages
+    - Can be expanded to show more information.
+
+The application is publicly accessible and free to use.
 ## Development resources
-
-### Web-based scheduling app that is highly mobile friendly and accessible
-
-- Web Application
-- Free to use, publicly accessible
-- Mobile accessible
-- Modern UI
-
-### Links
-
-- [Confluence](https://schedule-planner-capstone.atlassian.net/l/cp/Aw0TPPu3)
-- [Jira](https://schedule-planner-capstone.atlassian.net/jira/software/projects/TIME/boards/2)
+- The internet
+- [Jira](https://academic-cs458.atlassian.net/jira/software/projects/AR/boards/1/backlog)
 
 ## Running
 

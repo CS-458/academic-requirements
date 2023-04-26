@@ -14,9 +14,9 @@ test("Default Error Notification Behavior", () => {
 });
 
 const errorsMock = [
-  "error 1",
-  "error 2",
-  "error 3"
+  ["error 2", "error"],
+  ["error 1", "warning"],
+  ["error 3", "error"]
 ];
 
 test("Error Notification - Badge Number", () => {
@@ -28,7 +28,8 @@ test("Error Notification - Badge Number", () => {
   expect(index).toMatchSnapshot();
   const notificationButton = screen.getByTestId("notificationButton");
   expect(notificationButton).not.toBeDisabled();
-  expect(notificationButton).toContainHTML(`You Have ${errorsMock.length} Errors`);
+  const errorBell = screen.getByTestId("errorBellTooltip");
+  expect(errorBell).toContainHTML(`You Have ${errorsMock.length} Errors`);
 });
 
 test("Error Notification - Open Popover", async () => {
@@ -63,7 +64,7 @@ test("Error Notification - Errors Displayed", async () => {
 
   // Ensure each error is displayed
   errorsMock.forEach((error) => {
-    expect(within(popover).queryByText(error)).not.toBeNull();
+    expect(within(popover).queryByText(error[0])).not.toBeNull();
   });
 });
 

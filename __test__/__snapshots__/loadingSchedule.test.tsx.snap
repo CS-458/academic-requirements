@@ -23,9 +23,11 @@ exports[`Load saved schedule 1`] = `
               >
                 <div>
                   <div
-                    class="MuiBox-root css-6um5jb"
+                    class="css-1bnuhlb-MuiStack-root"
                   >
-                    <div>
+                    <div
+                      class="css-163ljxj-MuiStack-root"
+                    >
                       <span
                         aria-label="Save"
                         class=""
@@ -53,47 +55,95 @@ exports[`Load saved schedule 1`] = `
                           />
                         </button>
                       </span>
-                    </div>
-                    <button
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-                      data-testid="notificationButton"
-                      tabindex="0"
-                      type="button"
-                    >
-                      <span
-                        aria-label="You Have 2 Errors"
-                        class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                      <button
+                        aria-label="Save as PDF"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
                         data-mui-internal-clone-element="true"
+                        tabindex="0"
+                        type="button"
                       >
                         <svg
                           aria-hidden="true"
                           class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                          data-testid="NotificationImportantIcon"
+                          data-testid="SavePdf"
                           focusable="false"
                           viewBox="0 0 24 24"
                         >
                           <path
-                            d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                            d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"
                           />
                         </svg>
                         <span
-                          class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                      <button
+                        aria-label="Save as PNG"
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+                        data-mui-internal-clone-element="true"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                          data-testid="SavePng"
+                          focusable="false"
+                          viewBox="0 0 24 24"
                         >
-                          2
+                          <path
+                            d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4 2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"
+                          />
+                        </svg>
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                    <span
+                      aria-label="You Have 2 Errors"
+                      class=""
+                      data-mui-internal-clone-element="true"
+                      data-testid="errorBellTooltip"
+                    >
+                      <button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+                        data-testid="notificationButton"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                            data-testid="NotificationImportantIcon"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                            />
+                          </svg>
+                          <span
+                            class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                          >
+                            2
+                          </span>
                         </span>
-                      </span>
-                      <span
-                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                      />
-                    </button>
-                    <br />
+                        <span
+                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                        />
+                      </button>
+                    </span>
                     <span
                       aria-label="Undo"
                       class=""
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="undoButton"
                         disabled=""
                         tabindex="-1"
@@ -112,14 +162,13 @@ exports[`Load saved schedule 1`] = `
                         </svg>
                       </button>
                     </span>
-                    <br />
                     <span
                       aria-label="Redo"
                       class=""
                       data-mui-internal-clone-element="true"
                     >
                       <button
-                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                         data-testid="redoButton"
                         disabled=""
                         tabindex="-1"
@@ -138,10 +187,9 @@ exports[`Load saved schedule 1`] = `
                         </svg>
                       </button>
                     </span>
-                    <br />
                     <button
                       aria-label="Reload initial schedule"
-                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-zqy9xa-MuiButtonBase-root-MuiIconButton-root"
                       data-mui-internal-clone-element="true"
                       tabindex="0"
                       type="button"
@@ -164,7 +212,7 @@ exports[`Load saved schedule 1`] = `
                   </div>
                 </div>
                 <div
-                  style="overflow: hidden; clear: both;"
+                  style="overflow: hidden; clear: both; padding-top: 1em;"
                 >
                   <div
                     class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomCenter css-1t20nyk-MuiSnackbar-root"
@@ -195,7 +243,12 @@ exports[`Load saved schedule 1`] = `
                       <div
                         class="MuiAlert-message css-1pxa9xg-MuiAlert-message"
                       >
-                        MATH-157 requires: MATH-151 or MATH-153 or MATH-156&lt;br&gt;CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        <div>
+                          MATH-157 requires: MATH-151 or MATH-153 or MATH-156
+                        </div>
+                        <div>
+                          CS-343 requires: MATH-158 or MATH-154 or PHYS-281
+                        </div>
                       </div>
                       <div
                         class="MuiAlert-action css-ki1hdl-MuiAlert-action"
@@ -227,271 +280,401 @@ exports[`Load saved schedule 1`] = `
                     style="overflow-y: auto; height: 100%;"
                   >
                     <div
-                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-1fjvggn-MuiPaper-root-MuiAccordion-root"
+                      class="printed MuiBox-root css-0"
                     >
-                      <div>
-                        <div
-                          aria-expanded="true"
-                          class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
-                          >
-                            Year 
-                            1
-                          </div>
-                          <div
-                            class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
                       <div
-                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
-                        style="min-height: 0px;"
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root Mui-expanded css-odo8ha-MuiPaper-root-MuiAccordion-root"
                       >
-                        <div
-                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                        >
+                        <div>
                           <div
-                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            aria-expanded="true"
+                            class="MuiButtonBase-root MuiAccordionSummary-root Mui-expanded css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
                           >
                             <div
-                              class="MuiAccordion-region"
-                              role="region"
+                              class="MuiAccordionSummary-content Mui-expanded css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              1
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper Mui-expanded css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="expand-year"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-entered css-pwcg7p-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                             >
                               <div
-                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                                class="MuiAccordion-region"
+                                role="region"
                               >
                                 <div
-                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester5"
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                   >
-                                    <p>
-                                      Fall
-                                       (
-                                      10
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester5"
                                     >
-                                      CS
-                                      -
-                                      144
-                                      <br />
-                                      Computer Science I
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Fall
+                                               (
+                                              10
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          144
+                                          <br />
+                                          Computer Science I
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=144&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          COMST
+                                          -
+                                          100
+                                          <br />
+                                          Fundamentals of Speech
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=100&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          ENGL
+                                          -
+                                          101
+                                          <br />
+                                          Composition 1
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester6"
                                     >
-                                      COMST
-                                      -
-                                      100
-                                      <br />
-                                      Fundamentals of Speech
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=COMST&filter%5B29%5D=100&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Winter
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          >
+                                            <button
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              data-testid="semester6-suggestBtn"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                  data-testid="AssistantIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                                >
+                                                  0
+                                                </span>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                              />
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester7"
                                     >
-                                      ENGL
-                                      -
-                                      101
-                                      <br />
-                                      Composition 1
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=101&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Spring
+                                               (
+                                              17
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          145
+                                          <br />
+                                          Computer Science II
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=145&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          ENGL
+                                          -
+                                          102
+                                          <br />
+                                          Composition 2
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=102&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText CourseWarningRed"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          MATH
+                                          -
+                                          157
+                                          <br />
+                                          Calculus and Analytic Geometry II
+                                          <br />
+                                          Credits: 
+                                          5
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=157&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          MATH
+                                          -
+                                          156
+                                          <br />
+                                          Calculus and Analytic Geometry I
+                                          <br />
+                                          Credits: 
+                                          5
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester6"
-                                  >
-                                    <p>
-                                      Winter
-                                       (
-                                      0
-                                      ) 
-                                    </p>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester7"
-                                  >
-                                    <p>
-                                      Spring
-                                       (
-                                      17
-                                      ) 
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester8"
                                     >
-                                      CS
-                                      -
-                                      145
-                                      <br />
-                                      Computer Science II
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=145&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Summer
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          >
+                                            <button
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              data-testid="semester8-suggestBtn"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                  data-testid="AssistantIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                                >
+                                                  0
+                                                </span>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                              />
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      ENGL
-                                      -
-                                      102
-                                      <br />
-                                      Composition 2
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ENGL&filter%5B29%5D=102&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                    <div
-                                      class="Course-root CourseText CourseWarningRed"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      MATH
-                                      -
-                                      157
-                                      <br />
-                                      Calculus and Analytic Geometry II
-                                      <br />
-                                      Credits: 
-                                      5
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=157&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      MATH
-                                      -
-                                      156
-                                      <br />
-                                      Calculus and Analytic Geometry I
-                                      <br />
-                                      Credits: 
-                                      5
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=156&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester8"
-                                  >
-                                    <p>
-                                      Summer
-                                       (
-                                      0
-                                      ) 
-                                    </p>
                                   </div>
                                 </div>
                               </div>
@@ -499,289 +682,415 @@ exports[`Load saved schedule 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                    >
-                      <div>
-                        <div
-                          aria-expanded="false"
-                          class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                          >
-                            Year 
-                            2
-                          </div>
-                          <div
-                            class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
                       <div
-                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                        style="min-height: 0px;"
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
                       >
-                        <div
-                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                        >
+                        <div>
                           <div
-                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
                           >
                             <div
-                              class="MuiAccordion-region"
-                              role="region"
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              2
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="expand-year"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                             >
                               <div
-                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                                class="MuiAccordion-region"
+                                role="region"
                               >
                                 <div
-                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester9"
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                   >
-                                    <p>
-                                      Fall
-                                       (
-                                      10
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester9"
                                     >
-                                      CS
-                                      -
-                                      244
-                                      <br />
-                                      Data Structures
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=244&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Fall
+                                               (
+                                              10
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          244
+                                          <br />
+                                          Data Structures
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=244&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          248
+                                          <br />
+                                          Web and Internet Programming
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=248&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          MATH
+                                          -
+                                          275
+                                          <br />
+                                          Linear Algebra
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester10"
                                     >
-                                      CS
-                                      -
-                                      248
-                                      <br />
-                                      Web and Internet Programming
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=248&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Winter
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          >
+                                            <button
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              data-testid="semester10-suggestBtn"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                  data-testid="AssistantIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+                                                >
+                                                  0
+                                                </span>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                              />
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester11"
                                     >
-                                      MATH
-                                      -
-                                      275
-                                      <br />
-                                      Linear Algebra
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=275&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Spring
+                                               (
+                                              10
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          254
+                                          <br />
+                                          Algorithm Design and Analysis
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=254&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          324
+                                          <br />
+                                          Database Systems Manipulation and Design
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=324&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          MATH
+                                          -
+                                          270
+                                          <br />
+                                          Discrete Mathematics
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=270&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          290
+                                          <br />
+                                          Professional Seminar
+                                          <br />
+                                          Credits: 
+                                          1
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=290&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester10"
-                                  >
-                                    <p>
-                                      Winter
-                                       (
-                                      0
-                                      ) 
-                                    </p>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester11"
-                                  >
-                                    <p>
-                                      Spring
-                                       (
-                                      10
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester12"
                                     >
-                                      CS
-                                      -
-                                      254
-                                      <br />
-                                      Algorithm Design and Analysis
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=254&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Summer
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          >
+                                            <button
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              data-testid="semester12-suggestBtn"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                  data-testid="AssistantIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                                                >
+                                                  2
+                                                </span>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                              />
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      CS
-                                      -
-                                      324
-                                      <br />
-                                      Database Systems Manipulation and Design
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=324&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      MATH
-                                      -
-                                      270
-                                      <br />
-                                      Discrete Mathematics
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=MATH&filter%5B29%5D=270&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      CS
-                                      -
-                                      290
-                                      <br />
-                                      Professional Seminar
-                                      <br />
-                                      Credits: 
-                                      1
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=290&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester12"
-                                  >
-                                    <p>
-                                      Summer
-                                       (
-                                      0
-                                      ) 
-                                    </p>
                                   </div>
                                 </div>
                               </div>
@@ -789,245 +1098,340 @@ exports[`Load saved schedule 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                    >
-                      <div>
-                        <div
-                          aria-expanded="false"
-                          class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                          >
-                            Year 
-                            3
-                          </div>
-                          <div
-                            class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
                       <div
-                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                        style="min-height: 0px;"
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
                       >
-                        <div
-                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                        >
+                        <div>
                           <div
-                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
                           >
                             <div
-                              class="MuiAccordion-region"
-                              role="region"
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              3
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="expand-year"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                             >
                               <div
-                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                                class="MuiAccordion-region"
+                                role="region"
                               >
                                 <div
-                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester13"
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                   >
-                                    <p>
-                                      Fall
-                                       (
-                                      9
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText CourseWarningRed"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester13"
                                     >
-                                      CS
-                                      -
-                                      343
-                                      <br />
-                                      Mathematical Foundations of Computer Graphics
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=343&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Fall
+                                               (
+                                              9
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText CourseWarningRed"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          343
+                                          <br />
+                                          Mathematical Foundations of Computer Graphics
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=343&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          ICT
+                                          -
+                                          215
+                                          <br />
+                                          Cybertechnology Ethics
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=215&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          364
+                                          <br />
+                                          Mobile Development in Android
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=364&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester14"
                                     >
-                                      ICT
-                                      -
-                                      215
-                                      <br />
-                                      Cybertechnology Ethics
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=ICT&filter%5B29%5D=215&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Winter
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          >
+                                            <button
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              data-testid="semester14-suggestBtn"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-ci5apu-MuiSvgIcon-root"
+                                                  data-testid="AssistantIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.12 10.88L12 17l-1.88-4.12L6 11l4.12-1.88L12 5l1.88 4.12L18 11l-4.12 1.88z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+                                                >
+                                                  2
+                                                </span>
+                                              </span>
+                                              <span
+                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                              />
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester15"
                                     >
-                                      CS
-                                      -
-                                      364
-                                      <br />
-                                      Mobile Development in Android
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=364&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Spring
+                                               (
+                                              6
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          358
+                                          <br />
+                                          Software Engineering Principles
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=358&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          404
+                                          <br />
+                                          Advanced Web and Internet Programming
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=404&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester14"
-                                  >
-                                    <p>
-                                      Winter
-                                       (
-                                      0
-                                      ) 
-                                    </p>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester15"
-                                  >
-                                    <p>
-                                      Spring
-                                       (
-                                      6
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester16"
                                     >
-                                      CS
-                                      -
-                                      358
-                                      <br />
-                                      Software Engineering Principles
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=358&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Summer
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      CS
-                                      -
-                                      404
-                                      <br />
-                                      Advanced Web and Internet Programming
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=404&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester16"
-                                  >
-                                    <p>
-                                      Summer
-                                       (
-                                      0
-                                      ) 
-                                    </p>
                                   </div>
                                 </div>
                               </div>
@@ -1035,223 +1439,287 @@ exports[`Load saved schedule 1`] = `
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-1fjvggn-MuiPaper-root-MuiAccordion-root"
-                    >
-                      <div>
-                        <div
-                          aria-expanded="false"
-                          class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
-                          role="button"
-                          tabindex="0"
-                        >
-                          <div
-                            class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
-                          >
-                            Year 
-                            4
-                          </div>
-                          <div
-                            class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
-                              data-testid="ArrowForwardIosSharpIcon"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
                       <div
-                        class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                        style="min-height: 0px;"
+                        class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiAccordion-root css-odo8ha-MuiPaper-root-MuiAccordion-root"
                       >
-                        <div
-                          class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                        >
+                        <div>
                           <div
-                            class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                            aria-expanded="false"
+                            class="MuiButtonBase-root MuiAccordionSummary-root css-3ookw9-MuiButtonBase-root-MuiAccordionSummary-root"
+                            role="button"
+                            tabindex="0"
                           >
                             <div
-                              class="MuiAccordion-region"
-                              role="region"
+                              class="MuiAccordionSummary-content css-1betqn-MuiAccordionSummary-content"
+                            >
+                              Year 
+                              4
+                            </div>
+                            <div
+                              class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                data-testid="expand-year"
+                                focusable="false"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                          style="min-height: 0px;"
+                        >
+                          <div
+                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                          >
+                            <div
+                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                             >
                               <div
-                                class="MuiAccordionDetails-root css-1jv654d-MuiAccordionDetails-root"
+                                class="MuiAccordion-region"
+                                role="region"
                               >
                                 <div
-                                  style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
+                                  class="MuiAccordionDetails-root css-1jd0yvc-MuiAccordionDetails-root"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester17"
+                                    style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                   >
-                                    <p>
-                                      Fall
-                                       (
-                                      8
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester17"
                                     >
-                                      CS
-                                      -
-                                      458
-                                      <br />
-                                      Software engineering Practicum
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Fall
+                                               (
+                                              8
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          458
+                                          <br />
+                                          Software engineering Practicum
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          441
+                                          <br />
+                                          Computer Architecture
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=441&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester18"
                                     >
-                                      CS
-                                      -
-                                      441
-                                      <br />
-                                      Computer Architecture
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=441&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester18"
-                                  >
-                                    <p>
-                                      Winter
-                                       (
-                                      0
-                                      ) 
-                                    </p>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-w964xf"
-                                    data-testid="semester19"
-                                  >
-                                    <p>
-                                      Spring
-                                       (
-                                      7
-                                      ) 
-                                      <svg
-                                        aria-hidden="true"
-                                        aria-label="Low"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="amber"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                        />
-                                        <path
-                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                        />
-                                      </svg>
-                                    </p>
-                                    <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
-                                    >
-                                      CS
-                                      -
-                                      458
-                                      <br />
-                                      Software engineering Practicum
-                                      <br />
-                                      Credits: 
-                                      4
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
-                                      >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Winter
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="Course-root CourseText"
-                                      data-testid="course"
-                                      draggable="true"
-                                      style="opacity: 1;"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
+                                      data-testid="semester19"
                                     >
-                                      CS
-                                      -
-                                      442
-                                      <br />
-                                      Operating Systems
-                                      <br />
-                                      Credits: 
-                                      3
-                                      <br />
-                                      <a
-                                        href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=442&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
-                                        target="_blank"
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
                                       >
-                                        Description
-                                      </a>
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Spring
+                                               (
+                                              7
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          458
+                                          <br />
+                                          Software engineering Practicum
+                                          <br />
+                                          Credits: 
+                                          4
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=458&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                        <div
+                                          class="Course-root CourseText"
+                                          data-testid="course"
+                                          draggable="true"
+                                          style="opacity: 1;"
+                                        >
+                                          CS
+                                          -
+                                          442
+                                          <br />
+                                          Operating Systems
+                                          <br />
+                                          Credits: 
+                                          3
+                                          <br />
+                                          <a
+                                            href="https://bulletin.uwstout.edu/content.php?filter%5B27%5D=CS&filter%5B29%5D=442&filter%5Bcourse_type%5D=-1&filter%5Bkeyword%5D=&filter%5B32%5D=1&filter%5Bcpage%5D=1&cur_cat_oid=21&expand=&navoid=544&search_database=Filter#acalog_template_course_filter"
+                                            target="_blank"
+                                          >
+                                            Description
+                                          </a>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="semester Semester-root MuiBox-root css-17txp1g"
-                                    data-testid="semester20"
-                                  >
-                                    <p>
-                                      Summer
-                                       (
-                                      0
-                                      ) 
-                                    </p>
+                                    <div
+                                      class="semester Semester-root MuiBox-root css-17txp1g"
+                                      data-testid="semester20"
+                                    >
+                                      <div
+                                        class="css-nen11g-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiGrid-root MuiGrid-container css-3zt7es-MuiGrid-root"
+                                        >
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
+                                          >
+                                            <p>
+                                              Summer
+                                               (
+                                              0
+                                              )
+                                               
+                                            </p>
+                                          </div>
+                                          <div
+                                            class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1290,7 +1758,7 @@ exports[`Load saved schedule 1`] = `
                 </div>
                 <div
                   class="class-dropdown generic"
-                  style="overflow: hidden; clear: both;"
+                  style="overflow: hidden; clear: both; padding-top: 1em;"
                 >
                   <div
                     class="MuiBox-root css-8atqhb"
@@ -1392,7 +1860,7 @@ exports[`Load saved schedule 1`] = `
                         class="MuiBox-root css-19midj6"
                       >
                         <div
-                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-stf7qh-MuiAutocomplete-root"
+                          class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1hbdqan-MuiAutocomplete-root"
                         >
                           <div
                             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -1400,8 +1868,8 @@ exports[`Load saved schedule 1`] = `
                             <label
                               class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                               data-shrink="false"
-                              for=":r6:"
-                              id=":r6:-label"
+                              for=":r8:"
+                              id=":r8:-label"
                             >
                               Course Category
                             </label>
@@ -1415,7 +1883,7 @@ exports[`Load saved schedule 1`] = `
                                 autocapitalize="none"
                                 autocomplete="off"
                                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                                id=":r6:"
+                                id=":r8:"
                                 role="combobox"
                                 spellcheck="false"
                                 type="text"
@@ -1600,6 +2068,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS MA"
                               >
                                 CS MA
                               </div>
@@ -1651,6 +2121,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CS Core"
                               >
                                 CS Core
                               </div>
@@ -1702,6 +2174,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-Math Core"
                               >
                                 Math Core
                               </div>
@@ -1761,6 +2235,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-GLP"
                               >
                                 GLP
                               </div>
@@ -1812,6 +2288,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-RES"
                               >
                                 RES
                               </div>
@@ -1863,6 +2341,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-COMSK"
                               >
                                 COMSK
                               </div>
@@ -1914,6 +2394,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARNS"
                               >
                                 ARNS
                               </div>
@@ -1965,6 +2447,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-ARHU"
                               >
                                 ARHU
                               </div>
@@ -2016,6 +2500,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SBSCI"
                               >
                                 SBSCI
                               </div>
@@ -2067,6 +2553,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-CDI"
                               >
                                 CDI
                               </div>
@@ -2118,6 +2606,8 @@ exports[`Load saved schedule 1`] = `
                             >
                               <div
                                 class="requirementName"
+                                data-mui-internal-clone-element="true"
+                                data-testid="requirementName-SRER"
                               >
                                 SRER
                               </div>
@@ -2180,5 +2670,9 @@ exports[`Load saved schedule 1`] = `
       </div>
     </div>
   </div>
+  <script
+    defer=""
+    src="https://accounts.google.com/gsi/client"
+  />
 </body>
 `;

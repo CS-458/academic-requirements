@@ -8,17 +8,67 @@ exports[`Default Error Notification Behavior 1`] = `
       <div
         data-testid="test-root-element"
       >
+        <span
+          aria-label="You Have 0 Errors"
+          class=""
+          data-mui-internal-clone-element="true"
+          data-testid="errorBellTooltip"
+        >
+          <button
+            class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="notificationButton"
+            disabled=""
+            tabindex="-1"
+            type="button"
+          >
+            <span
+              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationsNoneIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
+                />
+              </svg>
+              <span
+                class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
+              >
+                0
+              </span>
+            </span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
+  </body>,
+  "container": <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <span
+        aria-label="You Have 0 Errors"
+        class=""
+        data-mui-internal-clone-element="true"
+        data-testid="errorBellTooltip"
+      >
         <button
-          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
           data-testid="notificationButton"
           disabled=""
           tabindex="-1"
           type="button"
         >
           <span
-            aria-label="You Have 0 Errors"
             class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-            data-mui-internal-clone-element="true"
           >
             <svg
               aria-hidden="true"
@@ -38,43 +88,7 @@ exports[`Default Error Notification Behavior 1`] = `
             </span>
           </span>
         </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="test-root-element"
-    >
-      <button
-        class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-        data-testid="notificationButton"
-        disabled=""
-        tabindex="-1"
-        type="button"
-      >
-        <span
-          aria-label="You Have 0 Errors"
-          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-          data-mui-internal-clone-element="true"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-            data-testid="NotificationsNoneIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"
-            />
-          </svg>
-          <span
-            class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge MuiBadge-invisible css-1pi4uwz-MuiBadge-badge"
-          >
-            0
-          </span>
-        </span>
-      </button>
+      </span>
     </div>
   </div>,
   "debug": [Function],
@@ -139,16 +153,68 @@ exports[`Error Notification - Badge Number 1`] = `
       <div
         data-testid="test-root-element"
       >
+        <span
+          aria-label="You Have 3 Errors"
+          class=""
+          data-mui-internal-clone-element="true"
+          data-testid="errorBellTooltip"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="notificationButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationImportantIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                />
+              </svg>
+              <span
+                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+              >
+                3
+              </span>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </span>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
+  </body>,
+  "container": <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <span
+        aria-label="You Have 3 Errors"
+        class=""
+        data-mui-internal-clone-element="true"
+        data-testid="errorBellTooltip"
+      >
         <button
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
           data-testid="notificationButton"
           tabindex="0"
           type="button"
         >
           <span
-            aria-label="You Have 3 Errors"
             class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-            data-mui-internal-clone-element="true"
           >
             <svg
               aria-hidden="true"
@@ -171,45 +237,7 @@ exports[`Error Notification - Badge Number 1`] = `
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="test-root-element"
-    >
-      <button
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-        data-testid="notificationButton"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          aria-label="You Have 3 Errors"
-          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-          data-mui-internal-clone-element="true"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-            data-testid="NotificationImportantIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
-            />
-          </svg>
-          <span
-            class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
-          >
-            3
-          </span>
-        </span>
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </button>
+      </span>
     </div>
   </div>,
   "debug": [Function],
@@ -276,16 +304,68 @@ exports[`Error Notification - Close Popover 1`] = `
       <div
         data-testid="test-root-element"
       >
+        <span
+          aria-label="You Have 3 Errors"
+          class=""
+          data-mui-internal-clone-element="true"
+          data-testid="errorBellTooltip"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="notificationButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationImportantIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                />
+              </svg>
+              <span
+                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+              >
+                3
+              </span>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </span>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
+  </body>,
+  "container": <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <span
+        aria-label="You Have 3 Errors"
+        class=""
+        data-mui-internal-clone-element="true"
+        data-testid="errorBellTooltip"
+      >
         <button
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
           data-testid="notificationButton"
           tabindex="0"
           type="button"
         >
           <span
-            aria-label="You Have 3 Errors"
             class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-            data-mui-internal-clone-element="true"
           >
             <svg
               aria-hidden="true"
@@ -308,45 +388,7 @@ exports[`Error Notification - Close Popover 1`] = `
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="test-root-element"
-    >
-      <button
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-        data-testid="notificationButton"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          aria-label="You Have 3 Errors"
-          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-          data-mui-internal-clone-element="true"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-            data-testid="NotificationImportantIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
-            />
-          </svg>
-          <span
-            class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
-          >
-            3
-          </span>
-        </span>
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </button>
+      </span>
     </div>
   </div>,
   "debug": [Function],
@@ -413,16 +455,68 @@ exports[`Error Notification - Errors Displayed 1`] = `
       <div
         data-testid="test-root-element"
       >
+        <span
+          aria-label="You Have 3 Errors"
+          class=""
+          data-mui-internal-clone-element="true"
+          data-testid="errorBellTooltip"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="notificationButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationImportantIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                />
+              </svg>
+              <span
+                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+              >
+                3
+              </span>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </span>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
+  </body>,
+  "container": <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <span
+        aria-label="You Have 3 Errors"
+        class=""
+        data-mui-internal-clone-element="true"
+        data-testid="errorBellTooltip"
+      >
         <button
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
           data-testid="notificationButton"
           tabindex="0"
           type="button"
         >
           <span
-            aria-label="You Have 3 Errors"
             class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-            data-mui-internal-clone-element="true"
           >
             <svg
               aria-hidden="true"
@@ -445,45 +539,7 @@ exports[`Error Notification - Errors Displayed 1`] = `
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="test-root-element"
-    >
-      <button
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-        data-testid="notificationButton"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          aria-label="You Have 3 Errors"
-          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-          data-mui-internal-clone-element="true"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-            data-testid="NotificationImportantIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
-            />
-          </svg>
-          <span
-            class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
-          >
-            3
-          </span>
-        </span>
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </button>
+      </span>
     </div>
   </div>,
   "debug": [Function],
@@ -548,16 +604,68 @@ exports[`Error Notification - Open Popover 1`] = `
       <div
         data-testid="test-root-element"
       >
+        <span
+          aria-label="You Have 3 Errors"
+          class=""
+          data-mui-internal-clone-element="true"
+          data-testid="errorBellTooltip"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="notificationButton"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="NotificationImportantIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
+                />
+              </svg>
+              <span
+                class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
+              >
+                3
+              </span>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </span>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://accounts.google.com/gsi/client"
+    />
+  </body>,
+  "container": <div>
+    <div
+      data-testid="test-root-element"
+    >
+      <span
+        aria-label="You Have 3 Errors"
+        class=""
+        data-mui-internal-clone-element="true"
+        data-testid="errorBellTooltip"
+      >
         <button
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1caykdm-MuiButtonBase-root-MuiIconButton-root"
           data-testid="notificationButton"
           tabindex="0"
           type="button"
         >
           <span
-            aria-label="You Have 3 Errors"
             class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-            data-mui-internal-clone-element="true"
           >
             <svg
               aria-hidden="true"
@@ -580,45 +688,7 @@ exports[`Error Notification - Open Popover 1`] = `
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="test-root-element"
-    >
-      <button
-        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
-        data-testid="notificationButton"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          aria-label="You Have 3 Errors"
-          class="MuiBadge-root MuiBadge-root css-1c32n2y-MuiBadge-root"
-          data-mui-internal-clone-element="true"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-            data-testid="NotificationImportantIcon"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M18 16v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-5 0h-2v-2h2v2zm0-4h-2V8h2v4zm-1 10c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2z"
-            />
-          </svg>
-          <span
-            class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
-          >
-            3
-          </span>
-        </span>
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </button>
+      </span>
     </div>
   </div>,
   "debug": [Function],

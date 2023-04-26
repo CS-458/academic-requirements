@@ -1,4 +1,12 @@
-import React, { FC, useEffect, memo, useCallback, useState } from "react";
+import React, {
+  FC,
+  useEffect,
+  memo,
+  useCallback,
+  useState,
+  useRef,
+  createContext
+} from "react";
 import { CourseList } from "./CourseList";
 import StringProcessing from "../entities/StringProcessing";
 import { ItemTypes } from "../entities/Constants";
@@ -30,6 +38,7 @@ import ScheduleErrorNotification from "./ScheduleErrorNotifications";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
 import ReloadPage from "./ReloadPage";
+import ScheduleUpload from "./ScheduleUploadModal";
 
 export interface CourseError {
   id: number;
@@ -38,6 +47,8 @@ export interface CourseError {
 
 let undo = false;
 let redo = false;
+
+export const PassedCourseListContext = createContext<CourseType[]>([]);
 
 export const FourYearPlanPage: FC<FourYearPlanType> = memo(
   function FourYearPlanPage({
@@ -131,20 +142,7 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       const tempSemesters: SemesterType[] = [];
       let i = 0;
       for (let year = 1; year < 5; year++) {
-        [season.Fall, season.Spring].forEach((s) => {
-          tempSemesters.push({
-            accepts: [ItemTypes.COURSE],
-            courses: [],
-            semesterNumber: i++,
-            SemesterCredits: 0,
-            Warning: null,
-            year,
-            season: s
-          });
-        });
-      }
-      for (let year = 1; year < 5; year++) {
-        [season.Winter, season.Summer].forEach((s) => {
+        Object.values(season).forEach((s) => {
           tempSemesters.push({
             accepts: [ItemTypes.COURSE],
             courses: [],
@@ -257,11 +255,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       [PassedCourseList, semesters]
     );
 
-    const [savedErrors, setSavedErrors] = useState<string[]>([]);
+    const [savedErrors, setSavedErrors] = useState<string[][]>([]);
 
     useEffect(() => {
       if (updateWarning.newCheck) {
-        const errors: string[] = [];
+        const errors: string[][] = [];
 
         const duplicateCourses: CourseError[] = [];
         for (let i = 0; i < semesters.length; i++) {
@@ -273,7 +271,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 );
                 if (dup !== undefined) {
                   errors.push(
-                    `Duplicate Course found: ${c.subject}-${c.number}`
+                    [
+                      `Duplicate Course found: ${c.subject}-${c.number}`,
+                      "warning"
+                    ]
                   );
                   duplicateCourses.push({
                     id: c.idCourse,
@@ -299,7 +300,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 sem: sem.semesterNumber
               });
               errors.push(
-                `${c.subject}-${c.number} is only offered in the fall`
+                [
+                  `${c.subject}-${c.number} is only offered in the fall`,
+                  "warning"
+                ]
               );
             } else if (c.semesters === "SP" && sem.season !== season.Spring) {
               fallSpringCourses.push({
@@ -307,7 +311,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 sem: sem.semesterNumber
               });
               errors.push(
-                `${c.subject}-${c.number} is only offered in the spring`
+                [
+                  `${c.subject}-${c.number} is only offered in the spring`,
+                  "warning"
+                ]
               );
             }
           });
@@ -328,7 +335,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             if (!val.returnValue) {
               preReqCourses.push({ id: c.idCourse, sem: sem.semesterNumber });
               errors.push(
-                `${c.subject}-${c.number} requires: ${val.failedString}`
+                [
+                  `${c.subject}-${c.number} requires: ${val.failedString}`,
+                  "error"
+                ]
               );
             }
           });
@@ -343,10 +353,22 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         });
         setSemesters(tempSemesters);
 
-        const newErrors = errors.filter((e) => !savedErrors.includes(e));
+        // errors that have not been seen before
+        const newErrors: string[][] = errors.filter((e) => {
+          return savedErrors.findIndex((se) => {
+            return se[0].includes(e[0]);
+          }) === -1;
+        });
         if (newErrors.length > 0) {
           setVisibility(true);
-          throwError(newErrors.join("<br>"), "error");
+          // loop through new errors to determine max severity
+          let severity = "warning";
+          newErrors.forEach((e) => {
+            if (e[1] === "error") {
+              severity = "error";
+            }
+          });
+          throwError(newErrors.map((e) => e[0]).join("<br>"), severity);
         }
         setSavedErrors(errors);
       }
@@ -548,9 +570,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
     function loadFYP(semesters: SemesterType[]): void {
       // fill in the schedule
       semesters.forEach((semester, index) => {
+        if (index % 2 === 1) return;
         const tempArr: CourseType[] = [];
+        console.log("FYP", fourYearPlan);
         // Get the semester data from the json
-        const classPlan = fourYearPlan.ClassPlan["Semester" + (index + 1)];
+        const classPlan = fourYearPlan.ClassPlan["Semester" + (index / 2 + 1)];
         if (classPlan == null) return;
         const courseStringArr = classPlan.Courses;
         let credits = 0;
@@ -676,19 +700,35 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
         if (move !== undefined) {
           undo = true;
           const temp = coursesForRedo;
-          temp.push({ movedTo: move.movedFrom, movedFrom: move.movedTo, course: move.course });
+          temp.push({
+            movedTo: move.movedFrom,
+            movedFrom: move.movedTo,
+            course: move.course
+          });
           setCoursesForRedo(temp);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Undo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Undo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -700,16 +740,28 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
           createCourseMoveRecord(move.movedFrom, move.course, move.movedTo);
           // course came from the courseList, so move it back
           if (move.movedFrom === -2) {
-            handleReturnDrop({ idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleReturnDrop({
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           } else if (move.movedTo === -2) {
             // was moved to course list
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "CourseList" });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "CourseList"
+            });
           } else {
-            handleDrop(move.movedFrom, { idCourse: move.course, dragSource: "Semester " + move.movedTo });
+            handleDrop(move.movedFrom, {
+              idCourse: move.course,
+              dragSource: "Semester " + move.movedTo
+            });
           }
         }
       } catch (error: any) {
-        throwError("Redo Error: It's possible the Year has been deleted and cannot be accessed.", "warning");
+        throwError(
+          "Redo Error: It's possible the Year has been deleted and cannot be accessed.",
+          "warning"
+        );
       }
     }
 
@@ -734,102 +786,99 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
       }
     }
 
+    function errorBreaks(): JSX.Element[] {
+      return error.split("<br>").map((s) => <div>{s}</div>);
+    }
+
+    const semListRef = useRef(null);
     return (
-      <div className="generic">
-        <div className="drag-drop">
-          <ActionBar
-            scheduleData={info}
-            sems={semesters}
-            resetRequirements={resetRequirements}
-            setAlertData={throwError}
-            handleReturn={handleReturnDrop}
-            setSemesters={setSemesters}
-            setSavedErrors={setSavedErrors}
-            resetRedo={setCoursesForRedo}
-            resetMoved={setCoursesMoved}
-            defaultName={userMajor()?.schedule_name}
-          >
-            <ScheduleErrorNotification errors={savedErrors} />
-            <br />
-            <UndoButton
-              handleUndoCourse={handleUndoCourse}
-              courses={coursesMoved}
-            />
-            <br />
-            <RedoButton
-              handleRedoCourse={handleRedoCourse}
-              courses={coursesForRedo}
-            />
-            <br />
-            <ReloadPage
-              scheduleData={info}
-              sems={semesters}
-              resetRequirements={resetRequirements}
-              handleReturn={handleReturnDrop}
-              setSemesters={setSemesters}
-              setSavedErrors={setSavedErrors}
-              resetRedo={setCoursesForRedo}
-              resetMoved={setCoursesMoved}
-              loadFYP={loadFYP}
-              initializeSemesters={initializeSemesters}
-            />
-          </ActionBar>
-          <div style={{ overflow: "hidden", clear: "both" }}>
-            <Snackbar
-              open={visibility}
-              autoHideDuration={6000}
-              onClose={handleClose}
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-              data-testid="snackbar"
-            >
-              <Alert
+      <PassedCourseListContext.Provider value={PassedCourseList}>
+        <div className="generic">
+          <div className="drag-drop">
+            <ActionBar>
+              <ScheduleUpload
+                scheduleData={info}
+                setAlertData={throwError}
+                semRef={semListRef}
+                defaultName={userMajor()?.schedule_name}
+              />
+              <ScheduleErrorNotification errors={savedErrors} />
+              <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
+              <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
+              <ReloadPage
+                scheduleData={info}
+                sems={semesters}
+                resetRequirements={resetRequirements}
+                handleReturn={handleReturnDrop}
+                setSemesters={setSemesters}
+                setSavedErrors={setSavedErrors}
+                resetRedo={setCoursesForRedo}
+                resetMoved={setCoursesMoved}
+                loadFYP={loadFYP}
+                initializeSemesters={initializeSemesters}
+                setWarningPreReq={setWarningPrereq}
+                setWarningFallvsSpring={setWarningFallvsSpringCourses}
+                setWarningDupCourses={setWarningDupCourses}
+              />
+            </ActionBar>
+            <div style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}>
+              <Snackbar
+                open={visibility}
+                autoHideDuration={6000}
                 onClose={handleClose}
-                severity={severity}
-                sx={{ width: "100%" }}
+                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                data-testid="snackbar"
               >
-                {`${error}`}
-              </Alert>
-            </Snackbar>
-            <SemesterList
+                <Alert
+                  onClose={handleClose}
+                  severity={severity}
+                  sx={{ width: "100%" }}
+                >
+                  {errorBreaks()}
+                </Alert>
+              </Snackbar>
+              <SemesterList
+                sref={semListRef}
+                semesters={semesters}
+                warningPrerequisiteCourses={warningPrereq}
+                warningFallvsSpringCourses={warningFallvsSpringCourses}
+                warningDuplicateCourses={warningDupCourses}
+                PassedCourseList={PassedCourseList}
+                setSemesters={setSemesters}
+                checkRequirements={checkRequirements}
+                coursesInMultipleCategories={coursesInMultipleCategories}
+                setUpdateWarning={setUpdateWarning}
+                reqList={reqList ?? []}
+                reqGenList={reqGenList ?? []}
+                createCourseMoveRecord={createCourseMoveRecord}
+                error={throwError}
+              />
+            </div>
+            <div
+              style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}
+              className="class-dropdown generic"
+            >
+              <CourseFiltering
+                courseData={PassedCourseList}
+                onFiltered={(courses: CourseType[]) => {
+                  setCoursesInCategory(courses);
+                }}
+              />
+              <CourseList
+                accept={[ItemTypes.COURSE]}
+                onDrop={(item) => handleReturnDrop(item)}
+                courses={coursesInCategory}
+                key={0}
+              />
+            </div>
+            <InformationDrawer
+              requirementsDisplay={requirementsDisplay}
               semesters={semesters}
-              warningPrerequisiteCourses={warningPrereq}
-              warningFallvsSpringCourses={warningFallvsSpringCourses}
-              warningDuplicateCourses={warningDupCourses}
-              PassedCourseList={PassedCourseList}
-              setSemesters={setSemesters}
-              checkRequirements={checkRequirements}
-              coursesInMultipleCategories={coursesInMultipleCategories}
-              setUpdateWarning={setUpdateWarning}
-              reqList={reqList ?? []}
-              reqGenList={reqGenList ?? []}
-              createCourseMoveRecord={createCourseMoveRecord}
-              error={throwError}
+              passedCourseList={PassedCourseList}
             />
           </div>
-          <div
-            style={{ overflow: "hidden", clear: "both" }}
-            className="class-dropdown generic"
-          >
-            <CourseFiltering
-              courseData={PassedCourseList}
-              onFiltered={(courses: CourseType[]) => {
-                setCoursesInCategory(courses);
-              }}
-            />
-            <CourseList
-              accept={[ItemTypes.COURSE]}
-              onDrop={(item) => handleReturnDrop(item)}
-              courses={coursesInCategory}
-              key={0}
-            />
-          </div>
-          <InformationDrawer
-            requirementsDisplay={requirementsDisplay}
-            semesters={semesters}
-            passedCourseList={PassedCourseList}
-          />
         </div>
-      </div>
+      </PassedCourseListContext.Provider>
     );
   }
 );

@@ -1,9 +1,20 @@
+html {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  @page {
+    /* size: portrait; */
+    size: landscape;
+  }
+}
+
 .generic {
   height: 100%;
 }
 
 .App {
-  text-align: center;
   height: 100%;
   margin-right: 10px;
   margin-left: 10px;
@@ -33,7 +44,7 @@ body {
 }
 
 .class-dropdown {
-  text-align: center;
+  text-align: left;
   border-radius: 10px;
   padding: 5px;
   border-color: black;
@@ -67,7 +78,6 @@ body {
 }
 
 .page {
-  padding-top: 1em;
   height: 100%;
 }
 
@@ -100,6 +110,7 @@ body {
 }
 .percentage {
   text-align: right;
+  justify-content: right;
   display: flex;
   align-items: center;
 }
@@ -110,5 +121,4 @@ body {
   align-items: center;
   padding-top: 1px;
   vertical-align: center;
-
 }

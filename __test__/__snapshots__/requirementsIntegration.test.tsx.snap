@@ -274,16 +274,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -301,16 +313,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -328,16 +352,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -355,16 +391,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -442,16 +490,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -469,16 +529,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -496,16 +568,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -523,16 +607,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -610,16 +706,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -637,16 +745,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -664,16 +784,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -691,16 +823,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -778,16 +922,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -805,16 +961,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -832,16 +1000,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -859,16 +1039,28 @@ exports[`Check for details tooltip 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2095,16 +2287,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2122,16 +2326,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2149,16 +2365,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2176,16 +2404,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2263,16 +2503,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2290,16 +2542,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2317,16 +2581,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2344,16 +2620,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2431,16 +2719,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2458,16 +2758,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2485,16 +2797,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2512,16 +2836,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2599,16 +2935,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2626,16 +2974,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2653,16 +3013,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -2680,16 +3052,28 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>

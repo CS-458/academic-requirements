@@ -274,32 +274,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        4
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          4
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                   <div
@@ -339,16 +356,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -366,16 +395,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        12
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          12
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                   <div
@@ -459,16 +500,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -546,16 +599,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        13
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          13
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
                                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -692,16 +757,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -719,32 +796,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        10
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          10
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                   <div
@@ -850,16 +944,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -937,32 +1043,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        6
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          6
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
                                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -1055,16 +1178,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -1082,32 +1217,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        7
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          7
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
                                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -1200,16 +1352,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -1287,32 +1451,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Fall
-                                         (
-                                        4
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Fall
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          4
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
                                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -1383,16 +1564,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Winter
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Winter
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>
@@ -1410,32 +1603,49 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Spring
-                                         (
-                                        3
-                                        )
-                                         
-                                        <svg
-                                          aria-hidden="true"
-                                          aria-label="Low"
-                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="amber"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
                                         >
-                                          <path
-                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
-                                          />
-                                          <path
-                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
-                                          />
-                                        </svg>
-                                      </p>
+                                          Spring
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          3
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          <div
+                                            aria-label="Low"
+                                            class=" css-omazcq-MuiStack-root"
+                                            data-mui-internal-clone-element="true"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="MuiSvgIcon-root MuiSvgIcon-colorWarning MuiSvgIcon-fontSizeMedium css-3adcp6-MuiSvgIcon-root"
+                                              data-testid="amber"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                              />
+                                              <path
+                                                d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
                                         class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -1506,16 +1716,28 @@ exports[`Test undo and redo button 1`] = `
                                     <div
                                       class="MuiGrid-root MuiGrid-item css-4pkl32-MuiGrid-root"
                                     >
-                                      <p>
-                                        Summer
-                                         (
-                                        0
-                                        )
-                                         
-                                      </p>
+                                      <div
+                                        class="css-gqvo15-MuiStack-root"
+                                      >
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          Summer
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        >
+                                          (
+                                          0
+                                          )
+                                        </div>
+                                        <div
+                                          class="MuiBox-root css-0"
+                                        />
+                                      </div>
                                     </div>
                                     <div
-                                      class="MuiGrid-root MuiGrid-item css-13335fe-MuiGrid-root"
+                                      class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     />
                                   </div>
                                 </div>

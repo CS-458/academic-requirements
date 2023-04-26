@@ -11,11 +11,13 @@ import {
   styled,
   Theme,
   CSSObject,
-  Drawer
+  Drawer,
+  Grid
 } from "@mui/material";
 import {
   CourseType,
   RequirementComponentType,
+  season,
   SemesterType
 } from "../entities/four_year_plan";
 import { Requirement } from "./Requirement";
@@ -157,6 +159,13 @@ export default function InformationDrawer(props: {
     return total;
   }
 
+  function semesterName(inp: string): string {
+    const i = +inp.replace("Semester", "") - 1;
+    const s = i % 2 === 0 ? season.Fall : season.Spring;
+    const y = Math.floor(i / 2) + 1;
+    return `Year ${y} ${s}`;
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -206,36 +215,52 @@ export default function InformationDrawer(props: {
             key={0}
           />
           <Typography sx={{ color: "primary.main" }}>Major</Typography>
-          <Divider sx={{ color: "primary.main", mb: "10px" }}/>
-        { open ? props.requirementsDisplay?.map(({ name, percentage }, index) => (<div key={index}>
-          { name === "Global Perspective (GLP)"
-            ? <>
-            <Typography sx={{ color: "primary.main" }}>General Education</Typography>
-            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
-            </> : <></>
-          }
-          <Requirement
-            name={name}
-            reqs={props.requirementsDisplay[index]}
-            percentage={percentage}
-            digits={1}
-            key={index}
-          /></div>))
-          : props.requirementsDisplay?.map(({ shortName, percentage }, index) => (<div key={index}>
-          { shortName === "GLP"
-            ? <>
-            <Typography sx={{ color: "primary.main" }}>Gen Eds</Typography>
-            <Divider sx={{ color: "primary.main", mb: "10px" }}/>
-            </> : <></>
-          }
-          <Requirement
-            name={shortName}
-            reqs={props.requirementsDisplay[index]}
-            percentage={percentage}
-            digits={0}
-            key={index}
-          /></div>))
-        }
+          <Divider sx={{ color: "primary.main", mb: "10px" }} />
+          {open
+            ? props.requirementsDisplay?.map(({ name, percentage }, index) => (
+              <div key={index}>
+                {name === "Global Perspective (GLP)" ? (
+                  <>
+                    <Typography sx={{ color: "primary.main" }}>
+                      General Education
+                    </Typography>
+                    <Divider sx={{ color: "primary.main", mb: "10px" }} />
+                  </>
+                ) : (
+                  <></>
+                )}
+                <Requirement
+                  name={name}
+                  reqs={props.requirementsDisplay[index]}
+                  percentage={percentage}
+                  digits={1}
+                  key={index}
+                />
+              </div>
+            ))
+            : props.requirementsDisplay?.map(
+              ({ shortName, percentage }, index) => (
+                <div key={index}>
+                  {shortName === "GLP" ? (
+                    <>
+                      <Typography sx={{ color: "primary.main" }}>
+                        Gen Eds
+                      </Typography>
+                      <Divider sx={{ color: "primary.main", mb: "10px" }} />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                  <Requirement
+                    name={shortName}
+                    reqs={props.requirementsDisplay[index]}
+                    percentage={percentage}
+                    digits={0}
+                    key={index}
+                  />
+                </div>
+              )
+            )}
         </TabPanel>
         {loadPlan ? (
           <TabPanel value={value} index={completedCourses.length !== 0 ? 2 : 1}>
@@ -243,21 +268,35 @@ export default function InformationDrawer(props: {
               The four year plan for your concentration recommends taking
               courses in the following categories in the respective semesters.
             </Typography>
-            {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
-              if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
-                return (
-                  <div style={{ margin: "5px" }} key={index}>
-                    <Typography key={index + 0.5}>{key}</Typography>
-                    <Typography
-                      style={{ marginLeft: "10px", marginBottom: "25px" }}
-                      key={index}
-                    >
-                      {fourYearPlan?.ClassPlan[key].Requirements.toString()}
-                    </Typography>
-                  </div>
-                );
-              }
-            })}
+            <Box
+              sx={{
+                mt: "0.75rem",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(10em, auto))"
+              }}
+            >
+              {Object.keys(fourYearPlan.ClassPlan).map((key, index) => {
+                if (fourYearPlan?.ClassPlan[key].Requirements.length > 0) {
+                  return (
+                    <Grid key={key}>
+                      <Typography key={index + 0.5} fontSize="1.2rem">
+                        {semesterName(key)}
+                      </Typography>
+                      <Typography
+                        style={{ marginLeft: "10px", marginBottom: "25px" }}
+                        key={index}
+                      >
+                        {fourYearPlan?.ClassPlan[key].Requirements.map(
+                          (e: string) => (
+                            <Box sx={{ fontSize: "1rem" }}>{e}</Box>
+                          )
+                        )}
+                      </Typography>
+                    </Grid>
+                  );
+                }
+              })}
+            </Box>
           </TabPanel>
         ) : undefined}
         {completedCourses.length !== 0 ? (

@@ -11,3 +11,9 @@ test("getSchedules returns empty for error", async () => {
   user.cred = "";
   expect(await getSchedules(user)).toStrictEqual([]);
 });
+
+test("uploadSchedule throws with an invalid token", async () => {
+  await expect(uploadSchedule(undefined, "S1", {})).rejects.toThrowError(
+    "User is not logged in"
+  );
+});

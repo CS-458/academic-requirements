@@ -7,10 +7,7 @@ import {
   ListItemButton,
   ListItemIcon,
   IconButton,
-  Divider,
-  Typography,
-  createTheme,
-  ThemeProvider
+  Divider
 } from "@mui/material";
 import {
   Menu,
@@ -30,32 +27,19 @@ export default function MenuDrawer(): any {
     right: false
   });
   const [opened, setOpened] = useState<boolean>(false);
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent) => {
-        setState({ ...state, [anchor]: open });
-        setOpened(open);
-      };
-
-  const theme = createTheme({
-    typography: {
-      fontFamily: [
-        "cursive",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol"
-      ].join(",")
-    }
-  });
+  function toggleDrawer(
+    anchor: Anchor,
+    open: boolean
+  ): (event: React.KeyboardEvent | React.MouseEvent) => void {
+    return (_e) => {
+      setState({ ...state, [anchor]: open });
+      setOpened(open);
+    };
+  }
 
   const list = (anchor: Anchor): any => (
-    <Box data-testid="box"
+    <Box
+      data-testid="box"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -63,49 +47,43 @@ export default function MenuDrawer(): any {
     >
       <List>
         <ListItem key={"Button Text"} disablePadding>
-        <Link href="/">
-          <ListItemButton data-testid="inputPageButton">
-          <ListItemIcon>
-          <ListIcon/>
-        </ListItemIcon>
-          <ThemeProvider theme = {theme}>
-            <Typography fontFamily="cursive">Input Page</Typography>
-          </ThemeProvider>
-          </ListItemButton>
-        </Link>
+          <Link href="/">
+            <ListItemButton data-testid="inputPageButton">
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              Input Page
+            </ListItemButton>
+          </Link>
         </ListItem>
       </List>
       <Divider />
       <List>
         <ListItem key={"Button Text"} disablePadding>
-        <Link href="/scheduler">
-          <ListItemButton>
-            <ListItemIcon>
-              <ScheduleIcon/>
-            </ListItemIcon>
-            <ThemeProvider theme = {theme}>
-            <Typography fontFamily="cursive">Schedule Page</Typography>
-            </ThemeProvider>
-          </ListItemButton>
-        </Link>
+          <Link href="/scheduler">
+            <ListItemButton>
+              <ListItemIcon>
+                <ScheduleIcon />
+              </ListItemIcon>
+              Schedule Page
+            </ListItemButton>
+          </Link>
         </ListItem>
       </List>
       <Divider />
-      {userToken() !== undefined &&
-      (<List>
+      {userToken() !== undefined && (
+        <List>
           <ListItem key={"Button Text"} disablePadding>
-          <Link href="/account">
-            <ListItemButton>
-              <ListItemIcon>
-                <AccountCircleIcon />
-              </ListItemIcon>
-              <ThemeProvider theme = {theme}>
-              <Typography fontFamily = "cursive">Account</Typography>
-              </ThemeProvider>
-            </ListItemButton>
-          </Link>
+            <Link href="/account">
+              <ListItemButton>
+                <ListItemIcon>
+                  <AccountCircleIcon />
+                </ListItemIcon>
+                Account
+              </ListItemButton>
+            </Link>
           </ListItem>
-      </List>
+        </List>
       )}
       <Divider />
     </Box>

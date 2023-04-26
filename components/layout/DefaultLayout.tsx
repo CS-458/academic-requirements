@@ -6,8 +6,7 @@ import {
   Button,
   Popover,
   MenuList,
-  MenuItem,
-  Tooltip
+  MenuItem
 } from "@mui/material";
 
 import MenuDrawer from "../NavigationMenu";
@@ -119,21 +118,19 @@ export default function DefaultLayout(props: {
     return (
       <Typography variant="h5" component="div" sx={{ fontSize: "1rem" }}>
         <Button aria-describedby={id} onClick={handleClick}>
-          <Tooltip title={"Manage Profile"}>
-            <img
-              src={picture}
-              onError={() => {
-                if (picture === undefined) return;
-                if (picture.startsWith("https://lh3")) {
-                  setPicture(picture.replace("lh3", "lh4"));
-                } else if (picture.startsWith("https://lh4")) {
-                  setPicture(picture.replace("lh4", "lh5"));
-                }
-              }}
-              style={{ height: "2em", borderRadius: "50%" }}
-              data-testid="account-picture"
-            />
-          </Tooltip>
+          <img
+            src={picture}
+            onError={() => {
+              if (picture === undefined) return;
+              if (picture.startsWith("https://lh3")) {
+                setPicture(picture.replace("lh3", "lh4"));
+              } else if (picture.startsWith("https://lh4")) {
+                setPicture(picture.replace("lh4", "lh5"));
+              }
+            }}
+            style={{ height: "2em", borderRadius: "50%" }}
+            data-testid="account-picture"
+          />
         </Button>
         <Popover
           id={id}

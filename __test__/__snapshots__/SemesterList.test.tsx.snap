@@ -78,7 +78,8 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                               Fall
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -104,7 +105,8 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                               Winter
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -161,7 +163,8 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                               Spring
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -187,7 +190,8 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                               Summer
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -321,7 +325,8 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
                               Fall
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -378,7 +383,8 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
                               Winter
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -404,7 +410,8 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
                               Spring
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -430,7 +437,8 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
                               Summer
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -533,7 +541,8 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
                               Fall
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -612,7 +621,8 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
                               Winter
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -638,7 +648,8 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
                               Spring
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -664,7 +675,8 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
                               Summer
                                (
                               0
-                              ) 
+                              )
+                               
                             </p>
                           </div>
                           <div
@@ -976,7 +988,8 @@ exports[`Render Semester List 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1002,7 +1015,8 @@ exports[`Render Semester List 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1028,7 +1042,8 @@ exports[`Render Semester List 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1054,7 +1069,8 @@ exports[`Render Semester List 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1140,7 +1156,8 @@ exports[`Render Semester List 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1197,7 +1214,8 @@ exports[`Render Semester List 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1223,7 +1241,8 @@ exports[`Render Semester List 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1249,7 +1268,8 @@ exports[`Render Semester List 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1335,7 +1355,8 @@ exports[`Render Semester List 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1392,7 +1413,8 @@ exports[`Render Semester List 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1418,7 +1440,8 @@ exports[`Render Semester List 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1475,7 +1498,8 @@ exports[`Render Semester List 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1561,7 +1585,8 @@ exports[`Render Semester List 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1618,7 +1643,8 @@ exports[`Render Semester List 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1644,7 +1670,8 @@ exports[`Render Semester List 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1701,7 +1728,8 @@ exports[`Render Semester List 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2343,7 +2371,7 @@ exports[`Render Semester List 2`] = `
                                     style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                   >
                                     <div
-                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
                                       data-testid="semester0"
                                     >
                                       <div
@@ -2359,8 +2387,24 @@ exports[`Render Semester List 2`] = `
                                               Fall
                                                (
                                               3
-                                              ) 
-                                              Low
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
                                             </p>
                                           </div>
                                           <div
@@ -2439,7 +2483,8 @@ exports[`Render Semester List 2`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2465,7 +2510,8 @@ exports[`Render Semester List 2`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2522,7 +2568,8 @@ exports[`Render Semester List 2`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2608,7 +2655,8 @@ exports[`Render Semester List 2`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2665,7 +2713,8 @@ exports[`Render Semester List 2`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2691,7 +2740,8 @@ exports[`Render Semester List 2`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2748,7 +2798,8 @@ exports[`Render Semester List 2`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2834,7 +2885,8 @@ exports[`Render Semester List 2`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2891,7 +2943,8 @@ exports[`Render Semester List 2`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2917,7 +2970,8 @@ exports[`Render Semester List 2`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -2974,7 +3028,8 @@ exports[`Render Semester List 2`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -3060,7 +3115,8 @@ exports[`Render Semester List 2`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -3117,7 +3173,8 @@ exports[`Render Semester List 2`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -3143,7 +3200,8 @@ exports[`Render Semester List 2`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -3200,7 +3258,8 @@ exports[`Render Semester List 2`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5264,7 +5323,8 @@ exports[`Render Semester List 3`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5321,7 +5381,8 @@ exports[`Render Semester List 3`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5331,7 +5392,7 @@ exports[`Render Semester List 3`] = `
                                       </div>
                                     </div>
                                     <div
-                                      class="semester Semester-root MuiBox-root css-12qoa1o"
+                                      class="semester Semester-root MuiBox-root css-w964xf"
                                       data-testid="semester2"
                                     >
                                       <div
@@ -5347,8 +5408,24 @@ exports[`Render Semester List 3`] = `
                                               Spring
                                                (
                                               3
-                                              ) 
-                                              Low
+                                              )
+                                               
+                                              <svg
+                                                aria-hidden="true"
+                                                aria-label="Low"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                data-mui-internal-clone-element="true"
+                                                data-testid="amber"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                                />
+                                                <path
+                                                  d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                                />
+                                              </svg>
                                             </p>
                                           </div>
                                           <div
@@ -5427,7 +5504,8 @@ exports[`Render Semester List 3`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5513,7 +5591,8 @@ exports[`Render Semester List 3`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5570,7 +5649,8 @@ exports[`Render Semester List 3`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5596,7 +5676,8 @@ exports[`Render Semester List 3`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5653,7 +5734,8 @@ exports[`Render Semester List 3`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5739,7 +5821,8 @@ exports[`Render Semester List 3`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5796,7 +5879,8 @@ exports[`Render Semester List 3`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5822,7 +5906,8 @@ exports[`Render Semester List 3`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5879,7 +5964,8 @@ exports[`Render Semester List 3`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -5965,7 +6051,8 @@ exports[`Render Semester List 3`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -6022,7 +6109,8 @@ exports[`Render Semester List 3`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -6048,7 +6136,8 @@ exports[`Render Semester List 3`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -6105,7 +6194,8 @@ exports[`Render Semester List 3`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8169,7 +8259,8 @@ exports[`Render Semester List 4`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8226,7 +8317,8 @@ exports[`Render Semester List 4`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8252,7 +8344,8 @@ exports[`Render Semester List 4`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8309,7 +8402,8 @@ exports[`Render Semester List 4`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8395,7 +8489,8 @@ exports[`Render Semester List 4`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8452,7 +8547,8 @@ exports[`Render Semester List 4`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8478,7 +8574,8 @@ exports[`Render Semester List 4`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8535,7 +8632,8 @@ exports[`Render Semester List 4`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8621,7 +8719,8 @@ exports[`Render Semester List 4`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8678,7 +8777,8 @@ exports[`Render Semester List 4`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8704,7 +8804,8 @@ exports[`Render Semester List 4`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8761,7 +8862,8 @@ exports[`Render Semester List 4`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8847,7 +8949,8 @@ exports[`Render Semester List 4`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8904,7 +9007,8 @@ exports[`Render Semester List 4`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8930,7 +9034,8 @@ exports[`Render Semester List 4`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -8987,7 +9092,8 @@ exports[`Render Semester List 4`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -10787,7 +10893,8 @@ exports[`Semester Drag a Suggested Course 1`] = `
                 Fall
                  (
                 0
-                ) 
+                )
+                 
               </p>
             </div>
             <div
@@ -10861,7 +10968,8 @@ exports[`Semester Has No Suggestions 1`] = `
                 Fall
                  (
                 0
-                ) 
+                )
+                 
               </p>
             </div>
             <div
@@ -10904,7 +11012,8 @@ exports[`Semester Has Only Course Suggestions 1`] = `
                 Fall
                  (
                 0
-                ) 
+                )
+                 
               </p>
             </div>
             <div
@@ -10978,7 +11087,8 @@ exports[`Semester Has Only Requirements Suggestions 1`] = `
                 Fall
                  (
                 0
-                ) 
+                )
+                 
               </p>
             </div>
             <div
@@ -11048,7 +11158,8 @@ exports[`Semester Has Suggestions 1`] = `
                 Fall
                  (
                 0
-                ) 
+                )
+                 
               </p>
             </div>
             <div
@@ -11375,7 +11486,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11432,7 +11544,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11458,7 +11571,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11515,7 +11629,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11601,7 +11716,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11658,7 +11774,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11684,7 +11801,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11741,7 +11859,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11827,7 +11946,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11884,7 +12004,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11910,7 +12031,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -11967,7 +12089,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -12053,7 +12176,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -12110,7 +12234,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -12136,7 +12261,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -12193,7 +12319,8 @@ exports[`Testing adding and Removing a year 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -12350,8 +12477,8 @@ exports[`Testing adding and Removing a year 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r17:"
-                        id=":r17:-label"
+                        for=":r19:"
+                        id=":r19:-label"
                       >
                         Course Category
                       </label>
@@ -12365,7 +12492,7 @@ exports[`Testing adding and Removing a year 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r17:"
+                          id=":r19:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -13428,7 +13555,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13485,7 +13613,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13511,7 +13640,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13568,7 +13698,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13654,7 +13785,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13711,7 +13843,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13737,7 +13870,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13794,7 +13928,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13880,7 +14015,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13937,7 +14073,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -13963,7 +14100,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14020,7 +14158,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14106,7 +14245,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14163,7 +14303,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14189,7 +14330,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14246,7 +14388,8 @@ exports[`Try removing a year that has a course 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -14403,8 +14546,8 @@ exports[`Try removing a year that has a course 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":r1s:"
-                        id=":r1s:-label"
+                        for=":r1u:"
+                        id=":r1u:-label"
                       >
                         Course Category
                       </label>
@@ -14418,7 +14561,7 @@ exports[`Try removing a year that has a course 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":r1s:"
+                          id=":r1u:"
                           role="combobox"
                           spellcheck="false"
                           type="text"

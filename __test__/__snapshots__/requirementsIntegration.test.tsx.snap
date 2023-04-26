@@ -278,7 +278,8 @@ exports[`Check for details tooltip 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -304,7 +305,8 @@ exports[`Check for details tooltip 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -330,7 +332,8 @@ exports[`Check for details tooltip 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -356,7 +359,8 @@ exports[`Check for details tooltip 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -442,7 +446,8 @@ exports[`Check for details tooltip 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -468,7 +473,8 @@ exports[`Check for details tooltip 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -494,7 +500,8 @@ exports[`Check for details tooltip 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -520,7 +527,8 @@ exports[`Check for details tooltip 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -606,7 +614,8 @@ exports[`Check for details tooltip 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -632,7 +641,8 @@ exports[`Check for details tooltip 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -658,7 +668,8 @@ exports[`Check for details tooltip 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -684,7 +695,8 @@ exports[`Check for details tooltip 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -770,7 +782,8 @@ exports[`Check for details tooltip 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -796,7 +809,8 @@ exports[`Check for details tooltip 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -822,7 +836,8 @@ exports[`Check for details tooltip 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -848,7 +863,8 @@ exports[`Check for details tooltip 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -1005,8 +1021,8 @@ exports[`Check for details tooltip 1`] = `
                       <label
                         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
                         data-shrink="false"
-                        for=":rt:"
-                        id=":rt:-label"
+                        for=":rv:"
+                        id=":rv:-label"
                       >
                         Course Category
                       </label>
@@ -1020,7 +1036,7 @@ exports[`Check for details tooltip 1`] = `
                           autocapitalize="none"
                           autocomplete="off"
                           class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
-                          id=":rt:"
+                          id=":rv:"
                           role="combobox"
                           spellcheck="false"
                           type="text"
@@ -2083,7 +2099,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2109,7 +2126,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2135,7 +2153,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2161,7 +2180,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2247,7 +2267,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2273,7 +2294,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2299,7 +2321,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2325,7 +2348,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2411,7 +2435,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2437,7 +2462,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2463,7 +2489,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2489,7 +2516,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2575,7 +2603,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Fall
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2601,7 +2630,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2627,7 +2657,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Spring
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -2653,7 +2684,8 @@ exports[`Test whether requirements visually update on the screen 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div

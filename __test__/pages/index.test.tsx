@@ -26,6 +26,11 @@ test("Verify Majors and Concentrations", async () => {
   ).not.toBeChecked();
 
   expect(generateButton).not.toBeDisabled();
+
+  expect(userMajor()?.major.name).toBe("Computer Science");
+  expect(userMajor()?.concentration.name).toBe("Interdisciplinary");
+  expect(userMajor()?.load_four_year_plan).toBe(false);
+  expect(userMajor()?.schedule_name).toBe(undefined);
 }, 10000000);
 
 test("Verify Four Year Plan Not Show", async () => {
@@ -66,9 +71,9 @@ test("Verify Select Use Four Year Plan", async () => {
 
   const planSwitch = screen.getByTestId("FourYearPlanSwitch");
   await user.click(planSwitch);
-  expect(userMajor()?.load_four_year_plan).toBeTruthy();
+  expect(userMajor()?.load_four_year_plan).toBe(true);
   await user.click(planSwitch);
-  expect(userMajor()?.load_four_year_plan).toBeFalsy();
+  expect(userMajor()?.load_four_year_plan).toBe(false);
 }, 10000000);
 
 test("Verify adding completed course", async () => {
@@ -105,6 +110,7 @@ test("Verify adding completed course", async () => {
   await user.selectAutocomplete(/Course Number/i, "220");
   await user.click(addButton);
   expect(userMajor()?.completed_courses).toContain("ANTH-220");
+  expect(userMajor()?.completed_courses).toContain("ANTH-230");
 }, 100000);
 
 test("Verify deleting completed course", async () => {

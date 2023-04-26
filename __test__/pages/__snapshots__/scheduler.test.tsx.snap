@@ -287,7 +287,8 @@ exports[`Test render of scheduler 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -313,7 +314,8 @@ exports[`Test render of scheduler 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -339,7 +341,8 @@ exports[`Test render of scheduler 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -365,7 +368,8 @@ exports[`Test render of scheduler 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -451,7 +455,8 @@ exports[`Test render of scheduler 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -508,7 +513,8 @@ exports[`Test render of scheduler 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -534,7 +540,8 @@ exports[`Test render of scheduler 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -560,7 +567,8 @@ exports[`Test render of scheduler 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -646,7 +654,8 @@ exports[`Test render of scheduler 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -703,7 +712,8 @@ exports[`Test render of scheduler 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -729,7 +739,8 @@ exports[`Test render of scheduler 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -786,7 +797,8 @@ exports[`Test render of scheduler 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -872,7 +884,8 @@ exports[`Test render of scheduler 1`] = `
                                               Fall
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -929,7 +942,8 @@ exports[`Test render of scheduler 1`] = `
                                               Winter
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -955,7 +969,8 @@ exports[`Test render of scheduler 1`] = `
                                               Spring
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div
@@ -1012,7 +1027,8 @@ exports[`Test render of scheduler 1`] = `
                                               Summer
                                                (
                                               0
-                                              ) 
+                                              )
+                                               
                                             </p>
                                           </div>
                                           <div

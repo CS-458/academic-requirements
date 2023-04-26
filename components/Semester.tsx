@@ -4,6 +4,7 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
+import { Assistant, WarningAmber } from "@mui/icons-material";
 import {
   Badge,
   Box,
@@ -12,9 +13,9 @@ import {
   IconButton,
   Popover,
   Stack,
-  Typography
+  Typography,
+  Tooltip
 } from "@mui/material";
-import { Assistant } from "@mui/icons-material";
 import { CourseList } from "./CourseList";
 
 export const Semester: FC<SemesterProps> = function Semester({
@@ -46,7 +47,9 @@ export const Semester: FC<SemesterProps> = function Semester({
 
   // Changes the background color when you're hovering over the semester
   let bgcolor = "";
-  if (Warning !== null) bgcolor = "warning.main";
+  if (Warning !== null) {
+    bgcolor = "null";
+  }
   if (isOver) bgcolor = "success.main";
 
   const handleOpenSuggester = (event: React.MouseEvent<HTMLElement>): void => {
@@ -100,7 +103,14 @@ export const Semester: FC<SemesterProps> = function Semester({
         >
           <Grid item flexGrow={1}>
             <p>
-              {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
+              {season} ({SemesterCredits}){" "}
+              {Warning !== null ? (
+                <Tooltip title={Warning}>
+                  <WarningAmber data-testid="amber" />
+                </Tooltip>
+              ) : (
+                ""
+              )}
             </p>
           </Grid>
           <Grid
@@ -165,10 +175,7 @@ export const Semester: FC<SemesterProps> = function Semester({
                       suggestedContent?.requirements.length > 0
                         ? ".25em"
                         : "0em",
-                    pb:
-                      suggestedContent?.courses.length > 0
-                        ? "0em"
-                        : ".25em"
+                    pb: suggestedContent?.courses.length > 0 ? "0em" : ".25em"
                   }}
                 >
                   {suggestedContent?.requirements.map((reqText, index) => {
@@ -200,7 +207,10 @@ export const Semester: FC<SemesterProps> = function Semester({
                       marginBottom: "0px",
                       borderRadius: "0px",
                       padding: "1em",
-                      pt: suggestedContent?.requirements.length > 0 ? "0em" : "1em"
+                      pt:
+                        suggestedContent?.requirements.length > 0
+                          ? "0em"
+                          : "1em"
                     }}
                   />
                 )}

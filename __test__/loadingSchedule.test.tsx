@@ -57,7 +57,7 @@ test("Load saved schedule", async () => {
     within(parentEl(screen.getByText(/CS MA/i), "Requirement")).getByText(/44/i)
   ).toBeInTheDocument();
   // Verify low/high warnings were calculated
-  expect(screen.getAllByText(/Fall \(10\) Low/i)[0]).toBeInTheDocument();
+  expect(screen.getAllByTestId("amber")[0]).toBeInTheDocument();
 
   await user.click(screen.getByTestId("saveButton"));
   expect(screen.getByLabelText(/Schedule Name/i)).toHaveValue("Test Name");

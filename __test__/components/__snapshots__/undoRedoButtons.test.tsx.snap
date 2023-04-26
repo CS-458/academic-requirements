@@ -262,7 +262,7 @@ exports[`Test undo and redo button 1`] = `
                               style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                             >
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester0"
                               >
                                 <div
@@ -278,8 +278,24 @@ exports[`Test undo and redo button 1`] = `
                                         Fall
                                          (
                                         4
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -327,7 +343,8 @@ exports[`Test undo and redo button 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -353,7 +370,8 @@ exports[`Test undo and redo button 1`] = `
                                         Spring
                                          (
                                         12
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -445,7 +463,8 @@ exports[`Test undo and redo button 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -531,7 +550,8 @@ exports[`Test undo and redo button 1`] = `
                                         Fall
                                          (
                                         13
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -676,7 +696,8 @@ exports[`Test undo and redo button 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -686,7 +707,7 @@ exports[`Test undo and redo button 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester6"
                               >
                                 <div
@@ -702,8 +723,24 @@ exports[`Test undo and redo button 1`] = `
                                         Spring
                                          (
                                         10
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -817,7 +854,8 @@ exports[`Test undo and redo button 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -887,7 +925,7 @@ exports[`Test undo and redo button 1`] = `
                               style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                             >
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester8"
                               >
                                 <div
@@ -903,8 +941,24 @@ exports[`Test undo and redo button 1`] = `
                                         Fall
                                          (
                                         6
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -1005,7 +1059,8 @@ exports[`Test undo and redo button 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -1015,7 +1070,7 @@ exports[`Test undo and redo button 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester10"
                               >
                                 <div
@@ -1031,8 +1086,24 @@ exports[`Test undo and redo button 1`] = `
                                         Spring
                                          (
                                         7
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -1133,7 +1204,8 @@ exports[`Test undo and redo button 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -1203,7 +1275,7 @@ exports[`Test undo and redo button 1`] = `
                               style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                             >
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester12"
                               >
                                 <div
@@ -1219,8 +1291,24 @@ exports[`Test undo and redo button 1`] = `
                                         Fall
                                          (
                                         4
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -1299,7 +1387,8 @@ exports[`Test undo and redo button 1`] = `
                                         Winter
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div
@@ -1309,7 +1398,7 @@ exports[`Test undo and redo button 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="semester Semester-root MuiBox-root css-12qoa1o"
+                                class="semester Semester-root MuiBox-root css-w964xf"
                                 data-testid="semester14"
                               >
                                 <div
@@ -1325,8 +1414,24 @@ exports[`Test undo and redo button 1`] = `
                                         Spring
                                          (
                                         3
-                                        ) 
-                                        Low
+                                        )
+                                         
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Low"
+                                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-mui-internal-clone-element="true"
+                                          data-testid="amber"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                          />
+                                          <path
+                                            d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                          />
+                                        </svg>
                                       </p>
                                     </div>
                                     <div
@@ -1405,7 +1510,8 @@ exports[`Test undo and redo button 1`] = `
                                         Summer
                                          (
                                         0
-                                        ) 
+                                        )
+                                         
                                       </p>
                                     </div>
                                     <div

@@ -10,3 +10,5 @@
 - On the Winter Semester, the High Warning should appear for reaching higher than 4 total credits
 - On the Summer Semester, the High Warning should appear for reaching higher than 12 total credits.
 - Note that there is NO lower limit for either Winter or Summer semesters and should not appear unlike Fall and Spring.
+- A special error icon should appear next to the name displaying a Warning Amber. A tooltip will also
+appear after hovering over the icon.

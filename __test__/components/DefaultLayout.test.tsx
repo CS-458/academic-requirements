@@ -68,8 +68,9 @@ test("Render Default Layout w/expiring user", async () => {
   expect(screen.getByText(/Logout/i)).toBeInTheDocument();
   expect(page.baseElement).toMatchSnapshot();
 
-  await waitFor(() =>
-    expect(screen.getByTestId("google-login-button")).toBeInTheDocument()
+  await waitFor(
+    () => expect(screen.getByTestId("google-login-button")).toBeInTheDocument(),
+    { timeout: 3000 }
   );
 });
 

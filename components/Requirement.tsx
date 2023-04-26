@@ -53,7 +53,7 @@ export const Requirement: FC<ReqProps> = memo(function Requirement({
         <Box sx={{ position: "relative", display: "inline-flex", p: 0 }}>
           <CircularProgress
             variant="determinate"
-            value={percentage}
+            value={percentage > 100 ? 100 : percentage}
             sx={{ p: 0 }}
           />
           <Box

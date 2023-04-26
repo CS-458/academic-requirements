@@ -143,7 +143,9 @@ exports[`Render Default Layout w/expiring user 1`] = `
               >
                 <button
                   aria-describedby="simple-popover"
+                  aria-label="Manage Profile"
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-mui-internal-clone-element="true"
                   tabindex="0"
                   type="button"
                 >
@@ -299,7 +301,9 @@ exports[`Render Default Layout w/user 1`] = `
               >
                 <button
                   aria-describedby="simple-popover"
+                  aria-label="Manage Profile"
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                  data-mui-internal-clone-element="true"
                   tabindex="0"
                   type="button"
                 >

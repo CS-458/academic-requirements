@@ -102,16 +102,30 @@ export const Semester: FC<SemesterProps> = function Semester({
           }}
         >
           <Grid item flexGrow={1}>
-            <p>
-              {season} ({SemesterCredits}){" "}
-              {Warning !== null ? (
-                <Tooltip title={Warning}>
-                  <WarningAmber data-testid="amber" />
-                </Tooltip>
-              ) : (
-                ""
-              )}
-            </p>
+            <Stack
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              minHeight="3em"
+              gap="0.3em"
+            >
+              <Box>{season}</Box>
+              <Box>({SemesterCredits})</Box>
+              <Box>
+                {Warning !== null ? (
+                  <Tooltip title={Warning}>
+                    <Stack direction="column" justifyContent="center">
+                      <WarningAmber
+                        data-testid="amber"
+                        color={Warning === "Low" ? "warning" : "error"}
+                      />
+                    </Stack>
+                  </Tooltip>
+                ) : (
+                  ""
+                )}
+              </Box>
+            </Stack>
           </Grid>
           <Grid
             item
@@ -119,7 +133,7 @@ export const Semester: FC<SemesterProps> = function Semester({
               display: "flex",
               position: "absolute",
               right: ".5em",
-              width: "100%",
+              width: "auto",
               justifyContent: "end"
             }}
           >

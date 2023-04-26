@@ -4,7 +4,8 @@ import { useDrop } from "react-dnd";
 import { Course } from "./DraggableCourse.tsx";
 import { ItemTypes } from "../entities/Constants";
 import { SemesterProps } from "../entities/four_year_plan";
-import { Box } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
+import { WarningAmber } from "@mui/icons-material/";
 
 export const Semester: FC<SemesterProps> = function Semester({
   accept,
@@ -30,7 +31,9 @@ export const Semester: FC<SemesterProps> = function Semester({
 
   // Changes the background color when you're hovering over the semester
   let bgcolor = "";
-  if (Warning !== null) bgcolor = "warning.main";
+  if (Warning !== null) {
+    bgcolor = "null";
+  };
   if (isOver) bgcolor = "success.main";
 
   return (
@@ -42,7 +45,7 @@ export const Semester: FC<SemesterProps> = function Semester({
       key={`semester-${year}-${season}`}
     >
       <p>
-        {season} ({SemesterCredits}) {Warning !== null ? Warning : ""}
+        {season} ({SemesterCredits}) {Warning !== null ? <Tooltip title={Warning}><WarningAmber data-testid="amber"/></Tooltip> : ""}
       </p>
       {courses.map((course) => (
         <Course

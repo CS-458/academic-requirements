@@ -280,7 +280,7 @@ exports[`Load saved schedule 1`] = `
                                   style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester5"
                                   >
                                     <p>
@@ -288,7 +288,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       10
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"
@@ -539,7 +554,7 @@ exports[`Load saved schedule 1`] = `
                                   style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester9"
                                   >
                                     <p>
@@ -547,7 +562,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       10
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"
@@ -628,7 +658,7 @@ exports[`Load saved schedule 1`] = `
                                     </p>
                                   </div>
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester11"
                                   >
                                     <p>
@@ -636,7 +666,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       10
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"
@@ -799,7 +844,7 @@ exports[`Load saved schedule 1`] = `
                                   style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester13"
                                   >
                                     <p>
@@ -807,7 +852,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       9
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText CourseWarningRed"
@@ -888,7 +948,7 @@ exports[`Load saved schedule 1`] = `
                                     </p>
                                   </div>
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester15"
                                   >
                                     <p>
@@ -896,7 +956,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       6
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"
@@ -1015,7 +1090,7 @@ exports[`Load saved schedule 1`] = `
                                   style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 100%;"
                                 >
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester17"
                                   >
                                     <p>
@@ -1023,7 +1098,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       8
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"
@@ -1082,7 +1172,7 @@ exports[`Load saved schedule 1`] = `
                                     </p>
                                   </div>
                                   <div
-                                    class="semester Semester-root MuiBox-root css-12qoa1o"
+                                    class="semester Semester-root MuiBox-root css-w964xf"
                                     data-testid="semester19"
                                   >
                                     <p>
@@ -1090,7 +1180,22 @@ exports[`Load saved schedule 1`] = `
                                        (
                                       7
                                       ) 
-                                      Low
+                                      <svg
+                                        aria-hidden="true"
+                                        aria-label="Low"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        data-mui-internal-clone-element="true"
+                                        data-testid="amber"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2z"
+                                        />
+                                        <path
+                                          d="M13 16h-2v2h2zm0-6h-2v5h2z"
+                                        />
+                                      </svg>
                                     </p>
                                     <div
                                       class="Course-root CourseText"

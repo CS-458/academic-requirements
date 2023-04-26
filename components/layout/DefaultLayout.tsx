@@ -122,12 +122,11 @@ export default function DefaultLayout(props: {
           <Button aria-describedby={id} onClick={handleClick}>
             <img
               src={picture}
-              onError={() => {
-                if (picture === undefined) return;
-                if (picture.startsWith("https://lh3")) {
-                  setPicture(picture.replace("lh3", "lh4"));
-                } else if (picture.startsWith("https://lh4")) {
-                  setPicture(picture.replace("lh4", "lh5"));
+              onError={(e) => {
+                console.log(e);
+                const target = e.target;
+                if (target instanceof HTMLImageElement) {
+                  target.src = "/defaultProfile.png";
                 }
               }}
               style={{ height: "2em", borderRadius: "50%" }}

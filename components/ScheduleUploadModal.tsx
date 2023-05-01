@@ -22,11 +22,14 @@ import { uploadSchedule, userToken } from "../services/user";
 import { UserSavedSchedule } from "../entities/four_year_plan";
 
 function show(el: Element): void {
-  if (el instanceof HTMLElement) {
+  if (el instanceof HTMLElement || el instanceof SVGElement) {
     if (el.matches(".MuiCollapse-root") || el.matches(".MuiCollapse-wrapper")) {
       el.style.visibility = "visible";
       el.style.height = "auto";
       el.style.overflow = "auto";
+    } else if (el.matches(".hidden")) {
+      el.style.display = "none";
+      console.log("Hidden", el);
     }
   }
   for (let i = 0; i < el.children.length; i++) {
@@ -46,7 +49,7 @@ export function hide(el: Element): void {
         el.style.display = "none";
       }
     }
-  } else if (el instanceof HTMLElement) {
+  } else if (el instanceof HTMLElement || el instanceof SVGElement) {
     el.setAttribute("data-screen-pos", el.style.position);
     el.style.position = "absolute";
     el.style.top = "0";
@@ -76,6 +79,8 @@ export function unHide(): void {
       ) {
         el.style.visibility = "";
         el.style.height = "";
+      } else if (el.matches(".hidden")) {
+        el.style.display = "";
       }
     }
   });
@@ -196,7 +201,7 @@ export default function FormDialog(props: {
     token === undefined ? "Must be logged in to save" : "Save";
 
   return (
-<Stack direction="column" alignItems="center">
+    <Stack direction="column" alignItems="center">
       <Tooltip title={saveTooltip} placement="right" arrow>
         <span>
           <IconButton
@@ -229,7 +234,12 @@ export default function FormDialog(props: {
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={downloadPng}>Image</Button>
           <Button onClick={handlePDF}>PDF</Button>
-          <Button onClick={onClickExportSchedule} data-testid="nestedSavedButton">Save</Button>
+          <Button
+            onClick={onClickExportSchedule}
+            data-testid="nestedSavedButton"
+          >
+            Save
+          </Button>
         </DialogActions>
       </Dialog>
       <Tooltip title="Save as PDF" placement="right" arrow>

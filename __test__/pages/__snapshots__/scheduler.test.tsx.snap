@@ -238,7 +238,7 @@ exports[`Test render of scheduler 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -454,7 +454,7 @@ exports[`Test render of scheduler 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -523,7 +523,7 @@ exports[`Test render of scheduler 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester4-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -701,7 +701,7 @@ exports[`Test render of scheduler 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -770,7 +770,7 @@ exports[`Test render of scheduler 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester8-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -879,7 +879,7 @@ exports[`Test render of scheduler 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester10-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -979,7 +979,7 @@ exports[`Test render of scheduler 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -1048,7 +1048,7 @@ exports[`Test render of scheduler 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester12-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -1157,7 +1157,7 @@ exports[`Test render of scheduler 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester14-suggestBtn"
                                               tabindex="0"
                                               type="button"

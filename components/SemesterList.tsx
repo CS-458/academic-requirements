@@ -180,6 +180,7 @@ export default function SemesterList({
           onClick={() => {
             addYear();
           }}
+          disabled={semesters.length >= 64}
           data-testid="addButton"
         >
           Add Year

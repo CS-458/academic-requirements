@@ -29,7 +29,7 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                 data-testid="expand-year"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                           >
                             <button
-                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                               data-testid="semester1-suggestBtn"
                               tabindex="0"
                               type="button"
@@ -246,7 +246,7 @@ exports[`DropAccordion - Suggest winter/summer courses 1`] = `
                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                           >
                             <button
-                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                               data-testid="semester3-suggestBtn"
                               tabindex="0"
                               type="button"
@@ -324,7 +324,7 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                 data-testid="expand-year"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -393,7 +393,7 @@ exports[`DropAccordion - Suggestions consider Completed Courses correctly 1`] = 
                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                           >
                             <button
-                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                               data-testid="semester0-suggestBtn"
                               tabindex="0"
                               type="button"
@@ -588,7 +588,7 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                 data-testid="expand-year"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -657,7 +657,7 @@ exports[`DropAccordion - Suggestions remove repeatable course in course in curre
                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                           >
                             <button
-                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                               data-testid="semester0-suggestBtn"
                               tabindex="0"
                               type="button"
@@ -1083,7 +1083,7 @@ exports[`Render Semester List 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -1299,7 +1299,7 @@ exports[`Render Semester List 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -1368,7 +1368,7 @@ exports[`Render Semester List 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester4-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -1546,7 +1546,7 @@ exports[`Render Semester List 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -1615,7 +1615,7 @@ exports[`Render Semester List 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester8-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -1724,7 +1724,7 @@ exports[`Render Semester List 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester10-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -1824,7 +1824,7 @@ exports[`Render Semester List 1`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -1893,7 +1893,7 @@ exports[`Render Semester List 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester12-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -2002,7 +2002,7 @@ exports[`Render Semester List 1`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester14-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -2674,7 +2674,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -2764,7 +2764,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester0-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -2895,7 +2895,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester2-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -2995,7 +2995,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -3064,7 +3064,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester4-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3173,7 +3173,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester6-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3273,7 +3273,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -3342,7 +3342,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester8-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3451,7 +3451,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester10-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3551,7 +3551,7 @@ exports[`Render Semester List 2`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -3620,7 +3620,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester12-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3642,7 +3642,7 @@ exports[`Render Semester List 2`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  4
+                                                  3
                                                 </span>
                                               </span>
                                               <span
@@ -3729,7 +3729,7 @@ exports[`Render Semester List 2`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester14-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -3751,7 +3751,7 @@ exports[`Render Semester List 2`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  3
+                                                  2
                                                 </span>
                                               </span>
                                               <span
@@ -5807,7 +5807,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -5876,7 +5876,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester0-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6006,7 +6006,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester2-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6128,7 +6128,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -6197,7 +6197,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester4-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6306,7 +6306,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester6-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6406,7 +6406,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -6475,7 +6475,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester8-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6584,7 +6584,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester10-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6684,7 +6684,7 @@ exports[`Render Semester List 3`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -6753,7 +6753,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester12-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6775,7 +6775,7 @@ exports[`Render Semester List 3`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  4
+                                                  3
                                                 </span>
                                               </span>
                                               <span
@@ -6862,7 +6862,7 @@ exports[`Render Semester List 3`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester14-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -6884,7 +6884,7 @@ exports[`Render Semester List 3`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  3
+                                                  2
                                                 </span>
                                               </span>
                                               <span
@@ -8940,7 +8940,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -9009,7 +9009,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester0-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9118,7 +9118,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester2-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9218,7 +9218,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -9287,7 +9287,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester4-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9396,7 +9396,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester6-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9496,7 +9496,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -9565,7 +9565,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester8-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9674,7 +9674,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester10-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9774,7 +9774,7 @@ exports[`Render Semester List 4`] = `
                             >
                               <svg
                                 aria-hidden="true"
-                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                                 data-testid="expand-year"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -9843,7 +9843,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester12-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9865,7 +9865,7 @@ exports[`Render Semester List 4`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  4
+                                                  3
                                                 </span>
                                               </span>
                                               <span
@@ -9952,7 +9952,7 @@ exports[`Render Semester List 4`] = `
                                             class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                           >
                                             <button
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                               data-testid="semester14-suggestBtn"
                                               tabindex="0"
                                               type="button"
@@ -9974,7 +9974,7 @@ exports[`Render Semester List 4`] = `
                                                 <span
                                                   class="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary MuiBadge-badge css-106c1u2-MuiBadge-badge"
                                                 >
-                                                  3
+                                                  2
                                                 </span>
                                               </span>
                                               <span
@@ -11835,7 +11835,7 @@ exports[`Semester Drag a Suggested Course 1`] = `
               class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
             >
               <button
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="semester1-suggestBtn"
                 tabindex="0"
                 type="button"
@@ -11978,7 +11978,7 @@ exports[`Semester Has Only Course Suggestions 1`] = `
               class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
             >
               <button
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="semester1-suggestBtn"
                 tabindex="0"
                 type="button"
@@ -12065,7 +12065,7 @@ exports[`Semester Has Only Requirements Suggestions 1`] = `
               class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
             >
               <button
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="semester1-suggestBtn"
                 tabindex="0"
                 type="button"
@@ -12148,7 +12148,7 @@ exports[`Semester Has Suggestions 1`] = `
               class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
             >
               <button
-                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                 data-testid="semester1-suggestBtn"
                 tabindex="0"
                 type="button"
@@ -12419,7 +12419,7 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -12488,7 +12488,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester0-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -12597,7 +12597,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester2-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -12697,7 +12697,7 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -12766,7 +12766,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester4-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -12875,7 +12875,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester6-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -12975,7 +12975,7 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -13044,7 +13044,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester8-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -13153,7 +13153,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester10-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -13253,7 +13253,7 @@ exports[`Testing adding and Removing a year 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -13322,7 +13322,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester12-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -13431,7 +13431,7 @@ exports[`Testing adding and Removing a year 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester14-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -14680,7 +14680,7 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -14749,7 +14749,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester0-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -14858,7 +14858,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester2-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -14958,7 +14958,7 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -15027,7 +15027,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester4-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -15136,7 +15136,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester6-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -15236,7 +15236,7 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -15305,7 +15305,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester8-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -15414,7 +15414,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester10-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -15514,7 +15514,7 @@ exports[`Try removing a year that has a course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -15583,7 +15583,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester12-suggestBtn"
                                         tabindex="0"
                                         type="button"
@@ -15692,7 +15692,7 @@ exports[`Try removing a year that has a course 1`] = `
                                       class="MuiGrid-root MuiGrid-item css-xyn65t-MuiGrid-root"
                                     >
                                       <button
-                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+                                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium hidden css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                         data-testid="semester14-suggestBtn"
                                         tabindex="0"
                                         type="button"

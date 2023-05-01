@@ -229,7 +229,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -445,7 +445,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -661,7 +661,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -877,7 +877,7 @@ exports[`Four Year Plan Page Prerequisite course 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -1651,7 +1651,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -1867,7 +1867,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -2083,7 +2083,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -2299,7 +2299,7 @@ exports[`Four Year Plan Page duplicate courses 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -3073,7 +3073,7 @@ exports[`Four Year Plan Page renders 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -3289,7 +3289,7 @@ exports[`Four Year Plan Page renders 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -3505,7 +3505,7 @@ exports[`Four Year Plan Page renders 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -3721,7 +3721,7 @@ exports[`Four Year Plan Page renders 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -4495,7 +4495,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -4711,7 +4711,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -4927,7 +4927,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -5143,7 +5143,7 @@ exports[`Four Year Plan incompatible Season Fall 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -5917,7 +5917,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -6133,7 +6133,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -6349,7 +6349,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -6565,7 +6565,7 @@ exports[`Four Year Plan incompatible Season Spring 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -7339,7 +7339,7 @@ exports[`High/low warning icons displayed 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -7555,7 +7555,7 @@ exports[`High/low warning icons displayed 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -7771,7 +7771,7 @@ exports[`High/low warning icons displayed 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -7987,7 +7987,7 @@ exports[`High/low warning icons displayed 1`] = `
                       >
                         <svg
                           aria-hidden="true"
-                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-v84d5j-MuiSvgIcon-root"
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium hidden css-v84d5j-MuiSvgIcon-root"
                           data-testid="expand-year"
                           focusable="false"
                           viewBox="0 0 24 24"

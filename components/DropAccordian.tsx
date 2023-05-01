@@ -6,7 +6,7 @@ import {
   AccordionSummaryProps,
   styled
 } from "@mui/material";
-import { ArrowForwardIosSharp, ChevronRightSharp, CircleNotifications } from "@mui/icons-material";
+import { ArrowForwardIosSharp } from "@mui/icons-material";
 import { useContext, useState } from "react";
 import {
   CourseType,
@@ -40,6 +40,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
       <ArrowForwardIosSharp
         sx={{ fontSize: "0.9rem" }}
         data-testid="expand-year"
+        className="hidden"
       />
     }
     {...props}
@@ -98,52 +99,46 @@ export default function DropTargetAccordian(props: {
     const curSemester = props.semesters.find(
       (sem) => sem.semesterNumber === semNum
     );
-    const suggestedCourses: CourseType[] = [];
+    let suggestedCourses: CourseType[] = [];
 
-    PassedCourseList.forEach((course: CourseType) => {
-      // Suggest courses based on the four year plan
-      classPlan?.Courses.forEach((courseString: String) => {
-        const subject = courseString.split("-")[0];
-        const number = courseString.split("-")[1];
+    // Suggest courses based on the four year plan
+    classPlan?.Courses.forEach((courseString: String) => {
+      const subject = courseString.split("-")[0];
+      const number = courseString.split("-")[1];
 
-        // We found the full course object for a course in the four year plan
-        if (course.subject === subject && course.number === number) {
-          // Course is not already marked as complete
-          if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
-            // Course is not already suggested (or is repeatable and can be suggested again)
-            if (
-              course.repeatableForCred ||
-              suggestedCourses.findIndex(
-                (sc) => sc.idCourse === course.idCourse
-              ) === -1
-            ) {
-              suggestedCourses.push(course);
-            }
-          } else {
-            // Only suggest a completed course if it's repeatable
-            if (course.repeatableForCred) {
-              suggestedCourses.push(course);
-            }
+      const course = PassedCourseList.find(
+        (c) => c.subject === subject && c.number === number
+      );
+      if (course !== undefined) {
+        // Course is not already marked as complete
+        if (completedCourses.findIndex((cc) => cc === courseString) === -1) {
+          // Course is not already suggested (or is repeatable and can be suggested again)
+          if (
+            course.repeatableForCred ||
+            suggestedCourses.findIndex(
+              (sc) => sc.idCourse === course.idCourse
+            ) === -1
+          ) {
+            suggestedCourses.push(course);
           }
-        }
-      });
-
-      // Suggest all courses that are available in Winter/Summer for a winter/summer semester
-      if (
-        (curSemester?.season === season.Winter &&
-          course.semesters?.includes("WI")) ||
-        (curSemester?.season === season.Summer &&
-          course.semesters?.includes("SU"))
-      ) {
-        if (
-          suggestedCourses.findIndex(
-            (sc) => sc.idCourse === course.idCourse
-          ) === -1
-        ) {
-          suggestedCourses.push(course);
+        } else {
+          // Only suggest a completed course if it's repeatable
+          if (course.repeatableForCred) {
+            suggestedCourses.push(course);
+          }
         }
       }
     });
+
+    if (curSemester?.season === season.Winter) {
+      suggestedCourses = suggestedCourses.concat(
+        PassedCourseList.filter((c) => c.semesters?.includes("WI"))
+      );
+    } else if (curSemester?.season === season.Summer) {
+      suggestedCourses = suggestedCourses.concat(
+        PassedCourseList.filter((c) => c.semesters?.includes("SU"))
+      );
+    }
 
     // remove a suggestion if it already exists in the schedule
     props.semesters.forEach((sem) => {
@@ -180,7 +175,7 @@ export default function DropTargetAccordian(props: {
       sx={{ pageBreakInside: "avoid" }}
     >
       <div ref={drop}>
-        <AccordionSummary sx={{ bgcolor: "primary.main" }} expandIcon={<ChevronRightSharp className="hidden" />}>
+        <AccordionSummary sx={{ bgcolor: "primary.main" }}>
           Year {props.year + 1}
         </AccordionSummary>
       </div>

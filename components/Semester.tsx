@@ -139,6 +139,7 @@ export const Semester: FC<SemesterProps> = function Semester({
           >
             {suggestedContentExists() && (
               <IconButton
+                className="hidden"
                 onClick={handleOpenSuggester}
                 data-testid={`semester${semesterNumber}-suggestBtn`}
               >

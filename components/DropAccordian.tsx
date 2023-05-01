@@ -6,7 +6,7 @@ import {
   AccordionSummaryProps,
   styled
 } from "@mui/material";
-import { ArrowForwardIosSharp } from "@mui/icons-material";
+import { ArrowForwardIosSharp, ChevronRightSharp, CircleNotifications } from "@mui/icons-material";
 import { useContext, useState } from "react";
 import {
   CourseType,
@@ -180,7 +180,7 @@ export default function DropTargetAccordian(props: {
       sx={{ pageBreakInside: "avoid" }}
     >
       <div ref={drop}>
-        <AccordionSummary sx={{ bgcolor: "primary.main" }}>
+        <AccordionSummary sx={{ bgcolor: "primary.main" }} expandIcon={<ChevronRightSharp className="hidden" />}>
           Year {props.year + 1}
         </AccordionSummary>
       </div>

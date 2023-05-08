@@ -270,12 +270,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   (c2) => c.idCourse === c2.idCourse
                 );
                 if (dup !== undefined) {
-                  errors.push(
-                    [
-                      `Duplicate Course found: ${c.subject}-${c.number}`,
-                      "warning"
-                    ]
-                  );
+                  errors.push([
+                    `Duplicate Course found: ${c.subject}-${c.number}`,
+                    "warning"
+                  ]);
                   duplicateCourses.push({
                     id: c.idCourse,
                     sem: semesters[i].semesterNumber
@@ -299,23 +297,19 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 id: c.idCourse,
                 sem: sem.semesterNumber
               });
-              errors.push(
-                [
-                  `${c.subject}-${c.number} is only offered in the fall`,
-                  "warning"
-                ]
-              );
+              errors.push([
+                `${c.subject}-${c.number} is only offered in the fall`,
+                "warning"
+              ]);
             } else if (c.semesters === "SP" && sem.season !== season.Spring) {
               fallSpringCourses.push({
                 id: c.idCourse,
                 sem: sem.semesterNumber
               });
-              errors.push(
-                [
-                  `${c.subject}-${c.number} is only offered in the spring`,
-                  "warning"
-                ]
-              );
+              errors.push([
+                `${c.subject}-${c.number} is only offered in the spring`,
+                "warning"
+              ]);
             }
           });
         });
@@ -334,12 +328,10 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
             );
             if (!val.returnValue) {
               preReqCourses.push({ id: c.idCourse, sem: sem.semesterNumber });
-              errors.push(
-                [
-                  `${c.subject}-${c.number} requires: ${val.failedString}`,
-                  "error"
-                ]
-              );
+              errors.push([
+                `${c.subject}-${c.number} requires: ${val.failedString}`,
+                "error"
+              ]);
             }
           });
           takenCourses = takenCourses.concat(concurrent);
@@ -355,9 +347,11 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
 
         // errors that have not been seen before
         const newErrors: string[][] = errors.filter((e) => {
-          return savedErrors.findIndex((se) => {
-            return se[0].includes(e[0]);
-          }) === -1;
+          return (
+            savedErrors.findIndex((se) => {
+              return se[0].includes(e[0]);
+            }) === -1
+          );
         });
         if (newErrors.length > 0) {
           setVisibility(true);
@@ -503,10 +497,12 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                   SemesterCredits: 0,
                   Warning: null,
                   semesterNumber:
-                    semesters.reduce(
-                      (max, s) => Math.max(max, s.semesterNumber),
-                      0
-                    ) + 1
+                    semesters.length === 0
+                      ? 0
+                      : semesters.reduce(
+                        (max, s) => Math.max(max, s.semesterNumber),
+                        0
+                      ) + 1
                 };
                 semesters.push(semester);
               }
@@ -803,8 +799,14 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 defaultName={userMajor()?.schedule_name}
               />
               <ScheduleErrorNotification errors={savedErrors} />
-              <UndoButton handleUndoCourse={handleUndoCourse} courses={coursesMoved} />
-              <RedoButton handleRedoCourse={handleRedoCourse} courses={coursesForRedo} />
+              <UndoButton
+                handleUndoCourse={handleUndoCourse}
+                courses={coursesMoved}
+              />
+              <RedoButton
+                handleRedoCourse={handleRedoCourse}
+                courses={coursesForRedo}
+              />
               <ReloadPage
                 scheduleData={info}
                 sems={semesters}
@@ -821,7 +823,9 @@ export const FourYearPlanPage: FC<FourYearPlanType> = memo(
                 setWarningDupCourses={setWarningDupCourses}
               />
             </ActionBar>
-            <div style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}>
+            <div
+              style={{ overflow: "hidden", clear: "both", paddingTop: "1em" }}
+            >
               <Snackbar
                 open={visibility}
                 autoHideDuration={6000}
